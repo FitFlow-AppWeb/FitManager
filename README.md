@@ -240,3 +240,37 @@ FitManager es una plataforma de gestión integral diseñada para digitalizar y o
 **Alcance**
 
 FitManager no solo se dirige a los dueños y entrenadores que buscan optimizar sus operaciones, sino que también proporciona a los clientes del gimnasio una plataforma sencilla para gestionar sus reservas, horarios y asistencia de manera eficiente. A diferencia de sistemas genéricos o gestión manual en hojas de cálculo, FitManager ofrece una solución especializada para el entorno fitness, accesible desde cualquier dispositivo con conexión a internet. Su flexibilidad y adaptabilidad lo convierten en una herramienta ideal para gimnasios de diferentes tipos, desde espacios pequeños hasta centros de entrenamiento de mayor escala, abarcando diversas disciplinas y necesidades operativas.
+
+## 1.4. Segmentos Objetivo
+
+**Segmento objetivo #1: Dueños, administradores y entrenadores de gimnasios**
+
+Aspectos demográficos:
+* Sexo: No definido (tanto hombres como mujeres).
+* Rango de edad: 25-50 años.
+* Nivel socioeconómico: Medio a alto, debido a la necesidad de inversión en tecnología y la operación de un gimnasio.
+
+Aspectos geográficos:
+* Nacionalidad: Principalmente de países de habla hispana, aunque se puede adaptar a otros mercados.
+* Zona geográfica de residencia: Zonas urbanas y suburbanas, con presencia de gimnasios independientes y centros de entrenamiento.
+
+Aspectos psicográficos:
+* Intereses: Interés por la optimización de procesos, tecnología aplicada a la gestión, y crecimiento profesional.
+* Estilo de vida: Orientados al negocio, interesados en la mejora continua de sus instalaciones, procesos y la experiencia de sus clientes.
+* Actitudes: Valoran la eficiencia operativa, la automatización de tareas, y la posibilidad de ofrecer un servicio más profesional y organizado.
+
+**Segmento objetivo #2: Clientes de gimnasios**
+
+Aspectos demográficos:
+* Sexo: No definido (tanto hombres como mujeres).
+* Rango de edad: 18-45 años, personas activas en la búsqueda de mejorar su salud y estado físico.
+* Nivel socioeconómico: Medio a medio-alto, ya que tienen acceso a membresías en gimnasios o centros de entrenamiento.
+
+Aspectos geográficos:
+* Nacionalidad: Principalmente de países de habla hispana.
+* Zona geográfica de residencia: Zonas urbanas y suburbanas, donde existen una mayor concentración de gimnasios.
+
+Aspectos psicográficos:
+* Intereses: Salud, fitness, bienestar personal, deportes y mejora física.
+* Estilo de vida: Activos, interesados en entrenamientos personalizados, y en mantener un estilo de vida saludable.
+* Actitudes: Buscan conveniencia, facilidad para acceder a la información sobre horarios, entrenamientos y disponibilidad, y valoran una experiencia organizada en el gimnasio.
