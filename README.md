@@ -230,3 +230,13 @@ FitManager debe tener un diseño moderno, claro y profesional, con una interfaz 
 <p align="center">
   <a href="https://drive.google.com/file/d/1s4bRIgJBOXdcWbEElVUIdd4UmPVrTLMN/view?usp=sharing">Link del Canvas</a>
 </p>
+
+## 1.3. Propuesta de Valor y Alcance
+
+**Propuesta de valor**
+
+FitManager es una plataforma de gestión integral diseñada para digitalizar y optimizar las operaciones de gimnasios, estudios de entrenamiento personalizado y centros de entrenamiento funcional. Su propuesta de valor se basa en simplificar la administración del negocio mediante herramientas que permiten a los dueños, administradores y entrenadores controlar pagos, membresías, clases, reservas y métricas operativas desde un solo lugar. A través de funcionalidades como el calendario dinámico, el panel de métricas, la gestión personalizada de planes y el registro automatizado de asistencias, FitManager reduce la carga operativa del personal, evita errores humanos y mejora significativamente la experiencia tanto del cliente del gimnasio como de los administradores.
+
+**Alcance**
+
+FitManager no solo se dirige a los dueños y entrenadores que buscan optimizar sus operaciones, sino que también proporciona a los clientes del gimnasio una plataforma sencilla para gestionar sus reservas, horarios y asistencia de manera eficiente. A diferencia de sistemas genéricos o gestión manual en hojas de cálculo, FitManager ofrece una solución especializada para el entorno fitness, accesible desde cualquier dispositivo con conexión a internet. Su flexibilidad y adaptabilidad lo convierten en una herramienta ideal para gimnasios de diferentes tipos, desde espacios pequeños hasta centros de entrenamiento de mayor escala, abarcando diversas disciplinas y necesidades operativas.
