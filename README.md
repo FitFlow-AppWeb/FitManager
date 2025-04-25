@@ -274,3 +274,324 @@ Aspectos psicográficos:
 * Intereses: Salud, fitness, bienestar personal, deportes y mejora física.
 * Estilo de vida: Activos, interesados en entrenamientos personalizados, y en mantener un estilo de vida saludable.
 * Actitudes: Buscan conveniencia, facilidad para acceder a la información sobre horarios, entrenamientos y disponibilidad, y valoran una experiencia organizada en el gimnasio.
+
+# CAPÍTULO 2: REQUIREMENTS ELICITATION & ANALYSIS
+
+## 2.1. Competidores
+
+FitManager compite directamente con plataformas como Mindbody, ClubRight y Booking Ninjas, todas enfocadas en la gestión digital de gimnasios. Mindbody ofrece una solución integral y global, aunque puede resultar compleja y costosa para gimnasios medianos o pequeños. ClubRight destaca por su simplicidad y precios accesibles, pero ofrece menos herramientas avanzadas. Booking Ninjas se enfoca en la automatización empresarial, aunque su implementación puede ser menos intuitiva para gimnasios convencionales. Frente a ellos, FitManager ofrece una alternativa moderna, adaptable a todo tipo de gimnasios y entrenamientos, con una experiencia más ágil y centrada en las necesidades operativas reales.
+
+### 2.1.1. Análisis Competitivo
+
+Tabla 1
+*Competitive Anlysis Landscape*
+
+**Competitive Analysis Landscape**
+> **¿Por qué llevar a cabo este análisis?**  
+> El objetivo de hacer este análisis es comparar a FitManager con competidores clave para identificar sus ventajas competitivas y oportunidades de mejora en el mercado de software para gimnasios.
+
+| Aspecto                    | **FitManager** | **Mindbody** | **ClubRight** | **Booking Ninjas** |
+|----------------------------|----------------|--------------|----------------|---------------------|
+| **Logo** | <div align="center"><img src="https://github.com/user-attachments/assets/ef4eeb67-c3c1-44ed-a88b-8867457427a5" height="100"/></div> | <div align="center"><img src="https://github.com/user-attachments/assets/6a73ae1f-63d7-4a55-a671-3d1866fb5b32" height="100"/></div> | <div align="center"><img src="https://github.com/user-attachments/assets/5fa9b28b-69e5-496a-b907-9a79fba30fd7" height="100"/></div> | <div align="center"><img src="https://github.com/user-attachments/assets/dce6b339-b62f-4810-a958-b9b036755681" height="100"/></div> |
+| **Overview** | Plataforma SaaS para gimnasios de combate, reservas, pagos y métricas. | App global para wellness y fitness (gimnasios, yoga, spas, etc.). | Software para gimnasios con enfoque en pagos y comunidad. | Solución para automatizar operaciones en gimnasios y hoteles. |
+| **Ventaja competitiva** | Adaptable a todo tipo de gimnasios, interfaz simple y automatización de gestión y pagos. | Comunidad global y marketing integrado. | Facilidad de uso y soporte personalizado. | Alta personalización e integración con sistemas externos. |
+| **Mercado objetivo** | Todo tipo de gimnasios incluyendo de combate, funcionales e híbridos (zonas urbanas). | Centros wellness y estudios de fitness en todo el mundo. | Gimnasios medianos y pequeños del Reino Unido. | Centros fitness que buscan eficiencia operativa. |
+| **Estrategias de marketing** | Nicho, publicidad digital, testimonios de entrenadores, alianzas locales. | Marketplace integrado, SEO y publicidad en redes. | Enfoque en relaciones y demostraciones personalizadas. | Marketing de contenido y posicionamiento SEO. |
+| **Productos y servicios** | Gestión de clases, reservas, pagos, métricas, notificaciones. | Agendamiento, pagos, marketplace, marketing, apps móviles. | Registro de socios, pagos, reservas, informes. | CRM, reservas, pagos, gestión documental, automatización. |
+| **Precios y costos** | Modelo por suscripción: Básico, Avanzado, Premium. | Varía según tamaño y funciones. Costos elevados para premium. | Tarifas asequibles por número de usuarios. | Planes empresariales personalizados. |
+| **Canales de distribución** | Web responsive. | App móvil y web. | Web app compatible con móviles. | Web y móvil con dashboards personalizables. |
+| **Fortalezas** | Especialización, interfaz sencilla, automatización, soporte local. | Ecosistema robusto, comunidad global, app móvil. | Simplicidad, buena relación calidad-precio, soporte. | Flexibilidad, automatización avanzada, integración. |
+| **Oportunidades** | Limitado fuera del nicho, dependencia de internet, menor reconocimiento. | Costoso, complejo para nuevos usuarios. | Funcionalidades limitadas en planes básicos. | Precio alto, curva de aprendizaje. |
+| **Debilidades** | Diferenciación frente a competidores generalistas y a plataformas con curva de aprendizaje elevada, accesibilidad a pequeños negocios. | Crecimiento global del wellness. | Ampliar funciones y cobertura. | Demanda por automatización y eficiencia post-COVID. |
+| **Amenazas** | Competencia de soluciones ya consolidadas en el mercado y opciones gratuitas. | Competencia de nicho y apps locales. | Saturación del mercado. | Adaptabilidad a mercados pequeños o locales. |
+
+### 2.1.2. Estrategias y tácticas frente a los competidores
+
+FitManager se posicionará como una solución especializada en gimnasios de deportes de combate, diferenciándose de competidores generalistas. Para afrontar las fortalezas de otros actores consolidados como Booking Ninjas, Mindbody y ClubRight, aplicará las siguientes estrategias:
+
+#1 Herramientas especializadas para gimnasios y entrenamientos personalizados
+* Fortaleza Utilizada: Especialización en gimnasios, automatización.
+* Oportunidad Aprovechada: Diferenciación frente a competidores generalistas.
+* Descripción: Mientras que plataformas como Mindbody y Booking Ninjas ofrecen soluciones genéricas, FitManager se centrará en herramientas especializadas para gimnasios funcionales y de entrenamiento personalizado. Esto incluirá gestión de sesiones intensivas, planificación de rutinas específicas y control de desempeño físico detallado, adaptándose a las necesidades reales de los entrenadores y sus clientes.
+
+#2 Posicionamiento como solución intuitiva y accesible
+* Fortaleza Utilizada: Interfaz sencilla.
+* Oportunidad Aprovechada: Diferenciación frente a plataformas con curva de aprendizaje elevada.
+* Descripción: A diferencia de competidores como ClubRight, que pueden ser más complejos en su configuración, FitManager destacará por una experiencia de usuario fluida y sin fricciones. Esto facilitará la adopción rápida por parte de los gimnasios, permitiéndoles gestionar sus operaciones sin necesidad de capacitación extensa.
+
+#3 Sistema de métricas y reportes automáticos para mejorar el desempeño
+* Fortaleza Utilizada: Automatización.
+* Oportunidad Aprovechada: Diferenciación frente a competidores generalistas.
+* Descripción: FitManager integrará un sistema avanzado de métricas y reportes automáticos, permitiendo a los entrenadores monitorear el progreso de sus alumnos de manera objetiva. Esta funcionalidad, que no todos los competidores implementan de manera robusta, facilitará la toma de decisiones basadas en datos y mejorará la retención de clientes.
+
+#4 Estructura de precios flexible para gimnasios de todos los tamaños
+* Fortaleza Utilizada: Soporte local.
+* Oportunidad Aprovechada: Accesibilidad para pequeños negocios.
+* Descripción: A diferencia de plataformas con costos elevados o modelos rígidos, FitManager ofrecerá planes escalables según el tamaño del gimnasio. Esto permitirá que tanto pequeños estudios como grandes cadenas accedan a la plataforma sin sacrificar funcionalidad, fomentando la adopción del software en el mercado.
+
+## 2.2. Entrevistas
+
+### 2.2.1. Diseño de entrevistas
+
+**Segmento #1: Dueños, administradores y entrenadores de gimnasios**
+
+Objetivo: Entender sus desafíos y necesidades operativas, especialmente en áreas como programación de clases, gestión de pagos y seguimiento de clientes.
+Se tienen las siguientes preguntas, dependiendo de su rol en el gimnasio:
+
+Para quienes se centran en la administración:
+1. ¿Cómo gestionan actualmente los pagos, membresías y clases en su gimnasio?
+2. ¿Qué tan satisfecho(a) está con su sistema de administración actual?
+3. ¿Utilizan actualmente alguna plataforma digital o software para apoyar la gestión del gimnasio? ¿Cuál?
+4. ¿Qué problemas han enfrentado al administrar horarios, clases o pagos?
+5. ¿Cuánto tiempo dedica su equipo diariamente a tareas administrativas?
+6. ¿Ha considerado implementar una solución en la nube que automatice procesos? ¿Por qué sí o por qué no?
+7. ¿Qué tan importante considera que es la digitalización para el crecimiento de su gimnasio?
+8. ¿Estaría dispuesto(a) a pagar una suscripción mensual si esta solución le ahorra tiempo, errores y esfuerzo? ¿Qué precio considera razonable?
+9. ¿Qué funcionalidades cree que serían indispensables en una herramienta de este tipo?
+
+Para quienes se centran en el entrenamiento:
+1. ¿Cómo gestionas actualmente tus horarios y clases?
+2. ¿Tienes acceso a información actualizada sobre tus clientes o alumnos? ¿Cómo la obtienes?
+3. ¿Qué herramientas digitales utilizas actualmente para organizar tu trabajo?
+4. ¿Has tenido problemas para coordinar clases, entrenamientos o sesiones con clientes?
+5. ¿Cómo te comunicas normalmente con los administradores del gimnasio?
+6. ¿Qué tan útil sería para ti tener una plataforma que centraliza tus horarios, disponibilidad y datos de tus clientes?
+7. ¿Crees que una herramienta así te ayudaría a trabajar mejor? ¿Por qué?
+8. ¿Qué funcionalidades te parecerían más valiosas en una aplicación pensada para entrenadores?
+
+**Segmento #2: Clientes de gimnasios**
+Objetivo: Entender sus necesidades y expectativas en relación con la gestión de reservas, horarios y entrenamientos
+
+1. ¿Cómo te informas actualmente sobre los horarios de clases o la disponibilidad de entrenadores en tu gimnasio?
+2. ¿Has tenido alguna vez problemas por falta de información o cambios inesperados en los horarios?
+3. ¿Qué tan útil sería para ti poder reservar tu espacio en el gimnasio o una clase con anticipación desde tu celular?
+4. ¿Crees que tu experiencia mejoraría si tu entrenador pudiera seguir tu progreso físico y adaptar tus rutinas según eso?
+5. ¿Te interesaría usar una app donde puedas ver los horarios del gimnasio, la disponibilidad de entrenadores y hacer tus reservas fácilmente?
+6. ¿Con qué frecuencia asistes al gimnasio y qué factores influyen en que mantengas esa constancia?
+7. ¿Qué aspectos de la experiencia en tu gimnasio crees que podrían mejorarse con tecnología?
+
+### 2.2.2. Registro de entrevistas
+
+**Segmento #1: Dueños, administradores y entrenadores de gimnasios**
+
+**Entrevistado N°1: Gonzalo Carhuanconte**
+* Edad: 25
+* Distrito: Los Olivos
+* Link: [Entrevista Gonzalo Carhuanconte](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUwjeWiCPbJPgRZUOXiloVYBzejgoqWTEwI0mQl7j7omhA?e=PS413T)
+* Instante en el que inicia: 0:20
+* Duración: 4:48
+
+Resumen:
+
+Gonzalo Carhuanconte, administrador de un gimnasio pequeño, gestiona pagos, membresías y clases de forma manual, utilizando herramientas como Excel y WhatsApp, lo que le genera errores, pérdida de tiempo y desorganización. Aunque reconoce la importancia de digitalizar su negocio, no ha utilizado software especializado debido a su complejidad, idioma o costo. Dedica entre 1 y 2 horas diarias a tareas administrativas y enfrenta problemas frecuentes al coordinar horarios y controlar pagos. Está abierto a usar una solución en la nube si es accesible, simple y está en español, y considera justo pagar entre 40 y 80 soles mensuales por un sistema que le ahorre tiempo y esfuerzo. Valora especialmente funcionalidades como el control automatizado de pagos, la gestión de horarios, alertas, reportes y la compatibilidad con medios de pago locales.
+
+**Entrevistado N°2: Carlos Martel**
+* Edad: 53
+* Distrito: Pueblo libre
+* Link: [Entrevista Carlos Martel](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EXL7_Zx3oqBGp_WdJeLM6S4BXoqGXbZv3htkc8ZFQS3Yzw?e=2OwSgx)
+* Instante en el que inicia: 0:01
+* Duración: 3:14
+
+Resumen:
+
+Carlos Martel administra y entrena un gimnasio enfocado en artes marciales y preparación física. Actualmente gestiona su negocio principalmente con Excel, pero considera que no es una solución efectiva, ya que le hace perder tiempo valioso y no le permite llevar un control óptimo. Recibe pagos en múltiples formatos (Yape, Plin, tarjeta, transferencia y efectivo), lo cual complica aún más la administración. Comenta que en verano, debido al aumento de personas, la situación se vuelve más caótica. Está interesado en una herramienta digital que le permita visualizar todo desde una app, automatizar alertas de pagos pendientes o por vencer y facilitar la gestión diaria. Cree que las soluciones digitales están en tendencia, especialmente para captar clientes por redes sociales, y estaría dispuesto a pagar una suscripción mensual de hasta 150 soles, siempre que el sistema realmente lo ayude a mejorar su operación.
+
+**Entrevistado N°3: Tsuyoshi Arakaki**
+* Edad: 22
+* Distrito: San Juan de Lurigancho
+* Link: [Entrevista Tsuyoshi Arakaki](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ETcOuXIyY71MnG4b7AyLxAgBTsE-82SSfQPFM4Kyi0LZ2Q?e=mZ5PtT)
+* Instante en el que inicia: 0:01
+* Duración: 6:46
+
+Resumen: 
+
+Tsuyoshi Arakaki ayuda en la gestión del gimnasio de su tío. Actualmente, la comunicación con los clientes se realiza manualmente por WhatsApp, avisándoles uno por uno cuánto deben pagar. Los pagos se hacen por Yape o Plin, y cada entrenador gestiona sus clases en su propio archivo de Excel, lo que genera desorganización. Tsuyoshi le dedica entre una y dos horas diarias a estas tareas porque estudia, pero en vacaciones le dedica más tiempo. Considera que una solución en la nube que automatice estos procesos, especialmente los pagos y la organización de clases, sería muy útil. Destaca que la digitalización es clave para el crecimiento del gimnasio y, aunque no tiene poder de decisión, estima que una suscripción mensual de hasta 300 soles podría ser viable si la herramienta realmente facilita la gestión.
+
+**Entrevistado N°4: Piero Ramirez**
+* Edad: 19
+* Distrito: Magdalena del Mar
+* Link: [Entrevista Piero Ramirez](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Ec0mRZfMEstNjpTqAYPB_fUBg_xMJAbrX6L1NQCuPNXY4Q?e=EUphPC)
+* Instante en el que inicia: 0:01
+* Duración: 3:37
+
+Resumen: 
+
+Piero Ramírez trabaja como entrenador part-time en Viva Fitness y disfruta mucho de su labor. Actualmente, gestiona sus horarios mediante tablas en Excel y coordina actividades por números de WhatsApp, lo cual considera poco práctico. Para acceder a la información de los clientes, recurre a archivos de Drive o Excel, lo que le resulta problemático y poco eficiente. La comunicación con los administradores del gimnasio también se realiza vía WhatsApp, lo que fragmenta aún más la gestión. Considera que una plataforma que centralice toda esta información mejoraría significativamente su trabajo, especialmente en la organización de horarios y seguimiento de clientes. Para él, una buena app debería incluir datos relevantes de cada cliente, como historial, objetivos y salud, que le permitan diseñar rutinas más personalizadas y efectivas.
+
+**Entrevistado N°5: Christian Valer**
+* Edad: 24
+* Distrito: Magdalena del Mar
+* Link: [Entrevista Christian Valer](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EWxMREmBuWpEmb2YQVPKqoIBGNkap_P0r8TO-vuKXvXweQ?e=nfF8YN)
+* Instante en el que inicia: 0:02
+* Duración: 3:52
+
+Resumen:
+
+Christian Valer es coach en un gimnasio y actualmente organiza sus clases utilizando WhatsApp y Google Calendar, mientras que el seguimiento del progreso de sus clientes lo realiza por mensajes. Aunque usa ambas herramientas, reconoce que tenerlas por separado le genera problemas: se le pueden pasar sesiones, hay cambios de última hora y olvidos de confirmación que provocan espacios vacíos o superposición de clases. La comunicación con los administradores también se da por WhatsApp. Considera que sería muy útil tener todo en un solo lugar, ya que ahorraría tiempo, mejoraría la coordinación y le daría acceso directo a la disponibilidad de clases y a los datos de los clientes. Piensa que una solución así evitaría errores, permitiría dejar de revisar varias apps al mismo tiempo y le daría una visión más clara para brindar un mejor servicio. Para él, lo esencial sería incluir gestión de horarios, sistema de seguimiento de clientes, recordatorios automáticos y acceso a información relevante sobre la salud de los alumnos.
+
+**Segmento #2: Clientes de gimnasios**
+
+**Entrevistado N.º 6: Mateo Cadillo**
+* Edad: 17
+* Distrito: San Borja
+* Link: [Entervista Mateo Cadillo](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ER2u9OjVKtFGixIBAr2vTDcBZatVzLstAZA23yAHQ-17KQ?e=ZgYc2O)
+* Instante en el que inicia: 0:20
+* Duración: 5:13
+
+Resumen: 
+
+Mateo Cadillo, estudiante universitario de 17 años, asiste al gimnasio de lunes a viernes y considera que su constancia se basa más en la disciplina que en la motivación. Actualmente se informa sobre los horarios y disponibilidad de entrenadores a través de un grupo de WhatsApp, pero ha tenido problemas debido a cancelaciones de último minuto y falta de comunicación clara. Considera que una plataforma web o app sería mucho más útil y ordenada para consultar horarios, disponibilidad y realizar reservas. También valora que su entrenador pueda hacerle seguimiento a su progreso físico, ya que esto le permitiría mejorar su rendimiento y ajustar rutinas según su evolución.
+
+**Entrevistado N.º 7: Franco Rios**
+* Edad: 19
+* Distrito: San Miguel
+* Link: [Entrevista Franco Rios](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EU21q4ARa0BAheDefNLJZQgBWU6e3xpFFPLdoiBdtdglFQ?e=dIoCMA)
+* Instante en el que inicia: 0:24
+* Duración: 4:09
+
+Resumen:
+
+Franco Ríos Rivera es un entrenador de gimnasio, pero también es cliente del mismo. Utiliza principalmente el calendario de su celular y una libreta para apuntar los horarios de sus clases. Aunque este sistema manual le ha funcionado, ha experimentado problemas como cancelaciones de clases no notificadas, cambios de horarios y la sobrecarga de tareas que podrían automatizarse. Considera que una app que permita gestionar reservas y horarios de manera centralizada sería muy útil y profesional, ayudándole a evitar confusiones y a ahorrar tiempo. Además, cree que la tecnología podría mejorar las rutinas personalizadas y el registro de entrada al gimnasio. Franco, quien asiste al gimnasio todos los días por disciplina y por disfrute, también valora que su progreso físico sea seguido de manera más detallada por su entrenador.
+
+**Entrevistado N.º 8: Leonardo Ames**
+* Edad: 19
+* Distrito: Pueblo Libre
+* Link: [Entrevista Leonardo Ames](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ER5iI5wr0ydNqr_4wAi_02QBpx3oaryMOp5VwcYN691Lqg?e=EgEt67)
+* Instante en el que inicia: 0:01
+* Duración: 3:26
+
+Resumen:
+
+Leonardo Ames asiste al gimnasio entre 4 y 5 veces por semana y se considera constante, aunque su asistencia depende de los horarios de clases en la universidad. Señala que, en ocasiones, no sabe si el gimnasio estará disponible o saturado, lo que le genera incertidumbre al momento de planificar sus visitas. Le gustaría poder reservar su espacio con anticipación desde el celular y tener visibilidad en tiempo real sobre la disponibilidad del gimnasio. Además, considera que sería muy beneficioso que un entrenador pudiera hacer seguimiento de su progreso físico para adaptar mejor sus rutinas. Mencionó que una app que le permita ver horarios, disponibilidad y gestionar sus reservas fácilmente mejoraría significativamente su experiencia. También cree que la tecnología puede aportar valor al permitir un mejor seguimiento del progreso físico, personalizar rutinas y monitorear aspectos como la alimentación.
+
+### 2.2.3. Análisis de entrevistas
+
+**Segmento #1: Dueños, administradores y entrenadores de gimnasios**
+
+Hallazgos:
+
+Los entrevistados coinciden en que la gestión actual de sus gimnasios o labores como entrenadores se apoya en herramientas dispersas como Excel, WhatsApp y Google Calendar, lo que genera desorganización, pérdida de tiempo y errores administrativos. El proceso de control de pagos es manual, con medios variados como Yape, Plin, efectivo y transferencias, lo que complica el seguimiento. Además, la comunicación con clientes y entre personal es fragmentada, afectando la coordinación diaria. Todos valoran una solución centralizada que les permita automatizar cobros, organizar horarios, acceder a datos de clientes y reducir el número de herramientas que deben revisar a diario. La disposición a pagar por una plataforma digital varía, pero es alta si el sistema es simple, en español y resuelve realmente sus problemas operativos.
+
+Conclusiones:
+
+Existe una clara necesidad de digitalizar la gestión operativa de los gimnasios y entrenadores, especialmente en tareas como pagos, programación de clases y seguimiento de clientes. Tanto administradores como entrenadores muestran una fuerte apertura hacia soluciones tecnológicas, siempre que sean accesibles, intuitivas y funcionales. FitManager tiene la oportunidad de posicionarse como una herramienta esencial que centraliza las operaciones diarias, mejora la experiencia del cliente final y reduce significativamente la carga operativa del personal, ofreciendo valor real y tangible desde el primer uso.
+
+**Segmento #2: Clientes de gimnasios**
+
+Hallazgos:
+
+Los tres participantes coinciden en la necesidad de una solución digital que facilite la gestión de horarios, reservas y seguimiento de su progreso físico. Actualmente, todos dependen de sistemas manuales como WhatsApp, calendarios y libretas, los cuales no son eficientes y generan problemas de comunicación, como cancelaciones de última hora y falta de claridad en la disponibilidad de entrenadores. Mateo, Franco y Leonardo valoran una plataforma web o app que centralice esta información y les permita reservar con anticipación, consultar la disponibilidad en tiempo real y evitar confusiones. Además, todos consideran que el seguimiento del progreso físico por parte de los entrenadores sería un beneficio significativo, ya que les permitiría ajustar sus rutinas de forma más efectiva y personalizada.
+
+Conclusiones:
+
+Los clientes entrevistados muestran una fuerte necesidad de una solución tecnológica que optimice su experiencia en el gimnasio. Una plataforma que ofrezca funcionalidades como la visualización de horarios, la gestión de reservas, y el seguimiento del progreso físico sería altamente valorada, ya que resolvería los problemas de comunicación y organización actuales. Además, la automatización de tareas, como la gestión de horarios y el registro de asistencia, permitiría ahorrar tiempo y evitar errores. En general, la implementación de una app o web no solo mejoraría la experiencia diaria de los clientes, sino que también contribuiría a una gestión más profesional y eficiente de las actividades dentro del gimnasio.
+
+## 2.3. Needfinding
+
+### 2.3.1. User Personas
+
+Las siguientes fichas User Persona representan de manera semi-ficticia a los usuarios ideales de FitManager, basándose en nuestros hallazgos en las entrevistas. Se resumen datos clave, como edad, ocupación y objetivos. Es útil para el proyecto porque nos permitirá diseñar una solución centrada en el usuario, entendiendo mejor sus problemas reales, motivaciones y contexto, lo que ayuda a tomar decisiones más acertadas en el desarrollo del producto, priorización de funcionalidades y mejora de la experiencia general.
+
+**Segmento #1: Dueños, administradores y entrenadores de gimnasios**
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/186dea7a-8114-4382-8966-9b45d57fecf6" alt="USER PERSONA - SEGMENTO #1">
+</p>
+
+**Segmento #2: Clientes de gimnasios**
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5d9f8bc1-a979-4cf4-b442-ef6cdb5e03f8" alt="USER PERSONA - SEGMENTO #2">
+</p>
+
+### 2.3.2. User Task Matrix
+
+| Tarea                                                              | Daniel Muñoz |              | Sebastián Ramírez |              |
+|--------------------------------------------------------------------|--------------|--------------|-------------------|--------------|
+|                                                                    | Frecuencia   | Importancia  | Frecuencia        | Importancia  |
+| Visualizar horarios y clases del gimnasio                          | Con frecuencia | Alta        | Rara vez          | Media        |
+| Visualizar disponibilidad de entrenadores y espacios               | Con frecuencia | Alta        | Con frecuencia    | Alta         |
+| Reservar clases y entrenamientos                                   | Con frecuencia | Alta        | Con frecuencia    | Alta         |
+| Consultar rutinas de entrenamiento personalizadas                  | Con frecuencia | Alta        | Con frecuencia    | Alta         |
+| Registrar y visualizar el progreso físico                          | A veces        | Alta        | Con frecuencia    | Alta         |
+| Acceder al historial de asistencia                                 | A veces        | Media       | Rara vez          | Baja         |
+| Recibir notificaciones sobre cambios de horario                    | Rara vez       | Baja        | Con frecuencia    | Alta         |
+| Gestionar pagos y membresías desde la app                          | Con frecuencia | Alta        | A veces           | Media        |
+| Contactar fácilmente con entrenadores o el gimnasio                | A veces        | Media       | A veces           | Alta         |
+
+### 2.3.3. User Journey Mapping
+
+**Segmento #1: Dueños, administradores y entrenadores de gimnasios**
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/404af6c2-b3d3-49b1-9cd6-65783907791a" alt="USER JOURNEY MAP - SEGMENTO #1">
+</p>
+
+**Segmento #2: Clientes de gimnasios**
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1e228f47-690a-437f-be19-dd78af876aa9" alt="USER JOURNEY MAP - SEGMENTO #2">
+</p>
+
+### 2.3.4. Empathy Mapping
+
+**Segmento #1: Dueños, administradores y entrenadores de gimnasios**
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0d8c6f0d-043b-4797-8319-5a253c7221d2" alt="EMPHATY MAP - SEGMENTO #1">
+
+**Segmento #2: Clientes de gimnasios**
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b08c192b-a03c-4450-baf8-e2823e1311e0" alt="EMPHATY MAP - SEGMENTO #2">
+</p>
+
+### 2.3.5. As-Is Scenario Mapping
+
+**Segmento #1: Dueños, administradores y entrenadores de gimnasios**
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5ab60ca6-ab6d-4f74-b42f-549cc226669a" alt="AS IS SCENARIO - SEGMENTO #1">
+
+**Segmento #2: Clientes de gimnasios**
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8e3ac3fd-613a-4ddf-8579-55d09750f611" alt="AS IS SCENARIO - SEGMENTO #2">
+</p>
+
+## 2.4 Ubiquitous Language
+
+Lista de Términos
+
+* **Miembro**  
+  * Usuario registrado en el gimnasio con acceso a reservas y seguimiento.  
+  * *Sinónimos a evitar:* "Cliente" (en contextos técnicos).
+
+* **Entrenador**  
+  * Personal que imparte clases o sesiones personalizadas.  
+  * *Diferenciar de:* "Staff" (roles no instructivos como recepción o limpieza).
+
+* **Clase**  
+  * Sesión grupal o individual con horario fijo (ej: Yoga, CrossFit).  
+  * *No confundir con:* "Sesión" (término genérico que puede referirse también a login).
+
+* **Reserva**  
+  * Cupo asignado a un miembro para una clase específica.  
+  * *Distinto de:* "Registro" (proceso de alta en el sistema).
+
+* **Asistencia**  
+  * Registro de presencia física en una clase.
+
+* **Membresía**  
+  * Plan de suscripción activo/inactivo de un miembro.  
+  * *Estados posibles:* Activa, Vencida, Pendiente de pago.
+
+* **Cupo**  
+  * Espacio disponible en una clase (ej: "5/10 cupos").  
+  * *Uso exclusivo:* Capacidad máxima de participantes.
+
+* **Panel**  
+  * Vista principal con métricas resumidas para administradores.  
+  * *Término técnico:* "Dashboard" (solo en código).
+
+* **Administrador**  
+  * Usuario con permisos para gestionar toda la plataforma.  
+  * *No usar:* "Manager" (reservado para gimnasios con múltiples sedes).
+
+* **Monto**  
+  * Cantidad de dinero.  
+  * *Evitar términos como:* “Precio” (más adecuado para mostrar al público) o “Tarifa” (cuando se refiere a categorías o planes).
