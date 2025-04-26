@@ -1939,3 +1939,46 @@ Ipsos Perú. (2024). Lima activa. https://www.ipsos.com/es-pe/lima-activa
 Shrivastava, M., Mishra, R., Patil, A., & Thakare, R. (2022). Digitalization in Gym Management System. International Journal of Research Publication and Reviews, 3(12), 354–358. https://ijrpr.com/uploads/V5ISSUE3/IJRPR23946.pdf
 
 Tandon, M. (2025, 22 de febrero). 100 Gym Membership Retention Statistics. Smart Health Clubs. https://smarthealthclubs.com/blog/100-gym-membership-retention-statistics/
+
+# Anexos
+
+Anexo A. Entrevistas
+
+Entrevista Gonzalo Carhuanconte. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUwjeWiCPbJPgRZUOXiloVYBzejgoqWTEwI0mQl7j7omhA?e=PS413T
+
+Entrevista Carlos Martel. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EXL7_Zx3oqBGp_WdJeLM6S4BXoqGXbZv3htkc8ZFQS3Yzw?e=2OwSgx
+
+Entrevista Tsuyoshi Arakaki. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ETcOuXIyY71MnG4b7AyLxAgBTsE-82SSfQPFM4Kyi0LZ2Q?e=mZ5PtT
+
+Entrevista Piero Ramirez. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Ec0mRZfMEstNjpTqAYPB_fUBg_xMJAbrX6L1NQCuPNXY4Q?e=EUphPC
+
+Entrevista Christian Valer. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EWxMREmBuWpEmb2YQVPKqoIBGNkap_P0r8TO-vuKXvXweQ?e=nfF8YN
+
+Entrevista Mateo Cadillo. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ER2u9OjVKtFGixIBAr2vTDcBZatVzLstAZA23yAHQ-17KQ?e=ZgYc2O
+
+Entrevista Franco Rios. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EU21q4ARa0BAheDefNLJZQgBWU6e3xpFFPLdoiBdtdglFQ?e=dIoCMA
+
+Entrevista Leonardo Ames. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ER5iI5wr0ydNqr_4wAi_02QBpx3oaryMOp5VwcYN691Lqg?e=EgEt67
+
+Anexo B. Videos del proyecto
+
+Web applications. prototyping.https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ERuo8X7cvC5FqEx6YCN0JpYBKXMEph_E6QqXlAQ9kbxQHw?e=TTxgUe
+![image](https://github.com/user-attachments/assets/9d547fca-102b-4ac3-a75b-08701f3a993e)
+
+Execution Evidence for Sprint 1 Review. 
+
+Anexo C. UI Design
+
+Wireframes y mockups. https://www.figma.com/design/4gPCmaqbcavYIRPzj9J5iK/UI-Design?node-id=1-3818&t=JJGdaovG3eenwj5D-1
+
+Web applications prototyping. https://www.figma.com/proto/5Hnhhda3IFBYmJFJmVGhAO/FitManager?node-id=2428-2091&p=f&t=XULRI0q7bMtdQZ8b-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2428%3A2091
+
+Landing page prototyping. https://www.figma.com/proto/5Hnhhda3IFBYmJFJmVGhAO/FitManager?node-id=2577-1607&p=f&t=eDMDCmcxhafsKd5D-1&scaling=scale-down&content-scaling=fixed&page-id=2577%3A1441
+
+Anexo D. Pivotal Tracker
+
+FitManager. https://www.pivotaltracker.com/n/projects/2740715
+
+Anexo E. Lean UX Canvas
+
+Fit Manager Lean UX Canvas. https://drive.google.com/file/d/1s4bRIgJBOXdcWbEElVUIdd4UmPVrTLMN/view
