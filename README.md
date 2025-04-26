@@ -1586,3 +1586,284 @@ El Domain-Driven Software Architecture extiende los principios del Domain Driven
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e57f9ad4-1714-4480-9e77-62605a1a2ff2" alt="Diagrama clases">
 </p>
+
+# CAPÍTULO 5: PRODUCT IMPLEMENTATION & DEPLOYMENT
+
+## 5.1. Software Configuration Management
+
+El Software Configuration Management (SCM) desempeña un papel esencial en el proceso de desarrollo, ya que permite mantener el control y la consistencia de versiones y configuraciones durante todo el ciclo de vida del producto. De acuerdo con Configu Editorial Team (2024), el SCM promueve una colaboración eficiente entre los equipos, facilita el manejo de cambios complejos y asegura que todos los involucrados trabajen dentro de un entorno uniforme y alineado.
+
+### 5.1.1. Software Development Environment Configuration
+
+| Producto             | Propósito en el Proyecto                                   | Categoría              | Ruta de Descarga / Acceso                            | Descripción |
+|----------------------|------------------------------------------------------------|-------------------------|------------------------------------------------------|-------------|
+| JetBrains Rider      | Desarrollo del backend en C#                               | Software Development    | https://www.jetbrains.com/rider/                     | JetBrains Rider es un entorno de desarrollo integrado (IDE) que proporciona herramientas avanzadas para desarrollar aplicaciones backend en C# de manera eficiente. |
+| JetBrains Toolbox    | Gestión centralizada de IDEs JetBrains                     | Software Development    | https://www.jetbrains.com/toolbox-app/              | JetBrains Toolbox es una aplicación que permite gestionar y actualizar todos los IDEs de JetBrains, facilitando su uso y mantenimiento dentro del proyecto. |
+| JetBrains WebStorm   | Desarrollo del frontend con Vue.js                         | Software Development    | https://www.jetbrains.com/webstorm/                 | WebStorm es un IDE ideal para desarrollo frontend con Vue.js, proporcionando funcionalidades como autocompletado, depuración y administración de proyectos. |
+| Node.js              | Entorno de ejecución para JavaScript / soporte Vue.js      | Software Development    | https://nodejs.org/                                 | Node.js es un entorno de ejecución para JavaScript que permite ejecutar código del lado del servidor, y es fundamental para integrar Vue.js en la aplicación. |
+| Vue.js               | Framework JavaScript para el frontend                      | Software Development    | https://vuejs.org/                                  | Vue.js es un framework progresivo para construir interfaces de usuario interactivas, permitiendo crear componentes dinámicos y reactivas en el frontend del proyecto. |
+| MySQL                | Gestión de base de datos del sistema                       | Software Development    | https://www.mysql.com/downloads/                    | MySQL es un sistema de gestión de bases de datos relacional utilizado para almacenar y gestionar datos en el backend, esencial para el sistema del gimnasio. |
+| Visual Studio Code   | Desarrollo de la landing page                              | Software Development    | https://code.visualstudio.com/                      | Visual Studio Code es un editor de código fuente ligero y potente que soporta múltiples lenguajes y es ideal para el desarrollo rápido de la landing page. |
+| Bootstrap            | Framework CSS para diseño responsivo de la landing page    | Software Development    | https://getbootstrap.com/                           | Bootstrap es un framework CSS que facilita el diseño de interfaces web responsivas, permitiendo que la landing page se vea correctamente en diferentes dispositivos. |
+| Swiper CSS           | Carruseles y sliders interactivos en la landing page       | Software Development    | https://swiperjs.com/                               | Swiper es una librería de JavaScript para crear sliders y carruseles interactivos, mejorando la experiencia de usuario en la landing page. |
+| AOS.js               | Animaciones de scroll en la landing page                   | Software Development    | https://michalsnik.github.io/aos/                   | AOS.js es una librería de animaciones de desplazamiento que agrega efectos visuales al hacer scroll en la landing page, mejorando su dinamismo y atractivo. |
+| GitHub               | Control de versiones y repositorio de código               | Software Development    | https://github.com/                                 | GitHub es una plataforma de alojamiento de código que permite controlar versiones, gestionar proyectos y colaborar de manera eficiente con equipos de desarrollo. |
+| GitHub Desktop       | Cliente visual de GitHub para gestión de repositorios      | Software Development    | https://desktop.github.com/                         | GitHub Desktop es una herramienta que permite gestionar repositorios de GitHub de manera visual y sencilla, facilitando el manejo de versiones del código fuente. |
+| Figma                | Diseño de interfaces y prototipos UI/UX                    | Product UX/UI Design    | https://www.figma.com/                              | Figma es una herramienta de diseño de interfaces que permite crear prototipos de alta fidelidad, ideal para la creación de la experiencia de usuario del proyecto. |
+| Lucidchart           | Diagramación de arquitectura, flujos y procesos            | Product UX/UI Design    | https://www.lucidchart.com/                         | Lucidchart es una herramienta de diagramación en línea que facilita la creación de flujos, mapas de procesos y diagramas de arquitectura, clave para planificar el sistema. |
+| Pivotal Tracker      | Gestión ágil de tareas y backlog del equipo                | Project Management      | https://www.pivotaltracker.com/                     | Pivotal Tracker es una herramienta de gestión ágil que permite gestionar el progreso de tareas, sprints y el backlog del equipo, esencial para la planificación de proyectos. |
+| UXPressia            | Creación de mapas de experiencia de usuario                | Product UX/UI Design    | https://uxpressia.com/                              | Herramienta enfocada en la creación de journey maps y perfiles de usuario, útil para visualizar la experiencia del usuario en el sistema. |
+| Structurizr          | Modelado de arquitectura de software                       | Product UX/UI Design    | https://structurizr.com/                            | Herramienta para crear modelos de arquitectura de software basada en el modelo C4, útil para documentar sistemas complejos. |
+
+
+
+
+
+
+
+### 5.1.2. Source Code Management
+
+Para la gestión del código fuente en FitManager, se utilizará Git como sistema de control de versiones, implementando el modelo de trabajo GitFlow. Esta metodología permitirá llevar un seguimiento estructurado de los cambios en el código, facilitando tanto el desarrollo de nuevas funcionalidades como la corrección de errores. Los repositorios estarán alojados en GitHub y estarán organizados bajo una estructura de ramas clara. Además de la rama principal main, se crearán las siguientes ramas: develop, feature, release y hotfix. Esta estructura garantizará una colaboración eficiente y un acceso ordenado al proyecto por parte de todo el equipo.
+
+Repositorio de Frontend Web Applications: https://github.com/kistoo/FitManager/
+
+Repositorio del landing page: https://github.com/Nico1234556/FitManagerLanding
+
+Repositorio de los web services: https://github.com/kistoo/FitManager-Web-Services
+
+### 5.1.3. Source Code Style Guide & Conventions
+
+Para mantener la coherencia, legibilidad y calidad del código fuente en FitManager, se seguirán convenciones de estilo claras y uniformes. Todo el código deberá escribirse siguiendo buenas prácticas como la correcta indentación, nombres de variables y funciones descriptivas, comentarios útiles y organizados, y separación lógica de responsabilidades. Asimismo, se establecerán convenciones específicas según el lenguaje y entorno utilizado.
+
+Espaciado
+
+El espaciado del código en FitManager seguirá una convención clara para asegurar legibilidad y facilitar el mantenimiento. Se utilizarán 2 espacios por nivel de indentación. Se dejará un espacio después de comas, operadores y palabras clave como if, for o while, y no se dejarán espacios innecesarios antes de paréntesis o llaves. Además, se incluirán líneas en blanco entre bloques de código lógico (como funciones o secciones dentro de una misma función) para mejorar la organización visual. Esta convención busca reducir la fricción durante el trabajo colaborativo y facilitar la revisión del código en equipos de desarrollo.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/eee32723-0221-4be7-8aec-841fde5353ea" alt="Espaciado">
+</p>
+
+Nomenclatura
+
+Para la denominación de entidades como archivos, variables y clases, se utilizará el idioma inglés, promoviendo así una mayor compatibilidad y comprensión en entornos de desarrollo globales. Los nombres se escribirán en minúsculas, y en caso de requerir la separación de palabras, se emplearán guiones en lugar de espacios. Esta convención no solo mejora la claridad, sino que también favorece la uniformidad en el código, facilitando su comprensión, mantenimiento y colaboración entre todos los miembros del equipo.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/06ddc334-8d62-4405-b085-005a9658ccff" alt="Nomenclatura">
+</p>
+
+Comentarios
+
+Los comentarios en FitManager serán utilizados de manera estratégica para mejorar la comprensión del código, sin recargarlo innecesariamente. Se emplearán para explicar secciones complejas, detallar la lógica detrás de ciertas decisiones de implementación o marcar tareas pendientes. Siempre se redactarán en inglés, de forma clara y concisa. Se evitarán comentarios obvios o redundantes que describan lo evidente. Además, se fomentará el uso de comentarios estructurados y consistentes para facilitar la lectura, especialmente en funciones extensas o con lógica crítica. Un buen comentario debe agregar valor y contexto al código, no simplemente repetir lo que ya se puede deducir a simple vista.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8d26de96-cd89-4448-b32e-82e131a9ce61" alt="Comentarios 1">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/83c0a3af-caf7-4810-aa18-e7d38e187def" alt="Comentarios 2">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7c1ded73-fbd0-4d52-b3da-bee907772a4e" alt="Comentarios 3">
+</p>
+
+Commits
+
+Los mensajes de commit en FitManager seguirán una estructura clara y estandarizada para facilitar el seguimiento del historial de cambios y mejorar la colaboración en equipo. Cada mensaje debe ser breve pero descriptivo, redactado en tiempo presente y en inglés (por ejemplo: “Add 1.1.1. Section”, “Add payment component”). Se recomienda comenzar con un verbo que indique la acción realizada y evitar frases genéricas como “update” o “change” sin contexto. En caso de commits más complejos, se puede incluir un cuerpo adicional explicando el motivo del cambio o su impacto. Mantener esta convención ayuda a que el historial del repositorio sea legible y útil tanto para el equipo actual como para futuros desarrolladores.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/898779a4-c366-493b-8023-b05ce62db9d6" alt="Nomenclatura">
+</p>
+
+### 5.1.4. Software Deployment Configuration
+
+Para el proceso de despliegue, empleamos GitHub como plataforma principal, asegurándonos de seguir una serie de pasos estructurados para garantizar un flujo de trabajo eficiente y sin contratiempos. A continuación, describimos los pasos que seguimos para llevar a cabo el despliegue de manera ordenada y efectiva:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/608b510a-9bff-4a5d-a4ce-e63da3534595" alt="Paso 1 SDC">
+</p>
+
+Abrimos el repositorio de la landing page
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6eb930ce-2f0e-4fc0-9468-d32d7cc562d9" alt="Paso 2 SDC">
+</p>
+
+Nos dirigimos a la sección "Settings" y le damos click a "Pages"
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f4228b25-956f-45ae-8ec6-a451ca9a21cf" alt="Paso 3 SDC">
+</p>
+
+Nos aseguramos que el source sea “Deploy from a branch”. Escogemos la rama que vamos a desplegar, en nuestro caso la rama main, escogemos el root y le damos a guardar
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f153d046-796d-4747-a33a-401ec501e76f" alt="Paso 4 SDC">
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/235ca588-0cf0-489a-953b-f82b10faa8fa" alt="Paso 5 SDC">
+</p>
+
+Volvemos a la sección "Code" y veremos un punto amarillo, al cual le daremos click y luego se expandirá y tendremos que ir a "Details"
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ee348c3c-12e1-4f3b-98ed-bc29af27338e" alt="Paso 6 SDC">
+</p>
+
+Esperamos a que se terminen todas y luego nos dirigimos de vuelta a "Settings" y luego a "Pages"
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aefab390-87b4-45cd-886c-2a55deaaa5d1" alt="Paso 7 SDC">
+</p>
+
+Podremos visualizar el link de la landing page y luego le damos click para visitarla
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9be33ab0-0b48-414a-a399-f26a5f2cef3b" alt="Paso 8 SDC">
+</p>
+
+La landing page ya está desplegada.
+
+## 5.2. Product Implementation & Deployment
+
+### 5.2.1. Sprint 1
+
+En esta sección se documenta el progreso alcanzado durante el Sprint 1 del proyecto FitManager, abordando tanto el desarrollo del producto como la dinámica de trabajo en equipo. Se detallan los objetivos planificados, la distribución de responsabilidades, el backlog de tareas y las evidencias del desarrollo y despliegue. Esta estructura permite visualizar de forma ordenada el avance logrado y sentar las bases para los siguientes ciclos de trabajo.
+
+#### 5.2.1.1. Sprint Planning
+
+| **Sprint #**                     | Sprint 1 |
+|----------------------------------|---------|
+|        | **Sprint Planning Background** |
+| Date                             | 22/04/2025 |
+| Location                         | Discord |
+| Prepared by                      | Victor Ortiz |
+| Attendees (to planning meeting)  | Juan Alvarado, Renzo Luque, Cassius Martel, Tomio Nakamurakare, Victor Ortiz |
+| Sprint 0 Review Summary          | Este es el primer sprint del proyecto, por lo tanto no existe un sprint anterior a evaluar. Las actividades previas se enfocaron en la ideación del producto, validación de problemas mediante entrevistas y elaboración del backlog inicial. |
+| Sprint 0 Retrospective Summary   | Se hizo el desarrollo de la introducción, requerimientos y diseño del producto de manera colaborativa y eficaz |
+|      | **Sprint Goal & User Stories** |
+| Sprint 1 Goal                    | Nos enfocaremos en desplegar la primera versión de la página de aterrizaje pública de FitManager. Creemos que esto aporta visibilidad y credibilidad a clientes potenciales (dueños y administradores de gimnasios), permitiéndoles conocer la propuesta de valor de la plataforma. Esto se confirmará cuando la página esté publicada, sea accesible y contenga secciones clave como sobre nosotros, nuestras funcionalidades, planes y contacto. |
+| Sprint 1 Velocity                | 12 |
+| Sum of Story Points              | 27 |
+
+#### 5.2.1.2. Aspect Leaders and Collaborators
+
+| Team Member                         | Diseño UX | Diseño UI - Wireframes | Diseño UI - MockUps | Diseño Landing Page | Control de versiones |
+|-------------------------------------|-----------|-------------------------|----------------------|----------------------|-----------------------|
+| Alvarado De La Cruz, Juan Carlos   | C         | C                       | -                    | C                    | C                     |
+| Luque Minaya, Renzo Andrés         | C         | L                       | -                    | C                    | C                     |
+| Martel Andrade, Cassius Estefano   | L         | C                       | L                    | C                    | C                     |
+| Nakamurake Teruya, Alex Tomio      | C         | C                       | C                    | C                    | L                     |
+| Ortiz Alarcón, Victor Nicolás      | C         | C                       | C                    | L                    | C                     |
+
+#### 5.2.1.3 Sprint Backlog 1
+
+| Sprint #       | Sprint #1 |      |      |      |      |
+|----------------|-----------|------|------|------|------|
+|      | Work-Item / Task |      |      |      |      |
+| User Story ID  | Id   | Description                                         | Estimation (Hours) | Assigned To                        | Status     |
+| US14           | T01  | Crear la estructura de la sección principal         | 1                   | Luque Minaya, Renzo Andrés         | Done       |
+|                | T02  | Diseñar la parte visual de la sección principal     | 1                   | Luque Minaya, Renzo Andrés         | Done       |
+|                | T03  | Crear la estructura de la sección sobre nosotros    | 1                   | Nakamurake Teruya, Alex Tomio      | Done       |
+|                | T04  | Diseñar la parte visual de la sección sobre nosotros| 2                   | Nakamurake Teruya, Alex Tomio      | Done       |
+|                | T05  | Crear la estructura de la sección de muestra        | 1                   | Ortiz Alarcón, Victor Nicolás      | Done       |
+|                | T06  | Diseñar la parte visual de la sección de muestra    | 1                   | Ortiz Alarcón, Victor Nicolás      | Done       |
+| US15           | T07  | Crear la estructura de la sección de contacto       | 1                   | Alvarado De La Cruz, Juan Carlos   | Done       |
+|                | T08  | Diseñar la parte visual de la sección de contacto   | 1                   | Alvarado De La Cruz, Juan Carlos   | Done       |
+|                | T09  | Crear el formulario de contacto                     | 1                   | Alvarado De La Cruz, Juan Carlos   | Done       |
+| US16           | T10  | Crear la estructura de la sección de planes         | 1                   | Martel Andrade, Cassius Estefano   | Done       |
+|                | T11  | Diseñar la parte visual de la sección de planes     | 1                   | Martel Andrade, Cassius Estefano   | Done       |
+| US02           | T12  | Diseño UX sección horarios                          | 2                   | Luque Minaya, Renzo Andrés         | Done       |
+|                | T13  | Diseño UI sección horarios                          | 3                   | Luque Minaya, Renzo Andrés         | Done       |
+| US01           | T14  | Diseño UX sección calendario                        | 2                   | Ortiz Alarcón, Victor Nicolás      | Done       |
+|
+
+Icebox de las historias de usuario pendientes (no iniciadas en este sprint)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c733ecc4-6d21-41a1-9f0b-ebb1c9d1fc23" alt="Icebox US pendientes">
+</p>
+
+Historias de usuario empezadas y finalizadas del sprint
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a90172d6-d285-4ea7-b711-8da2a6d80b9a" alt="Icebox US sprint 1">
+</p>
+
+Épicas
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/943e82bd-5128-4978-9b9d-57a2380e77a7" alt="Épicas">
+</p>
+
+#### 5.1.2.4. Development Evidence for Sprint Review
+
+Durante el Sprint 1, el equipo completó todas las tareas asociadas al desarrollo de la primera versión del Landing Page de FitManager. Se desarrollo el header, la sección inicio, la sección sobre nosotros, la sección de muestra, la sección de planes, la sección de contacto y el footer. Respecto a la aplicación web, se realizó el diseño UX/UI para facilitar el avance de este en los siguientes sprints.
+
+| Repository                                                  | Branch              | Commit Id                                | Commit message                             | Commit Message Body | Commited on (Date) |
+|-------------------------------------------------------------|---------------------|-------------------------------------------|--------------------------------------------|----------------------|--------------------|
+| https://github.com/Nico1234556/FitManagerLanding            | feature/start       | 9de3cc2098d2030e78e46f7a32bd34cbc92af889  | iniciamos la landing muchachos             | -                    | 22/04              |
+| https://github.com/Nico1234556/FitManagerLanding            | feature/error-404   | 46d7918588f1f346d7650cfac4fb2080a3a61f57  | error 404                                   | -                    | 22/04              |
+| https://github.com/Nico1234556/FitManagerLanding            | feature/home        | 0260e775fad14d1dfb921dc9a89995f1b7b8d6a8  | feat:adding idex structure                 | -                    | 22/04              |
+| https://github.com/Nico1234556/FitManagerLanding            | feature/styles      | e32b9db6cd7c07ab5644e1141176d8b996b8ef29  | feat: add video popup functionality and styling | -                | 22/04              |
+| https://github.com/Nico1234556/FitManagerLanding            | feature/Contactanos | be1b17e184cdbe4625c64aee490b655e5f3c516e  | Contactanos                                 | -                    | 22/04              |
+| https://github.com/Nico1234556/FitManagerLanding            | feature/planes      | 6702e74fcbd06fb6faeadc64533869ffd5dc0b45  | Pricing y estilos                           | -                    | 22/04              |
+| https://github.com/Nico1234556/FitManagerLanding            | feature/muestra     | ffb97d747e787d36f58f4265b54115bace8f2e96  | agregamos muestra de horario y algunas funciones | -               | 22/04              |
+| https://github.com/Nico1234556/FitManagerLanding            | feature/about       | 2a2ca7b51007b5a2cfe86990719b6533806f4fa3  | Add about section                           | -                    | 23/04              |
+| https://github.com/Nico1234556/FitManagerLanding            | feature/fix         | f45faba3e6438a5b1efdaa1ca0b1ef38aeb4c1d0  | Fix "Muestras"                              | -                    | 23/04              |
+
+#### 5.2.1.5. Execution Evidence for Sprint Review.
+
+Durante el Sprint 1 se completó y desplegó la primera versión funcional del Landing Page de FitManager, logrando cumplir con el objetivo establecido en el Sprint Planning. Esta entrega incluyó el diseño, maquetación e implementación de las secciones informativas clave: descripción del producto, características principales, paquetes de suscripción, formulario de contacto y una galería visual del producto.
+
+#### 5.2.1.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 1 no se desarrollaron Web Services ni endpoints funcionales, ya que el alcance del sprint estuvo centrado exclusivamente en el diseño, desarrollo y despliegue del Landing Page de FitManager. Por tanto, no se generó documentación técnica relacionada a APIs REST ni se utilizó OpenAPI.
+
+#### 5.2.1.7. Software Deployment Evidence for Sprint Review
+
+Al cierre del Sprint 1, se logró el despliegue exitoso de la primera versión del Landing Page de FitManager, cumpliendo con los objetivos establecidos para esta iteración. A continuación, se detallan las evidencias del proceso de despliegue:
+
+Para el proceso de despliegue, empleamos GitHub como plataforma principal, asegurándonos de seguir una serie de pasos estructurados para garantizar un flujo de trabajo eficiente y sin contratiempos. A continuación, describimos los pasos que seguimos para llevar a cabo el despliegue de manera ordenada y efectiva:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/608b510a-9bff-4a5d-a4ce-e63da3534595" alt="Paso 1 SDC">
+</p>
+
+Abrimos el repositorio de la landing page
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6eb930ce-2f0e-4fc0-9468-d32d7cc562d9" alt="Paso 2 SDC">
+</p>
+
+Nos dirigimos a la sección "Settings" y le damos click a "Pages"
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f4228b25-956f-45ae-8ec6-a451ca9a21cf" alt="Paso 3 SDC">
+</p>
+
+Nos aseguramos que el source sea “Deploy from a branch”. Escogemos la rama que vamos a desplegar, en nuestro caso la rama main, escogemos el root y le damos a guardar
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f153d046-796d-4747-a33a-401ec501e76f" alt="Paso 4 SDC">
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/235ca588-0cf0-489a-953b-f82b10faa8fa" alt="Paso 5 SDC">
+</p>
+
+Volvemos a la sección "Code" y veremos un punto amarillo, al cual le daremos click y luego se expandirá y tendremos que ir a "Details"
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ee348c3c-12e1-4f3b-98ed-bc29af27338e" alt="Paso 6 SDC">
+</p>
+
+Esperamos a que se terminen todas y luego nos dirigimos de vuelta a "Settings" y luego a "Pages"
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aefab390-87b4-45cd-886c-2a55deaaa5d1" alt="Paso 7 SDC">
+</p>
+
+Podremos visualizar el link de la landing page y luego le damos click para visitarla
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9be33ab0-0b48-414a-a399-f26a5f2cef3b" alt="Paso 8 SDC">
+</p>
+
+La landing page ya está desplegada.
