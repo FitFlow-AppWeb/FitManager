@@ -1920,7 +1920,7 @@ En esta imagen se aprecia la sección "Insights" de Github, donde se puede ver l
   <img src="https://github.com/user-attachments/assets/3aa24654-5dfc-4351-8029-15b85023afa1" alt="Commits READ.ME">
 </p>
 
-Por otro lado, en esta imagen se ve que todos participaron también en los commits del read.me
+Por otro lado, en esta imagen se ve que todos participaron también en los commits del readme
 
 # Conclusiones
 
