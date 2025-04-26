@@ -1886,3 +1886,19 @@ Podremos visualizar el link de la landing page y luego le damos click para visit
 </p>
 
 La landing page ya está desplegada.
+
+#### 5.2.1.8. Team Collaboration Insights during Sprint
+
+Durante el desarrollo del Sprint 1, el equipo de FitManager mantuvo una dinámica de colaboración efectiva y constante. Al ser el primer sprint del proyecto, se establecieron acuerdos clave sobre la metodología de trabajo, herramientas de comunicación y canales para el seguimiento de tareas. A continuación, se muestra evidencia de la participación de cada uno de los miembros del equipo:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8f9c030a-50c6-4b12-adf5-aaa1991f3e44" alt="Insights landing page">
+</p>
+
+En esta imagen se aprecia la sección "Insights" de Github, donde se puede ver la cantidad de commits realizada por usuarios. Se evidencia que todos participaron en los commits de la landing page.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3aa24654-5dfc-4351-8029-15b85023afa1" alt="Commits READ.ME">
+</p>
+
+Por otro lado, en esta imagen se ve que todos participaron también en los commits del read.me
