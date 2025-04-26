@@ -1761,22 +1761,30 @@ En esta sección se documenta el progreso alcanzado durante el Sprint 1 del proy
 | Sprint #       | Sprint #1 |      |      |      |      |
 |----------------|-----------|------|------|------|------|
 |      | Work-Item / Task |      |      |      |      |
-| User Story ID  | Id   | Description                                         | Estimation (Hours) | Assigned To                        | Status     |
-| US14           | T01  | Crear la estructura de la sección principal         | 1                   | Luque Minaya, Renzo Andrés         | Done       |
-|                | T02  | Diseñar la parte visual de la sección principal     | 1                   | Luque Minaya, Renzo Andrés         | Done       |
-|                | T03  | Crear la estructura de la sección sobre nosotros    | 1                   | Nakamurake Teruya, Alex Tomio      | Done       |
-|                | T04  | Diseñar la parte visual de la sección sobre nosotros| 2                   | Nakamurake Teruya, Alex Tomio      | Done       |
-|                | T05  | Crear la estructura de la sección de muestra        | 1                   | Ortiz Alarcón, Victor Nicolás      | Done       |
-|                | T06  | Diseñar la parte visual de la sección de muestra    | 1                   | Ortiz Alarcón, Victor Nicolás      | Done       |
-| US15           | T07  | Crear la estructura de la sección de contacto       | 1                   | Alvarado De La Cruz, Juan Carlos   | Done       |
-|                | T08  | Diseñar la parte visual de la sección de contacto   | 1                   | Alvarado De La Cruz, Juan Carlos   | Done       |
-|                | T09  | Crear el formulario de contacto                     | 1                   | Alvarado De La Cruz, Juan Carlos   | Done       |
-| US16           | T10  | Crear la estructura de la sección de planes         | 1                   | Martel Andrade, Cassius Estefano   | Done       |
-|                | T11  | Diseñar la parte visual de la sección de planes     | 1                   | Martel Andrade, Cassius Estefano   | Done       |
-| US02           | T12  | Diseño UX sección horarios                          | 2                   | Luque Minaya, Renzo Andrés         | Done       |
-|                | T13  | Diseño UI sección horarios                          | 3                   | Luque Minaya, Renzo Andrés         | Done       |
-| US01           | T14  | Diseño UX sección calendario                        | 2                   | Ortiz Alarcón, Victor Nicolás      | Done       |
-|
+| User Story ID | Task ID | Description                                         | Estimation (Hours) | Assigned To                        | Status |
+| US14          | T01     | Crear la estructura de la sección principal         | 1                  | Ortiz Alarcón, Victor Nicolás       | Done   |
+|               | T02     | Diseñar la parte visual de la sección principal     | 1                  | Ortiz Alarcón, Victor Nicolás       | Done   |
+|               | T03     | Crear la estructura de la sección sobre nosotros    | 1                  | Ortiz Alarcón, Victor Nicolás       | Done   |
+|               | T04     | Diseñar la parte visual de la sección sobre nosotros| 2                  | Ortiz Alarcón, Victor Nicolás       | Done   |
+|               | T05     | Crear la estructura de la sección de muestra        | 1                  | Ortiz Alarcón, Victor Nicolás       | Done   |
+|               | T06     | Diseñar la parte visual de la sección de muestra    | 1                  | Ortiz Alarcón, Victor Nicolás       | Done   |
+| US15          | T07     | Crear la estructura de la sección de contacto       | 1                  | Ortiz Alarcón, Victor Nicolás       | Done   |
+|               | T08     | Diseñar la parte visual de la sección de contacto   | 1                  | Ortiz Alarcón, Victor Nicolás       | Done   |
+|               | T09     | Crear el formulario de contacto                     | 1                  | Ortiz Alarcón, Victor Nicolás       | Done   |
+| US16          | T10     | Crear la estructura de la sección de planes         | 1                  | Martel Andrade, Cassius Estefano    | Done   |
+|               | T11     | Diseñar la parte visual de la sección de planes     | 1                  | Martel Andrade, Cassius Estefano    | Done   |
+| US02          | T12     | Diseño UX sección horarios                          | 2                  | Martel Andrade, Cassius Estefano    | Done   |
+|               | T13     | Diseño UI sección horarios                          | 3                  | Martel Andrade, Cassius Estefano    | Done   |
+| US01          | T14     | Diseño UX sección calendario                        | 2                  | Martel Andrade, Cassius Estefano    | Done   |
+|               | T15     | Diseño UI sección calendario                        | 3                  | Martel Andrade, Cassius Estefano    | Done   |
+| US06          | T16     | Diseño UX sección ingresos y pagos                  | 2                  | Nakamurake Teruya, Alex Tomio       | Done   |
+|               | T17     | Diseño UI sección ingresos y pagos                  | 3                  | Nakamurake Teruya, Alex Tomio       | Done   |
+| US10          | T18     | Diseño UX sección personal                          | 2                  | Nakamurake Teruya, Alex Tomio       | Done   |
+|               | T19     | Diseño UI sección personal                          | 3                  | Nakamurake Teruya, Alex Tomio       | Done   |
+| US09          | T20     | Diseño UX sección miembros                          | 2                  | Nakamurake Teruya, Alex Tomio       | Done   |
+|               | T21     | Diseño UI sección miembros                          | 3                  | Nakamurake Teruya, Alex Tomio       | Done   |
+| US12          | T22     | Diseño UX sección notificaciones                    | 2                  | Martel Andrade, Cassius Estefano    | Done   |
+|               | T23     | Diseño UI sección notificaciones                    | 3                  | Martel Andrade, Cassius Estefano    | Done   |
 
 Icebox de las historias de usuario pendientes (no iniciadas en este sprint)
 <p align="center">
