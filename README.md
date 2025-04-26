@@ -3,6 +3,7 @@
 <p align="center">Universidad: Universidad Peruana de Ciencias Aplicadas (UPC)</p>
 <p align="center">Carrera: Ingeniería de Software</p>
 <p align="center">Ciclo: 05</p>
+<p align="center">Aplicaciones Web 1ASI0730</p>
 <p align="center">Sección 4388</p>
 <p align="center">Profesor: Alex Humberto Sánchez Ponce</p>
 
