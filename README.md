@@ -1805,17 +1805,28 @@ Historias de usuario empezadas y finalizadas del sprint
 
 Durante el Sprint 1, el equipo completó todas las tareas asociadas al desarrollo de la primera versión del Landing Page de FitManager. Se desarrollo el header, la sección inicio, la sección sobre nosotros, la sección de muestra, la sección de planes, la sección de contacto y el footer. Respecto a la aplicación web, se realizó el diseño UX/UI para facilitar el avance de este en los siguientes sprints.
 
-| Repository                                                  | Branch              | Commit Id                                | Commit message                             | Commit Message Body | Commited on (Date) |
-|-------------------------------------------------------------|---------------------|-------------------------------------------|--------------------------------------------|----------------------|--------------------|
-| https://github.com/Nico1234556/FitManagerLanding            | feature/start       | 9de3cc2098d2030e78e46f7a32bd34cbc92af889  | iniciamos la landing muchachos             | -                    | 22/04              |
-| https://github.com/Nico1234556/FitManagerLanding            | feature/error-404   | 46d7918588f1f346d7650cfac4fb2080a3a61f57  | error 404                                   | -                    | 22/04              |
-| https://github.com/Nico1234556/FitManagerLanding            | feature/home        | 0260e775fad14d1dfb921dc9a89995f1b7b8d6a8  | feat:adding idex structure                 | -                    | 22/04              |
-| https://github.com/Nico1234556/FitManagerLanding            | feature/styles      | e32b9db6cd7c07ab5644e1141176d8b996b8ef29  | feat: add video popup functionality and styling | -                | 22/04              |
-| https://github.com/Nico1234556/FitManagerLanding            | feature/Contactanos | be1b17e184cdbe4625c64aee490b655e5f3c516e  | Contactanos                                 | -                    | 22/04              |
-| https://github.com/Nico1234556/FitManagerLanding            | feature/planes      | 6702e74fcbd06fb6faeadc64533869ffd5dc0b45  | Pricing y estilos                           | -                    | 22/04              |
-| https://github.com/Nico1234556/FitManagerLanding            | feature/muestra     | ffb97d747e787d36f58f4265b54115bace8f2e96  | agregamos muestra de horario y algunas funciones | -               | 22/04              |
-| https://github.com/Nico1234556/FitManagerLanding            | feature/about       | 2a2ca7b51007b5a2cfe86990719b6533806f4fa3  | Add about section                           | -                    | 23/04              |
-| https://github.com/Nico1234556/FitManagerLanding            | feature/fix         | f45faba3e6438a5b1efdaa1ca0b1ef38aeb4c1d0  | Fix "Muestras"                              | -                    | 23/04              |
+| Repository                                                 | Branch              | Commit ID                                | Commit Message                                      | Commit Message Body | Committed On |
+|------------------------------------------------------------|---------------------|-------------------------------------------|----------------------------------------------------|----------------------|---------------|
+| https://github.com/Nico1234556/FitManagerLanding           | feature/start       | 9de3cc2098d2030e78e46f7a32bd34cbc92af889  | Iniciamos la landing muchachos                    | -                    | 22/04         |
+| https://github.com/Nico1234556/FitManagerLanding           | feature/error-404   | 46d7918588f1f346d7650cfac4fb2080a3a61f57  | Error 404                                         | -                    | 22/04         |
+| https://github.com/Nico1234556/FitManagerLanding           | feature/home        | 0260e775fad14d1dfb921dc9a89995f1b7b8d6a8  | Feat: adding index structure                      | -                    | 22/04         |
+| https://github.com/Nico1234556/FitManagerLanding           | feature/styles      | e32b9db6cd7c07ab5644e1141176d8b996b8ef29  | Feat: add video popup functionality and styling   | -                    | 22/04         |
+| https://github.com/Nico1234556/FitManagerLanding           | feature/Contactanos | be1b17e184cdbe4625c64aee490b655e5f3c516e  | Contactanos                                       | -                    | 22/04         |
+| https://github.com/Nico1234556/FitManagerLanding           | feature/planes      | 6702e74fcbd06fb6faeadc64533869ffd5dc0b45  | Pricing y estilos                                 | -                    | 22/04         |
+| https://github.com/Nico1234556/FitManagerLanding           | feature/muestra     | ffb97d747e787d36f58f4265b54115bace8f2e96  | Agregamos muestra de horario y algunas funciones  | -                    | 22/04         |
+| https://github.com/Nico1234556/FitManagerLanding           | feature/about       | 2a2ca7b51007b5a2cfe86990719b6533806f4fa3  | Add about section                                 | -                    | 23/04         |
+| https://github.com/Nico1234556/FitManagerLanding           | feature/fix         | f45faba3e6438a5b1efdaa1ca0b1ef38aeb4c1d0  | Fix "Muestras"                                    | -                    | 23/04         |
+| https://github.com/kistoo/FitManager                       | develop             | 6291838345e1f8a58aefab5125413f223eb2279f  | Add 1.1.1. section                                | -                    | 21/04         |
+| https://github.com/kistoo/FitManager                       | develop             | 487af506a39bbb976ccb9f7a75781df6232bf482  | Add 1.1.2. section                                | -                    | 21/04         |
+| https://github.com/kistoo/FitManager                       | develop             | fd1393f4e633bf14c13279d3022dd71666adc338  | Add 1.2.1. section                                | -                    | 21/04         |
+| https://github.com/kistoo/FitManager                       | develop             | 04a44a9bed5a761f5b61c8bc9aac6c9794d4b111  | Add 1.2.2. section                                | -                    | 25/05         |
+| https://github.com/kistoo/FitManager                       | develop             | 969792cfa821ff377671f440c0afb142617b1d03  | Add 1.3. section                                  | -                    | 25/05         |
+| https://github.com/kistoo/FitManager                       | develop             | 227936ebd0636ff776c04398ad50902e614d7fa8  | Add 1.4. section                                  | -                    | 25/05         |
+| https://github.com/kistoo/FitManager                       | develop             | 0898d619ae448f6782c51075a64696934a4b457f  | Add chapter 2                                     | -                    | 25/05         |
+| https://github.com/kistoo/FitManager                       | develop             | 30ece3f00d2ee0f631446d2b98082cc1d011a8ec  | Add chapter 3                                     | -                    | 25/05         |
+| https://github.com/kistoo/FitManager                       | develop             | 3c6ce197d7f98e2b7cb13155889e3db7b304c4cf  | Add chapter 4                                     | -                    | 25/05         |
+| https://github.com/kistoo/FitManager                       | develop             | 51a47c4ea35a3d84ea0b2a582f4d1083c1307ec5  | Add chapter 5                                     | -                    | 25/05         |
+
 
 #### 5.2.1.5. Execution Evidence for Sprint Review.
 
