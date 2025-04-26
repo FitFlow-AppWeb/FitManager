@@ -1914,7 +1914,11 @@ Durante el desarrollo del Sprint 1, el equipo de FitManager mantuvo una dinámic
   <img src="https://github.com/user-attachments/assets/8f9c030a-50c6-4b12-adf5-aaa1991f3e44" alt="Insights landing page">
 </p>
 
-En esta imagen se aprecia la sección "Insights" de Github, donde se puede ver la cantidad de commits realizada por usuarios. Se evidencia que todos participaron en los commits de la landing page.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d4be013d-8439-4873-9403-64c3f2d52e74" alt="Insights landing page">
+</p>
+
+En estas imágenes se aprecia la sección "Insights" de Github y los commits del repositorio de la landing page. Se evidencia que todos participaron en los commits de la landing page.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/3aa24654-5dfc-4351-8029-15b85023afa1" alt="Commits READ.ME">
