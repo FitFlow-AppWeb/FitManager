@@ -17,6 +17,140 @@
 
 <p align="center">Abril 2025</p>
 
+# Registro de versiones del informe
+
+| **Versión**  | **Fecha**   | **Autor/es**                                                                                           | **Descripción**                                                                                                                |
+|--------------|-------------|--------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| 1.0 (TB1)    | 25/04/25    | - Alvarado De La Cruz, Juan Carlos <br> - Luque Minaya, Renzo Andrés <br> - Martel Andrade, Cassius Estefano <br> - Nakamurakare Teruya, Alex Tomio <br> - Ortiz Alarcón, Víctor Nicolás | Capítulo I: Introducción <br> Capítulo II: Requirements Elicitation & Analysis <br> Capítulo III: Requirements Specification <br> Capítulo IV: Product Design <br> Capítulo V: Product Implementation, Validation & Deployment |
+
+# Project Report Collaboration Insights
+
+Repositorio donde está el project report: https://github.com/FitFlow-AppWeb/FitManager
+
+Para el desarrollo del informe hemos trabajado en un google docs, y luego hemos pasado el contenido al readme del repositorio principal. A cada uno se le encargo subir un capítulo
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/10f7e376-a1bf-459a-81df-802ba9249fad" alt="Insights repositorio">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a4179b65-5933-4b31-89d1-014545c03263" alt="Commits repositorio">
+</p>
+
+Si bien es cierto que uno de los miembros registra un mayor número de commits en el repositorio, esto se debe a que fue el encargado principal de realizar hotfixes, ajustes menores y correcciones de formato a lo largo del desarrollo del informe, asegurando su calidad final.
+
+# Contenido
+
+- [Fitmanager](#fitmanager)
+ 
+- [Registro de versiones del informe](#registro-de-versiones-del-informe)
+ 
+- [Project Report Collaboration Insights](#project-report-collaboration-insights)
+
+- [Contenido](#contenido)
+
+- [Student Outcome](#student-outcome)
+
+- [CAPÍTULO 1: INTRODUCCIÓN](#capítulo-1-introducción)
+  * [1.1. Startup Profile](#11-startup-profile)
+    + [1.1.1. Descripción del Startup](#111-descripción-del-startup)
+    + [1.1.2. Perfiles de los integrantes del equipo](#112-perfiles-de-los-integrantes-del-equipo)
+  * [1.2. Solution Profile](#12-solution-profile)
+    + [1.2.1. Antecedentes y Problemática](#121-antecedentes-y-problemática)
+    + [1.2.2. Lean UX Process](#122-lean-ux-process)
+      - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+      - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+      - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+      - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
+  * [1.3. Propuesta de Valor y Alcance](#13-propuesta-de-valor-y-alcance)
+  * [1.4. Segmentos Objetivo](#14-segmentos-objetivo)
+
+- [CAPÍTULO 2: REQUIREMENTS ELICITATION & ANALYSIS](#capítulo-2-requirements-elicitation--analysis)
+  * [2.1. Competidores](#21-competidores)
+    + [2.1.1. Análisis Competitivo](#211-análisis-competitivo)
+    + [2.1.2. Estrategias y tácticas frente a los competidores](#212-estrategias-y-tácticas-frente-a-los-competidores)
+  * [2.2. Entrevistas](#22-entrevistas)
+    + [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
+    + [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+    + [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+  * [2.3. Needfinding](#23-needfinding)
+    + [2.3.1. User Personas](#231-user-personas)
+    + [2.3.2. User Task Matrix](#232-user-task-matrix)
+    + [2.3.3. User Journey Mapping](#233-user-journey-mapping)
+    + [2.3.4. Empathy Mapping](#234-empathy-mapping)
+    + [2.3.5. As-Is Scenario Mapping](#235-as-is-scenario-mapping)
+  * [2.4 Ubiquitous Language](#24-ubiquitous-language)
+
+- [CAPÍTULO 3: REQUIREMENTS SPECIFICATION](#capítulo-3-requirements-specification)
+  * [3.1. To-Be Scenario Mapping](#31-to-be-scenario-mapping)
+  * [3.2. User Stories](#32-user-stories)
+  * [3.3. Impact Mapping](#33-impact-mapping)
+  * [3.4. Product Backlog](#34-product-backlog)
+
+- [CAPÍTULO 4: PRODUCT UX/UI DESIGN](#capítulo-4-product-uxui-design)
+  * [4.1. Style Guidelines](#41-style-guidelines)
+    + [4.1.1 General Style Guidelines](#411-general-style-guidelines)
+    + [4.1.2 Web Style Guidelines](#412-web-style-guidelines)
+  * [4.2. Information Architecture](#42-information-architecture)
+    + [4.2.1. Organization Systems](#421-organization-systems)
+    + [4.2.2. Labeling Systems](#422-labeling-systems)
+    + [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
+    + [4.2.4 Searching Systems](#424-searching-systems)
+    + [4.2.5. Navigation Systems](#425-navigation-systems)
+  * [4.3. Landing Page UI Design](#43-landing-page-ui-design)
+    + [4.3.1. Landing Page Wireframes](#431-landing-page-wireframes)
+    + [4.3.2. Landing Page Mock-Ups](#432-landing-page-mock-ups)
+  * [4.4 Web Applications UX/UI Design](#44-web-applications-uxui-design)
+    + [4.4.1. Web Applications Wireframes](#441-web-applications-wireframes)
+    + [4.4.2. Web Applications Wireflow Diagrams](#442-web-applications-wireflow-diagrams)
+    + [4.4.3. Web Applications Mock-up](#443-web-applications-mock-up)
+    + [4.4.4. Web Applications User Flow Diagrams](#444-web-applications-user-flow-diagrams)
+  * [4.5. Web Applications Prototyping](#45-web-applications-prototyping)
+  * [4.6. Domain-Driven Software Architecture](#46-domain-driven-software-architecture)
+    + [4.6.1. Software Architecture Context Diagram](#461-software-architecture-context-diagram)
+    + [4.6.2. Software Architecture Container Diagram](#462-software-architecture-container-diagram)
+    + [4.6.3. Software Architecture Components Diagram](#463-software-architecture-components-diagram)
+  * [4.7. Software Object-Oriented Design](#47-software-object-oriented-design)
+    + [4.7.1. Class Diagram](#471-class-diagram)
+    + [4.7.2. Class Dictionary](#472-class-dictionary)
+  * [4.8. Database Design](#48-database-design)
+    + [4.8.1. Database Diagram](#481-database-diagram)
+
+- [CAPÍTULO 5: PRODUCT IMPLEMENTATION & DEPLOYMENT](#capítulo-5-product-implementation--deployment)
+  * [5.1. Software Configuration Management](#51-software-configuration-management)
+    + [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
+    + [5.1.2. Source Code Management](#512-source-code-management)
+    + [5.1.3. Source Code Style Guide & Conventions](#513-source-code-style-guide--conventions)
+    + [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
+  * [5.2. Landing Page, Services & Applications Implementation](#52-landing-page-services--applications-implementation)
+    + [5.2.1. Sprint 1](#521-sprint-1)
+      - [5.2.1.1. Sprint Planning](#5211-sprint-planning)
+      - [5.2.1.2. Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
+      - [5.2.1.3 Sprint Backlog 1](#5213-sprint-backlog-1)
+      - [5.1.2.4. Development Evidence for Sprint Review](#5124-development-evidence-for-sprint-review)
+      - [5.2.1.5. Execution Evidence for Sprint Review](#5215-execution-evidence-for-sprint-review)
+      - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
+      - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
+      - [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+
+- [Conclusiones](#conclusiones)
+  
+- [Recomendaciones](#recomendaciones)
+  
+- [Bibliografía](#bibliografÍa)
+  
+- [Anexos](#anexos)
+
+# Student Outcome
+
+ABET - EAC - Student Outcome 5
+Criterio: La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
+
+| **Criterio específico** | **Acciones realizadas** | **Conclusiones** |
+|:------------------------|:-------------------------|:-----------------|
+| **Trabaja en equipo para proporcionar liderazgo en forma conjunta** | - Alvarado De La Cruz, Juan Carlos (TB1) <br> - Luque Minaya, Renzo Andrés (TB1) <br> - Martel Andrade, Cassius Estefano (TB1) <br> - Nakamurakare Teruya, Alex Tomio (TB1) <br> - Ortiz Alarcón, Víctor Nicolás (TB1) | El equipo ha demostrado una capacidad significativa para funcionar de manera efectiva y proporcionar liderazgo de forma conjunta. La estructura del documento, desde la definición del perfil de la startup y el análisis de la problemática hasta la especificación de requisitos y el diseño del producto, refleja una distribución de tareas y responsabilidades donde cada miembro ha aportado su expertise. La aplicación de metodologías como Lean UX y Domain-Driven Design, junto con la planificación del diseño de la interfaz y la arquitectura del software, evidencia una visión compartida y una dirección coordinada, distribuyendo el liderazgo en las diferentes etapas del proyecto. |
+| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos** | - Alvarado De La Cruz, Juan Carlos (TB1) <br> - Luque Minaya, Renzo Andrés (TB1) <br> - Martel Andrade, Cassius Estefano (TB1) <br> - Nakamurakare Teruya, Alex Tomio (TB1) <br> - Ortiz Alarcón, Víctor Nicolás (TB1) | El trabajo realizado en FitManager ejemplifica la creación de un entorno colaborativo e inclusivo. La exhaustiva fase de Requirements Elicitation & Analysis, que incluyó entrevistas, needfinding y la creación de user personas, demuestra un esfuerzo por comprender las necesidades de los futuros usuarios a través de la participación activa y la empatía. El establecimiento de metas se ve reflejado en la definición clara de los objetivos del producto y los segmentos objetivo. La planificación de tareas es evidente en la estructura del documento, la definición del Product Backlog y la planificación del primer sprint de la landing page. Finalmente, el avance concreto en el diseño y la implementación inicial de la landing page durante el primer sprint subraya la capacidad del equipo para cumplir con los objetivos establecidos. |
+
 # CAPÍTULO 1: INTRODUCCIÓN
 
 ## 1.1. Startup Profile
@@ -1249,7 +1383,7 @@ La organización jerárquica de la información dentro de la aplicación se ve r
 
 Los wireframes y mockups de la Landing Page de FitManager se conciben siguiendo los principios fundamentales de la Arquitectura de la Información y el Diseño de Interfaz de Usuario . La AI se aplica para estructurar y organizar el contenido de manera lógica e intuitiva, facilitando la comprensión de la propuesta de valor y la navegación a través de las diferentes secciones informativas. Paralelamente, los principios de UI se integran para crear una interfaz visualmente atractiva, funcional y fácil de usar, considerando la jerarquía visual, el contraste, la legibilidad y la llamada a la acción, con el objetivo de guiar al usuario de manera efectiva hacia la conversión.
 
-## 4.3.1. Landing Page Wireframes
+### 4.3.1. Landing Page Wireframes
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/70a92f7c-4fdb-4ee5-b7df-2d346338486d" alt="Home wireframe">
@@ -1644,11 +1778,11 @@ El Software Configuration Management (SCM) desempeña un papel esencial en el pr
 
 Para la gestión del código fuente en FitManager, se utilizará Git como sistema de control de versiones, implementando el modelo de trabajo GitFlow. Esta metodología permitirá llevar un seguimiento estructurado de los cambios en el código, facilitando tanto el desarrollo de nuevas funcionalidades como la corrección de errores. Los repositorios estarán alojados en GitHub y estarán organizados bajo una estructura de ramas clara. Además de la rama principal main, se crearán las siguientes ramas: develop, feature, release y hotfix. Esta estructura garantizará una colaboración eficiente y un acceso ordenado al proyecto por parte de todo el equipo.
 
-Repositorio de Frontend Web Applications: https://github.com/kistoo/FitManager/
+Repositorio de Frontend Web Applications: https://github.com/FitFlow-AppWeb/FitManager
 
-Repositorio del landing page: https://github.com/Nico1234556/FitManagerLanding
+Repositorio del landing page: https://github.com/FitFlow-AppWeb/FitManagerLanding
 
-Repositorio de los web services: https://github.com/kistoo/FitManager-Web-Services
+Repositorio de los web services: https://github.com/FitFlow-AppWeb/FitManager-Web-Services
 
 ### 5.1.3. Source Code Style Guide & Conventions
 
@@ -1743,7 +1877,7 @@ Podremos visualizar el link de la landing page y luego le damos click para visit
 
 La landing page ya está desplegada.
 
-## 5.2. Product Implementation & Deployment
+## 5.2. Landing Page, Services & Applications Implementation
 
 ### 5.2.1. Sprint 1
 
@@ -1826,25 +1960,25 @@ Durante el Sprint 1, el equipo completó todas las tareas asociadas al desarroll
 
 | Repository                                                 | Branch              | Commit ID                                | Commit Message                                      | Commit Message Body | Committed On |
 |------------------------------------------------------------|---------------------|-------------------------------------------|----------------------------------------------------|----------------------|---------------|
-| https://github.com/Nico1234556/FitManagerLanding           | feature/start       | 9de3cc2098d2030e78e46f7a32bd34cbc92af889  | Iniciamos la landing muchachos                    | -                    | 22/04         |
-| https://github.com/Nico1234556/FitManagerLanding           | feature/error-404   | 46d7918588f1f346d7650cfac4fb2080a3a61f57  | Error 404                                         | -                    | 22/04         |
-| https://github.com/Nico1234556/FitManagerLanding           | feature/home        | 0260e775fad14d1dfb921dc9a89995f1b7b8d6a8  | Feat: adding index structure                      | -                    | 22/04         |
-| https://github.com/Nico1234556/FitManagerLanding           | feature/styles      | e32b9db6cd7c07ab5644e1141176d8b996b8ef29  | Feat: add video popup functionality and styling   | -                    | 22/04         |
-| https://github.com/Nico1234556/FitManagerLanding           | feature/Contactanos | be1b17e184cdbe4625c64aee490b655e5f3c516e  | Contactanos                                       | -                    | 22/04         |
-| https://github.com/Nico1234556/FitManagerLanding           | feature/planes      | 6702e74fcbd06fb6faeadc64533869ffd5dc0b45  | Pricing y estilos                                 | -                    | 22/04         |
-| https://github.com/Nico1234556/FitManagerLanding           | feature/muestra     | ffb97d747e787d36f58f4265b54115bace8f2e96  | Agregamos muestra de horario y algunas funciones  | -                    | 22/04         |
-| https://github.com/Nico1234556/FitManagerLanding           | feature/about       | 2a2ca7b51007b5a2cfe86990719b6533806f4fa3  | Add about section                                 | -                    | 23/04         |
-| https://github.com/Nico1234556/FitManagerLanding           | feature/fix         | f45faba3e6438a5b1efdaa1ca0b1ef38aeb4c1d0  | Fix "Muestras"                                    | -                    | 23/04         |
-| https://github.com/kistoo/FitManager                       | develop             | 6291838345e1f8a58aefab5125413f223eb2279f  | Add 1.1.1. section                                | -                    | 21/04         |
-| https://github.com/kistoo/FitManager                       | develop             | 487af506a39bbb976ccb9f7a75781df6232bf482  | Add 1.1.2. section                                | -                    | 21/04         |
-| https://github.com/kistoo/FitManager                       | develop             | fd1393f4e633bf14c13279d3022dd71666adc338  | Add 1.2.1. section                                | -                    | 21/04         |
-| https://github.com/kistoo/FitManager                       | develop             | 04a44a9bed5a761f5b61c8bc9aac6c9794d4b111  | Add 1.2.2. section                                | -                    | 25/05         |
-| https://github.com/kistoo/FitManager                       | develop             | 969792cfa821ff377671f440c0afb142617b1d03  | Add 1.3. section                                  | -                    | 25/05         |
-| https://github.com/kistoo/FitManager                       | develop             | 227936ebd0636ff776c04398ad50902e614d7fa8  | Add 1.4. section                                  | -                    | 25/05         |
-| https://github.com/kistoo/FitManager                       | develop             | 0898d619ae448f6782c51075a64696934a4b457f  | Add chapter 2                                     | -                    | 25/05         |
-| https://github.com/kistoo/FitManager                       | develop             | 30ece3f00d2ee0f631446d2b98082cc1d011a8ec  | Add chapter 3                                     | -                    | 25/05         |
-| https://github.com/kistoo/FitManager                       | develop             | 3c6ce197d7f98e2b7cb13155889e3db7b304c4cf  | Add chapter 4                                     | -                    | 25/05         |
-| https://github.com/kistoo/FitManager                       | develop             | 51a47c4ea35a3d84ea0b2a582f4d1083c1307ec5  | Add chapter 5                                     | -                    | 25/05         |
+| https://github.com/FitFlow-AppWeb/FitManagerLanding           | feature/start       | 9de3cc2098d2030e78e46f7a32bd34cbc92af889  | Iniciamos la landing muchachos                    | -                    | 22/04         |
+| https://github.com/FitFlow-AppWeb/FitManagerLanding           | feature/error-404   | 46d7918588f1f346d7650cfac4fb2080a3a61f57  | Error 404                                         | -                    | 22/04         |
+| https://github.com/FitFlow-AppWeb/FitManagerLanding           | feature/home        | 0260e775fad14d1dfb921dc9a89995f1b7b8d6a8  | Feat: adding index structure                      | -                    | 22/04         |
+| https://github.com/FitFlow-AppWeb/FitManagerLanding           | feature/styles      | e32b9db6cd7c07ab5644e1141176d8b996b8ef29  | Feat: add video popup functionality and styling   | -                    | 22/04         |
+| https://github.com/FitFlow-AppWeb/FitManagerLanding           | feature/Contactanos | be1b17e184cdbe4625c64aee490b655e5f3c516e  | Contactanos                                       | -                    | 22/04         |
+| https://github.com/FitFlow-AppWeb/FitManagerLanding           | feature/planes      | 6702e74fcbd06fb6faeadc64533869ffd5dc0b45  | Pricing y estilos                                 | -                    | 22/04         |
+| https://github.com/FitFlow-AppWeb/FitManagerLanding           | feature/muestra     | ffb97d747e787d36f58f4265b54115bace8f2e96  | Agregamos muestra de horario y algunas funciones  | -                    | 22/04         |
+| https://github.com/FitFlow-AppWeb/FitManagerLanding           | feature/about       | 2a2ca7b51007b5a2cfe86990719b6533806f4fa3  | Add about section                                 | -                    | 23/04         |
+| https://github.com/FitFlow-AppWeb/FitManagerLanding           | feature/fix         | f45faba3e6438a5b1efdaa1ca0b1ef38aeb4c1d0  | Fix "Muestras"                                    | -                    | 23/04         |
+| https://github.com/FitFlow-AppWeb/FitManager                       | develop             | 6291838345e1f8a58aefab5125413f223eb2279f  | Add 1.1.1. section                                | -                    | 21/04         |
+| https://github.com/FitFlow-AppWeb/FitManager                       | develop             | 487af506a39bbb976ccb9f7a75781df6232bf482  | Add 1.1.2. section                                | -                    | 21/04         |
+| https://github.com/FitFlow-AppWeb/FitManager                       | develop             | fd1393f4e633bf14c13279d3022dd71666adc338  | Add 1.2.1. section                                | -                    | 21/04         |
+| https://github.com/FitFlow-AppWeb/FitManager                       | develop             | 04a44a9bed5a761f5b61c8bc9aac6c9794d4b111  | Add 1.2.2. section                                | -                    | 25/05         |
+| https://github.com/FitFlow-AppWeb/FitManager                       | develop             | 969792cfa821ff377671f440c0afb142617b1d03  | Add 1.3. section                                  | -                    | 25/05         |
+| https://github.com/FitFlow-AppWeb/FitManager                       | develop             | 227936ebd0636ff776c04398ad50902e614d7fa8  | Add 1.4. section                                  | -                    | 25/05         |
+| https://github.com/FitFlow-AppWeb/FitManager                       | develop             | 0898d619ae448f6782c51075a64696934a4b457f  | Add chapter 2                                     | -                    | 25/05         |
+| https://github.com/FitFlow-AppWeb/FitManager                       | develop             | 30ece3f00d2ee0f631446d2b98082cc1d011a8ec  | Add chapter 3                                     | -                    | 25/05         |
+| https://github.com/FitFlow-AppWeb/FitManager                       | develop             | 3c6ce197d7f98e2b7cb13155889e3db7b304c4cf  | Add chapter 4                                     | -                    | 25/05         |
+| https://github.com/FitFlow-AppWeb/FitManager                       | develop             | 51a47c4ea35a3d84ea0b2a582f4d1083c1307ec5  | Add chapter 5                                     | -                    | 25/05         |
 
 
 #### 5.2.1.5. Execution Evidence for Sprint Review.
@@ -1914,11 +2048,7 @@ Durante el desarrollo del Sprint 1, el equipo de FitManager mantuvo una dinámic
   <img src="https://github.com/user-attachments/assets/8f9c030a-50c6-4b12-adf5-aaa1991f3e44" alt="Insights landing page">
 </p>
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/d4be013d-8439-4873-9403-64c3f2d52e74" alt="Insights landing page">
-</p>
-
-En estas imágenes se aprecia la sección "Insights" de Github y los commits del repositorio de la landing page. Se evidencia que todos participaron en los commits de la landing page.
+En esta imagen se aprecia la sección "Insights" de Github, donde se puede ver la cantidad de commits realizada por usuarios. Se evidencia que todos participaron en los commits de la landing page.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/3aa24654-5dfc-4351-8029-15b85023afa1" alt="Commits READ.ME">
