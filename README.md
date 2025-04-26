@@ -1,3 +1,22 @@
+# FitManager
+
+<p align="center">Universidad: Universidad Peruana de Ciencias Aplicadas (UPC)</p>
+<p align="center">Carrera: Ingeniería de Software</p>
+<p align="center">Ciclo: 05</p>
+<p align="center">Sección 4388</p>
+<p align="center">Profesor: Alex Humberto Sánchez Ponce</p>
+
+<p align="center"><strong>Informe del Trabajo Final</strong></p>
+
+<p align="center">FitFlow</p>
+<p align="center">Alvarado De La Cruz, Juan Carlos U202216150</p>
+<p align="center">Luque Minaya, Renzo Andrés U20221C275</p>
+<p align="center">Martel Andrade, Cassius Estefano U202312287</p>
+<p align="center">Nakamurake Teruya, Alex Tomio U20201f855</p>
+<p align="center">Ortiz Alarcón, Victor Nicolás U202312899</p>
+
+<p align="center">Abril 2025</p>
+
 # CAPÍTULO 1: INTRODUCCIÓN
 
 ## 1.1. Startup Profile
