@@ -1902,3 +1902,11 @@ En esta imagen se aprecia la sección "Insights" de Github, donde se puede ver l
 </p>
 
 Por otro lado, en esta imagen se ve que todos participaron también en los commits del read.me
+
+# Conclusiones
+
+* Consideramos que nuestro equipo ha realizado un esfuerzo exhaustivo en la obtención y el análisis de los requisitos. Las diversas técnicas que empleamos, incluyendo entrevistas, needfinding, creación de user personas, journey maps, y más, nos han permitido obtener una comprensión profunda de las necesidades de los usuarios y las demandas del mercado. Este enfoque integral proporciona una base sólida para el desarrollo de un producto centrado en el usuario.
+* Nuestro equipo se ha adherido a un proceso de diseño estructurado y sistemático. Hemos avanzado lógicamente desde la especificación de los requisitos hasta el diseño detallado del producto, considerando cuidadosamente varios aspectos como la arquitectura de la información, el diseño de la interfaz de usuario/experiencia de usuario, la arquitectura del software y el diseño de la base de datos. Este enfoque organizado ha contribuido significativamente a la claridad y la coherencia del proyecto.
+* Hemos puesto un fuerte énfasis en la experiencia del usuario (UX) a lo largo del proyecto. La aplicación de los principios de Lean UX, el desarrollo de user personas detalladas y el diseño meticuloso de las interfaces de usuario y los flujos de usuario demuestran nuestro compromiso con la creación de un producto que no solo sea funcional, sino que también proporcione una experiencia agradable e intuitiva para los usuarios.
+* Nuestro equipo ha desarrollado una arquitectura de software bien definida, utilizando los principios del Domain Driven Design y creando diagramas detallados (Contexto, Contenedor, Componentes). Esto refleja nuestra comprensión de las mejores prácticas de diseño de software y proporciona un marco robusto para las etapas posteriores de implementación.
+* Hemos avanzado con éxito más allá de las fases de planificación y diseño y ya hemos logrado un progreso tangible en la implementación, como lo demuestra el trabajo completado durante el Sprint 1 para la landing page. Esto demuestra nuestra capacidad para traducir las especificaciones de diseño en entregables concretos y nuestro compromiso para llevar el producto a buen término.
