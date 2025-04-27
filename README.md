@@ -531,9 +531,14 @@ Objetivo: Entender sus necesidades y expectativas en relación con la gestión d
 **Entrevistado N°1: Gonzalo Carhuanconte**
 * Edad: 25
 * Distrito: Los Olivos
-* Link: [Entrevista Gonzalo Carhuanconte](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUwjeWiCPbJPgRZUOXiloVYBzejgoqWTEwI0mQl7j7omhA?e=PS413T)
-* Instante en el que inicia: 0:20
+* Link: [Entrevistas FitManager](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD)
+* Instante en el que inicia: 0:01
 * Duración: 4:48
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/73bbf2df-25de-4e44-bc11-925c7756c117" alt="Entrevista Gonzalo Carhuanconte">
+</p>
+
 
 Resumen:
 
@@ -542,9 +547,13 @@ Gonzalo Carhuanconte, administrador de un gimnasio pequeño, gestiona pagos, mem
 **Entrevistado N°2: Carlos Martel**
 * Edad: 53
 * Distrito: Pueblo libre
-* Link: [Entrevista Carlos Martel](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EXL7_Zx3oqBGp_WdJeLM6S4BXoqGXbZv3htkc8ZFQS3Yzw?e=2OwSgx)
-* Instante en el que inicia: 0:01
+* Link: [Entrevistas FitManager](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD)
+* Instante en el que inicia: 4:49
 * Duración: 3:14
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d8c4e113-c53d-4f92-a23b-17125f6f59e3" alt="Entrevista Carlos Martel">
+</p>
 
 Resumen:
 
@@ -553,9 +562,13 @@ Carlos Martel administra y entrena un gimnasio enfocado en artes marciales y pre
 **Entrevistado N°3: Tsuyoshi Arakaki**
 * Edad: 22
 * Distrito: San Juan de Lurigancho
-* Link: [Entrevista Tsuyoshi Arakaki](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ETcOuXIyY71MnG4b7AyLxAgBTsE-82SSfQPFM4Kyi0LZ2Q?e=mZ5PtT)
-* Instante en el que inicia: 0:01
+* Link: [Entrevistas FitManager](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD)
+* Instante en el que inicia: 8:03
 * Duración: 6:46
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ac0c891d-4b32-4fef-8174-cafa7b3af3b1" alt="Entrevista Tsuyoshi Arakaki">
+</p>
 
 Resumen: 
 
@@ -564,9 +577,13 @@ Tsuyoshi Arakaki ayuda en la gestión del gimnasio de su tío. Actualmente, la c
 **Entrevistado N°4: Piero Ramirez**
 * Edad: 19
 * Distrito: Magdalena del Mar
-* Link: [Entrevista Piero Ramirez](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Ec0mRZfMEstNjpTqAYPB_fUBg_xMJAbrX6L1NQCuPNXY4Q?e=EUphPC)
-* Instante en el que inicia: 0:01
+* Link: [Entrevistas FitManager](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD)
+* Instante en el que inicia: 14:49
 * Duración: 3:37
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0c25f18d-94d2-40ea-a849-307091ffb219" alt="Entrevista Piero Ramirez">
+</p>
 
 Resumen: 
 
@@ -575,9 +592,13 @@ Piero Ramírez trabaja como entrenador part-time en Viva Fitness y disfruta much
 **Entrevistado N°5: Christian Valer**
 * Edad: 24
 * Distrito: Magdalena del Mar
-* Link: [Entrevista Christian Valer](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EWxMREmBuWpEmb2YQVPKqoIBGNkap_P0r8TO-vuKXvXweQ?e=nfF8YN)
-* Instante en el que inicia: 0:02
+* Link: [Entrevistas FitManager](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD)
+* Instante en el que inicia: 18:25
 * Duración: 3:52
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2908fffd-d4c7-4531-b3c4-6c4a15f9990c" alt="Entrevista Christian Valer">
+</p>
 
 Resumen:
 
@@ -588,9 +609,13 @@ Christian Valer es coach en un gimnasio y actualmente organiza sus clases utiliz
 **Entrevistado N.º 6: Mateo Cadillo**
 * Edad: 17
 * Distrito: San Borja
-* Link: [Entervista Mateo Cadillo](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ER2u9OjVKtFGixIBAr2vTDcBZatVzLstAZA23yAHQ-17KQ?e=ZgYc2O)
-* Instante en el que inicia: 0:20
+* Link: [Entrevistas FitManager](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD)
+* Instante en el que inicia: 22:17
 * Duración: 5:13
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ed7728e8-153f-473e-ac47-e9513ba148cf" alt="Entrevista Mateo Cadillo">
+</p>
 
 Resumen: 
 
@@ -599,9 +624,13 @@ Mateo Cadillo, estudiante universitario de 17 años, asiste al gimnasio de lunes
 **Entrevistado N.º 7: Franco Rios**
 * Edad: 19
 * Distrito: San Miguel
-* Link: [Entrevista Franco Rios](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EU21q4ARa0BAheDefNLJZQgBWU6e3xpFFPLdoiBdtdglFQ?e=dIoCMA)
-* Instante en el que inicia: 0:24
+* Link: [Entrevistas FitManager](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD)
+* Instante en el que inicia: 27:51
 * Duración: 4:09
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/619cee21-c596-4056-b794-e79cb9cefbdf" alt="Entrevista Franco Rios">
+</p>
 
 Resumen:
 
@@ -610,9 +639,13 @@ Franco Ríos Rivera es un entrenador de gimnasio, pero también es cliente del m
 **Entrevistado N.º 8: Leonardo Ames**
 * Edad: 19
 * Distrito: Pueblo Libre
-* Link: [Entrevista Leonardo Ames](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ER5iI5wr0ydNqr_4wAi_02QBpx3oaryMOp5VwcYN691Lqg?e=EgEt67)
-* Instante en el que inicia: 0:01
+* Link: [Entrevistas FitManager](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD)
+* Instante en el que inicia: 32:25
 * Duración: 3:26
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/530005cf-8bca-429c-afdf-902c1a637f87" alt="Entrevista Leonardo Ames">
+</p>
 
 Resumen:
 
@@ -2098,21 +2131,7 @@ Tandon, M. (2025, 22 de febrero). 100 Gym Membership Retention Statistics. Smart
 
 Anexo A. Entrevistas
 
-Entrevista Gonzalo Carhuanconte. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUwjeWiCPbJPgRZUOXiloVYBzejgoqWTEwI0mQl7j7omhA?e=PS413T
-
-Entrevista Carlos Martel. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EXL7_Zx3oqBGp_WdJeLM6S4BXoqGXbZv3htkc8ZFQS3Yzw?e=2OwSgx
-
-Entrevista Tsuyoshi Arakaki. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ETcOuXIyY71MnG4b7AyLxAgBTsE-82SSfQPFM4Kyi0LZ2Q?e=mZ5PtT
-
-Entrevista Piero Ramirez. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Ec0mRZfMEstNjpTqAYPB_fUBg_xMJAbrX6L1NQCuPNXY4Q?e=EUphPC
-
-Entrevista Christian Valer. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EWxMREmBuWpEmb2YQVPKqoIBGNkap_P0r8TO-vuKXvXweQ?e=nfF8YN
-
-Entrevista Mateo Cadillo. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ER2u9OjVKtFGixIBAr2vTDcBZatVzLstAZA23yAHQ-17KQ?e=ZgYc2O
-
-Entrevista Franco Rios. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EU21q4ARa0BAheDefNLJZQgBWU6e3xpFFPLdoiBdtdglFQ?e=dIoCMA
-
-Entrevista Leonardo Ames. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ER5iI5wr0ydNqr_4wAi_02QBpx3oaryMOp5VwcYN691Lqg?e=EgEt67
+Entrevistas FitManager. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD
 
 Anexo B. Videos del proyecto
 
