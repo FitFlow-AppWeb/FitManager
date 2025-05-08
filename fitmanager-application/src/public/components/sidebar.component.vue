@@ -12,9 +12,6 @@ import FinancesIcon from '/assets/Credit_card_fill.svg?raw';
 import AttendanceIcon from '/assets/Time_fill.svg?raw';
 import NotificationsIcon from '/assets/Bell_fill.svg?raw';
 
-
-
-
 const menuItems = ref([
   {
     label: 'Dashboard',
@@ -75,12 +72,19 @@ const menuItems = ref([
     <div class="line-separator"></div>
     <div class="sidebar-nav">
       <Menu class="nav-contentMenu" :model="menuItems">
-        <template #itemicon="{ item }">
-          <div v-if="item.svgContent"
-               class="custom-svg-container"
-               v-html="item.svgContent"> </div>
-          <span v-else-if="item.icon" :class="['p-menuitem-icon', item.icon]"></span>
+
+        <template #item="{ item, props }">
+          <li :class="props.class">
+            <router-link
+                :to="item.to"
+                class="p-menu-item-link custom-menu-link"
+            >
+              <div v-if="item.svgContent" class="custom-svg-container" v-html="item.svgContent"></div>
+              <span class="p-menu-item-label">{{ item.label }}</span>
+            </router-link>
+          </li>
         </template>
+
       </Menu>
     </div>
     <div class="line-separator"></div>
@@ -142,13 +146,13 @@ const menuItems = ref([
 }
 
 :deep(.p-menu-item-link) {
-  margin: 15px 20px;
+  margin: 8px 20px;
 }
 
 :deep(.p-menu-item-label) {
   display: flex;
   align-items: center;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -167,6 +171,10 @@ const menuItems = ref([
   width: 3rem !important;
   height: 3rem !important;
 }
+
+
+
+
 
 .sidebar-footer {
   margin: 0 15px;
