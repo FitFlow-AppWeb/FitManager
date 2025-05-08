@@ -124,6 +124,27 @@ const menuItems = ref([
   }
 }
 
+:deep(.p-menu) {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+:deep(.p-menu-list) {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+:deep(.p-menu-item-link) {
+  margin: 0;
+  background-color: transparent !important;
+}
+
+:deep(.p-menu-item-link:hover) {
+  background-color: rgba(0, 0, 0, 0.1) !important; /* Optional hover effect */
+}
+
 .line-separator {
   width: calc(100% - 20px);
   margin: 0 auto;
@@ -133,20 +154,13 @@ const menuItems = ref([
 
 .sidebar-nav {
   flex-grow: 1;
-  padding: 20px 12px;
-  .nav-contentMenu {
-    width: 100%;
-  }
+  padding: 10px 12px;
 }
 
 .nav-contentMenu {
   width: 100%;
   background-color: transparent !important;
   padding: 0 !important;
-}
-
-:deep(.p-menu-item-link) {
-  margin: 8px 20px;
 }
 
 :deep(.p-menu-item-label) {
