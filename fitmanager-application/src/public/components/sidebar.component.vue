@@ -148,18 +148,18 @@ const menuItems = ref([
   display: flex;
   align-items: center;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 :deep(.p-menu-item-link:hover) {
   background-color: #96bcbd;
-  color: #000000;
+  color: #222222;
   border-radius: 4px;
 }
 
 :deep(.p-menu-item-link.active-menu-item) {
   background-color: #86a7a8;
-  color: #000000;
+  color: #222222;
   border-radius: 4px;
 }
 
