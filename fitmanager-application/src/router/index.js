@@ -8,6 +8,7 @@ import Bookings from '../bookings/components/bookings.component.vue';
 import Finances from '../finances/components/finances.component.vue';
 import Attendance from '../attendance/components/attendance.component.vue';
 import Notifications from '../notifications/components/notifications.component.vue';
+import Profile from '../user/components/profile.component.vue'
 
 const router = createRouter({
 
@@ -63,6 +64,11 @@ const router = createRouter({
             name: 'Notifications',
             component: Notifications
         },
+        {
+            path: '/profile',
+            name: 'Profile',
+            component: Profile
+        }
         ]
 })
 
