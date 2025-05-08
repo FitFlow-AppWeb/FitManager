@@ -78,7 +78,9 @@ const menuItems = ref([
             <router-link
                 :to="item.to"
                 class="p-menu-item-link custom-menu-link"
-            >
+                :class="{ 'active-menu-item': selectedItem === item }"
+                @click="selectedItem = item"
+              >
               <div v-if="item.svgContent" class="custom-svg-container" v-html="item.svgContent"></div>
               <span class="p-menu-item-label">{{ item.label }}</span>
             </router-link>
@@ -124,25 +126,41 @@ const menuItems = ref([
   }
 }
 
-:deep(.p-menu) {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+:deep(.p-menu) { 
+  background-color: transparent;
+  border: transparent;
+  box-shadow: none;
 }
 
 :deep(.p-menu-list) {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+  background-color: transparent;
+  border: transparent;
+  box-shadow: none;
 }
 
 :deep(.p-menu-item-link) {
   margin: 0;
-  background-color: transparent !important;
+  background-color: #A7D1D2;
+  transition: background-color 0.2s ease-in-out;
+}
+
+:deep(.p-menu-item-label) {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 :deep(.p-menu-item-link:hover) {
-  background-color: rgba(0, 0, 0, 0.1) !important; /* Optional hover effect */
+  background-color: #96bcbd;
+  color: #000000;
+  border-radius: 4px;
+}
+
+:deep(.p-menu-item-link.active-menu-item) {
+  background-color: #86a7a8;
+  color: #000000;
+  border-radius: 4px;
 }
 
 .line-separator {
@@ -155,35 +173,6 @@ const menuItems = ref([
 .sidebar-nav {
   flex-grow: 1;
   padding: 10px 12px;
-}
-
-.nav-contentMenu {
-  width: 100%;
-  background-color: transparent !important;
-  padding: 0 !important;
-}
-
-:deep(.p-menu-item-label) {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.nav-contentMenu :deep(.custom-svg-container) {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-}
-
-.nav-contentMenu :deep(.custom-svg-container svg) {
-  width: 3rem !important;
-  height: 3rem !important;
-}
-
-.nav-contentMenu :deep(svg) {
-  width: 3rem !important;
-  height: 3rem !important;
 }
 
 .sidebar-footer {
