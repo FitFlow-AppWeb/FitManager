@@ -16,7 +16,9 @@
         </IconField>
       </template>
       <template #end>
-        <Button class="toolbar-profile-pic" variant="outlined" icon="pi pi-user"/>
+        <RouterLink to="/profile">
+          <Button class="toolbar-profile-pic" variant="outlined" icon="pi pi-user"/>
+        </RouterLink>
       </template>
     </Toolbar>
   </div>
