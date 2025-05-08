@@ -166,7 +166,7 @@ const menuItems = ref([
 .line-separator {
   width: calc(100% - 20px);
   margin: 0 auto;
-  height: 1px;
+  height: 0.5px;
   background-color: rgba(58, 73, 73, 0.5);
 }
 
