@@ -5,11 +5,12 @@
   import InputIcon from 'primevue/inputicon';
   import InputText from "primevue/inputtext";
   import Button from 'primevue/button';
+  import Card from 'primevue/card';
 
 </script>
 
 <template>
-  <Card>
+  <div class="app-card">
     <Toolbar class="app-toolbar">
       <template #start>
         <IconField class="toolbar-search">
@@ -21,12 +22,12 @@
         <Button class="toolbar-profile-pic" variant="outlined" icon="pi pi-user"/>
       </template>
     </Toolbar>
-  </Card>
+  </div>
 </template>
 
 <style scoped>
 
-Card {
+.app-card {
   display: flex;
   height: 70px;
   width: 100%;
@@ -37,8 +38,8 @@ Card {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
   padding: 0 50px;
 }
 
