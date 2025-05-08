@@ -67,7 +67,7 @@ const menuItems = ref([
   <div class="app-sidebar">
     <div class="sidebar-header">
       <h3 class="app-title">FITMANAGER</h3>
-      <img src="/assets/logo-app.png" alt="FitManager Logo" class="app-logo">
+      <img src="/assets/fit-manager-logo.svg" alt="FitManager Logo" class="app-logo" />
     </div>
     <div class="line-separator"></div>
     <div class="sidebar-nav">
@@ -133,7 +133,7 @@ const menuItems = ref([
 
 .sidebar-nav {
   flex-grow: 1;
-  padding: 0 10px;
+  padding: 20px 12px;
   .nav-contentMenu {
     width: 100%;
   }
@@ -171,10 +171,6 @@ const menuItems = ref([
   width: 3rem !important;
   height: 3rem !important;
 }
-
-
-
-
 
 .sidebar-footer {
   margin: 0 15px;
