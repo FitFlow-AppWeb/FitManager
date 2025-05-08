@@ -1,7 +1,5 @@
-<script>
-export default {
-  name: "sidebar.component"
-}
+<script setup>
+
 </script>
 
 <template>

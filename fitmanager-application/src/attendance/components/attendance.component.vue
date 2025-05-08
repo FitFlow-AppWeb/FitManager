@@ -1,7 +1,5 @@
-<script>
-export default {
-  name: "toolbar.component"
-}
+<script setup>
+
 </script>
 
 <template>
