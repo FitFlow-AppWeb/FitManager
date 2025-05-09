@@ -1,0 +1,470 @@
+{
+  "member": [
+    {
+      "id": "1",
+      "fullName": "Kurt Cobain",
+      "age": 27,
+      "membershipStatus": "inactive",
+      "membershipType": "annual",
+      "expirationDate": "2025-12-31",
+      "dni": "78295786",
+      "email": "kurt@example.com",
+      "phone": "+1234567890",
+      "address": "Jirón NoSé 996",
+      "membershipStartDate": "2021-01-01",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "2",
+      "fullName": "John Dao",
+      "age": 30,
+      "membershipStatus": "inactive",
+      "membershipType": "monthly",
+      "expirationDate": "2025-06-15",
+      "dni": "23456789asds",
+      "email": "john@example.com",
+      "phone": "+1234567891",
+      "address": "Avenida Mbappe 2311",
+      "membershipStartDate": "2024-02-01",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "3",
+      "fullName": "Jane Smith",
+      "age": 25,
+      "membershipStatus": "inactive",
+      "membershipType": "quarterly",
+      "expirationDate": "2024-08-20",
+      "dni": "34567890",
+      "email": "jane@example.com",
+      "phone": "+1234567892",
+      "address": "Calle Las Palmas 222",
+      "membershipStartDate": "2022-05-01",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "5",
+      "fullName": "Sarah Connor",
+      "age": 28,
+      "membershipStatus": "inactive",
+      "membershipType": "monthly",
+      "expirationDate": "2025-07-01",
+      "dni": "56789012",
+      "email": "sarah@example.com",
+      "phone": "+1234567894",
+      "address": "Avenida AAAA 111",
+      "membershipStartDate": "2024-06-15",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "6",
+      "fullName": "David Bowie",
+      "age": 50,
+      "membershipStatus": "inactive",
+      "membershipType": "quarterly",
+      "expirationDate": "2023-11-01",
+      "dni": "67890123",
+      "email": "david@example.com",
+      "phone": "+1234567895",
+      "address": "Calle Profe subame puntos si ve esto 92",
+      "membershipStartDate": "2022-11-01",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "7",
+      "fullName": "Elena Gilber",
+      "age": 22,
+      "membershipStatus": "inactive",
+      "membershipType": "quarterly",
+      "expirationDate": "2025-09-10",
+      "dni": "78901234",
+      "email": "elena@example.com",
+      "phone": "+1234567896",
+      "address": "Calle Las Palmas 223",
+      "membershipStartDate": "2023-09-10",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "8",
+      "fullName": "Tom Hanks",
+      "age": 45,
+      "membershipStatus": "pending",
+      "membershipType": "monthly",
+      "expirationDate": "2025-10-30",
+      "dni": "89012345",
+      "email": "tom@example.com",
+      "phone": "+1234567897",
+      "address": "Calle Las Palmas 2221",
+      "membershipStartDate": "2024-10-01",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "9",
+      "fullName": "Angela Jolie",
+      "age": 40,
+      "membershipStatus": "inactive",
+      "membershipType": "quarterly",
+      "expirationDate": "2023-12-20",
+      "dni": "90123456",
+      "email": "angela@example.com",
+      "phone": "+1234567898",
+      "address": "Calle Las Palmas 2222",
+      "membershipStartDate": "2022-12-20",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "10",
+      "fullName": "Chris Hemsworth",
+      "age": 33,
+      "membershipStatus": "active",
+      "membershipType": "annual",
+      "expirationDate": "2025-03-25",
+      "dni": "01234567",
+      "email": "chris@example.com",
+      "phone": "+1234567899",
+      "address": "Calle Las Palmas 2223",
+      "membershipStartDate": "2023-03-25",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "11",
+      "fullName": "Natalie Port",
+      "age": 32,
+      "membershipStatus": "active",
+      "membershipType": "monthly",
+      "expirationDate": "2025-01-10",
+      "dni": "12345678",
+      "email": "natalie@example.com",
+      "phone": "+1234567800",
+      "address": "Calle Las Palmas 2224",
+      "membershipStartDate": "2024-01-10",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "12",
+      "fullName": "Brad Pitt",
+      "age": 50,
+      "membershipStatus": "pending",
+      "membershipType": "quarterly",
+      "expirationDate": "2024-05-15",
+      "dni": "23456789",
+      "email": "brad@example.com",
+      "phone": "+1234567801",
+      "address": "Calle Las Palmas 11",
+      "membershipStartDate": "2023-05-15",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "13",
+      "fullName": "Emma Watson",
+      "age": 28,
+      "membershipStatus": "inactive",
+      "membershipType": "annual",
+      "expirationDate": "2025-04-30",
+      "dni": "34567890",
+      "email": "emma@example.com",
+      "phone": "+1234567802",
+      "address": "Calle Las Palmas 115",
+      "membershipStartDate": "2022-04-30",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "14",
+      "fullName": "Johnny Depp",
+      "age": 55,
+      "membershipStatus": "active",
+      "membershipType": "monthly",
+      "expirationDate": "2025-02-28",
+      "dni": "45678901",
+      "email": "johnny@example.com",
+      "phone": "+1234567803",
+      "address": "Calle Las Palmas 119",
+      "membershipStartDate": "2024-02-28",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "15",
+      "fullName": "Hugh Jackman",
+      "age": 48,
+      "membershipStatus": "pending",
+      "membershipType": "annual",
+      "expirationDate": "2025-08-15",
+      "dni": "56789012",
+      "email": "hugh@example.com",
+      "phone": "+1234567804",
+      "address": "Calle Las Palmas 113",
+      "membershipStartDate": "2023-08-15",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    }
+  ],
+  "employees": [
+    {
+      "id": "1",
+      "fullName": "Lucas Thompson",
+      "age": 30,
+      "role": "trainer",
+      "hourlyWage": 25,
+      "hoursPerWeek": 40,
+      "dni": "87654321",
+      "email": "lucas.trainer@example.com",
+      "phone": "+1234567001",
+      "address": "Main Street 101",
+      "specialties": [
+        "Weight Training",
+        "Nutrition"
+      ],
+      "certifications": [
+        "ACE Certified",
+        "CPR"
+      ],
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "2",
+      "fullName": "Maria Lopez",
+      "age": 28,
+      "role": "group instructor",
+      "hourlyWage": 22,
+      "hoursPerWeek": 30,
+      "dni": "11223344",
+      "email": "maria.group@example.com",
+      "phone": "+1234567002",
+      "address": "Oak Avenue 202",
+      "specialties": [
+        "Yoga",
+        "Pilates"
+      ],
+      "certifications": [
+        "RYT 200",
+        "First Aid"
+      ],
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "3",
+      "fullName": "James Smith",
+      "age": 45,
+      "role": "cleaning",
+      "hourlyWage": 12,
+      "hoursPerWeek": 35,
+      "dni": "99887766",
+      "email": "james.clean@example.com",
+      "phone": "+1234567003",
+      "address": "Hill Road 303",
+      "specialties": [],
+      "certifications": [],
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "4",
+      "fullName": "Ava Johnso",
+      "age": 33,
+      "role": "trainer",
+      "hourlyWage": 15,
+      "hoursPerWeek": 40,
+      "dni": "33445566",
+      "email": "ava.reception@example.com",
+      "phone": "+1234567004",
+      "address": "Pine Street 40",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg",
+      "specialties": [
+        "asd"
+      ],
+      "certifications": []
+    },
+    {
+      "id": "5",
+      "fullName": "Daniel Kim",
+      "age": 26,
+      "role": "group instructor",
+      "hourlyWage": 20,
+      "hoursPerWeek": 25,
+      "dni": "55667788",
+      "email": "daniel.group@example.com",
+      "phone": "+1234567005",
+      "address": "Elm Street 505",
+      "specialties": [
+        "Zumba",
+        "Dance Fitness"
+      ],
+      "certifications": [
+        "Zumba Certified"
+      ],
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "6",
+      "fullName": "Emma White",
+      "age": 40,
+      "role": "trainer",
+      "hourlyWage": 30,
+      "hoursPerWeek": 38,
+      "dni": "66778899",
+      "email": "emma.trainer@example.com",
+      "phone": "+1234567006",
+      "address": "Cedar Lane 606",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg",
+      "specialties": [
+        "Strength Training",
+        "Rehabilitation"
+      ],
+      "certifications": [
+        "NASM",
+        "CPR"
+      ]
+    },
+    {
+      "id": "8",
+      "fullName": "Sophia Brown",
+      "age": 29,
+      "role": "reception",
+      "hourlyWage": 16,
+      "hoursPerWeek": 32,
+      "dni": "88990011",
+      "email": "sophia.reception@example.com",
+      "phone": "+1234567008",
+      "address": "Maple Street 808",
+      "specialties": [],
+      "certifications": [],
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "9",
+      "fullName": "Ethan Wilson",
+      "age": 35,
+      "role": "trainer",
+      "hourlyWage": 27,
+      "hoursPerWeek": 36,
+      "dni": "99001122",
+      "email": "ethan.trainer@example.com",
+      "phone": "+1234567009",
+      "address": "Aspen Avenue 909",
+      "specialties": [
+        "CrossFit",
+        "Mobility"
+      ],
+      "certifications": [
+        "CrossFit Level 1",
+        "CPR"
+      ],
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "10",
+      "fullName": "Chloe Martinez",
+      "age": 31,
+      "role": "group instructor",
+      "hourlyWage": 21,
+      "hoursPerWeek": 28,
+      "dni": "00112233",
+      "email": "chloe.group@example.com",
+      "phone": "+1234567010",
+      "address": "Willow Drive 1010",
+      "specialties": [
+        "HIIT",
+        "Aerobics"
+      ],
+      "certifications": [
+        "CPR",
+        "Group Fitness Certified"
+      ],
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "11",
+      "fullName": "Liam Davis",
+      "age": 38,
+      "role": "cleaning",
+      "hourlyWage": 14,
+      "hoursPerWeek": 20,
+      "dni": "11223355",
+      "email": "liam.clean@example.com",
+      "phone": "+1234567011",
+      "address": "Cherry Lane 1111",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg",
+      "specialties": [
+        "mbappe",
+        "si"
+      ],
+      "certifications": []
+    },
+    {
+      "id": "12",
+      "fullName": "Emily Garcia",
+      "age": 27,
+      "role": "reception",
+      "hourlyWage": 17,
+      "hoursPerWeek": 35,
+      "dni": "22334466",
+      "email": "emily.reception@example.com",
+      "phone": "+1234567012",
+      "address": "Magnolia Street 1212",
+      "specialties": [],
+      "certifications": [],
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "13",
+      "fullName": "Noah Robinson",
+      "age": 34,
+      "role": "trainer",
+      "hourlyWage": 26,
+      "hoursPerWeek": 34,
+      "dni": "33445577",
+      "email": "noah.trainer@example.com",
+      "phone": "+1234567013",
+      "address": "Palm Avenue 1313",
+      "specialties": [
+        "Bodybuilding",
+        "Functional Training"
+      ],
+      "certifications": [
+        "NSCA Certified",
+        "CPR"
+      ],
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "14",
+      "fullName": "Grace Lee",
+      "age": 36,
+      "role": "group instructor",
+      "hourlyWage": 23,
+      "hoursPerWeek": 29,
+      "dni": "44556688",
+      "email": "grace.group@example.com",
+      "phone": "+1234567014",
+      "address": "Cypress Lane 1414",
+      "specialties": [
+        "Spin",
+        "Cardio Dance"
+      ],
+      "certifications": [
+        "GroupX",
+        "First Aid"
+      ],
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": "15",
+      "fullName": "Benjamin Clark",
+      "age": 42,
+      "role": "trainer",
+      "hourlyWage": 29,
+      "hoursPerWeek": 40,
+      "dni": "55667799",
+      "email": "benjamin.trainer@example.com",
+      "phone": "+1234567015",
+      "address": "Fir Street 1515",
+      "specialties": [
+        "Endurance",
+        "Strength"
+      ],
+      "certifications": [
+        "ACSM Certified",
+        "CPR"
+      ],
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    }
+  ]
+}

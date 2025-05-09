@@ -14,21 +14,8 @@ export default {
     }
   },
 
-  data() {
-    return {
-      localVisible: this.visible
-    };
-  },
-
-  watch: {
-    visible(val) {
-      this.localVisible = val;
-    }
-  },
-
   methods: {
     closeDialog() {
-      this.localVisible = false;
       this.$emit("close");
     },
     deactivateMember() {
@@ -46,14 +33,15 @@ export default {
 
 <template>
   <pv-dialog
-      header="Deactivate Member"
-      v-model:visible="localVisible"
+      header="Remove Member"
+      :visible="visible"
+      @update:visible="closeDialog"
       modal
   >
-    <p>Are you sure you want to deactivate this member?</p>
+    <p>Are you sure you want to remove this member?</p>
     <div class="dialog-actions">
       <pv-button label="Cancel" class="p-button-secondary" @click="closeDialog" />
-      <pv-button label="Deactivate" class="p-button-danger" @click="deactivateMember" />
+      <pv-button label="Remove" class="p-button-danger" @click="deactivateMember" />
     </div>
   </pv-dialog>
 </template>

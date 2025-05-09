@@ -69,7 +69,7 @@ export default {
       <div class="actions">
         <pv-button label="Edit Details" class="action-btn" @click="$emit('edit-request')"/>
         <pv-button label="Payments" class="action-btn" />
-        <pv-button label="Deactivate" class="action-btn"  @click="$emit('deactivate-request')"/>
+        <pv-button label="Remove Member" class="action-btn"  @click="$emit('deactivate-request')"/>
       </div>
     </template>
   </pv-card>
@@ -116,13 +116,11 @@ export default {
   margin: 0.75rem 0;
 }
 
-/* Celeste lineas (hr) */
 hr {
   border: 1px solid #A7D1D2;
   margin: 1rem 0;
 }
 
-/* Action buttons */
 .actions {
   display: flex;
   flex-direction: column;
@@ -134,13 +132,13 @@ hr {
   width: 100%;
   background-color: white;
   border: 1px solid #A7D1D2;
-  color: black; /* Texto negro */
+  color: black;
 }
 
-/* Hover, ahora con !important para asegurar que no sea sobrescrito */
+
 .action-btn:hover {
-  background-color: #A7D1D2 !important; /* Fondo celeste en hover */
-  color: white !important; /* Texto blanco en hover */
+  background-color: #A7D1D2 !important;
+  color: white !important;
   border-color: #8FBFC0 !important;
 }
 </style>
