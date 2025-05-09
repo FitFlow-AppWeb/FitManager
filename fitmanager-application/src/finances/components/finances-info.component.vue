@@ -1,11 +1,11 @@
 <script>
-export default {
-  name: "finances-info.component"
-}
+
 </script>
 
 <template>
-
+  <div class="card">
+    <p>FinancesInfo</p>
+  </div>
 </template>
 
 <style scoped>
