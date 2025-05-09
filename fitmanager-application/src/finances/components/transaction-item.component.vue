@@ -1,7 +1,5 @@
 <script>
-export default {
-  name: "transaction-item.component"
-}
+
 </script>
 
 <template>

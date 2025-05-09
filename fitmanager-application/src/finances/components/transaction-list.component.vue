@@ -1,11 +1,11 @@
 <script>
-export default {
-  name: "transaction-list.component"
-}
+
 </script>
 
 <template>
-
+  <div class="card">
+    <p>TransactionList</p>
+  </div>
 </template>
 
 <style scoped>
