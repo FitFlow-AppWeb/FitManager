@@ -1,0 +1,52 @@
+{
+  "subscription_income": [
+    {
+      "date": "2024-12-01",
+      "month": "December",
+      "year": 2024,
+      "mensual": 4900,
+      "trimestral": 2000,
+      "annual": 1500
+    },
+    {
+      "date": "2025-01-01",
+      "month": "January",
+      "year": 2025,
+      "mensual": 5800,
+      "trimestral": 3100,
+      "annual": 2800
+    },
+    {
+      "date": "2025-02-01",
+      "month": "February",
+      "year": 2025,
+      "mensual": 5300,
+      "trimestral": 2800,
+      "annual": 1000
+    },
+    {
+      "date": "2025-03-01",
+      "month": "March",
+      "year": 2025,
+      "mensual": 5500,
+      "trimestral": 1500,
+      "annual": 1800
+    },
+    {
+      "date": "2025-04-01",
+      "month": "April",
+      "year": 2025,
+      "mensual": 5600,
+      "trimestral": 1820,
+      "annual": 1800
+    },
+    {
+      "date": "2025-05-01",
+      "month": "May",
+      "year": 2025,
+      "mensual": 5900,
+      "trimestral": 2000,
+      "annual": 2800
+    }
+  ]
+}
