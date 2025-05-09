@@ -7,20 +7,7 @@
  */
 
 export class Member {
-    constructor({
-                    id = "",
-                    fullName = "",
-                    age = 0,
-                    membershipStatus = "",
-                    membershipType = "",
-                    expirationDate = "",
-                    dni = "",
-                    email = "",
-                    phone = "",
-                    address = "",
-                    membershipStartDate = "",
-                    profilePicture = "",
-                }) {
+    constructor(id, fullName, age, membershipStatus, membershipType, expirationDate, dni, email, phone, address, membershipStartDate, profilePicture) {
         this.id = id;
         this.fullName = fullName;
         this.age = age;

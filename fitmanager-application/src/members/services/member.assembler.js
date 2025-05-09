@@ -7,20 +7,28 @@
  * Cassius Martel
  */
 
-import { Member } from "../model/member.entity.js";
+import { Member } from '../model/member.entity.js';
 
 export class MemberAssembler {
+    static toEntityFromResource(resource) {
+        return new Member(
+            resource.id,
+            resource.fullName,
+            resource.age,
+            resource.membershipStatus,
+            resource.membershipType,
+            resource.expirationDate,
+            resource.dni,
+            resource.email,
+            resource.phone,
+            resource.address,
+            resource.membershipStartDate,
+            resource.profilePicture,
 
-    static toEntitiesFromResponse(response) {
-        if (!Array.isArray(response)) {
-            console.error("Invalid response format for members");
-            return [];
-        }
-
-        return response.map((memberRaw) => this.toEntityFromResource(memberRaw));
+        );
     }
 
-    static toEntityFromResource(resource) {
-        return new Member(resource);
+    static toEntitiesFromResponse(response) {
+        return response.map(this.toEntityFromResource);
     }
 }
