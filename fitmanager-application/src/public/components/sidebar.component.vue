@@ -112,11 +112,11 @@ const menuItems = ref([
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0;
+  padding: 13px 0;
   .app-title {
     font-size: 2rem;
     font-family: 'Bebas Neue',serif;
-    font-weight: bold;
+    font-weight: normal;
     margin: 0;
     padding-right: 10px;
   }
