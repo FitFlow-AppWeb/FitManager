@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Dashboard from '../dashboard/components/dashboard.component.vue';
 import Calendar from '../calendar/components/calendar.component.vue';
-import Members from '../members/components/members.component.vue';
+import Members from '../members/components/member.component.vue';
 import Employees from '../employees/components/employees.component.vue';
 import Classes from '../classes/components/classes.component.vue';
 import Bookings from '../bookings/components/bookings.component.vue';

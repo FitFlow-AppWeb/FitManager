@@ -1,8 +1,4 @@
 <script setup>
-export default {
-  name: "calendar.component"
-}
-<script>
 
 </script>
 
