@@ -1,11 +1,10 @@
 <script setup>
-import Member from './members/components/member.component.vue'
+import Layout from './public/components/app-layout.componet.vue'
 </script>
 
 <template>
-  <body>
-  <Member/>
-  </body>
+  <Layout/>
+
 </template>
 
 <style scoped>

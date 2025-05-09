@@ -7,12 +7,21 @@ import Aura from '@primevue/themes/aura'
 import i18n from "./i18n.js";
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
+import router from './router/index.js'
 
 
 const app = createApp(App);
 
 app
-    .use(PrimeVue, { ripple: true, theme: { preset: Aura }})
+    .use(PrimeVue, {
+        ripple: true,
+        theme: {
+            preset: Aura,
+            options: {
+                darkModeSelector: false
+            }
+        }
+    })
     .component('pv-inputtext', InputText)
     .component('pv-datepicker', DatePicker)
     .component('pv-button', Button)
@@ -28,11 +37,6 @@ app
     .component('pv-tooltip', Tooltip)
     .component('pv-row', Row)
     .component('pv-dialog', Dialog)
-
-
-
-
-
-
+    .use(router)
     /*  .use(i18n) */
-    .mount('#app');
+    .mount('#app')

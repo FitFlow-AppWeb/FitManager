@@ -1,7 +1,4 @@
 <script>
-export default {
-  name: "settings.component"
-}
 </script>
 
 <template>
