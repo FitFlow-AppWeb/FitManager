@@ -80,7 +80,7 @@ export default {
         v-model:selection="internalSelection"
         @rowSelect="handleRowSelect"
         paginator
-        :rows="10"
+        :rows="9"
         :rowClass="getRowClass"
         size="large"
         class="datatable"

@@ -23,8 +23,26 @@ export class MemberApiService {
             });
     }
     deactivateMember(member) {
-        return axios.patch(`http://localhost:3000/member/${member.id}`, {
-            membershipStatus: "inactive"
-        });
+
+        return axios.delete(`http://localhost:3000/member/${member.id}`)
+            .catch(error => {
+                console.error('Error deleting member:', error);
+                throw error;
+            });
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
