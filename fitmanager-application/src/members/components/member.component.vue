@@ -91,7 +91,7 @@ export default {
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding: 1rem;
   box-sizing: border-box;
 }
