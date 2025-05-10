@@ -466,5 +466,22 @@
       ],
       "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "powergym_pro",
+      "email": "ness@gmail.com",
+      "phone": "+51 990 530 751",
+      "devices": 3,
+      "plan": "Platino",
+      "role": "Admin",
+      "language": "Español",
+      "units": "kg/m",
+      "timezone": "GMT-5",
+      "notifications": "on",
+      "currency": "S/ (PEN)",
+      "help": true
+    }
   ]
 }
