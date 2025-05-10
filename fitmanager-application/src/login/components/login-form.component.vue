@@ -146,7 +146,7 @@ button[type="button"] {
   margin-top: 5px;
   background: none;
   border: none;
-  color: #000000;
+  color: #0000;
   cursor: pointer;
   font-size: 14px;
 }
