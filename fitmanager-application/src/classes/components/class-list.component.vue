@@ -115,6 +115,7 @@ export default {
 
       <pv-column field="name" header="Name" sortable style="width:25%"></pv-column>
       <pv-column field="type" header="Type" sortable style="width:15%"></pv-column>
+      <pv-column field="trainerName" header="Trainer" sortable style="width:15%"/>
       <pv-column field="date" header="Date" sortable style="width:25%"></pv-column>
       <pv-column field="time" header="Time" sortable style="width:20%"></pv-column>
       <pv-column field="duration" header="Duration" sortable style="width:25%"></pv-column>
@@ -129,7 +130,7 @@ export default {
 <style scoped>
 .table-container {
   width: 100%;
-  max-width: 800px;
+  max-width: 850px;
 }
 
 /* Estilo general */

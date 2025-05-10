@@ -474,7 +474,7 @@
       "type": "Group",
       "date": "2025-05-11",
       "time": "08:00",
-      "duration": "1 hour",
+      "duration": "120 min",
       "status": "Confirmed",
       "trainer_id": 1,
       "members_ids": [1, 2, 3]
@@ -485,7 +485,7 @@
       "type": "Group",
       "date": "2025-05-12",
       "time": "18:00",
-      "duration": "1 hour",
+      "duration": "90 min",
       "status": "Pending",
       "trainer_id": 2,
       "members_ids": [6, 7, 8]
@@ -496,9 +496,9 @@
       "type": "Group",
       "date": "2025-05-13",
       "time": "10:00",
-      "duration": "1 hour",
+      "duration": "45 min",
       "status": "Cancelled",
-      "trainer_id": 3,
+      "trainer_id": 6,
       "members_ids": [9, 10, 11, 12]
     },
     {
@@ -507,7 +507,7 @@
       "type": "Solo",
       "date": "2025-05-14",
       "time": "19:00",
-      "duration": "1 hour",
+      "duration": "30 min",
       "status": "Confirmed",
       "trainer_id": 4,
       "members_ids": [13]
@@ -518,7 +518,7 @@
       "type": "Group",
       "date": "2025-05-15",
       "time": "17:00",
-      "duration": "1 hour",
+      "duration": "60 min",
       "status": "Confirmed",
       "trainer_id": 5,
       "members_ids": [14, 15]
