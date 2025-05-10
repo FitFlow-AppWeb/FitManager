@@ -466,5 +466,63 @@
       ],
       "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
     }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "name": "Yoga",
+      "type": "Group",
+      "date": "2025-05-11",
+      "time": "08:00",
+      "duration": "1 hour",
+      "status": "Confirmed",
+      "trainer_id": 1,
+      "members_ids": [1, 2, 3]
+    },
+    {
+      "id": 2,
+      "name": "Spinning",
+      "type": "Group",
+      "date": "2025-05-12",
+      "time": "18:00",
+      "duration": "1 hour",
+      "status": "Pending",
+      "trainer_id": 2,
+      "members_ids": [6, 7, 8]
+    },
+    {
+      "id": 3,
+      "name": "Pilates",
+      "type": "Group",
+      "date": "2025-05-13",
+      "time": "10:00",
+      "duration": "1 hour",
+      "status": "Cancelled",
+      "trainer_id": 3,
+      "members_ids": [9, 10, 11, 12]
+    },
+    {
+      "id": 4,
+      "name": "Chest",
+      "type": "Solo",
+      "date": "2025-05-14",
+      "time": "19:00",
+      "duration": "1 hour",
+      "status": "Confirmed",
+      "trainer_id": 4,
+      "members_ids": [13]
+    },
+    {
+      "id": 5,
+      "name": "Zumba",
+      "type": "Group",
+      "date": "2025-05-15",
+      "time": "17:00",
+      "duration": "1 hour",
+      "status": "Confirmed",
+      "trainer_id": 5,
+      "members_ids": [14, 15]
+    }
   ]
 }
+
