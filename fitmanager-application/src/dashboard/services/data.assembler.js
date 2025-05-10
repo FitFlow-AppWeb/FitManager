@@ -11,16 +11,24 @@ import { Data } from "../model/data.entity.js";
 
 export class DataAssembler {
 
+    // Converts a single raw resource object to a Data instance
+    static toEntityFromResource(resource) {
+        return new Data(
+            resource.title,
+            resource.value,
+            resource.change,
+            resource.period,
+            resource.image
+        );
+    }
+
+    // Converts an array of raw objects into an array of Data instances
     static toEntitiesFromResponse(response) {
         if (!Array.isArray(response)) {
             console.error("Invalid response format for data");
             return [];
         }
 
-        return response.map((dataRaw) => this.toEntityFromResource(dataRaw));
-    }
-
-    static toEntityFromResource(resource) {
-        return new Data(resource);
+        return response.map(this.toEntityFromResource);
     }
 }
