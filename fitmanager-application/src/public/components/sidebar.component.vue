@@ -119,6 +119,7 @@ const menuItems = ref([
     font-weight: normal;
     margin: 0;
     padding-right: 10px;
+    color: #3A4949;
   }
   .app-logo {
     height: 36px;
