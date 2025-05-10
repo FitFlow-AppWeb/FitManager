@@ -23,11 +23,6 @@ export default {
       this.internalSelection = event.data;
       this.$emit('selected', event.data);
     },
-    getRowClass(data) {
-      return this.internalSelection && this.internalSelection.id === data.id
-          ? 'manual-highlight'
-          : '';
-    },
     toggleFilters() {
       this.showFilters = !this.showFilters;
     },
@@ -38,7 +33,7 @@ export default {
       console.log('Viewing class', classData);
     },
     editClass(classData) {
-      console.log('Editing class', classData);
+      this.$emit('edit-request', classData);
     },
     deleteClass(classData) {
       console.log('Deleting class', classData);
@@ -69,6 +64,7 @@ export default {
         :value="filteredClasses"
         selectionMode="single"
         v-model:selection="internalSelection"
+        @row-select="handleRowSelect"
         paginator
         :rows="9"
         size="large"
@@ -128,10 +124,10 @@ export default {
       <pv-column field="duration" header="Duration" sortable style="width:25%"></pv-column>
       <pv-column field="status" header="Status" sortable style="width:25%"></pv-column>
       <pv-column header="Actions" style="width: 15%">
-        <template #body="slotProps">
+        <template v-slot:body="{ data }">
           <div class="action-buttons">
             <img src="/assets/eye-svgrepo-com.svg" alt="View" class="action-icon" @click="viewClass(slotProps.rowData)" />
-            <img src="/assets/pencil-svgrepo-com.svg" alt="Edit" class="action-icon" @click="editClass(slotProps.rowData)" />
+            <img src="/assets/pencil-svgrepo-com.svg" alt="Edit" class="action-icon" @click="() => editClass(data) "/>
             <img src="/assets/close-svgrepo-com.svg" alt="Delete" class="action-icon" @click="deleteClass(slotProps.rowData)" />
           </div>
         </template>
@@ -145,7 +141,7 @@ export default {
 <style scoped>
 .table-container {
   width: 100%;
-  max-width: 850px;
+  max-width: 1200px;
 }
 
 /* Estilo general */

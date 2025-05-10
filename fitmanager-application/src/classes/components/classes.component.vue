@@ -2,10 +2,11 @@
 import { ClassApiService } from "../services/class-api.service.js";
 import ClassList from "./class-list.component.vue"
 import AddClass from "./add-class.component.vue";
+import EditClass from "./edit-class.component.vue";
 
 export default {
   name: "ClassComponent",
-  components: {ClassApiService, ClassList, AddClass},
+  components: {ClassApiService, ClassList, AddClass, EditClass},
   data(){
     return {
       classes: [],
@@ -19,7 +20,8 @@ export default {
     onClassSelected(gymClass) {
       this.selectedClass = gymClass;
     },
-    onEditRequest() {
+    onEditRequest(gymClass) {
+      this.selectedClass = gymClass;
       this.showEditModal = true;
     },
     onDeactivateRequest() {
@@ -47,14 +49,20 @@ export default {
           :classes="classes"
           @selected="onClassSelected"
           @add-request="showAddModal = true"
+          @edit-request="onEditRequest"
       />
       <AddClass
           v-if="showAddModal"
           @close="showAddModal = false"
           @class-added="fetchClasses"
-
       />
 
+      <EditClass
+          v-if="showEditModal"
+          :class-data="selectedClass"
+          @close="showEditModal = false"
+          @class-updated="fetchClasses"
+      />
     </div>
 
 

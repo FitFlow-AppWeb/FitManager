@@ -14,7 +14,6 @@ export class ClassApiService {
             const employeeMap = {};
             for (const emp of employees) {
                 employeeMap[emp.id] = emp.fullName;
-                console.log(emp.fullName);
 
             }
 
@@ -31,5 +30,12 @@ export class ClassApiService {
 
     addClass(gymClass) {
         return axios.post("http://localhost:3000/classes", gymClass);
+    }
+    updateClass(gymClass) {
+        return axios.put(`http://localhost:3000/classes/${gymClass.id}`, gymClass)
+            .catch(error => {
+                console.error('Error updating class:', error);
+                throw error;
+            });
     }
 }

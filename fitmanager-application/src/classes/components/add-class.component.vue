@@ -22,17 +22,53 @@ export default {
       typeOptions: [
         { name: "Group", value: "Group" },
         { name: "Solo", value: "Solo" }
+      ],
+      timeOptions: [
+        { name: "06:00", value: "06:00" },
+        { name: "07:00", value: "07:00" },
+        { name: "08:00", value: "08:00" },
+        { name: "09:00", value: "09:00" },
+        { name: "10:00", value: "10:00" },
+        { name: "11:00", value: "11:00" },
+        { name: "12:00", value: "12:00" },
+        { name: "13:00", value: "13:00" },
+        { name: "14:00", value: "14:00" },
+        { name: "15:00", value: "15:00" },
+        { name: "16:00", value: "16:00" },
+        { name: "17:00", value: "17:00" },
+        { name: "18:00", value: "18:00" },
+        { name: "19:00", value: "19:00" },
+        { name: "20:00", value: "20:00" },
+        { name: "21:00", value: "21:00" },
+        { name: "22:00", value: "22:00" },
+        { name: "23:00", value: "23:00" }
+      ],
+      durationOptions: [
+        { name: "30 min", value: "30 min" },
+        { name: "45 min", value: "45 min" },
+        { name: "60 min", value: "60 min" },
+        { name: "75 min", value: "75 min" },
+        { name: "90 min", value: "90 min" },
+        { name: "105 min", value: "105 min" },
+        { name: "120 min", value: "120 min" },
+        { name: "135 min", value: "135 min" },
+        { name: "150 min", value: "150 min" },
+        { name: "165 min", value: "165 min" },
+        { name: "180 min", value: "180 min" }
       ]
     };
   },
   methods: {
     async submitForm() {
+      const formattedDate = this.date instanceof Date
+          ? this.date.toISOString().split('T')[0]
+          : this.date;
       const newClass = {
         id: Date.now(),
         name: this.name,
         status: this.status,
         type: this.type,
-        date: this.date,
+        date: formattedDate,
         time: this.time,
         duration: this.duration,
         trainer_id: this.trainer_id,
@@ -69,8 +105,25 @@ export default {
         <pv-inputtext v-model="name" placeholder="Name" class="input-field" required />
         <pv-select v-model="type" :options="typeOptions" placeholder="Type" option-label="name" option-value="value" class="input-field" required />
         <pv-datepicker v-model="date" placeholder="Date" class="input-field" required />
-        <pv-inputtext v-model.number="time" placeholder="Time" type="number" class="input-field" required />
-        <pv-inputtext v-model.number="duration" placeholder="Duration" type="number" class="input-field" required />
+        <pv-select
+            v-model="time"
+            :options="timeOptions"
+            placeholder="Time"
+            option-label="name"
+            option-value="value"
+            class="input-field"
+            required
+        />
+
+        <pv-select
+            v-model="duration"
+            :options="durationOptions"
+            placeholder="Duration"
+            option-label="name"
+            option-value="value"
+            class="input-field"
+            required
+        />
         <pv-select
             v-model="trainer_id"
             :options="trainers"
