@@ -2012,5 +2012,32 @@
       { "hour": "20:00", "classes": ["HIIT"] }, { "hour": "21:00", "classes": [] },
       { "hour": "22:00", "classes": ["Stretching"] }, { "hour": "23:00", "classes": [] }
     ]
-  }
+  },
+  "users": [
+    {
+      "id": 1,
+      "username": "powergym_peru",
+      "email": "messi@gmail.com",
+      "phone": "+51 999 530 751",
+      "plan": "Platinum",
+      "role": "Admin",
+      "devices": 3,
+      "avatar": "/assets/logo-profile.PNG",
+      "gymLogo": "/assets/gimnasio-profile.PNG",
+      "settings": {
+        "language": "English",
+        "units": "kg/cm",
+        "timezone": "GMT-5",
+        "notifications": "Enabled",
+        "currency": "USD"
+      },
+      "permissions": {
+        "managementTeam": "Team Alpha",
+        "telecom": "Commercial Plus",
+        "remoteAssociate": "-13 1995 802 751",
+        "disparities": "Vendrides 2",
+        "planAssist": "Active"
+      }
+    }
+  ]
 }
