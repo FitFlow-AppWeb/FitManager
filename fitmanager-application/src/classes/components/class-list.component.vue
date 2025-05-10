@@ -30,7 +30,7 @@ export default {
       this.showFilters = false;
     },
     viewClass(classData) {
-      console.log('Viewing class', classData);
+      this.$emit('view-request', classData);
     },
     editClass(classData) {
       this.$emit('edit-request', classData);
@@ -126,7 +126,7 @@ export default {
       <pv-column header="Actions" style="width: 15%">
         <template v-slot:body="{ data }">
           <div class="action-buttons">
-            <img src="/assets/eye-svgrepo-com.svg" alt="View" class="action-icon" @click="viewClass(slotProps.rowData)" />
+            <img src="/assets/eye-svgrepo-com.svg" alt="View" class="action-icon" @click="() => viewClass(data) " />
             <img src="/assets/pencil-svgrepo-com.svg" alt="Edit" class="action-icon" @click="() => editClass(data) "/>
             <img src="/assets/close-svgrepo-com.svg" alt="Delete" class="action-icon" @click="() => deleteClass(data)" />
           </div>

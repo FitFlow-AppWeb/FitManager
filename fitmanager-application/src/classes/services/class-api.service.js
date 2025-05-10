@@ -1,5 +1,6 @@
 import axios from 'axios';
 import  {ClassAssembler} from "./class.assembler.js";
+import {Member} from "../../members/model/member.entity.js";
 
 export class ClassApiService {
     async getAllClasses() {
@@ -46,5 +47,37 @@ export class ClassApiService {
                 console.error('Error deleting class:', error);
                 throw error;
             });
+    }
+
+    async getMembersByClass(gymClass) {
+        try {
+            const response = await axios.get('http://localhost:3000/member');
+            const allMembers = response.data;
+
+            const filteredMembers = allMembers
+                .filter(member => gymClass.members_ids.includes(Number(member.id)));
+
+
+            return filteredMembers.map(m =>
+                new Member(
+                    Number(m.id),
+                    m.fullName,
+                    m.age,
+                    m.membershipStatus,
+                    m.membershipType,
+                    m.expirationDate,
+                    m.dni,
+                    m.email,
+                    m.phone,
+                    m.address,
+                    m.membershipStartDate,
+                    m.profilePicture
+                )
+            );
+
+        } catch (error) {
+            console.error('Error fetching members:', error);
+            throw error;
+        }
     }
 }
