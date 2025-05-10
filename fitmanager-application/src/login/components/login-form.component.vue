@@ -146,10 +146,9 @@ button[type="button"] {
   margin-top: 5px;
   background: none;
   border: none;
-  color: #00000;
+  color: #000000;
   cursor: pointer;
   font-size: 14px;
-
 }
 
 /* Botón de Iniciar Sesión */
