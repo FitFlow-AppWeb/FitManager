@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import PrimeVue from 'primevue/config';
+import { Divider} from "primevue";
 import {Avatar, Button, Card, Column, DataTable, Select, Paginator, Toolbar, SelectButton, InputText, Tooltip, DatePicker, Popover, Row, Dialog} from 'primevue';
 import Aura from '@primevue/themes/aura'
 import i18n from "./i18n.js";
@@ -22,6 +23,7 @@ app
             }
         }
     })
+    .component('pv-divider', Divider)
     .component('pv-inputtext', InputText)
     .component('pv-datepicker', DatePicker)
     .component('pv-button', Button)
