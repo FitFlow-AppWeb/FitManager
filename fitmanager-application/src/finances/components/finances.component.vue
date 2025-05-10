@@ -21,14 +21,14 @@ import GraphicList from './graphic.component.vue'
 .finances-layout {
   display:flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height: 100%;
   width: 100%;
 }
 
 .layout-top {
   display:flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .layout-bottom {
