@@ -1,9 +1,21 @@
-<script setup>
-import Layout from './public/components/app-layout.componet.vue'
+<script >
+import Login from './login/components/login.component.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Login
+  }
+};
+
 </script>
 
 <template>
-  <Layout/>
+    <div id="app">
+      <Login />
+    </div>
+
+
 
 </template>
 
