@@ -4,7 +4,6 @@ import App from './App.vue'
 import PrimeVue from 'primevue/config';
 import {Avatar, Button, Card, Column, DataTable, Divider, Select, Paginator, Toolbar, SelectButton, InputText, Tooltip, DatePicker, Popover, Row, Dialog} from 'primevue';
 import Chart from 'primevue/chart';
-import {Avatar, Button, Card, Column, DataTable, Select, Paginator, Toolbar, SelectButton, InputText, Tooltip, DatePicker, Popover, Row, Dialog} from 'primevue';
 import Aura from '@primevue/themes/aura'
 import i18n from "./i18n.js";
 import 'primeicons/primeicons.css';
