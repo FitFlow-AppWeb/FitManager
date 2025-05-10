@@ -555,16 +555,6 @@
         14,
         15
       ]
-    },
-    {
-      "id": "1746849646960",
-      "name": "Futebol",
-      "status": "Pending",
-      "type": "Solo",
-      "date": "2025-05-30",
-      "time": "09:00",
-      "duration": "45 min",
-      "trainer_id": "2"
     }
   ]
 }

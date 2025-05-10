@@ -3,17 +3,19 @@ import { ClassApiService } from "../services/class-api.service.js";
 import ClassList from "./class-list.component.vue"
 import AddClass from "./add-class.component.vue";
 import EditClass from "./edit-class.component.vue";
+import DeleteClass from "./delete-class.component.vue";
+import DeactivateMember from "../../members/components/deactivate.component.vue";
 
 export default {
   name: "ClassComponent",
-  components: {ClassApiService, ClassList, AddClass, EditClass},
+  components: {DeactivateMember, ClassApiService, ClassList, AddClass, EditClass, DeleteClass},
   data(){
     return {
       classes: [],
       selectedClass: null,
       showAddModal: false,
       showEditModal: false,
-      showDeactivateModal: false // nuevo
+      showDeleteModal: false // nuevo
     };
   },
   methods: {
@@ -24,8 +26,9 @@ export default {
       this.selectedClass = gymClass;
       this.showEditModal = true;
     },
-    onDeactivateRequest() {
-      this.showDeactivateModal = true;
+    ondDeleteRequest(gymClass) {
+      this.selectedClass = gymClass;
+      this.showDeleteModal = true;
     },
     fetchClasses() {
       const service = new ClassApiService();
@@ -50,6 +53,7 @@ export default {
           @selected="onClassSelected"
           @add-request="showAddModal = true"
           @edit-request="onEditRequest"
+          @delete-request="ondDeleteRequest"
       />
       <AddClass
           v-if="showAddModal"
@@ -62,6 +66,13 @@ export default {
           :class-data="selectedClass"
           @close="showEditModal = false"
           @class-updated="fetchClasses"
+      />
+      <DeleteClass
+          v-if="showDeleteModal"
+          :class-data="selectedClass"
+          :visible="showDeleteModal"
+          @close="showDeleteModal = false"
+          @deleted-gymClass="fetchClasses"
       />
     </div>
 

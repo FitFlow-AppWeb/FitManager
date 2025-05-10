@@ -38,4 +38,13 @@ export class ClassApiService {
                 throw error;
             });
     }
+
+    deleteClass(gymClass) {
+
+        return axios.delete(`http://localhost:3000/classes/${gymClass.id}`)
+            .catch(error => {
+                console.error('Error deleting class:', error);
+                throw error;
+            });
+    }
 }

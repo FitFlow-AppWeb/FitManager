@@ -36,7 +36,7 @@ export default {
       this.$emit('edit-request', classData);
     },
     deleteClass(classData) {
-      console.log('Deleting class', classData);
+      this.$emit('delete-request', classData);
     }
   },
   computed: {
@@ -128,7 +128,7 @@ export default {
           <div class="action-buttons">
             <img src="/assets/eye-svgrepo-com.svg" alt="View" class="action-icon" @click="viewClass(slotProps.rowData)" />
             <img src="/assets/pencil-svgrepo-com.svg" alt="Edit" class="action-icon" @click="() => editClass(data) "/>
-            <img src="/assets/close-svgrepo-com.svg" alt="Delete" class="action-icon" @click="deleteClass(slotProps.rowData)" />
+            <img src="/assets/close-svgrepo-com.svg" alt="Delete" class="action-icon" @click="() => deleteClass(data)" />
           </div>
         </template>
       </pv-column>
