@@ -477,7 +477,11 @@
       "duration": "120 min",
       "status": "Confirmed",
       "trainer_id": 1,
-      "members_ids": [1, 2, 3]
+      "members_ids": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 2,
@@ -488,7 +492,11 @@
       "duration": "90 min",
       "status": "Pending",
       "trainer_id": 2,
-      "members_ids": [6, 7, 8]
+      "members_ids": [
+        6,
+        7,
+        8
+      ]
     },
     {
       "id": 3,
@@ -499,7 +507,12 @@
       "duration": "45 min",
       "status": "Cancelled",
       "trainer_id": 6,
-      "members_ids": [9, 10, 11, 12]
+      "members_ids": [
+        9,
+        10,
+        11,
+        12
+      ]
     },
     {
       "id": 4,
@@ -510,7 +523,9 @@
       "duration": "30 min",
       "status": "Confirmed",
       "trainer_id": 4,
-      "members_ids": [13]
+      "members_ids": [
+        13
+      ]
     },
     {
       "id": 5,
@@ -521,8 +536,20 @@
       "duration": "60 min",
       "status": "Confirmed",
       "trainer_id": 5,
-      "members_ids": [14, 15]
+      "members_ids": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": 1746848243753,
+      "name": "Fulvo",
+      "status": "Confirmed",
+      "type": "Solo",
+      "date": "2025-06-26T05:00:00.000Z",
+      "time": 10,
+      "duration": 10,
+      "trainer_id": "1"
     }
   ]
 }
-

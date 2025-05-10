@@ -33,6 +33,15 @@ export default {
     },
     applyFilters() {
       this.showFilters = false;
+    },
+    viewClass(classData) {
+      console.log('Viewing class', classData);
+    },
+    editClass(classData) {
+      console.log('Editing class', classData);
+    },
+    deleteClass(classData) {
+      console.log('Deleting class', classData);
     }
   },
   computed: {
@@ -60,10 +69,8 @@ export default {
         :value="filteredClasses"
         selectionMode="single"
         v-model:selection="internalSelection"
-        @rowSelect="handleRowSelect"
         paginator
         :rows="9"
-        :rowClass="getRowClass"
         size="large"
         class="datatable"
     >
@@ -120,7 +127,15 @@ export default {
       <pv-column field="time" header="Time" sortable style="width:20%"></pv-column>
       <pv-column field="duration" header="Duration" sortable style="width:25%"></pv-column>
       <pv-column field="status" header="Status" sortable style="width:25%"></pv-column>
-
+      <pv-column header="Actions" style="width: 15%">
+        <template #body="slotProps">
+          <div class="action-buttons">
+            <img src="/assets/eye-svgrepo-com.svg" alt="View" class="action-icon" @click="viewClass(slotProps.rowData)" />
+            <img src="/assets/pencil-svgrepo-com.svg" alt="Edit" class="action-icon" @click="editClass(slotProps.rowData)" />
+            <img src="/assets/close-svgrepo-com.svg" alt="Delete" class="action-icon" @click="deleteClass(slotProps.rowData)" />
+          </div>
+        </template>
+      </pv-column>
 
       <template #empty>No classes found.</template>
     </pv-datatable>
@@ -305,5 +320,26 @@ export default {
 
 .right-group .add-btn:hover {
   background-color: #8FBFC0 !important;
+}
+
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.action-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+
+}
+
+.action-icon:hover {
+  opacity: 0.2;
 }
 </style>

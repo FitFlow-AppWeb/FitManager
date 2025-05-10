@@ -1,10 +1,11 @@
 <script>
 import { ClassApiService } from "../services/class-api.service.js";
 import ClassList from "./class-list.component.vue"
+import AddClass from "./add-class.component.vue";
 
 export default {
   name: "ClassComponent",
-  components: {ClassApiService, ClassList},
+  components: {ClassApiService, ClassList, AddClass},
   data(){
     return {
       classes: [],
@@ -46,6 +47,12 @@ export default {
           :classes="classes"
           @selected="onClassSelected"
           @add-request="showAddModal = true"
+      />
+      <AddClass
+          v-if="showAddModal"
+          @close="showAddModal = false"
+          @class-added="fetchClasses"
+
       />
 
     </div>

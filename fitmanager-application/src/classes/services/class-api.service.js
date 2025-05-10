@@ -28,4 +28,8 @@ export class ClassApiService {
             throw error;
         }
     }
+
+    addClass(gymClass) {
+        return axios.post("http://localhost:3000/classes", gymClass);
+    }
 }
