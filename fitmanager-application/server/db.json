@@ -466,5 +466,36 @@
       ],
       "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
     }
-  ]
+  ],
+  "dashboard": {
+    "statistics": [
+      { "title": "Total Members", "value": 125, "change": "+2.5%", "period": "Since last month", "image": "/assets/total-members.svg" },
+      { "title": "Active Members", "value": 65, "change": "-10%", "period": "Since yesterday", "image": "/assets/active-members.svg" },
+      { "title": "Bookings/Week", "value": 54, "change": "+9.5%", "period": "Since last week", "image": "/assets/bookings-week.svg" },
+      { "title": "Attendance/Week", "value": 316, "change": "-6%", "period": "Since last week", "image": "/assets/attendance-week.svg" },
+      { "title": "Revenue/Month", "value": 1252, "change": "+5.8%", "period": "Since last month", "image": "/assets/revenue-month.svg" },
+      { "title": "New Members/Month", "value": 11, "change": "+20%", "period": "Since last month", "image": "/assets/new-members-month.svg" },
+      { "title": "Pending Payments", "value": 25, "change": "-52%", "period": "Since last month", "image": "/assets/pending-payments.svg" }
+    ],
+    "todayAttendance": [
+      { "hour": "06:00", "value": 15 }, { "hour": "07:00", "value": 30 }, { "hour": "08:00", "value": 25 },
+      { "hour": "09:00", "value": 46 }, { "hour": "10:00", "value": 42 }, { "hour": "11:00", "value": 36 },
+      { "hour": "12:00", "value": 60 }, { "hour": "13:00", "value": 32 }, { "hour": "14:00", "value": 31 },
+      { "hour": "15:00", "value": 42 }, { "hour": "16:00", "value": 60 }, { "hour": "17:00", "value": 71 },
+      { "hour": "18:00", "value": 56 }, { "hour": "19:00", "value": 58 }, { "hour": "20:00", "value": 48 },
+      { "hour": "21:00", "value": 39 }, { "hour": "22:00", "value": 30 }, { "hour": "23:00", "value": 12 },
+      { "hour": "00:00", "value": 0 }
+    ],
+    "todayClasses": [
+      { "hour": "06:00", "classes": ["Yoga", "Pilates"] }, { "hour": "07:00", "classes": ["CrossFit"] },
+      { "hour": "08:00", "classes": ["Spinning", "Boxing"] }, { "hour": "09:00", "classes": ["Zumba"] },
+      { "hour": "10:00", "classes": ["Functional"] }, { "hour": "11:00", "classes": [] },
+      { "hour": "12:00", "classes": ["HIIT"] }, { "hour": "13:00", "classes": ["Yoga"] },
+      { "hour": "14:00", "classes": [] }, { "hour": "15:00", "classes": ["Pilates"] },
+      { "hour": "16:00", "classes": ["CrossFit"] }, { "hour": "17:00", "classes": ["Spinning"] },
+      { "hour": "18:00", "classes": ["Boxing", "Zumba"] }, { "hour": "19:00", "classes": ["Functional"] },
+      { "hour": "20:00", "classes": ["HIIT"] }, { "hour": "21:00", "classes": [] },
+      { "hour": "22:00", "classes": ["Stretching"] }, { "hour": "23:00", "classes": [] }
+    ]
+  }
 }
