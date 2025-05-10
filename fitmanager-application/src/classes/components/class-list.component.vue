@@ -66,7 +66,7 @@ export default {
         v-model:selection="internalSelection"
         @row-select="handleRowSelect"
         paginator
-        :rows="9"
+        :rows="8"
         size="large"
         class="datatable"
     >
