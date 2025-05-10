@@ -111,8 +111,9 @@ export default {
 
 /* Styling for the title text */
 .title-text {
-  font-size: 1rem; /* Size of the title text */
+  font-size: 1.1rem; /* Size of the title text */
   font-weight: normal; /* Normal font weight */
+  color: #575757;
 }
 
 /* Styling for the change box at the bottom */
