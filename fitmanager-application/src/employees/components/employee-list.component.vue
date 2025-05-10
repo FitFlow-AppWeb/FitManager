@@ -170,7 +170,6 @@ export default {
 <style scoped>
 .table-container {
   width: 100%;
-  max-width: 800px;
 }
 
 /* Estilo general */
