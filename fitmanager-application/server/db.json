@@ -470,18 +470,28 @@
   "users": [
     {
       "id": 1,
-      "username": "powergym_pro",
-      "email": "ness@gmail.com",
-      "phone": "+51 990 530 751",
-      "devices": 3,
-      "plan": "Platino",
+      "username": "powergym_peru",
+      "email": "messi@gmail.com",
+      "phone": "+51 999 530 751",
+      "plan": "Platinum",
       "role": "Admin",
-      "language": "Español",
-      "units": "kg/m",
-      "timezone": "GMT-5",
-      "notifications": "on",
-      "currency": "S/ (PEN)",
-      "help": true
+      "devices": 3,
+      "avatar": "/assets/logo-profile.PNG",
+      "gymLogo": "/assets/gimnasio-profile.PNG",
+      "settings": {
+        "language": "English",
+        "units": "kg/cm",
+        "timezone": "GMT-5",
+        "notifications": "Enabled",
+        "currency": "USD"
+      },
+      "permissions": {
+        "managementTeam": "Team Alpha",
+        "telecom": "Commercial Plus",
+        "remoteAssociate": "-13 1995 802 751",
+        "disparities": "Vendrides 2",
+        "planAssist": "Active"
+      }
     }
   ]
 }

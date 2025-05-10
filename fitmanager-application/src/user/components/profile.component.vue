@@ -1,74 +1,55 @@
 <template>
-  <div class="dashboard-container" v-if="userLoaded">
-    <!-- Cuadro superior -->
+  <div class="dashboard-container">
+    <!-- 1. CUADRO SUPERIOR (Header) -->
     <div class="top-section">
-      <PermissionPersonal :user="userData" />
+      <HeaderComponent :user="user" />
     </div>
 
-    <!-- Cuadros inferiores -->
-    <div class="bottom-sections">
-      <div class="bottom-left">
-        <EditorCuenta :user="userData" />
+    <!-- 2. CUADROS INFERIORES (Mitad izquierda/derecha) -->
+    <div class="bottom-container">
+      <div class="left-section">
+        <AccountInfo :user="user" />
       </div>
-      <div class="bottom-right">
-        <VehicleModels />
+      <div class="right-section">
+        <SystemSettings :settings="user.settings" />
       </div>
     </div>
-  </div>
-  <div v-else class="loading-screen">
-    Cargando datos del usuario...
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-import { getUserInfo } from '../services/user-info-api.service.js';
-import PermissionPersonal from './info.component.vue';
-import EditorCuenta from './settings.component.vue';
-import VehicleModels from './gym-profile.component.vue';
+import { getUserInfo } from '../services/user-info-api.service';
+import HeaderComponent from './info.component.vue'; // Asegúrate que el import coincida
+import AccountInfo from './settings.component.vue';
+import SystemSettings from './gym-profile.component.vue';
 
 export default {
   components: {
-    PermissionPersonal,
-    EditorCuenta,
-    VehicleModels
+    HeaderComponent, // Nombre debe coincidir con el import
+    AccountInfo,
+    SystemSettings
   },
-  setup() {
-    const userData = ref(null);
-    const userLoaded = ref(false);
-
-    const loadUserData = async () => {
-      try {
-        // Datos mockeados como fallback
-        userData.value = {
-          username: "powergym_peru",
-          email: "messi@gmail.com",
-          phone: "+51 999 530 751",
-          plan: "Platino",
-          devices: 3,
-          managementTeam: "Team Alpha",
-          telecom: "Commercial Plus",
-          remoteAssociate: "-13 1995 802 751",
-          disparities: "Vendrides 2",
-          planAssist: "Active"
-        };
-
-        // Intentar cargar datos reales
-        const apiData = await getUserInfo();
-        userData.value = { ...userData.value, ...apiData };
-      } catch (error) {
-        console.error("Error loading user:", error);
-      } finally {
-        userLoaded.value = true;
-      }
-    };
-
-    loadUserData();
-
+  data() {
     return {
-      userData,
-      userLoaded
+      user: null,
+      error: null
     };
+  },
+  async created() {
+    try {
+      this.user = await getUserInfo();
+      console.log("Datos del usuario:", this.user); // Debug crucial
+    } catch (error) {
+      console.error("Error:", error);
+      this.error = "Error loading data";
+      // Datos de emergencia
+      this.user = {
+        role: "Admin",
+        gymLogo: "/assets/gimnasio-profile.PNG",
+        avatar: "/assets/logo-profile.PNG",
+        settings: {} // Asegura que settings exista
+      };
+    }
   }
 };
 </script>
@@ -76,36 +57,85 @@ export default {
 <style scoped>
 .dashboard-container {
   padding: 20px;
-  background-color: #e0e0e0;
+  background-color: #f0f2f5;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.loading-screen {
-  padding: 40px;
-  text-align: center;
-  font-size: 1.2rem;
 }
 
 .top-section {
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: auto; /* Altura automática según contenido */
 }
 
-.bottom-sections {
+.bottom-container {
   display: flex;
   gap: 20px;
+  height: auto; /* Cambiamos de min-height a height auto */
 }
 
-.bottom-left, .bottom-right {
+.dashboard-container {
+  padding: 20px;
+  background-color: #f0f2f5; /* Fondo gris claro */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre cuadros */
+}
+
+/* CUADRO SUPERIOR */
+.top-section {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: auto; /* Se ajusta al contenido */
+}
+
+/* CONTENEDOR DE MITADES INFERIORES */
+.bottom-container {
+  display: flex;
+  gap: 20px;
+  flex: 1; /* Ocupa el espacio restante */
+}
+
+/* CUADROS IZQUIERDO Y DERECHO */
+.left-section, .right-section {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: fit-content; /* Altura según contenido */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bottom-container {
+    flex-direction: column;
+  }
+}
+
+.left-section, .right-section {
   flex: 1;
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: fit-content; /* Ajusta altura al contenido */
+  max-height: 400px; /* Altura máxima opcional */
+  overflow-y: auto; /* Scroll si el contenido excede la altura */
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+  .bottom-container {
+    flex-direction: column;
+  }
+
+  .left-section, .right-section {
+    max-height: none; /* Eliminamos límite en móvil */
+  }
 }
 </style>

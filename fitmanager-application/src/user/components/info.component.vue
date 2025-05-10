@@ -1,19 +1,29 @@
 <template>
   <div class="header-container">
-    <!-- Imagen izquierda -->
+    <!-- Debug: Muestra los datos recibidos -->
+    <!-- <pre>{{ user }}</pre> -->
+
     <div class="left-image">
-      <img src="/assets/gimnasio-profile.PNG" alt="Logo PowerGym" class="logo">
+      <img
+          :src="user.gymLogo"
+          alt="Gym Logo"
+          class="logo"
+          @error="handleImageError"
+      >
     </div>
 
-    <!-- Contenido central -->
     <div class="center-content">
       <h1 class="gym-title">POWERGYM</h1>
-      <p class="user-role">Admin</p>
+      <p class="user-role">{{ user.role || 'Admin' }}</p>
     </div>
 
-    <!-- Imagen derecha -->
     <div class="right-image">
-      <img src="/assets/logo-profile.PNG" alt="Usuario" class="avatar">
+      <img
+          :src="user.avatar"
+          alt="User Avatar"
+          class="avatar"
+          @error="handleImageError"
+      >
     </div>
   </div>
 </template>
@@ -23,10 +33,18 @@ export default {
   props: {
     user: {
       type: Object,
-      required: true
+      required: true,
+      default: () => ({})
+    }
+  },
+  methods: {
+    handleImageError(e) {
+      console.error("Error loading image:", e.target.src);
+      // Puedes establecer imágenes por defecto aquí si fallan
+      e.target.src = "/assets/default-image.png";
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -38,16 +56,15 @@ export default {
   padding: 0 20px;
 }
 
-/* Tamaños aumentados */
 .left-image, .right-image {
-  width: 150px;  /* Aumentado de 80px a 150px */
-  height: 150px; /* Aumentado de 80px a 150px */
+  width: 150px;
+  height: 150px;
 }
 
 .logo, .avatar {
-  width: 100%;   /* Ocupa todo el espacio disponible */
-  height: 100%;  /* Ocupa todo el espacio disponible */
-  object-fit: contain; /* Mantiene proporciones */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .center-content {

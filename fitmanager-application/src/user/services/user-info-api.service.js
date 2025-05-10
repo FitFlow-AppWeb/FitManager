@@ -1,18 +1,36 @@
-export async function getUserInfo() {
-    // Simular retraso de red
-    await new Promise(resolve => setTimeout(resolve, 500));
+const API_URL = 'http://localhost:3000';
 
-    return {
-        managementTeam: 'Team Alpha',
-        telecom: 'Commercial Plus',
-        remoteAssociate: '-13 1995 802 751',
-        disparities: 'Vendrides 2',
-        planAssist: 'Active',
-        // Campos adicionales
-        id: 1,
-        username: "powergym_pro",
-        email: "ness@gmail.com",
-        phone: "+51 990 530 751",
-        plan: "Platino"
-    };
+export async function getUserInfo() {
+    try {
+        const response = await fetch(`${API_URL}/users/1`);
+        if (!response.ok) throw new Error('Error al obtener datos');
+        const user = await response.json();
+
+        // Asegura que todos los campos requeridos existan
+        return {
+            ...user,
+            role: user.role || "Admin",
+            gymLogo: user.gymLogo || "/assets/gimnasio-profile.PNG",
+            avatar: user.avatar || "/assets/logo-profile.PNG",
+            settings: user.settings || {
+                language: "English",
+                units: "kg/cm",
+                timezone: "GMT-5"
+            }
+        };
+    } catch (error) {
+        console.error("API Error:", error);
+        // Datos de respaldo
+        return {
+            username: "powergym_peru",
+            role: "Admin",
+            gymLogo: "/assets/gimnasio-profile.PNG",
+            avatar: "/assets/logo-profile.PNG",
+            settings: {
+                language: "English",
+                units: "kg/cm",
+                timezone: "GMT-5"
+            }
+        };
+    }
 }

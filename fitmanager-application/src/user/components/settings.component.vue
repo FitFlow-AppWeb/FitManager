@@ -1,16 +1,16 @@
 <template>
   <div class="personal-info-container">
-    <h2 class="section-title">Personal Information </h2>
+    <h2 class="section-title">Personal Information</h2>
     <div class="divider"></div>
 
     <div class="info-content">
       <div class="info-row">
         <span class="label">Username:</span>
-        <span class="value">powergym_peru</span>
+        <span class="value">{{ user.username }}</span>
       </div>
       <div class="info-row">
         <span class="label">Email:</span>
-        <span class="value">messi@gmail.com</span>
+        <span class="value">{{ user.email }}</span>
       </div>
       <div class="info-row">
         <span class="label">Password:</span>
@@ -18,15 +18,15 @@
       </div>
       <div class="info-row">
         <span class="label">Phone Number:</span>
-        <span class="value">+51 999 530 751</span>
+        <span class="value">{{ user.phone }}</span>
       </div>
       <div class="info-row">
         <span class="label">Linked Devices:</span>
-        <span class="value">3</span>
+        <span class="value">{{ user.devices }}</span>
       </div>
       <div class="info-row">
         <span class="label">Current Plan:</span>
-        <span class="value">Platino</span>
+        <span class="value">{{ user.plan }}</span>
       </div>
     </div>
 
@@ -39,21 +39,21 @@
 
 <script>
 export default {
-  name: 'EditorCuenta',
+  name: 'AccountInfo',
   props: {
     user: {
       type: Object,
       required: true,
       default: () => ({
-        username: '',
-        email: '',
-        phone: '',
-        plan: '',
-        devices: 0
+        username: "powergym_peru",
+        email: "messi@gmail.com",
+        phone: "+51 999 530 751",
+        plan: "Platinum",
+        devices: 3
       })
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -71,7 +71,7 @@ export default {
 
 .divider {
   height: 1px;
-  background-color: #a0c4e0; /* Celeste-gris */
+  background-color: #a0c4e0;
   margin-bottom: 20px;
 }
 
@@ -80,6 +80,12 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre elementos */
 }
 
 .info-row {
@@ -113,21 +119,21 @@ export default {
 
 .edit-btn {
   background: white;
-  border: 1px solid #3498db; /* Celeste */
+  border: 1px solid #3498db;
   color: #3498db;
 }
 
 .edit-btn:hover {
-  background: #f0f8ff; /* Celeste muy claro */
+  background: #f0f8ff;
 }
 
 .logout-btn {
   background: white;
-  border: 1px solid #e74c3c; /* Rojo */
+  border: 1px solid #e74c3c;
   color: #e74c3c;
 }
 
 .logout-btn:hover {
-  background: #fff0f0; /* Rojo muy claro */
+  background: #fff0f0;
 }
 </style>
