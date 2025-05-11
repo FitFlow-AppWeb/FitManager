@@ -2,14 +2,19 @@ import { WeeklyAttendance } from "../model/week.entity";
 export class WeekAssembler {
 
     static toEntityFromResource(resource) {
+
+        if (!resource) {
+            return new WeeklyAttendance();
+        }
+
         return new WeeklyAttendance(
-            resource.lunes,
-            resource.martes,
-            resource.miercoles,
-            resource.jueves,
-            resource.viernes,
-            resource.sabado,
-            resource.domingo
+            resource.Lunes,
+            resource.Martes,
+            resource.Miercoles,
+            resource.Jueves,
+            resource.Viernes,
+            resource.Sabado,
+            resource.Domingo
         );
     }
 
