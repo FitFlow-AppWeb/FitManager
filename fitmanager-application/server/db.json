@@ -284,7 +284,7 @@
         "recipient": "Landlord Inc.",
         "payer": "Power Gym",
         "concept": "Alquiler November",
-        "amount": 2800.00,
+        "amount": 2800,
         "currency": "PEN",
         "date": "2024-11-01"
       },
@@ -293,7 +293,7 @@
         "recipient": "Power Gym",
         "payer": "New Member Alpha",
         "concept": "Membresia mensual",
-        "amount": 150.00,
+        "amount": 150,
         "currency": "PEN",
         "date": "2024-11-03"
       },
@@ -302,7 +302,7 @@
         "recipient": "Power Gym",
         "payer": "Big Spender A",
         "concept": "Membresia Anual",
-        "amount": 2000.00,
+        "amount": 2000,
         "currency": "PEN",
         "date": "2024-11-05"
       },
@@ -311,7 +311,7 @@
         "recipient": "Waterworks Ltd.",
         "payer": "Power Gym",
         "concept": "Servicios (Agua/Luz) November",
-        "amount": 390.50,
+        "amount": 390.5,
         "currency": "PEN",
         "date": "2024-11-10"
       },
@@ -320,7 +320,7 @@
         "recipient": "Power Gym",
         "payer": "Group Fit Pass",
         "concept": "Membresia Trimestral",
-        "amount": 1500.00,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2024-11-12"
       },
@@ -329,7 +329,7 @@
         "recipient": "Power Gym",
         "payer": "New Member Beta",
         "concept": "Membresia trimestral",
-        "amount": 380.00,
+        "amount": 380,
         "currency": "PEN",
         "date": "2024-11-15"
       },
@@ -347,7 +347,7 @@
         "recipient": "Power Gym",
         "payer": "Dedicated User Nov",
         "concept": "Membresia Mensual",
-        "amount": 1000.00,
+        "amount": 1000,
         "currency": "PEN",
         "date": "2024-11-20"
       },
@@ -356,7 +356,7 @@
         "recipient": "Power Gym",
         "payer": "Early Bird Inc. Nov",
         "concept": "Membresia Anual",
-        "amount": 820.00,
+        "amount": 820,
         "currency": "PEN",
         "date": "2024-11-25"
       },
@@ -365,7 +365,7 @@
         "recipient": "Lucas Thompson",
         "payer": "Power Gym",
         "concept": "Sueldo November",
-        "amount": 3000.00,
+        "amount": 3000,
         "currency": "PEN",
         "date": "2024-11-26"
       },
@@ -374,7 +374,7 @@
         "recipient": "Maria Lopez",
         "payer": "Power Gym",
         "concept": "Sueldo November",
-        "amount": 2500.00,
+        "amount": 2500,
         "currency": "PEN",
         "date": "2024-11-26"
       },
@@ -383,7 +383,7 @@
         "recipient": "James Smith",
         "payer": "Power Gym",
         "concept": "Sueldo November",
-        "amount": 1500.00,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2024-11-26"
       },
@@ -392,7 +392,7 @@
         "recipient": "Ava Johnso",
         "payer": "Power Gym",
         "concept": "Sueldo November",
-        "amount": 2200.00,
+        "amount": 2200,
         "currency": "PEN",
         "date": "2024-11-26"
       },
@@ -401,7 +401,7 @@
         "recipient": "Daniel Kim",
         "payer": "Power Gym",
         "concept": "Sueldo November",
-        "amount": 2300.00,
+        "amount": 2300,
         "currency": "PEN",
         "date": "2024-11-26"
       },
@@ -410,7 +410,7 @@
         "recipient": "Power Gym",
         "payer": "New Member Gamma",
         "concept": "Membresia anual",
-        "amount": 1350.00,
+        "amount": 1350,
         "currency": "PEN",
         "date": "2024-11-28"
       },
@@ -419,7 +419,7 @@
         "recipient": "Landlord Inc.",
         "payer": "Power Gym",
         "concept": "Alquiler",
-        "amount": 2800.00,
+        "amount": 2800,
         "currency": "PEN",
         "date": "2024-12-01"
       },
@@ -428,7 +428,7 @@
         "recipient": "Power Gym",
         "payer": "Corp Pass A",
         "concept": "Membresia Anual",
-        "amount": 3000.00,
+        "amount": 3000,
         "currency": "PEN",
         "date": "2024-12-02"
       },
@@ -437,7 +437,7 @@
         "recipient": "Power Gym",
         "payer": "Emma Watson",
         "concept": "Membresia mensual",
-        "amount": 150.00,
+        "amount": 150,
         "currency": "PEN",
         "date": "2024-12-03"
       },
@@ -446,7 +446,7 @@
         "recipient": "Power Gym",
         "payer": "Winter Bulk Inc.",
         "concept": "Membresia Trimestral",
-        "amount": 2000.00,
+        "amount": 2000,
         "currency": "PEN",
         "date": "2024-12-05"
       },
@@ -455,7 +455,7 @@
         "recipient": "Power Gym",
         "payer": "Tom Hanks",
         "concept": "Membresia trimestral",
-        "amount": 400.0,
+        "amount": 400,
         "currency": "PEN",
         "date": "2024-12-06"
       },
@@ -464,7 +464,7 @@
         "recipient": "Power Gym",
         "payer": "Resolution User Dec",
         "concept": "Membresia Mensual",
-        "amount": 1500.00,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2024-12-07"
       },
@@ -473,7 +473,7 @@
         "recipient": "Power Gym",
         "payer": "Chris Hemsworth",
         "concept": "Membresia mensual",
-        "amount": 150.00,
+        "amount": 150,
         "currency": "PEN",
         "date": "2024-12-08"
       },
@@ -482,7 +482,7 @@
         "recipient": "Power Gym",
         "payer": "Corp Pass B",
         "concept": "Membresia Anual",
-        "amount": 3000.00,
+        "amount": 3000,
         "currency": "PEN",
         "date": "2024-12-10"
       },
@@ -500,7 +500,7 @@
         "recipient": "Power Gym",
         "payer": "Jane Smith",
         "concept": "Membresia anual",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2024-12-13"
       },
@@ -509,7 +509,7 @@
         "recipient": "Power Gym",
         "payer": "Festive Fitness Group",
         "concept": "Membresia Trimestral",
-        "amount": 1400.00,
+        "amount": 1400,
         "currency": "PEN",
         "date": "2024-12-15"
       },
@@ -536,7 +536,7 @@
         "recipient": "Power Gym",
         "payer": "December Dedication User",
         "concept": "Membresia Mensual",
-        "amount": 1000.00,
+        "amount": 1000,
         "currency": "PEN",
         "date": "2024-12-20"
       },
@@ -545,7 +545,7 @@
         "recipient": "Lucas Thompson",
         "payer": "Power Gym",
         "concept": "Sueldo December",
-        "amount": 3000.0,
+        "amount": 3000,
         "currency": "PEN",
         "date": "2024-12-26"
       },
@@ -554,7 +554,7 @@
         "recipient": "James Smith",
         "payer": "Power Gym",
         "concept": "Sueldo December",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2024-12-27"
       },
@@ -563,7 +563,7 @@
         "recipient": "Maria Lopez",
         "payer": "Power Gym",
         "concept": "Sueldo December",
-        "amount": 2500.0,
+        "amount": 2500,
         "currency": "PEN",
         "date": "2024-12-27"
       },
@@ -572,7 +572,7 @@
         "recipient": "Ava Johnso",
         "payer": "Power Gym",
         "concept": "Sueldo December",
-        "amount": 2200.0,
+        "amount": 2200,
         "currency": "PEN",
         "date": "2024-12-27"
       },
@@ -581,34 +581,52 @@
         "recipient": "Daniel Kim",
         "payer": "Power Gym",
         "concept": "Sueldo December",
-        "amount": 2300.0,
+        "amount": 2300,
         "currency": "PEN",
         "date": "2024-12-27"
       },
       {
-        "id": "R_JAN_M1", "recipient": "Power Gym", "payer": "Jan Early M", "concept": "Membresia Mensual", "amount": 2000, "currency": "PEN", "date": "2025-01-02"
+        "id": "R_JAN_M1",
+        "recipient": "Power Gym",
+        "payer": "Jan Early M",
+        "concept": "Membresia Mensual",
+        "amount": 2000,
+        "currency": "PEN",
+        "date": "2025-01-02"
       },
       {
         "id": "P007",
         "recipient": "Landlord Inc.",
         "payer": "Power Gym",
         "concept": "Alquiler",
-        "amount": 2800.00,
+        "amount": 2800,
         "currency": "PEN",
         "date": "2025-01-02"
       },
       {
-        "id": "R_JAN_Y1", "recipient": "Power Gym", "payer": "Jan VIP Y1", "concept": "Membresia Anual", "amount": 10000, "currency": "PEN", "date": "2025-01-03"
+        "id": "R_JAN_Y1",
+        "recipient": "Power Gym",
+        "payer": "Jan VIP Y1",
+        "concept": "Membresia Anual",
+        "amount": 10000,
+        "currency": "PEN",
+        "date": "2025-01-03"
       },
       {
-        "id": "R_JAN_Q1", "recipient": "Power Gym", "payer": "Jan Corp Q1", "concept": "Membresia Trimestral", "amount": 3000, "currency": "PEN", "date": "2025-01-05"
+        "id": "R_JAN_Q1",
+        "recipient": "Power Gym",
+        "payer": "Jan Corp Q1",
+        "concept": "Membresia Trimestral",
+        "amount": 3000,
+        "currency": "PEN",
+        "date": "2025-01-05"
       },
       {
         "id": "R006",
         "recipient": "Power Gym",
         "payer": "Tom Hanks",
         "concept": "Membresia trimestral",
-        "amount": 400.0,
+        "amount": 400,
         "currency": "PEN",
         "date": "2025-01-07"
       },
@@ -617,7 +635,7 @@
         "recipient": "Power Gym",
         "payer": "Sarah Connor",
         "concept": "Membresia mensual",
-        "amount": 150.0,
+        "amount": 150,
         "currency": "PEN",
         "date": "2025-01-09"
       },
@@ -640,26 +658,38 @@
         "date": "2025-01-11"
       },
       {
-        "id": "R_JAN_M2", "recipient": "Power Gym", "payer": "Jan Mid M", "concept": "Membresia Mensual", "amount": 2350, "currency": "PEN", "date": "2025-01-15"
+        "id": "R_JAN_M2",
+        "recipient": "Power Gym",
+        "payer": "Jan Mid M",
+        "concept": "Membresia Mensual",
+        "amount": 2350,
+        "currency": "PEN",
+        "date": "2025-01-15"
       },
       {
         "id": "P101",
         "recipient": "Marketing Digital SRL",
         "payer": "Power Gym",
         "concept": "Publicidad Online Enero",
-        "amount": 350.0,
+        "amount": 350,
         "currency": "PEN",
         "date": "2025-01-15"
       },
       {
-        "id": "R_JAN_Q2", "recipient": "Power Gym", "payer": "Jan Family Q", "concept": "Membresia Trimestral", "amount": 3800, "currency": "PEN", "date": "2025-01-18"
+        "id": "R_JAN_Q2",
+        "recipient": "Power Gym",
+        "payer": "Jan Family Q",
+        "concept": "Membresia Trimestral",
+        "amount": 3800,
+        "currency": "PEN",
+        "date": "2025-01-18"
       },
       {
         "id": "P111",
         "recipient": "AquaService",
         "payer": "Power Gym",
         "concept": "Dispensador Agua Enero",
-        "amount": 150.0,
+        "amount": 150,
         "currency": "PEN",
         "date": "2025-01-18"
       },
@@ -668,7 +698,7 @@
         "recipient": "Power Gym",
         "payer": "Tom Hanks",
         "concept": "Membresia anual",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2025-01-20"
       },
@@ -677,19 +707,25 @@
         "recipient": "ReparaTodo SAC",
         "payer": "Power Gym",
         "concept": "Reparacion caminadora",
-        "amount": 280.0,
+        "amount": 280,
         "currency": "PEN",
         "date": "2025-01-20"
       },
       {
-        "id": "R_JAN_Y2", "recipient": "Power Gym", "payer": "Jan LongTerm Y", "concept": "Membresia Anual", "amount": 12500, "currency": "PEN", "date": "2025-01-22"
+        "id": "R_JAN_Y2",
+        "recipient": "Power Gym",
+        "payer": "Jan LongTerm Y",
+        "concept": "Membresia Anual",
+        "amount": 12500,
+        "currency": "PEN",
+        "date": "2025-01-22"
       },
       {
         "id": "P009",
         "recipient": "Lucas Thompson",
         "payer": "Power Gym",
         "concept": "Sueldo January",
-        "amount": 3000.0,
+        "amount": 3000,
         "currency": "PEN",
         "date": "2025-01-25"
       },
@@ -698,7 +734,7 @@
         "recipient": "Maria Lopez",
         "payer": "Power Gym",
         "concept": "Sueldo January",
-        "amount": 2500.0,
+        "amount": 2500,
         "currency": "PEN",
         "date": "2025-01-26"
       },
@@ -707,7 +743,7 @@
         "recipient": "James Smith",
         "payer": "Power Gym",
         "concept": "Sueldo January",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2025-01-26"
       },
@@ -716,7 +752,7 @@
         "recipient": "Ava Johnso",
         "payer": "Power Gym",
         "concept": "Sueldo January",
-        "amount": 2200.0,
+        "amount": 2200,
         "currency": "PEN",
         "date": "2025-01-26"
       },
@@ -725,43 +761,61 @@
         "recipient": "Daniel Kim",
         "payer": "Power Gym",
         "concept": "Sueldo January",
-        "amount": 2300.0,
+        "amount": 2300,
         "currency": "PEN",
         "date": "2025-01-26"
       },
       {
-        "id": "R_FEB_M1", "recipient": "Power Gym", "payer": "Feb Fast M", "concept": "Membresia Mensual", "amount": 2000, "currency": "PEN", "date": "2025-02-01"
+        "id": "R_FEB_M1",
+        "recipient": "Power Gym",
+        "payer": "Feb Fast M",
+        "concept": "Membresia Mensual",
+        "amount": 2000,
+        "currency": "PEN",
+        "date": "2025-02-01"
       },
       {
         "id": "P012",
         "recipient": "Landlord Inc.",
         "payer": "Power Gym",
         "concept": "Alquiler",
-        "amount": 2800.00,
+        "amount": 2800,
         "currency": "PEN",
         "date": "2025-02-02"
       },
       {
-        "id": "R_FEB_Y1", "recipient": "Power Gym", "payer": "Feb Gold Y", "concept": "Membresia Anual", "amount": 10000, "currency": "PEN", "date": "2025-02-03"
+        "id": "R_FEB_Y1",
+        "recipient": "Power Gym",
+        "payer": "Feb Gold Y",
+        "concept": "Membresia Anual",
+        "amount": 10000,
+        "currency": "PEN",
+        "date": "2025-02-03"
       },
       {
         "id": "R008",
         "recipient": "Power Gym",
         "payer": "Jane Smith",
         "concept": "Membresia mensual",
-        "amount": 150.0,
+        "amount": 150,
         "currency": "PEN",
         "date": "2025-02-04"
       },
       {
-        "id": "R_FEB_Q1", "recipient": "Power Gym", "payer": "Feb Team Q", "concept": "Membresia Trimestral", "amount": 2500, "currency": "PEN", "date": "2025-02-05"
+        "id": "R_FEB_Q1",
+        "recipient": "Power Gym",
+        "payer": "Feb Team Q",
+        "concept": "Membresia Trimestral",
+        "amount": 2500,
+        "currency": "PEN",
+        "date": "2025-02-05"
       },
       {
         "id": "P103",
         "recipient": "OfiSupply",
         "payer": "Power Gym",
         "concept": "Suministros oficina Febrero",
-        "amount": 120.0,
+        "amount": 120,
         "currency": "PEN",
         "date": "2025-02-05"
       },
@@ -770,12 +824,18 @@
         "recipient": "Power Gym",
         "payer": "Angela Jolie",
         "concept": "Membresia mensual",
-        "amount": 150.0,
+        "amount": 150,
         "currency": "PEN",
         "date": "2025-02-07"
       },
       {
-        "id": "R_FEB_M2", "recipient": "Power Gym", "payer": "Feb Steady M", "concept": "Membresia Mensual", "amount": 2350, "currency": "PEN", "date": "2025-02-10"
+        "id": "R_FEB_M2",
+        "recipient": "Power Gym",
+        "payer": "Feb Steady M",
+        "concept": "Membresia Mensual",
+        "amount": 2350,
+        "currency": "PEN",
+        "date": "2025-02-10"
       },
       {
         "id": "P013",
@@ -800,19 +860,25 @@
         "recipient": "Power Gym",
         "payer": "Brad Pitt",
         "concept": "Membresia anual",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2025-02-14"
       },
       {
-        "id": "R_FEB_Q2", "recipient": "Power Gym", "payer": "Feb Duo Q", "concept": "Membresia Trimestral", "amount": 3100, "currency": "PEN", "date": "2025-02-16"
+        "id": "R_FEB_Q2",
+        "recipient": "Power Gym",
+        "payer": "Feb Duo Q",
+        "concept": "Membresia Trimestral",
+        "amount": 3100,
+        "currency": "PEN",
+        "date": "2025-02-16"
       },
       {
         "id": "P104",
         "recipient": "Imprenta Grafica",
         "payer": "Power Gym",
         "concept": "Volantes y Banners",
-        "amount": 450.0,
+        "amount": 450,
         "currency": "PEN",
         "date": "2025-02-18"
       },
@@ -821,19 +887,25 @@
         "recipient": "Power Gym",
         "payer": "Chris Hemsworth",
         "concept": "Membresia trimestral",
-        "amount": 400.0,
+        "amount": 400,
         "currency": "PEN",
         "date": "2025-02-19"
       },
       {
-        "id": "R_FEB_Y2", "recipient": "Power Gym", "payer": "Feb Elite Y", "concept": "Membresia Anual", "amount": 11000, "currency": "PEN", "date": "2025-02-20"
+        "id": "R_FEB_Y2",
+        "recipient": "Power Gym",
+        "payer": "Feb Elite Y",
+        "concept": "Membresia Anual",
+        "amount": 11000,
+        "currency": "PEN",
+        "date": "2025-02-20"
       },
       {
         "id": "P112",
         "recipient": "TechSupport Pro",
         "payer": "Power Gym",
         "concept": "Soporte IT Febrero",
-        "amount": 250.0,
+        "amount": 250,
         "currency": "PEN",
         "date": "2025-02-20"
       },
@@ -842,7 +914,7 @@
         "recipient": "Lucas Thompson",
         "payer": "Power Gym",
         "concept": "Sueldo February",
-        "amount": 3000.0,
+        "amount": 3000,
         "currency": "PEN",
         "date": "2025-02-25"
       },
@@ -851,7 +923,7 @@
         "recipient": "Maria Lopez",
         "payer": "Power Gym",
         "concept": "Sueldo February",
-        "amount": 2500.0,
+        "amount": 2500,
         "currency": "PEN",
         "date": "2025-02-25"
       },
@@ -860,7 +932,7 @@
         "recipient": "James Smith",
         "payer": "Power Gym",
         "concept": "Sueldo February",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2025-02-25"
       },
@@ -869,7 +941,7 @@
         "recipient": "Ava Johnso",
         "payer": "Power Gym",
         "concept": "Sueldo February",
-        "amount": 2200.0,
+        "amount": 2200,
         "currency": "PEN",
         "date": "2025-02-25"
       },
@@ -878,34 +950,52 @@
         "recipient": "Daniel Kim",
         "payer": "Power Gym",
         "concept": "Sueldo February",
-        "amount": 2300.0,
+        "amount": 2300,
         "currency": "PEN",
         "date": "2025-02-25"
       },
       {
-        "id": "R_MAR_Y1", "recipient": "Power Gym", "payer": "Mar Diamond Y", "concept": "Membresia Anual", "amount": 10000, "currency": "PEN", "date": "2025-03-01"
+        "id": "R_MAR_Y1",
+        "recipient": "Power Gym",
+        "payer": "Mar Diamond Y",
+        "concept": "Membresia Anual",
+        "amount": 10000,
+        "currency": "PEN",
+        "date": "2025-03-01"
       },
       {
         "id": "P105",
         "recipient": "Seguros Confianza",
         "payer": "Power Gym",
         "concept": "Poliza seguro local",
-        "amount": 600.0,
+        "amount": 600,
         "currency": "PEN",
         "date": "2025-03-01"
       },
       {
-        "id": "R_MAR_M1", "recipient": "Power Gym", "payer": "Mar Active M", "concept": "Membresia Mensual", "amount": 2000, "currency": "PEN", "date": "2025-03-02"
+        "id": "R_MAR_M1",
+        "recipient": "Power Gym",
+        "payer": "Mar Active M",
+        "concept": "Membresia Mensual",
+        "amount": 2000,
+        "currency": "PEN",
+        "date": "2025-03-02"
       },
       {
-        "id": "R_MAR_Q1", "recipient": "Power Gym", "payer": "Mar Group Q", "concept": "Membresia Trimestral", "amount": 2500, "currency": "PEN", "date": "2025-03-03"
+        "id": "R_MAR_Q1",
+        "recipient": "Power Gym",
+        "payer": "Mar Group Q",
+        "concept": "Membresia Trimestral",
+        "amount": 2500,
+        "currency": "PEN",
+        "date": "2025-03-03"
       },
       {
         "id": "P017",
         "recipient": "Landlord Inc.",
         "payer": "Power Gym",
         "concept": "Alquiler",
-        "amount": 2800.00,
+        "amount": 2800,
         "currency": "PEN",
         "date": "2025-03-04"
       },
@@ -914,7 +1004,7 @@
         "recipient": "Power Gym",
         "payer": "Johnny Depp",
         "concept": "Membresia mensual",
-        "amount": 150.0,
+        "amount": 150,
         "currency": "PEN",
         "date": "2025-03-04"
       },
@@ -923,7 +1013,7 @@
         "recipient": "Power Gym",
         "payer": "Kurt Cobain",
         "concept": "Membresia mensual",
-        "amount": 150.0,
+        "amount": 150,
         "currency": "PEN",
         "date": "2025-03-05"
       },
@@ -932,7 +1022,7 @@
         "recipient": "Power Gym",
         "payer": "David Bowie",
         "concept": "Membresia trimestral",
-        "amount": 400.0,
+        "amount": 400,
         "currency": "PEN",
         "date": "2025-03-08"
       },
@@ -946,14 +1036,20 @@
         "date": "2025-03-09"
       },
       {
-        "id": "R_MAR_Y2", "recipient": "Power Gym", "payer": "Mar Platinum Y", "concept": "Membresia Anual", "amount": 11000, "currency": "PEN", "date": "2025-03-10"
+        "id": "R_MAR_Y2",
+        "recipient": "Power Gym",
+        "payer": "Mar Platinum Y",
+        "concept": "Membresia Anual",
+        "amount": 11000,
+        "currency": "PEN",
+        "date": "2025-03-10"
       },
       {
         "id": "P113",
         "recipient": "MusiGym Sounds",
         "payer": "Power Gym",
         "concept": "Licencia Musica Marzo",
-        "amount": 180.0,
+        "amount": 180,
         "currency": "PEN",
         "date": "2025-03-10"
       },
@@ -967,26 +1063,38 @@
         "date": "2025-03-12"
       },
       {
-        "id": "R_MAR_M2", "recipient": "Power Gym", "payer": "Mar Regular M", "concept": "Membresia Mensual", "amount": 2350, "currency": "PEN", "date": "2025-03-15"
+        "id": "R_MAR_M2",
+        "recipient": "Power Gym",
+        "payer": "Mar Regular M",
+        "concept": "Membresia Mensual",
+        "amount": 2350,
+        "currency": "PEN",
+        "date": "2025-03-15"
       },
       {
         "id": "P106",
         "recipient": "ProClean Limpieza Profunda",
         "payer": "Power Gym",
         "concept": "Limpieza especializada",
-        "amount": 300.0,
+        "amount": 300,
         "currency": "PEN",
         "date": "2025-03-15"
       },
       {
-        "id": "R_MAR_Q2", "recipient": "Power Gym", "payer": "Mar Plus Q", "concept": "Membresia Trimestral", "amount": 3100, "currency": "PEN", "date": "2025-03-18"
+        "id": "R_MAR_Q2",
+        "recipient": "Power Gym",
+        "payer": "Mar Plus Q",
+        "concept": "Membresia Trimestral",
+        "amount": 3100,
+        "currency": "PEN",
+        "date": "2025-03-18"
       },
       {
         "id": "R015",
         "recipient": "Power Gym",
         "payer": "Emma Watson",
         "concept": "Membresia anual",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2025-03-19"
       },
@@ -1004,7 +1112,7 @@
         "recipient": "Lucas Thompson",
         "payer": "Power Gym",
         "concept": "Sueldo March",
-        "amount": 3000.0,
+        "amount": 3000,
         "currency": "PEN",
         "date": "2025-03-28"
       },
@@ -1013,7 +1121,7 @@
         "recipient": "Maria Lopez",
         "payer": "Power Gym",
         "concept": "Sueldo March",
-        "amount": 2500.0,
+        "amount": 2500,
         "currency": "PEN",
         "date": "2025-03-28"
       },
@@ -1022,7 +1130,7 @@
         "recipient": "James Smith",
         "payer": "Power Gym",
         "concept": "Sueldo March",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2025-03-28"
       },
@@ -1031,7 +1139,7 @@
         "recipient": "Ava Johnso",
         "payer": "Power Gym",
         "concept": "Sueldo March",
-        "amount": 2200.0,
+        "amount": 2200,
         "currency": "PEN",
         "date": "2025-03-28"
       },
@@ -1040,7 +1148,7 @@
         "recipient": "Daniel Kim",
         "payer": "Power Gym",
         "concept": "Sueldo March",
-        "amount": 2300.0,
+        "amount": 2300,
         "currency": "PEN",
         "date": "2025-03-28"
       },
@@ -1049,19 +1157,25 @@
         "recipient": "Landlord Inc.",
         "payer": "Power Gym",
         "concept": "Alquiler",
-        "amount": 2800.00,
+        "amount": 2800,
         "currency": "PEN",
         "date": "2025-04-01"
       },
       {
-        "id": "R_APR_M1", "recipient": "Power Gym", "payer": "Apr Sprint M", "concept": "Membresia Mensual", "amount": 2000, "currency": "PEN", "date": "2025-04-01"
+        "id": "R_APR_M1",
+        "recipient": "Power Gym",
+        "payer": "Apr Sprint M",
+        "concept": "Membresia Mensual",
+        "amount": 2000,
+        "currency": "PEN",
+        "date": "2025-04-01"
       },
       {
         "id": "R016",
         "recipient": "Power Gym",
         "payer": "Emma Watson",
         "concept": "Membresia mensual",
-        "amount": 150.0,
+        "amount": 150,
         "currency": "PEN",
         "date": "2025-04-02"
       },
@@ -1070,22 +1184,34 @@
         "recipient": "Power Gym",
         "payer": "Elena Gilber",
         "concept": "Membresia mensual",
-        "amount": 150.0,
+        "amount": 150,
         "currency": "PEN",
         "date": "2025-04-02"
       },
       {
-        "id": "R_APR_Y1", "recipient": "Power Gym", "payer": "Apr Prime Y", "concept": "Membresia Anual", "amount": 10000, "currency": "PEN", "date": "2025-04-03"
+        "id": "R_APR_Y1",
+        "recipient": "Power Gym",
+        "payer": "Apr Prime Y",
+        "concept": "Membresia Anual",
+        "amount": 10000,
+        "currency": "PEN",
+        "date": "2025-04-03"
       },
       {
-        "id": "R_APR_Q1", "recipient": "Power Gym", "payer": "Apr Pro Q", "concept": "Membresia Trimestral", "amount": 3000, "currency": "PEN", "date": "2025-04-04"
+        "id": "R_APR_Q1",
+        "recipient": "Power Gym",
+        "payer": "Apr Pro Q",
+        "concept": "Membresia Trimestral",
+        "amount": 3000,
+        "currency": "PEN",
+        "date": "2025-04-04"
       },
       {
         "id": "P107",
         "recipient": "WebMaster Solutions",
         "payer": "Power Gym",
         "concept": "Mantenimiento Web Abril",
-        "amount": 200.0,
+        "amount": 200,
         "currency": "PEN",
         "date": "2025-04-05"
       },
@@ -1103,7 +1229,7 @@
         "recipient": "Power Gym",
         "payer": "Natalie Port",
         "concept": "Membresia trimestral",
-        "amount": 400.0,
+        "amount": 400,
         "currency": "PEN",
         "date": "2025-04-10"
       },
@@ -1112,7 +1238,7 @@
         "recipient": "SafetyFirst Equip",
         "payer": "Power Gym",
         "concept": "Botiquin y Extintor Abril",
-        "amount": 320.0,
+        "amount": 320,
         "currency": "PEN",
         "date": "2025-04-12"
       },
@@ -1126,29 +1252,47 @@
         "date": "2025-04-13"
       },
       {
-        "id": "R_APR_M2", "recipient": "Power Gym", "payer": "Apr Core M", "concept": "Membresia Mensual", "amount": 2350, "currency": "PEN", "date": "2025-04-14"
+        "id": "R_APR_M2",
+        "recipient": "Power Gym",
+        "payer": "Apr Core M",
+        "concept": "Membresia Mensual",
+        "amount": 2350,
+        "currency": "PEN",
+        "date": "2025-04-14"
       },
       {
         "id": "R019",
         "recipient": "Power Gym",
         "payer": "Brad Pitt",
         "concept": "Membresia anual",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2025-04-15"
       },
       {
-        "id": "R_APR_Q2", "recipient": "Power Gym", "payer": "Apr Crew Q", "concept": "Membresia Trimestral", "amount": 3800, "currency": "PEN", "date": "2025-04-18"
+        "id": "R_APR_Q2",
+        "recipient": "Power Gym",
+        "payer": "Apr Crew Q",
+        "concept": "Membresia Trimestral",
+        "amount": 3800,
+        "currency": "PEN",
+        "date": "2025-04-18"
       },
       {
-        "id": "R_APR_Y2", "recipient": "Power Gym", "payer": "Apr Ultra Y", "concept": "Membresia Anual", "amount": 11000, "currency": "PEN", "date": "2025-04-19"
+        "id": "R_APR_Y2",
+        "recipient": "Power Gym",
+        "payer": "Apr Ultra Y",
+        "concept": "Membresia Anual",
+        "amount": 11000,
+        "currency": "PEN",
+        "date": "2025-04-19"
       },
       {
         "id": "P108",
         "recipient": "EnergyDrink Corp",
         "payer": "Power Gym",
         "concept": "Compra bebidas energéticas",
-        "amount": 550.0,
+        "amount": 550,
         "currency": "PEN",
         "date": "2025-04-20"
       },
@@ -1157,7 +1301,7 @@
         "recipient": "Lucas Thompson",
         "payer": "Power Gym",
         "concept": "Sueldo April",
-        "amount": 3000.0,
+        "amount": 3000,
         "currency": "PEN",
         "date": "2025-04-26"
       },
@@ -1166,7 +1310,7 @@
         "recipient": "Maria Lopez",
         "payer": "Power Gym",
         "concept": "Sueldo April",
-        "amount": 2500.0,
+        "amount": 2500,
         "currency": "PEN",
         "date": "2025-04-28"
       },
@@ -1175,7 +1319,7 @@
         "recipient": "James Smith",
         "payer": "Power Gym",
         "concept": "Sueldo April",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2025-04-28"
       },
@@ -1184,7 +1328,7 @@
         "recipient": "Ava Johnso",
         "payer": "Power Gym",
         "concept": "Sueldo April",
-        "amount": 2200.0,
+        "amount": 2200,
         "currency": "PEN",
         "date": "2025-04-28"
       },
@@ -1193,34 +1337,52 @@
         "recipient": "Daniel Kim",
         "payer": "Power Gym",
         "concept": "Sueldo April",
-        "amount": 2300.0,
+        "amount": 2300,
         "currency": "PEN",
         "date": "2025-04-28"
       },
       {
-        "id": "R_MAY_Y1", "recipient": "Power Gym", "payer": "May Max Y", "concept": "Membresia Anual", "amount": 10000, "currency": "PEN", "date": "2025-05-01"
+        "id": "R_MAY_Y1",
+        "recipient": "Power Gym",
+        "payer": "May Max Y",
+        "concept": "Membresia Anual",
+        "amount": 10000,
+        "currency": "PEN",
+        "date": "2025-05-01"
       },
       {
-        "id": "R_MAY_M1", "recipient": "Power Gym", "payer": "May Go M", "concept": "Membresia Mensual", "amount": 2000, "currency": "PEN", "date": "2025-05-02"
+        "id": "R_MAY_M1",
+        "recipient": "Power Gym",
+        "payer": "May Go M",
+        "concept": "Membresia Mensual",
+        "amount": 2000,
+        "currency": "PEN",
+        "date": "2025-05-02"
       },
       {
         "id": "P034",
         "recipient": "Landlord Inc.",
         "payer": "Power Gym",
         "concept": "Alquiler",
-        "amount": 2800.0,
+        "amount": 2800,
         "currency": "PEN",
         "date": "2025-05-03"
       },
       {
-        "id": "R_MAY_Q1", "recipient": "Power Gym", "payer": "May Power Q", "concept": "Membresia Trimestral", "amount": 3000, "currency": "PEN", "date": "2025-05-04"
+        "id": "R_MAY_Q1",
+        "recipient": "Power Gym",
+        "payer": "May Power Q",
+        "concept": "Membresia Trimestral",
+        "amount": 3000,
+        "currency": "PEN",
+        "date": "2025-05-04"
       },
       {
         "id": "P028",
         "recipient": "Landlord Inc.",
         "payer": "Power Gym",
         "concept": "Alquiler",
-        "amount": 2800.0,
+        "amount": 2800,
         "currency": "PEN",
         "date": "2025-05-05"
       },
@@ -1229,7 +1391,7 @@
         "recipient": "Power Gym",
         "payer": "Natalie Port",
         "concept": "Membresia mensual",
-        "amount": 150.0,
+        "amount": 150,
         "currency": "PEN",
         "date": "2025-05-06"
       },
@@ -1238,7 +1400,7 @@
         "recipient": "Power Gym",
         "payer": "Chris Hemsworth",
         "concept": "Membresia trimestral",
-        "amount": 400.0,
+        "amount": 400,
         "currency": "PEN",
         "date": "2025-05-06"
       },
@@ -1247,7 +1409,7 @@
         "recipient": "Power Gym",
         "payer": "Elena Gilber",
         "concept": "Membresia trimestral",
-        "amount": 400.0,
+        "amount": 400,
         "currency": "PEN",
         "date": "2025-05-07"
       },
@@ -1256,7 +1418,7 @@
         "recipient": "Power Gym",
         "payer": "Sarah Connor",
         "concept": "Membresia mensual",
-        "amount": 150.0,
+        "amount": 150,
         "currency": "PEN",
         "date": "2025-05-08"
       },
@@ -1265,7 +1427,7 @@
         "recipient": "PrintExpress",
         "payer": "Power Gym",
         "concept": "Material Papeleria Mayo",
-        "amount": 90.0,
+        "amount": 90,
         "currency": "PEN",
         "date": "2025-05-08"
       },
@@ -1274,18 +1436,36 @@
         "recipient": "Power Gym",
         "payer": "Jane Smith",
         "concept": "Membresia mensual",
-        "amount": 150.0,
+        "amount": 150,
         "currency": "PEN",
         "date": "2025-05-09"
       },
       {
-        "id": "R_MAY_M2", "recipient": "Power Gym", "payer": "May Dash M", "concept": "Membresia Mensual", "amount": 2350, "currency": "PEN", "date": "2025-05-10"
+        "id": "R_MAY_M2",
+        "recipient": "Power Gym",
+        "payer": "May Dash M",
+        "concept": "Membresia Mensual",
+        "amount": 2350,
+        "currency": "PEN",
+        "date": "2025-05-10"
       },
       {
-        "id": "R_MAY_Q2", "recipient": "Power Gym", "payer": "May Flex Q", "concept": "Membresia Trimestral", "amount": 3000, "currency": "PEN", "date": "2025-05-10"
+        "id": "R_MAY_Q2",
+        "recipient": "Power Gym",
+        "payer": "May Flex Q",
+        "concept": "Membresia Trimestral",
+        "amount": 3000,
+        "currency": "PEN",
+        "date": "2025-05-10"
       },
       {
-        "id": "R_MAY_Y2", "recipient": "Power Gym", "payer": "May Total Y", "concept": "Membresia Anual", "amount": 12500, "currency": "PEN", "date": "2025-05-10"
+        "id": "R_MAY_Y2",
+        "recipient": "Power Gym",
+        "payer": "May Total Y",
+        "concept": "Membresia Anual",
+        "amount": 12500,
+        "currency": "PEN",
+        "date": "2025-05-10"
       },
       {
         "id": "P029",
@@ -1319,7 +1499,7 @@
         "recipient": "Consultores Fitness",
         "payer": "Power Gym",
         "concept": "Asesoria gestion Mayo",
-        "amount": 700.0,
+        "amount": 700,
         "currency": "PEN",
         "date": "2025-05-10"
       },
@@ -1337,7 +1517,7 @@
         "recipient": "Power Gym",
         "payer": "Hugh Jackman",
         "concept": "Membresia anual",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2025-05-14"
       },
@@ -1364,7 +1544,7 @@
         "recipient": "Power Gym",
         "payer": "Kurt Cobain",
         "concept": "Membresia anual",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2025-05-22"
       },
@@ -1373,7 +1553,7 @@
         "recipient": "Decoraciones GymFit",
         "payer": "Power Gym",
         "concept": "Renovacion decoracion",
-        "amount": 850.0,
+        "amount": 850,
         "currency": "PEN",
         "date": "2025-05-25"
       },
@@ -1382,7 +1562,7 @@
         "recipient": "Lucas Thompson",
         "payer": "Power Gym",
         "concept": "Sueldo May",
-        "amount": 3000.0,
+        "amount": 3000,
         "currency": "PEN",
         "date": "2025-05-28"
       },
@@ -1391,7 +1571,7 @@
         "recipient": "Maria Lopez",
         "payer": "Power Gym",
         "concept": "Sueldo May",
-        "amount": 2500.0,
+        "amount": 2500,
         "currency": "PEN",
         "date": "2025-05-28"
       },
@@ -1400,7 +1580,7 @@
         "recipient": "James Smith",
         "payer": "Power Gym",
         "concept": "Sueldo May",
-        "amount": 1500.0,
+        "amount": 1500,
         "currency": "PEN",
         "date": "2025-05-28"
       },
@@ -1409,7 +1589,7 @@
         "recipient": "Ava Johnso",
         "payer": "Power Gym",
         "concept": "Sueldo May",
-        "amount": 2200.0,
+        "amount": 2200,
         "currency": "PEN",
         "date": "2025-05-28"
       },
@@ -1418,7 +1598,7 @@
         "recipient": "Daniel Kim",
         "payer": "Power Gym",
         "concept": "Sueldo May",
-        "amount": 2300.0,
+        "amount": 2300,
         "currency": "PEN",
         "date": "2025-05-28"
       }
@@ -1428,7 +1608,7 @@
         {
           "month": "November",
           "year": 2024,
-          "total_income": 7200.00,
+          "total_income": 7200,
           "total_expenses": 14941.25,
           "earnings": -7741.25,
           "membership_income_breakdown": {
@@ -1440,7 +1620,7 @@
         {
           "month": "December",
           "year": 2024,
-          "total_income": 14100.00,
+          "total_income": 14100,
           "total_expenses": 16271.77,
           "earnings": -2171.77,
           "membership_income_breakdown": {
@@ -1452,7 +1632,7 @@
         {
           "month": "January",
           "year": 2025,
-          "total_income": 35700.00,
+          "total_income": 35700,
           "total_expenses": 16487.99,
           "earnings": 19212.01,
           "membership_income_breakdown": {
@@ -1464,7 +1644,7 @@
         {
           "month": "February",
           "year": 2025,
-          "total_income": 33150.00,
+          "total_income": 33150,
           "total_expenses": 16616.54,
           "earnings": 16533.46,
           "membership_income_breakdown": {
@@ -1476,9 +1656,9 @@
         {
           "month": "March",
           "year": 2025,
-          "total_income": 33150.00,
-          "total_expenses": 18036.60,
-          "earnings": 15113.40,
+          "total_income": 33150,
+          "total_expenses": 18036.6,
+          "earnings": 15113.4,
           "membership_income_breakdown": {
             "monthly": 4650,
             "quarterly": 6000,
@@ -1488,7 +1668,7 @@
         {
           "month": "April",
           "year": 2025,
-          "total_income": 34350.00,
+          "total_income": 34350,
           "total_expenses": 18028.93,
           "earnings": 16321.07,
           "membership_income_breakdown": {
@@ -1500,7 +1680,7 @@
         {
           "month": "May",
           "year": 2025,
-          "total_income": 35250.00,
+          "total_income": 35250,
           "total_expenses": 20313.42,
           "earnings": 14936.58,
           "membership_income_breakdown": {
@@ -1512,9 +1692,9 @@
         {
           "month": "June",
           "year": 2025,
-          "total_income": 0.0,
-          "total_expenses": 0.0,
-          "earnings": 0.0,
+          "total_income": 0,
+          "total_expenses": 0,
+          "earnings": 0,
           "membership_income_breakdown": {
             "monthly": 0,
             "quarterly": 0,
@@ -1524,14 +1704,14 @@
       ],
       "overall_summary": {
         "period_covered": "2024-2025",
-        "total_earnings_over_period": 52133.30,
-        "total_income_over_period": 192900.00,
-        "total_expenses_over_period": 140766.70,
+        "total_earnings_over_period": 52133.3,
+        "total_income_over_period": 192900,
+        "total_expenses_over_period": 140766.7,
         "average_monthly_expenses": 17595.84,
-        "income_2024": 21300.00,
+        "income_2024": 21300,
         "expenses_2024": 31213.02,
         "earnings_2024": -9913.02,
-        "income_2025": 171600.00,
+        "income_2025": 171600,
         "expenses_2025": 109553.68,
         "earnings_2025": 62046.32
       }
@@ -1891,7 +2071,12 @@
       "duration": "60 min",
       "status": "Confirmed",
       "trainer_id": 5,
-      "members_ids": [1, 2, 5, 6],
+      "members_ids": [
+        1,
+        2,
+        5,
+        6
+      ],
       "trainerName": "Trainer 5"
     },
     {
@@ -1903,7 +2088,12 @@
       "duration": "90 min",
       "status": "Pending",
       "trainer_id": 1,
-      "members_ids": [3, 7, 8, 12],
+      "members_ids": [
+        3,
+        7,
+        8,
+        12
+      ],
       "trainerName": "Trainer 1"
     },
     {
@@ -1915,7 +2105,9 @@
       "duration": "30 min",
       "status": "Confirmed",
       "trainer_id": 2,
-      "members_ids": [15],
+      "members_ids": [
+        15
+      ],
       "trainerName": "Trainer 2"
     },
     {
@@ -1927,7 +2119,11 @@
       "duration": "45 min",
       "status": "Cancelled",
       "trainer_id": 9,
-      "members_ids": [5, 6, 7],
+      "members_ids": [
+        5,
+        6,
+        7
+      ],
       "trainerName": "Trainer 9"
     },
     {
@@ -1939,7 +2135,9 @@
       "duration": "75 min",
       "status": "Confirmed",
       "trainer_id": 13,
-      "members_ids": [10],
+      "members_ids": [
+        10
+      ],
       "trainerName": "Trainer 13"
     },
     {
@@ -1951,7 +2149,11 @@
       "duration": "60 min",
       "status": "Pending",
       "trainer_id": 6,
-      "members_ids": [11, 12, 13],
+      "members_ids": [
+        11,
+        12,
+        13
+      ],
       "trainerName": "Trainer 6"
     },
     {
@@ -1963,7 +2165,11 @@
       "duration": "120 min",
       "status": "Confirmed",
       "trainer_id": 10,
-      "members_ids": [8, 9, 14],
+      "members_ids": [
+        8,
+        9,
+        14
+      ],
       "trainerName": "Trainer 10"
     },
     {
@@ -1975,42 +2181,246 @@
       "duration": "45 min",
       "status": "Cancelled",
       "trainer_id": 14,
-      "members_ids": [2],
+      "members_ids": [
+        2
+      ],
       "trainerName": "Trainer 14"
     }
-
-
   ],
-
   "dashboard": {
     "statistics": [
-      { "title": "Total Members", "value": 125, "change": "+2.5%", "period": "Since last month", "image": "/assets/total-members.svg" },
-      { "title": "Active Members", "value": 65, "change": "-10%", "period": "Since yesterday", "image": "/assets/active-members.svg" },
-      { "title": "Bookings/Week", "value": 54, "change": "+9.5%", "period": "Since last week", "image": "/assets/bookings-week.svg" },
-      { "title": "Attendance/Week", "value": 316, "change": "-6%", "period": "Since last week", "image": "/assets/attendance-week.svg" },
-      { "title": "Revenue/Month", "value": 1252, "change": "+5.8%", "period": "Since last month", "image": "/assets/revenue-month.svg" },
-      { "title": "New Members/Month", "value": 11, "change": "+20%", "period": "Since last month", "image": "/assets/new-members-month.svg" },
-      { "title": "Pending Payments", "value": 25, "change": "-52%", "period": "Since last month", "image": "/assets/pending-payments.svg" }
+      {
+        "title": "Total Members",
+        "value": 125,
+        "change": "+2.5%",
+        "period": "Since last month",
+        "image": "/assets/total-members.svg"
+      },
+      {
+        "title": "Active Members",
+        "value": 65,
+        "change": "-10%",
+        "period": "Since yesterday",
+        "image": "/assets/active-members.svg"
+      },
+      {
+        "title": "Bookings/Week",
+        "value": 54,
+        "change": "+9.5%",
+        "period": "Since last week",
+        "image": "/assets/bookings-week.svg"
+      },
+      {
+        "title": "Attendance/Week",
+        "value": 316,
+        "change": "-6%",
+        "period": "Since last week",
+        "image": "/assets/attendance-week.svg"
+      },
+      {
+        "title": "Revenue/Month",
+        "value": 1252,
+        "change": "+5.8%",
+        "period": "Since last month",
+        "image": "/assets/revenue-month.svg"
+      },
+      {
+        "title": "New Members/Month",
+        "value": 11,
+        "change": "+20%",
+        "period": "Since last month",
+        "image": "/assets/new-members-month.svg"
+      },
+      {
+        "title": "Pending Payments",
+        "value": 25,
+        "change": "-52%",
+        "period": "Since last month",
+        "image": "/assets/pending-payments.svg"
+      }
     ],
     "todayAttendance": [
-      { "hour": "06:00", "value": 15 }, { "hour": "07:00", "value": 30 }, { "hour": "08:00", "value": 25 },
-      { "hour": "09:00", "value": 46 }, { "hour": "10:00", "value": 42 }, { "hour": "11:00", "value": 36 },
-      { "hour": "12:00", "value": 60 }, { "hour": "13:00", "value": 32 }, { "hour": "14:00", "value": 31 },
-      { "hour": "15:00", "value": 42 }, { "hour": "16:00", "value": 60 }, { "hour": "17:00", "value": 71 },
-      { "hour": "18:00", "value": 56 }, { "hour": "19:00", "value": 58 }, { "hour": "20:00", "value": 48 },
-      { "hour": "21:00", "value": 39 }, { "hour": "22:00", "value": 30 }, { "hour": "23:00", "value": 12 },
-      { "hour": "00:00", "value": 0 }
+      {
+        "hour": "06:00",
+        "value": 15
+      },
+      {
+        "hour": "07:00",
+        "value": 30
+      },
+      {
+        "hour": "08:00",
+        "value": 25
+      },
+      {
+        "hour": "09:00",
+        "value": 46
+      },
+      {
+        "hour": "10:00",
+        "value": 42
+      },
+      {
+        "hour": "11:00",
+        "value": 36
+      },
+      {
+        "hour": "12:00",
+        "value": 60
+      },
+      {
+        "hour": "13:00",
+        "value": 32
+      },
+      {
+        "hour": "14:00",
+        "value": 31
+      },
+      {
+        "hour": "15:00",
+        "value": 42
+      },
+      {
+        "hour": "16:00",
+        "value": 60
+      },
+      {
+        "hour": "17:00",
+        "value": 71
+      },
+      {
+        "hour": "18:00",
+        "value": 56
+      },
+      {
+        "hour": "19:00",
+        "value": 58
+      },
+      {
+        "hour": "20:00",
+        "value": 48
+      },
+      {
+        "hour": "21:00",
+        "value": 39
+      },
+      {
+        "hour": "22:00",
+        "value": 30
+      },
+      {
+        "hour": "23:00",
+        "value": 12
+      },
+      {
+        "hour": "00:00",
+        "value": 0
+      }
     ],
     "todayClasses": [
-      { "hour": "06:00", "classes": ["Yoga", "Pilates"] }, { "hour": "07:00", "classes": ["CrossFit"] },
-      { "hour": "08:00", "classes": ["Spinning", "Boxing"] }, { "hour": "09:00", "classes": ["Zumba"] },
-      { "hour": "10:00", "classes": ["Functional"] }, { "hour": "11:00", "classes": [] },
-      { "hour": "12:00", "classes": ["HIIT"] }, { "hour": "13:00", "classes": ["Yoga"] },
-      { "hour": "14:00", "classes": [] }, { "hour": "15:00", "classes": ["Pilates"] },
-      { "hour": "16:00", "classes": ["CrossFit"] }, { "hour": "17:00", "classes": ["Spinning"] },
-      { "hour": "18:00", "classes": ["Boxing", "Zumba"] }, { "hour": "19:00", "classes": ["Functional"] },
-      { "hour": "20:00", "classes": ["HIIT"] }, { "hour": "21:00", "classes": [] },
-      { "hour": "22:00", "classes": ["Stretching"] }, { "hour": "23:00", "classes": [] }
+      {
+        "hour": "06:00",
+        "classes": [
+          "Yoga",
+          "Pilates"
+        ]
+      },
+      {
+        "hour": "07:00",
+        "classes": [
+          "CrossFit"
+        ]
+      },
+      {
+        "hour": "08:00",
+        "classes": [
+          "Spinning",
+          "Boxing"
+        ]
+      },
+      {
+        "hour": "09:00",
+        "classes": [
+          "Zumba"
+        ]
+      },
+      {
+        "hour": "10:00",
+        "classes": [
+          "Functional"
+        ]
+      },
+      {
+        "hour": "11:00",
+        "classes": []
+      },
+      {
+        "hour": "12:00",
+        "classes": [
+          "HIIT"
+        ]
+      },
+      {
+        "hour": "13:00",
+        "classes": [
+          "Yoga"
+        ]
+      },
+      {
+        "hour": "14:00",
+        "classes": []
+      },
+      {
+        "hour": "15:00",
+        "classes": [
+          "Pilates"
+        ]
+      },
+      {
+        "hour": "16:00",
+        "classes": [
+          "CrossFit"
+        ]
+      },
+      {
+        "hour": "17:00",
+        "classes": [
+          "Spinning"
+        ]
+      },
+      {
+        "hour": "18:00",
+        "classes": [
+          "Boxing",
+          "Zumba"
+        ]
+      },
+      {
+        "hour": "19:00",
+        "classes": [
+          "Functional"
+        ]
+      },
+      {
+        "hour": "20:00",
+        "classes": [
+          "HIIT"
+        ]
+      },
+      {
+        "hour": "21:00",
+        "classes": []
+      },
+      {
+        "hour": "22:00",
+        "classes": [
+          "Stretching"
+        ]
+      },
+      {
+        "hour": "23:00",
+        "classes": []
+      }
     ]
   },
   "users": [
@@ -2175,6 +2585,15 @@
       "last_maintenance": "2025-03-03",
       "next_maintenance": "2025-06-03",
       "trainer_id": 6
+    },
+    {
+      "id": 1746930502354,
+      "name": "Premium Boxing Gloves",
+      "description": "They are premium mate",
+      "quantity": 10,
+      "last_maintenance": "2025-03-12",
+      "next_maintenance": "2025-07-09",
+      "trainer_id": "13"
     }
   ]
 }

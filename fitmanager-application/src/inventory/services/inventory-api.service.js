@@ -27,6 +27,8 @@ export class InventoryApiService {
             throw error;
         }
     }
-
+    addInventory(inventory) {
+        return axios.post("http://localhost:3000/inventory", inventory);
+    }
 
 }
