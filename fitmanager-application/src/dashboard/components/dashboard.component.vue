@@ -64,17 +64,17 @@ export default {
 </script>
 
 <template>
-  <!-- Renders the top list of key statistics (first 4 entries) -->
-  <DataTopListComponent :statistics="statistics.slice(0, 4)" />
-
   <!-- Main layout section with two columns -->
   <div class="main-section">
     <div>
+      <!-- Renders the top list of key statistics (first 3 entries) -->
+      <DataTopListComponent :statistics="statistics.slice(0, 3)" />
+
       <!-- Renders today's attendance chart -->
       <TodayAttendanceComponent></TodayAttendanceComponent>
 
-      <!-- Renders the bottom list of remaining statistics (after the first 4) -->
-      <DataBottomListComponent :statistics="statistics.slice(4)" />
+      <!-- Renders the bottom list of remaining statistics (after the first 3) -->
+      <DataBottomListComponent :statistics="statistics.slice(3)" />
     </div>
 
     <!-- Renders the table with today's scheduled classes -->
@@ -91,7 +91,7 @@ export default {
 /* Grid layout for the main content section of the dashboard */
 .main-section {
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 70% 30%;
   gap: 1rem;
 }
 </style>

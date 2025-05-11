@@ -36,10 +36,10 @@ export default {
 </template>
 
 <style scoped>
-/* Grid container for arranging the data items */
+/* Styling for the card container, uses a responsive grid layout */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
-  grid-gap: 5vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
 }
 </style>

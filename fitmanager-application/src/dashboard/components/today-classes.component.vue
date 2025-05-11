@@ -62,8 +62,6 @@ export default {
     <!-- PrimeVue datatable to display class schedule -->
     <pv-datatable
         :value="filterSchedule()"
-        paginator
-        rows="9"
         selectionMode="single"
     >
       <!-- Column for hour -->
@@ -81,7 +79,7 @@ export default {
 <style scoped>
 /* Style for the component wrapper */
 .today-classes {
-  margin: 2rem 1rem 2rem 0;
+  margin: 1rem 1rem 0 0;
   padding: 0 1rem;
   background: #fff;
   border-radius: 0.5rem;

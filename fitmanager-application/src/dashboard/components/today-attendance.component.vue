@@ -89,7 +89,7 @@ export default {
 
 <style scoped>
 .today-attendance-chart {
-  max-width: 90%;
+  min-height: 50%;
   margin: 2rem 1rem;
   background-color: white;
   padding: 20px;
