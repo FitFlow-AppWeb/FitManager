@@ -11,7 +11,10 @@
         <AccountInfo :user="user" />
       </div>
       <div class="right-section">
-        <SystemSettings :settings="user.settings" />
+        <SystemSettings
+            :settings="user.settings"
+            @settings-updated="handleSettingsUpdate"
+        />
       </div>
     </div>
   </div>
@@ -19,15 +22,20 @@
 
 <script>
 import { getUserInfo } from '../services/user-info-api.service';
-import HeaderComponent from './info.component.vue'; // Asegúrate que el import coincida
+import HeaderComponent from './info.component.vue';
 import AccountInfo from './settings.component.vue';
 import SystemSettings from './gym-profile.component.vue';
+import { useI18n } from 'vue-i18n';
 
 export default {
   components: {
-    HeaderComponent, // Nombre debe coincidir con el import
+    HeaderComponent,
     AccountInfo,
     SystemSettings
+  },
+  setup() {
+    const { locale } = useI18n();
+    return { locale };
   },
   data() {
     return {
@@ -38,16 +46,53 @@ export default {
   async created() {
     try {
       this.user = await getUserInfo();
-      console.log("Datos del usuario:", this.user); // Debug crucial
+      console.log("Datos del usuario:", this.user);
+      // Establecer el idioma inicial basado en los settings del usuario
+      if (this.user.settings?.language) {
+        this.setLocaleFromLanguage(this.user.settings.language);
+      }
     } catch (error) {
       console.error("Error:", error);
       this.error = "Error loading data";
-      // Datos de emergencia
-      this.user = {
+      this.user = this.getDefaultUserData();
+    }
+  },
+  methods: {
+    handleSettingsUpdate({ key, value }) {
+      // Actualizar el setting en el objeto user
+      this.user.settings[key] = value;
+
+      // Si el setting actualizado es el idioma, cambiar el locale
+      if (key === 'language') {
+        this.setLocaleFromLanguage(value);
+      }
+    },
+    setLocaleFromLanguage(language) {
+      // Mapear el lenguaje seleccionado al código de locale
+      const localeMap = {
+        'English': 'en',
+        'Español': 'es',
+        'Português': 'pt'
+      };
+      this.locale = localeMap[language] || 'en';
+    },
+    getDefaultUserData() {
+      return {
         role: "Admin",
         gymLogo: "/assets/gimnasio-profile.PNG",
         avatar: "/assets/logo-profile.PNG",
-        settings: {} // Asegura que settings exista
+        settings: {
+          language: "English",
+          units: "kg/cm",
+          timezone: "GMT-5",
+          notifications: "Enabled",
+          currency: "USD"
+        },
+        username: "powergym_peru",
+        email: "messi@gmail.com",
+        phone: "+51 999 530 751",
+        plan: "Platinum",
+        devices: 3
       };
     }
   }
