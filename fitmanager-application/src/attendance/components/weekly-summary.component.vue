@@ -60,6 +60,7 @@ export default {
 .weekly-summary-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 250px;
   height: auto;
   background-color: #ffffff;
