@@ -4,7 +4,7 @@ import Calendar from '../calendar/components/calendar.component.vue';
 import Members from '../members/components/member.component.vue';
 import Employees from '../employees/components/employees.component.vue';
 import Classes from '../classes/components/classes.component.vue';
-import Bookings from '../bookings/components/bookings.component.vue';
+import Inventory from '../inventory/components/inventory.component.vue';
 import Finances from '../finances/components/finances.component.vue';
 import Attendance from '../attendance/components/attendance.component.vue';
 import Notifications from '../notifications/components/notifications.component.vue';
@@ -45,9 +45,9 @@ const router = createRouter({
             component: Classes
         },
         {
-            path: '/bookings',
-            name: 'Bookings',
-            component: Bookings
+            path: '/inventory',
+            name: 'Inventory',
+            component: Inventory
         },
         {
             path: '/finances',

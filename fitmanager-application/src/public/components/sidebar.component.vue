@@ -39,9 +39,9 @@ const menuItems = ref([
     to: '/classes'
   },
   {
-    label: 'Bookings',
+    label: 'Inventory',
     svgContent: BookingsIcon,
-    to: '/bookings'
+    to: '/inventory'
   },
   {
     label: 'Finances',
