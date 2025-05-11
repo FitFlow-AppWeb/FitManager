@@ -2586,15 +2586,6 @@
       "last_maintenance": "2025-03-03",
       "next_maintenance": "2025-06-03",
       "trainer_id": 6
-    },
-    {
-      "id": "1746930502354",
-      "name": "Premium Boxing Gloves",
-      "description": "They are premium mate",
-      "quantity": 10,
-      "last_maintenance": "2025-03-12",
-      "next_maintenance": "2025-07-09",
-      "trainer_id": "13"
     }
   ]
 }

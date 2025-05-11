@@ -38,4 +38,14 @@ export class InventoryApiService {
                 throw error;
             });
     }
+
+    deleteInventory(inventory) {
+
+        return axios.delete(`http://localhost:3000/inventory/${inventory.id}`)
+            .catch(error => {
+                console.error('Error deleting item:', error);
+                throw error;
+            });
+    }
+
 }

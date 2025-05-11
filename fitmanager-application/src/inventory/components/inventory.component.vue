@@ -3,10 +3,13 @@ import { InventoryApiService } from "../services/inventory-api.service.js";
 import InventoryList from "./inventory-list.component.vue"
 import AddInventory from ".//add-inventory.component.vue"
 import EditInventory from "./edit-inventory.component.vue";
+import DeleteInventory from "./delete-inventory.component.vue";
+import DeleteClass from "../../classes/components/delete-class.component.vue";
+
 
 export default {
   name: "InventoryComponent",
-  components: {EditInventory, InventoryApiService, InventoryList, AddInventory},
+  components: {DeleteClass, EditInventory, InventoryApiService, InventoryList, AddInventory, DeleteInventory},
   data() {
     return {
       inventory: [],
@@ -65,6 +68,14 @@ export default {
           @close="showEditModal = false"
           @inventory-updated="fetchInventory"
       />
+      <DeleteInventory
+          v-if="showDeleteModal"
+          :inventory-data="selectedInventory"
+          :visible="showDeleteModal"
+          @close="showDeleteModal = false"
+          @deleted-inventory="fetchInventory"
+      />
+
     </div>
 
   </div>
