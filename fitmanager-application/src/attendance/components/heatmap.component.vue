@@ -120,7 +120,7 @@ export default {
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   margin: 20px auto;
