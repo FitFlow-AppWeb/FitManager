@@ -1,38 +1,38 @@
 <template>
   <div class="personal-info-container">
-    <h2 class="section-title">Personal Information</h2>
+    <h2 class="section-title">{{ $t('personalInfo.title') }}</h2>
     <div class="divider"></div>
 
     <div class="info-content">
       <div class="info-row">
-        <span class="label">Username:</span>
+        <span class="label">{{ $t('personalInfo.username') }}:</span>
         <span class="value">{{ user.username }}</span>
       </div>
       <div class="info-row">
-        <span class="label">Email:</span>
+        <span class="label">{{ $t('personalInfo.email') }}:</span>
         <span class="value">{{ user.email }}</span>
       </div>
       <div class="info-row">
-        <span class="label">Password:</span>
+        <span class="label">{{ $t('personalInfo.password') }}:</span>
         <span class="value">*********************</span>
       </div>
       <div class="info-row">
-        <span class="label">Phone Number:</span>
+        <span class="label">{{ $t('personalInfo.phone') }}:</span>
         <span class="value">{{ user.phone }}</span>
       </div>
       <div class="info-row">
-        <span class="label">Linked Devices:</span>
+        <span class="label">{{ $t('personalInfo.devices') }}:</span>
         <span class="value">{{ user.devices }}</span>
       </div>
       <div class="info-row">
-        <span class="label">Current Plan:</span>
+        <span class="label">{{ $t('personalInfo.plan') }}:</span>
         <span class="value">{{ user.plan }}</span>
       </div>
     </div>
 
     <div class="buttons-container">
-      <button class="edit-btn">Edit Account</button>
-      <button class="logout-btn">Logout</button>
+      <button class="edit-btn">{{ $t('buttons.edit') }}</button>
+      <button class="logout-btn">{{ $t('buttons.logout') }}</button>
     </div>
   </div>
 </template>

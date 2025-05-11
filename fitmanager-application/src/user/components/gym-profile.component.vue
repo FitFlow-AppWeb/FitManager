@@ -1,11 +1,11 @@
 <template>
   <div class="settings-container">
-    <h2 class="section-title">Settings</h2>
+    <h2 class="section-title">{{ $t('settings.title') }}</h2>
     <div class="divider"></div>
 
     <div class="settings-group">
       <div class="setting-item">
-        <span class="setting-label">Language:</span>
+        <span class="setting-label">{{ $t('settings.language') }}:</span>
         <Dropdown
             v-model="selectedLanguage"
             :options="languages"
@@ -14,7 +14,7 @@
       </div>
 
       <div class="setting-item">
-        <span class="setting-label">Measurement Unit:</span>
+        <span class="setting-label">{{ $t('settings.measurementUnit') }}:</span>
         <Dropdown
             v-model="selectedUnit"
             :options="units"
@@ -23,7 +23,7 @@
       </div>
 
       <div class="setting-item">
-        <span class="setting-label">Timezone:</span>
+        <span class="setting-label">{{ $t('settings.timezone') }}:</span>
         <Dropdown
             v-model="selectedTimezone"
             :options="timezones"
@@ -32,16 +32,16 @@
       </div>
 
       <div class="setting-item">
-        <span class="setting-label">Notifications:</span>
+        <span class="setting-label">{{ $t('settings.notifications') }}:</span>
         <Dropdown
             v-model="selectedNotifications"
-            :options="notificationOptions"
+            :options="notificationOptionsTranslated"
             @change="updateSettings('notifications', $event.value)"
         />
       </div>
 
       <div class="setting-item">
-        <span class="setting-label">Currency:</span>
+        <span class="setting-label">{{ $t('settings.currency') }}:</span>
         <Dropdown
             v-model="selectedCurrency"
             :options="currencies"
@@ -50,7 +50,7 @@
       </div>
 
       <div class="setting-item">
-        <span class="setting-label">Help</span>
+        <span class="setting-label">{{ $t('settings.help') }}</span>
         <span class="help-arrow">>></span>
       </div>
     </div>
@@ -59,6 +59,7 @@
 
 <script>
 import Dropdown from 'primevue/dropdown';
+import { useI18n } from 'vue-i18n';
 
 export default {
   components: { Dropdown },
@@ -68,22 +69,36 @@ export default {
       required: true
     }
   },
+  setup() {
+    const { t } = useI18n();
+    return { t };
+  },
   data() {
     return {
       selectedLanguage: this.settings.language,
-      languages: ['English', 'Español', 'Português'],
+      languages: ['English', 'Español' ],
       selectedUnit: this.settings.units,
       units: ['kg/cm', 'lb/in'],
       selectedTimezone: this.settings.timezone,
       timezones: ['GMT-5', 'GMT-4', 'GMT-3'],
       selectedNotifications: this.settings.notifications,
-      notificationOptions: ['Enabled', 'Disabled', 'Important only'],
-      selectedCurrency: this.settings.currency,
       currencies: ['USD', 'EUR', 'PEN', 'BRL']
     };
   },
+  computed: {
+    notificationOptionsTranslated() {
+      return [
+        this.t('notificationOptions.enabled'),
+        this.t('notificationOptions.disabled'),
+        this.t('notificationOptions.importantOnly')
+      ];
+    }
+  },
   methods: {
     updateSettings(key, value) {
+      if (key === 'language') {
+        this.$i18n.locale = value.toLowerCase().includes('español') ? 'es' : 'en';
+      }
       this.$emit('settings-updated', { key, value });
     }
   }
