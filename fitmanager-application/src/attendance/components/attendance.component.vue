@@ -25,6 +25,13 @@ import HistoricalSummaryComponent from './historical-summary.component.vue'
   width: 100%;
 }
 
+.attendance-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+
 .attendance-right {
   display: flex;
   flex-direction: column;
