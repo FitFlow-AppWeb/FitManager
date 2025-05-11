@@ -31,4 +31,11 @@ export class InventoryApiService {
         return axios.post("http://localhost:3000/inventory", inventory);
     }
 
+    updateInventory(inventory) {
+        return axios.put(`http://localhost:3000/inventory/${inventory.id}`, inventory)
+            .catch(error => {
+                console.error('Error updating inventory:', error);
+                throw error;
+            });
+    }
 }

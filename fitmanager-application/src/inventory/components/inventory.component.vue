@@ -2,10 +2,11 @@
 import { InventoryApiService } from "../services/inventory-api.service.js";
 import InventoryList from "./inventory-list.component.vue"
 import AddInventory from ".//add-inventory.component.vue"
+import EditInventory from "./edit-inventory.component.vue";
 
 export default {
   name: "InventoryComponent",
-  components: {InventoryApiService, InventoryList, AddInventory},
+  components: {EditInventory, InventoryApiService, InventoryList, AddInventory},
   data() {
     return {
       inventory: [],
@@ -58,10 +59,13 @@ export default {
           @close="showAddModal = false"
           @inventory-added="fetchInventory"
       />
+      <EditInventory
+          v-if="showEditModal"
+          :inventory-data="selectedInventory"
+          @close="showEditModal = false"
+          @inventory-updated="fetchInventory"
+      />
     </div>
-
-
-
 
   </div>
 </template>

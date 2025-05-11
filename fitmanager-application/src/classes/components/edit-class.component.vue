@@ -5,11 +5,11 @@ import axios from "axios";
 export default {
   name: "EditClass",
   props: {
-    classData: Object,  // Se recibe la clase a editar
+    classData: Object,
   },
   data() {
     return {
-      localClassData: { ...this.classData }, // Copia de la clase para editar
+      localClassData: { ...this.classData },
       trainers: [],
       statusOptions: [
         { name: "Confirmed", value: "Confirmed" },
