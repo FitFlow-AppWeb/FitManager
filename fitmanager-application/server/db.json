@@ -1986,7 +1986,6 @@
     "statistics": [
       { "title": "Total Members", "value": 125, "change": "+2.5%", "period": "Since last month", "image": "/assets/total-members.svg" },
       { "title": "Active Members", "value": 65, "change": "-10%", "period": "Since yesterday", "image": "/assets/active-members.svg" },
-      { "title": "Bookings/Week", "value": 54, "change": "+9.5%", "period": "Since last week", "image": "/assets/bookings-week.svg" },
       { "title": "Attendance/Week", "value": 316, "change": "-6%", "period": "Since last week", "image": "/assets/attendance-week.svg" },
       { "title": "Revenue/Month", "value": 1252, "change": "+5.8%", "period": "Since last month", "image": "/assets/revenue-month.svg" },
       { "title": "New Members/Month", "value": 11, "change": "+20%", "period": "Since last month", "image": "/assets/new-members-month.svg" },
