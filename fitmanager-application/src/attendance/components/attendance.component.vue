@@ -35,7 +35,7 @@ import HistoricalSummaryComponent from './historical-summary.component.vue'
 .attendance-right {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
   height: 100%;

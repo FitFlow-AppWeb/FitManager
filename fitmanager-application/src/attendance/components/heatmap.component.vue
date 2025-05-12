@@ -45,7 +45,7 @@ export default {
         })
         .catch(error => {
           console.error("Error fetching weekly heatmap data in component:", error);
-          this.weekly_heatmap_entity = null; // o una entidad vacía
+          this.weekly_heatmap_entity = null; 
           this.isLoading = false;
         });
     },
@@ -57,14 +57,15 @@ export default {
         return '#FFFFFF'; 
       }
 
-      if (value >= 65) return '#d73027'; 
-      if (value >= 60) return '#ef524f'; 
-      if (value >= 50) return '#f8694d'; 
-      if (value >= 40) return '#fca951'; 
-      if (value >= 30) return '#FDD870'; 
-      if (value >= 20) return '#E6F0A3'; 
-      if (value >= 15) return '#B2D99A'; 
-      if (value > 0)  return '#84C07C';  
+      if (value >= 65) return '#E90A0A'; 
+      if (value >= 60) return '#FF3131'; 
+      if (value >= 50) return '#FF6B6B'; 
+      if (value >= 40) return '#FF7B42';
+      if (value >= 35) return '#FFA382' 
+      if (value >= 30) return '#FFCF82'; 
+      if (value >= 20) return '#C1FF92'; 
+      if (value >= 15) return '#7EE669'; 
+      if (value > 0)  return '#44CF44';  
       return '#FFFFFF'; 
     }
   },
@@ -148,8 +149,8 @@ export default {
 }
 
 .heatmap-cell {
-  width: 70px;
-  height: 25px;
+  width: 80px;
+  height: 31px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -60,7 +60,7 @@ export default {
 .weekly-summary-container {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 270px;
   height: auto;
   background-color: #ffffff;
   border-radius: 8px;
@@ -83,6 +83,6 @@ export default {
 
 .weekly-summary-content {
   padding: 0 25px;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 </style>
