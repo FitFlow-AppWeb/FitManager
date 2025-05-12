@@ -11,8 +11,10 @@ import HistoricalSummaryComponent from './historical-summary.component.vue'
             <HeatmapComponent/>
         </div>
         <div class="attendance-right">
+          <div class="test">
             <WeeklySummaryComponent/>
             <HistoricalSummaryComponent/>
+          </div>
         </div>
     </div>
 </template>
@@ -32,10 +34,16 @@ import HistoricalSummaryComponent from './historical-summary.component.vue'
   width: 50%;
 }
 
+.test {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
 .attendance-right {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0;
   padding: 0;
   height: 100%;
