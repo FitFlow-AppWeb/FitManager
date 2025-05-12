@@ -34,6 +34,7 @@ export default {
     <div class="weekly-summary-header">
       <h4 class="weekly-summary-title">Historical Summary</h4>
     </div>
+    <pv-divider class="weekly-summary-divider" />
     <div v-if="isLoading" class="weekly-summary-content">
       Loading...
     </div>
@@ -41,7 +42,6 @@ export default {
       Error: {{ error }}
     </div>
     <div v-else-if="summary?.weeklyOverview" class="weekly-summary-content">
-      <pv-divider class="weekly-summary-divider" />
       <p>Average daily attendance: {{ summary.historicalSummary.average_daily_attendance }}</p>
       <p>Average daily absences: {{ summary.historicalSummary.average_daily_absences }}</p>
       <p>Overall attendance: {{ summary.historicalSummary.overall_attendance_rate }}</p>
@@ -61,8 +61,9 @@ export default {
   display: flex;
   flex-direction: column;
   width: 270px;
-  height: auto;
+  height: 290px;
   background-color: #ffffff;
+  color: #5C5C5C;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -82,7 +83,14 @@ export default {
 }
 
 .weekly-summary-content {
-  padding: 0 25px;
-  font-size: 0.9em;
+  padding: 0 20px;
+  font-size: 0.8em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    margin: 8px;
+  }
 }
 </style>
