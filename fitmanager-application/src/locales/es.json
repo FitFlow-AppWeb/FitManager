@@ -42,5 +42,27 @@
     "class-panel": "Clases el",
     "no-classes": "No hay clases para este día",
     "month-view": "Vista mensual de clases"
+  },
+  "employees": {
+    "full-name": "Nombre completo",
+    "age": "Edad",
+    "role": "Rol",
+    "wage": "Salario por hora",
+    "hours": "Horas por semana",
+    "specialities": "Especialidades",
+    "add-specialty": "Agregar especialidad",
+    "certifications": "Certificaciones",
+    "add-certification": "Agregar certificación",
+    "add": "Agregar",
+    "cancel": "Cancelar",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "address": "Dirección",
+    "profile-picture": "URL de la foto de perfil",
+    "search": "Buscar por nombre",
+    "cleaning": "Limpieza",
+    "trainer": "Entrenador",
+    "group-instructor": "Instructor de grupo",
+    "reception": "Recepción"
   }
 }

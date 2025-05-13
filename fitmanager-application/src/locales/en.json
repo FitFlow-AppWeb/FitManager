@@ -42,5 +42,27 @@
     "class-panel": "Classes for",
     "no-classes": "No classes scheduled for this day",
     "month-view": "Monthly Class View"
+  },
+  "employees": {
+    "full-name": "Full Name",
+    "age": "Age",
+    "role": "Role",
+    "wage": "Hourle Wage",
+    "hours": "Hours Per Week",
+    "specialities": "Specialities",
+    "add-specialty": "Add Specialty",
+    "certifications": "Certifications",
+    "add-certification": "Add Certification",
+    "add": "Add",
+    "cancel": "Cancel",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "profile-picture": "Profile Picture URL",
+    "search": "Search by name",
+    "cleaning": "Cleaning",
+    "trainer": "Trainer",
+    "group-instructor": "Group instructor",
+    "reception": "Reception"
   }
 }
