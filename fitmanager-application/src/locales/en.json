@@ -1,0 +1,34 @@
+{
+  "profile": {
+    "settings": {
+      "title": "Settings",
+      "language": "Language",
+      "measurementUnit": "Measurement Unit",
+      "timezone": "Timezone",
+      "notifications": "Notifications",
+      "currency": "Currency",
+      "help": "Help"
+    },
+    "personal-info": {
+      "title": "Personal Information",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "phone": "Phone Number",
+      "devices": "Linked Devices",
+      "plan": "Current Plan"
+    },
+    "buttons": {
+      "edit": "Edit Account",
+      "logout": "Logout"
+    },
+    "notificationOptions": {
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "important-only": "Important only"
+    }
+  },
+  "general": {
+    "loading": "Loading"
+  }
+}

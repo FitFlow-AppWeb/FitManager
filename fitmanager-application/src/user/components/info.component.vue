@@ -1,20 +1,31 @@
-<template>
-  <div class="header-container">
-    <!-- Debug: Muestra los datos recibidos -->
-    <!-- <pre>{{ user }}</pre> -->
+<script>
+export default {
+  props: {
+    user: Object,
+    required: true
+  },
+  methods: {
+    handleImageError(e) {
+      console.error("Error loading image:", e.target.src);
+    }
+  }
+};
+</script>
 
+<template>
+  <div v-if="user" class="header-container">
     <div class="left-image">
       <img
           :src="user.gymLogo"
-          alt="Gym Logo"
+          alt="User gym logo"
           class="logo"
           @error="handleImageError"
       >
     </div>
 
     <div class="center-content">
-      <h1 class="gym-title">POWERGYM</h1>
-      <p class="user-role">{{ user.role || 'Admin' }}</p>
+      <h1 class="gym-title">{{user.name}}</h1>
+      <p class="user-role">{{ user.role }}</p>
     </div>
 
     <div class="right-image">
@@ -26,26 +37,11 @@
       >
     </div>
   </div>
-</template>
 
-<script>
-export default {
-  props: {
-    user: {
-      type: Object,
-      required: true,
-      default: () => ({})
-    }
-  },
-  methods: {
-    handleImageError(e) {
-      console.error("Error loading image:", e.target.src);
-      // Puedes establecer imágenes por defecto aquí si fallan
-      e.target.src = "/assets/default-image.png";
-    }
-  }
-};
-</script>
+  <div v-else>
+    {{ $t('general.loading') }} . . .
+  </div>
+</template>
 
 <style scoped>
 .header-container {

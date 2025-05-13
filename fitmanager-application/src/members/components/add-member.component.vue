@@ -30,18 +30,24 @@ export default {
   },
   methods: {
     async submitForm() {
+      const formattedExpirationDate = this.expirationDate instanceof Date
+          ? this.expirationDate.toISOString().split('T')[0]
+          : this.expirationDate;
+      const formattedStartDate = this.membershipStartDate instanceof Date
+          ? this.membershipStartDate.toISOString().split('T')[0]
+          : this.membershipStartDate;
       const newMember = {
         id: Date.now(),
         fullName: this.fullName,
         age: this.age,
         membershipStatus: this.membershipStatus,
         membershipType: this.membershipType,
-        expirationDate: this.expirationDate,
+        expirationDate: formattedExpirationDate,
         dni: this.dni,
         email: this.email,
         phone: this.phone,
         address: this.address,
-        membershipStartDate: this.membershipStartDate,
+        membershipStartDate: formattedStartDate,
         profilePicture: this.profilePicture
       };
 

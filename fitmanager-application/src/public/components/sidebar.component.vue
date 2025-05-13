@@ -39,9 +39,9 @@ const menuItems = ref([
     to: '/classes'
   },
   {
-    label: 'Bookings',
+    label: 'Inventory',
     svgContent: BookingsIcon,
-    to: '/bookings'
+    to: '/inventory'
   },
   {
     label: 'Finances',
@@ -119,6 +119,7 @@ const menuItems = ref([
     font-weight: normal;
     margin: 0;
     padding-right: 10px;
+    color: #3A4949;
   }
   .app-logo {
     height: 36px;

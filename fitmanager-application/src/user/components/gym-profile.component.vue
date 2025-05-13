@@ -1,116 +1,57 @@
-<template>
-  <div class="settings-container">
-    <h2 class="section-title">{{ $t('settings.title') }}</h2>
-    <div class="divider"></div>
-
-    <div class="settings-group">
-      <div class="setting-item">
-        <span class="setting-label">{{ $t('settings.language') }}:</span>
-        <Dropdown
-            v-model="selectedLanguage"
-            :options="languages"
-            @change="updateSettings('language', $event.value)"
-        />
-      </div>
-
-      <div class="setting-item">
-        <span class="setting-label">{{ $t('settings.measurementUnit') }}:</span>
-        <Dropdown
-            v-model="selectedUnit"
-            :options="units"
-            @change="updateSettings('units', $event.value)"
-        />
-      </div>
-
-      <div class="setting-item">
-        <span class="setting-label">{{ $t('settings.timezone') }}:</span>
-        <Dropdown
-            v-model="selectedTimezone"
-            :options="timezones"
-            @change="updateSettings('timezone', $event.value)"
-        />
-      </div>
-
-      <div class="setting-item">
-        <span class="setting-label">{{ $t('settings.notifications') }}:</span>
-        <Dropdown
-            v-model="selectedNotifications"
-            :options="notificationOptionsTranslated"
-            @change="updateSettings('notifications', $event.value)"
-        />
-      </div>
-
-      <div class="setting-item">
-        <span class="setting-label">{{ $t('settings.currency') }}:</span>
-        <Dropdown
-            v-model="selectedCurrency"
-            :options="currencies"
-            @change="updateSettings('currency', $event.value)"
-        />
-      </div>
-
-      <div class="setting-item">
-        <span class="setting-label">{{ $t('settings.help') }}</span>
-        <span class="help-arrow">>></span>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
-import Dropdown from 'primevue/dropdown';
-import { useI18n } from 'vue-i18n';
+import { UserApiService } from '../services/user-api.service.js';
 
 export default {
-  components: { Dropdown },
+  name: 'AccountInfo',
+  components: { UserApiService},
   props: {
-    settings: {
-      type: Object,
-      required: true
-    }
+    user: Object,
+    required: true
   },
-  setup() {
-    const { t } = useI18n();
-    return { t };
-  },
-  data() {
-    return {
-      selectedLanguage: this.settings.language,
-      languages: ['English', 'Español' ],
-      selectedUnit: this.settings.units,
-      units: ['kg/cm', 'lb/in'],
-      selectedTimezone: this.settings.timezone,
-      timezones: ['GMT-5', 'GMT-4', 'GMT-3'],
-      selectedNotifications: this.settings.notifications,
-      currencies: ['USD', 'EUR', 'PEN', 'BRL']
-    };
-  },
-  computed: {
-    notificationOptionsTranslated() {
-      return [
-        this.t('notificationOptions.enabled'),
-        this.t('notificationOptions.disabled'),
-        this.t('notificationOptions.importantOnly')
-      ];
-    }
-  },
-  methods: {
-    updateSettings(key, value) {
-      if (key === 'language') {
-        this.$i18n.locale = value.toLowerCase().includes('español') ? 'es' : 'en';
-      }
-      this.$emit('settings-updated', { key, value });
-    }
-  }
 };
 </script>
 
+<template>
+  <div v-if="user" class="personal-info-container">
+    <h2 class="section-title">{{ $t('profile.personal-info.title') }}</h2>
+    <div class="divider"></div>
+
+    <div class="info-content">
+      <div class="info-row">
+        <span class="label">{{ $t('profile.personal-info.username') }}</span>
+        <span class="value">{{ user.username }}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">{{ $t('profile.personal-info.email') }}:</span>
+        <span class="value">{{ user.email }}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">{{ $t('profile.personal-info.password') }}:</span>
+        <span class="value">*********************</span>
+      </div>
+      <div class="info-row">
+        <span class="label">{{ $t('profile.personal-info.phone') }}:</span>
+        <span class="value">{{ user.phone }}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">{{ $t('profile.personal-info.devices') }}:</span>
+        <span class="value">{{ user.devices }}</span>
+      </div>
+    </div>
+
+    <div class="buttons-container">
+      <button class="edit-btn">{{ $t('profile.buttons.edit') }}</button>
+      <button class="logout-btn">{{ $t('profile.buttons.logout') }}</button>
+    </div>
+  </div>
+
+  <div v-else>
+    {{ $t('general.loading') }} . . .
+  </div>
+</template>
+
 <style scoped>
-.settings-container {
-  background: white;
-  border-radius: 10px;
-  padding: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+.personal-info-container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -118,63 +59,75 @@ export default {
 
 .section-title {
   color: #2c3e50;
-  font-size: 1.4rem;
-  margin-bottom: 15px;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
 }
 
 .divider {
   height: 1px;
-  background-color: #e0e0e0;
+  background-color: #a0c4e0;
   margin-bottom: 20px;
 }
 
-.settings-group {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+.info-content {
   flex-grow: 1;
-}
-
-.settings-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.settings-group {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.setting-item {
+.account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre elementos */
+}
+
+.info-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid #f5f5f5;
 }
 
-.setting-label {
+.label {
   font-weight: 500;
   color: #555;
-  font-size: 0.95rem;
 }
 
-.help-arrow {
-  color: #3498db;
-  font-weight: bold;
-  font-size: 1.1rem;
+.value {
+  color: #333;
+  font-weight: 400;
 }
 
-/* Ajustes para PrimeVue Dropdown */
-.p-dropdown {
-  width: 180px;
-  border: 1px solid #ddd;
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.edit-btn, .logout-btn {
+  padding: 10px 20px;
   border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.p-dropdown .p-dropdown-label {
-  padding: 8px 12px;
+.edit-btn {
+  background: white;
+  border: 1px solid #3498db;
+  color: #3498db;
+}
+
+.edit-btn:hover {
+  background: #f0f8ff;
+}
+
+.logout-btn {
+  background: white;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+}
+
+.logout-btn:hover {
+  background: #fff0f0;
 }
 </style>

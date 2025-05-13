@@ -1,34 +1,13 @@
-<template>
-  <div class="dashboard-container">
-    <!-- 1. CUADRO SUPERIOR (Header) -->
-    <div class="top-section">
-      <HeaderComponent :user="user" />
-    </div>
-
-    <!-- 2. CUADROS INFERIORES (Mitad izquierda/derecha) -->
-    <div class="bottom-container">
-      <div class="left-section">
-        <AccountInfo :user="user" />
-      </div>
-      <div class="right-section">
-        <SystemSettings
-            :settings="user.settings"
-            @settings-updated="handleSettingsUpdate"
-        />
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
-import { getUserInfo } from '../services/user-info-api.service';
+import { UserApiService } from '../services/user-api.service.js';
 import HeaderComponent from './info.component.vue';
-import AccountInfo from './settings.component.vue';
-import SystemSettings from './gym-profile.component.vue';
+import SystemSettings from './settings.component.vue';
+import AccountInfo from './gym-profile.component.vue';
 import { useI18n } from 'vue-i18n';
 
 export default {
   components: {
+    UserApiService,
     HeaderComponent,
     AccountInfo,
     SystemSettings
@@ -43,61 +22,65 @@ export default {
       error: null
     };
   },
-  async created() {
-    try {
-      this.user = await getUserInfo();
-      console.log("Datos del usuario:", this.user);
-      // Establecer el idioma inicial basado en los settings del usuario
-      if (this.user.settings?.language) {
-        this.setLocaleFromLanguage(this.user.settings.language);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      this.error = "Error loading data";
-      this.user = this.getDefaultUserData();
-    }
-  },
   methods: {
+    fetchUserInfo() {
+      const service = new UserApiService();
+      service.getUserById(1).then(data => {
+        this.user = data;
+      });
+
+    },
     handleSettingsUpdate({ key, value }) {
       // Actualizar el setting en el objeto user
       this.user.settings[key] = value;
-
       // Si el setting actualizado es el idioma, cambiar el locale
       if (key === 'language') {
         this.setLocaleFromLanguage(value);
       }
+      const service = new UserApiService();
+      service.updateUserSettings(this.user.id, { [key]: value });
     },
     setLocaleFromLanguage(language) {
       // Mapear el lenguaje seleccionado al código de locale
       const localeMap = {
         'English': 'en',
         'Español': 'es',
-        'Português': 'pt'
       };
       this.locale = localeMap[language] || 'en';
     },
-    getDefaultUserData() {
-      return {
-        role: "Admin",
-        gymLogo: "/assets/gimnasio-profile.PNG",
-        avatar: "/assets/logo-profile.PNG",
-        settings: {
-          language: "English",
-          units: "kg/cm",
-          timezone: "GMT-5",
-          notifications: "Enabled",
-          currency: "USD"
-        },
-        username: "powergym_peru",
-        email: "messi@gmail.com",
-        phone: "+51 999 530 751",
-        plan: "Platinum",
-        devices: 3
-      };
-    }
+  },
+  mounted(){
+    this.fetchUserInfo();
   }
 };
 </script>
+
+<template>
+  <div v-if="user" class="dashboard-container">
+    <!-- 1. CUADRO SUPERIOR (Header) -->
+    <div class="top-section">
+      <HeaderComponent v-if="user" :user="user" />
+    </div>
+
+    <!-- 2. CUADROS INFERIORES (Mitad izquierda/derecha) -->
+    <div class="bottom-container">
+      <div class="left-section">
+        <AccountInfo v-if="user" :user="user" />
+      </div>
+      <div class="right-section">
+        <SystemSettings
+            v-if="user"
+            :settings="user.settings"
+            @settings-updated="handleSettingsUpdate"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div v-else>
+    {{ $t('general.loading') }} . . .
+  </div>
+</template>
 
 <style scoped>
 .dashboard-container {

@@ -1,0 +1,34 @@
+{
+  "profile": {
+    "settings": {
+      "title": "Configuración",
+      "language": "Idioma",
+      "measurementUnit": "Unidad de medida",
+      "timezone": "Zona horaria",
+      "notifications": "Notificaciones",
+      "currency": "Moneda",
+      "help": "Ayuda"
+    },
+    "personal-info": {
+      "title": "Información Personal",
+      "username": "Usuario",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "phone": "Número de teléfono",
+      "devices": "Dispositivos vinculados",
+      "plan": "Plan actual"
+    },
+    "buttons": {
+      "edit": "Editar cuenta",
+      "logout": "Cerrar sesión"
+    },
+    "notificationOptions": {
+      "enabled": "Activadas",
+      "disabled": "Desactivadas",
+      "important-only": "Solo importantes"
+    }
+  },
+  "general": {
+    "loading": "Cargando"
+  }
+}
