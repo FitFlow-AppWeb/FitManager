@@ -1,0 +1,94 @@
+{
+  "receivednotification": [
+    {
+      "id": "1",
+      "title": "Reunión de equipo",
+      "body": "Reunión a las 3 PM",
+      "sender": "john@example.com",
+      "recipients": ["mary@example.com", "jane@example.com"],
+      "date": "2025-05-10T10:00:00",
+      "status": "unread"
+    },
+    {
+      "id": "2",
+      "title": "Actualización del sistema",
+      "body": "El sistema se actualizará el 12 de mayo.",
+      "sender": "admin@example.com",
+      "recipients": ["john@example.com"],
+      "date": "2025-05-09T14:00:00",
+      "status": "unread"
+    },
+    {
+      "id": "3",
+      "title": "Cambio en el horario de trabajo",
+      "body": "Se cambia el horario de entrada para el próximo lunes.",
+      "sender": "hr@example.com",
+      "recipients": ["john@example.com", "mary@example.com"],
+      "date": "2025-05-07T12:00:00",
+      "status": "read"
+    },
+    {
+      "id": "4",
+      "title": "Notificación de vacaciones",
+      "body": "Tu solicitud de vacaciones ha sido aprobada del 15 al 25 de mayo.",
+      "sender": "admin@example.com",
+      "recipients": ["john@example.com"],
+      "date": "2025-05-05T09:00:00",
+      "status": "unread"
+    },
+    {
+      "id": "5",
+      "title": "Nuevo mensaje en el foro",
+      "body": "Alguien ha respondido a tu publicación en el foro de discusión.",
+      "sender": "forum@example.com",
+      "recipients": ["john@example.com"],
+      "date": "2025-05-03T16:30:00",
+      "status": "unread"
+    },
+    {
+      "id": "6",
+      "title": "Informe mensual disponible",
+      "body": "El informe mensual de desempeño ya está disponible en la intranet.",
+      "sender": "admin@example.com",
+      "recipients": ["mary@example.com", "john@example.com"],
+      "date": "2025-05-01T08:00:00",
+      "status": "read"
+    },
+    {
+      "id": "7",
+      "title": "Notificación de cumpleaños",
+      "body": "Hoy es el cumpleaños de tu compañero de trabajo, ¡felicitaciones!",
+      "sender": "hr@example.com",
+      "recipients": ["john@example.com"],
+      "date": "2025-04-30T10:00:00",
+      "status": "read"
+    },
+    {
+      "id": "8",
+      "title": "Recordatorio de reunión",
+      "body": "Recordatorio: reunión de seguimiento de proyecto mañana a las 11 AM.",
+      "sender": "manager@example.com",
+      "recipients": ["john@example.com", "mary@example.com"],
+      "date": "2025-04-28T08:00:00",
+      "status": "unread"
+    },
+    {
+      "id": "9",
+      "title": "Mantenimiento programado",
+      "body": "El mantenimiento del servidor se realizará el 5 de mayo de 1 AM a 4 AM.",
+      "sender": "admin@example.com",
+      "recipients": ["john@example.com", "mary@example.com"],
+      "date": "2025-04-25T12:00:00",
+      "status": "unread"
+    },
+    {
+      "id": "10",
+      "title": "Cambio de políticas de empresa",
+      "body": "Hemos actualizado nuestras políticas internas, por favor revisa los cambios.",
+      "sender": "hr@example.com",
+      "recipients": ["john@example.com", "mary@example.com", "jane@example.com"],
+      "date": "2025-04-20T09:30:00",
+      "status": "read"
+    }
+  ]
+}

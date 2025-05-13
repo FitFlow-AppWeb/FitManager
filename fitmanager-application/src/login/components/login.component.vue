@@ -1,5 +1,3 @@
-
-
 <script>
 import LogoTitle from "./logo-title.component.vue";
 import LoginForm from "./login-form.component.vue";
@@ -11,6 +9,12 @@ export default {
     LoginForm,
     CreateAccountButton,
   },
+  methods: {
+    loginFinished() {
+      // Emitir un evento a App.vue para indicar que el login fue exitoso
+      this.$emit("login-exitoso", true);
+    }
+  }
 };
 </script>
 
@@ -20,12 +24,13 @@ export default {
     <LogoTitle />
 
     <!-- Formulario de Login -->
-    <LoginForm />
+    <LoginForm @login="loginFinished" />
 
     <!-- Botón de Crear Cuenta -->
     <CreateAccountButton />
   </div>
 </template>
+
 <style scoped>
 .login-container {
   width: 100%;

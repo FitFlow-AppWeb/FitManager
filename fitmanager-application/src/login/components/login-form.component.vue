@@ -1,3 +1,46 @@
+<script>
+import { AdminApiService } from "../services/admin-api.service.js";
+import { useRouter } from 'vue-router';
+
+export default {
+  data() {
+    return {
+      email: '',
+      password: '',
+      passwordVisible: false,
+      error: null,
+    };
+  },
+  methods: {
+    async submitForm() {
+      this.error = null; // Reset error message
+
+      try {
+        const admins = await new AdminApiService().getAllAdmins();
+        const admin = admins.find(
+            (admin) => admin.email === this.email && admin.password === this.password
+        );
+
+        if (admin) {
+          // Guardamos el estado de autenticación en localStorage
+          localStorage.setItem('isAuthenticated', 'true');
+
+          // Emitir evento para que App.vue cambie el estado de autenticación
+          this.$emit('login-success');
+        } else {
+          this.error = "Correo o contraseña incorrectos.";
+        }
+      } catch (error) {
+        console.error('Error al intentar iniciar sesión:', error);
+        this.error = 'Hubo un error al procesar tu solicitud.';
+      }
+    },
+    togglePasswordVisibility() {
+      this.passwordVisible = !this.passwordVisible;
+    },
+  },
+};
+</script>
 <template>
   <div class="login-form-container">
     <h2>Iniciar Sesión</h2>
@@ -46,49 +89,7 @@
   </div>
 </template>
 
-<script>
-import { AdminApiService } from "../services/admin-api.service.js";
-import { useRouter } from 'vue-router';
 
-export default {
-  data() {
-    return {
-      email: '',
-      password: '',
-      passwordVisible: false,
-      error: null,
-    };
-  },
-  methods: {
-    async submitForm() {
-      this.error = null; // Reset error message
-
-      // Llamada al servicio de la API para obtener los administradores
-      try {
-        const admins = await new AdminApiService().getAllAdmins();
-
-        // Verificamos si el usuario y la contraseña coinciden
-        const admin = admins.find(
-            (admin) => admin.email === this.email && admin.password === this.password
-        );
-
-        if (admin) {
-          // Si la autenticación es exitosa, redirigir a /dashboard
-          this.$router.push({ name: 'Dashboard' });
-        } else {
-          this.error = "Correo o contraseña incorrectos.";
-        }
-      } catch (error) {
-        console.error('Error al intentar iniciar sesión:', error);
-        this.error = 'Hubo un error al procesar tu solicitud.';
-      }
-    },
-    togglePasswordVisibility() {
-      this.passwordVisible = !this.passwordVisible;
-    },
-  },
-};
-</script>
 
 <style scoped>
 /* Contenedor del formulario */
@@ -98,7 +99,7 @@ export default {
   margin: 0 auto;
   padding: 30px;
   background-color: #fff;
-  border-radius: 15px; /* Borde más redondeado */
+  border-radius: 15px; /* Borde más  redondeado */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
   font-family: 'Arial', sans-serif;
@@ -146,7 +147,6 @@ button[type="button"] {
   margin-top: 5px;
   background: none;
   border: none;
-  color: #0000;
   cursor: pointer;
   font-size: 14px;
 }

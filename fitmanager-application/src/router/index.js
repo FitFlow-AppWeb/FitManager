@@ -7,13 +7,21 @@ import Classes from '../classes/components/classes.component.vue';
 import Bookings from '../bookings/components/bookings.component.vue';
 import Finances from '../finances/components/finances.component.vue';
 import Attendance from '../attendance/components/attendance.component.vue';
-import Notifications from '../notifications/components/notifications.component.vue';
+import Notifications from '../notifications/components/notification.component.vue';
 import Profile from '../user/components/profile.component.vue';
+import Login from '../login/components/login.component.vue'; // Importa el componente de login
+import AppLayout from '../public/components/app-layout.componet.vue'; // Importa correctamente el layout
+
 import { useStore } from 'vuex'; // Importar vuex para manejar el estado
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
+        {
+            path: '/',
+            name: 'Login',
+            component: Login,
+        },
         {
             path: '/',
             name: 'Home',
@@ -82,15 +90,5 @@ const router = createRouter({
     ],
 });
 
-// Protección de rutas privadas
-router.beforeEach((to, from, next) => {
-    const isAuthenticated = localStorage.getItem('isAuthenticated'); // Comprobar si el usuario está autenticado (puedes usar Vuex o localStorage)
-
-    if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
-        next('/'); // Si no está autenticado, redirigir a login
-    } else {
-        next(); // Si está autenticado, permitir la navegación
-    }
-});
 
 export default router;
