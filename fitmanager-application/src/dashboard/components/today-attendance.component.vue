@@ -51,7 +51,7 @@ export default {
                 },
                 title: {
                   display: true,
-                  text: this.$t('dashboard.chartTitle')
+                  text: this.$t('dashboard.chart-title')
                 }
               },
               scales: {

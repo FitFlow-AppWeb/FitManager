@@ -22,7 +22,7 @@
       "edit": "Editar cuenta",
       "logout": "Cerrar sesión"
     },
-    "notificationOptions": {
+    "notification-options": {
       "enabled": "Activadas",
       "disabled": "Desactivadas",
       "important-only": "Solo importantes"
@@ -32,7 +32,7 @@
     "loading": "Cargando"
   },
   "dashboard": {
-    "chartTitle": "Asistencia de hoy por hora",
+    "chart-title": "Asistencia de hoy por hora",
     "today-classes": "Clases de hoy",
     "no-classes": "Sin clases",
     "classes": "Clases",

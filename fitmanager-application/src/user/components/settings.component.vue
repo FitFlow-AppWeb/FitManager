@@ -25,9 +25,9 @@ export default {
   computed: {
     notificationOptions() {
       return [
-        { value: 'enabled', label: this.$t('profile.notificationOptions.enabled') },
-        { value: 'disabled', label: this.$t('profile.notificationOptions.disabled') },
-        { value: 'important-only', label: this.$t('profile.notificationOptions.important-only') }
+        { value: 'enabled', label: this.$t('profile.notification-options.enabled') },
+        { value: 'disabled', label: this.$t('profile.notification-options.disabled') },
+        { value: 'important-only', label: this.$t('profile.notification-options.important-only') }
       ];
     }
   },

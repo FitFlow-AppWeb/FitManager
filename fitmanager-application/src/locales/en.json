@@ -22,7 +22,7 @@
       "edit": "Edit Account",
       "logout": "Logout"
     },
-    "notificationOptions": {
+    "notification-options": {
       "enabled": "Enabled",
       "disabled": "Disabled",
       "important-only": "Important only"
@@ -32,7 +32,7 @@
     "loading": "Loading"
   },
   "dashboard": {
-    "chartTitle": "Today's Attendance by Hour",
+    "chart-title": "Today's Attendance by Hour",
     "today-classes": "Today's Classes",
     "no-classes": "No classes",
     "classes": "Classes",
