@@ -50,23 +50,23 @@ export default {
       <!-- Personal info -->
       <div class="section">
         <p><strong>DNI:</strong> {{ employee.dni }}</p>
-        <p><strong>Age:</strong> {{ employee.age }}</p>
-        <p><strong>Email:</strong> {{ employee.email }}</p>
-        <p><strong>Phone:</strong> {{ employee.phone }}</p>
-        <p><strong>Address:</strong> {{ employee.address }}</p>
+        <p><strong>{{ $t('employees.age')}}:</strong> {{ employee.age }}</p>
+        <p><strong>{{ $t('employees.email')}}:</strong> {{ employee.email }}</p>
+        <p><strong>{{ $t('employees.phone')}}:</strong> {{ employee.phone }}</p>
+        <p><strong>{{ $t('employees.address')}}:</strong> {{ employee.address }}</p>
       </div>
 
       <hr />
 
       <!-- Membership dates & type -->
       <div class="section">
-        <p><strong>Weekly Hours:</strong> {{ employee.hoursPerWeek }}</p>
-        <p><strong>Hourly Wage: </strong> {{ employee.hourlyWage }}</p>
-        <p><strong>Specialties: </strong>
+        <p><strong>{{ $t('employees.weekly-hours')}}:</strong> {{ employee.hoursPerWeek }}</p>
+        <p><strong>{{ $t('employees.hourly-wage')}}: </strong> {{ employee.hourlyWage }}</p>
+        <p><strong>{{ $t('employees.specialities')}}: </strong>
           <span v-if="employee.specialties.length">{{ employee.specialties.join(', ') }}</span>
           <span v-else>None</span>
         </p>
-        <p><strong>Certifications: </strong>
+        <p><strong>{{ $t('employees.certifications')}}: </strong>
           <span v-if="employee.certifications.length">{{ employee.certifications.join(', ') }}</span>
           <span v-else>None</span>
         </p>
@@ -77,9 +77,9 @@ export default {
 
       <!-- Action buttons -->
       <div class="actions">
-        <pv-button label="Edit Details" class="action-btn" @click="$emit('edit-request')"/>
-        <pv-button label="Schedule Assignment" class="action-btn" />
-        <pv-button label="Fire" class="action-btn"  @click="$emit('fire-request')"/>
+        <pv-button :label="$t('employees.edit-details')" class="action-btn" @click="$emit('edit-request')"/>
+        <pv-button :label="$t('employees.schedule-assignment')" class="action-btn" />
+        <pv-button :label="$t('employees.fire')" class="action-btn"  @click="$emit('fire-request')"/>
       </div>
     </template>
   </pv-card>

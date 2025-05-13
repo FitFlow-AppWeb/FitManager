@@ -16,10 +16,10 @@ export default {
       address: "",
       profilePicture: "",
       roleOptions: [
-        { name: "Cleaning", value: "cleaning" },
-        { name: "Trainer", value: "trainer" },
-        { name: "Group Instructor", value: "group instructor" },
-        { name: "Reception", value: "Reception" }
+        { name: this.$t('employees.cleaning'), value: "cleaning" },
+        { name: this.$t('employees.trainer'), value: "trainer" },
+        { name: this.$t('employees.group-instructor'), value: "group instructor" },
+        { name: this.$t('employees.reception'), value: "Reception" }
 
       ],
       specialties: [],
@@ -79,18 +79,18 @@ export default {
 <template>
   <div class="modal-overlay">
     <div class="modal-content">
-      <h2 class="modal-title">Add New Employee</h2>
+      <h2 class="modal-title">{{ $t('employees.add-new-employee') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="fullName" placeholder="Full Name" class="input-field" required />
-        <pv-inputtext v-model.number="age" placeholder="Age" type="number" class="input-field" required />
-        <pv-select v-model="role" :options="roleOptions" placeholder="Role" option-label="name" option-value="value" class="input-field" required />
-        <pv-inputtext v-model.number="hourlyWage" placeholder="Hourly Wage" type="number" class="input-field" required />
-        <pv-inputtext v-model.number="hoursPerWeek" placeholder="Hours Per Week" type="number" class="input-field" required />
+        <pv-inputtext v-model="fullName" :placeholder="$t('employees.full-name')" class="input-field" required />
+        <pv-inputtext v-model.number="age" :placeholder="$t('employees.age')" type="number" class="input-field" required />
+        <pv-select v-model="role" :options="roleOptions" :placeholder="$t('employees.role')" option-label="name" option-value="value" class="input-field" required />
+        <pv-inputtext v-model.number="hourlyWage" :placeholder="$t('employees.wage')" type="number" class="input-field" required />
+        <pv-inputtext v-model.number="hoursPerWeek" :placeholder="$t('employees.hours')" type="number" class="input-field" required />
         <div class="input-field">
-          <label>Specialties</label>
+          <label>{{$t('employees.specialities')}}</label>
           <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <pv-inputtext v-model="newSpecialty" placeholder="Add Specialty" />
-            <pv-button icon="pi pi-plus" @click="addSpecialty" label="Add"  class="add-button2"/>
+            <pv-inputtext v-model="newSpecialty" :placeholder="$t('employees.add-specialty')" />
+            <pv-button icon="pi pi-plus" @click="addSpecialty" :label="$t('general.add')"  class="add-button2"/>
           </div>
           <ul style="margin-top: 0.5rem; padding-left: 1rem;">
             <li v-for="(spec, index) in specialties" :key="'spec-' + index" style="margin-top: 0.25rem;">
@@ -101,9 +101,9 @@ export default {
         </div>
 
         <div class="input-field">
-          <label>Certifications</label>
+          <label>{{ $t('employees.certifications') }}</label>
           <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <pv-inputtext v-model="newCertification" placeholder="Add Certification"  />
+            <pv-inputtext v-model="newCertification" :placeholder="$t('employees.add-certification')"  />
             <pv-button icon="pi pi-plus" @click="addCertification" label="Add" class="add-button2" />
           </div>
           <ul style="margin-top: 0.5rem; padding-left: 1rem;">
@@ -114,14 +114,14 @@ export default {
           </ul>
         </div>
         <pv-inputtext v-model="dni" placeholder="DNI" class="input-field" required />
-        <pv-inputtext v-model="email" type="email" placeholder="Email" class="input-field" required />
-        <pv-inputtext v-model="phone" type="tel" placeholder="Phone" class="input-field" required />
-        <pv-inputtext v-model="address" placeholder="Address" class="input-field" required />
-        <pv-inputtext v-model="profilePicture" type="url" placeholder="Profile Picture URL" class="input-field" required />
+        <pv-inputtext v-model="email" type="email" :placeholder="$t('employees.email')" class="input-field" required />
+        <pv-inputtext v-model="phone" type="tel" :placeholder="$t('employees.phone')" class="input-field" required />
+        <pv-inputtext v-model="address" :placeholder="$t('employees.address')" class="input-field" required />
+        <pv-inputtext v-model="profilePicture" type="url" :placeholder="$t('employees.profile-picture')" class="input-field" required />
 
         <div class="actions">
-          <pv-button label="Add" type="submit" class="add-button" />
-          <pv-button label="Cancel" type="button" @click="$emit('close')" class="cancel-button" />
+          <pv-button :label="$t('general.add')" type="submit" class="add-button" />
+          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
         </div>
       </form>
     </div>

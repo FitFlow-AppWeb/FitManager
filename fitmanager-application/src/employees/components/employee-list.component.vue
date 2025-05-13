@@ -105,7 +105,7 @@ export default {
           <div class="left-group">
             <pv-inputtext
                 v-model="searchQuery"
-                placeholder="Search by name..."
+                :placeholder="`${$t('employees.search')}...`"
                 class="search-bar"
             />
             <pv-button
@@ -115,25 +115,25 @@ export default {
             />
             <div v-if="showFilters" class="filter-panel">
               <div class="filter-row">
-                <label>Age Min:</label>
+                <label>{{ $t("employees.age") }} Min:</label>
                 <input type="number" v-model.number="ageRange.min" min="0" />
                 <label>Max:</label>
                 <input type="number" v-model.number="ageRange.max" min="0" />
               </div>
               <div class="filter-row">
-                <label>Wage Min:</label>
+                <label>{{$t("employees.wage")}}  Min:</label>
                 <input type="number" v-model.number="salaryRange.min" min="0" />
                 <label>Max:</label>
                 <input type="number" v-model.number="salaryRange.max" min="0" />
               </div>
               <div class="filter-row">
-                <label>Hours Min:</label>
+                <label>{{$t("employees.hours")}}  Min:</label>
                 <input type="number" v-model.number="hoursRange.min" min="0" />
                 <label>Max:</label>
                 <input type="number" v-model.number="hoursRange.max" min="0" />
               </div>
               <div class="filter-row">
-                <label>Status:</label>
+                <label>{{ $t("employees.status") }}:</label>
                 <pv-sbutton
                     v-model="roleFilter"
                     :options="roleOptions"
@@ -146,7 +146,7 @@ export default {
           </div>
           <div class="right-group">
             <pv-button
-                label="Add Employee"
+                :label="$t('employees.add-employee')"
                 icon="pi pi-plus"
                 class="add-btn"
                 @click="$emit('add-request')"
@@ -156,13 +156,13 @@ export default {
       </template>
 
       <!-- Columnas -->
-      <pv-column field="fullName" header="Name" sortable style="width:25%"></pv-column>
-      <pv-column field="age" header="Age" sortable style="width:15%"></pv-column>
-      <pv-column field="role" header="Role" sortable style="width:25%"></pv-column>
-      <pv-column field="hourlyWage" header="Hourly Wage" sortable style="width:20%"></pv-column>
-      <pv-column field="hoursPerWeek" header="Hours Per Week" sortable style="width:25%"></pv-column>
+      <pv-column field="fullName" :header="$t('employees.name')" sortable style="width:25%"></pv-column>
+      <pv-column field="age" :header="$t('employees.age')" sortable style="width:15%"></pv-column>
+      <pv-column field="role" :header="$t('employees.role')" sortable style="width:25%"></pv-column>
+      <pv-column field="hourlyWage" :header="$t('employees.wage')" sortable style="width:20%"></pv-column>
+      <pv-column field="hoursPerWeek" :header="$t('employees.hours')" sortable style="width:25%"></pv-column>
 
-      <template #empty>No employees found.</template>
+      <template #empty>{{ $t('employees.not-found') }}.</template>
     </pv-datatable>
   </div>
 </template>

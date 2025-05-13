@@ -46,15 +46,15 @@ export default {
 
 <template>
   <pv-dialog
-      header="Fire employee"
+      :header="$t('employees.fire-employee')"
       :visible="visible"
       @update:visible="closeDialog"
       modal
   >
-    <p>Are you sure you want to fire this employee?</p>
+    <p>{{ $t('employees.fire-confirmation') }}</p>
     <div class="dialog-actions">
-      <pv-button label="Cancel" class="p-button-secondary" @click="closeDialog" />
-      <pv-button label="Fire" class="p-button-danger" @click="fireEmployee" />
+      <pv-button :label="$t('general.cancel')" class="p-button-secondary" @click="closeDialog" />
+      <pv-button :label="$t('employees.fire')" class="p-button-danger" @click="fireEmployee" />
     </div>
   </pv-dialog>
 </template>

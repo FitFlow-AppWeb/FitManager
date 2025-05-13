@@ -29,7 +29,10 @@
     }
   },
   "general": {
-    "loading": "Cargando"
+    "loading": "Cargando",
+    "add": "Agregar",
+    "cancel": "Cancelar",
+    "save": "Guardar"
   },
   "dashboard": {
     "chart-title": "Asistencia de hoy por hora",
@@ -44,17 +47,19 @@
     "month-view": "Vista mensual de clases"
   },
   "employees": {
+    "name": "Nombre",
     "full-name": "Nombre completo",
     "age": "Edad",
     "role": "Rol",
-    "wage": "Salario por hora",
+    "wage": "Pago por hora",
     "hours": "Horas por semana",
+    "add-employee": "Añadir Empleado",
+    "add-new-employee": "Añadir Nuevo Empleado",
+    "edit-employee": "Editar Empleado",
     "specialities": "Especialidades",
     "add-specialty": "Agregar especialidad",
     "certifications": "Certificaciones",
     "add-certification": "Agregar certificación",
-    "add": "Agregar",
-    "cancel": "Cancelar",
     "email": "Correo electrónico",
     "phone": "Teléfono",
     "address": "Dirección",
@@ -63,6 +68,15 @@
     "cleaning": "Limpieza",
     "trainer": "Entrenador",
     "group-instructor": "Instructor de grupo",
-    "reception": "Recepción"
+    "reception": "Recepción",
+    "weekly-hours": "Horas Semanales",
+    "hourly-wage": "Pago por Hora",
+    "edit-details": "Editar detalles",
+    "schedule-assignment": "Asignar horarios",
+    "fire": "Despedir",
+    "status": "Cargo",
+    "not-found": "No se encontraron empleados",
+    "fire-employee": "Despedir empleado",
+    "fire-confirmation": "¿Estás seguro de que deseas despedir a este empleado?"
   }
 }

@@ -29,7 +29,10 @@
     }
   },
   "general": {
-    "loading": "Loading"
+    "loading": "Loading",
+    "add": "Add",
+    "cancel": "Cancel",
+    "save": "Save"
   },
   "dashboard": {
     "chart-title": "Today's Attendance by Hour",
@@ -44,17 +47,19 @@
     "month-view": "Monthly Class View"
   },
   "employees": {
+    "name": "Name",
     "full-name": "Full Name",
     "age": "Age",
     "role": "Role",
-    "wage": "Hourle Wage",
+    "wage": "Hourly Wage",
     "hours": "Hours Per Week",
+    "add-employee": "Add Employee",
+    "add-new-employee": "Add New Employee",
+    "edit-employee": "Edit Employee",
     "specialities": "Specialities",
     "add-specialty": "Add Specialty",
     "certifications": "Certifications",
     "add-certification": "Add Certification",
-    "add": "Add",
-    "cancel": "Cancel",
     "email": "Email",
     "phone": "Phone",
     "address": "Address",
@@ -63,6 +68,15 @@
     "cleaning": "Cleaning",
     "trainer": "Trainer",
     "group-instructor": "Group instructor",
-    "reception": "Reception"
+    "reception": "Reception",
+    "weekly-hours": "Weekly Hours",
+    "hourly-wage": "Hourly Wage",
+    "edit-details": "Edit Details",
+    "schedule-assignment": "Schedule Assignment",
+    "fire": "Fire",
+    "status": "Status",
+    "not-found": "No employees found",
+    "fire-employee": "Fire employee",
+    "fire-confirmation": "Are you sure you want to fire this employee?"
   }
 }

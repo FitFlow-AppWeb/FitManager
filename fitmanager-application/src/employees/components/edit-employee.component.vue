@@ -13,11 +13,10 @@ export default {
     return {
       editedEmployee: { ...this.employee },
       roleOptions: [
-        { name: "Cleaning", value: "cleaning" },
-        { name: "Trainer", value: "trainer" },
-        { name: "Group Instructor", value: "group instructor" },
-        { name: "Reception", value: "Reception" }
-
+        { name: this.$t('employees.cleaning'), value: "cleaning" },
+        { name: this.$t('employees.trainer'), value: "trainer" },
+        { name: this.$t('employees.group-instructor'), value: "group instructor" },
+        { name: this.$t('employees.reception'), value: "Reception" }
       ],
       specialties: [...(this.employee.specialties || [])],
       certifications: [...(this.employee.certifications || [])],
@@ -27,28 +26,32 @@ export default {
   },
   methods: {
     async submitForm() {
+      this.editedEmployee.specialties = this.specialties;
+      this.editedEmployee.certifications = this.certifications;
       const service = new EmployeeApiService();
       await service.updateEmployee(this.editedEmployee);
-      this.$emit("employee-updated",this.editedEmployee);
+      this.$emit("employee-updated", this.editedEmployee);
       this.$emit("close");
     },
     addSpecialty() {
-      if (this.newSpecialty && !this.editedEmployee.specialties.includes(this.newSpecialty)) {
-        this.editedEmployee.specialties.push(this.newSpecialty.trim());
+      const trimmed = this.newSpecialty.trim();
+      if (trimmed && !this.specialties.includes(trimmed)) {
+        this.specialties.push(trimmed);
         this.newSpecialty = '';
       }
     },
     removeSpecialty(index) {
-      this.editedEmployee.specialties.splice(index, 1);
+      this.specialties.splice(index, 1);
     },
     addCertification() {
-      if (this.newCertification && !this.editedEmployee.certifications.includes(this.newCertification)) {
-        this.editedEmployee.certifications.push(this.newCertification.trim());
+      const trimmed = this.newCertification.trim();
+      if (trimmed && !this.certifications.includes(trimmed)) {
+        this.certifications.push(trimmed);
         this.newCertification = '';
       }
     },
     removeCertification(index) {
-      this.editedEmployee.certifications.splice(index, 1);
+      this.certifications.splice(index, 1);
     }
   }
 };
@@ -57,21 +60,22 @@ export default {
 <template>
   <div class="modal-overlay">
     <div class="modal-content">
-      <h2 class="modal-title">Edit Employee</h2>
+      <h2 class="modal-title">{{ $t('employees.edit-employee') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="editedEmployee.fullName" placeholder="Full Name" class="input-field" required />
-        <pv-inputtext v-model.number="editedEmployee.age" placeholder="Age" type="number" class="input-field" required />
-        <pv-select v-model="editedEmployee.role" :options="roleOptions" placeholder="Role" option-label="name" option-value="value" class="input-field" required />
-        <pv-inputtext v-model.number="editedEmployee.hourlyWage" placeholder="Hourly Wage" type="number" class="input-field" required />
-        <pv-inputtext v-model.number="editedEmployee.hoursPerWeek" placeholder="Hours Per Week" type="number" class="input-field" required />
+        <pv-inputtext v-model="editedEmployee.fullName" :placeholder="$t('employees.full-name')" class="input-field" required />
+        <pv-inputtext v-model.number="editedEmployee.age" :placeholder="$t('employees.age')" type="number" class="input-field" required />
+        <pv-select v-model="editedEmployee.role" :options="roleOptions" :placeholder="$t('employees.role')" option-label="name" option-value="value" class="input-field" required />
+        <pv-inputtext v-model.number="editedEmployee.hourlyWage" :placeholder="$t('employees.wage')" type="number" class="input-field" required />
+        <pv-inputtext v-model.number="editedEmployee.hoursPerWeek" :placeholder="$t('employees.hours')" type="number" class="input-field" required />
+
         <div class="input-field">
-          <label>Specialties</label>
+          <label>{{ $t('employees.specialities') }}</label>
           <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <pv-inputtext v-model="newSpecialty" placeholder="Add Specialty" />
-            <pv-button icon="pi pi-plus" @click="addSpecialty" label="Add" class="add-button2" />
+            <pv-inputtext v-model="newSpecialty" :placeholder="$t('employees.add-specialty')" />
+            <pv-button icon="pi pi-plus" @click="addSpecialty" :label="$t('general.add')" class="add-button2" />
           </div>
           <ul style="margin-top: 0.5rem; padding-left: 1rem;">
-            <li v-for="(spec, index) in editedEmployee.specialties" :key="'spec-' + index" style="margin-top: 0.25rem;">
+            <li v-for="(spec, index) in specialties" :key="'spec-' + index" style="margin-top: 0.25rem;">
               {{ spec }}
               <pv-button icon="pi pi-times" class="p-button-text p-button-sm" @click="removeSpecialty(index)" />
             </li>
@@ -79,33 +83,33 @@ export default {
         </div>
 
         <div class="input-field">
-          <label>Certifications</label>
+          <label>{{ $t('employees.certifications') }}</label>
           <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <pv-inputtext v-model="newCertification" placeholder="Add Certification" />
-            <pv-button icon="pi pi-plus" @click="addCertification" label="Add" class="add-button2" />
+            <pv-inputtext v-model="newCertification" :placeholder="$t('employees.add-certification')" />
+            <pv-button icon="pi pi-plus" @click="addCertification" :label="$t('general.add')" class="add-button2" />
           </div>
           <ul style="margin-top: 0.5rem; padding-left: 1rem;">
-            <li v-for="(cert, index) in editedEmployee.certifications" :key="'cert-' + index" style="margin-top: 0.25rem;">
+            <li v-for="(cert, index) in certifications" :key="'cert-' + index" style="margin-top: 0.25rem;">
               {{ cert }}
               <pv-button icon="pi pi-times" class="p-button-text p-button-sm" @click="removeCertification(index)" />
             </li>
           </ul>
         </div>
+
         <pv-inputtext v-model="editedEmployee.dni" placeholder="DNI" class="input-field" required />
-        <pv-inputtext v-model="editedEmployee.email" type="email" placeholder="Email" class="input-field" required />
-        <pv-inputtext v-model="editedEmployee.phone" type="tel" placeholder="Phone" class="input-field" required />
-        <pv-inputtext v-model="editedEmployee.address" placeholder="Address" class="input-field" required />
-        <pv-inputtext v-model="editedEmployee.profilePicture" type="url" placeholder="Profile Picture URL" class="input-field" required />
+        <pv-inputtext v-model="editedEmployee.email" type="email" :placeholder="$t('employees.email')" class="input-field" required />
+        <pv-inputtext v-model="editedEmployee.phone" type="tel" :placeholder="$t('employees.phone')" class="input-field" required />
+        <pv-inputtext v-model="editedEmployee.address" :placeholder="$t('employees.address')" class="input-field" required />
+        <pv-inputtext v-model="editedEmployee.profilePicture" type="url" :placeholder="$t('employees.profile-picture')" class="input-field" required />
 
         <div class="actions">
-          <pv-button label="Save " type="submit" class="add-button" />
-          <pv-button label="Cancel" type="button" @click="$emit('close')" class="cancel-button" />
+          <pv-button :label="$t('general.save')" type="submit" class="add-button" />
+          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
         </div>
       </form>
     </div>
   </div>
 </template>
-
 <style scoped>
 .modal-overlay {
   position: fixed;
