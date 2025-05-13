@@ -30,5 +30,12 @@
   },
   "general": {
     "loading": "Loading"
+  },
+  "dashboard": {
+    "chartTitle": "Today's Attendance by Hour",
+    "today-classes": "Today's Classes",
+    "no-classes": "No classes",
+    "classes": "Classes",
+    "hour": "Hour"
   }
 }

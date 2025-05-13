@@ -44,7 +44,7 @@ export default {
     },
     // Format the list of class names into a single string for display
     formatClasses(classes) {
-      return classes.length > 0 ? classes.join(', ') : 'No classes';
+      return classes.length > 0 ? classes.join(', ') : this.$t('dashboard.no-classes');
     }
   },
   // Automatically fetch the class schedule when the component is mounted
@@ -58,16 +58,16 @@ export default {
   <!-- Container for the classes table -->
   <div class="today-classes">
     <!-- Section title -->
-    <h2 class="title">Today's Classes</h2>
+    <h2 class="title">{{ $t('dashboard.today-classes') }}</h2>
     <!-- PrimeVue datatable to display class schedule -->
     <pv-datatable
         :value="filterSchedule()"
         selectionMode="single"
     >
       <!-- Column for hour -->
-      <pv-column field="hour" header="Hour" style="width: 20%" />
+      <pv-column field="hour" :header="$t('dashboard.hour')" style="width: 20%" />
       <!-- Column for formatted class list -->
-      <pv-column header="Classes" style="width: 60%">
+      <pv-column :header="$t('dashboard.classes')" style="width: 60%">
         <template #body="plan">
           <span>{{ formatClasses(plan.data.classes) }}</span>
         </template>

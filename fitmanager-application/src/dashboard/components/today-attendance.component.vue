@@ -51,7 +51,7 @@ export default {
                 },
                 title: {
                   display: true,
-                  text: 'Today\'s Attendance by Hour'
+                  text: this.$t('dashboard.chartTitle')
                 }
               },
               scales: {
@@ -83,7 +83,6 @@ export default {
         :data="chartData"
         :options="chartOptions"
     />
-    <p v-else>Loading attendance data...</p>
   </div>
 </template>
 

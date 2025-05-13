@@ -30,5 +30,12 @@
   },
   "general": {
     "loading": "Cargando"
+  },
+  "dashboard": {
+    "chartTitle": "Asistencia de hoy por hora",
+    "today-classes": "Clases de hoy",
+    "no-classes": "Sin clases",
+    "classes": "Clases",
+    "hour": "Hora"
   }
 }
