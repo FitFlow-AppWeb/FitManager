@@ -20,7 +20,7 @@ export default {
       return this.monthDate.getFullYear();
     },
     currentMonthName() {
-      return this.monthDate.toLocaleString('default', {month: 'long'});
+      return this.monthDate.toLocaleString(this.$i18n.locale, { month: 'long' });
     }
   },
   created() {
@@ -93,18 +93,18 @@ export default {
 
       <!-- Panel de clases del día seleccionado -->
       <div class="class-panel">
-        <h2>Clases el {{ selectedDateFormatted }}</h2>
+        <h2>{{$t('calendar.class-panel')}} {{ selectedDateFormatted }}</h2>
         <ul v-if="classesForDate.length">
           <li v-for="(cls, i) in classesForDate" :key="i">
             {{ cls.name }} ({{ cls.time }}) - {{ cls.trainerName }}
           </li>
         </ul>
-        <p v-else>No hay clases para este día.</p>
+        <p v-else>{{$t('calendar.no-classes')}}</p>
       </div>
     </div>
     <!-- Vista mensual de clases -->
     <div class="month-view">
-      <h2>Vista mensual de clases ({{ currentMonthName }} {{ currentYear }})</h2>
+      <h2>{{$t('calendar.month-view')}} ({{ currentMonthName }} {{ currentYear }})</h2>
       <div class="calendar-grid">
         <div class="day-cell" v-for="(day, i) in daysInMonth" :key="i">
           <div class="day-number">{{ day.day }}</div>

@@ -37,5 +37,10 @@
     "no-classes": "Sin clases",
     "classes": "Clases",
     "hour": "Hora"
+  },
+  "calendar": {
+    "class-panel": "Clases el",
+    "no-classes": "No hay clases para este día",
+    "month-view": "Vista mensual de clases"
   }
 }
