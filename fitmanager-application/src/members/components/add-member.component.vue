@@ -17,14 +17,14 @@ export default {
       membershipStartDate: "",
       profilePicture: "",
       statusOptions: [
-        { name: "Active", value: "active" },
-        { name: "Inactive", value: "inactive" },
-        { name: "Pending", value: "pending" }
+        { name: this.$t("members.active"), value: "active" },
+        { name: this.$t("members.inactive"), value: "inactive" },
+        { name: this.$t("members.pending"), value: "pending" }
       ],
       typeOptions: [
-        { name: "Monthly", value: "monthly" },
-        { name: "Quarterly", value: "quarterly" },
-        { name: "Annual", value: "annual" }
+        { name: this.$t("members.monthly"), value: "monthly" },
+        { name: this.$t("members.quarterly"), value: "quarterly" },
+        { name: this.$t("members.annual"), value: "annual" }
       ]
     };
   },
@@ -36,6 +36,7 @@ export default {
       const formattedStartDate = this.membershipStartDate instanceof Date
           ? this.membershipStartDate.toISOString().split('T')[0]
           : this.membershipStartDate;
+
       const newMember = {
         id: Date.now(),
         fullName: this.fullName,
@@ -63,28 +64,29 @@ export default {
 <template>
   <div class="modal-overlay">
     <div class="modal-content">
-      <h2 class="modal-title">Add New Member</h2>
+      <h2 class="modal-title">{{ $t('members.add-new-member') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="fullName" placeholder="Full Name" class="input-field" required />
-        <pv-inputtext v-model.number="age" placeholder="Age" type="number" class="input-field" required />
-        <pv-select v-model="membershipStatus" :options="statusOptions" placeholder="Membership Status" option-label="name" option-value="value" class="input-field" required />
-        <pv-select v-model="membershipType" :options="typeOptions" placeholder="Membership Type" option-label="name" option-value="value" class="input-field" required />
-        <pv-datepicker v-model="expirationDate" placeholder="Expiration Date" class="input-field" required />
-        <pv-datepicker v-model="membershipStartDate" placeholder="Membership Start Date" class="input-field" required />
+        <pv-inputtext v-model="fullName" :placeholder="$t('members.full-name')" class="input-field" required />
+        <pv-inputtext v-model.number="age" :placeholder="$t('members.age')" type="number" class="input-field" required />
+        <pv-select v-model="membershipStatus" :options="statusOptions" :placeholder="$t('members.membership-status')" option-label="name" option-value="value" class="input-field" required />
+        <pv-select v-model="membershipType" :options="typeOptions" :placeholder="$t('members.membership-type')" option-label="name" option-value="value" class="input-field" required />
+        <pv-datepicker v-model="expirationDate" :placeholder="$t('members.expiration-date')" class="input-field" required />
+        <pv-datepicker v-model="membershipStartDate" :placeholder="$t('members.start-date')" class="input-field" required />
         <pv-inputtext v-model="dni" placeholder="DNI" class="input-field" required />
-        <pv-inputtext v-model="email" type="email" placeholder="Email" class="input-field" required />
-        <pv-inputtext v-model="phone" type="tel" placeholder="Phone" class="input-field" required />
-        <pv-inputtext v-model="address" placeholder="Address" class="input-field" required />
-        <pv-inputtext v-model="profilePicture" type="url" placeholder="Profile Picture URL" class="input-field" required />
+        <pv-inputtext v-model="email" type="email" :placeholder="$t('members.email')" class="input-field" required />
+        <pv-inputtext v-model="phone" type="tel" :placeholder="$t('members.phone')" class="input-field" required />
+        <pv-inputtext v-model="address" :placeholder="$t('members.address')" class="input-field" required />
+        <pv-inputtext v-model="profilePicture" type="url" :placeholder="$t('members.profile-picture')" class="input-field" required />
 
         <div class="actions">
-          <pv-button label="Add" type="submit" class="add-button" />
-          <pv-button label="Cancel" type="button" @click="$emit('close')" class="cancel-button" />
+          <pv-button :label="$t('general.add')" type="submit" class="add-button" />
+          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
         </div>
       </form>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .modal-overlay {

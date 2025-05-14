@@ -11,16 +11,16 @@ export default {
   },
   data() {
     return {
-      editedMember: { ...this.member },
+      editedMember: {...this.member},
       statusOptions: [
-        { name: "Active", value: "active" },
-        { name: "Inactive", value: "inactive" },
-        { name: "Pending", value: "pending" }
+        {name: this.$t('members.active'), value: "active"},
+        {name: this.$t('members.inactive'), value: "inactive"},
+        {name: this.$t('members.pending'), value: "pending"}
       ],
       typeOptions: [
-        { name: "Monthly", value: "monthly" },
-        { name: "Quarterly", value: "quarterly" },
-        { name: "Annual", value: "annual" }
+        {name: this.$t('members.monthly'), value: "monthly"},
+        {name: this.$t('members.quarterly'), value: "quarterly"},
+        {name: this.$t('members.annual'), value: "annual"}
       ]
     };
   },
@@ -38,23 +38,32 @@ export default {
 <template>
   <div class="modal-overlay">
     <div class="modal-content">
-      <h2 class="modal-title">Edit Member</h2>
+      <h2 class="modal-title">{{ $t('members.edit-member') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="editedMember.fullName" placeholder="Full Name" class="input-field" required />
-        <pv-inputtext v-model.number="editedMember.age" placeholder="Age" type="number" class="input-field" required />
-        <pv-select v-model="editedMember.membershipStatus" :options="statusOptions" option-label="name" option-value="value" placeholder="Status" class="input-field" required />
-        <pv-select v-model="editedMember.membershipType" :options="typeOptions" option-label="name" option-value="value" placeholder="Type" class="input-field" required />
-        <pv-datepicker v-model="editedMember.expirationDate" placeholder="Expiration Date" class="input-field" required />
-        <pv-datepicker v-model="editedMember.membershipStartDate" placeholder="Start Date" class="input-field" required />
-        <pv-inputtext v-model="editedMember.dni" placeholder="DNI" class="input-field" required />
-        <pv-inputtext v-model="editedMember.email" type="email" placeholder="Email" class="input-field" required />
-        <pv-inputtext v-model="editedMember.phone" type="tel" placeholder="Phone" class="input-field" required />
-        <pv-inputtext v-model="editedMember.address" placeholder="Address" class="input-field" required />
-        <pv-inputtext v-model="editedMember.profilePicture" type="url" placeholder="Profile Picture URL" class="input-field" required />
+        <pv-inputtext v-model="editedMember.fullName" :placeholder="$t('members.full-name')" class="input-field"
+                      required/>
+        <pv-inputtext v-model.number="editedMember.age" :placeholder="$t('members.age')" type="number"
+                      class="input-field" required/>
+        <pv-select v-model="editedMember.membershipStatus" :options="statusOptions" option-label="name"
+                   option-value="value" :placeholder="$t('members.status')" class="input-field" required/>
+        <pv-select v-model="editedMember.membershipType" :options="typeOptions" option-label="name" option-value="value"
+                   :placeholder="$t('members.type')" class="input-field" required/>
+        <pv-datepicker v-model="editedMember.expirationDate" :placeholder="$t('members.expiration-date')"
+                       class="input-field" required/>
+        <pv-datepicker v-model="editedMember.membershipStartDate" :placeholder="$t('members.start-date')"
+                       class="input-field" required/>
+        <pv-inputtext v-model="editedMember.dni" placeholder="DNI" class="input-field" required/>
+        <pv-inputtext v-model="editedMember.email" type="email" :placeholder="$t('members.email')" class="input-field"
+                      required/>
+        <pv-inputtext v-model="editedMember.phone" type="tel" :placeholder="$t('members.phone')" class="input-field"
+                      required/>
+        <pv-inputtext v-model="editedMember.address" :placeholder="$t('members.address')" class="input-field" required/>
+        <pv-inputtext v-model="editedMember.profilePicture" type="url" :placeholder="$t('members.profile-picture')"
+                      class="input-field" required/>
 
         <div class="actions">
-          <pv-button label="Save" type="submit" class="add-button" />
-          <pv-button label="Cancel" type="button" @click="$emit('close')" class="cancel-button" />
+          <pv-button :label="$t('members.save')" type="submit" class="add-button"/>
+          <pv-button :label="$t('members.cancel')" type="button" @click="$emit('close')" class="cancel-button"/>
         </div>
       </form>
     </div>
@@ -108,29 +117,6 @@ export default {
   outline: none;
 }
 
-::v-deep(.p-dropdown),
-::v-deep(.p-calendar),
-::v-deep(.p-inputtext) {
-  background-color: white !important;
-  border: 1px solid #A7D1D2 !important;
-  border-radius: 4px !important;
-  color: #333 !important;
-  width: 100% !important;
-  font-size: 1rem !important;
-}
-
-::v-deep(.p-dropdown-label) {
-  color: #333 !important;
-}
-
-::v-deep(.p-dropdown-item) {
-  color: #333 !important;
-}
-::v-deep(.p-dropdown-item:hover) {
-  background-color: #A7D1D2 !important;
-  color: white !important;
-}
-
 .add-button {
   background-color: #A7D1D2;
   color: white;
@@ -139,12 +125,10 @@ export default {
   margin-top: 1rem;
 }
 
-
 .add-button:hover {
   background-color: #8FBFC0 !important;
   border-color: #8FBFC0 !important;
 }
-
 
 .cancel-button {
   background-color: #f0f0f0;
@@ -165,5 +149,4 @@ export default {
   justify-content: space-between;
   margin-top: 1rem;
 }
-
 </style>

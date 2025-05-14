@@ -92,7 +92,7 @@ export default {
           <div class="left-group">
             <pv-inputtext
                 v-model="searchQuery"
-                placeholder="Search by name..."
+                :placeholder="`${$t('members.search')}...`"
                 class="search-bar"
             />
             <pv-button
@@ -102,13 +102,13 @@ export default {
             />
             <div v-if="showFilters" class="filter-panel">
               <div class="filter-row">
-                <label>Age Min:</label>
+                <label>{{ $t("members.age") }} Min:</label>
                 <input type="number" v-model.number="ageRange.min" min="0" />
                 <label>Max:</label>
                 <input type="number" v-model.number="ageRange.max" min="0" />
               </div>
               <div class="filter-row">
-                <label>Status:</label>
+                <label>{{ $t("members.status") }}:</label>
                 <pv-sbutton
                     v-model="statusFilter"
                     :options="statusOptions"
@@ -116,7 +116,7 @@ export default {
                 />
               </div>
               <div class="filter-row">
-                <label>Type:</label>
+                <label>{{ $t("members.type") }}:</label>
                 <pv-sbutton
                     v-model="typeFilter"
                     :options="typeOptions"
@@ -128,7 +128,7 @@ export default {
           </div>
           <div class="right-group">
             <pv-button
-                label="Add Member"
+                :label="$t('members.add-member')"
                 icon="pi pi-plus"
                 class="add-btn"
                 @click="$emit('add-request')"
@@ -138,11 +138,11 @@ export default {
       </template>
 
       <!-- Columnas -->
-      <pv-column field="fullName" header="Name" sortable style="width:25%"></pv-column>
-      <pv-column field="age" header="Age" sortable style="width:15%"></pv-column>
-      <pv-column field="membershipStatus" header="Membership Status" sortable style="width:25%"></pv-column>
-      <pv-column field="membershipType" header="Membership Type" sortable style="width:20%"></pv-column>
-      <pv-column field="expirationDate" header="Expiration Date" sortable style="width:25%"></pv-column>
+      <pv-column field="fullName" :header="$t('members.name')" sortable style="width:25%"></pv-column>
+      <pv-column field="age" :header="$t('members.age')" sortable style="width:15%"></pv-column>
+      <pv-column field="membershipStatus" :header="$t('members.membership-status')" sortable style="width:25%"></pv-column>
+      <pv-column field="membershipType" :header="$t('members.membership-type')" sortable style="width:20%"></pv-column>
+      <pv-column field="expirationDate" :header="$t('members.expiration-date')" sortable style="width:25%"></pv-column>
 
       <template #empty>No members found.</template>
     </pv-datatable>

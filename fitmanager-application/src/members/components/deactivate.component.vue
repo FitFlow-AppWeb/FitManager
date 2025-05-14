@@ -33,15 +33,15 @@ export default {
 
 <template>
   <pv-dialog
-      header="Remove Member"
+      :header="$t('members.remove-member')"
       :visible="visible"
       @update:visible="closeDialog"
       modal
   >
-    <p>Are you sure you want to remove this member?</p>
+    <p>{{ $t('members.remove-confirmation') }}</p>
     <div class="dialog-actions">
-      <pv-button label="Cancel" class="p-button-secondary" @click="closeDialog" />
-      <pv-button label="Remove" class="p-button-danger" @click="deactivateMember" />
+      <pv-button :label="$t('general.cancel')" class="p-button-secondary" @click="closeDialog" />
+      <pv-button :label="$t('members.remove')" class="p-button-danger" @click="deactivateMember" />
     </div>
   </pv-dialog>
 </template>

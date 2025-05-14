@@ -32,7 +32,7 @@ export default {
     <!-- Profile picture + Name header -->
     <template #header>
       <div class="header">
-        <img :src="member.profilePicture" alt="Profile" class="profile-img" />
+        <img :src="member.profilePicture" alt="Profile" class="profile-img"/>
         <h2 class="name">{{ member.fullName }}</h2>
       </div>
 
@@ -41,35 +41,35 @@ export default {
         <strong>{{ member.membershipStatus.toUpperCase() }}</strong>
       </p>
 
-      <hr />
+      <hr/>
     </template>
 
     <template #content>
       <!-- Personal info -->
       <div class="section">
         <p><strong>DNI:</strong> {{ member.dni }}</p>
-        <p><strong>Age:</strong> {{ member.age }}</p>
-        <p><strong>Email:</strong> {{ member.email }}</p>
-        <p><strong>Phone:</strong> {{ member.phone }}</p>
-        <p><strong>Address:</strong> {{ member.address }}</p>
+        <p><strong>{{ $t("members.age") }}:</strong> {{ member.age }}</p>
+        <p><strong>{{ $t("members.email") }}:</strong> {{ member.email }}</p>
+        <p><strong>{{ $t("members.phone") }}:</strong> {{ member.phone }}</p>
+        <p><strong>{{ $t("members.address") }}:</strong> {{ member.address }}</p>
       </div>
 
-      <hr />
+      <hr/>
 
       <!-- Membership dates & type -->
       <div class="section">
-        <p><strong>Membership Type:</strong> {{ member.membershipType }}</p>
-        <p><strong>Start Date:</strong> {{ member.membershipStartDate }}</p>
-        <p><strong>Expiration Date:</strong> {{ member.expirationDate }}</p>
+        <p><strong>{{ $t("members.membership-type") }}:</strong> {{ member.membershipType }}</p>
+        <p><strong>{{ $t("members.start-date") }}:</strong> {{ member.membershipStartDate }}</p>
+        <p><strong>{{ $t("members.expiration-date") }}:</strong> {{ member.expirationDate }}</p>
       </div>
 
-      <hr />
+      <hr/>
 
       <!-- Action buttons -->
       <div class="actions">
-        <pv-button label="Edit Details" class="action-btn" @click="$emit('edit-request')"/>
-        <pv-button label="Payments" class="action-btn" />
-        <pv-button label="Remove Member" class="action-btn"  @click="$emit('deactivate-request')"/>
+        <pv-button :label="$t('members.edit-details')" class="action-btn" @click="$emit('edit-request')"/>
+        <pv-button :label="$t('members.payments')" class="action-btn"/>
+        <pv-button :label="$t('members.remove-member')" class="action-btn" @click="$emit('deactivate-request')"/>
       </div>
     </template>
   </pv-card>
@@ -86,7 +86,7 @@ export default {
 .member-card {
   max-width: 400px;
   padding: 1rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header {
@@ -134,7 +134,6 @@ hr {
   border: 1px solid #A7D1D2;
   color: black;
 }
-
 
 .action-btn:hover {
   background-color: #A7D1D2 !important;

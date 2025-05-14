@@ -209,6 +209,20 @@
       "address": "Calle Daniel A. Robles 380",
       "membershipStartDate": "2025-03-05",
       "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    },
+    {
+      "id": 1747178731043,
+      "fullName": "Hideki Uyeyama",
+      "age": 21,
+      "membershipStatus": "active",
+      "membershipType": "monthly",
+      "expirationDate": "2025-06-13",
+      "dni": "76684392",
+      "email": "sdad@outlook.com",
+      "phone": "988232311",
+      "address": "av.dsadasda",
+      "membershipStartDate": "2025-05-13",
+      "profilePicture": "https://im.com"
     }
   ],
   "finances": {
