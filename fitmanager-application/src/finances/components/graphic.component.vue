@@ -17,7 +17,7 @@ export default {
           x: {
             title: {
               display: true,
-              text: 'Month & Year',
+              text: this.$t('finances.month-year'),
             },
             ticks: {
               autoSkip: true,
@@ -27,7 +27,7 @@ export default {
           y: {
             title: {
               display: true,
-              text: 'Income (PEN)'
+              text: this.$t('finances.income-currency'),
             },
             beginAtZero: true,
           }
@@ -39,7 +39,7 @@ export default {
           },
           title: {
             display: true,
-            text: 'Monthly Income Overview',
+            text: this.$t('finances.overview'),
           }
         },
         tooltip: {
@@ -101,7 +101,7 @@ export default {
           labels: labels,
           datasets: [
             {
-              label: 'Monthly Income',
+              label: this.$t('finances.monthly-income'),
               data: monthlyData,
               borderColor: 'rgb(75, 192, 192)',
               backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -109,7 +109,7 @@ export default {
               fill: false
             },
             {
-              label: 'Quarterly Income',
+              label: this.$t('finances.quarterly-income'),
               data: quarterlyData,
               borderColor: 'rgb(255, 159, 64)',
               backgroundColor: 'rgba(255, 159, 64, 0.2)',
@@ -117,7 +117,7 @@ export default {
               fill: false
             },
             {
-              label: 'Yearly Income',
+              label: this.$t('finances.yearly-income'),
               data: yearlyData,
               borderColor: 'rgb(54, 162, 235)',
               backgroundColor: 'rgba(54, 162, 235, 0.2)',

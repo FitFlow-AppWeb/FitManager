@@ -154,5 +154,32 @@
     "search": "Search by name",
     "add-item": "Add item",
     "trainer": "Trainer"
+  },
+  "finances": {
+    "profit": "Profit",
+    "income": "Income",
+    "expenses": "Expenses",
+    "monthly-subs": "monthly subscriptions",
+    "quarterly-subs": "quarterly subscriptions",
+    "yearly-subs": "yearly subscriptions",
+    "average-expenses": "Average Expenses",
+    "profits": "Profits",
+    "no-data": "No data available",
+    "month-year": "Month & Year",
+    "income-currency": "Income (PEN)",
+    "overview": "Monthly Income Overview",
+    "monthly-income": "monthly income",
+    "quarterly-income": "quarterly income",
+    "yearly-income": "yearly income",
+    "transactions": "Transactions",
+    "transactions-not-found": "No transactions found.",
+    "transactions-loading": "Loading transaction data. Please wait.",
+    "date": "Date",
+    "recipient": "Recipient",
+    "payer": "Payer",
+    "concept": "Concept",
+    "amount": "Amount",
+    "curency": "Currency",
+    "search": "Keyword Search"
   }
 }

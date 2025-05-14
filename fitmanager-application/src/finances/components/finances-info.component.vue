@@ -47,30 +47,30 @@ export default {
 <template>
   <div class="info-container">
     <h3>Financial Overview</h3>
-    <div v-if="isLoading" class="message">Loading...</div>
+    <div v-if="isLoading" class="message">{{ $t('general.loading') }}...</div>
     <div v-if="error" class="message error">{{ error }}</div>
 
     <div v-if="!isLoading && !error && (aprilInfo || projectedInfo)" class="info-card">
       <template v-if="aprilInfo">
-        <p>Profit {{ displayMonth }}: <span>{{ formatCurrency(aprilInfo.earnings) }}</span></p>
-        <p>Incomes {{ displayMonth }}: <span>{{ formatCurrency(aprilInfo.total_income) }}</span></p>
-        <p>Expenses {{ displayMonth }}: <span>{{ formatCurrency(aprilInfo.total_expenses) }}</span></p>
-        <p v-if="aprilInfo.membership_income_breakdown">{{ displayMonth }} monthly subscriptions: <span>{{ formatCurrency(aprilInfo.membership_income_breakdown.monthly) }}</span></p>
-        <p v-if="aprilInfo.membership_income_breakdown">{{ displayMonth }} quarterly subscriptions: <span>{{ formatCurrency(aprilInfo.membership_income_breakdown.quarterly) }}</span></p>
-        <p v-if="aprilInfo.membership_income_breakdown">{{ displayMonth }} yearly subscriptions: <span>{{ formatCurrency(aprilInfo.membership_income_breakdown.annual) }}</span></p>
+        <p>{{ $t('finances.profit') }} {{ displayMonth }}: <span>{{ formatCurrency(aprilInfo.earnings) }}</span></p>
+        <p>{{ $t('finances.income')}} {{ displayMonth }}: <span>{{ formatCurrency(aprilInfo.total_income) }}</span></p>
+        <p>{{ $t('finances.expenses') }} {{ displayMonth }}: <span>{{ formatCurrency(aprilInfo.total_expenses) }}</span></p>
+        <p v-if="aprilInfo.membership_income_breakdown">{{ displayMonth }} {{ $t('finances.monthly-subs') }}: <span>{{ formatCurrency(aprilInfo.membership_income_breakdown.monthly) }}</span></p>
+        <p v-if="aprilInfo.membership_income_breakdown">{{ displayMonth }} {{ $t('finances.quarterly-subs') }}: <span>{{ formatCurrency(aprilInfo.membership_income_breakdown.quarterly) }}</span></p>
+        <p v-if="aprilInfo.membership_income_breakdown">{{ displayMonth }} {{ $t('finances.yearly-subs') }}: <span>{{ formatCurrency(aprilInfo.membership_income_breakdown.annual) }}</span></p>
       </template>
 
       <hr v-if="aprilInfo && projectedInfo" />
 
       <template v-if="projectedInfo">
-        <p>Average Expenses {{ projectedInfo.period_covered }}: <span>{{ formatCurrency(projectedInfo.average_monthly_expenses) }}</span></p>
-        <p>Profits {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.earnings_2025) }}</span></p>
-        <p>Income {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.income_2025) }}</span></p>
-        <p>Expenses {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.expenses_2025) }}</span></p>
+        <p>{{ $t('finances.expenses') }} {{ projectedInfo.period_covered }}: <span>{{ formatCurrency(projectedInfo.average_monthly_expenses) }}</span></p>
+        <p>{{ $t('finances.profits') }} {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.earnings_2025) }}</span></p>
+        <p>{{ $t('finances.income') }} {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.income_2025) }}</span></p>
+        <p>{{ $t('finances.expenses') }} {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.expenses_2025) }}</span></p>
       </template>
     </div>
     <div v-if="!isLoading && !error && !aprilInfo && !projectedInfo" class="message">
-      No data available.
+      {{ $t('no-data') }}.
     </div>
   </div>
 </template>

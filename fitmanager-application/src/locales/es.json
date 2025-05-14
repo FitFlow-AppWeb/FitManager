@@ -154,5 +154,32 @@
     "search": "Buscar por nombre",
     "add-item": "Agregar ítem",
     "trainer": "Entrenador"
+  },
+  "finances": {
+    "profit": "Ganancia",
+    "income": "Ingresos",
+    "expenses": "Gastos",
+    "monthly-subs": "suscripciones mensuales",
+    "quarterly-subs": "suscripciones trimestrales",
+    "yearly-subs": "suscripciones anuales",
+    "average-expenses": "Gasto Promedio",
+    "profits": "Ganancias",
+    "no-data": "No hay datos disponibles",
+    "month-year": "Mes y Año",
+    "income-currency": "Ingresos (PEN)",
+    "overview": "Resumen de Ingresos Mensuales",
+    "monthly-income": "ingresos mensuales",
+    "quarterly-income": "ingresos trimestrales",
+    "yearly-income": "ingresos anuales",
+    "transactions": "Transacciones",
+    "transactions-not-found": "No se encontraron transacciones.",
+    "transactions-loading": "Cargando datos de transacciones. Por favor, espera.",
+    "date": "Fecha",
+    "recipient": "Destinatario",
+    "payer": "Pagador",
+    "concept": "Concepto",
+    "amount": "Monto",
+    "curency": "Moneda",
+    "search": "Búsqueda por palabra clave"
   }
 }

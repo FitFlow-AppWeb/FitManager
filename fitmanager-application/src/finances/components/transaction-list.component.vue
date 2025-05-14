@@ -9,15 +9,15 @@
 
       <template #header>
         <div class="flex justify-content-between align-items-center">
-          <h5 class="m-0">Transactions</h5>
+          <h5 class="m-0">{{ $t('finances.transactions') }}</h5>
           <span class="p-input-icon-left">
-            <pv-inputtext v-model="filters['global'].value" placeholder="Keyword Search" />
+            <pv-inputtext v-model="filters['global'].value" :placeholder="$t('finances.search')" />
           </span>
         </div>
       </template>
 
       <template #empty>
-        No transactions found.
+        {{ $t('finances.transactions-not-found') }}
       </template>
       <template #loading>
         Loading transaction data. Please wait.
@@ -32,7 +32,7 @@
         </template>
       </pv-column>
 
-      <pv-column field="date" header="Date" :sortable="true" style="min-width: 10rem">
+      <pv-column field="date" :header="$t('finances.date')" :sortable="true" style="min-width: 10rem">
         <template #body="{data}">
           {{formatDate(data.date)}}
         </template>
@@ -41,7 +41,7 @@
         </template>
       </pv-column>
 
-      <pv-column field="recipient" header="Recipient" :sortable="true" style="min-width: 12rem">
+      <pv-column field="recipient" :header="$t('finances.recipient')" :sortable="true" style="min-width: 12rem">
         <template #body="{data}">
           {{data.recipient}}
         </template>
@@ -50,7 +50,7 @@
         </template>
       </pv-column>
 
-      <pv-column field="payer" header="Payer" :sortable="true" style="min-width: 12rem">
+      <pv-column field="payer" :header="$t('finances.payer')" :sortable="true" style="min-width: 12rem">
         <template #body="{data}">
           {{data.payer}}
         </template>
@@ -59,7 +59,7 @@
         </template>
       </pv-column>
 
-      <pv-column field="concept" header="Concept" :sortable="true" style="min-width: 14rem">
+      <pv-column field="concept" :header="$t('finances.concept')"  :sortable="true" style="min-width: 14rem">
         <template #body="{data}">
           {{data.concept}}
         </template>
@@ -68,13 +68,13 @@
         </template>
       </pv-column>
 
-      <pv-column field="amount" header="Amount" :sortable="true" style="min-width: 10rem">
+      <pv-column field="amount" :header="$t('finances.amount')"  :sortable="true" style="min-width: 10rem">
         <template #body="{data}">
           {{formatCurrency(data.amount, data.currency)}}
         </template>
       </pv-column>
 
-      <pv-column field="currency" header="Currency" :sortable="true" style="min-width: 8rem">
+      <pv-column field="currency" :header="$t('finances.currency')"  :sortable="true" style="min-width: 8rem">
         <template #body="{data}">
           {{data.currency}}
         </template>
