@@ -77,7 +77,7 @@ export default {
           <div class="left-group">
             <pv-inputtext
                 v-model="searchQuery"
-                placeholder="Search by name..."
+                :placeholder="`${$t('classes.search')}...`"
                 class="search-bar"
             />
             <pv-button
@@ -87,7 +87,7 @@ export default {
             />
             <div v-if="showFilters" class="filter-panel">
               <div class="filter-row">
-                <label>Status:</label>
+                <label>{{ $t('classes.status') }}:</label>
                 <pv-sbutton
                     v-model="statusFilter"
                     :options="statusOptions"
@@ -95,7 +95,7 @@ export default {
                 />
               </div>
               <div class="filter-row">
-                <label>Type:</label>
+                <label>{{ $t('classes.type') }}:</label>
                 <pv-sbutton
                     v-model="typeFilter"
                     :options="typeOptions"
@@ -107,7 +107,7 @@ export default {
           </div>
           <div class="right-group">
             <pv-button
-                label="Add Class"
+                :label="$t('classes.add-class')"
                 icon="pi pi-plus"
                 class="add-btn"
                 @click="$emit('add-request')"
@@ -116,13 +116,13 @@ export default {
         </div>
       </template>
 
-      <pv-column field="name" header="Name" sortable style="width:25%"></pv-column>
-      <pv-column field="type" header="Type" sortable style="width:15%"></pv-column>
-      <pv-column field="trainerName" header="Trainer" sortable style="width:15%"/>
-      <pv-column field="date" header="Date" sortable style="width:25%"></pv-column>
-      <pv-column field="time" header="Time" sortable style="width:20%"></pv-column>
-      <pv-column field="duration" header="Duration" sortable style="width:25%"></pv-column>
-      <pv-column field="status" header="Status" sortable style="width:25%"></pv-column>
+      <pv-column field="name" :header="$t('classes.name')" sortable style="width:25%"></pv-column>
+      <pv-column field="type" :header="$t('classes.type')" sortable style="width:15%"></pv-column>
+      <pv-column field="trainerName" :header="$t('classes.trainer')" sortable style="width:15%"/>
+      <pv-column field="date" :header="$t('classes.date')" sortable style="width:25%"></pv-column>
+      <pv-column field="time" :header="$t('classes.time')" sortable style="width:20%"></pv-column>
+      <pv-column field="duration" :header="$t('classes.duration')" sortable style="width:25%"></pv-column>
+      <pv-column field="status" :header="$t('classes.status')" sortable style="width:25%"></pv-column>
       <pv-column header="Actions" style="width: 15%">
         <template v-slot:body="{ data }">
           <div class="action-buttons">
@@ -133,7 +133,7 @@ export default {
         </template>
       </pv-column>
 
-      <template #empty>No classes found.</template>
+      <template #empty>{{ $t('classes.not-found') }}.</template>
     </pv-datatable>
   </div>
 </template>

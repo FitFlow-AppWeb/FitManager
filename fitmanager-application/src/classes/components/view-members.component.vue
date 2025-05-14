@@ -35,7 +35,7 @@ export default {
 
 <template>
   <pv-dialog
-      header="Members in this Class"
+      :header="$t('classes.members-class')"
       :visible="visible"
       @update:visible="closeDialog"
       modal
@@ -43,18 +43,18 @@ export default {
   >
     <div v-if="members.length">
       <pv-datatable :value="members" responsive-layout="scroll" :rows="10" scrollable>
-        <pv-column field="fullName" header="Full Name" />
-        <pv-column field="age" header="Age" />
-        <pv-column field="membershipStatus" header="Membership Status" />
-        <pv-column field="membershipType" header="Membership Type" />
-        <pv-column field="expirationDate" header="Expiration Date" />
-        <pv-column field="email" header="Email" />
-        <pv-column field="phone" header="Phone" />
-        <pv-column field="address" header="Address" />
+        <pv-column field="fullName" :header="$t('members.full-name')" />
+        <pv-column field="age" :header="$t('members.age')" />
+        <pv-column field="membershipStatus" :header="$t('members.membership-status')" />
+        <pv-column field="membershipType" :header="$t('members.membership-type')" />
+        <pv-column field="expirationDate" :header="$t('members.expiration-date')" />
+        <pv-column field="email" :header="$t('members.email')" />
+        <pv-column field="phone" :header="$t('members.phone')" />
+        <pv-column field="address" :header="$t('members.address')" />
       </pv-datatable>
     </div>
     <div v-else>
-      <p>No members found for this class.</p>
+      <p>{{$t('members.members-not-found')}}.</p>
     </div>
 
     <div class="dialog-actions">

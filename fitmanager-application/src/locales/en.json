@@ -110,5 +110,31 @@
     "search": "Search by name",
     "add-member": "Add Member",
     "name" : "Name"
+  },
+  "classes": {
+    "add-new-class": "Add New Class",
+    "name": "Name",
+    "type": "Type",
+    "date": "Date",
+    "time": "Time",
+    "duration": "Duration",
+    "select-trainer": "Select Trainer",
+    "status": "Status",
+    "group": "Group",
+    "solo": "Solo",
+    "confirmed": "Confirmed",
+    "cancelled": "Cancelled",
+    "pending": "Pending",
+    "search": "Search by name",
+    "add-class": "Add Class",
+    "trainer": "Trainer",
+    "not-found": "No classes found",
+    "delete-class": "Delete Class",
+    "delete-confirmation": "Are you sure you want to delete this class?",
+    "delete": "Delete",
+    "edit-class": "Edit Class",
+    "update": "Update",
+    "members-class": "Members in this Class",
+    "members-not-found": "No members found for this class"
   }
 }

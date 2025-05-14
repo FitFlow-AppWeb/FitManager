@@ -110,5 +110,31 @@
     "search": "Buscar por nombre",
     "add-member": "Añadir Miembro",
     "name" : "Nombre"
+  },
+  "classes": {
+    "add-new-class": "Agregar nueva clase",
+    "name": "Nombre",
+    "type": "Tipo",
+    "date": "Fecha",
+    "time": "Hora",
+    "duration": "Duración",
+    "select-trainer": "Seleccionar entrenador",
+    "status": "Estado",
+    "group": "Grupo",
+    "solo": "Individual",
+    "confirmed": "Confirmada",
+    "cancelled": "Cancelada",
+    "pending": "Pendiente",
+    "search": "Buscar por nombre",
+    "add-class": "Agregar clase",
+    "trainer": "Entrenador",
+    "not-found": "No se encontraron clases",
+    "delete-class": "Eliminar clase",
+    "delete-confirmation": "¿Estás seguro de que deseas eliminar esta clase?",
+    "delete": "Eliminar",
+    "edit-class": "Editar clase",
+    "update": "Actualizar",
+    "members-class": "Miembros en esta clase",
+    "members-not-found": "No se encontraron miembros para esta clase"
   }
 }

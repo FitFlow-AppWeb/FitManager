@@ -15,13 +15,13 @@ export default {
       time: "",
       duration: "",
       statusOptions: [
-        { name: "Confirmed", value: "Confirmed" },
-        { name: "Cancelled", value: "Cancelled" },
-        { name: "Pending", value: "Pending" }
+        { name: this.$t("classes.confirmed"), value: "Confirmed" },
+        { name: this.$t("classes.cancelled"), value: "Cancelled" },
+        { name: this.$t("classes.pending"), value: "Pending" }
       ],
       typeOptions: [
-        { name: "Group", value: "Group" },
-        { name: "Solo", value: "Solo" }
+        { name: this.$t("classes.group"), value: "Group" },
+        { name: this.$t("classes.solo"), value: "Solo" }
       ],
       timeOptions: [
         { name: "06:00", value: "06:00" },
@@ -100,15 +100,15 @@ export default {
 <template>
   <div class="modal-overlay">
     <div class="modal-content">
-      <h2 class="modal-title">Add New Class</h2>
+      <h2 class="modal-title">{{ $t("classes.add-new-class") }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="name" placeholder="Name" class="input-field" required />
-        <pv-select v-model="type" :options="typeOptions" placeholder="Type" option-label="name" option-value="value" class="input-field" required />
-        <pv-datepicker v-model="date" placeholder="Date" class="input-field" required />
+        <pv-inputtext v-model="name" :placeholder="$t('classes.name')" class="input-field" required />
+        <pv-select v-model="type" :options="typeOptions" :placeholder="$t('classes.type')" option-label="name" option-value="value" class="input-field" required />
+        <pv-datepicker v-model="date" :placeholder="$t('classes.date')" class="input-field" required />
         <pv-select
             v-model="time"
             :options="timeOptions"
-            placeholder="Time"
+            :placeholder="$t('classes.time')"
             option-label="name"
             option-value="value"
             class="input-field"
@@ -118,7 +118,7 @@ export default {
         <pv-select
             v-model="duration"
             :options="durationOptions"
-            placeholder="Duration"
+            :placeholder="$t('classes.duration')"
             option-label="name"
             option-value="value"
             class="input-field"
@@ -127,17 +127,17 @@ export default {
         <pv-select
             v-model="trainer_id"
             :options="trainers"
-            placeholder="Select Trainer"
+            :placeholder="$t('classes.select-trainer')"
             option-label="name"
             option-value="value"
             class="input-field"
             required
         />
-        <pv-select v-model="status" :options="statusOptions" placeholder="Status" option-label="name" option-value="value" class="input-field" required />
+        <pv-select v-model="status" :options="statusOptions" :placeholder="$t('classes.status')" option-label="name" option-value="value" class="input-field" required />
 
         <div class="actions">
-          <pv-button label="Add" type="submit" class="add-button" />
-          <pv-button label="Cancel" type="button" @click="$emit('close')" class="cancel-button" />
+          <pv-button :label="$t('general.add')" type="submit" class="add-button" />
+          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
         </div>
       </form>
     </div>

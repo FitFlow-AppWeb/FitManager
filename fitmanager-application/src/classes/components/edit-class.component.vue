@@ -12,13 +12,13 @@ export default {
       localClassData: { ...this.classData },
       trainers: [],
       statusOptions: [
-        { name: "Confirmed", value: "Confirmed" },
-        { name: "Cancelled", value: "Cancelled" },
-        { name: "Pending", value: "Pending" }
+        { name: this.$t("classes.confirmed"), value: "Confirmed" },
+        { name: this.$t("classes.cancelled"), value: "Cancelled" },
+        { name: this.$t("classes.pending"), value: "Pending" }
       ],
       typeOptions: [
-        { name: "Group", value: "Group" },
-        { name: "Solo", value: "Solo" }
+        { name: this.$t("classes.group"), value: "Group" },
+        { name: this.$t("classes.solo"), value: "Solo" }
       ],
       timeOptions: [
         { name: "06:00", value: "06:00" },
@@ -86,15 +86,15 @@ export default {
 <template>
   <div class="modal-overlay" @click.self="closeModal">
     <div class="modal-content">
-      <h2 class="modal-title">Edit Class</h2>
+      <h2 class="modal-title">{{$t('classes.edit-class')}}</h2>
       <form @submit.prevent="updateClass">
-        <pv-inputtext v-model="localClassData.name" placeholder="Name" class="input-field" required />
-        <pv-select v-model="localClassData.type" :options="typeOptions" placeholder="Type" option-label="name" option-value="value" class="input-field" required />
-        <pv-datepicker v-model="localClassData.date" placeholder="Date" class="input-field" required />
+        <pv-inputtext v-model="localClassData.name" :placeholder="$t('classes.name')" class="input-field" required />
+        <pv-select v-model="localClassData.type" :options="typeOptions" :placeholder="$t('classes.type')" option-label="name" option-value="value" class="input-field" required />
+        <pv-datepicker v-model="localClassData.date":placeholder="$t('classes.date')" class="input-field" required />
         <pv-select
             v-model="localClassData.time"
             :options="timeOptions"
-            placeholder="Time"
+            :placeholder="$t('classes.time')"
             option-label="name"
             option-value="value"
             class="input-field"
@@ -104,7 +104,7 @@ export default {
         <pv-select
             v-model="localClassData.duration"
             :options="durationOptions"
-            placeholder="Duration"
+            :placeholder="$t('classes.duration')"
             option-label="name"
             option-value="value"
             class="input-field"
@@ -113,17 +113,17 @@ export default {
         <pv-select
             v-model="localClassData.trainer_id"
             :options="trainers"
-            placeholder="Select Trainer"
+            :placeholder="$t('classes.select-trainer')"
             option-label="name"
             option-value="value"
             class="input-field"
             required
         />
-        <pv-select v-model="localClassData.status" :options="statusOptions" placeholder="Status" option-label="name" option-value="value" class="input-field" required />
+        <pv-select v-model="localClassData.status" :options="statusOptions" :placeholder="$t('classes.status')" option-label="name" option-value="value" class="input-field" required />
 
         <div class="actions">
-          <pv-button label="Update" type="submit" class="update-button" />
-          <pv-button label="Cancel" type="button" @click="closeModal" class="cancel-button" />
+          <pv-button :label="$t('classes.update')" type="submit" class="update-button" />
+          <pv-button :label="$t('general.cancel')"  type="button" @click="closeModal" class="cancel-button" />
         </div>
       </form>
     </div>

@@ -33,15 +33,15 @@ export default {
 
 <template>
   <pv-dialog
-      header="Delete Class"
+      :header="$t('classes.delete-class')"
       :visible="visible"
       @update:visible="closeDialog"
       modal
   >
-    <p>Are you sure you want to delete this class?</p>
+    <p>{{ $t('classes.delete-confirmation') }}</p>
     <div class="dialog-actions">
-      <pv-button label="Cancel" class="p-button-secondary" @click="closeDialog" />
-      <pv-button label="Delete" class="p-button-danger" @click="deleteClass" />
+      <pv-button :label="$t('general.cancel')" class="p-button-secondary" @click="closeDialog" />
+      <pv-button :label="$t('classes.delete')" class="p-button-danger" @click="deleteClass" />
     </div>
   </pv-dialog>
 </template>
