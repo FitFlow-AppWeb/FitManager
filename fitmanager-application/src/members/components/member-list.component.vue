@@ -144,7 +144,7 @@ export default {
       <pv-column field="membershipType" :header="$t('members.membership-type')" sortable style="width:20%"></pv-column>
       <pv-column field="expirationDate" :header="$t('members.expiration-date')" sortable style="width:25%"></pv-column>
 
-      <template #empty>No members found.</template>
+      <template #empty>{{$t('members.not-found')}}.</template>
     </pv-datatable>
   </div>
 </template>

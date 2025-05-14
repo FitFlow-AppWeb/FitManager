@@ -109,7 +109,8 @@
     "payments": "Pagos",
     "search": "Buscar por nombre",
     "add-member": "Añadir Miembro",
-    "name" : "Nombre"
+    "name" : "Nombre",
+    "not-found": "No se encontraron miembros"
   },
   "classes": {
     "add-new-class": "Agregar nueva clase",

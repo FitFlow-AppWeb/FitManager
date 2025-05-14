@@ -109,7 +109,8 @@
     "payments": "Payments",
     "search": "Search by name",
     "add-member": "Add Member",
-    "name" : "Name"
+    "name" : "Name",
+    "not-found": "No members found"
   },
   "classes": {
     "add-new-class": "Add New Class",
