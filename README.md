@@ -2265,7 +2265,352 @@ Ejemplo de tareas y descripción de una historia
 
 #### 5.2.2.4. Development Evidence for Sprint Review
 
+## Members
+
+| Repository   | Branch          | Commit Id | Commit message                          | Committed on (Date) |
+|--------------|-----------------|-----------|-----------------------------------------|---------------------|
+| FitManager   | feature/members | 699fb19   | Add initial project structure           | May 7, 2025         |
+| FitManager   | feature/members | b1cb0c9   | Add calendar directory                  | May 7, 2025         |
+| FitManager   | feature/members | 7c07d01   | Modified main.js                        | May 7, 2025         |
+| FitManager   | feature/members | f6d2188   | Add members screen                      | May 9, 2025         |
+| FitManager   | feature/members | 7bda199   | fix(member): change height to 100% for better layout responsiveness | May 9, 2025 |
+
+## Employees
+
+| Repository   | Branch          | Commit Id | Commit message                          | Committed on (Date) |
+|--------------|-----------------|-----------|-----------------------------------------|---------------------|
+| FitManager   | feature/employees| 2d0d8e8   | Remove accident                         | May 9, 2025         |
+| FitManager   | feature/employees| 7c02f9f   | Add employee screen                     | May 9, 2025         |
+| FitManager   | feature/employees| cce63dc   | Merge branch 'feature/employees' into develop | May 9, 2025 |
+
+## Classes
+
+| Repository   | Branch          | Commit Id | Commit message                          | Committed on (Date) |
+|--------------|-----------------|-----------|-----------------------------------------|---------------------|
+| FitManager   | feature/classes | f5fdc35   | Add class.entity                        | May 9, 2025         |
+| FitManager   | feature/classes | 8f9f891   | Add class list                          | May 9, 2025         |
+| FitManager   | feature/classes | 5aef9a7   | Add trainer column                      | May 9, 2025         |
+| FitManager   | feature/classes | b89d352   | Add add-class.component                 | May 9, 2025         |
+| FitManager   | feature/classes | 6a26932   | Add edit-class.component                | May 10, 2025        |
+| FitManager   | feature/classes | 70cf17d   | Add delete-class.component              | May 10, 2025        |
+| FitManager   | feature/classes | 7e549cf   | Add view-members.component              | May 10, 2025        |
+| FitManager   | feature/classes | 5e8c6f3   | Add more gym classes                    | May 10, 2025        |
+| FitManager   | feature/classes | 59939f5   | Delete max-width property               | May 10, 2025        |
+| FitManager   | feature/classes | d721af5   | Merge branch 'feature/employees' into develop | May 10, 2025        |
+
+## Dashboard
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/dashboard| 033799d   | feat(assets): add svg for dashboard items                            | May 9, 2025         |
+| FitManager   | feature/dashboard| f4cf77c   | Add data entity                                                      | May 9, 2025         |
+| FitManager   | feature/dashboard| 61e43e4   | Add data assembler                                                   | May 9, 2025         |
+| FitManager   | feature/dashboard| 814ff10   | Add dashboard section                                                | May 9, 2025         |
+| FitManager   | feature/dashboard| d6551ca   | Merge branch 'feat/dashboard' into develop                           | May 9, 2025         |
+| FitManager   | feature/dashboard| d97847a   | fix(data-item): changed title color based on mockup prototype and adjust its size for readability | May 10, 2025 |
+| FitManager   | feature/dashboard| a156352   | Fix main.js                                                          | May 9, 2025         |
+| FitManager   | feature/dashboard| f3ba7c8   | Update dashboard endpoint                                            | May 9, 2025         |
+| FitManager   | feature/dashboard| 3e0d03b   | Refactor layout structure                                            | May 9, 2025         |
+
+## Calendar
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/calendar| a156352   | Fix main.js                                                          | May 10, 2025        |
+| FitManager   | feature/calendar| 728f310   | Add calendar component                                               | May 10, 2025        |
+| FitManager   | feature/calendar| 9d4b44d   | Merge branch 'feature/calendar' into develop                         | May 10, 2025        |
+
+## Attendance
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/attendance| 0a7d85f  | feat(attendance): integrate heatmap and summary components into attendance layout | May 11, 2025 |
+| FitManager   | feature/attendance| ae66044  | feat(heatmap): update component name and enhance styling with container layout | May 11, 2025 |
+| FitManager   | feature/attendance| a932531  | feat(historical-summary): rename component and enhance styling with container layout | May 11, 2025 |
+| FitManager   | feature/attendance| 9aa004f  | feat(weekly-summary): rename component and add container layout with styling enhancements | May 11, 2025 |
+| FitManager   | feature/attendance| 31b47b3  | feat(db): update db adding attendance                               | May 11, 2025        |
+| FitManager   | feature/attendance| 28fd118  | feat(week): add WeeklyAttendance class to manage weekly attendance data | May 11, 2025 |
+| FitManager   | feature/attendance| 9b1ef1d  | feat(week-api): implement WeekApiService and WeekAssembler for fetching and processing weekly attendance data | May 11, 2025 |
+| FitManager   | feature/attendance| 163e5bf  | feat(week-assembler): add WeekAssembler class for transforming attendance data from resources and responses | May 11, 2025 |
+| FitManager   | feature/attendance| 86478bf  | feat(heatmap): enhance heat map component with data fetching, formatting, and improved UI | May 11, 2025 |
+| FitManager   | feature/attendance| 50adc0a  | fix(week-api): update API endpoint and improve error handling for weekly attendance data | May 11, 2025 |
+| FitManager   | feature/attendance| 27e75a7  | fix(week-assembler): handle null resource input and update property names for weekly attendance | May 11, 2025 |
+| FitManager   | feature/attendance| 6909afb  | style(heatmap): adjust box-shadow for improved visual appearance    | May 11, 2025        |
+| FitManager   | feature/attendance| ef54e85  | feat(historical-summary): implement data fetching and enhance UI for historical summary component | May 11, 2025 |
+| FitManager   | feature/attendance| 64a81e7  | feat(weekly-summary): implement data fetching and loading states for weekly summary component | May 11, 2025 |
+| FitManager   | feature/attendance| abf56ee  | feat(summary): add Summary class to encapsulate weekly and historical attendance data | May 11, 2025 |
+| FitManager   | feature/attendance| 7890a29  | feat(summary-api): implement SummaryApiService for fetching and processing attendance summary data | May 11, 2025 |
+| FitManager   | feature/attendance| 8be626f  | feat(summary-assembler): add SummaryAssembler class for transforming summary resources into entities | May 11, 2025 |
+| FitManager   | feature/attendance| 3570c80  | feat(attendance): add flexbox layout for attendance component to improve UI structure | May 11, 2025 |
+| FitManager   | feature/attendance| b791ce9  | style(heatmap): remove margin from heatmap component for better alignment | May 11, 2025 |
+| FitManager   | feature/attendance| 8dd1d28  | feat(weekly-summary): centered component. | May 11, 2025 |
+| FitManager   | feature/attendance| 975e3f4  | Merge branch 'feat/attendance' into develop                         | May 11, 2025        |
+
+## App Layout
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/app-layout | d9e68ac  | feat(assets): add svg for menu items                                | May 8, 2025         |
+| FitManager   | feature/app-layout | b3cbc70  | feat(calendar): add initial calendar component                       | May 8, 2025         |
+| FitManager   | feature/app-layout | 748cc86  | feat(layout): integrate app layout component into main app         | May 8, 2025         |
+| FitManager   | feature/app-layout | 987e07b  | feat(router): set up Vue router with initial routes                 | May 8, 2025         |
+| FitManager   | feature/app-layout | 4968c6b  | feat(style): update body and app styles for full-width layout       | May 8, 2025         |
+| FitManager   | feature/app-layout | b889fac  | feat(index): update title and add Google Fonts for improved typography | May 8, 2025     |
+| FitManager   | feature/app-layout | 53b248a  | feat(sidebar): add sidebar component with navigation menu           | May 8, 2025         |
+| FitManager   | feature/app-layout | 95af015  | feat(toolbar): add toolbar component with search and profile options (still TODO) | May 8, 2025 |
+| FitManager   | feature/app-layout | 4896600  | feat(components): add new components for attendance, classes, dashboard, bookings, employees, finances, members, and notifications | May 8, 2025 |
+| FitManager   | feature/app-layout | dd79438  | feat(main): integrate router and PrimeVue for enhanced functionality | May 8, 2025        |
+| FitManager   | feature/app-layout | 5d02d12  | feat(layout): create app layout component with sidebar, toolbar and content integration | May 8, 2025 |
+| FitManager   | feature/app-layout | fc9a2e4  | chore: add logo-app png for sidebar.                                | May 8, 2025         |
+| FitManager   | feature/app-layout | e3dc67c  | feat(sidebar): add link routes to menu items (SPA)                  | May 8, 2025         |
+| FitManager   | feature/app-layout | abc41c2  | chore: update con .svg files                                         | May 8, 2025         |
+| FitManager   | feature/app-layout | 2bf9dd5  | feat(sidebar): replace logo image with SVG and adjust padding in sidebar navigation | May 8, 2025 |
+| FitManager   | feature/app-layout | b47b777  | feat(svg): add new SVG for brand logo                               | May 8, 2025         |
+| FitManager   | feature/app-layout | 2f899e1  | feat(sidebar): enhance menu styles for improved aesthetics and hover effect (still to work) | May 8, 2025 |
+| FitManager   | feature/app-layout | 601774b  | feat(style): update color scheme and background for improved readability | May 8, 2025 |
+| FitManager   | feature/app-layout | f71c40f  | feat(theme): integrate Aura theme with PrimeVue for enhanced styling options | May 8, 2025 |
+| FitManager   | feature/app-layout | 3b860ad  | feat(toolbar): enhance toolbar layout with search input and profile section | May 8, 2025 |
+| FitManager   | feature/app-layout | 9de832f  | feat(sidebar): enhance menu item interaction with active state and hover effects | May 8, 2025 |
+| FitManager   | feature/app-layout | 6f741ec  | feat(sidebar): reduce line separator height for improved visual clarity | May 8, 2025 |
+| FitManager   | app-layout       | cfe15b2   | feat(toolbar): improve search input styling and update profile button layout | May 8, 2025 |
+| FitManager   | feature/app-layout | 9778105  | feat(toolbar): replace card for div, removed redundancies from styles | May 8, 2025         |
+| FitManager   | feature/app-layout | f11b1ba  | chore: update.                                                      | May 8, 2025         |
+| FitManager   | feature/app-layout | f533919  | feat(profile): refactor components and set up script for gym profile, info, and settings | May 8, 2025 |
+| FitManager   | feature/app-layout | 1c75155  | feat(router): add profile route to the application                  | May 8, 2025         |
+| FitManager   | feature/app-layout | 465b207  | feat(router): add profile route to the application                  | May 8, 2025         |
+| FitManager   | feature/app-layout | dfd2021  | feat(sidebar): update font weight and link colors for improved visibility | May 8, 2025 |
+| FitManager   | feature/app-layout | 0d84dbc  | Merge branch 'feat/app-layout' of https://github.com/FitFlow-AppWeb/FitManager into develop | May 9, 2025 |
+
+## Finances
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/finances | d2f3c84   | feat(db-finances): add initial subscription income data for 2024-2025 | May 9, 2025         |
+| FitManager   | feature/finances | 895788d   | feat(finances): restructure finances layout with new components for improved organization | May 9, 2025 |
+| FitManager   | feature/finances | f61cf73   | feat(finances): add card layout to finances info component for better presentation | May 9, 2025 |
+| FitManager   | feature/finances | 5e3b98d   | feat(graphic): add card layout and styling for improved data presentation | May 9, 2025 |
+| FitManager   | feature/finances | 8c9bea0   | refactor(transactions): remove unused component names and add card layout to transaction list | May 9, 2025 |
+| FitManager   | feature/finances | edacc1b   | feat(graphic): add graphic component and creating linear graph from API | May 9, 2025         |
+| FitManager   | feature/finances | a13af41   | style(sidebar): update text color for improved visibility           | May 9, 2025         |
+| FitManager   | feature/finances | dd7d992   | fix(finances): update field names                                   | May 9, 2025         |
+| FitManager   | feature/finances | 114f797   | feat(finances): enhance FinancesInfo component with card layout and divider | May 9, 2025 |
+| FitManager   | feature/finances | b464401   | feat(main): add Divider component from PrimeVue for improved layout | May 9, 2025         |
+| FitManager   | feature/finances | 2ab136d   | feat(finances): add GeneralInfo and IncomeData entities for financial data management | May 10, 2025 |
+| FitManager   | feature/finances | ff2e6c3   | chore: deleted db                                                   | May 10, 2025        |
+| FitManager   | feature/finances | 4045825   | feat(db): add finances database in API                               | May 10, 2025        |
+| FitManager   | feature/finances | 3ad9222   | feat(finances): update layout styles for improved spacing in finances component | May 10, 2025 |
+| FitManager   | feature/finances | 7065830   | feat(finances): implement GeneralInfoComponent for displaying financial data | May 10, 2025 |
+| FitManager   | feature/finances | 38ffcb0   | feat(finances): add general-info assembler for transforming financial data resources | May 10, 2025 |
+| FitManager   | feature/finances | 0041688   | feat(finances): add GeneralInfoApiService for fetching financial data | May 10, 2025 |
+| FitManager   | feature/finances | bbdd3bc   | feat(finances): implement IncomeChartComponent for visualizing income data | May 10, 2025 |
+| FitManager   | feature/finances | 83a94d3   | feat(finances): add IncomeAssembler for transforming income data resources | May 10, 2025 |
+| FitManager   | feature/finances | 5372a97   | feat(finances): add IncomeApiService for fetching income data       | May 10, 2025         |
+| FitManager   | feature/finances | a01bda2   | feat(transaction): add transaction assembler.                       | May 10, 2025         |
+| FitManager   | feature/finances | a9d01a4   | feat(transaction): add transaction entity.                          | May 10, 2025         |
+| FitManager   | feature/finances | 5414861   | feat(transaction): implement transaction API service for fetching transactions | May 10, 2025 |
+| FitManager   | feature/finances | 38321c2   | feat(transaction): implement transaction list component with filtering and loading states | May 9, 2025 |
+| FitManager   | feature/finances | 563c9c9   | Merge branch 'feat/finances' into develop                           | May 10, 2025        |
+
+## Inventory
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/inventory | 806dafa  | Add inventory.entity.js                                             | May 10, 2025        |
+| FitManager   | feature/inventory | e78796f  | Add inventory.assembler.js.js                                        | May 10, 2025        |
+| FitManager   | feature/inventory | b70b562  | Add inventory-api.service.js                                         | May 10, 2025        |
+| FitManager   | feature/inventory | b3914b8  | Add inventory-list                                                   | May 10, 2025        |
+| FitManager   | feature/inventory | 89cf4bf  | Add edit inventory feature                                           | May 10, 2025        |
+| FitManager   | feature/inventory | 6590902  | Add delete inventory feature                                         | May 10, 2025        |
+| FitManager   | feature/inventory | a8628f4  | Merge branch 'feature/inventory' into develop                        | May 10, 2025        |
+
+## Profile
+
+| Repository   | Branch         | Commit Id | Commit message                                           | Committed on (Date) |
+|--------------|----------------|-----------|----------------------------------------------------------|---------------------|
+| FitManager   | feature/profile | 148b314   | Initial commit                                            | May 9, 2025         |
+| FitManager   | feature/profile | 8595ab1   | add users to db.json                                      | May 9, 2025         |
+| FitManager   | feature/profile | 5236187   | chore: add logo-profile.png and gimnasio-profile.png      | May 9, 2025         |
+| FitManager   | feature/profile | 37e9e83   | add profile screen                                        | May 10, 2025        |
+| FitManager   | feature/profile | ef0caa8   | Profile fake api                                          | May 10, 2025        |
+| FitManager   | feature/profile | f671fb8   | add i18n implementation on profile                        | May 11, 2025        |
+| FitManager   | feature/profile | 5c6ee29   | Fix user and i18n                                          | May 12, 2025        |
+
+## Internationalization
+
+| Repository   | Branch                  | Commit Id | Commit message                                           | Committed on (Date) |
+|--------------|-------------------------|-----------|----------------------------------------------------------|---------------------|
+| FitManager   | feature/internacionalization | 2c16899   | Implement i18n for dashboard section                      | May 12, 2025        |
+| FitManager   | feature/internacionalization | 8e09168   | Adjust key naming in i18n                                 | May 12, 2025        |
+| FitManager   | feature/internacionalization | 2f30f9e   | Implement i18n for calendar section                       | May 12, 2025        |
+| FitManager   | feature/internacionalization | 33151b7   | Add definitions for employees section                     | May 12, 2025        |
+
+## Notifications
+
+| Repository   | Branch         | Commit Id | Commit message                                           | Committed on (Date) |
+|--------------|----------------|-----------|----------------------------------------------------------|---------------------|
+| FitManager   | feature/notification | 5de501eb74ceedabbb7f75c3b3d02f807c3ed96a | Add login                                            | May 13, 2025        |
+| FitManager   | feature/notification | 5de501eb74ceedabbb7f75c3b3d02f807c3ed96a | Finish notification and login                          | May 13, 2025        |
+
 #### 5.2.2.5. Execution Evidence for Sprint Review.
+
+En el Sprint 2 hemos logrado implementar y visualizar las siguientes funcionalidades clave para nuestra aplicación web **FitManager**. A continuación, se presenta la evidencia de ejecución de estas funcionalidades implementadas:
+
+### Layout General de la Aplicación (App-Layout)
+
+Se ha integrado el layout general de la aplicación con las siguientes características:
+
+- **Barra de Navegación Superior (Toolbar)**: La barra de navegación contiene:
+  - El **logotipo de la aplicación**.
+  - Una **barra de búsqueda global** para facilitar la búsqueda dentro de la aplicación.
+  - El acceso al **perfil del usuario**.
+  
+ <p align="center">
+  <img src="https://github.com/user-attachments/assets/96d1d7e8-b38d-4531-be72-b7850c39ca52" alt="Toolbar">
+</p>
+
+El **Menú Lateral** ofrece acceso directo a todas las secciones principales de gestión de la plataforma, incluyendo:
+
+- **Dashboard**
+- **Miembros**
+- **Personal**
+- **Clases**
+- **Calendario**
+- **Asistencia**
+- **Finanzas**
+- **Inventario**
+- **Notificaciones**
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b51e12b5-532a-4b93-9a81-88030f4626fb" alt="sidebar">
+</p>
+
+El **Área de Contenido Principal** es el espacio donde se cargarán las diferentes vistas y funcionalidades de cada sección seleccionada. Dependiendo de la opción seleccionada en el menú lateral, este área se actualizará dinámicamente para mostrar los detalles y las interacciones específicas relacionadas con la sección activa.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a95570c9-c0ec-4981-9064-6fb302cc917d" alt="area de contenido principal">
+</p>
+
+### Dashboard
+
+El **Dashboard** ofrece una vista general y rápida del estado y las actividades clave del gimnasio:
+
+- **Métricas**: Presenta tarjetas con métricas importantes como total de miembros, miembros activos, e ingresos recientes.
+- **Gráfico de Asistencias**: Incluye un gráfico de asistencia del día y un listado de las clases programadas para la jornada actual.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/904395f2-2e0e-4f8e-829d-9f708d31b5b2" alt="dashboard">
+</p>
+
+### Calendar
+
+El **Calendar** es una herramienta visual para la programación y consulta de actividades:
+
+- **Vista Mensual**: Presenta un calendario mensual donde se pueden identificar las clases programadas.
+- **Detalle por Día**: Al seleccionar un día, se muestran las clases y eventos específicos de esa fecha.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/05e8ca92-c3f0-4fa4-b7a2-3e3691988995" alt="calendar">
+</p>
+
+### Personal
+
+La funcionalidad **Personal** permite administrar al equipo de trabajo del gimnasio:
+
+- **Listado de Personal**: Una tabla que muestra los empleados (entrenadores, recepcionistas, etc.), sus roles y datos de contacto. Incluye opciones de búsqueda para facilitar la navegación.
+- **Creación y Edición de Personal**: Interfaces que permiten agregar nuevos empleados y actualizar sus perfiles existentes.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/65a3518e-674d-4f31-b139-009b0eee11cd" alt="personal">
+</p>
+
+### Members
+
+La sección **Members** permite la administración integral de los clientes del gimnasio:
+
+- **Listado de Miembros**: Se visualiza una tabla con los miembros registrados, mostrando información relevante como nombre, estado de membresía, etc. Incluye funcionalidades de búsqueda y filtros para facilitar la navegación.
+- **Creación y Edición de Miembros**: Formularios dedicados para registrar nuevos miembros y modificar la información de los existentes.
+- **Vista de Detalle del Miembro**: Al seleccionar un miembro, se muestra una tarjeta o panel con su información completa y opciones de gestión.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6f22d171-5f83-43cc-a6e6-292dd2fff767" alt="members">
+</p>
+
+### Classes
+
+La sección **Classes** permite la organización y administración de las clases ofrecidas en el gimnasio:
+
+- **Listado de Clases**: Visualización de todas las clases con detalles como nombre, entrenador, horario, cupos disponibles e inscritos.
+- **Gestión de Clases**: Funcionalidades para añadir nuevas clases, editar las existentes y eliminarlas.
+- **Vista de Detalle de Clase**: Muestra información ampliada de una clase específica, incluyendo la lista de participantes.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/de32445e-cdf7-4914-9500-a34ccca1a363" alt="classes">
+</p>
+
+### Inventory
+
+La sección **Inventory** proporciona la funcionalidad para administrar los recursos y equipos del gimnasio:
+
+- **Listado de Inventario**: Tabla que muestra los ítems del inventario, su cantidad disponible y estado.
+- **Gestión de Ítems**: Formularios para agregar, editar y eliminar ítems del inventario.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/df224d1b-36c2-4d5a-af0a-49718f241c63" alt="inventory">
+</p>
+
+### Finances
+
+La sección **Finances** permite realizar un seguimiento de los movimientos económicos del gimnasio:
+
+- **Gráfico de Ingresos**: Representación visual de la evolución de los ingresos a lo largo del tiempo.
+- **Tabla de Transacciones**: Listado detallado de los pagos y otros movimientos financieros realizados.
+- **Resumen Financiero**: Información consolidada sobre el estado financiero general del gimnasio.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/11377a39-34d9-48da-a904-109cc82739bb" alt="finances">
+</p>
+
+### Attendance
+
+El módulo **Attendance** permite el seguimiento de la concurrencia al gimnasio:
+
+- **Mapa de Calor Semanal (Heatmap)**: Visualización gráfica de los horarios con mayor y menor afluencia durante la semana.
+- **Resúmenes de Asistencia**: Paneles con estadísticas de asistencia tanto a nivel semanal como histórica.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/14f98e95-d676-4ad5-92bc-8fc5f07f35de" alt="attendance">
+</p>
+
+### Notifications
+
+El sistema de **Notifications** facilita la comunicación de avisos importantes dentro de la plataforma y hacia los usuarios:
+
+- **Bandeja de Notificaciones Recibidas/Enviadas**: Interfaz que muestra un listado de las notificaciones, permitiendo ver su estado.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4a954af6-c72e-4f54-bdd3-43d960d680c9" alt="notifications">
+</p>
+
+### Perfil
+
+Esta sección permite a los usuarios (administradores del gimnasio) gestionar la información de su cuenta y las configuraciones generales de la aplicación FitManager:
+
+- **Visualización de Información del Perfil**: Muestra los datos asociados a la cuenta del gimnasio o del usuario administrador, como nombre del gimnasio, datos de contacto principales y rol del usuario.
+- **Edición de Información del Perfil**: Interfaz para modificar los detalles de la cuenta, como el nombre del gimnasio, dirección, información de contacto y, posiblemente, cargar o cambiar el logo del gimnasio.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/82f01528-51c0-434b-a7ce-e8b245f900c2" alt="profile">
+</p>
+
+### Login
+
+Permite a los administradores acceder a la plataforma FitManager mediante credenciales o autenticación social:
+
+- **Autenticación de usuarios existentes**: Los administradores pueden ingresar al sistema utilizando su **email** y **contraseña**.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1f49aac5-d9ef-4bf0-b5f7-8db362e4e7e7" alt="profile">
+</p>
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
