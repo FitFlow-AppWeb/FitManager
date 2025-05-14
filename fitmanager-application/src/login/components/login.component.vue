@@ -10,9 +10,12 @@ export default {
     CreateAccountButton,
   },
   methods: {
-    loginFinished() {
-      // Emitir un evento a App.vue para indicar que el login fue exitoso
-      this.$emit("login-exitoso", true);
+    // Este método manejará el evento de login exitoso
+    loginFinished(authenticated) {
+      if (authenticated) {
+        // Emitir el evento "login-success" al componente App.vue
+        this.$emit("login-exitoso", authenticated);
+      }
     }
   }
 };
@@ -24,7 +27,7 @@ export default {
     <LogoTitle />
 
     <!-- Formulario de Login -->
-    <LoginForm @login="loginFinished" />
+    <LoginForm @login-success="loginFinished" />
 
     <!-- Botón de Crear Cuenta -->
     <CreateAccountButton />

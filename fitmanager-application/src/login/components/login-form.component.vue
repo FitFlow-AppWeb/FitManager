@@ -1,7 +1,5 @@
 <script>
 import { AdminApiService } from "../services/admin-api.service.js";
-import { useRouter } from 'vue-router';
-
 export default {
   data() {
     return {
@@ -16,17 +14,19 @@ export default {
       this.error = null; // Reset error message
 
       try {
+        // Llamada al servicio de la API para obtener los administradores
         const admins = await new AdminApiService().getAllAdmins();
+
+        // Verificamos si el usuario y la contraseña coinciden
         const admin = admins.find(
             (admin) => admin.email === this.email && admin.password === this.password
         );
 
-        if (admin) {
-          // Guardamos el estado de autenticación en localStorage
-          localStorage.setItem('isAuthenticated', 'true');
+        console.log("Admin encontrado:", admin); // Verifica si los datos están correctos
 
-          // Emitir evento para que App.vue cambie el estado de autenticación
-          this.$emit('login-success');
+        if (admin) {
+          // Emitir el evento de login exitoso al componente padre
+          this.$emit('login-success', true); // Emitimos al componente padre (LoginComponent)
         } else {
           this.error = "Correo o contraseña incorrectos.";
         }
@@ -41,17 +41,16 @@ export default {
   },
 };
 </script>
+
 <template>
   <div class="login-form-container">
     <h2>Iniciar Sesión</h2>
     <form @submit.prevent="submitForm">
-      <!-- Email -->
       <div class="input-group">
         <label for="email">Email</label>
         <input type="email" id="email" v-model="email" required />
       </div>
 
-      <!-- Contraseña -->
       <div class="input-group">
         <label for="password">Contraseña</label>
         <input :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" required />
@@ -60,27 +59,20 @@ export default {
         </button>
       </div>
 
-      <!-- Botón Iniciar Sesión -->
       <button type="submit" class="submit-btn">Iniciar Sesión</button>
 
-      <!-- Olvidé mi contraseña -->
       <p class="forgot-password">
         <a href="#">Olvidé mi contraseña</a>
       </p>
     </form>
 
-    <!-- Error Message -->
     <div v-if="error" class="error-message">{{ error }}</div>
 
-    <!-- Redes Sociales -->
     <div class="social-login">
-      <!-- Botón Google -->
       <button class="google-btn">
         <img src="/assets/google-logo.png" alt="Google Logo" class="social-logo" />
         Iniciar Sesión con Google
       </button>
-
-      <!-- Botón Apple -->
       <button class="apple-btn">
         <img src="/assets/apple-logo.png" alt="Apple Logo" class="social-logo" />
         Iniciar Sesión con Apple
@@ -88,8 +80,6 @@ export default {
     </div>
   </div>
 </template>
-
-
 
 <style scoped>
 /* Contenedor del formulario */
@@ -99,7 +89,7 @@ export default {
   margin: 0 auto;
   padding: 30px;
   background-color: #fff;
-  border-radius: 15px; /* Borde más  redondeado */
+  border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
   font-family: 'Arial', sans-serif;
@@ -111,10 +101,9 @@ h2 {
   margin-bottom: 20px;
   color: #333;
   text-align: center;
-
 }
 
-/* Grupo de entradas */
+/* Estilos del formulario */
 .input-group {
   margin-bottom: 25px;
 }
@@ -123,26 +112,22 @@ h2 {
   display: block;
   margin-bottom: 8px;
   color: #555;
-
 }
 
 .input-group input {
   width: 100%;
   padding: 12px;
   font-size: 16px;
-  border: 1px solid #A7D1D2; /* Color de borde */
-  border-radius: 10px; /* Borde más redondeado */
+  border: 1px solid #A7D1D2;
+  border-radius: 10px;
   outline: none;
   transition: all 0.3s ease;
-
 }
 
 .input-group input:focus {
-  border-color: #007bff; /* Color al hacer focus */
-
+  border-color: #007bff;
 }
 
-/* Botón de Mostrar/Ocultar Contraseña */
 button[type="button"] {
   margin-top: 5px;
   background: none;
@@ -156,7 +141,7 @@ button[type="button"] {
   width: 100%;
   padding: 14px;
   font-size: 16px;
-  background-color: #A7D1D2; /* Color de fondo */
+  background-color: #A7D1D2;
   color: #3b3b3b;
   border: none;
   border-radius: 25px;
@@ -165,7 +150,7 @@ button[type="button"] {
 }
 
 .submit-btn:hover {
-  background-color: #8BB5B6; /* Color al hacer hover */
+  background-color: #8BB5B6;
 }
 
 /* Olvidé mi Contraseña */
@@ -195,7 +180,7 @@ button[type="button"] {
   padding: 12px;
   font-size: 16px;
   border-radius: 15px;
-  border: 1px solid #A7D1D2; /* Color de borde */
+  border: 1px solid #A7D1D2;
   margin-bottom: 10px;
   cursor: pointer;
   display: flex;
@@ -205,19 +190,19 @@ button[type="button"] {
 }
 
 .google-btn {
-  background-color: #fff; /* Color de fondo de Google */
+  background-color: #fff;
   color: #000000;
   border: none;
 }
 
 .apple-btn {
-  background-color: #ffff; /* Color de fondo de Apple */
+  background-color: #ffff;
   color: #000000;
   border: none;
 }
 
 .social-logo {
-  width: 20px; /* Ajustar el tamaño de las imágenes */
+  width: 20px;
   height: auto;
 }
 

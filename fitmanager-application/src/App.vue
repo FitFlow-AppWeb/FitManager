@@ -3,14 +3,15 @@ import { ref } from 'vue';
 import Login from './login/components/login.component.vue'; // Componente de Login
 import Layout from './public/components/app-layout.componet.vue'; // Componente Layout
 
-// Estado para saber si el usuario está autenticado
-const isAuthenticated = ref(localStorage.getItem('isAuthenticated') === 'true');
+// Inicializa el estado como false para que el Login se muestre por defecto
+const isAuthenticated = ref(false); // No usamos localStorage aquí, solo el estado interno
 
 // Método para manejar el evento de login exitoso
-const handleLoginSuccess = () => {
-  isAuthenticated.value = true;
-  console.log('isAuthenticated');
-  localStorage.setItem('isAuthenticated', 'true'); // Guardar en localStorage
+const handleLoginSuccess = (authenticated) => {
+  if (authenticated) {
+    isAuthenticated.value = true; // Cambiar el estado a autenticado
+    console.log("Login exitoso: Usuario autenticado.");
+  }
 };
 </script>
 
@@ -25,7 +26,6 @@ const handleLoginSuccess = () => {
 </template>
 
 <style scoped>
-/* Estilos para el contenedor de la aplicación */
 #app {
   font-family: 'Arial', sans-serif;
 }
