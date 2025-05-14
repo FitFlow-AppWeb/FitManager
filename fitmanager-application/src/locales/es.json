@@ -204,5 +204,29 @@
     "highest-attendance": "Mayor asistencia",
     "lowest-attendance": "Menor asistencia",
     "most-frequent-user": "Usuario más frecuente"
+  },
+  "notification": {
+    "create-button": "Crear notificación",
+    "title": "Título",
+    "body": "Cuerpo",
+    "recipients": "Destinatarios (separados por comas)",
+    "date": "Fecha",
+    "cancel": "Cancelar",
+    "sent-notifications": "Notificaciones enviadas",
+    "received-notifications": "Notificaciones recibidas",
+    "recipient": "Destinatario",
+    "sender": "Remitente",
+    "recipients2": "Destinatarios"
+  },
+  "login": {
+    "register": "Registrarse",
+    "login": "Iniciar sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "forget": "¿Olvidaste tu contraseña?",
+    "google": "Iniciar sesión con Google",
+    "apple": "Iniciar sesión con Apple",
+    "show": "Mostrar",
+    "hide": "Ocultar"
   }
 }

@@ -24,7 +24,7 @@ export default {
         class="create-btn"
         aria-label="Create a new notification"
     >
-      Crear Notificación
+      {{ $t('notification.create-button') }}
     </button>
   </div>
 </template>

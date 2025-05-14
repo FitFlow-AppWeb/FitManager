@@ -49,25 +49,26 @@ export default {
 
 <template>
   <div class="login-form-container">
-    <h2>Iniciar Sesión</h2>
+    <h2>{{ $t('login.login') }}</h2>
     <form @submit.prevent="submitForm">
       <div class="input-group">
-        <label for="email">Email</label>
+        <label for="email">{{ $t('login.email') }}</label>
         <input type="email" id="email" v-model="email" required aria-label="Email" />
       </div>
 
       <div class="input-group">
-        <label for="password">Contraseña</label>
+        <label for="password">{{ $t('login.password') }}</label>
         <input :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" required aria-label="Contraseña" />
         <button type="button" @click="togglePasswordVisibility" aria-label="Toggle password visibility">
-          {{ passwordVisible ? 'Ocultar' : 'Mostrar' }}
+          {{ passwordVisible ? $t('login.hide') : $t('login.show') }}
+
         </button>
       </div>
 
-      <button type="submit" class="submit-btn" aria-label="Iniciar sesión">Iniciar Sesión</button>
+      <button type="submit" class="submit-btn" aria-label="Iniciar sesión">{{ $t('login.login') }}</button>
 
       <p class="forgot-password">
-        <a href="#" aria-label="Olvidé mi contraseña">Olvidé mi contraseña</a>
+        <a href="#" aria-label="Olvidé mi contraseña">{{ $t('login.forget') }}</a>
       </p>
     </form>
 
@@ -76,11 +77,11 @@ export default {
     <div class="social-login">
       <button class="google-btn" aria-label="Iniciar sesión con Google">
         <img src="/assets/google-logo.png" alt="Google Logo" class="social-logo" />
-        Iniciar Sesión con Google
+        {{ $t('login.google') }}
       </button>
       <button class="apple-btn" aria-label="Iniciar sesión con Apple">
         <img src="/assets/apple-logo.png" alt="Apple Logo" class="social-logo" />
-        Iniciar Sesión con Apple
+        {{ $t('login.apple') }}
       </button>
     </div>
   </div>

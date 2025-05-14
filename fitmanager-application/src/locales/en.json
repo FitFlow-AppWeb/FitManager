@@ -204,5 +204,30 @@
     "highest-attendance": "Highest attendance",
     "lowest-attendance": "Lowest attendance",
     "most-frequent-user": "Most frequent user"
+  },
+
+  "notification": {
+    "create-button": "Create Notification",
+    "title": "Title",
+    "body": "Body",
+    "recipients": "Recipients (separated by commas)",
+    "date": "Date",
+    "cancel": "Cancel",
+    "sent-notifications": "Sent notifications",
+    "received-notifications": "Received notifications",
+    "recipient": "Recipient",
+    "sender": "Sender",
+    "recipients2": "Recipients"
+  },
+  "login": {
+    "register": "Register",
+    "login": "Log in",
+    "email": "Email",
+    "password": "Password",
+    "forget": "Forgot password",
+    "google": "Log in with Google",
+    "apple": "Log in with Apple",
+    "show": "Show",
+    "hide": "Hide"
   }
 }
