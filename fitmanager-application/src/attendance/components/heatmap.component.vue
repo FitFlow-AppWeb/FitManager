@@ -8,13 +8,13 @@ export default {
       isLoading: true,
       hoursOfDay: ["06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"],
       daysConfig: [
-        { header: 'Lunes',     keyInEntity: 'lunes',     keyForColumn: 'Lunes' },
-        { header: 'Martes',    keyInEntity: 'martes',    keyForColumn: 'Martes' },
-        { header: 'Miércoles', keyInEntity: 'miercoles', keyForColumn: 'MiercolesValue' },
-        { header: 'Jueves',    keyInEntity: 'jueves',    keyForColumn: 'Jueves' },
-        { header: 'Viernes',   keyInEntity: 'viernes',   keyForColumn: 'Viernes' },
-        { header: 'Sábado',    keyInEntity: 'sabado',    keyForColumn: 'Sabado' },
-        { header: 'Domingo',   keyInEntity: 'domingo',   keyForColumn: 'Domingo' }
+        { header: this.$t('attendance.monday'),     keyInEntity: 'lunes',     keyForColumn: 'Lunes' },
+        { header: this.$t('attendance.tuesday'),    keyInEntity: 'martes',    keyForColumn: 'Martes' },
+        { header: this.$t('attendance.wednesday'), keyInEntity: 'miercoles', keyForColumn: 'MiercolesValue' },
+        { header: this.$t('attendance.thursday'),    keyInEntity: 'jueves',    keyForColumn: 'Jueves' },
+        { header: this.$t('attendance.friday'),   keyInEntity: 'viernes',   keyForColumn: 'Viernes' },
+        { header: this.$t('attendance.saturday'),    keyInEntity: 'sabado',    keyForColumn: 'Sabado' },
+        { header: this.$t('attendance.sunday'),   keyInEntity: 'domingo',   keyForColumn: 'Domingo' }
       ]
     };
   },
@@ -77,14 +77,14 @@ export default {
 
 <template>
   <div class="heatmap-page-container">
-    <h2 class="heatmap-title">Weekly Heatmap</h2>
+    <h2 class="heatmap-title">{{ $t('attendance.weekly-heatmap') }}</h2>
     
     <div v-if="isLoading" class="loading-message">
-      Cargando datos del mapa de calor...
+      {{ $t('attendance.loading') }}
     </div>
     
     <div v-if="!isLoading && (!formattedHeatmapData || formattedHeatmapData.length === 0)" class="no-data-message">
-      No hay datos disponibles para mostrar el mapa de calor.
+      {{ $t('attendance.no-data') }}
     </div>
 
     <pv-datatable v-if="!isLoading && formattedHeatmapData && formattedHeatmapData.length > 0"
@@ -92,7 +92,7 @@ export default {
         class="p-datatable-sm heatmap-table p-datatable-gridlines" responsiveLayout="scroll"
         >
 
-        <pv-column field="hour" header="Hora/Día" :style="{width: '70px'}" class="hour-column-header">
+        <pv-column field="hour" :header="$t('attendance.hour-day')" :style="{width: '70px'}" class="hour-column-header">
            <template #body="slotProps">
             <div class="hour-cell-content">
               {{ slotProps.data.hour }}

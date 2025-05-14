@@ -181,5 +181,28 @@
     "amount": "Amount",
     "curency": "Currency",
     "search": "Keyword Search"
+  },
+  "attendance": {
+    "weekly-heatmap": "Weekly Heatmap",
+    "loading": "Loading heatmap data",
+    "no-data": "There is no data available to show the heatmap",
+    "hour-day": "Hour/Day",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "weekly-summary": "Weekly Summary",
+    "total-weekly-attendance": "Total Weekly Attendance",
+    "historical-summary": "Historical Summary",
+    "average-daily-attendance": "Average daily attendance",
+    "average-daily-absences": "Average daily absences",
+    "overall-attendance": "Overall attendance",
+    "peak-hour-average": "Peak hour average",
+    "highest-attendance": "Highest attendance",
+    "lowest-attendance": "Lowest attendance",
+    "most-frequent-user": "Most frequent user"
   }
 }

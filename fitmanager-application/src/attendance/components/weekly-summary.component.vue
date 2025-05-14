@@ -136,7 +136,7 @@ export default {
 <template>
   <div class="weekly-summary-container">
     <div class="weekly-summary-header">
-      <h4 class="weekly-summary-title">Weekly Summary</h4>
+      <h4 class="weekly-summary-title">{{ $t('attendance.weekly-summary') }}</h4>
     </div>
     <pv-divider class="weekly-summary-divider" />
     <div class="weekly-summary-content-wrapper">
@@ -152,7 +152,7 @@ export default {
       <div v-else class="weekly-summary-message">
         No data available.
       </div>
-      <p class="total-attendance">Total Weekly Attendance: {{ totalAttendance }}</p>  
+      <p class="total-attendance">{{ $t('attendance.total-weekly-attendance') }}: {{ totalAttendance }}</p>
     </div>
   </div>
 </template>

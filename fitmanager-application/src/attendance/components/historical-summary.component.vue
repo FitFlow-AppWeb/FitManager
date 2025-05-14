@@ -32,7 +32,7 @@ export default {
 <template>
   <div class="weekly-summary-container">
     <div class="weekly-summary-header">
-      <h4 class="weekly-summary-title">Historical Summary</h4>
+      <h4 class="weekly-summary-title">{{ $t('attendance.historical-summary') }}</h4>
     </div>
     <pv-divider class="weekly-summary-divider" />
     <div v-if="isLoading" class="weekly-summary-content">
@@ -42,13 +42,13 @@ export default {
       Error: {{ error }}
     </div>
     <div v-else-if="summary?.weeklyOverview" class="weekly-summary-content">
-      <p>Average daily attendance: {{ summary.historicalSummary.average_daily_attendance }}</p>
-      <p>Average daily absences: {{ summary.historicalSummary.average_daily_absences }}</p>
-      <p>Overall attendance: {{ summary.historicalSummary.overall_attendance_rate }}</p>
-      <p>Peak hour average: {{ summary.historicalSummary.average_peak_time }}</p>
-      <p>Highest attendance: {{ summary.historicalSummary.max_attendance }}</p>
-      <p>Lowest attendance: {{ summary.historicalSummary.min_attendance }}</p>
-      <p>Most frequent user: {{ summary.historicalSummary.most_frequent_user }}</p>
+      <p>{{ $t('attendance.average-daily-attendance') }}: {{ summary.historicalSummary.average_daily_attendance }}</p>
+      <p>{{ $t('attendance.average-daily-absences') }}: {{ summary.historicalSummary.average_daily_absences }}</p>
+      <p>{{ $t('attendance.overall-attendance') }}: {{ summary.historicalSummary.overall_attendance_rate }}</p>
+      <p>{{ $t('attendance.peak-hour-average') }}: {{ summary.historicalSummary.average_peak_time }}</p>
+      <p>{{ $t('attendance.highest-attendance') }}: {{ summary.historicalSummary.max_attendance }}</p>
+      <p>{{ $t('attendance.lowest-attendance') }}: {{ summary.historicalSummary.min_attendance }}</p>
+      <p>{{ $t('attendance.most-frequent-user') }}: {{ summary.historicalSummary.most_frequent_user }}</p>
     </div>
     <div v-else class="weekly-summary-content">
       No data available

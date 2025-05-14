@@ -181,5 +181,28 @@
     "amount": "Monto",
     "curency": "Moneda",
     "search": "Búsqueda por palabra clave"
+  },
+  "attendance": {
+    "weekly-heatmap": "Mapa de calor semanal",
+    "loading": "Cargando datos del mapa de calor",
+    "no-data": "No hay datos disponibles para mostrar el mapa de calor",
+    "hour-day": "Hora/Día",
+    "monday": "Lunes",
+    "tuesday": "Martes",
+    "wednesday": "Miércoles",
+    "thursday": "Jueves",
+    "friday": "Viernes",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
+    "weekly-summary": "Resumen semanal",
+    "total-weekly-attendance": "Asistencia semanal total",
+    "historical-summary": "Resumen histórico",
+    "average-daily-attendance": "Promedio diario de asistencia",
+    "average-daily-absences": "Promedio diario de ausencias",
+    "overall-attendance": "Asistencia general",
+    "peak-hour-average": "Promedio en hora pico",
+    "highest-attendance": "Mayor asistencia",
+    "lowest-attendance": "Menor asistencia",
+    "most-frequent-user": "Usuario más frecuente"
   }
 }
