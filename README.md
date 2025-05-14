@@ -2614,6 +2614,64 @@ Permite a los administradores acceder a la plataforma FitManager mediante creden
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
+Durante el Sprint 2, el desarrollo del frontend de FitManager para las funcionalidades de gestión de miembros, finanzas, empleados, clases, dashboard, asistencia, usuarios (perfil) e inventario se realizó utilizando una API simulada (`fake API`). 
+
+Esta API fue servida localmente mediante json-server, utilizando el archivo `db.json` como fuente de datos. Este enfoque permitió que el equipo de frontend avanzara de manera paralela y desacoplada del desarrollo completo del backend, facilitando la implementación temprana de vistas, interacción y validación de funcionalidades clave.
+  
+> La documentación formal con OpenAPI (Swagger) de los servicios web RESTful definitivos y su implementación en el backend real están planificadas para sprints posteriores.  
+> La estructura de datos reflejada en `db.json` y los endpoints simulados servirán como referencia base para el diseño y desarrollo de los servicios reales.
+
+| Endpoint                            | Entidad Principal        | Operaciones Simuladas (JSON Server)             | Alcance Futuro con OpenAPI |
+|-------------------------------------|---------------------------|--------------------------------------------------|-----------------------------|
+| `http://localhost:3000/member`      | Miembros (Members)        | `GET`, `POST`, `PUT`, `DELETE` (por ID)         | Métodos detallados para listar, obtener por ID, crear, actualizar y eliminar miembros. |
+| `http://localhost:3000/finances`    | Finanzas (Finances)       | `GET` (para `subscription_income`, `transaction_history`) | Consultas de ingresos, historial de transacciones y resumen financiero. |
+| `http://localhost:3000/employees`   | Empleados (Employees)     | `GET`, `POST`, `PUT`, `DELETE` (por ID)         | Gestión completa del personal. |
+| `http://localhost:3000/classes`     | Clases (Classes)          | `GET`, `POST`, `PUT`, `DELETE` (por ID)         | Gestión de clases, horarios, entrenadores e inscripciones. |
+| `http://localhost:3000/dashboard`   | Dashboard (Estadísticas)  | `GET` (para `statistics`, `todayAttendance`, `todayClasses`) | Consulta de métricas y datos consolidados del panel principal. |
+| `http://localhost:3000/attendance`  | Asistencia (Attendance)   | `GET` (para `weekly_heatmap`, `weekly_overview`, `historical_summary`) | Datos de asistencia, mapas de calor y resúmenes semanales/históricos. |
+| `http://localhost:3000/users`       | Usuarios / Perfil         | `GET`, `PUT` (por ID)                           | Gestión del perfil del usuario/gimnasio. |
+| `http://localhost:3000/inventory`   | Inventario (Inventory)    | `GET`, `POST`, `PUT`, `DELETE` (por ID)         | Gestión de ítems del inventario. |
+| `http://localhost:3000/receivednotification` | Notificaciones Recibidas | `GET`                                            | Consulta de notificaciones recibidas. |
+| `http://localhost:3000/inventory/sentnotification` | Notificaciones Enviadas  | `GET`                                            | Consulta de notificaciones enviadas. |
+| `http://localhost:3000/admin`       | Login (Administradores)   | `GET`                                            | Consulta de credenciales de acceso. |
+
+## Interacción con la Documentación OpenAPI (Simulada)
+
+Las interacciones con la API simulada se realizaron directamente a través de solicitudes HTTP desde el código fuente del frontend (utilizando axios) basándose en la estructura del archivo db.json y las rutas visibles en el tablero.
+
+A continuación, se detalla un ejemplo de cómo el frontend de FitManager interactúa con el endpoint simulado /attendance para obtener los datos de resumen de asistencia, utilizando el servicio SummaryApiService:
+
+- La imagen a continuación muestra el resultado de acceder directamente al endpoint http://localhost:3000/attendance a través de un navegador web mientras json-server está sirviendo el archivo db.json. Se puede observar la estructura JSON completa devuelta para la clave "attendance", incluyendo weekly_heatmap, weekly_overview, y historical_summary, que son los datos que el SummaryApiService procesa:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8480a2be-0d78-49fe-a29e-e1919a066c94" alt="endpoints result">
+</p>
+
+### Acción: Obtener los datos de resumen de asistencia (incluyendo el resumen semanal y el histórico)
+
+- **Servicio Frontend Involucrado**: `SummaryApiService` (definido en `summary-api.service.js`)
+- **Método del Servicio**: `getSummary()`
+- **Verbo HTTP** (simulado por json-server para la solicitud `axios.get`): `GET`
+- **Sintaxis de Llamada** (URL utilizada por axios): `http://localhost:3000/attendance`
+
+`SummaryApiService` realiza una solicitud `GET` a `http://localhost:3000/attendance`.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a7da4ac2-553c-44b1-8d15-b8e45f5c1bde" alt="attendance api service">
+</p>
+
+La respuesta esperada de json-server (basada en db.json bajo la clave "attendance") contiene los objetos `weekly_overview` y `historical_summary`.
+
+El servicio extrae `response.data.weekly_overview` y `response.data.historical_summary`.
+
+Estos datos "resource" se pasan a `SummaryAssembler.toEntityFromResource()` (definido en `summary.assembler.js`).
+
+El `SummaryAssembler` instancia un objeto `Summary` (definido en `summary.entity.js`) con los datos transformados.
+
+El objeto `Summary` resultante es devuelto por el método `getSummary()`, listo para ser utilizado por los componentes de la UI en el frontend.
+
+La documentación de servicios en Sprint 2 se centró en la API simulada (`json-server`, `db.json`) usada para el desarrollo frontend de FitManager. Aunque no se generó documentación OpenAPI formal, esta API simulada y su consumo (ej. `SummaryApiService`) establecen un contrato inicial para los servicios RESTful reales que se documentará un sprint futuro.
+
 #### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint
