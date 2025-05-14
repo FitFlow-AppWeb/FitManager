@@ -1,4 +1,10 @@
 
+<!--
+  This Vue component represents the system settings page, where users can customize various settings such as language, measurement units, timezone, notifications, and currency. The settings are passed in as props from a parent component. The component uses the `pv-select` component to allow users to select different options for each setting. Changes to the settings are emitted back to the parent component via the `settings-updated` event. The component also contains computed properties to handle the available options for notifications.
+
+  Author: Juan Alvarado
+-->
+
 <script>
 
 export default {
@@ -41,7 +47,7 @@ export default {
 
 <template>
   <div v-if="settings" class="settings-container">
-    <h2 class="section-title">{{ $t('profile.settings.title') }}</h2>
+    <h2 class="section-title" aria-live="polite">{{ $t('profile.settings.title') }}</h2>
     <div class="divider"></div>
 
     <div class="settings-group">
@@ -51,6 +57,7 @@ export default {
             v-model="selectedLanguage"
             :options="languages"
             @change="updateSettings('language', $event.value)"
+            aria-label="Select language"
         />
       </div>
 
@@ -60,6 +67,7 @@ export default {
             v-model="selectedUnit"
             :options="units"
             @change="updateSettings('units', $event.value)"
+            aria-label="Select measurement unit"
         />
       </div>
 
@@ -69,6 +77,7 @@ export default {
             v-model="selectedTimezone"
             :options="timezones"
             @change="updateSettings('timezone', $event.value)"
+            aria-label="Select timezone"
         />
       </div>
 
@@ -80,8 +89,8 @@ export default {
             optionLabel="label"
             optionValue="value"
             @change="updateSettings('notifications', $event.value)"
+            aria-label="Select notification option"
         />
-
       </div>
 
       <div class="setting-item">
@@ -90,6 +99,7 @@ export default {
             v-model="selectedCurrency"
             :options="currencies"
             @change="updateSettings('currency', $event.value)"
+            aria-label="Select currency"
         />
       </div>
 
@@ -101,9 +111,10 @@ export default {
   </div>
 
   <div v-else>
-    {{ $t('general.loading') }} . . .
+    <p aria-live="polite">{{ $t('general.loading') }} . . .</p>
   </div>
 </template>
+
 
 <style scoped>
 .settings-container {

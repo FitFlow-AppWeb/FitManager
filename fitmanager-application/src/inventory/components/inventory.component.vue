@@ -1,3 +1,20 @@
+//
+// The `InventoryComponent` is a Vue.js component responsible for managing the inventory. It includes functionality
+// for listing, adding, editing, and deleting inventory items. The component renders multiple child components,
+// including `InventoryList`, `AddInventory`, `EditInventory`, and `DeleteInventory`.
+// - `InventoryList` displays the list of inventory items and provides options for selecting, adding, editing,
+// and deleting items.
+// - `AddInventory` is used for adding new items to the inventory,
+// - `EditInventory` is used for editing the details of a selected item, and
+// - `DeleteInventory` is used for confirming and deleting an item.
+// The component maintains a list of inventory items (`inventory`) and tracks the selected inventory item (`selectedInventory`).
+// It manages the visibility of modals for adding, editing, and deleting inventory through `showAddModal`,
+// `showEditModal`, and `showDeleteModal`. It fetches the inventory data from the API when the component is mounted,
+// and after an action like adding, editing, or deleting, the inventory list is refreshed.
+//
+// Author: Cassius Martel
+//
+
 <script>
 import { InventoryApiService } from "../services/inventory-api.service.js";
 import InventoryList from "./inventory-list.component.vue"
@@ -5,7 +22,6 @@ import AddInventory from ".//add-inventory.component.vue"
 import EditInventory from "./edit-inventory.component.vue";
 import DeleteInventory from "./delete-inventory.component.vue";
 import DeleteClass from "../../classes/components/delete-class.component.vue";
-
 
 export default {
   name: "InventoryComponent",
@@ -43,7 +59,6 @@ export default {
     this.fetchInventory();
   }
 }
-
 </script>
 
 <template>
@@ -56,17 +71,20 @@ export default {
           @add-request="showAddModal = true"
           @edit-request="onEditRequest"
           @delete-request="ondDeleteRequest"
+          aria-label="Inventory list"
       />
       <AddInventory
           v-if="showAddModal"
           @close="showAddModal = false"
           @inventory-added="fetchInventory"
+          aria-labelledby="add-inventory-modal-title"
       />
       <EditInventory
           v-if="showEditModal"
           :inventory-data="selectedInventory"
           @close="showEditModal = false"
           @inventory-updated="fetchInventory"
+          aria-labelledby="edit-inventory-modal-title"
       />
       <DeleteInventory
           v-if="showDeleteModal"
@@ -74,10 +92,9 @@ export default {
           :visible="showDeleteModal"
           @close="showDeleteModal = false"
           @deleted-inventory="fetchInventory"
+          aria-labelledby="delete-inventory-modal-title"
       />
-
     </div>
-
   </div>
 </template>
 

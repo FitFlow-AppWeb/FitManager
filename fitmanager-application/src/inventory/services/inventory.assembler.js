@@ -1,3 +1,11 @@
+// 
+// This code defines the InventoryAssembler class, which is responsible for transforming raw resource data into Inventory entities.
+// - `toEntityFromResource`: Converts a single resource object into an instance of the Inventory class.
+// - `toEntitiesFromResponse`: Converts an array of resource objects into an array of Inventory entities.
+// The Inventory class, imported from the '../model/inventory.entity.js' file, models an inventory item with properties such as id, name, description, quantity, maintenance dates, and trainer_id.
+// Author: Cassius Martel
+//
+
 import { Inventory } from '../model/inventory.entity.js';
 
 export class InventoryAssembler {

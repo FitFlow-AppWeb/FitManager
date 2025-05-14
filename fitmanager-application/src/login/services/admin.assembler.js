@@ -1,9 +1,9 @@
 /**
- * Este archivo contiene la clase AdminAssembler, que es responsable de
- * convertir objetos de datos simples en instancias de la entidad Admin.
- * Se utiliza para simular la deserialización de datos de una respuesta de una API falsa.
+ * This file contains the AdminAssembler class, which is responsible for
+ * converting simple data objects into instances of the Admin entity.
+ * It is used to simulate the deserialization of data from a fake API response.
  *
- * Cassius Martel
+ * Author: Victor Ortiz
  */
 
 import { Admin } from '../model/admin.entity.js';

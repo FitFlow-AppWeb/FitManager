@@ -1,3 +1,12 @@
+/**
+ * This file contains the MemberApiService class, which is responsible for handling
+ * API requests related to member data. It includes methods to fetch all members,
+ * add a new member, update an existing member, and deactivate a member (delete).
+ * The service uses the MemberAssembler to convert plain data into Member entities.
+ *
+ * Author: Cassius Martel
+ */
+
 import axios from 'axios';
 import { MemberAssembler } from './member.assembler.js';
 
@@ -22,27 +31,12 @@ export class MemberApiService {
                 throw error;
             });
     }
-    deactivateMember(member) {
 
+    deactivateMember(member) {
         return axios.delete(`http://localhost:3000/member/${member.id}`)
             .catch(error => {
                 console.error('Error deleting member:', error);
                 throw error;
             });
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

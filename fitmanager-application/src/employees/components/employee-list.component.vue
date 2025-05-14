@@ -1,4 +1,16 @@
 <script>
+/**
+ * Employee List Component
+ *
+ * This component is designed to display a list of employees in a table format with filtering options. It allows
+ * users to filter employees based on various criteria such as age, salary, hours per week, and role. The component
+ * supports searching by employee name and dynamically applies filters to narrow down the results. It also supports
+ * selecting a specific employee row and emitting an event when the row is selected.
+ *
+ * The component also includes a button to add a new employee, which triggers an event for the parent component.
+ *
+ * Author: Cassius Martel
+ */
 
 export default {
   name: "EmployeeList",
@@ -107,30 +119,32 @@ export default {
                 v-model="searchQuery"
                 :placeholder="`${$t('employees.search')}...`"
                 class="search-bar"
+                aria-label="Search employee"
             />
             <pv-button
                 icon="pi pi-filter"
                 class="filter-btn"
                 @click="toggleFilters"
+                aria-label="Toggle filters"
             />
-            <div v-if="showFilters" class="filter-panel">
+            <div v-if="showFilters" class="filter-panel" aria-expanded="true">
               <div class="filter-row">
                 <label>{{ $t("employees.age") }} Min:</label>
-                <input type="number" v-model.number="ageRange.min" min="0" />
+                <input type="number" v-model.number="ageRange.min" min="0" aria-label="Minimum age" />
                 <label>Max:</label>
-                <input type="number" v-model.number="ageRange.max" min="0" />
+                <input type="number" v-model.number="ageRange.max" min="0" aria-label="Maximum age" />
               </div>
               <div class="filter-row">
                 <label>{{$t("employees.wage")}}  Min:</label>
-                <input type="number" v-model.number="salaryRange.min" min="0" />
+                <input type="number" v-model.number="salaryRange.min" min="0" aria-label="Minimum wage" />
                 <label>Max:</label>
-                <input type="number" v-model.number="salaryRange.max" min="0" />
+                <input type="number" v-model.number="salaryRange.max" min="0" aria-label="Maximum wage" />
               </div>
               <div class="filter-row">
                 <label>{{$t("employees.hours")}}  Min:</label>
-                <input type="number" v-model.number="hoursRange.min" min="0" />
+                <input type="number" v-model.number="hoursRange.min" min="0" aria-label="Minimum hours per week" />
                 <label>Max:</label>
-                <input type="number" v-model.number="hoursRange.max" min="0" />
+                <input type="number" v-model.number="hoursRange.max" min="0" aria-label="Maximum hours per week" />
               </div>
               <div class="filter-row">
                 <label>{{ $t("employees.status") }}:</label>
@@ -138,10 +152,9 @@ export default {
                     v-model="roleFilter"
                     :options="roleOptions"
                     class="filter-sbutton"
+                    aria-label="Role filter"
                 />
               </div>
-
-
             </div>
           </div>
           <div class="right-group">
@@ -150,6 +163,7 @@ export default {
                 icon="pi pi-plus"
                 class="add-btn"
                 @click="$emit('add-request')"
+                aria-label="Add new employee"
             />
           </div>
         </div>
@@ -166,6 +180,7 @@ export default {
     </pv-datatable>
   </div>
 </template>
+
 
 <style scoped>
 .table-container {

@@ -29,11 +29,12 @@ export default {
 
 <template>
   <!-- Container that holds the data items -->
-  <div class="card-container">
+  <div class="card-container" role="region" aria-labelledby="top-statistics-title">
     <!-- Loop through the statistics array and render a data-item for each entry -->
     <data-item v-for="(item, index) in statistics" :key="item.title" :data="item" />
   </div>
 </template>
+
 
 <style scoped>
 /* Styling for the card container, uses a responsive grid layout */

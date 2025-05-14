@@ -1,4 +1,12 @@
-// received-notification-api.service.js
+/**
+ * This file contains the ReceivedNotificationApiService class, which handles the interaction
+ * with the backend API for managing received notifications. It includes methods for fetching,
+ * adding, updating, and marking notifications as read. The responses from the API are processed
+ * and converted into ReceivedNotification entities using the ReceivedNotificationAssembler.
+ *
+ * Author: Victor Ortiz
+ */
+
 import axios from 'axios';
 import { ReceivedNotificationAssembler } from './received-notification.assembler.js';
 

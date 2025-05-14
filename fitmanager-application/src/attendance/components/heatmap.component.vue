@@ -1,5 +1,14 @@
+<!--
+ * HeatmapComponent - Displays weekly attendance data in a heatmap format.
+ * Fetches data from the WeekApiService and formats it for display in a table with dynamic colors based on values.
+ *
+ * Author: Renzo Luque
+ -->
+
+
 <script>
 import { WeekApiService } from "../services/week-api.service";
+
 export default {
   name: 'HeatmapComponent',
   data() {
@@ -8,23 +17,24 @@ export default {
       isLoading: true,
       hoursOfDay: ["06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"],
       daysConfig: [
-        { header: this.$t('attendance.monday'),     keyInEntity: 'lunes',     keyForColumn: 'Lunes' },
-        { header: this.$t('attendance.tuesday'),    keyInEntity: 'martes',    keyForColumn: 'Martes' },
+        { header: this.$t('attendance.monday'), keyInEntity: 'lunes', keyForColumn: 'Lunes' },
+        { header: this.$t('attendance.tuesday'), keyInEntity: 'martes', keyForColumn: 'Martes' },
         { header: this.$t('attendance.wednesday'), keyInEntity: 'miercoles', keyForColumn: 'MiercolesValue' },
-        { header: this.$t('attendance.thursday'),    keyInEntity: 'jueves',    keyForColumn: 'Jueves' },
-        { header: this.$t('attendance.friday'),   keyInEntity: 'viernes',   keyForColumn: 'Viernes' },
-        { header: this.$t('attendance.saturday'),    keyInEntity: 'sabado',    keyForColumn: 'Sabado' },
-        { header: this.$t('attendance.sunday'),   keyInEntity: 'domingo',   keyForColumn: 'Domingo' }
+        { header: this.$t('attendance.thursday'), keyInEntity: 'jueves', keyForColumn: 'Jueves' },
+        { header: this.$t('attendance.friday'), keyInEntity: 'viernes', keyForColumn: 'Viernes' },
+        { header: this.$t('attendance.saturday'), keyInEntity: 'sabado', keyForColumn: 'Sabado' },
+        { header: this.$t('attendance.sunday'), keyInEntity: 'domingo', keyForColumn: 'Domingo' }
       ]
     };
   },
+
   computed: {
     formattedHeatmapData() {
       if (!this.weekly_heatmap_entity || Object.keys(this.weekly_heatmap_entity).length === 0) {
         return [];
-    }
+      }
 
-    return this.hoursOfDay.map(hour => {
+      return this.hoursOfDay.map(hour => {
         const row = { hour: hour };
         this.daysConfig.forEach(day => {
           const dayData = this.weekly_heatmap_entity[day.keyInEntity];
@@ -34,41 +44,44 @@ export default {
       });
     }
   },
+
   methods: {
     fetchWeeklyHeatmap() {
       this.isLoading = true;
       const service = new WeekApiService();
       service.getWeekAttendance()
-        .then(data => {
-          this.weekly_heatmap_entity = data;
-          this.isLoading = false;
-        })
-        .catch(error => {
-          console.error("Error fetching weekly heatmap data in component:", error);
-          this.weekly_heatmap_entity = null; 
-          this.isLoading = false;
-        });
+          .then(data => {
+            this.weekly_heatmap_entity = data;
+            this.isLoading = false;
+          })
+          .catch(error => {
+            console.error("Error fetching weekly heatmap data in component:", error);
+            this.weekly_heatmap_entity = null;
+            this.isLoading = false;
+          });
     },
+
     getCellColor(value) {
       if (value === undefined || value === null) {
-        return '#FFFFFF'; 
+        return '#FFFFFF';
       }
       if (value === 0) {
-        return '#FFFFFF'; 
+        return '#FFFFFF';
       }
 
-      if (value >= 65) return '#E90A0A'; 
-      if (value >= 60) return '#FF3131'; 
-      if (value >= 50) return '#FF6B6B'; 
+      if (value >= 65) return '#E90A0A';
+      if (value >= 60) return '#FF3131';
+      if (value >= 50) return '#FF6B6B';
       if (value >= 40) return '#FF7B42';
-      if (value >= 35) return '#FFA382' 
-      if (value >= 30) return '#FFCF82'; 
-      if (value >= 20) return '#C1FF92'; 
-      if (value >= 15) return '#7EE669'; 
-      if (value > 0)  return '#44CF44';  
-      return '#FFFFFF'; 
+      if (value >= 35) return '#FFA382'
+      if (value >= 30) return '#FFCF82';
+      if (value >= 20) return '#C1FF92';
+      if (value >= 15) return '#7EE669';
+      if (value > 0) return '#44CF44';
+      return '#FFFFFF';
     }
   },
+
   mounted() {
     this.fetchWeeklyHeatmap();
   }
@@ -77,44 +90,50 @@ export default {
 
 <template>
   <div class="heatmap-page-container">
-    <h2 class="heatmap-title">{{ $t('attendance.weekly-heatmap') }}</h2>
-    
-    <div v-if="isLoading" class="loading-message">
+    <h2 class="heatmap-title" aria-live="polite">{{ $t('attendance.weekly-heatmap') }}</h2>
+
+    <div v-if="isLoading" class="loading-message" aria-live="assertive">
       {{ $t('attendance.loading') }}
     </div>
-    
-    <div v-if="!isLoading && (!formattedHeatmapData || formattedHeatmapData.length === 0)" class="no-data-message">
+
+    <div v-if="!isLoading && (!formattedHeatmapData || formattedHeatmapData.length === 0)" class="no-data-message" aria-live="assertive">
       {{ $t('attendance.no-data') }}
     </div>
 
+    <!-- Heatmap table with ARIA attributes -->
     <pv-datatable v-if="!isLoading && formattedHeatmapData && formattedHeatmapData.length > 0"
-        :value="formattedHeatmapData"
-        class="p-datatable-sm heatmap-table p-datatable-gridlines" responsiveLayout="scroll"
-        >
+                  :value="formattedHeatmapData"
+                  class="p-datatable-sm heatmap-table p-datatable-gridlines"
+                  responsiveLayout="scroll"
+                  role="grid"
+                  aria-labelledby="heatmap-table">
 
-        <pv-column field="hour" :header="$t('attendance.hour-day')" :style="{width: '70px'}" class="hour-column-header">
-           <template #body="slotProps">
-            <div class="hour-cell-content">
-              {{ slotProps.data.hour }}
-            </div>
-          </template>
-        </pv-column>
+      <pv-column field="hour" :header="$t('attendance.hour-day')" :style="{width: '70px'}" class="hour-column-header" aria-sort="none">
+        <template #body="slotProps">
+          <div class="hour-cell-content" role="gridcell" aria-label="Hour: {{ slotProps.data.hour }}">
+            {{ slotProps.data.hour }}
+          </div>
+        </template>
+      </pv-column>
 
-        <pv-column   v-for="day in daysConfig" 
-            :key="day.keyForColumn" 
-            :field="day.keyForColumn" 
-            :header="day.header">
-            <template #body="slotProps">
-                <div class="heatmap-cell" :style="{ backgroundColor: getCellColor(slotProps.data[day.keyForColumn]) }">
+      <!-- Day columns dynamically created from daysConfig with ARIA roles for grid and cells -->
+      <pv-column v-for="day in daysConfig"
+                 :key="day.keyForColumn"
+                 :field="day.keyForColumn"
+                 :header="day.header"
+                 aria-label="Attendance for {{ day.header }}">
+        <template #body="slotProps">
+          <div class="heatmap-cell" :style="{ backgroundColor: getCellColor(slotProps.data[day.keyForColumn]) }" role="gridcell" aria-label="Attendance value: {{ slotProps.data[day.keyForColumn] }}">
                     <span v-if="slotProps.data[day.keyForColumn] > 0">
                         {{ slotProps.data[day.keyForColumn] }}
                     </span>
-                </div>
-            </template>
-        </pv-column>
+          </div>
+        </template>
+      </pv-column>
     </pv-datatable>
   </div>
 </template>
+
 
 <style scoped>
 .heatmap-page-container {

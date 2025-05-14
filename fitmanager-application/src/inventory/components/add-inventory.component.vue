@@ -1,3 +1,14 @@
+<!--
+// The `AddInventoryComponent` is a Vue.js component that enables users to add new inventory items.
+// It provides a form where the user can input inventory details including name, description, quantity,
+// last maintenance date, next maintenance date, and the trainer responsible for the item. The component
+// fetches a list of trainers from the backend and populates a dropdown menu for selecting a trainer.
+// Upon form submission, the data is formatted and sent to the backend via the `InventoryApiService`.
+// After successful submission, it emits events to notify that the inventory has been added and to close the modal.
+//
+// Author: Cassius Martel
+-->
+
 <script>
 import {InventoryApiService} from "../services/inventory-api.service.js";
 import axios from "axios";
@@ -13,7 +24,6 @@ export default {
       last_maintenance: "",
       next_maintenance: "",
       quantity: "",
-
     };
   },
   methods: {
@@ -25,14 +35,13 @@ export default {
           ? this.next_maintenance.toISOString().split('T')[0]
           : this.next_maintenance;
       const inventory = {
-        id: Date.now(),
+
         name: this.name,
         description: this.description,
         quantity: this.quantity,
         last_maintenance: formattedLast,
         next_maintenance: formattedNext,
         trainer_id: this.trainer_id,
-
       };
 
       const service = new InventoryApiService();
@@ -62,11 +71,11 @@ export default {
     <div class="modal-content">
       <h2 class="modal-title">{{ $t('inventory.add-new-item') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="name" :placeholder="$t('inventory.name')" class="input-field" required />
-        <pv-inputtext v-model="description" :placeholder="$t('inventory.description')" class="input-field" required />
-        <pv-inputtext v-model.number="quantity" :placeholder="$t('inventory.quantity')" type="number" class="input-field" required />
-        <pv-datepicker v-model="last_maintenance" :placeholder="$t('inventory.last-maintenance')" class="input-field" required />
-        <pv-datepicker v-model="next_maintenance" :placeholder="$t('inventory.next-maintenance')" class="input-field" required />
+        <pv-inputtext v-model="name" :placeholder="$t('inventory.name')" class="input-field" required aria-label="Inventory name" />
+        <pv-inputtext v-model="description" :placeholder="$t('inventory.description')" class="input-field" required aria-label="Inventory description" />
+        <pv-inputtext v-model.number="quantity" :placeholder="$t('inventory.quantity')" type="number" class="input-field" required aria-label="Inventory quantity" />
+        <pv-datepicker v-model="last_maintenance" :placeholder="$t('inventory.last-maintenance')" class="input-field" required aria-label="Last maintenance date" />
+        <pv-datepicker v-model="next_maintenance" :placeholder="$t('inventory.next-maintenance')" class="input-field" required aria-label="Next maintenance date" />
 
         <pv-select
             v-model="trainer_id"
@@ -75,17 +84,19 @@ export default {
             option-label="name"
             option-value="value"
             class="input-field"
-            required
+            required aria-label="Select trainer"
         />
 
         <div class="actions">
-          <pv-button :label="$t('general.add')" type="submit" class="add-button" />
-          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
+          <pv-button :label="$t('general.add')" type="submit" class="add-button" aria-label="Add inventory" />
+          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" aria-label="Cancel" />
         </div>
       </form>
     </div>
   </div>
 </template>
+
+
 <style scoped>
 .modal-overlay {
   position: fixed;

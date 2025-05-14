@@ -7,7 +7,7 @@
  * - value: The number of attendees recorded during that hour
  *
  * This model is used to build time-based attendance charts on the dashboard.
- *
+ * /
  * Author: Tomio Nakamurakare
  */
 

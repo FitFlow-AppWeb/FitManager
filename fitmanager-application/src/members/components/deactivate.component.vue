@@ -1,4 +1,15 @@
 <script>
+/**
+ * Deactivate Member Component
+ *
+ * This component provides a confirmation dialog to deactivate a member's account.
+ * It receives the member object and a visibility flag as props.
+ * When the user confirms, it calls a service to deactivate the member and emits
+ * relevant events to update the parent component.
+ *
+ * Author: Cassius Martel
+ */
+
 import { MemberApiService } from "../services/member-api.service";
 
 export default {
@@ -37,11 +48,29 @@ export default {
       :visible="visible"
       @update:visible="closeDialog"
       modal
+      role="alertdialog"
+      aria-labelledby="deactivateDialogTitle"
+      aria-describedby="deactivateDialogMessage"
   >
-    <p>{{ $t('members.remove-confirmation') }}</p>
-    <div class="dialog-actions">
-      <pv-button :label="$t('general.cancel')" class="p-button-secondary" @click="closeDialog" />
-      <pv-button :label="$t('members.remove')" class="p-button-danger" @click="deactivateMember" />
+    <template #header>
+      <h2 id="deactivateDialogTitle">{{ $t('members.remove-member') }}</h2>
+    </template>
+
+    <p id="deactivateDialogMessage">{{ $t('members.remove-confirmation') }}</p>
+
+    <div class="dialog-actions" role="group" aria-label="Confirmation actions">
+      <pv-button
+          :label="$t('general.cancel')"
+          class="p-button-secondary"
+          @click="closeDialog"
+          aria-label="Cancel deactivation"
+      />
+      <pv-button
+          :label="$t('members.remove')"
+          class="p-button-danger"
+          @click="deactivateMember"
+          aria-label="Confirm deactivation"
+      />
     </div>
   </pv-dialog>
 </template>

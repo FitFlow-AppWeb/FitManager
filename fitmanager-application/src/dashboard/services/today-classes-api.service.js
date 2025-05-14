@@ -3,7 +3,7 @@
  * retrieving today's class schedule from the backend API.
  * It uses axios to perform the HTTP request and delegates the
  * transformation of raw data to the TodayClassesAssembler.
- *
+ * /
  * Tomio Nakamurakare
  */
 

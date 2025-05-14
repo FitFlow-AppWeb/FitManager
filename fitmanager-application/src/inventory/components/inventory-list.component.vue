@@ -1,6 +1,19 @@
+//
+// The `inventory-list.component` is a Vue.js component designed to display and manage a list of inventory items in a table format.
+// It includes functionality for searching and filtering inventory items, selecting a specific item, and triggering actions
+// such as editing or deleting an inventory item.
+// - The `filteredInventory` computed property filters the inventory based on the search query.
+// - The component emits events like `selected`, `edit-request`, and `delete-request` when a user selects an inventory item,
+// edits it, or deletes it, respectively.
+// - The `toggleFilters` method controls the visibility of the filter options, while the `applyFilters` method applies them.
+// - The component uses the `pv-datatable` component to display inventory data in a paginated and sortable table format.
+//
+// Author: Cassius Martel
+//
+
 <script>
 export default {
-name: "inventory-list.component",
+  name: "inventory-list.component",
   props: {
     inventory: {
       type: Array,
@@ -44,7 +57,6 @@ name: "inventory-list.component",
     }
   }
 }
-
 </script>
 
 <template>
@@ -58,6 +70,7 @@ name: "inventory-list.component",
         :rows="7"
         size="large"
         class="datatable"
+        aria-labelledby="inventory-table"
     >
       <template #header>
         <div class="header-title">
@@ -68,6 +81,7 @@ name: "inventory-list.component",
                 v-model="searchQuery"
                 :placeholder="`${$t('inventory.search')}...`"
                 class="search-bar"
+                aria-label="Search inventory"
             />
           </div>
           <div class="right-group">
@@ -76,22 +90,23 @@ name: "inventory-list.component",
                 icon="pi pi-plus"
                 class="add-btn"
                 @click="$emit('add-request')"
+                aria-label="Add new inventory item"
             />
           </div>
         </div>
       </template>
 
-      <pv-column field="name" :header="$t('inventory.name')" sortable style="width:25%"></pv-column>
-      <pv-column field="description" :header="$t('inventory.description')" sortable style="width:15%"></pv-column>
-      <pv-column field="quantity" :header="$t('inventory.quantity')" sortable style="width:25%"></pv-column>
-      <pv-column field="last_maintenance" :header="$t('inventory.last-maintenance')" sortable style="width:20%"></pv-column>
-      <pv-column field="next_maintenance" :header="$t('inventory.next-maintenance')" sortable style="width:25%"></pv-column>
-      <pv-column field="trainerName" :header="$t('inventory.trainer')" sortable style="width:15%"/>
-      <pv-column header="Actions" style="width: 15%">
+      <pv-column field="name" :header="$t('inventory.name')" sortable style="width:25%" aria-header="Item Name"></pv-column>
+      <pv-column field="description" :header="$t('inventory.description')" sortable style="width:15%" aria-header="Description"></pv-column>
+      <pv-column field="quantity" :header="$t('inventory.quantity')" sortable style="width:25%" aria-header="Quantity"></pv-column>
+      <pv-column field="last_maintenance" :header="$t('inventory.last-maintenance')" sortable style="width:20%" aria-header="Last Maintenance"></pv-column>
+      <pv-column field="next_maintenance" :header="$t('inventory.next-maintenance')" sortable style="width:25%" aria-header="Next Maintenance"></pv-column>
+      <pv-column field="trainerName" :header="$t('inventory.trainer')" sortable style="width:15%" aria-header="Trainer"></pv-column>
+      <pv-column header="Actions" style="width: 15%" aria-header="Actions">
         <template v-slot:body="{ data }">
           <div class="action-buttons">
-            <img src="/assets/pencil-svgrepo-com.svg" alt="Edit" class="action-icon" @click="() => editInventory(data) "/>
-            <img src="/assets/close-svgrepo-com.svg" alt="Delete" class="action-icon" @click="() => deleteInventory(data)" />
+            <img src="/assets/pencil-svgrepo-com.svg" alt="Edit" class="action-icon" @click="() => editInventory(data)" aria-label="Edit inventory item"/>
+            <img src="/assets/close-svgrepo-com.svg" alt="Delete" class="action-icon" @click="() => deleteInventory(data)" aria-label="Delete inventory item"/>
           </div>
         </template>
       </pv-column>
@@ -101,12 +116,12 @@ name: "inventory-list.component",
   </div>
 </template>
 
+
 <style scoped>
 .table-container {
   width: 100%;
 }
 
-/* Estilo general */
 .datatable {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   background-color: white;
@@ -114,7 +129,6 @@ name: "inventory-list.component",
   border-radius: 10px;
 }
 
-/* Header de la tabla */
 ::v-deep(.p-datatable-header) {
   background-color: white;
   color: black;
@@ -122,7 +136,6 @@ name: "inventory-list.component",
   border-bottom: 1px solid #A7D1D2;
 }
 
-/* Columnas (encabezados y celdas) */
 ::v-deep(.p-datatable-thead > tr > th),
 ::v-deep(.p-datatable-tbody > tr > td) {
   background-color: white;
@@ -130,13 +143,11 @@ name: "inventory-list.component",
   border: 1px solid #A7D1D2 !important;
 }
 
-/* Hover */
 ::v-deep(.p-datatable-tbody > tr:not(.p-highlight):hover > td) {
   background-color: #f1f1f1;
   cursor: pointer;
 }
 
-/* Fila seleccionada */
 ::v-deep(.p-datatable-tbody > tr.manual-highlight > td) {
   background-color: #A7D1D2 !important;
   color: black !important;
@@ -145,7 +156,6 @@ name: "inventory-list.component",
 }
 
 
-/* Paginador */
 ::v-deep(.p-paginator) {
   background-color: white;
   color: black;
@@ -167,12 +177,10 @@ name: "inventory-list.component",
   color: black;
 }
 
-/* Garantiza altura mínima para no achicar tabla */
 .datatable ::v-deep(.p-datatable-tablewrapper) {
-  min-height: 250px; /* ajusta a la altura deseada */
+  min-height: 250px;
 }
 
-/* Estilos de subheader */
 .header-title {
   margin-bottom: 0.5rem;
 }
@@ -215,7 +223,6 @@ name: "inventory-list.component",
 
 
 
-/* Botón seleccionado */
 ::v-deep(.filter-sbutton .p-highlight) {
   background-color: #A7D1D2 !important;
   color: white !important;
@@ -244,10 +251,10 @@ name: "inventory-list.component",
   padding: 0.75rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 10;
-  width: 360px !important;   /* más ancho */
-  max-width: 90vw;           /* nunca mayor al 90% de la ventana */
-  right: 0;                  /* alinéalo a la derecha */
-  left: auto !important;     /* desactiva el left fijo */
+  width: 360px !important;
+  max-width: 90vw;
+  right: 0;
+  left: auto !important;
 }
 
 .filter-row {

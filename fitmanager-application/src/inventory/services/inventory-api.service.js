@@ -1,3 +1,13 @@
+// 
+// This code defines the InventoryApiService class, which provides methods for interacting with an API to manage inventory data.
+// - `getInventory`: Fetches inventory and employee data concurrently. It then associates each inventory item with the name of its assigned trainer using a map.
+// - `addInventory`: Sends a POST request to add a new inventory item.
+// - `updateInventory`: Sends a PUT request to update an existing inventory item.
+// - `deleteInventory`: Sends a DELETE request to remove an inventory item from the API.
+// This service uses axios to perform HTTP requests and the InventoryAssembler class to map raw inventory data into Inventory entities.
+// Author: Cassius Martel
+//
+
 import axios from "axios";
 import { InventoryAssembler } from "./inventory.assembler.js";
 

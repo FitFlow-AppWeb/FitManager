@@ -1,6 +1,17 @@
+// 
+// Description: This code defines the `ClassApiService` class, which handles the communication with an API to manage gym classes and their associated data. It includes several methods:
+// - `getAllClasses`: Fetches all classes and employees data concurrently. It then assembles the class data and associates each class with its trainer's name based on the employee data.
+// - `addClass`: Sends a POST request to add a new class.
+// - `updateClass`: Sends a PUT request to update an existing class.
+// - `deleteClass`: Sends a DELETE request to remove a class.
+// - `getMembersByClass`: Fetches all members and filters them by the `members_ids` associated with a specific class, returning a list of member objects.
+// The `ClassAssembler` is used to convert API responses into class entities, and the `Member` class is used to represent members.
+// Author: Cassius Martel
+//
+
 import axios from 'axios';
-import  {ClassAssembler} from "./class.assembler.js";
-import {Member} from "../../members/model/member.entity.js";
+import { ClassAssembler } from "./class.assembler.js";
+import { Member } from "../../members/model/member.entity.js";
 
 export class ClassApiService {
     async getAllClasses() {
@@ -15,7 +26,6 @@ export class ClassApiService {
             const employeeMap = {};
             for (const emp of employees) {
                 employeeMap[emp.id] = emp.fullName;
-
             }
 
             return classes.map(c => ({
@@ -32,6 +42,7 @@ export class ClassApiService {
     addClass(gymClass) {
         return axios.post("http://localhost:3000/classes", gymClass);
     }
+
     updateClass(gymClass) {
         return axios.put(`http://localhost:3000/classes/${gymClass.id}`, gymClass)
             .catch(error => {
@@ -41,7 +52,6 @@ export class ClassApiService {
     }
 
     deleteClass(gymClass) {
-
         return axios.delete(`http://localhost:3000/classes/${gymClass.id}`)
             .catch(error => {
                 console.error('Error deleting class:', error);
@@ -56,7 +66,6 @@ export class ClassApiService {
 
             const filteredMembers = allMembers
                 .filter(member => gymClass.members_ids.includes(Number(member.id)));
-
 
             return filteredMembers.map(m =>
                 new Member(

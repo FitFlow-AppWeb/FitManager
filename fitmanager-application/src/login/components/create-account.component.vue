@@ -1,19 +1,26 @@
+<!--
+// This Vue component defines a button that, when clicked, navigates the user to the "Create Account" page by using Vue Router.
+// The `goToCreateAccount` method is responsible for navigating to the "/create-account" route.
+// Author: Victor Ortiz
+-->
+
+<script>
+export default {
+  methods: {
+    goToCreateAccount() {
+      this.$router.push('/create-account');
+    },
+  },
+};
+</script>
+
 <template>
   <div class="create-account-btn">
     <button @click="goToCreateAccount">Crear Cuenta</button>
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    goToCreateAccount() {
-      // Lógica para navegar a la página de creación de cuenta
-      this.$router.push('/create-account');
-    },
-  },
-};
-</script>
+
 
 <style scoped>
 .create-account-btn {

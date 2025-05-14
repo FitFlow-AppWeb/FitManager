@@ -9,7 +9,7 @@
  * - change:   A string indicating how the value has changed (e.g., "+5%", "-2")
  * - period:   The time frame for the reported change (e.g., "last week")
  * - image:    Path to an icon or image that visually represents the metric
- *
+ * //
  * Author: Tomio Nakamurakare
  */
 

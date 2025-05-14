@@ -269,7 +269,7 @@
     },
     {
       "id": "3",
-      "fullName": "Jane Smith",
+      "fullName": "Jane Smit",
       "age": 25,
       "membershipStatus": "inactive",
       "membershipType": "quarterly",
@@ -450,7 +450,7 @@
       "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
     },
     {
-      "id": 1747178731043,
+      "id": "1747178731043",
       "fullName": "Hideki Uyeyama",
       "age": 21,
       "membershipStatus": "active",
@@ -2030,7 +2030,7 @@
     },
     {
       "id": "4",
-      "fullName": "Ava Johnso",
+      "fullName": "Ava Johns",
       "age": 33,
       "role": "trainer",
       "hourlyWage": 15,
@@ -2215,27 +2215,6 @@
       "certifications": [
         "GroupX",
         "First Aid"
-      ],
-      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
-    },
-    {
-      "id": "15",
-      "fullName": "Benjamin Clark",
-      "age": 42,
-      "role": "trainer",
-      "hourlyWage": 29,
-      "hoursPerWeek": 40,
-      "dni": "55667799",
-      "email": "benjamin.trainer@example.com",
-      "phone": "+1234567015",
-      "address": "Fir Street 1515",
-      "specialties": [
-        "Endurance",
-        "Strength"
-      ],
-      "certifications": [
-        "ACSM Certified",
-        "CPR"
       ],
       "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
     }

@@ -1,3 +1,13 @@
+<!--
+* This code defines the sidebar component for the application, which includes a list of menu items
+* with corresponding icons and links. Each menu item is dynamically rendered using the PrimeVue Menu component.
+* The sidebar also includes a header with the app title and logo, and a footer with a logout option (TODO).
+* The menu items are defined in the `menuItems` array, each containing the label, icon, and target route.
+* The active menu item is highlighted when selected.
+*
+* Author: Renzo Luque
+-->
+
 <script setup>
 import {Menu} from "primevue";
 import {ref} from "vue";
@@ -60,11 +70,10 @@ const menuItems = ref([
   }
 ]);
 
-
 </script>
 
 <template>
-  <div class="app-sidebar">
+  <div class="app-sidebar" role="navigation" aria-label="Main Navigation">
     <div class="sidebar-header">
       <h3 class="app-title">FITMANAGER</h3>
       <img src="/assets/fit-manager-logo.svg" alt="FitManager Logo" class="app-logo" />
@@ -72,30 +81,29 @@ const menuItems = ref([
     <div class="line-separator"></div>
     <div class="sidebar-nav">
       <Menu class="nav-contentMenu" :model="menuItems">
-
         <template #item="{ item, props }">
-          <li :class="props.class">
+          <li :class="props.class" role="menuitem">
             <router-link
                 :to="item.to"
                 class="p-menu-item-link custom-menu-link"
                 :class="{ 'active-menu-item': selectedItem === item }"
                 @click="selectedItem = item"
-              >
-              <div v-if="item.svgContent" class="custom-svg-container" v-html="item.svgContent"></div>
+                :aria-current="selectedItem === item ? 'page' : null"
+            >
+              <div v-if="item.svgContent" class="custom-svg-container" v-html="item.svgContent" aria-hidden="true"></div>
               <span class="p-menu-item-label">{{ item.label }}</span>
             </router-link>
           </li>
         </template>
-
       </Menu>
     </div>
     <div class="line-separator"></div>
     <div class="sidebar-footer">
-      <!--      TODO :  LOGOUT -->
       <p>Salir</p>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .app-sidebar {

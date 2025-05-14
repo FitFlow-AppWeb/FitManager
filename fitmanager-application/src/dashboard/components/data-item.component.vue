@@ -22,10 +22,10 @@ export default {
 
 <template>
   <!-- Card layout for displaying individual data items -->
-  <div class="custom-card">
+  <div class="custom-card" role="region" aria-labelledby="data-item-title">
     <!-- Header section with the title and an expandable icon -->
     <div class="custom-card-header">
-      <p class="title-text">{{ data.title }}</p>
+      <p class="title-text" id="data-item-title">{{ data.title }}</p>
       <img src="../../../public/assets/expand.svg" :alt="`go to ${data.title} section`">
     </div>
 
@@ -52,6 +52,7 @@ export default {
     </div>
   </div>
 </template>
+
 
 <style scoped>
 * {

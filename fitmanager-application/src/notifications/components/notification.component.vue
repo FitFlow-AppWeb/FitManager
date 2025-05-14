@@ -1,28 +1,35 @@
 <script>
-import NotificationHeader from './create-notification-button.component.vue'; // Botón de crear notificación
-import CreateNotificationModal from './CreateNotificationModal.component.vue'; // Modal para crear notificación
-import SentNotification from './sent-notification.component.vue'; // Componente de notificaciones enviadas
-import ReceivedNotification from './received-notification.component.vue'; // Componente de notificaciones recibidas
+/**
+ * This file contains the NotificationComponent which manages the display of sent and received notifications.
+ * It also includes the ability to create new notifications via a modal. The component allows the user to switch between
+ * the "Sent" and "Received" notifications tabs and open the modal to create a new notification.
+ *
+ * Author: Victor Ortiz
+ */
+import NotificationHeader from './create-notification-button.component.vue'; // Button for creating notification
+import CreateNotificationModalComponent from './create-notification-modal.component.vue'; // Modal for creating notification
+import SentNotification from './sent-notification.component.vue'; // Component for sent notifications
+import ReceivedNotification from './received-notification.component.vue'; // Component for received notifications
 
 export default {
   name: 'NotificationComponent',
   data() {
     return {
-      showSent: true, // Estado para saber si mostramos "Enviadas" o "Recibidas"
+      showSent: true, // State to determine whether to show "Sent" or "Received" notifications
     };
   },
   components: {
     NotificationHeader,
-    CreateNotificationModal,
+    CreateNotificationModal: CreateNotificationModalComponent,
     SentNotification,
     ReceivedNotification
   },
   methods: {
     switchTab(tab) {
-      this.showSent = tab === 'sent'; // Cambia entre "Enviadas" y "Recibidas"
+      this.showSent = tab === 'sent'; // Switch between "Sent" and "Received"
     },
     openCreateNotificationModal() {
-      this.$refs.createNotificationModal.openModal(); // Llama al método 'openModal' del modal
+      this.$refs.createNotificationModal.openModal(); // Call the 'openModal' method from the modal
     }
   }
 };
@@ -30,24 +37,24 @@ export default {
 
 <template>
   <div class="notification-container">
-    <!-- Botones en la parte superior (con clase sticky) -->
-    <div class="tabs">
-      <button @click="switchTab('sent')" :class="{ active: showSent }">Notificaciones Enviadas</button>
-      <button @click="switchTab('received')" :class="{ active: !showSent }">Notificaciones Recibidas</button>
-      <button @click="openCreateNotificationModal" class="create-btn">Crear Notificación</button>
+    <!-- Tabs for navigating between Sent and Received notifications -->
+    <div class="tabs" role="tablist">
+      <button @click="switchTab('sent')" :class="{ active: showSent }" role="tab" aria-selected="showSent">Notificaciones Enviadas</button>
+      <button @click="switchTab('received')" :class="{ active: !showSent }" role="tab" aria-selected="!showSent">Notificaciones Recibidas</button>
+      <button @click="openCreateNotificationModal" class="create-btn" aria-label="Create notification">Crear Notificación</button>
     </div>
 
-    <!-- Sección de Notificaciones Enviadas -->
-    <div v-if="showSent">
+    <!-- Section for Sent Notifications -->
+    <div v-if="showSent" role="tabpanel" aria-labelledby="sent-tab">
       <SentNotification />
     </div>
 
-    <!-- Sección de Notificaciones Recibidas -->
-    <div v-else>
+    <!-- Section for Received Notifications -->
+    <div v-else role="tabpanel" aria-labelledby="received-tab">
       <ReceivedNotification />
     </div>
 
-    <!-- Componente Modal para Crear Notificación -->
+    <!-- Modal Component for Creating Notification -->
     <CreateNotificationModal ref="createNotificationModal" />
   </div>
 </template>
@@ -58,10 +65,9 @@ export default {
   background-color: #F2EDED;
 }
 
-/* Tabs (botones) con posición sticky */
 .tabs {
   top: 0;
-  z-index: 10; /* Para que se mantengan por encima del contenido al hacer scroll */
+  z-index: 10;
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
@@ -85,7 +91,7 @@ export default {
   opacity: 0.8;
 }
 
-/* Estilo del botón Crear Notificación */
+
 .create-btn {
   background-color: #A7D1D2;
   padding: 10px 20px;

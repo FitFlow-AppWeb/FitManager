@@ -1,3 +1,9 @@
+<!--
+  This Vue component serves as the dashboard page, where it manages and displays the user's profile information and system settings. The component fetches user data on mount, including their personal information and settings. It uses child components (`HeaderComponent`, `AccountInfo`, and `SystemSettings`) to display different sections of the dashboard, such as the header with the user's details, account information, and system settings. Additionally, the component provides functionality to update user settings and locale preferences. When a setting is changed, the component updates both the local state and the backend using the `UserApiService`.
+
+  Author: Juan Alvarado
+-->
+
 <script>
 import { UserApiService } from '../services/user-api.service.js';
 import HeaderComponent from './info.component.vue';
@@ -28,7 +34,6 @@ export default {
       service.getUserById(1).then(data => {
         this.user = data;
       });
-
     },
     handleSettingsUpdate({ key, value }) {
       // Actualizar el setting en el objeto user
@@ -59,28 +64,30 @@ export default {
   <div v-if="user" class="dashboard-container">
     <!-- 1. CUADRO SUPERIOR (Header) -->
     <div class="top-section">
-      <HeaderComponent v-if="user" :user="user" />
+      <HeaderComponent v-if="user" :user="user" aria-live="polite"/>
     </div>
 
     <!-- 2. CUADROS INFERIORES (Mitad izquierda/derecha) -->
     <div class="bottom-container">
       <div class="left-section">
-        <AccountInfo v-if="user" :user="user" />
+        <AccountInfo v-if="user" :user="user" aria-live="polite"/>
       </div>
       <div class="right-section">
         <SystemSettings
             v-if="user"
             :settings="user.settings"
             @settings-updated="handleSettingsUpdate"
+            aria-live="polite"
         />
       </div>
     </div>
   </div>
 
   <div v-else>
-    {{ $t('general.loading') }} . . .
+    <p aria-live="polite">{{ $t('general.loading') }} . . .</p>
   </div>
 </template>
+
 
 <style scoped>
 .dashboard-container {

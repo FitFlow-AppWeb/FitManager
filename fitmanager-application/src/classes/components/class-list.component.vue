@@ -1,3 +1,13 @@
+<!--
+// Description: This code defines a `class-list.component` which is a Vue.js component for displaying a list of gym classes in a table format.
+// It allows users to view, edit, or delete classes, and includes functionality for searching and filtering by class name, status, and type.
+// The component also includes buttons for adding a new class and toggling filters.
+// - The `filteredClasses` computed property filters the class list based on search query, status filter, and type filter.
+// - The `handleRowSelect` method handles selection of a class row, emitting the selected class data to the parent component.
+// - The `toggleFilters`, `applyFilters`, `viewClass`, `editClass`, and `deleteClass` methods handle user interactions with filters and class actions.
+// Author: Cassius Martel
+-->
+
 <script>
 export default {
   name: "class-list.component",
@@ -79,11 +89,13 @@ export default {
                 v-model="searchQuery"
                 :placeholder="`${$t('classes.search')}...`"
                 class="search-bar"
+                aria-label="Search for a class"
             />
             <pv-button
                 icon="pi pi-filter"
                 class="filter-btn"
                 @click="toggleFilters"
+                aria-label="Toggle filters"
             />
             <div v-if="showFilters" class="filter-panel">
               <div class="filter-row">
@@ -92,6 +104,7 @@ export default {
                     v-model="statusFilter"
                     :options="statusOptions"
                     class="filter-sbutton"
+                    aria-label="Filter by status"
                 />
               </div>
               <div class="filter-row">
@@ -100,9 +113,9 @@ export default {
                     v-model="typeFilter"
                     :options="typeOptions"
                     class="filter-sbutton"
+                    aria-label="Filter by type"
                 />
               </div>
-
             </div>
           </div>
           <div class="right-group">
@@ -111,6 +124,7 @@ export default {
                 icon="pi pi-plus"
                 class="add-btn"
                 @click="$emit('add-request')"
+                aria-label="Add a new class"
             />
           </div>
         </div>
@@ -126,9 +140,9 @@ export default {
       <pv-column header="Actions" style="width: 15%">
         <template v-slot:body="{ data }">
           <div class="action-buttons">
-            <img src="/assets/eye-svgrepo-com.svg" alt="View" class="action-icon" @click="() => viewClass(data) " />
-            <img src="/assets/pencil-svgrepo-com.svg" alt="Edit" class="action-icon" @click="() => editClass(data) "/>
-            <img src="/assets/close-svgrepo-com.svg" alt="Delete" class="action-icon" @click="() => deleteClass(data)" />
+            <img src="/assets/eye-svgrepo-com.svg" alt="View" class="action-icon" @click="() => viewClass(data)" aria-label="View class" />
+            <img src="/assets/pencil-svgrepo-com.svg" alt="Edit" class="action-icon" @click="() => editClass(data)" aria-label="Edit class" />
+            <img src="/assets/close-svgrepo-com.svg" alt="Delete" class="action-icon" @click="() => deleteClass(data)" aria-label="Delete class" />
           </div>
         </template>
       </pv-column>
@@ -138,12 +152,12 @@ export default {
   </div>
 </template>
 
+
 <style scoped>
 .table-container {
   width: 100%;
 }
 
-/* Estilo general */
 .datatable {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   background-color: white;
@@ -151,7 +165,6 @@ export default {
   border-radius: 10px;
 }
 
-/* Header de la tabla */
 ::v-deep(.p-datatable-header) {
   background-color: white;
   color: black;
@@ -159,7 +172,6 @@ export default {
   border-bottom: 1px solid #A7D1D2;
 }
 
-/* Columnas (encabezados y celdas) */
 ::v-deep(.p-datatable-thead > tr > th),
 ::v-deep(.p-datatable-tbody > tr > td) {
   background-color: white;
@@ -167,13 +179,11 @@ export default {
   border: 1px solid #A7D1D2 !important;
 }
 
-/* Hover */
 ::v-deep(.p-datatable-tbody > tr:not(.p-highlight):hover > td) {
   background-color: #f1f1f1;
   cursor: pointer;
 }
 
-/* Fila seleccionada */
 ::v-deep(.p-datatable-tbody > tr.manual-highlight > td) {
   background-color: #A7D1D2 !important;
   color: black !important;
@@ -182,7 +192,6 @@ export default {
 }
 
 
-/* Paginador */
 ::v-deep(.p-paginator) {
   background-color: white;
   color: black;
@@ -204,12 +213,10 @@ export default {
   color: black;
 }
 
-/* Garantiza altura mínima para no achicar tabla */
 .datatable ::v-deep(.p-datatable-tablewrapper) {
   min-height: 250px; /* ajusta a la altura deseada */
 }
 
-/* Estilos de subheader */
 .header-title {
   margin-bottom: 0.5rem;
 }
@@ -251,8 +258,6 @@ export default {
 
 
 
-
-/* Botón seleccionado */
 ::v-deep(.filter-sbutton .p-highlight) {
   background-color: #A7D1D2 !important;
   color: white !important;
@@ -281,10 +286,10 @@ export default {
   padding: 0.75rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 10;
-  width: 360px !important;   /* más ancho */
-  max-width: 90vw;           /* nunca mayor al 90% de la ventana */
-  right: 0;                  /* alinéalo a la derecha */
-  left: auto !important;     /* desactiva el left fijo */
+  width: 360px !important;
+  max-width: 90vw;
+  right: 0;
+  left: auto !important;
 }
 
 .filter-row {

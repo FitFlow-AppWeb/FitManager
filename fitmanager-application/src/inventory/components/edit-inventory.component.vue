@@ -1,8 +1,20 @@
+//
+// The `EditInventory` is a Vue.js component that allows users to edit the details of an inventory item.
+// It accepts `inventoryData` as a prop, which contains the data for the inventory item to be edited.
+// The component initializes with this data and allows the user to modify the item's name, description, quantity,
+// last maintenance date, next maintenance date, and assigned trainer.
+// The component fetches a list of available trainers from a backend API and populates the options in a select dropdown.
+// When the user submits the form, the updated inventory data is sent to the backend for updating, and the component emits
+// an event to notify the parent component that the inventory item has been updated.
+// The component also provides a close button to cancel the operation and close the modal.
+//
+// Author: Cassius Martel
+//
+
 <script>
 
 import { InventoryApiService } from "../services/inventory-api.service.js";
 import axios from "axios";
-
 
 export default {
   name: "EditInventory",
@@ -44,15 +56,15 @@ export default {
 </script>
 
 <template>
-  <div class="modal-overlay" @click.self="closeModal">
+  <div class="modal-overlay" @click.self="closeModal" aria-labelledby="edit-inventory-modal-title" role="dialog" aria-hidden="false">
     <div class="modal-content">
-      <h2 class="modal-title">{{$t('inventory.edit-inventory')}}</h2>
+      <h2 id="edit-inventory-modal-title" class="modal-title">{{$t('inventory.edit-inventory')}}</h2>
       <form @submit.prevent="updateInventory">
-        <pv-inputtext v-model="localInventoryData.name" :placeholder="$t('inventory.name')" class="input-field" required />
-        <pv-inputtext v-model="localInventoryData.description" :placeholder="$t('inventory.description')" class="input-field" required />
-        <pv-inputtext v-model.number="localInventoryData.quantity" :placeholder="$t('inventory.quantity')" type="number" class="input-field" required />
-        <pv-datepicker v-model="localInventoryData.last_maintenance" :placeholder="$t('inventory.last-maintenance')" class="input-field" required />
-        <pv-datepicker v-model="localInventoryData.next_maintenance" :placeholder="$t('inventory.next-maintenance')" class="input-field" required />
+        <pv-inputtext v-model="localInventoryData.name" :placeholder="$t('inventory.name')" class="input-field" required aria-labelledby="inventory-name-label"/>
+        <pv-inputtext v-model="localInventoryData.description" :placeholder="$t('inventory.description')" class="input-field" required aria-labelledby="inventory-description-label"/>
+        <pv-inputtext v-model.number="localInventoryData.quantity" :placeholder="$t('inventory.quantity')" type="number" class="input-field" required aria-labelledby="inventory-quantity-label"/>
+        <pv-datepicker v-model="localInventoryData.last_maintenance" :placeholder="$t('inventory.last-maintenance')" class="input-field" required aria-labelledby="inventory-last-maintenance-label"/>
+        <pv-datepicker v-model="localInventoryData.next_maintenance" :placeholder="$t('inventory.next-maintenance')" class="input-field" required aria-labelledby="inventory-next-maintenance-label"/>
 
         <pv-select
             v-model="localInventoryData.trainer_id"
@@ -62,16 +74,18 @@ export default {
             option-value="value"
             class="input-field"
             required
+            aria-labelledby="trainer-select-label"
         />
 
         <div class="actions">
-          <pv-button :label="$t('inventory.update')" type="submit" class="update-button" />
-          <pv-button :label="$t('general.cancel')" type="button" @click="closeModal" class="cancel-button" />
+          <pv-button :label="$t('inventory.update')" type="submit" class="update-button" aria-label="Update inventory"/>
+          <pv-button :label="$t('general.cancel')" type="button" @click="closeModal" class="cancel-button" aria-label="Cancel editing inventory"/>
         </div>
       </form>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .modal-overlay {

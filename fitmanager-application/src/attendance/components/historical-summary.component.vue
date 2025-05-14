@@ -1,3 +1,11 @@
+<!--
+  Description: This component, HistoricalSummary, is responsible for fetching and displaying a historical summary of weekly attendance data. It fetches the data from an API using the SummaryApiService and handles loading, error, and data display states. The summary includes various statistics like average daily attendance, absences, overall attendance rate, peak hours, and most frequent user. It shows either a loading message, an error message, or the summary data once it's available.
+  Author: Renzo Luque
+  Accessibility:
+    - The component uses proper aria roles and attributes for better accessibility.
+    - Each element that displays data is properly labeled with appropriate aria labels.
+-->
+
 <script>
 import { SummaryApiService } from "../services/summary-api.service";
 export default {
@@ -16,29 +24,29 @@ export default {
     fetchSummary() {
       const summaryService = new SummaryApiService();
       summaryService.getSummary()
-        .then((summary) => {
-          this.summary = summary;
-          this.isLoading = false;
-        })
-        .catch((error) => {
-          this.error = error;
-          this.isLoading = false;
-        });
+          .then((summary) => {
+            this.summary = summary;
+            this.isLoading = false;
+          })
+          .catch((error) => {
+            this.error = error;
+            this.isLoading = false;
+          });
     }
   }
 }
 </script>
 
 <template>
-  <div class="weekly-summary-container">
-    <div class="weekly-summary-header">
+  <div class="weekly-summary-container" aria-live="polite">
+    <div class="weekly-summary-header" role="heading" aria-level="2">
       <h4 class="weekly-summary-title">{{ $t('attendance.historical-summary') }}</h4>
     </div>
     <pv-divider class="weekly-summary-divider" />
-    <div v-if="isLoading" class="weekly-summary-content">
+    <div v-if="isLoading" class="weekly-summary-content" role="status" aria-live="assertive">
       Loading...
     </div>
-    <div v-else-if="error" class="weekly-summary-content">
+    <div v-else-if="error" class="weekly-summary-content" role="alert" aria-live="assertive">
       Error: {{ error }}
     </div>
     <div v-else-if="summary?.weeklyOverview" class="weekly-summary-content">

@@ -1,9 +1,16 @@
 <script>
+/**
+ * This file contains the definition of the NotificationHeader component.
+ * It renders a header with a button to trigger the creation of a notification.
+ * When the button is clicked, it emits an event to create a notification.
+ *
+ * Author: Victor Ortiz
+ */
 export default {
   name: 'NotificationHeader',
   methods: {
     createNotification() {
-      this.$emit('create-notification'); // Emite el evento para abrir el modal
+      this.$emit('create-notification');
     }
   }
 };
@@ -11,7 +18,14 @@ export default {
 
 <template>
   <div class="notification-header">
-    <button @click="createNotification" class="create-btn">Crear Notificación</button>
+    <!-- ARIA-Label added to improve accessibility -->
+    <button
+        @click="createNotification"
+        class="create-btn"
+        aria-label="Create a new notification"
+    >
+      Crear Notificación
+    </button>
   </div>
 </template>
 

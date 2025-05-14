@@ -1,4 +1,11 @@
-// received-notification-assembler.js
+/**
+ * This file contains the ReceivedNotificationAssembler class, which is responsible for transforming
+ * raw data (such as from an API response) into instances of the ReceivedNotification class.
+ * The class contains methods to convert a single resource or an array of resources into
+ * ReceivedNotification entities.
+ *
+ * Author: Victor Ortiz
+ */
 
 import { ReceivedNotification } from '../model/received-notification.entity.js';
 

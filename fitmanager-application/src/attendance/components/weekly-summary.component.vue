@@ -1,3 +1,8 @@
+<!--
+  Description: This component, WeeklySummaryComponent, fetches and displays weekly attendance data in a bar chart format. It retrieves the data using the SummaryApiService and displays attendance statistics for each day of the week. The chart dynamically updates based on the fetched data, and error or loading states are handled accordingly. Additionally, the component calculates and displays the total weekly attendance. The chart is configured with custom options for better styling and layout.
+  Author: Renzo Luque
+-->
+
 <script>
 import { SummaryApiService } from "../services/summary-api.service";
 export default {
@@ -16,13 +21,13 @@ export default {
       if (!this.summary?.weeklyOverview) return 0;
       const overview = this.summary.weeklyOverview;
       return (
-        (overview.asistencias_lunes || 0) +
-        (overview.asistencias_martes || 0) +
-        (overview.asistencias_miercoles || 0) +
-        (overview.asistencias_jueves || 0) +
-        (overview.asistencias_viernes || 0) +
-        (overview.asistencias_sabado || 0) +
-        (overview.asistencias_domingo || 0)
+          (overview.asistencias_lunes || 0) +
+          (overview.asistencias_martes || 0) +
+          (overview.asistencias_miercoles || 0) +
+          (overview.asistencias_jueves || 0) +
+          (overview.asistencias_viernes || 0) +
+          (overview.asistencias_sabado || 0) +
+          (overview.asistencias_domingo || 0)
       );
     }
   },
@@ -35,16 +40,16 @@ export default {
       this.isLoading = true;
       const summaryService = new SummaryApiService();
       summaryService.getSummary()
-        .then((summary) => {
-          this.summary = summary;
-          this.formatChartData();
-          this.isLoading = false;
-        })
-        .catch((error) => {
-          this.error = error;
-          this.isLoading = false;
-          console.error("Error fetching summary:", error);
-        });
+          .then((summary) => {
+            this.summary = summary;
+            this.formatChartData();
+            this.isLoading = false;
+          })
+          .catch((error) => {
+            this.error = error;
+            this.isLoading = false;
+            console.error("Error fetching summary:", error);
+          });
     },
     formatChartData() {
       if (!this.summary || !this.summary.weeklyOverview) {
@@ -134,28 +139,29 @@ export default {
 </script>
 
 <template>
-  <div class="weekly-summary-container">
+  <div class="weekly-summary-container" aria-live="polite">
     <div class="weekly-summary-header">
-      <h4 class="weekly-summary-title">{{ $t('attendance.weekly-summary') }}</h4>
+      <h4 class="weekly-summary-title" aria-label="Weekly attendance summary">{{ $t('attendance.weekly-summary') }}</h4>
     </div>
     <pv-divider class="weekly-summary-divider" />
     <div class="weekly-summary-content-wrapper">
-      <div v-if="isLoading" class="weekly-summary-message">
+      <div v-if="isLoading" class="weekly-summary-message" aria-live="assertive">
         Loading overview...
       </div>
-      <div v-else-if="error" class="weekly-summary-message">
+      <div v-else-if="error" class="weekly-summary-message" aria-live="assertive">
         Error: {{ error.message || error }}
       </div>
-      <div v-else-if="chartData" class="weekly-summary-chart-container">
+      <div v-else-if="chartData" class="weekly-summary-chart-container" aria-label="Attendance chart">
         <pv-chart type="bar" :data="chartData" :options="chartOptions" />
       </div>
       <div v-else class="weekly-summary-message">
         No data available.
       </div>
-      <p class="total-attendance">{{ $t('attendance.total-weekly-attendance') }}: {{ totalAttendance }}</p>
+      <p class="total-attendance" aria-label="Total weekly attendance">{{ $t('attendance.total-weekly-attendance') }}: {{ totalAttendance }}</p>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .weekly-summary-container {

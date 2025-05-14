@@ -1,9 +1,11 @@
 /**
- * This file contains the definition of the Member class.
- * The class is used to model the member entity, containing essential information about each member.
- * It includes properties like name, age, membership status, and other personal details.
+ * Member Class Definition
  *
- * Cassius Martel
+ * This class models a Member entity with all relevant attributes such as personal details,
+ * membership status, contact information, and important dates. It serves as a data structure
+ * for representing members within the application logic.
+ *
+ * Author: Cassius Martel
  */
 
 export class Member {

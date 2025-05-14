@@ -1,3 +1,15 @@
+<!--
+This Vue component displays the logo and title for the application. The logo is an image and the title is "FITMANAGER" in an h1 element.
+It is a simple static component used as a branding header in the UI.
+Author: Victor Ortiz
+-->
+
+<script>
+export default {
+  name: 'LogoTitle',
+};
+</script>
+
 <template>
   <div class="logo-title-container">
     <img src="/assets/logo-app.png" alt="FitManager Logo" class="logo" />
@@ -5,11 +17,7 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'LogoTitle',
-};
-</script>
+
 
 <style scoped>
 .logo-title-container {

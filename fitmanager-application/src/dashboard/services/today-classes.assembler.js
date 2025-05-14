@@ -3,7 +3,7 @@
  * converting raw data objects into TodayClass entity instances.
  * It simulates the deserialization process used for API responses
  * that provide today's class schedule in a raw format.
- *
+ * /
  * Tomio Nakamurakare
  */
 

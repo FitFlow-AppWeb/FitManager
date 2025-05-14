@@ -1,3 +1,8 @@
+<!--
+  Description: This component is part of a calendar system that allows the user to view and manage class schedules. It has two main sections: one for displaying classes on the selected date and another for showing a monthly overview of classes. The user can select a specific date to see the classes scheduled for that day, and the component will also generate a monthly view with the respective classes for each day. The component interacts with an external API service (`ClassApiService`) to fetch class data. It also provides functionality for navigating through months and selecting different days to view class information.
+  Author: Tomio Nakamurakare
+-->
+
 <script>
 import { ClassApiService } from '../../classes/services/class-api.service.js';
 
@@ -82,17 +87,15 @@ export default {
 <template>
   <div class="calendar-layout">
     <div class="calendar-top-section">
-      <!-- Calendario inline para seleccionar un día -->
       <pv-datepicker
           v-model="selectedDate"
           inline
           date-format="yy-mm-dd"
           @date-select="onDateChange"
           @month-change="onMonthChange"
-      />
+          aria-label="Select a date for classes"/>
 
-      <!-- Panel de clases del día seleccionado -->
-      <div class="class-panel">
+      <div class="class-panel" aria-live="polite">
         <h2>{{$t('calendar.class-panel')}} {{ selectedDateFormatted }}</h2>
         <ul v-if="classesForDate.length">
           <li v-for="(cls, i) in classesForDate" :key="i">
@@ -102,7 +105,7 @@ export default {
         <p v-else>{{$t('calendar.no-classes')}}</p>
       </div>
     </div>
-    <!-- Vista mensual de clases -->
+
     <div class="month-view">
       <h2>{{$t('calendar.month-view')}} ({{ currentMonthName }} {{ currentYear }})</h2>
       <div class="calendar-grid">
@@ -116,9 +119,9 @@ export default {
         </div>
       </div>
     </div>
-
   </div>
 </template>
+
 
 <style scoped>
 

@@ -7,7 +7,7 @@
  * - classes: An array of class names or codes scheduled at that hour
  *
  * This model is used to populate the "Today's Classes" table in the dashboard.
- *
+ * /
  * Author: Tomio Nakamurakare
  */
 

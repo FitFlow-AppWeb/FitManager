@@ -1,3 +1,11 @@
+// 
+// This JavaScript class `GeneralInfo` is designed to store and manage general information about financial data for a specific month and year. 
+// It includes properties such as total income, total expenses, earnings, and a breakdown of membership income (monthly, quarterly, and annual).
+// The constructor allows for the initialization of these properties, with default values provided if no data is supplied.
+// 
+// Author: Renzo Luque
+//
+
 export class GeneralInfo {
     constructor(month='',
                 year='',

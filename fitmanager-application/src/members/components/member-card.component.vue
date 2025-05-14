@@ -1,4 +1,15 @@
 <script>
+/**
+ * Member Card Component
+ *
+ * This component displays detailed information about a single member,
+ * including their profile picture, personal and contact information,
+ * membership status and dates. It also provides action buttons to
+ * edit or deactivate the member.
+ *
+ * Author: Cassius Martel
+ */
+
 import { Button as PvButton } from "primevue";
 
 export default {
@@ -28,12 +39,23 @@ export default {
 </script>
 
 <template>
-  <pv-card v-if="member" class="member-card">
+  <pv-card
+      v-if="member"
+      class="member-card"
+      role="region"
+      :aria-label="`Profile card for ${member.fullName}`"
+  >
     <!-- Profile picture + Name header -->
     <template #header>
       <div class="header">
-        <img :src="member.profilePicture" alt="Profile" class="profile-img"/>
-        <h2 class="name">{{ member.fullName }}</h2>
+        <img
+            :src="member.profilePicture"
+            alt="Profile picture"
+            class="profile-img"
+            role="img"
+            :aria-label="`Profile picture of ${member.fullName}`"
+        />
+        <h2 class="name" role="heading" aria-level="2">{{ member.fullName }}</h2>
       </div>
 
       <!-- Status text -->
@@ -41,12 +63,12 @@ export default {
         <strong>{{ member.membershipStatus.toUpperCase() }}</strong>
       </p>
 
-      <hr/>
+      <hr />
     </template>
 
     <template #content>
       <!-- Personal info -->
-      <div class="section">
+      <div class="section" role="group" aria-label="Personal information">
         <p><strong>DNI:</strong> {{ member.dni }}</p>
         <p><strong>{{ $t("members.age") }}:</strong> {{ member.age }}</p>
         <p><strong>{{ $t("members.email") }}:</strong> {{ member.email }}</p>
@@ -54,26 +76,38 @@ export default {
         <p><strong>{{ $t("members.address") }}:</strong> {{ member.address }}</p>
       </div>
 
-      <hr/>
+      <hr />
 
       <!-- Membership dates & type -->
-      <div class="section">
+      <div class="section" role="group" aria-label="Membership details">
         <p><strong>{{ $t("members.membership-type") }}:</strong> {{ member.membershipType }}</p>
         <p><strong>{{ $t("members.start-date") }}:</strong> {{ member.membershipStartDate }}</p>
         <p><strong>{{ $t("members.expiration-date") }}:</strong> {{ member.expirationDate }}</p>
       </div>
 
-      <hr/>
+      <hr />
 
       <!-- Action buttons -->
-      <div class="actions">
-        <pv-button :label="$t('members.edit-details')" class="action-btn" @click="$emit('edit-request')"/>
-        <pv-button :label="$t('members.payments')" class="action-btn"/>
-        <pv-button :label="$t('members.remove-member')" class="action-btn" @click="$emit('deactivate-request')"/>
+      <div class="actions" role="group" aria-label="Action buttons">
+        <pv-button
+            :label="$t('members.edit-details')"
+            class="action-btn"
+            @click="$emit('edit-request')"
+        />
+        <pv-button
+            :label="$t('members.payments')"
+            class="action-btn"
+        />
+        <pv-button
+            :label="$t('members.remove-member')"
+            class="action-btn"
+            @click="$emit('deactivate-request')"
+        />
       </div>
     </template>
   </pv-card>
 </template>
+
 
 <style scoped>
 .p-card {

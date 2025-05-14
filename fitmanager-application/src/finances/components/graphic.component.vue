@@ -1,4 +1,16 @@
 <script>
+/**
+ * Income Chart Component
+ *
+ * This component fetches income data from an API and displays it in a line chart using the PrimeVue Chart component.
+ * The chart represents monthly, quarterly, and yearly income data, and provides a visual overview of the financial performance.
+ * If no data is available or an error occurs during the data fetch, appropriate messages are displayed.
+ * The chart data is updated asynchronously, and it supports different types of income (monthly, quarterly, yearly).
+ * It also handles loading and error states during data fetching.
+ *
+ * Author: Renzo Luque
+ */
+
 import { IncomeApiService } from "../services/income-api.service.js";
 import Chart from "primevue/chart";
 
@@ -144,6 +156,7 @@ export default {
     <Chart type="line" :data="chartData" :options="chartOptions" class="p-chart" />
   </div>
 </template>
+
 
 <style scoped>
 .card{

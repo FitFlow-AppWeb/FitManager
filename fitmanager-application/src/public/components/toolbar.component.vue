@@ -1,28 +1,39 @@
+<!--
+* This code defines a toolbar component that includes a search field and a user profile button.
+* The toolbar uses PrimeVue's `Toolbar`, `IconField`, `InputIcon`, `InputText`, and `Button` components to create the layout.
+* On the left side of the toolbar, there is a search field with an icon and a text input for search functionality.
+* On the right side, there is a button that redirects the user to the profile page when clicked.
+* The toolbar is wrapped inside a div with the class `app-card`.
+*
+* Author: Renzo Luque
+-->
+
 <script setup>
-  import Toolbar from 'primevue/toolbar';
-  import IconField from 'primevue/iconfield';
-  import InputIcon from 'primevue/inputicon';
-  import InputText from "primevue/inputtext";
-  import Button from 'primevue/button';
+import Toolbar from 'primevue/toolbar';
+import IconField from 'primevue/iconfield';
+import InputIcon from 'primevue/inputicon';
+import InputText from "primevue/inputtext";
+import Button from 'primevue/button';
 </script>
 
 <template>
   <div class="app-card">
-    <Toolbar class="app-toolbar">
+    <Toolbar class="app-toolbar" role="toolbar" aria-label="Main Toolbar">
       <template #start>
         <IconField class="toolbar-search">
-          <InputIcon class="pi pi-search" />
-          <InputText class="search-input-text" placeholder="Search" />
+          <InputIcon class="pi pi-search" aria-hidden="true" />
+          <InputText class="search-input-text" placeholder="Search" aria-label="Search input" />
         </IconField>
       </template>
       <template #end>
-        <RouterLink to="/profile">
-          <Button class="toolbar-profile-pic" variant="outlined" icon="pi pi-user"/>
+        <RouterLink to="/profile" aria-label="Go to Profile">
+          <Button class="toolbar-profile-pic" variant="outlined" icon="pi pi-user" aria-label="Profile Button"/>
         </RouterLink>
       </template>
     </Toolbar>
   </div>
 </template>
+
 
 <style scoped>
 

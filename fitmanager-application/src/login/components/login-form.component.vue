@@ -1,5 +1,13 @@
+<!--
+This Vue component defines a login form for an admin to sign in. It accepts an email and password and verifies the credentials by calling the `AdminApiService` to fetch all admins.
+If the provided credentials match any admin, the login is successful, and an event `login-success` is emitted. Otherwise, an error message is displayed.
+It also allows toggling the visibility of the password input field.
+Author: Victor Ortiz
+-->
+
 <script>
 import { AdminApiService } from "../services/admin-api.service.js";
+
 export default {
   data() {
     return {
@@ -11,22 +19,19 @@ export default {
   },
   methods: {
     async submitForm() {
-      this.error = null; // Reset error message
+      this.error = null;
 
       try {
-        // Llamada al servicio de la API para obtener los administradores
         const admins = await new AdminApiService().getAllAdmins();
 
-        // Verificamos si el usuario y la contraseña coinciden
         const admin = admins.find(
             (admin) => admin.email === this.email && admin.password === this.password
         );
 
-        console.log("Admin encontrado:", admin); // Verifica si los datos están correctos
+        console.log("Admin encontrado:", admin);
 
         if (admin) {
-          // Emitir el evento de login exitoso al componente padre
-          this.$emit('login-success', true); // Emitimos al componente padre (LoginComponent)
+          this.$emit('login-success', true);
         } else {
           this.error = "Correo o contraseña incorrectos.";
         }
@@ -48,32 +53,32 @@ export default {
     <form @submit.prevent="submitForm">
       <div class="input-group">
         <label for="email">Email</label>
-        <input type="email" id="email" v-model="email" required />
+        <input type="email" id="email" v-model="email" required aria-label="Email" />
       </div>
 
       <div class="input-group">
         <label for="password">Contraseña</label>
-        <input :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" required />
-        <button type="button" @click="togglePasswordVisibility">
+        <input :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" required aria-label="Contraseña" />
+        <button type="button" @click="togglePasswordVisibility" aria-label="Toggle password visibility">
           {{ passwordVisible ? 'Ocultar' : 'Mostrar' }}
         </button>
       </div>
 
-      <button type="submit" class="submit-btn">Iniciar Sesión</button>
+      <button type="submit" class="submit-btn" aria-label="Iniciar sesión">Iniciar Sesión</button>
 
       <p class="forgot-password">
-        <a href="#">Olvidé mi contraseña</a>
+        <a href="#" aria-label="Olvidé mi contraseña">Olvidé mi contraseña</a>
       </p>
     </form>
 
-    <div v-if="error" class="error-message">{{ error }}</div>
+    <div v-if="error" class="error-message" role="alert">{{ error }}</div>
 
     <div class="social-login">
-      <button class="google-btn">
+      <button class="google-btn" aria-label="Iniciar sesión con Google">
         <img src="/assets/google-logo.png" alt="Google Logo" class="social-logo" />
         Iniciar Sesión con Google
       </button>
-      <button class="apple-btn">
+      <button class="apple-btn" aria-label="Iniciar sesión con Apple">
         <img src="/assets/apple-logo.png" alt="Apple Logo" class="social-logo" />
         Iniciar Sesión con Apple
       </button>
@@ -81,8 +86,8 @@ export default {
   </div>
 </template>
 
+
 <style scoped>
-/* Contenedor del formulario */
 .login-form-container {
   width: 100%;
   max-width: 600px;
@@ -95,7 +100,6 @@ export default {
   font-family: 'Arial', sans-serif;
 }
 
-/* Título */
 h2 {
   font-size: 30px;
   margin-bottom: 20px;
@@ -103,7 +107,6 @@ h2 {
   text-align: center;
 }
 
-/* Estilos del formulario */
 .input-group {
   margin-bottom: 25px;
 }
@@ -136,7 +139,6 @@ button[type="button"] {
   font-size: 14px;
 }
 
-/* Botón de Iniciar Sesión */
 .submit-btn {
   width: 100%;
   padding: 14px;
@@ -153,7 +155,6 @@ button[type="button"] {
   background-color: #8BB5B6;
 }
 
-/* Olvidé mi Contraseña */
 .forgot-password {
   text-align: right;
   margin-top: 10px;
@@ -165,7 +166,6 @@ button[type="button"] {
   font-size: 14px;
 }
 
-/* Mensaje de error */
 .error-message {
   color: red;
   margin-top: 15px;

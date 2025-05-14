@@ -1,4 +1,17 @@
 <script>
+/**
+ * Edit Member Component
+ *
+ * This component renders a form that allows users to edit the details of an existing member.
+ * It pre-populates the form with the current member's data and enables editing of personal,
+ * contact, and membership-related fields.
+ *
+ * Upon submission, the updated information is sent to the backend via an API service,
+ * and relevant events are emitted to inform the parent component of the update or cancellation.
+ *
+ * Author: Cassius Martel
+ */
+
 import { MemberApiService } from "../services/member-api.service.js";
 
 export default {
@@ -11,16 +24,16 @@ export default {
   },
   data() {
     return {
-      editedMember: {...this.member},
+      editedMember: { ...this.member },
       statusOptions: [
-        {name: this.$t('members.active'), value: "active"},
-        {name: this.$t('members.inactive'), value: "inactive"},
-        {name: this.$t('members.pending'), value: "pending"}
+        { name: this.$t('members.active'), value: "active" },
+        { name: this.$t('members.inactive'), value: "inactive" },
+        { name: this.$t('members.pending'), value: "pending" }
       ],
       typeOptions: [
-        {name: this.$t('members.monthly'), value: "monthly"},
-        {name: this.$t('members.quarterly'), value: "quarterly"},
-        {name: this.$t('members.annual'), value: "annual"}
+        { name: this.$t('members.monthly'), value: "monthly" },
+        { name: this.$t('members.quarterly'), value: "quarterly" },
+        { name: this.$t('members.annual'), value: "annual" }
       ]
     };
   },
@@ -36,39 +49,120 @@ export default {
 </script>
 
 <template>
-  <div class="modal-overlay">
+  <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="editMemberTitle">
     <div class="modal-content">
-      <h2 class="modal-title">{{ $t('members.edit-member') }}</h2>
-      <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="editedMember.fullName" :placeholder="$t('members.full-name')" class="input-field"
-                      required/>
-        <pv-inputtext v-model.number="editedMember.age" :placeholder="$t('members.age')" type="number"
-                      class="input-field" required/>
-        <pv-select v-model="editedMember.membershipStatus" :options="statusOptions" option-label="name"
-                   option-value="value" :placeholder="$t('members.status')" class="input-field" required/>
-        <pv-select v-model="editedMember.membershipType" :options="typeOptions" option-label="name" option-value="value"
-                   :placeholder="$t('members.type')" class="input-field" required/>
-        <pv-datepicker v-model="editedMember.expirationDate" :placeholder="$t('members.expiration-date')"
-                       class="input-field" required/>
-        <pv-datepicker v-model="editedMember.membershipStartDate" :placeholder="$t('members.start-date')"
-                       class="input-field" required/>
-        <pv-inputtext v-model="editedMember.dni" placeholder="DNI" class="input-field" required/>
-        <pv-inputtext v-model="editedMember.email" type="email" :placeholder="$t('members.email')" class="input-field"
-                      required/>
-        <pv-inputtext v-model="editedMember.phone" type="tel" :placeholder="$t('members.phone')" class="input-field"
-                      required/>
-        <pv-inputtext v-model="editedMember.address" :placeholder="$t('members.address')" class="input-field" required/>
-        <pv-inputtext v-model="editedMember.profilePicture" type="url" :placeholder="$t('members.profile-picture')"
-                      class="input-field" required/>
+      <h2 class="modal-title" id="editMemberTitle">{{ $t('members.edit-member') }}</h2>
+      <form @submit.prevent="submitForm" aria-describedby="editMemberDesc">
+        <p id="editMemberDesc" class="sr-only">{{ $t('members.fill-form-to-edit-member') }}</p>
 
-        <div class="actions">
-          <pv-button :label="$t('members.save')" type="submit" class="add-button"/>
-          <pv-button :label="$t('members.cancel')" type="button" @click="$emit('close')" class="cancel-button"/>
+        <pv-inputtext
+            v-model="editedMember.fullName"
+            :placeholder="$t('members.full-name')"
+            class="input-field"
+            required
+            aria-label="Full name"
+        />
+        <pv-inputtext
+            v-model.number="editedMember.age"
+            :placeholder="$t('members.age')"
+            type="number"
+            class="input-field"
+            required
+            aria-label="Age"
+        />
+        <pv-select
+            v-model="editedMember.membershipStatus"
+            :options="statusOptions"
+            option-label="name"
+            option-value="value"
+            :placeholder="$t('members.status')"
+            class="input-field"
+            required
+            aria-label="Membership status"
+        />
+        <pv-select
+            v-model="editedMember.membershipType"
+            :options="typeOptions"
+            option-label="name"
+            option-value="value"
+            :placeholder="$t('members.type')"
+            class="input-field"
+            required
+            aria-label="Membership type"
+        />
+        <pv-datepicker
+            v-model="editedMember.expirationDate"
+            :placeholder="$t('members.expiration-date')"
+            class="input-field"
+            required
+            aria-label="Expiration date"
+        />
+        <pv-datepicker
+            v-model="editedMember.membershipStartDate"
+            :placeholder="$t('members.start-date')"
+            class="input-field"
+            required
+            aria-label="Start date"
+        />
+        <pv-inputtext
+            v-model="editedMember.dni"
+            placeholder="DNI"
+            class="input-field"
+            required
+            aria-label="DNI"
+        />
+        <pv-inputtext
+            v-model="editedMember.email"
+            type="email"
+            :placeholder="$t('members.email')"
+            class="input-field"
+            required
+            aria-label="Email"
+        />
+        <pv-inputtext
+            v-model="editedMember.phone"
+            type="tel"
+            :placeholder="$t('members.phone')"
+            class="input-field"
+            required
+            aria-label="Phone"
+        />
+        <pv-inputtext
+            v-model="editedMember.address"
+            :placeholder="$t('members.address')"
+            class="input-field"
+            required
+            aria-label="Address"
+        />
+        <pv-inputtext
+            v-model="editedMember.profilePicture"
+            type="url"
+            :placeholder="$t('members.profile-picture')"
+            class="input-field"
+            required
+            aria-label="Profile picture URL"
+        />
+
+        <div class="actions" role="group" aria-label="Form actions">
+          <pv-button
+              :label="$t('members.save')"
+              type="submit"
+              class="add-button"
+              aria-label="Save changes"
+          />
+          <pv-button
+              :label="$t('members.cancel')"
+              type="button"
+              @click="$emit('close')"
+              class="cancel-button"
+              aria-label="Cancel editing"
+          />
         </div>
       </form>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .modal-overlay {

@@ -1,4 +1,19 @@
 <script>
+/**
+ * Employee Component
+ *
+ * This component is responsible for managing and displaying employees within the system. It integrates several sub-components
+ * such as `EmployeeList`, `EmployeeCard`, `AddEmployee`, `EditEmployee`, and `FireEmployee`.
+ * The main responsibilities include displaying the list of employees, allowing the user to view employee details,
+ * add new employees, edit existing ones, or fire an employee. It fetches the employee data from an API service
+ * and updates the displayed list upon any changes.
+ *
+ * The component maintains a modal system for adding, editing, and firing employees, which are triggered by
+ * specific user actions.
+ *
+ * Author: Cassius Martel
+ */
+
 import { EmployeeApiService } from "../services/employee-api.service";
 import EmployeeList from "./employee-list.component.vue";
 import EmployeeCard from "./employee-card.component.vue";
@@ -43,7 +58,6 @@ export default {
 };
 </script>
 
-
 <template>
   <div class="employee-container">
     <!-- Panel de lista -->
@@ -52,10 +66,12 @@ export default {
           :employees="employees"
           @selected="onEmployeeSelected"
           @add-request="showAddModal = true"
-       />
+          aria-labelledby="employee-list"
+      />
       <AddEmployee  v-if="showAddModal"
                     @close="showAddModal = false"
                     @employee-added="fetchEmployees"
+                    aria-labelledby="add-employee-modal"
       />
 
     </div>
@@ -64,6 +80,7 @@ export default {
           :employee="selectedEmployee"
           @edit-request="onEditRequest"
           @fire-request="onFireRequest"
+          aria-labelledby="employee-card"
       />
     </div>
 
@@ -72,15 +89,18 @@ export default {
         :employee="selectedEmployee"
         @close="showEditModal = false"
         @employee-updated="fetchEmployees"
+        aria-labelledby="edit-employee-modal"
     />
     <FireEmployee
         :employee="selectedEmployee"
         :visible="showFireModal"
         @close="showFireModal = false"
         @employee-fire="fetchEmployees"
+        aria-labelledby="fire-employee-modal"
     />
   </div>
 </template>
+
 
 <style scoped>
 .employee-container {

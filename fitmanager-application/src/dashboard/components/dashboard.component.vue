@@ -65,23 +65,22 @@ export default {
 
 <template>
   <!-- Main layout section with two columns -->
-  <div class="main-section">
-    <div>
+  <div class="main-section" role="region" aria-label="Dashboard overview section">
+    <div role="group" aria-label="Performance metrics and attendance overview">
       <!-- Renders the top list of key statistics (first 3 entries) -->
       <DataTopListComponent :statistics="statistics.slice(0, 3)" />
 
       <!-- Renders today's attendance chart -->
-      <TodayAttendanceComponent></TodayAttendanceComponent>
+      <TodayAttendanceComponent />
 
       <!-- Renders the bottom list of remaining statistics (after the first 3) -->
       <DataBottomListComponent :statistics="statistics.slice(3)" />
     </div>
 
     <!-- Renders the table with today's scheduled classes -->
-    <today-classes-component></today-classes-component>
+    <today-classes-component />
   </div>
 </template>
-
 
 <style scoped>
 :root {

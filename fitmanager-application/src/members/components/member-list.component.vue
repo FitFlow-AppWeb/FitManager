@@ -1,4 +1,15 @@
 <script>
+/**
+ * Member List Component
+ *
+ * This component displays a searchable and filterable table of members.
+ * Users can search by name, filter by age range, membership status, or type,
+ * and select a member row to trigger parent component interactions.
+ * Also includes pagination and the ability to initiate adding a new member.
+ *
+ * Author: Cassius Martel
+ */
+
 export default {
   name: "MemberList",
   props: {
@@ -44,23 +55,19 @@ export default {
   computed: {
     filteredMembers() {
       let list = [...this.members];
-      // Búsqueda en tiempo real
       if (this.searchQuery) {
         const q = this.searchQuery.toLowerCase();
         list = list.filter(m => m.fullName.toLowerCase().includes(q));
       }
-      // Rango de edad
       if (this.ageRange.min != null) {
         list = list.filter(m => m.age >= this.ageRange.min);
       }
       if (this.ageRange.max != null) {
         list = list.filter(m => m.age <= this.ageRange.max);
       }
-      // Estado
       if (this.statusFilter) {
         list = list.filter(m => m.membershipStatus === this.statusFilter);
       }
-      // Tipo
       if (this.typeFilter) {
         list = list.filter(m => m.membershipType === this.typeFilter);
       }
@@ -70,10 +77,8 @@ export default {
 };
 </script>
 
-
-
 <template>
-  <div class="table-container">
+  <div class="table-container" role="region" aria-label="Member list">
     <pv-datatable
         :value="filteredMembers"
         selectionMode="single"
@@ -84,28 +89,30 @@ export default {
         :rowClass="getRowClass"
         size="large"
         class="datatable"
+        aria-label="Filtered members table"
     >
       <template #header>
-        <div class="header-title">
-        </div>
-        <div class="subheader">
+        <div class="header-title"></div>
+        <div class="subheader" role="search">
           <div class="left-group">
             <pv-inputtext
                 v-model="searchQuery"
                 :placeholder="`${$t('members.search')}...`"
                 class="search-bar"
+                aria-label="Search by member name"
             />
             <pv-button
                 icon="pi pi-filter"
                 class="filter-btn"
                 @click="toggleFilters"
+                aria-label="Toggle filters"
             />
-            <div v-if="showFilters" class="filter-panel">
+            <div v-if="showFilters" class="filter-panel" role="region" aria-label="Filter panel">
               <div class="filter-row">
                 <label>{{ $t("members.age") }} Min:</label>
-                <input type="number" v-model.number="ageRange.min" min="0" />
+                <input type="number" v-model.number="ageRange.min" min="0" aria-label="Minimum age filter" />
                 <label>Max:</label>
-                <input type="number" v-model.number="ageRange.max" min="0" />
+                <input type="number" v-model.number="ageRange.max" min="0" aria-label="Maximum age filter" />
               </div>
               <div class="filter-row">
                 <label>{{ $t("members.status") }}:</label>
@@ -113,6 +120,7 @@ export default {
                     v-model="statusFilter"
                     :options="statusOptions"
                     class="filter-sbutton"
+                    aria-label="Membership status filter"
                 />
               </div>
               <div class="filter-row">
@@ -121,9 +129,9 @@ export default {
                     v-model="typeFilter"
                     :options="typeOptions"
                     class="filter-sbutton"
+                    aria-label="Membership type filter"
                 />
               </div>
-
             </div>
           </div>
           <div class="right-group">
@@ -132,22 +140,25 @@ export default {
                 icon="pi pi-plus"
                 class="add-btn"
                 @click="$emit('add-request')"
+                aria-label="Add new member"
             />
           </div>
         </div>
       </template>
 
-      <!-- Columnas -->
       <pv-column field="fullName" :header="$t('members.name')" sortable style="width:25%"></pv-column>
       <pv-column field="age" :header="$t('members.age')" sortable style="width:15%"></pv-column>
       <pv-column field="membershipStatus" :header="$t('members.membership-status')" sortable style="width:25%"></pv-column>
       <pv-column field="membershipType" :header="$t('members.membership-type')" sortable style="width:20%"></pv-column>
       <pv-column field="expirationDate" :header="$t('members.expiration-date')" sortable style="width:25%"></pv-column>
 
-      <template #empty>{{$t('members.not-found')}}.</template>
+      <template #empty>
+        {{ $t('members.not-found') }}.
+      </template>
     </pv-datatable>
   </div>
 </template>
+
 
 
 
@@ -156,7 +167,6 @@ export default {
   width: 100%;
 }
 
-/* Estilo general */
 .datatable {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   background-color: white;
@@ -164,7 +174,6 @@ export default {
   border-radius: 10px;
 }
 
-/* Header de la tabla */
 ::v-deep(.p-datatable-header) {
   background-color: white;
   color: black;
@@ -172,7 +181,6 @@ export default {
   border-bottom: 1px solid #A7D1D2;
 }
 
-/* Columnas (encabezados y celdas) */
 ::v-deep(.p-datatable-thead > tr > th),
 ::v-deep(.p-datatable-tbody > tr > td) {
   background-color: white;
@@ -180,13 +188,11 @@ export default {
   border: 1px solid #A7D1D2 !important;
 }
 
-/* Hover */
 ::v-deep(.p-datatable-tbody > tr:not(.p-highlight):hover > td) {
   background-color: #f1f1f1;
   cursor: pointer;
 }
 
-/* Fila seleccionada */
 ::v-deep(.p-datatable-tbody > tr.manual-highlight > td) {
   background-color: #A7D1D2 !important;
   color: black !important;
@@ -195,7 +201,6 @@ export default {
 }
 
 
-/* Paginador */
 ::v-deep(.p-paginator) {
   background-color: white;
   color: black;
@@ -217,12 +222,10 @@ export default {
   color: black;
 }
 
-/* Garantiza altura mínima para no achicar tabla */
 .datatable ::v-deep(.p-datatable-tablewrapper) {
-  min-height: 250px; /* ajusta a la altura deseada */
+  min-height: 250px;
 }
 
-/* Estilos de subheader */
 .header-title {
   margin-bottom: 0.5rem;
 }
@@ -265,7 +268,6 @@ export default {
 
 
 
-/* Botón seleccionado */
 ::v-deep(.filter-sbutton .p-highlight) {
   background-color: #A7D1D2 !important;
   color: white !important;
@@ -293,10 +295,10 @@ export default {
   padding: 0.75rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 10;
-  width: 350px !important;   /* más ancho */
-  max-width: 90vw;           /* nunca mayor al 90% de la ventana */
-  right: 0;                  /* alinéalo a la derecha */
-  left: auto !important;     /* desactiva el left fijo */
+  width: 350px !important;
+  max-width: 90vw;
+  right: 0;
+  left: auto !important;
 }
 
 .filter-row {

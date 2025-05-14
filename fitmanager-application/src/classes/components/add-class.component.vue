@@ -1,3 +1,11 @@
+<!--
+// Description: This code defines the `add-class.component`, which is a Vue.js component for adding a new class to the system.
+// It includes a form that collects the class name, trainer, type, date, time, duration, and status. The form also provides a list of available trainers and other options for status, type, time, and duration.
+// The form submission triggers the `submitForm` method, which formats the data and calls the `addClass` service to save the new class. Upon successful submission, the component emits the `class-added` event and closes the modal.
+// The component fetches the list of available trainers when it is mounted, filtering them based on role.
+// Author: Cassius Martel
+-->
+
 <script>
 import { ClassApiService } from "../services/class-api.service.js";
 import axios from "axios";
@@ -64,7 +72,7 @@ export default {
           ? this.date.toISOString().split('T')[0]
           : this.date;
       const newClass = {
-        id: Date.now(),
+
         name: this.name,
         status: this.status,
         type: this.type,
@@ -72,7 +80,6 @@ export default {
         time: this.time,
         duration: this.duration,
         trainer_id: this.trainer_id,
-
       };
 
       const service = new ClassApiService();
@@ -102,9 +109,9 @@ export default {
     <div class="modal-content">
       <h2 class="modal-title">{{ $t("classes.add-new-class") }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="name" :placeholder="$t('classes.name')" class="input-field" required />
-        <pv-select v-model="type" :options="typeOptions" :placeholder="$t('classes.type')" option-label="name" option-value="value" class="input-field" required />
-        <pv-datepicker v-model="date" :placeholder="$t('classes.date')" class="input-field" required />
+        <pv-inputtext v-model="name" :placeholder="$t('classes.name')" class="input-field" required aria-label="Class name" />
+        <pv-select v-model="type" :options="typeOptions" :placeholder="$t('classes.type')" option-label="name" option-value="value" class="input-field" required aria-label="Select class type" />
+        <pv-datepicker v-model="date" :placeholder="$t('classes.date')" class="input-field" required aria-label="Select class date" />
         <pv-select
             v-model="time"
             :options="timeOptions"
@@ -112,7 +119,7 @@ export default {
             option-label="name"
             option-value="value"
             class="input-field"
-            required
+            required aria-label="Select class time"
         />
 
         <pv-select
@@ -122,7 +129,7 @@ export default {
             option-label="name"
             option-value="value"
             class="input-field"
-            required
+            required aria-label="Select class duration"
         />
         <pv-select
             v-model="trainer_id"
@@ -131,18 +138,19 @@ export default {
             option-label="name"
             option-value="value"
             class="input-field"
-            required
+            required aria-label="Select class trainer"
         />
-        <pv-select v-model="status" :options="statusOptions" :placeholder="$t('classes.status')" option-label="name" option-value="value" class="input-field" required />
+        <pv-select v-model="status" :options="statusOptions" :placeholder="$t('classes.status')" option-label="name" option-value="value" class="input-field" required aria-label="Select class status" />
 
         <div class="actions">
-          <pv-button :label="$t('general.add')" type="submit" class="add-button" />
-          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
+          <pv-button :label="$t('general.add')" type="submit" class="add-button" aria-label="Add class" />
+          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" aria-label="Cancel" />
         </div>
       </form>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .modal-overlay {

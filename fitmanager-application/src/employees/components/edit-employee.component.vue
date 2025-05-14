@@ -1,4 +1,17 @@
 <script>
+/**
+ * Edit Employee Component
+ *
+ * This component allows users to edit the details of an existing employee. The form displays the employee's
+ * current information, such as full name, age, hourly wage, role, certifications, and specialties. Users can modify
+ * any of these details and submit the updated information.
+ *
+ * Upon submission, the updated employee data is sent to the backend through the `EmployeeApiService`, and the
+ * component emits events indicating that the employee has been updated or the modal was closed.
+ *
+ * Author: Cassius Martel
+ */
+
 import { EmployeeApiService } from "../services/employee-api.service.js";
 
 export default {
@@ -62,22 +75,22 @@ export default {
     <div class="modal-content">
       <h2 class="modal-title">{{ $t('employees.edit-employee') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="editedEmployee.fullName" :placeholder="$t('employees.full-name')" class="input-field" required />
-        <pv-inputtext v-model.number="editedEmployee.age" :placeholder="$t('employees.age')" type="number" class="input-field" required />
-        <pv-select v-model="editedEmployee.role" :options="roleOptions" :placeholder="$t('employees.role')" option-label="name" option-value="value" class="input-field" required />
-        <pv-inputtext v-model.number="editedEmployee.hourlyWage" :placeholder="$t('employees.wage')" type="number" class="input-field" required />
-        <pv-inputtext v-model.number="editedEmployee.hoursPerWeek" :placeholder="$t('employees.hours')" type="number" class="input-field" required />
+        <pv-inputtext v-model="editedEmployee.fullName" :placeholder="$t('employees.full-name')" class="input-field" required aria-label="Full Name" />
+        <pv-inputtext v-model.number="editedEmployee.age" :placeholder="$t('employees.age')" type="number" class="input-field" required aria-label="Age" />
+        <pv-select v-model="editedEmployee.role" :options="roleOptions" :placeholder="$t('employees.role')" option-label="name" option-value="value" class="input-field" required aria-label="Role" />
+        <pv-inputtext v-model.number="editedEmployee.hourlyWage" :placeholder="$t('employees.wage')" type="number" class="input-field" required aria-label="Hourly Wage" />
+        <pv-inputtext v-model.number="editedEmployee.hoursPerWeek" :placeholder="$t('employees.hours')" type="number" class="input-field" required aria-label="Hours per Week" />
 
         <div class="input-field">
           <label>{{ $t('employees.specialities') }}</label>
           <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <pv-inputtext v-model="newSpecialty" :placeholder="$t('employees.add-specialty')" />
+            <pv-inputtext v-model="newSpecialty" :placeholder="$t('employees.add-specialty')" aria-label="Specialty to add" />
             <pv-button icon="pi pi-plus" @click="addSpecialty" :label="$t('general.add')" class="add-button2" />
           </div>
           <ul style="margin-top: 0.5rem; padding-left: 1rem;">
             <li v-for="(spec, index) in specialties" :key="'spec-' + index" style="margin-top: 0.25rem;">
               {{ spec }}
-              <pv-button icon="pi pi-times" class="p-button-text p-button-sm" @click="removeSpecialty(index)" />
+              <pv-button icon="pi pi-times" class="p-button-text p-button-sm" @click="removeSpecialty(index)" aria-label="Remove Specialty"/>
             </li>
           </ul>
         </div>
@@ -85,22 +98,22 @@ export default {
         <div class="input-field">
           <label>{{ $t('employees.certifications') }}</label>
           <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <pv-inputtext v-model="newCertification" :placeholder="$t('employees.add-certification')" />
+            <pv-inputtext v-model="newCertification" :placeholder="$t('employees.add-certification')" aria-label="Certification to add" />
             <pv-button icon="pi pi-plus" @click="addCertification" :label="$t('general.add')" class="add-button2" />
           </div>
           <ul style="margin-top: 0.5rem; padding-left: 1rem;">
             <li v-for="(cert, index) in certifications" :key="'cert-' + index" style="margin-top: 0.25rem;">
               {{ cert }}
-              <pv-button icon="pi pi-times" class="p-button-text p-button-sm" @click="removeCertification(index)" />
+              <pv-button icon="pi pi-times" class="p-button-text p-button-sm" @click="removeCertification(index)" aria-label="Remove Certification"/>
             </li>
           </ul>
         </div>
 
-        <pv-inputtext v-model="editedEmployee.dni" placeholder="DNI" class="input-field" required />
-        <pv-inputtext v-model="editedEmployee.email" type="email" :placeholder="$t('employees.email')" class="input-field" required />
-        <pv-inputtext v-model="editedEmployee.phone" type="tel" :placeholder="$t('employees.phone')" class="input-field" required />
-        <pv-inputtext v-model="editedEmployee.address" :placeholder="$t('employees.address')" class="input-field" required />
-        <pv-inputtext v-model="editedEmployee.profilePicture" type="url" :placeholder="$t('employees.profile-picture')" class="input-field" required />
+        <pv-inputtext v-model="editedEmployee.dni" placeholder="DNI" class="input-field" required aria-label="DNI" />
+        <pv-inputtext v-model="editedEmployee.email" type="email" :placeholder="$t('employees.email')" class="input-field" required aria-label="Email" />
+        <pv-inputtext v-model="editedEmployee.phone" type="tel" :placeholder="$t('employees.phone')" class="input-field" required aria-label="Phone" />
+        <pv-inputtext v-model="editedEmployee.address" :placeholder="$t('employees.address')" class="input-field" required aria-label="Address" />
+        <pv-inputtext v-model="editedEmployee.profilePicture" type="url" :placeholder="$t('employees.profile-picture')" class="input-field" required aria-label="Profile Picture URL" />
 
         <div class="actions">
           <pv-button :label="$t('general.save')" type="submit" class="add-button" />
@@ -110,6 +123,7 @@ export default {
     </div>
   </div>
 </template>
+
 <style scoped>
 .modal-overlay {
   position: fixed;

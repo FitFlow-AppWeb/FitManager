@@ -1,4 +1,11 @@
 <script>
+/**
+ * This file contains the NotificationModal component which allows the user to create a new notification.
+ * It displays a modal with a form for entering the notification's title, body, recipients, and date.
+ * The modal can be opened and closed with the appropriate methods, and the form can be submitted to create a notification.
+ *
+ * Author: Victor Ortiz
+ */
 export default {
   data() {
     return {
@@ -11,74 +18,74 @@ export default {
   },
   methods: {
     openModal() {
-      this.showModal = true; // Mostrar el modal
+      this.showModal = true; // Show the modal
     },
     closeModal() {
-      this.showModal = false; // Cerrar el modal
+      this.showModal = false; // Close the modal
     },
     submitForm() {
-      // Aquí puedes manejar la lógica para enviar la notificación a la API o almacenarla
+      // Handle logic to send notification to the API or store it
       const newNotification = {
         title: this.title,
         body: this.body,
         recipients: this.recipients.split(',').map((recipient) => recipient.trim()),
         date: this.date,
-        status: 'sent', // Estado predeterminado de la notificación
+        status: 'sent', // Default status for the notification
       };
 
-      console.log('Notificación creada:', newNotification);
-      // Resetear los valores del formulario
+      console.log('Notification created:', newNotification);
+      // Reset form values
       this.title = '';
       this.body = '';
       this.recipients = '';
       this.date = '';
-      this.closeModal(); // Cerrar el modal
+      this.closeModal(); // Close the modal
     }
   }
 };
 </script>
 
 <template>
-  <div v-if="showModal" class="modal-overlay">
-    <div class="modal">
-      <h2>Crear Notificación</h2>
+  <div v-if="showModal" class="modal-overlay" role="dialog" aria-labelledby="modalTitle" aria-hidden="false">
+    <div class="modal" role="document">
+      <h2 id="modalTitle">Crear Notificación</h2>
       <form @submit.prevent="submitForm">
-        <!-- Título -->
+        <!-- Title -->
         <div class="input-group">
           <label for="title">Título</label>
-          <input type="text" id="title" v-model="title" required />
+          <input type="text" id="title" v-model="title" required aria-required="true" />
         </div>
 
-        <!-- Cuerpo -->
+        <!-- Body -->
         <div class="input-group">
           <label for="body">Cuerpo</label>
-          <textarea id="body" v-model="body" required></textarea>
+          <textarea id="body" v-model="body" required aria-required="true"></textarea>
         </div>
 
-        <!-- Destinatarios -->
+        <!-- Recipients -->
         <div class="input-group">
           <label for="recipients">Destinatarios (separados por coma)</label>
-          <input type="text" id="recipients" v-model="recipients" required />
+          <input type="text" id="recipients" v-model="recipients" required aria-required="true" />
         </div>
 
-        <!-- Fecha -->
+        <!-- Date -->
         <div class="input-group">
           <label for="date">Fecha</label>
-          <input type="datetime-local" id="date" v-model="date" required />
+          <input type="datetime-local" id="date" v-model="date" required aria-required="true" />
         </div>
 
-        <!-- Botones -->
+        <!-- Buttons -->
         <div class="modal-buttons">
-          <button type="submit" class="submit-btn">Crear Notificación</button>
-          <button type="button" @click="closeModal" class="cancel-btn">Cancelar</button>
+          <button type="submit" class="submit-btn" aria-label="Create notification">Crear Notificación</button>
+          <button type="button" @click="closeModal" class="cancel-btn" aria-label="Cancel creating notification">Cancelar</button>
         </div>
       </form>
     </div>
   </div>
 </template>
 
+
 <style scoped>
-/* Estilos del modal */
 .modal-overlay {
   position: fixed;
   top: 0;

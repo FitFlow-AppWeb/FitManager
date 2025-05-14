@@ -1,4 +1,15 @@
 <script>
+/**
+ * Add Member Component
+ *
+ * This component provides a form for adding a new gym member.
+ * It captures key member details such as name, age, membership status and type,
+ * contact information, and membership duration. Once the form is submitted,
+ * the data is formatted and sent to the backend using a service class.
+ *
+ * Author: Cassius Martel
+ */
+
 import { MemberApiService } from "../services/member-api.service.js";
 
 export default {
@@ -38,7 +49,7 @@ export default {
           : this.membershipStartDate;
 
       const newMember = {
-        id: Date.now(),
+
         fullName: this.fullName,
         age: this.age,
         membershipStatus: this.membershipStatus,
@@ -62,23 +73,23 @@ export default {
 </script>
 
 <template>
-  <div class="modal-overlay">
+  <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="addMemberTitle">
     <div class="modal-content">
-      <h2 class="modal-title">{{ $t('members.add-new-member') }}</h2>
+      <h2 id="addMemberTitle" class="modal-title">{{ $t('members.add-new-member') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="fullName" :placeholder="$t('members.full-name')" class="input-field" required />
-        <pv-inputtext v-model.number="age" :placeholder="$t('members.age')" type="number" class="input-field" required />
-        <pv-select v-model="membershipStatus" :options="statusOptions" :placeholder="$t('members.membership-status')" option-label="name" option-value="value" class="input-field" required />
-        <pv-select v-model="membershipType" :options="typeOptions" :placeholder="$t('members.membership-type')" option-label="name" option-value="value" class="input-field" required />
-        <pv-datepicker v-model="expirationDate" :placeholder="$t('members.expiration-date')" class="input-field" required />
-        <pv-datepicker v-model="membershipStartDate" :placeholder="$t('members.start-date')" class="input-field" required />
-        <pv-inputtext v-model="dni" placeholder="DNI" class="input-field" required />
-        <pv-inputtext v-model="email" type="email" :placeholder="$t('members.email')" class="input-field" required />
-        <pv-inputtext v-model="phone" type="tel" :placeholder="$t('members.phone')" class="input-field" required />
-        <pv-inputtext v-model="address" :placeholder="$t('members.address')" class="input-field" required />
-        <pv-inputtext v-model="profilePicture" type="url" :placeholder="$t('members.profile-picture')" class="input-field" required />
+        <pv-inputtext v-model="fullName" :placeholder="$t('members.full-name')" class="input-field" required aria-label="Full name" />
+        <pv-inputtext v-model.number="age" :placeholder="$t('members.age')" type="number" class="input-field" required aria-label="Age" />
+        <pv-select v-model="membershipStatus" :options="statusOptions" :placeholder="$t('members.membership-status')" option-label="name" option-value="value" class="input-field" required aria-label="Membership status" />
+        <pv-select v-model="membershipType" :options="typeOptions" :placeholder="$t('members.membership-type')" option-label="name" option-value="value" class="input-field" required aria-label="Membership type" />
+        <pv-datepicker v-model="expirationDate" :placeholder="$t('members.expiration-date')" class="input-field" required aria-label="Membership expiration date" />
+        <pv-datepicker v-model="membershipStartDate" :placeholder="$t('members.start-date')" class="input-field" required aria-label="Membership start date" />
+        <pv-inputtext v-model="dni" placeholder="DNI" class="input-field" required aria-label="DNI" />
+        <pv-inputtext v-model="email" type="email" :placeholder="$t('members.email')" class="input-field" required aria-label="Email" />
+        <pv-inputtext v-model="phone" type="tel" :placeholder="$t('members.phone')" class="input-field" required aria-label="Phone number" />
+        <pv-inputtext v-model="address" :placeholder="$t('members.address')" class="input-field" required aria-label="Address" />
+        <pv-inputtext v-model="profilePicture" type="url" :placeholder="$t('members.profile-picture')" class="input-field" required aria-label="Profile picture URL" />
 
-        <div class="actions">
+        <div class="actions" role="group" aria-label="Form actions">
           <pv-button :label="$t('general.add')" type="submit" class="add-button" />
           <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
         </div>
@@ -86,6 +97,7 @@ export default {
     </div>
   </div>
 </template>
+
 
 
 <style scoped>

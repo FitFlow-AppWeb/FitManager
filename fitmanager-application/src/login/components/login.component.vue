@@ -1,3 +1,14 @@
+<!--
+// This Vue component renders the login page. It includes the following components:
+// 1. `LogoTitle`: Displays the logo and title of the application.
+// 2. `LoginForm`: Handles user authentication, emitting a `login-success` event upon successful login.
+// 3. `CreateAccountButton`: Displays a button for creating a new account.
+//
+// The component listens for the `login-success` event emitted by the `LoginForm` component.
+// When the login is successful (i.e., `authenticated` is true), it emits the `login-exitoso` event to notify the parent component.
+// Author: Victor Ortiz
+-->
+
 <script>
 import LogoTitle from "./logo-title.component.vue";
 import LoginForm from "./login-form.component.vue";
@@ -10,10 +21,8 @@ export default {
     CreateAccountButton,
   },
   methods: {
-    // Este método manejará el evento de login exitoso
     loginFinished(authenticated) {
       if (authenticated) {
-        // Emitir el evento "login-success" al componente App.vue
         this.$emit("login-exitoso", authenticated);
       }
     }
@@ -23,16 +32,14 @@ export default {
 
 <template>
   <div class="login-container">
-    <!-- Logo y Título -->
     <LogoTitle />
 
-    <!-- Formulario de Login -->
     <LoginForm @login-success="loginFinished" />
 
-    <!-- Botón de Crear Cuenta -->
     <CreateAccountButton />
   </div>
 </template>
+
 
 <style scoped>
 .login-container {

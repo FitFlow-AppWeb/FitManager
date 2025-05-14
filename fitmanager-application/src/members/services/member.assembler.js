@@ -1,10 +1,9 @@
-
 /**
  * This file contains the MemberAssembler class, which is responsible
  * for converting plain data objects into instances of the Member entity.
  * It is used to simulate the deserialization of data from a fake API response.
  *
- * Cassius Martel
+ * Author: Cassius Martel
  */
 
 import { Member } from '../model/member.entity.js';
@@ -23,8 +22,7 @@ export class MemberAssembler {
             resource.phone,
             resource.address,
             resource.membershipStartDate,
-            resource.profilePicture,
-
+            resource.profilePicture
         );
     }
 

@@ -1,3 +1,11 @@
+<!--
+// Description: This code defines the `EditClass` component, which is used to edit the details of an existing class.
+// The component receives `classData` as a prop, which contains the class to be edited. It initializes local state `localClassData` with the class data
+// and provides methods for updating the class, closing the modal, and fetching the list of trainers. The component renders a form where the user can update the class's name,
+// type, date, time, duration, trainer, and status. Upon submitting the form, the `updateClass` method is called to update the class data.
+// Author: Cassius Martel
+-->
+
 <script>
 import { ClassApiService } from "../services/class-api.service.js";
 import axios from "axios";
@@ -84,13 +92,13 @@ export default {
 </script>
 
 <template>
-  <div class="modal-overlay" @click.self="closeModal">
+  <div class="modal-overlay" @click.self="closeModal" aria-labelledby="edit-class-dialog">
     <div class="modal-content">
-      <h2 class="modal-title">{{$t('classes.edit-class')}}</h2>
+      <h2 class="modal-title" id="edit-class-dialog">{{ $t('classes.edit-class') }}</h2>
       <form @submit.prevent="updateClass">
-        <pv-inputtext v-model="localClassData.name" :placeholder="$t('classes.name')" class="input-field" required />
-        <pv-select v-model="localClassData.type" :options="typeOptions" :placeholder="$t('classes.type')" option-label="name" option-value="value" class="input-field" required />
-        <pv-datepicker v-model="localClassData.date":placeholder="$t('classes.date')" class="input-field" required />
+        <pv-inputtext v-model="localClassData.name" :placeholder="$t('classes.name')" class="input-field" required aria-label="Class Name" />
+        <pv-select v-model="localClassData.type" :options="typeOptions" :placeholder="$t('classes.type')" option-label="name" option-value="value" class="input-field" required aria-label="Class Type" />
+        <pv-datepicker v-model="localClassData.date" :placeholder="$t('classes.date')" class="input-field" required aria-label="Class Date" />
         <pv-select
             v-model="localClassData.time"
             :options="timeOptions"
@@ -99,6 +107,7 @@ export default {
             option-value="value"
             class="input-field"
             required
+            aria-label="Class Time"
         />
 
         <pv-select
@@ -109,6 +118,7 @@ export default {
             option-value="value"
             class="input-field"
             required
+            aria-label="Class Duration"
         />
         <pv-select
             v-model="localClassData.trainer_id"
@@ -118,17 +128,19 @@ export default {
             option-value="value"
             class="input-field"
             required
+            aria-label="Select Trainer"
         />
-        <pv-select v-model="localClassData.status" :options="statusOptions" :placeholder="$t('classes.status')" option-label="name" option-value="value" class="input-field" required />
+        <pv-select v-model="localClassData.status" :options="statusOptions" :placeholder="$t('classes.status')" option-label="name" option-value="value" class="input-field" required aria-label="Class Status" />
 
         <div class="actions">
-          <pv-button :label="$t('classes.update')" type="submit" class="update-button" />
-          <pv-button :label="$t('general.cancel')"  type="button" @click="closeModal" class="cancel-button" />
+          <pv-button :label="$t('classes.update')" type="submit" class="update-button" aria-label="Update Class" />
+          <pv-button :label="$t('general.cancel')" type="button" @click="closeModal" class="cancel-button" aria-label="Cancel" />
         </div>
       </form>
     </div>
   </div>
 </template>
+
 
 
 

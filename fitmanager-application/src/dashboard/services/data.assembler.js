@@ -3,7 +3,7 @@
  * for transforming raw data objects into instances of the Data entity.
  * It simulates the deserialization process, typically used when handling
  * API responses that provide data in a raw format.
- *
+ * /
  * Tomio Nakamurakare
  */
 

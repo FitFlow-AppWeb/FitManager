@@ -1,4 +1,12 @@
-// sent-notification-api.service.js
+/**
+ * This file contains the SentNotificationApiService class, which is responsible for interacting with
+ * the backend API to fetch, create, update, and deactivate sent notifications. It makes HTTP requests
+ * to the API and processes the responses using the SentNotificationAssembler class to convert raw data
+ * into properly structured SentNotification entities.
+ *
+ * Author: Victor Ortiz
+ */
+
 import axios from 'axios';
 import { SentNotificationAssembler } from './sent-notification.assembler.js';
 

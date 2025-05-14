@@ -1,3 +1,13 @@
+/**
+ * This file contains the AdminApiService class, which is responsible for
+ * making API calls to manage admin data. It handles fetching, adding,
+ * updating, and deactivating admin accounts using axios requests.
+ * It also utilizes the AdminAssembler to transform raw API data into
+ * Admin entities for use within the application.
+ *
+ * Author: Victor Ortiz
+ */
+
 import axios from 'axios';
 import { AdminAssembler } from './admin.assembler.js';
 

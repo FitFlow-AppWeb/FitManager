@@ -1,3 +1,14 @@
+/**
+ * Employee Class
+ *
+ * This class defines an employee object with various attributes including personal information,
+ * role, pay rate, and professional qualifications.
+ * The constructor initializes the employee with properties like ID, full name, age, role, hourly wage,
+ * work hours per week, and contact details. Additionally, it includes specialties and certifications.
+ *
+ * Author: Cassius Martel
+ */
+
 export class Employee {
     constructor(id, fullName, age, role, hourlyWage, hoursPerWeek, dni, email, phone, address, profilePicture, specialties = [], certifications = []) {
         this.id = id;

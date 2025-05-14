@@ -1,10 +1,24 @@
 <script>
+/**
+ * Member Management Component
+ *
+ * This component serves as the central hub for managing members. It provides:
+ * - A list view to browse all members.
+ * - A detailed card view for the selected member.
+ * - Modal dialogs to add, edit, or deactivate members.
+ *
+ * It fetches member data from the backend API and responds to user interactions
+ * such as selecting a member, initiating edits, or confirming deactivation.
+ *
+ * Author: Cassius Martel
+ */
+
 import { MemberApiService } from "../services/member-api.service.js";
 import MemberList from "./member-list.component.vue";
 import MemberCard from "./member-card.component.vue";
 import AddMember from "./add-member.component.vue";
 import EditMember from "./edit-member.component.vue";
-import DeactivateMember from "./deactivate.component.vue"; // nuevo
+import DeactivateMember from "./deactivate.component.vue";
 
 export default {
   name: "MemberComponent",
@@ -15,7 +29,7 @@ export default {
       selectedMember: null,
       showAddModal: false,
       showEditModal: false,
-      showDeactivateModal: false // nuevo
+      showDeactivateModal: false
     };
   },
   methods: {
@@ -41,11 +55,10 @@ export default {
 };
 </script>
 
-
 <template>
-  <div class="member-container">
-    <!-- Panel de lista -->
-    <div class="list-pane">
+  <div class="member-container" role="main" aria-label="Member management interface">
+    <!-- List Panel -->
+    <div class="list-pane" role="region" aria-label="Member list panel">
       <MemberList
           :members="members"
           @selected="onMemberSelected"
@@ -58,23 +71,24 @@ export default {
       />
     </div>
 
-    <!-- Panel de tarjeta -->
-    <div class="card-pane" v-if="selectedMember">
+    <!-- Card Panel -->
+    <div class="card-pane" v-if="selectedMember" role="region" aria-label="Selected member details">
       <MemberCard
           :member="selectedMember"
           @edit-request="onEditRequest"
           @deactivate-request="onDeactivateRequest"
-
       />
     </div>
 
-    <!-- Modal de edición -->
+    <!-- Edit Modal -->
     <EditMember
         v-if="showEditModal"
         :member="selectedMember"
         @close="showEditModal = false"
         @member-updated="fetchMembers"
     />
+
+    <!-- Deactivate Modal -->
     <DeactivateMember
         v-if="showDeactivateModal"
         :member="selectedMember"
@@ -84,6 +98,7 @@ export default {
     />
   </div>
 </template>
+
 
 <style scoped>
 .member-container {

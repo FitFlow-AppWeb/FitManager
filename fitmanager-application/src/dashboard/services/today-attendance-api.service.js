@@ -2,7 +2,7 @@
  * This file defines the TodayAttendanceApiService class.
  * It is responsible for retrieving today's attendance data from the API
  * and converting the raw response into structured TodayAttendance entities.
- *
+ * /
  * Tomio Nakamurakare
  */
 

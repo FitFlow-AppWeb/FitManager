@@ -58,16 +58,22 @@ export default {
   <!-- Container for the classes table -->
   <div class="today-classes">
     <!-- Section title -->
-    <h2 class="title">{{ $t('dashboard.today-classes') }}</h2>
+    <h2 class="title" aria-label="Today classes">{{ $t('dashboard.today-classes') }}</h2>
     <!-- PrimeVue datatable to display class schedule -->
     <pv-datatable
         :value="filterSchedule()"
         selectionMode="single"
+        aria-labelledby="today-classes-table"
     >
       <!-- Column for hour -->
-      <pv-column field="hour" :header="$t('dashboard.hour')" style="width: 20%" />
+      <pv-column
+          field="hour"
+          :header="$t('dashboard.hour')"
+          style="width: 20%"
+          aria-label="Hour"
+      />
       <!-- Column for formatted class list -->
-      <pv-column :header="$t('dashboard.classes')" style="width: 60%">
+      <pv-column :header="$t('dashboard.classes')" style="width: 60%" aria-label="Classes">
         <template #body="plan">
           <span>{{ formatClasses(plan.data.classes) }}</span>
         </template>
@@ -76,8 +82,8 @@ export default {
   </div>
 </template>
 
+
 <style scoped>
-/* Style for the component wrapper */
 .today-classes {
   margin: 1rem 1rem 0 0;
   padding: 0 1rem;
@@ -92,7 +98,6 @@ export default {
   margin-bottom: 1rem;
 }
 
-/* Highlight row on hover */
 .p-datatable-tbody > tr:hover {
   background-color: #f1f1f1;
 }

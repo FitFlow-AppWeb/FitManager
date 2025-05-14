@@ -1,3 +1,9 @@
+<!--
+  This Vue component is used to display a user profile header with the user's gym logo, name, role, and avatar. It takes a `user` object as a prop, and if the `user` object exists, it displays the gym logo on the left, the user's name and role in the center, and the user's avatar on the right. If any of the images fail to load, an error message is logged to the console using the `handleImageError` method. If the `user` object is not available, a loading message is shown instead.
+
+  Author: Juan Alvarado
+-->
+
 <script>
 export default {
   props: {
@@ -20,12 +26,13 @@ export default {
           alt="User gym logo"
           class="logo"
           @error="handleImageError"
+          aria-label="User gym logo"
       >
     </div>
 
     <div class="center-content">
-      <h1 class="gym-title">{{user.name}}</h1>
-      <p class="user-role">{{ user.role }}</p>
+      <h1 class="gym-title" aria-label="Gym name">{{user.name}}</h1>
+      <p class="user-role" aria-label="User role">{{ user.role }}</p>
     </div>
 
     <div class="right-image">
@@ -34,14 +41,16 @@ export default {
           alt="User Avatar"
           class="avatar"
           @error="handleImageError"
+          aria-label="User avatar"
       >
     </div>
   </div>
 
   <div v-else>
-    {{ $t('general.loading') }} . . .
+    <p aria-live="polite">{{ $t('general.loading') }} . . .</p>
   </div>
 </template>
+
 
 <style scoped>
 .header-container {

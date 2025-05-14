@@ -1,5 +1,17 @@
 <script>
-import { GeneralInfoApiService } from "../services/general-info-api.service.js"; // Verifica esta ruta
+/**
+ * General Information Component
+ *
+ * This component fetches and displays financial data for a specific month (April by default) and provides projected data for the target year (2025).
+ * The data includes earnings, income, and expenses for the current month, as well as projected information for the target year.
+ * The component fetches the data asynchronously using a service (`GeneralInfoApiService`).
+ * It displays the data in a formatted currency style and handles loading and error states.
+ * If no data is available, a "no data" message is shown.
+ *
+ * Author: Renzo Luque
+ */
+
+import { GeneralInfoApiService } from "../services/general-info-api.service.js"; // Verifies this path
 
 export default {
   name: "GeneralInfoComponent",
@@ -43,12 +55,11 @@ export default {
 };
 </script>
 
-
 <template>
   <div class="info-container">
     <h3>Financial Overview</h3>
-    <div v-if="isLoading" class="message">{{ $t('general.loading') }}...</div>
-    <div v-if="error" class="message error">{{ error }}</div>
+    <div v-if="isLoading" class="message" aria-live="polite">{{ $t('general.loading') }}...</div>
+    <div v-if="error" class="message error" aria-live="assertive">{{ error }}</div>
 
     <div v-if="!isLoading && !error && (aprilInfo || projectedInfo)" class="info-card">
       <template v-if="aprilInfo">
@@ -74,6 +85,7 @@ export default {
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .info-container {

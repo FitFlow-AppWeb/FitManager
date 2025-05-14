@@ -1,4 +1,11 @@
 <script>
+/**
+ * This file defines the ReceivedNotification component, which fetches and displays the list of received notifications.
+ * It uses an API service to fetch the notifications and displays relevant information such as the title, date, body, sender,
+ * and recipients for each notification.
+ *
+ * Author: Victor Ortiz
+ */
 import { ReceivedNotificationApiService } from '../services/received-notification-api.service.js';
 import { ReceivedNotificationAssembler } from '../services/received-notification.assembler.js';
 
@@ -16,7 +23,7 @@ export default {
     async fetchNotifications() {
       try {
         const response = await new ReceivedNotificationApiService().getAllReceivedNotifications();
-        this.notifications = response; // Guardamos las notificaciones recibidas
+        this.notifications = response; // Store the received notifications
       } catch (error) {
         console.error('Error fetching received notifications:', error);
       }
@@ -26,11 +33,11 @@ export default {
 </script>
 
 <template>
-  <div class="notification-list">
-    <h3>Notificaciones Recibidas</h3>
-    <div v-for="notification in notifications" :key="notification.id" class="notification-item">
+  <div class="notification-list" role="region" aria-labelledby="received-notifications-title">
+    <h3 id="received-notifications-title">Notificaciones Recibidas</h3>
+    <div v-for="notification in notifications" :key="notification.id" class="notification-item" role="listitem" aria-labelledby="notification-title">
       <div class="notification-header">
-        <span class="notification-title">{{ notification.title }}</span>
+        <span id="notification-title" class="notification-title">{{ notification.title }}</span>
         <span class="notification-date">{{ notification.date }}</span>
       </div>
       <div class="notification-body">

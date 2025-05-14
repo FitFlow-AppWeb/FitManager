@@ -28,8 +28,13 @@ export default {
 
 <template>
   <!-- Render the DataItem component for each statistic in the statistics array -->
-  <div class="card-container">
-    <data-item v-for="(item, index) in statistics" :key="item.title" :data="item" />
+  <div class="card-container" role="list" aria-label="Summary statistics">
+    <data-item
+        v-for="(item, index) in statistics"
+        :key="item.title"
+        :data="item"
+        role="listitem"
+    />
   </div>
 </template>
 

@@ -1,4 +1,18 @@
 <script>
+/**
+ * Employee Card Component
+ *
+ * This component is used to display an employee's detailed information in a card layout. It showcases the employee's
+ * profile picture, name, role, and various other personal details such as DNI, age, email, phone, and address.
+ * Additionally, it displays information about the employee's weekly hours, hourly wage, certifications, and specialties.
+ * Based on the employee's role, the component dynamically adjusts the color of the status text.
+ *
+ * The component includes action buttons for editing employee details, scheduling assignments, and firing the employee,
+ * emitting corresponding events when these actions are triggered.
+ *
+ * Author: Cassius Martel
+ */
+
 import { Button as PvButton } from "primevue";
 
 export default {
@@ -39,7 +53,7 @@ export default {
       </div>
 
       <!-- Status text -->
-      <p class="status" :style="{ color: statusColor }">
+      <p class="status" :style="{ color: statusColor }" aria-label="Employee role status">
         <strong>{{ employee.role.toUpperCase() }}</strong>
       </p>
 
@@ -70,20 +84,20 @@ export default {
           <span v-if="employee.certifications.length">{{ employee.certifications.join(', ') }}</span>
           <span v-else>None</span>
         </p>
-
       </div>
 
       <hr />
 
       <!-- Action buttons -->
       <div class="actions">
-        <pv-button :label="$t('employees.edit-details')" class="action-btn" @click="$emit('edit-request')"/>
-        <pv-button :label="$t('employees.schedule-assignment')" class="action-btn" />
-        <pv-button :label="$t('employees.fire')" class="action-btn"  @click="$emit('fire-request')"/>
+        <pv-button :label="$t('employees.edit-details')" class="action-btn" @click="$emit('edit-request')" aria-label="Edit employee details"/>
+        <pv-button :label="$t('employees.schedule-assignment')" class="action-btn" aria-label="Schedule employee assignment"/>
+        <pv-button :label="$t('employees.fire')" class="action-btn"  @click="$emit('fire-request')" aria-label="Fire employee"/>
       </div>
     </template>
   </pv-card>
 </template>
+
 
 <style scoped>
 .p-card {
@@ -126,13 +140,11 @@ export default {
   margin: 0.75rem 0;
 }
 
-/* Celeste lineas (hr) */
 hr {
   border: 1px solid #A7D1D2;
   margin: 1rem 0;
 }
 
-/* Action buttons */
 .actions {
   display: flex;
   flex-direction: column;
@@ -144,13 +156,12 @@ hr {
   width: 100%;
   background-color: white;
   border: 1px solid #A7D1D2;
-  color: black; /* Texto negro */
+  color: black;
 }
 
-/* Hover, ahora con !important para asegurar que no sea sobrescrito */
 .action-btn:hover {
-  background-color: #A7D1D2 !important; /* Fondo celeste en hover */
-  color: white !important; /* Texto blanco en hover */
+  background-color: #A7D1D2 !important;
+  color: white !important;
   border-color: #8FBFC0 !important;
 }
 </style>

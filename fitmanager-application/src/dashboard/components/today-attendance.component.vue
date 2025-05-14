@@ -75,16 +75,21 @@ export default {
 
 <template>
   <!-- Container for the attendance chart -->
-  <div class="today-attendance-chart">
+  <div class="today-attendance-chart" aria-labelledby="attendance-chart-title">
     <!-- Render the chart if data is available, else show loading message -->
     <pv-chart
         v-if="chartData && chartOptions"
         type="bar"
         :data="chartData"
         :options="chartOptions"
+        aria-describedby="attendance-chart-description"
     />
+    <p id="attendance-chart-description" v-if="!chartData">
+      {{ $t('dashboard.loading') }}
+    </p>
   </div>
 </template>
+
 
 <style scoped>
 .today-attendance-chart {
