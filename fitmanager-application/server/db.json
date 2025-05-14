@@ -1,4 +1,243 @@
 {
+  "admin": [
+    {
+      "id": "1",
+      "fullName": "Cassius Martel",
+      "email": "cassius@example.com",
+      "password": "admin123",
+      "role": "admin",
+      "lastLoginDate": "2025-05-09",
+      "phone": "+1234567890",
+      "address": "Avenida Ejemplo 100",
+      "profilePicture": "https://i.imgur.com/jVyXxXV.jpg"
+    }
+  ],
+  "receivednotification": [
+    {
+      "id": "1",
+      "title": "Reunión de equipo",
+      "body": "Reunión a las 3 PM",
+      "sender": "john@example.com",
+      "recipients": [
+        "mary@example.com",
+        "jane@example.com"
+      ],
+      "date": "2025-05-10T10:00:00",
+      "status": "unread"
+    },
+    {
+      "id": "2",
+      "title": "Actualización del sistema",
+      "body": "El sistema se actualizará el 12 de mayo.",
+      "sender": "admin@example.com",
+      "recipients": [
+        "john@example.com"
+      ],
+      "date": "2025-05-09T14:00:00",
+      "status": "unread"
+    },
+    {
+      "id": "3",
+      "title": "Cambio en el horario de trabajo",
+      "body": "Se cambia el horario de entrada para el próximo lunes.",
+      "sender": "hr@example.com",
+      "recipients": [
+        "john@example.com",
+        "mary@example.com"
+      ],
+      "date": "2025-05-07T12:00:00",
+      "status": "read"
+    },
+    {
+      "id": "4",
+      "title": "Notificación de vacaciones",
+      "body": "Tu solicitud de vacaciones ha sido aprobada del 15 al 25 de mayo.",
+      "sender": "admin@example.com",
+      "recipients": [
+        "john@example.com"
+      ],
+      "date": "2025-05-05T09:00:00",
+      "status": "unread"
+    },
+    {
+      "id": "5",
+      "title": "Nuevo mensaje en el foro",
+      "body": "Alguien ha respondido a tu publicación en el foro de discusión.",
+      "sender": "forum@example.com",
+      "recipients": [
+        "john@example.com"
+      ],
+      "date": "2025-05-03T16:30:00",
+      "status": "unread"
+    },
+    {
+      "id": "6",
+      "title": "Informe mensual disponible",
+      "body": "El informe mensual de desempeño ya está disponible en la intranet.",
+      "sender": "admin@example.com",
+      "recipients": [
+        "mary@example.com",
+        "john@example.com"
+      ],
+      "date": "2025-05-01T08:00:00",
+      "status": "read"
+    },
+    {
+      "id": "7",
+      "title": "Notificación de cumpleaños",
+      "body": "Hoy es el cumpleaños de tu compañero de trabajo, ¡felicitaciones!",
+      "sender": "hr@example.com",
+      "recipients": [
+        "john@example.com"
+      ],
+      "date": "2025-04-30T10:00:00",
+      "status": "read"
+    },
+    {
+      "id": "8",
+      "title": "Recordatorio de reunión",
+      "body": "Recordatorio: reunión de seguimiento de proyecto mañana a las 11 AM.",
+      "sender": "manager@example.com",
+      "recipients": [
+        "john@example.com",
+        "mary@example.com"
+      ],
+      "date": "2025-04-28T08:00:00",
+      "status": "unread"
+    },
+    {
+      "id": "9",
+      "title": "Mantenimiento programado",
+      "body": "El mantenimiento del servidor se realizará el 5 de mayo de 1 AM a 4 AM.",
+      "sender": "admin@example.com",
+      "recipients": [
+        "john@example.com",
+        "mary@example.com"
+      ],
+      "date": "2025-04-25T12:00:00",
+      "status": "unread"
+    },
+    {
+      "id": "10",
+      "title": "Cambio de políticas de empresa",
+      "body": "Hemos actualizado nuestras políticas internas, por favor revisa los cambios.",
+      "sender": "hr@example.com",
+      "recipients": [
+        "john@example.com",
+        "mary@example.com",
+        "jane@example.com"
+      ],
+      "date": "2025-04-20T09:30:00",
+      "status": "read"
+    }
+  ],
+  "sentnotification": [
+    {
+      "id": "1",
+      "title": "Reunión de equipo",
+      "body": "Reunión a las 3 PM",
+      "recipients": [
+        "john@example.com",
+        "mary@example.com"
+      ],
+      "date": "2025-05-10T10:00:00",
+      "status": "sent"
+    },
+    {
+      "id": "2",
+      "title": "Actualización del sistema",
+      "body": "El sistema se actualizará el 12 de mayo.",
+      "recipients": [
+        "jane@example.com"
+      ],
+      "date": "2025-05-09T14:00:00",
+      "status": "sent"
+    },
+    {
+      "id": "3",
+      "title": "Notificación urgente",
+      "body": "Cambio de políticas de seguridad",
+      "recipients": [
+        "admin@example.com"
+      ],
+      "date": "2025-05-08T08:30:00",
+      "status": "sent"
+    },
+    {
+      "id": "4",
+      "title": "Aprobación de presupuesto",
+      "body": "Tu solicitud de presupuesto ha sido aprobada.",
+      "recipients": [
+        "john@example.com",
+        "jane@example.com"
+      ],
+      "date": "2025-05-07T11:00:00",
+      "status": "sent"
+    },
+    {
+      "id": "5",
+      "title": "Confirmación de asistencia",
+      "body": "Confirmamos tu asistencia a la conferencia del 15 de mayo.",
+      "recipients": [
+        "mary@example.com",
+        "jane@example.com"
+      ],
+      "date": "2025-05-06T09:45:00",
+      "status": "sent"
+    },
+    {
+      "id": "6",
+      "title": "Recordatorio de pago",
+      "body": "Te recordamos que el pago vence el 10 de mayo.",
+      "recipients": [
+        "john@example.com"
+      ],
+      "date": "2025-05-04T16:30:00",
+      "status": "sent"
+    },
+    {
+      "id": "7",
+      "title": "Descuento exclusivo para ti",
+      "body": "¡Aprovecha un descuento exclusivo del 20% en tu próxima compra!",
+      "recipients": [
+        "mary@example.com"
+      ],
+      "date": "2025-05-02T10:00:00",
+      "status": "sent"
+    },
+    {
+      "id": "8",
+      "title": "Encuesta de satisfacción",
+      "body": "Queremos conocer tu opinión sobre nuestro servicio. Completa esta breve encuesta.",
+      "recipients": [
+        "admin@example.com",
+        "mary@example.com"
+      ],
+      "date": "2025-05-01T09:00:00",
+      "status": "sent"
+    },
+    {
+      "id": "9",
+      "title": "Confirmación de cita",
+      "body": "Tu cita con el doctor ha sido confirmada para el 18 de mayo a las 3 PM.",
+      "recipients": [
+        "jane@example.com"
+      ],
+      "date": "2025-04-30T11:30:00",
+      "status": "sent"
+    },
+    {
+      "id": "10",
+      "title": "Cambios en el horario de oficina",
+      "body": "Hemos cambiado el horario de oficina. Ahora abrimos de 9 AM a 5 PM.",
+      "recipients": [
+        "john@example.com",
+        "mary@example.com"
+      ],
+      "date": "2025-04-28T15:00:00",
+      "status": "sent"
+    }
+  ],
   "member": [
     {
       "id": "1",
