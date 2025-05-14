@@ -66,13 +66,13 @@ name: "inventory-list.component",
           <div class="left-group">
             <pv-inputtext
                 v-model="searchQuery"
-                placeholder="Search by name..."
+                :placeholder="`${$t('inventory.search')}...`"
                 class="search-bar"
             />
           </div>
           <div class="right-group">
             <pv-button
-                label="Add item"
+                :label="$t('inventory.add-item')"
                 icon="pi pi-plus"
                 class="add-btn"
                 @click="$emit('add-request')"
@@ -81,12 +81,12 @@ name: "inventory-list.component",
         </div>
       </template>
 
-      <pv-column field="name" header="Name" sortable style="width:25%"></pv-column>
-      <pv-column field="description" header="Description" sortable style="width:15%"></pv-column>
-      <pv-column field="quantity" header="Quantity" sortable style="width:25%"></pv-column>
-      <pv-column field="last_maintenance" header="Last Maintenance" sortable style="width:20%"></pv-column>
-      <pv-column field="next_maintenance" header="Next Maintenance" sortable style="width:25%"></pv-column>
-      <pv-column field="trainerName" header="Trainer" sortable style="width:15%"/>
+      <pv-column field="name" :header="$t('inventory.name')" sortable style="width:25%"></pv-column>
+      <pv-column field="description" :header="$t('inventory.description')" sortable style="width:15%"></pv-column>
+      <pv-column field="quantity" :header="$t('inventory.quantity')" sortable style="width:25%"></pv-column>
+      <pv-column field="last_maintenance" :header="$t('inventory.last-maintenance')" sortable style="width:20%"></pv-column>
+      <pv-column field="next_maintenance" :header="$t('inventory.next-maintenance')" sortable style="width:25%"></pv-column>
+      <pv-column field="trainerName" :header="$t('inventory.trainer')" sortable style="width:15%"/>
       <pv-column header="Actions" style="width: 15%">
         <template v-slot:body="{ data }">
           <div class="action-buttons">

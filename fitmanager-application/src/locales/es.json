@@ -137,5 +137,22 @@
     "update": "Actualizar",
     "members-class": "Miembros en esta clase",
     "members-not-found": "No se encontraron miembros para esta clase"
+  },
+  "inventory": {
+    "add-new-item": "Agregar nuevo ítem",
+    "name": "Nombre",
+    "description": "Descripción",
+    "quantity": "Cantidad",
+    "last-maintenance": "Último mantenimiento",
+    "next-maintenance": "Próximo mantenimiento",
+    "select-trainer": "Seleccionar entrenador",
+    "delete-item": "Eliminar ítem",
+    "delete-confirmation": "¿Estás seguro de que deseas eliminar este ítem?",
+    "delete": "Eliminar",
+    "edit-inventory": "Editar inventario",
+    "update": "Actualizar",
+    "search": "Buscar por nombre",
+    "add-item": "Agregar ítem",
+    "trainer": "Entrenador"
   }
 }

@@ -33,15 +33,15 @@ export default {
 
 <template>
   <pv-dialog
-      header="Delete Item"
+      :header="$t('inventory.delete-item')"
       :visible="visible"
       @update:visible="closeDialog"
       modal
   >
-    <p>Are you sure you want to delete this item?</p>
+    <p>{{ $t('inventory.delete-confirmation') }}</p>
     <div class="dialog-actions">
-      <pv-button label="Cancel" class="p-button-secondary" @click="closeDialog" />
-      <pv-button label="Delete" class="p-button-danger" @click="deleteInventory" />
+      <pv-button :label="$t('general.cancel')" class="p-button-secondary" @click="closeDialog" />
+      <pv-button :label="$t('inventory.delete')" class="p-button-danger" @click="deleteInventory" />
     </div>
   </pv-dialog>
 </template>

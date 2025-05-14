@@ -46,18 +46,18 @@ export default {
 <template>
   <div class="modal-overlay" @click.self="closeModal">
     <div class="modal-content">
-      <h2 class="modal-title">Edit Inventory</h2>
+      <h2 class="modal-title">{{$t('inventory.edit-inventory')}}</h2>
       <form @submit.prevent="updateInventory">
-        <pv-inputtext v-model="localInventoryData.name" placeholder="Name" class="input-field" required />
-        <pv-inputtext v-model="localInventoryData.description" placeholder="Description" class="input-field" required />
-        <pv-inputtext v-model.number="localInventoryData.quantity" placeholder="Quantity" type="number" class="input-field" required />
-        <pv-datepicker v-model="localInventoryData.last_maintenance" placeholder="Last Maintenance" class="input-field" required />
-        <pv-datepicker v-model="localInventoryData.next_maintenance" placeholder="Next Maintenance" class="input-field" required />
+        <pv-inputtext v-model="localInventoryData.name" :placeholder="$t('inventory.name')" class="input-field" required />
+        <pv-inputtext v-model="localInventoryData.description" :placeholder="$t('inventory.description')" class="input-field" required />
+        <pv-inputtext v-model.number="localInventoryData.quantity" :placeholder="$t('inventory.quantity')" type="number" class="input-field" required />
+        <pv-datepicker v-model="localInventoryData.last_maintenance" :placeholder="$t('inventory.last-maintenance')" class="input-field" required />
+        <pv-datepicker v-model="localInventoryData.next_maintenance" :placeholder="$t('inventory.next-maintenance')" class="input-field" required />
 
         <pv-select
             v-model="localInventoryData.trainer_id"
             :options="trainers"
-            placeholder="Select Trainer"
+            :placeholder="$t('inventory.select-trainer')"
             option-label="name"
             option-value="value"
             class="input-field"
@@ -65,8 +65,8 @@ export default {
         />
 
         <div class="actions">
-          <pv-button label="Update" type="submit" class="update-button" />
-          <pv-button label="Cancel" type="button" @click="closeModal" class="cancel-button" />
+          <pv-button :label="$t('inventory.update')" type="submit" class="update-button" />
+          <pv-button :label="$t('general.cancel')" type="button" @click="closeModal" class="cancel-button" />
         </div>
       </form>
     </div>
