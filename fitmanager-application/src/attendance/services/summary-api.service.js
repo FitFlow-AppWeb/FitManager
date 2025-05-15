@@ -17,7 +17,7 @@ export class SummaryApiService {
      * @returns {Promise<Summary>} - Promise resolving to a Summary entity
      */
     getSummary() {
-        return axios.get("http://localhost:3000/attendance")
+        return axios.get("https://fitmanager.onrender.com/attendance")
             .then((response) => {
                 const weeklyOverviewResource = response.data?.weekly_overview;
                 const historicalSummaryResource = response.data?.historical_summary;

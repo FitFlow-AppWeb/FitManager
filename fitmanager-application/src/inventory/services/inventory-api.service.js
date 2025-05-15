@@ -15,8 +15,8 @@ export class InventoryApiService {
     async getInventory() {
         try {
             const [inventoryRes, employeesRes] = await Promise.all([
-                axios.get('http://localhost:3000/inventory'),
-                axios.get('http://localhost:3000/employees')
+                axios.get('https://fitmanager.onrender.com/inventory'),
+                axios.get('https://fitmanager.onrender.com/employees')
             ]);
 
             const inventory = InventoryAssembler.toEntitiesFromResponse(inventoryRes.data);
@@ -38,11 +38,11 @@ export class InventoryApiService {
         }
     }
     addInventory(inventory) {
-        return axios.post("http://localhost:3000/inventory", inventory);
+        return axios.post("https://fitmanager.onrender.com/inventory", inventory);
     }
 
     updateInventory(inventory) {
-        return axios.put(`http://localhost:3000/inventory/${inventory.id}`, inventory)
+        return axios.put(`https://fitmanager.onrender.com/inventory/${inventory.id}`, inventory)
             .catch(error => {
                 console.error('Error updating inventory:', error);
                 throw error;
@@ -51,7 +51,7 @@ export class InventoryApiService {
 
     deleteInventory(inventory) {
 
-        return axios.delete(`http://localhost:3000/inventory/${inventory.id}`)
+        return axios.delete(`https://fitmanager.onrender.com/inventory/${inventory.id}`)
             .catch(error => {
                 console.error('Error deleting item:', error);
                 throw error;

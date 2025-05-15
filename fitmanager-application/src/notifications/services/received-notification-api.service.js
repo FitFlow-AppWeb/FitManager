@@ -12,7 +12,7 @@ import { ReceivedNotificationAssembler } from './received-notification.assembler
 
 export class ReceivedNotificationApiService {
     getAllReceivedNotifications() {
-        return axios.get('http://localhost:3000/receivednotification')
+        return axios.get('https://fitmanager.onrender.com/receivednotification')
             .then(response => ReceivedNotificationAssembler.toEntitiesFromResponse(response.data))
             .catch(error => {
                 console.error('Error fetching received notifications:', error);
@@ -21,11 +21,11 @@ export class ReceivedNotificationApiService {
     }
 
     addReceivedNotification(notification) {
-        return axios.post("http://localhost:3000/receivednotification", notification);
+        return axios.post("https://fitmanager.onrender.com/receivednotification", notification);
     }
 
     updateReceivedNotification(notification) {
-        return axios.put(`http://localhost:3000/receivednotification/${notification.id}`, notification)
+        return axios.put(`https://fitmanager.onrender.com/receivednotification/${notification.id}`, notification)
             .catch(error => {
                 console.error('Error updating received notification:', error);
                 throw error;
@@ -33,7 +33,7 @@ export class ReceivedNotificationApiService {
     }
 
     markAsReadReceivedNotification(notification) {
-        return axios.patch(`http://localhost:3000/receivednotification/${notification.id}`, {
+        return axios.patch(`https://fitmanager.onrender.com/receivednotification/${notification.id}`, {
             status: "read"
         });
     }

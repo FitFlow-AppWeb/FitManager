@@ -15,7 +15,7 @@ export class WeekApiService {
      * @returns {Promise<WeeklyAttendance>} - A promise that resolves to a WeeklyAttendance instance
      */
     getWeekAttendance() {
-        return axios.get("http://localhost:3000/attendance")
+        return axios.get("https://fitmanager.onrender.com/attendance")
             .then((response) => {
                 const heatmapResource = response.data?.weekly_heatmap;
 

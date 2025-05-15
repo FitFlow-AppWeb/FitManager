@@ -17,8 +17,8 @@ export class ClassApiService {
     async getAllClasses() {
         try {
             const [classesRes, employeesRes] = await Promise.all([
-                axios.get('http://localhost:3000/classes'),
-                axios.get('http://localhost:3000/employees')
+                axios.get('https://fitmanager.onrender.com/classes'),
+                axios.get('https://fitmanager.onrender.com/employees')
             ]);
 
             const classes = ClassAssembler.toEntitiesFromResponse(classesRes.data);
@@ -40,11 +40,11 @@ export class ClassApiService {
     }
 
     addClass(gymClass) {
-        return axios.post("http://localhost:3000/classes", gymClass);
+        return axios.post("https://fitmanager.onrender.com/classes", gymClass);
     }
 
     updateClass(gymClass) {
-        return axios.put(`http://localhost:3000/classes/${gymClass.id}`, gymClass)
+        return axios.put(`https://fitmanager.onrender.com/classes/${gymClass.id}`, gymClass)
             .catch(error => {
                 console.error('Error updating class:', error);
                 throw error;
@@ -52,7 +52,7 @@ export class ClassApiService {
     }
 
     deleteClass(gymClass) {
-        return axios.delete(`http://localhost:3000/classes/${gymClass.id}`)
+        return axios.delete(`https://fitmanager.onrender.com/classes/${gymClass.id}`)
             .catch(error => {
                 console.error('Error deleting class:', error);
                 throw error;
@@ -61,7 +61,7 @@ export class ClassApiService {
 
     async getMembersByClass(gymClass) {
         try {
-            const response = await axios.get('http://localhost:3000/member');
+            const response = await axios.get('https://fitmanager.onrender.com/member');
             const allMembers = response.data;
 
             const filteredMembers = allMembers

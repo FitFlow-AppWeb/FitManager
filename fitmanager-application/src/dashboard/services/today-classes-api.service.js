@@ -14,7 +14,7 @@ export class TodayClassesApiService {
 
     // Fetches today's classes from the API and converts them to entity objects
     getTodayClasses() {
-        return axios.get('http://localhost:3000/dashboard/')
+        return axios.get('https://fitmanager.onrender.com/dashboard/')
             .then(response => {
                 const todayClasses = response.data?.todayClasses;
 

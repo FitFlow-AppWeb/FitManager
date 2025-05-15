@@ -13,7 +13,7 @@ import { AdminAssembler } from './admin.assembler.js';
 
 export class AdminApiService {
     getAllAdmins() {
-        return axios.get('http://localhost:3000/admin')
+        return axios.get('https://fitmanager.onrender.com/admin')
             .then(response => AdminAssembler.toEntitiesFromResponse(response.data))
             .catch(error => {
                 console.error('Error fetching admins:', error);
@@ -22,11 +22,11 @@ export class AdminApiService {
     }
 
     addAdmin(admin) {
-        return axios.post("http://localhost:3000/admin", admin);
+        return axios.post("https://fitmanager.onrender.com/admin", admin);
     }
 
     updateAdmin(admin) {
-        return axios.put(`http://localhost:3000/admin/${admin.id}`, admin)
+        return axios.put(`https://fitmanager.onrender.com/admin/${admin.id}`, admin)
             .catch(error => {
                 console.error('Error updating admin:', error);
                 throw error;
@@ -34,7 +34,7 @@ export class AdminApiService {
     }
 
     deactivateAdmin(admin) {
-        return axios.patch(`http://localhost:3000/admin/${admin.id}`, {
+        return axios.patch(`https://fitmanager.onrender.com/admin/${admin.id}`, {
             membershipStatus: "inactive"
         });
     }

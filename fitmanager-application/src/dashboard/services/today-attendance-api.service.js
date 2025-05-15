@@ -13,7 +13,7 @@ export class TodayAttendanceApiService {
 
     // Fetches today's attendance data from the API and transforms it into entity instances
     getTodayAttendance() {
-        return axios.get('http://localhost:3000/dashboard/')
+        return axios.get('https://fitmanager.onrender.com/dashboard/')
             .then(response => {
                 const todayAttendance = response.data?.todayAttendance;
                 if (!Array.isArray(todayAttendance)) {

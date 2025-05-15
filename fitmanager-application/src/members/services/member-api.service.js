@@ -12,7 +12,7 @@ import { MemberAssembler } from './member.assembler.js';
 
 export class MemberApiService {
     getAllMembers() {
-        return axios.get('http://localhost:3000/member')
+        return axios.get('https://fitmanager.onrender.com/member')
             .then(response => MemberAssembler.toEntitiesFromResponse(response.data))
             .catch(error => {
                 console.error('Error fetching members:', error);
@@ -21,11 +21,11 @@ export class MemberApiService {
     }
 
     addMember(member) {
-        return axios.post("http://localhost:3000/member", member);
+        return axios.post("https://fitmanager.onrender.com/member", member);
     }
 
     updateMember(member) {
-        return axios.put(`http://localhost:3000/member/${member.id}`, member)
+        return axios.put(`https://fitmanager.onrender.com/member/${member.id}`, member)
             .catch(error => {
                 console.error('Error updating member:', error);
                 throw error;
@@ -33,7 +33,7 @@ export class MemberApiService {
     }
 
     deactivateMember(member) {
-        return axios.delete(`http://localhost:3000/member/${member.id}`)
+        return axios.delete(`https://fitmanager.onrender.com/member/${member.id}`)
             .catch(error => {
                 console.error('Error deleting member:', error);
                 throw error;

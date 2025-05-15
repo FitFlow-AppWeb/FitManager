@@ -19,7 +19,7 @@ import { EmployeeAssembler } from './employee.assembler.js';
 
 export class EmployeeApiService{
     getAllEmployees() {
-        return axios.get('http://localhost:3000/employees')
+        return axios.get('https://fitmanager.onrender.com/employees')
             .then(response => EmployeeAssembler.toEntitiesFromResponse(response.data))
             .catch(error => {
                 console.error('Error fetching employees:', error);
@@ -27,17 +27,17 @@ export class EmployeeApiService{
             });
     }
     addEmployee(employee) {
-        return axios.post("http://localhost:3000/employees", employee);
+        return axios.post("https://fitmanager.onrender.com/employees", employee);
     }
     updateEmployee(employee) {
-        return axios.put(`http://localhost:3000/employees/${employee.id}`, employee)
+        return axios.put(`https://fitmanager.onrender.com/employees/${employee.id}`, employee)
             .catch(error => {
                 console.error('Error updating employee:', error);
                 throw error;
             });
     }
     fireEmployee(employee) {
-        return axios.delete(`http://localhost:3000/employees/${employee.id}`)
+        return axios.delete(`https://fitmanager.onrender.com/employees/${employee.id}`)
             .catch(error => {
                 console.error('Error deleting employee:', error);
                 throw error;

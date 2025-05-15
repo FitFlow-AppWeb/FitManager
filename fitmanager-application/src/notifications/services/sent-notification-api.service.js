@@ -12,7 +12,7 @@ import { SentNotificationAssembler } from './sent-notification.assembler.js';
 
 export class SentNotificationApiService {
     getAllSentNotifications() {
-        return axios.get('http://localhost:3000/sentnotification')
+        return axios.get('https://fitmanager.onrender.com/sentnotification')
             .then(response => SentNotificationAssembler.toEntitiesFromResponse(response.data))
             .catch(error => {
                 console.error('Error fetching sent notifications:', error);
@@ -21,11 +21,11 @@ export class SentNotificationApiService {
     }
 
     addSentNotification(notification) {
-        return axios.post("http://localhost:3000/sentnotification", notification);
+        return axios.post("https://fitmanager.onrender.com/sentnotification", notification);
     }
 
     updateSentNotification(notification) {
-        return axios.put(`http://localhost:3000/sentnotification/${notification.id}`, notification)
+        return axios.put(`https://fitmanager.onrender.com/sentnotification/${notification.id}`, notification)
             .catch(error => {
                 console.error('Error updating sent notification:', error);
                 throw error;
@@ -33,7 +33,7 @@ export class SentNotificationApiService {
     }
 
     deactivateSentNotification(notification) {
-        return axios.patch(`http://localhost:3000/sentnotification/${notification.id}`, {
+        return axios.patch(`https://fitmanager.onrender.com/sentnotification/${notification.id}`, {
             status: "inactive"
         });
     }

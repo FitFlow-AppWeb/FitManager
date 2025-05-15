@@ -1,7 +1,7 @@
 // 
 // The `GeneralInfoApiService` class is responsible for fetching financial data from an API and processing it into entities.
 // It has a method called `getFinancialData` that does the following:
-// 1. Sends a GET request to the endpoint `http://localhost:3000/finances` to retrieve financial data.
+// 1. Sends a GET request to the endpoint `https://fitmanager.onrender.com/finances` to retrieve financial data.
 // 2. Extracts the `monthly_summary` and `overall_summary` from the API response.
 // 3. If the `monthly_summary` is valid (an array), it transforms it into `GeneralInfo` entities using the `GeneralInfoAssembler`.
 // 4. Returns an object containing both the monthly financial data (as entities) and the overall summary data.
@@ -15,7 +15,7 @@ import { GeneralInfoAssembler } from "./general-info.assembler.js";
 
 export class GeneralInfoApiService {
     getFinancialData() {
-        return axios.get('http://localhost:3000/finances')
+        return axios.get('https://fitmanager.onrender.com/finances')
             .then((response) => {
 
                 const monthlySummariesData = response.data?.general_information?.monthly_summary;

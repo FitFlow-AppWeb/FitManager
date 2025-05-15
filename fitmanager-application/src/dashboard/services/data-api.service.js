@@ -13,7 +13,7 @@ export class DataApiService {
 
     // Retrieves dashboard statistics from the API and converts them into Data entities
     getStatistics() {
-        return axios.get('http://localhost:3000/dashboard/')
+        return axios.get('https://fitmanager.onrender.com/dashboard/')
             .then(response => {
                 const statistics = response.data?.statistics;
                 if (!Array.isArray(statistics)) {

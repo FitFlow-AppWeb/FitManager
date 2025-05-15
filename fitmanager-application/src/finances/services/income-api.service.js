@@ -11,7 +11,7 @@ import axios from "axios";
 
 export class IncomeApiService {
     getIncomeData() {
-        return axios.get('http://localhost:3000/finances')
+        return axios.get('https://fitmanager.onrender.com/finances')
             .then((response) => {
 
                 const subscriptionIncomeArray = response.data?.subscription_income;
