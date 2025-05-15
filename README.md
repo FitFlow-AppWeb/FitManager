@@ -20,9 +20,13 @@
 
 # Registro de versiones del informe
 
-| **Versión**  | **Fecha**   | **Autor/es**                                                                                           | **Descripción**                                                                                                                |
-|--------------|-------------|--------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| 1.0 (TB1)    | 25/04/25    | - Alvarado De La Cruz, Juan Carlos <br> - Luque Minaya, Renzo Andrés <br> - Martel Andrade, Cassius Estefano <br> - Nakamurakare Teruya, Alex Tomio <br> - Ortiz Alarcón, Víctor Nicolás | Capítulo I: Introducción <br> Capítulo II: Requirements Elicitation & Analysis <br> Capítulo III: Requirements Specification <br> Capítulo IV: Product Design <br> Capítulo V: Product Implementation, Validation & Deployment |
+## Versiones del Documento
+
+| Versión   | Fecha     | Autor(es)                                                                                 | Descripción                                                                                   |
+|-----------|-----------|--------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| 1.0 (TB1) | 25/04/25  | - Alvarado De La Cruz, Juan Carlos<br>- Luque Minaya, Renzo Andrés<br>- Martel Andrade, Cassius Estefano<br>- Nakamurakare Teruya, Alex Tomio<br>- Ortiz Alarcón, Víctor Nicolás | Capítulo I: Introducción<br>Capítulo II: Requirements Elicitation & Analysis<br>Capítulo III: Requirements Specification<br>Capítulo IV: Product Design<br>Capítulo V: Product Implementation, Validation & Deployment |
+| 2.0 (TP)  | 14/05/25  | - Alvarado De La Cruz, Juan Carlos<br>- Luque Minaya, Renzo Andrés<br>- Martel Andrade, Cassius Estefano<br>- Nakamurakare Teruya, Alex Tomio<br>- Ortiz Alarcón, Víctor Nicolás | Correcciones de la TB1<br>Capítulo V: Product Implementation, Validation & Deployment        |
+
 
 # Project Report Collaboration Insights
 
@@ -133,6 +137,25 @@ Si bien es cierto que uno de los miembros registra un mayor número de commits e
       - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
       - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
       - [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+* [5.2. Landing Page, Services & Applications Implementation](#52-landing-page-services--applications-implementation)
+    + [5.2.1. Sprint 1](#521-sprint-1)
+      - [5.2.1.1. Sprint Planning](#5211-sprint-planning)
+      - [5.2.1.2. Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
+      - [5.2.1.3 Sprint Backlog 1](#5213-sprint-backlog-1)
+      - [5.2.1.4. Development Evidence for Sprint Review](#5214-development-evidence-for-sprint-review)
+      - [5.2.1.5. Execution Evidence for Sprint Review](#5215-execution-evidence-for-sprint-review)
+      - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
+      - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
+      - [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+    + [5.2.2. Sprint 2](#522-sprint-2)
+      - [5.2.2.1. Sprint Planning](#5221-sprint-planning)
+      - [5.2.2.2. Aspect Leaders and Collaborators](#5222-aspect-leaders-and-collaborators)
+      - [5.2.2.3 Sprint Backlog 2](#5223-sprint-backlog-2)
+      - [5.2.2.4. Development Evidence for Sprint Review](#5224-development-evidence-for-sprint-review)
+      - [5.2.2.5. Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review)
+      - [5.2.2.6. Services Documentation Evidence for Sprint Review](#5226-services-documentation-evidence-for-sprint-review)
+      - [5.2.2.7. Software Deployment Evidence for Sprint Review](#5227-software-deployment-evidence-for-sprint-review)
+      - [5.2.2.8. Team Collaboration Insights during Sprint](#5228-team-collaboration-insights-during-sprint)
 
 - [Conclusiones](#conclusiones)
   
@@ -402,32 +425,32 @@ FitManager no solo se dirige a los dueños y entrenadores que buscan optimizar s
 Aspectos demográficos:
 * Sexo: No definido (tanto hombres como mujeres).
 * Rango de edad: 25-50 años.
-* Nivel socioeconómico: Medio a alto, debido a la necesidad de inversión en tecnología y la operación de un gimnasio.
+* Nivel socioeconómico: Medio a alto, debido a la necesidad de inversión en tecnología y la operación de un gimnasio. Este perfil coincide con los responsables de más de 46,000 gimnasios en América Latina, un mercado que genera ingresos por aproximadamente 5,600 millones de dólares anuales (2018, Mercado Fitness).
 
 Aspectos geográficos:
 * Nacionalidad: Principalmente de países de habla hispana, aunque se puede adaptar a otros mercados.
-* Zona geográfica de residencia: Zonas urbanas y suburbanas, con presencia de gimnasios independientes y centros de entrenamiento.
+* Zona geográfica de residencia: Zonas urbanas y suburbanas, con presencia de gimnasios independientes y centros de entrenamiento. En Perú, por ejemplo, existen más de 1,600 centros de entrenamiento, y grandes cadenas como Smart Fit continúan invirtiendo agresivamente en expansión, con 21 millones de dólares destinados a abrir 14 nuevos gimnasios solo en 2023 (Forbes Perú).
 
 Aspectos psicográficos:
-* Intereses: Interés por la optimización de procesos, tecnología aplicada a la gestión, y crecimiento profesional.
-* Estilo de vida: Orientados al negocio, interesados en la mejora continua de sus instalaciones, procesos y la experiencia de sus clientes.
-* Actitudes: Valoran la eficiencia operativa, la automatización de tareas, y la posibilidad de ofrecer un servicio más profesional y organizado.
+* Intereses: Interés por la optimización de procesos, tecnología aplicada a la gestión, y crecimiento profesional. La digitalización del sector fitness ha sido una tendencia clave en los últimos años, con creciente demanda por plataformas que automaticen reservas, membresías y seguimiento de clientes.
+* Estilo de vida: Orientados al negocio, interesados en la mejora continua de sus instalaciones, procesos y la experiencia de sus clientes. Buscan diferenciarse en un mercado competitivo con servicios modernos, eficientes y personalizados.
+* Actitudes: Valoran la eficiencia operativa, la automatización de tareas, y la posibilidad de ofrecer un servicio más profesional y organizado. Más del 55% de los latinoamericanos activos prefieren entrenar en gimnasios por razones de eficacia, conveniencia y acceso a buenos equipos, lo que obliga a los administradores a estar en constante innovación (Mercado Fitness, 2024).
 
 **Segmento objetivo #2: Clientes de gimnasios**
 
 Aspectos demográficos:
 * Sexo: No definido (tanto hombres como mujeres).
 * Rango de edad: 18-45 años, personas activas en la búsqueda de mejorar su salud y estado físico.
-* Nivel socioeconómico: Medio a medio-alto, ya que tienen acceso a membresías en gimnasios o centros de entrenamiento.
+* Nivel socioeconómico: Medio a medio-alto, ya que tienen acceso a membresías en gimnasios o centros de entrenamiento. En América Latina, la industria del fitness genera más de 5,600 millones de dólares anuales con una creciente participación de jóvenes adultos (Mercado Fitness, 2019).
 
 Aspectos geográficos:
 * Nacionalidad: Principalmente de países de habla hispana.
-* Zona geográfica de residencia: Zonas urbanas y suburbanas, donde existen una mayor concentración de gimnasios.
+* Zona geográfica de residencia: Zonas urbanas y suburbanas, donde existe una mayor concentración de gimnasios. En Perú, por ejemplo, las principales cadenas como Smart Fit están ubicadas en Lima Metropolitana y otras ciudades intermedias (Forbes Perú, 2023).
 
 Aspectos psicográficos:
-* Intereses: Salud, fitness, bienestar personal, deportes y mejora física.
-* Estilo de vida: Activos, interesados en entrenamientos personalizados, y en mantener un estilo de vida saludable.
-* Actitudes: Buscan conveniencia, facilidad para acceder a la información sobre horarios, entrenamientos y disponibilidad, y valoran una experiencia organizada en el gimnasio.
+* Intereses: Salud, fitness, bienestar personal, deportes y mejora física. Una encuesta regional muestra que el 55% de los latinoamericanos activos prefiere entrenar en gimnasios, motivados por eficacia (35%), conveniencia (32%) y acceso a equipamiento (29%) (Mercado Fitness, 2024).
+* Estilo de vida: Activos, interesados en entrenamientos personalizados y en mantener un estilo de vida saludable. El auge de clases grupales y el entrenamiento funcional responde a estas preferencias (Universidad Nacional de Cuyo, 2019).
+* Actitudes: Buscan conveniencia, facilidad para acceder a información sobre horarios, entrenamientos y disponibilidad. Valoran una experiencia organizada en el gimnasio, idealmente mediada por tecnología (Expansión Franquicia, 2017).
 
 # CAPÍTULO 2: REQUIREMENTS ELICITATION & ANALYSIS
 
@@ -452,7 +475,7 @@ Tabla 1
 | **Mercado objetivo** | Todo tipo de gimnasios incluyendo de combate, funcionales e híbridos (zonas urbanas). | Centros wellness y estudios de fitness en todo el mundo. | Gimnasios medianos y pequeños del Reino Unido. | Centros fitness que buscan eficiencia operativa. |
 | **Estrategias de marketing** | Nicho, publicidad digital, testimonios de entrenadores, alianzas locales. | Marketplace integrado, SEO y publicidad en redes. | Enfoque en relaciones y demostraciones personalizadas. | Marketing de contenido y posicionamiento SEO. |
 | **Productos y servicios** | Gestión de clases, reservas, pagos, métricas, notificaciones. | Agendamiento, pagos, marketplace, marketing, apps móviles. | Registro de socios, pagos, reservas, informes. | CRM, reservas, pagos, gestión documental, automatización. |
-| **Precios y costos** | Modelo por suscripción: Básico, Avanzado, Premium. | Varía según tamaño y funciones. Costos elevados para premium. | Tarifas asequibles por número de usuarios. | Planes empresariales personalizados. |
+| **Precios y costos** | Se incluyen todas las funcionalidades por $200 | Starter: $129 <br> Accelerate: $259 <br> Ultimate: $349 <br> Ultimate Plus: $699 | Plan Core: $109 al mes <br> Plan Complete: $169 al mes | Dependiendo de las unidades: <br> 1-5 unidades: $499 <br> 5-50 unidades: $7950 + $1295 al mes |
 | **Canales de distribución** | Web responsive. | App móvil y web. | Web app compatible con móviles. | Web y móvil con dashboards personalizables. |
 | **Fortalezas** | Especialización, interfaz sencilla, automatización, soporte local. | Ecosistema robusto, comunidad global, app móvil. | Simplicidad, buena relación calidad-precio, soporte. | Flexibilidad, automatización avanzada, integración. |
 | **Oportunidades** | Limitado fuera del nicho, dependencia de internet, menor reconocimiento. | Costoso, complejo para nuevos usuarios. | Funcionalidades limitadas en planes básicos. | Precio alto, curva de aprendizaje. |
@@ -855,10 +878,10 @@ Lista de Términos
 | **User Story ID** | US02 |
 |-------------------|------|
 | **Epic ID** | EP01 |
-| **Title** | Gestión de Horarios |
-| **Description** | Como administrador, quiero poder modificar los horarios de las clases en el sistema para asegurar que los clientes siempre vean una programación actualizada y puedan reservar en función de la disponibilidad real. |
-| **Acceptance Criteria #1** | Dado que el administrador accede al panel de gestión de horarios  <br> Cuando edita el horario de una clase existente <br> Entonces el nuevo horario se guarda correctamente y se refleja en el calendario de todos los usuarios en tiempo real |
-| **Acceptance Criteria #2** | Dado que una clase modificada ya tenía reservas previas <br> Cuando se guarda el nuevo horario <br> Entonces el sistema notifica automáticamente a los clientes afectados por el cambio |
+| **Title** | Gestión de calendario |
+| **Description** | Como administrador, quiero poder gestionar y modificar la información mostrada en el calendario de clases, incluyendo la adición de nuevas clases y la visualización de la programación, para asegurar que los clientes siempre tengan una visión clara y actualizada de la disponibilidad de las clases. |
+| **Acceptance Criteria #1** | Dado que el administrador accede a la vista del calendario de clases <br> Cuando añade una nueva clase a un día específico <br> Entonces la nueva clase se muestra correctamente en el calendario mensual y en la vista de clases del día para todos los usuarios en tiempo real |
+| **Acceptance Criteria #2** | Dado que el administrador modifica la información de una clase existente (por ejemplo, horario, instructor, nombre) visible en el calendario <br> Cuando se guardan los cambios <br> Entonces la información actualizada de la clase se refleja correctamente en el calendario mensual y en la vista de clases del día para todos los usuarios en tiempo real |
 
 | **User Story ID** | US03 |
 |-------------------|------|
@@ -887,10 +910,11 @@ Lista de Términos
 | **User Story ID** | US06 |
 |-------------------|------|
 | **Epic ID** | EP03 |
-| **Title** | Gestionar pagos de clientes |
-| **Description** | Como administrador del gimnasio, quiero ver y gestionar el estado de pagos de cada cliente para llevar un control eficiente de membresías activas e inactivas. |
-| **Acceptance Criteria #1** | Dado que el administrador tiene acceso al panel de gestión de pagos, <br> Cuando selecciona un cliente específico, <br> Entonces debe poder ver un desglose completo de los pagos realizados, fechas de vencimiento y estado de la membresía (activa/inactiva). |
-| **Acceptance Criteria #2** | Dado que un cliente tiene una membresía próxima a vencer o vencida, <br> Cuando el administrador visualiza el listado general de clientes, <br> Entonces el sistema debe resaltar visualmente a los clientes con pagos pendientes o vencidos (por ejemplo, con un ícono de advertencia o cambio de color) para facilitar el seguimiento. |
+| **Title** | Gestionar finanzas |
+| **Description** | Como administrador del gimnasio, quiero ver y gestionar las finanzas del gimnasio para tener un control completo sobre los ingresos, egresos y el estado financiero del negocio. |
+| **Acceptance Criteria #1** | Dado que el dueño del gimnasio accede a la sección de transacciones <br> Cuando consulta los pagos realizados <br> Entonces debe poder ver una lista con los pagos de membresías efectuados por los clientes, incluyendo el nombre del cliente, monto abonado, fecha y tipo de membresía. |
+| **Acceptance Criteria #2** | Dado que el dueño del gimnasio entra en la sección de transacciones <br> Cuando revisa los egresos registrados <br> Entonces debe poder ver un desglose de los pagos realizados por sueldos, compras de insumos y otros gastos operativos, con la fecha y monto de cada transacción. |
+| **Acceptance Criteria #3** | Dado que el dueño del gimnasio accede a la sección de resúmenes financieros <br> Cuando selecciona la opción para ver los ingresos y egresos del mes o del año <br> Entonces debe poder consultar un resumen detallado de los ingresos totales, gastos y el balance neto, con la opción de filtrar por mes o año. |
 
 | **User Story ID** | US07 |
 |-------------------|------|
@@ -911,25 +935,27 @@ Lista de Términos
 | **User Story ID** | US09 |
 |-------------------|------|
 | **Epic ID** | EP04 |
-| **Title** | Consultar historial de asistencias de un cliente |
-| **Description** | Como entrenador, quiero poder ver las asistencias de cada cliente para hacer un mejor seguimiento de su compromiso y progreso. |
-| **Acceptance Criteria #1** | Dado que el entrenador está en la vista de perfil de un cliente, <br> Cuando selecciona la opción "Historial de Asistencias", <br> Entonces el sistema muestra un registro detallado de todas las clases a las que el cliente ha asistido, con fechas y horas de asistencia. |
-| **Acceptance Criteria #2** | Dado que el entrenador está visualizando el historial de asistencias, <br> Cuando el entrenador hace clic en una fecha específica, <br> Entonces el sistema muestra detalles adicionales sobre la clase (nombre de la clase, entrenador, duración, etc.). |
+| **Title** | Consultar historial de asistencias general |
+| **Description** | Como entrenador, quiero poder ver un historial general de asistencias de todos los clientes para analizar tendencias de asistencia, evaluar el compromiso de los miembros y ajustar las clases según la demanda. |
+| **Acceptance Criteria #1** | Dado que el entrenador está en la sección de historial de asistencias <br> Cuando selecciona la opción para ver el historial general de asistencias <br> Entonces el sistema muestra un resumen visual con un mapa de calor de la semana que indica los días con mayor y menor asistencia, y un resumen de las asistencias por semana. |
+| **Acceptance Criteria #2** | Dado que el entrenador quiere analizar el compromiso de los clientes <br> Cuando revisa el resumen histórico de asistencias <br> Entonces el sistema debe mostrar un datos estadísticos relacionados a la asistencia del gimnasio |
 
 | **User Story ID** | US10 |
 |-------------------|------|
 | **Epic ID** | EP04 |
-| **Title** | Registrar nuevo entrenador o personal administrativo |
-| **Description** | Como administrador, quiero crear perfiles para el personal del gimnasio para gestionar sus roles, horarios y actividades. |
-| **Acceptance Criteria #1** | Dado que un nuevo miembro del personal se une al gimnasio, <br> Cuando el administrador registra su información en el sistema, <br> Entonces se crea un perfil con su rol, horario y clases asignadas. |
+| **Title** | Gestionar clases |
+| **Description** | Como administrador del gimnasio, quiero poder gestionar las clases ofrecidas por el gimnasio para mantener actualizada la programación. |
+| **Acceptance Criteria #1** | Dado que el administrador accede a la sección de gestión de clases <br> Cuando se carga la vista <br> Entonces el sistema muestra una lista de clases existentes con información como nombre, horario, entrenador asignado y capacidad. |
+| **Acceptance Criteria #2** | Dado que el administrador desea agregar una nueva clase al cronograma <br> Cuando selecciona la opción para crear clase <br> Entonces el sistema permite ingresar los datos necesarios (nombre, fecha, hora, entrenador, capacidad, duración) y guardar el nuevo registro. |
+| **Acceptance Criteria #3** | Dado que el administrador necesita modificar una clase programada <br> Cuando hace clic en “editar” sobre una clase específica <br> Entonces el sistema permite modificar los campos disponibles y actualizar la información correctamente. |
 
 | **User Story ID** | US11 |
 |-------------------|------|
 | **Epic ID** | EP04 |
 | **Title** | Gestionar personal del gimnasio |
-| **Description** | Como administrador, quiero gestionar fácilmente al personal del gimnasio para organizar horarios, roles y desempeño. |
-| **Acceptance Criteria #1** | Dado que el administrador accede al módulo de gestión de personal, <br> Cuando visualiza la lista de entrenadores y empleados, <br> Entonces puede ver sus roles asignados, horarios y estado de actividad. |
-| **Acceptance Criteria #2** | Dado que el administrador necesita modificar el horario de un entrenador, <br> Cuando edita su disponibilidad desde la plataforma, <br> Entonces el nuevo horario se actualiza automáticamente en el sistema y en el calendario correspondiente. |
+| **Description** | Como administrador del gimnasio, quiero poder gestionar al personal del gimnasio para mantener un control organizado sobre los entrenadores y otros empleados. |
+| **Acceptance Criteria #1** | Dado que el administrador accede a la sección de gestión de personal <br> Cuando se carga la vista <br> Entonces el sistema muestra una lista del personal actual con su nombre, rol (entrenador, recepcionista, etc.) y estado activo/inactivo. |
+| **Acceptance Criteria #2** | Dado que el administrador desea registrar a un nuevo miembro del personal <br> Cuando selecciona la opción para agregar personal <br> Entonces el sistema permite ingresar la información correspondiente (nombre, rol, contacto, estado) y guardar el nuevo registro. |
 
 | **User Story ID** | US12 |
 |-------------------|------|
@@ -974,13 +1000,56 @@ Lista de Términos
 
 | **User Story ID** | US17 |
 |-------------------|------|
+| **Epic ID** | EP04 |
+| **Title** | Gestión de inventario |
+| **Description** | Como administrador del gimnasio, quiero gestionar los ítems del inventario, para mantener un control actualizado y ordenado de los recursos y equipos disponibles en el gimnasio. |
+| **Acceptance Criteria #1** | Dado que el usuario en la sección de inventario <br> Cuando selecciona la opción "Agregar ítem" y completa el formulario con los datos requeridos <br> Entonces el nuevo ítem debe registrarse y aparecer en la lista de inventario. |
+| **Acceptance Criteria #2** | Dado que el usuario visualiza un ítem existente en la lista de inventario <br> Cuando selecciona "Editar" y modifica los campos necesarios <br> Entonces los cambios deben guardarse correctamente y reflejarse en la lista. |
+ **Acceptance Criteria #3** | Dado que hay un ítem que ya no es necesario <br> Cuando el usuario selecciona la opción "Eliminar" y confirma la acción <br> Entonces el ítem debe eliminarse del inventario y ya no estar visible en la lista. |
+
+| **User Story ID** | US18 |
+|-------------------|------|
+| **Epic ID** | EP08 |
+| **Title** | Visualización en múltiples idiomas |
+| **Description** | Como usuario, quiero poder visualizar la aplicación en inglés o español, para entender fácilmente la información según mi idioma preferido. |
+| **Acceptance Criteria #1** | Dado que el usuario tiene configurada la aplicación en el idioma español <br> Cuando accede a la plataforma <br> Entonces todos los textos, botones y mensajes deben mostrarse en español. |
+| **Acceptance Criteria #2** | Dado que el usuario tiene configurada la aplicación en el idioma inglés <br> Cuando accede a la plataforma <br> Entonces todos los textos, botones y mensajes deben mostrarse en inglés. |
+
+| **User Story ID** | US19 |
+|-------------------|------|
+| **Epic ID** | EP08 |
+| **Title** | Accesibilidad para lectores de pantalla |
+| **Description** | Como usuario que usa un lector de pantalla, quiero poder navegar y entender la plataforma fácilmente con herramientas de asistencia, para tener una experiencia de uso fluida y sin barreras. |
+| **Acceptance Criteria #1** | Dado que el usuario utiliza un lector de pantalla <br> Cuando navega por la plataforma <br> Entonces debe recibir información clara sobre los elementos de la interfaz, como botones, menús y secciones. |
+
+| **User Story ID** | US20 |
+|-------------------|------|
+| **Epic ID** | EP04 |
+| **Title** | Gestionar clientes del gimnasio |
+| **Description** | Como administrador del gimnasio, quiero poder gestionar la información de los clientes del gimnasio para mantener un registro actualizado. |
+| **Acceptance Criteria #1** | Dado que el administrador accede a la sección de gestión de clientes <br> Cuando visualiza la lista de clientes <br> Entonces el sistema muestra una tabla con el nombre, tipo de membresía, y siguiente pago de cada cliente registrado en el gimnasio. |
+| **Acceptance Criteria #2** | Dado que el administrador quiere agregar un nuevo cliente <br> Cuando selecciona la opción para agregar cliente <br> Entonces el sistema debe permitir al administrador ingresar los detalles del cliente, como nombre, tipo de membresía, y la fecha del siguiente pago, y guardar estos datos en la base de datos. |
+| **Acceptance Criteria #3** | Dado que el administrador necesita eliminar un cliente <br> Cuando selecciona la opción de eliminar <br> Entonces el sistema debe pedir una confirmación antes de eliminar el registro del cliente, asegurándose de que la eliminación se realice de forma definitiva. |
+
+| **User Story ID** | US21 |
+|-------------------|------|
+| **Epic ID** | EP04 |
+| **Title** | Dashboard de actividades |
+| **Description** | Como administrador, quiero tener una vista general del rendimiento y la actividad del gimnasio en un solo lugar, incluyendo métricas clave de miembros, asistencia y finanzas, para poder obtener una comprensión rápida del estado actual del negocio y tomar decisiones informadas. |
+| **Acceptance Criteria #1** | Dado que el administrador accede al panel principal del dashboard <br> Cuando se carga la vista general del día <br> Entonces se debe mostrar un listado de las clases programadas para hoy, incluyendo el nombre de la clase, horario, entrenador asignado y número de asistentes inscritos. |
+| **Acceptance Criteria #2** | Dado que el administrador se encuentra en el dashboard de actividades <br> Cuando visualiza el panel superior o sección de métricas <br> Entonces el sistema debe mostrar indicadores clave como: número total de miembros activos, ingresos mensuales, asistencia promedio semanal y egresos recientes. |
+
+### 3.2.3. Technical Stories
+
+| **User Story ID** | TS01 |
+|-------------------|------|
 | **Epic ID** | EP07 |
 | **Title** | Consultar Disponibilidad de Clases en el Sistema |
 | **Description** | Como desarrollador, quiero que el RESTful API permita consultar la disponibilidad de clases y entrenadores, para que la plataforma de FitManager pueda mostrar horarios actualizados en tiempo real a los usuarios. |
 | **Acceptance Criteria #1** | Dado que el desarrollador está haciendo una solicitud a la API, <br> Cuando se consulta la disponibilidad de clases, <br> Entonces la API debe devolver un listado actualizado de las clases disponibles, incluyendo la información de fecha, hora, entrenadores asignados y cupos disponibles. |
 | **Acceptance Criteria #2** | Dado que el desarrollador realiza una consulta para ver la disponibilidad de un entrenador, <br> Cuando se consulta la disponibilidad de un entrenador específico, <br> Entonces la API debe devolver una lista de las clases en las que el entrenador está asignado y la disponibilidad correspondiente. |
 
-| **User Story ID** | US18 |
+| **User Story ID** | TS02 |
 |-------------------|------|
 | **Epic ID** | EP07 |
 | **Title** | Crear y Gestionar Reservas de Clases |
@@ -989,7 +1058,7 @@ Lista de Términos
 | **Acceptance Criteria #2** | Dado que un cliente desea cancelar una reserva, <br> Cuando el cliente envía una solicitud de cancelación a la API, <br> Entonces la API debe cancelar la reserva y liberar el espacio en la clase, devolviendo una confirmación de la cancelación. |
 | **Acceptance Criteria #3** | Dado que un cliente intenta hacer una reserva para una clase llena, <br> Cuando el cliente envía la solicitud de reserva, <br> Entonces la API debe devolver un mensaje de error indicando que la clase está completa. |
 
-| **User Story ID** | US19 |
+| **User Story ID** | TS03 |
 |-------------------|------|
 | **Epic ID** | EP07 |
 | **Title** | Registrar Clientes y Personal |
@@ -999,7 +1068,7 @@ Lista de Términos
 | **Acceptance Criteria #3** | Dado que un administrador quiere registrar un nuevo miembro del personal (entrenador o personal administrativo), <br> Cuando el administrador envía una solicitud con la información del personal (nombre, rol, correo electrónico, teléfono, etc.), <br> Entonces la API debe crear un perfil de personal y devolver una confirmación con los detalles del perfil registrado, incluyendo un ID único de personal. |
 | **Acceptance Criteria #4** | Dado que un administrador desea actualizar los detalles de un miembro del personal, <br> Cuando el administrador envía una solicitud con los nuevos detalles del personal, <br> Entonces la API debe actualizar la información del miembro del personal y devolver una confirmación de que la actualización fue exitosa. |
 
-### 3.2.3. Epicas
+### 3.2.4. Epicas
 
 | **Epic ID** | EP01 |
 |-------------|------|
@@ -1008,7 +1077,7 @@ Lista de Términos
 | **User Story ID** | US01 |
 | **Título** | Visualización de horarios |
 | **User Story ID** | US02 |
-| **Título** | Gestión de reservas |
+| **Título** | Gestión de calendario |
 | **User Story ID** | US03 |
 | **Título** | Reservar clases |
 
@@ -1026,22 +1095,28 @@ Lista de Términos
 | **Title** | Gestión y pago de membresías online |
 | **Description** | Como administrador del gimnasio y como cliente, quiero contar con opciones para gestionar y realizar pagos de membresías desde la plataforma, para facilitar las transacciones, evitar retrasos y mejorar la organización financiera del gimnasio. |
 | **User Story ID** | US06 |
-| **Título** | Gestionar pagos de clientes |
+| **Título** | Gestionar finanzas |
 | **User Story ID** | US07 |
 | **Título** | Realizar pagos de membresía desde la app |
 
 | **Epic ID** | EP04 |
 |-------------|------|
 | **Title** | Gestión de perfiles y personal del gimnasio |
-| **Description** | Como administrador del gimnasio y como cliente, quiero contar con opciones para gestionar y realizar pagos de membresías desde la plataforma, para facilitar las transacciones, evitar retrasos y mejorar la organización financiera del gimnasio. |
+| **Description** | Como administrador del gimnasio, quiero gestionar los perfiles tanto del personal como de los clientes, para mantener organizada y actualizada la información de todos los involucrados en el funcionamiento del gimnasio, facilitar la administración interna y mejorar la atención a los usuarios. |
 | **User Story ID** | US08 |
 | **Título** | Registrar nuevo cliente en la plataforma |
 | **User Story ID** | US09 |
-| **Título** | Consultar historial de asistencias de un cliente |
+| **Título** | Consultar historial de asistencias general |
 | **User Story ID** | US10 |
-| **Título** | Registrar nuevo entrenador o personal administrativo |
+| **Título** | Gestionar clases |
 | **User Story ID** | US11 |
 | **Título** | Gestionar personal del gimnasio |
+| **User Story ID** | US17 |
+| **Título** | Gestión de inventario |
+| **User Story ID** | US20 |
+| **Título** | Gestionar clientes del gimnasio |
+| **User Story ID** | US21 |
+| **Título** | Visualización del Dashboard |
 
 | **Epic ID** | EP05 |
 |-------------|------|
@@ -1067,11 +1142,11 @@ Lista de Términos
 |-------------|------|
 | **Title** | RESTful API |
 | **Description** | Como desarrollador, quiero implementar y mantener los endpoints del RESTful API necesarios para las funciones clave de la plataforma, como gestión de clases, reservas, perfiles y pagos, para asegurar la operatividad y escalabilidad del sistema. |
-| **User Story ID** | US17 |
+| **User Story ID** | TS01 |
 | **Título** | Consultar Disponibilidad de Clases en el Sistema |
-| **User Story ID** | US18 |
+| **User Story ID** | TS02 |
 | **Título** | Crear y Gestionar Reservas de Clases |
-| **User Story ID** | US19 |
+| **User Story ID** | TS03 |
 | **Título** | Registrar Clientes y Personal |
 
 ## 3.3. Impact Mapping
@@ -1110,27 +1185,33 @@ Objetivo SMART: Obtener 50 formularios de contacto para demo o consulta desde la
 
 ## 3.4. Product Backlog
 
-| # | User Story ID | Descripción | Story Points |
-|---|----------------|-------------|---------------|
-| 1 | US03 | Como cliente, quiero poder reservar clases desde mi celular o web para asegurar mi cupo sin tener que llamar o hacer fila. | 5 |
-| 2 | US02 | Como administrador, quiero poder modificar los horarios de las clases en el sistema para asegurar que los clientes siempre vean una programación actualizada y puedan reservar en función de la disponibilidad real. | 3 |
-| 3 | US01 | Como usuario, quiero acceder a un calendario con los horarios de todas las clases para planificar fácilmente la programación y disponibilidad. | 3 |
-| 4 | US17 | Como desarrollador, quiero que el RESTful API permita consultar la disponibilidad de clases y entrenadores, para que la plataforma de FitManager pueda mostrar horarios actualizados en tiempo real a los usuarios. | 5 |
-| 5 | US18 | Como desarrollador, quiero que el API permita a los usuarios crear, cancelar y modificar reservas de clases, para que FitManager pueda gestionar las interacciones entre clientes y entrenadores. | 5 |
-| 6 | US19 | Como desarrollador, quiero que el API permita crear y gestionar perfiles de clientes y personal, para que FitManager pueda almacenar y actualizar la información relevante para los usuarios. | 5 |
-| 7 | US06 | Como administrador del gimnasio, quiero ver y gestionar el estado de pagos de cada cliente para llevar un control eficiente de membresías activas e inactivas. | 5 |
-| 8 | US07 | Como cliente del gimnasio, quiero pagar mi membresía desde la app usando mi tarjeta o billetera digital para mantener mi suscripción activa fácilmente. | 5 |
-| 9 | US04 | Como cliente, quiero registrar y visualizar mi progreso físico dentro de la app para evaluar mi evolución y mantenerme motivado. | 3 |
-| 10 | US10 | Como administrador, quiero crear perfiles para el personal del gimnasio para gestionar sus roles, horarios y actividades. | 3 |
-| 11 | US08 | Como cliente, quiero poder crear mi perfil para llevar un control de mi información personal y actividad dentro del gimnasio. | 3 |
-| 12 | US09 | Como entrenador, quiero poder ver las asistencias de cada cliente para hacer un mejor seguimiento de su compromiso y progreso. | 3 |
-| 13 | US12 | Como administrador o entrenador, quiero recibir notificaciones administrativas relevantes para estar informado sobre eventos importantes relacionados a la operación del gimnasio. | 3 |
-| 14 | US13 | Como cliente del gimnasio, quiero recibir notificaciones personalizadas según mis clases. | 3 |
-| 15 | US14 | Como visitante del sitio web de FitManager, quiero obtener información clara sobre las características y beneficios de la plataforma, para decidir si encaja con las necesidades de mi gimnasio. | 3 |
-| 16 | US15 | Como visitante interesado, quiero registrarme para solicitar una demo personalizada o más información sobre FitManager, para poder explorar cómo puede mejorar la gestión de mi gimnasio. | 2 |
-| 17 | US16 | Como visitante, quiero ver los precios y paquetes disponibles para FitManager, para poder decidir si la plataforma se ajusta a mi presupuesto y necesidades. | 2 |
-| 18 | US05 | Como cliente, quiero ver mi rutina personalizada de entrenamiento en la plataforma para seguirla paso a paso durante mis sesiones. | 5 |
-| 19 | US11 | Como administrador, quiero gestionar fácilmente al personal del gimnasio para organizar horarios, roles y desempeño. | 5 |
+| #  | User Story ID | Descripción | Story Points |
+|----|----------------|-------------|---------------|
+| 1  | US03 | Como cliente, quiero poder reservar clases desde mi celular o web para asegurar mi cupo sin tener que llamar o hacer fila. | 5 |
+| 2  | US02 | Como administrador, quiero poder gestionar y modificar la información mostrada en el calendario de clases, incluyendo la adición de nuevas clases y la visualización de la programación, para asegurar que los clientes siempre tengan una visión clara y actualizada de la disponibilidad de las clases. | 3 |
+| 3  | US20 | Como administrador del gimnasio, quiero poder gestionar la información de los clientes del gimnasio para mantener un registro actualizado, agregar nuevos clientes y editar la información existente, asegurando que toda la base de datos esté organizada y sea fácilmente accesible. | 5 |
+| 4  | US01 | Como usuario, quiero acceder a un calendario con los horarios de todas las clases para planificar fácilmente la programación y disponibilidad. | 3 |
+| 5  | TS01 | Como desarrollador, quiero que el RESTful API permita consultar la disponibilidad de clases y entrenadores, para que la plataforma de FitManager pueda mostrar horarios actualizados en tiempo real a los usuarios. | 5 |
+| 6  | TS02 | Como desarrollador, quiero que el API permita a los usuarios crear, cancelar y modificar reservas de clases, para que FitManager pueda gestionar las interacciones entre clientes y entrenadores. | 5 |
+| 7  | TS03 | Como desarrollador, quiero que el API permita crear y gestionar perfiles de clientes y personal, para que FitManager pueda almacenar y actualizar la información relevante para los usuarios. | 5 |
+| 8  | US06 | Como administrador del gimnasio, quiero ver y gestionar el estado de pagos de cada cliente para llevar un control eficiente de membresías activas e inactivas. | 5 |
+| 9  | US17 | Como administrador del gimnasio, quiero gestionar los ítems del inventario, para mantener un control actualizado y ordenado de los recursos y equipos disponibles en el gimnasio. | 3 |
+| 10 | US07 | Como cliente del gimnasio, quiero pagar mi membresía desde la app usando mi tarjeta o billetera digital para mantener mi suscripción activa fácilmente. | 5 |
+| 11 | US04 | Como cliente, quiero registrar y visualizar mi progreso físico dentro de la app para evaluar mi evolución y mantenerme motivado. | 3 |
+| 12 | US10 | Como administrador del gimnasio, quiero poder gestionar las clases ofrecidas por el gimnasio para mantener actualizada la programación. | 3 |
+| 13 | US08 | Como cliente, quiero poder crear mi perfil para llevar un control de mi información personal y actividad dentro del gimnasio. | 3 |
+| 14 | US09 | Como entrenador, quiero poder ver un historial general de asistencias de todos los clientes para analizar tendencias de asistencia, evaluar el compromiso de los miembros y ajustar las clases según la demanda. | 3 |
+| 15 | US12 | Como administrador o entrenador, quiero recibir notificaciones administrativas relevantes para mantenerme informado sobre situaciones importantes relacionadas con la operación del gimnasio. | 3 |
+| 16 | US13 | Como cliente del gimnasio, quiero recibir notificaciones personalizadas según mis clases. | 3 |
+| 17 | US14 | Como visitante del sitio web de FitManager, quiero obtener información clara sobre las características y beneficios de la plataforma, para decidir si encaja con las necesidades de mi gimnasio. | 3 |
+| 18 | US15 | Como visitante interesado, quiero registrarme para solicitar una demo personalizada o más información sobre FitManager, para poder explorar cómo puede mejorar la gestión de mi gimnasio | 2 |
+| 19 | US21 | Como administrador, quiero tener una vista general del rendimiento y la actividad del gimnasio en un solo lugar, incluyendo métricas clave de miembros, asistencia y finanzas, para poder obtener una comprensión rápida del estado actual del negocio y tomar decisiones informadas. | 2 |
+| 20 | US16 | Como visitante, quiero ver los precios y paquetes disponibles para FitManager, para poder decidir si la plataforma se ajusta a mi presupuesto y necesidades. | 2 |
+| 21 | US05 | Como cliente, quiero ver mi rutina personalizada de entrenamiento en la plataforma para seguirla paso a paso durante mis sesiones. | 5 |
+| 22 | US11 | Como administrador del gimnasio, quiero poder gestionar al personal del gimnasio para mantener un control organizado sobre los entrenadores y otros empleados. | 5 |
+| 23 | US18 | Como usuario, quiero poder visualizar la aplicación en inglés o español, para entender fácilmente la información según mi idioma preferido. | 2 |
+| 24 | US19 | Como usuario que usa un lector de pantalla, quiero poder navegar y entender la plataforma fácilmente con herramientas de asistencia, para tener una experiencia de uso fluida y sin barreras. | 2 |
+
 
 # CAPÍTULO 4: PRODUCT UX/UI DESIGN
 
@@ -1771,7 +1852,7 @@ El Domain-Driven Software Architecture extiende los principios del Domain Driven
 ### 4.8.1. Database Diagram
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/e57f9ad4-1714-4480-9e77-62605a1a2ff2" alt="Diagrama clases">
+  <img src="https://github.com/user-attachments/assets/cf093f3d-1290-416d-b21f-26353d97f995" alt="Diagrama clases">
 </p>
 
 # CAPÍTULO 5: PRODUCT IMPLEMENTATION & DEPLOYMENT
@@ -1988,7 +2069,7 @@ Historias de usuario empezadas y finalizadas del sprint
   <img src="https://github.com/user-attachments/assets/943e82bd-5128-4978-9b9d-57a2380e77a7" alt="Épicas">
 </p>
 
-#### 5.1.2.4. Development Evidence for Sprint Review
+#### 5.2.1.4. Development Evidence for Sprint Review
 
 Durante el Sprint 1, el equipo completó todas las tareas asociadas al desarrollo de la primera versión del Landing Page de FitManager. Se desarrollo el header, la sección inicio, la sección sobre nosotros, la sección de muestra, la sección de planes, la sección de contacto y el footer. Respecto a la aplicación web, se realizó el diseño UX/UI para facilitar el avance de este en los siguientes sprints.
 
@@ -2090,6 +2171,603 @@ En esta imagen se aprecia la sección "Insights" de Github, donde se puede ver l
 
 Por otro lado, en esta imagen se ve que todos participaron también en los commits del readme
 
+### 5.2.2. Sprint 2
+
+Continuando con el desarrollo del proyecto FitManager, el Sprint 2 se centró en el desarrollo del frontend para las funcionalidades clave de la aplicación web. Este sprint tuvo como objetivo principal la creación de las secciones de gestión de miembros, personal, clases, inventario, notificaciones e ingresos del gimnasio. Adicionalmente, se abordó la implementación del soporte para accesibilidad e internacionalización en la plataforma. Este ciclo iterativo avanzó sobre las bases de diseño UX/UI y la arquitectura DDD definidas en el sprint anterior, comenzando a materializar la interfaz con la que los administradores y dueños de gimnasios gestionan sus recursos operativos y financieros. A continuación, se detallan los componentes de este sprint:
+
+#### 5.2.2.1. Sprint Planning
+
+| **Sprint #**                     | Sprint 2 |
+|----------------------------------|---------|
+|        | **Sprint Planning Background** |
+| Date                             | 07/05/2025 |
+| Location                         | Discord group call |
+| Prepared by                      | Cassius Martel |
+| Attendees (to planning meeting)  | Juan Alvarado, Renzo Luque, Cassius Martel, Tomio Nakamurakare, Victor Ortiz |
+| Sprint 1 Review Summary          | Durante el Sprint 1, se cumplió exitosamente con la planificación establecida para la fase inicial del proyecto FitManager. Se diseñaron la experiencia de usuario (UX) y la interfaz de usuario (UI) de la plataforma, estableciendo así las bases visuales y funcionales del sistema. Asimismo, se definió la estructura principal basada en el Diseño Guiado por el Dominio (DDD), lo que permitirá una arquitectura escalable alineada con el dominio del gimnasio. También se establecieron las pautas de estilo para garantizar la coherencia visual y técnica a lo largo del proyecto. Finalmente, se desarrolló y desplegó la landing page responsiva, representando el primer entregable visible para el usuario final. |
+| Sprint 1 Retrospective Summary   | El equipo valoró positivamente la colaboración y el compromiso durante el Sprint 1, destacando la claridad en la definición de roles y tareas, lo que permitió completar entregables clave como el diseño UX/UI, la definición de la arquitectura DDD y el desarrollo de la landing page. Sin embargo, se identificaron oportunidades de mejora en la gestión del tiempo y la comunicación diaria, especialmente en la sincronización entre diseño y desarrollo. Para los próximos sprints, se acordó implementar reuniones de seguimiento más breves pero más frecuentes, así como mantener la documentación actualizada para facilitar el trabajo colaborativo y reducir cuellos de botella. |
+|      | **Sprint Goal & User Stories** |
+| Sprint 2 Goal                    | Nuestro enfoque está en desarrollar el frontend para las secciones de gestión de miembros, personal, clases, inventario, notificaciones y finanzas del gimnasio, además de implementar soporte para accesibilidad e internacionalización en la aplicación web de FitManager. Creemos que esto proporcionará a los administradores y propietarios de gimnasios una primera versión funcional de la plataforma que les permita visualizar, registrar, editar y organizar eficientemente los recursos humanos, operativos y financieros del gimnasio desde una interfaz clara, accesible y multilingüe. Esto se confirmará cuando este segmento pueda navegar por las vistas desarrolladas en este sprint, interactuar con los elementos de gestión descritos y acceder a la plataforma usando lectores de pantalla o en su idioma preferido. |
+| Sprint 2 Velocity                | 15 |
+| Sum of Story Points              | 36 |
+
+#### 5.2.2.2. Aspect Leaders and Collaborators
+
+En esta sección se elaborará la Leadership-and-Collaboration Matrix (LACX), un artefacto que permite identificar claramente quién lidera (L) y quién colabora (C) en cada aspecto funcional del Sprint 2.
+
+| Team Member (Last Name, First Name) | GitHub Username             | App   Layout Feature | Dashboard Feature | Calendar Feature | Personal Feature | Members Feature | Classes Feature | i18n Feature |
+|-------------------------------------|------------------------------|----------------------|-------------------|------------------|------------------|------------------|------------------|--------------|
+| Alarcón, Víctor Nicolás             | @Nico1234556                 |                      |                   |                  |                  |                  |                  |              |
+| Nakamurakare Teruya, Alex Tomio     | @kistoo                      |                      | L                 | L                |                  |                  |                  | L            |
+| Martel Andrade, Cassius Estefano    | @kcc12321                    |                      |                   | L                | L                | L                |                  |              |
+| Luque Minaya, Renzo Andrés          | @renzoluquem                 | L                    |                   |                  |                  |                  |                  |              |
+| Alvarado De La Cruz, Juan Carlos    | @JuanCarlosAlvarado900       |                      |                   |                  |                  |                  |                  | C            |
+
+| Team Member (Last Name, First Name) | GitHub Username             | Inventory Feature | Finances Feature | Attendance Feature | Notifications Feature | Profile Feature | Login Feature |
+|-------------------------------------|------------------------------|-------------------|------------------|---------------------|------------------------|------------------|----------------|
+| Alarcón, Víctor Nicolás             | @Nico1234556                 |                   |                  |                     | L                      |                  | L              |
+| Nakamurakare Teruya, Alex Tomio     | @kistoo                      |                   |                  |                     |                        | C                |                |
+| Martel Andrade, Cassius Estefano    | @kcc12321                    | L                 |                  |                     |                        |                  |                |
+| Luque Minaya, Renzo Andrés          | @renzoluquem                 |                   | L                | L                   |                        | C                |                |
+| Alvarado De La Cruz, Juan Carlos    | @JuanCarlosAlvarado900       |                   |                  |                     |                        | L                |                |
+
+#### 5.2.2.3 Sprint Backlog 2
+
+El presente Sprint Backlog 2 detalla el conjunto de tareas y User Stories seleccionadas del Product Backlog que el equipo de FitManager se ha comprometido a completar durante esta iteración. El objetivo principal de este sprint es desarrollar el frontend de las secciones de gestión de miembros, personal, clases, inventario, notificaciones e ingresos del gimnasio, además de implementar el soporte para accesibilidad e internacionalización en la aplicación web FitManager.
+
+| User Story ID | Task ID | Descripción                                              | Estimación (hrs) | Asignado a            | Estado  |
+|---------------|---------|----------------------------------------------------------|------------------|------------------------|---------|
+| US20          | T01     | Implementación de la tabla de clientes                  | 2                | Cassius Martel         | Done    |
+|               | T02     | Conexión con el fake API                                 | 0.5              | Cassius Martel         | Done    |
+|               | T03     | Implementación de lógica de creación de clientes         | 1                | Cassius Martel         | Done    |
+|               | T04     | Implementación de lógica de edición de clientes          | 0.5              | Cassius Martel         | Done    |
+|               | T05     | Implementación de lógica de borrar clientes              | 0.5              | Cassius Martel         | Done    |
+|               | T06     | Implementación de filtros y búsqueda                     | 0.5              | Cassius Martel         | Done    |
+|               | T07     | Desarrollo del componente de card de cliente             | 2                | Cassius Martel         | Done    |
+|               | T08     | Refinamiento de diseño visual                            | 0.5              | Cassius Martel         | Done    |
+| US06          | T09     | Desarrollo del componente de gráfico de ingresos         | 3                | Renzo Luque            | Done    |
+|               | T10     | Desarrollo del componente de resumen financiero          | 1                | Renzo Luque            | Done    |
+|               | T12     | Desarrollo del componente de la tabla de transacciones   | 2                | Renzo Luque            | Done    |
+|               | T13     | Implementación de funcionalidad de filtrado              | 0.5              | Renzo Luque            | Done    |
+|               | T14     | Implementación de la búsqueda global                     | 0.5              | Renzo Luque            | Done    |
+|               | T15     | Conexión con fake API                                    | 0.5              | Renzo Luque            | Done    |
+|               | T16     | Refinamiento del diseño visual                           | 0.5              | Renzo Luque            | Done    |
+| US02          | T17     | Desarrollo del componente del calendario mensual         | 3                | Tomio Nakamurakare     | Done    |
+|               | T18     | Lógica de navegación entre meses                         | 1                | Tomio Nakamurakare     | Done    |
+|               | T19     | Componente de clases por día                             | 2                | Tomio Nakamurakare     | Done    |
+|               | T20     | Conexión con fake API                                    | 0.5              | Tomio Nakamurakare     | Done    |
+|               | T21     | Manejo del estado de fecha seleccionada                  | 0.5              | Tomio Nakamurakare     | Done    |
+|               | T22     | Refinamiento del diseño visual                           | 0.5              | Tomio Nakamurakare     | Done    |
+| US09          | T23     | Componente de HeatMap semanal                            | 3                | Renzo Luque            | Done    |
+|               | T24     | Componente de resumen semanal                            | 1                | Renzo Luque            | Done    |
+|               | T25     | Componente de resumen histórico                          | 0.5              | Renzo Luque            | Done    |
+|               | T26     | Conexión con fake API                                    | 0.5              | Renzo Luque            | Done    |
+|               | T27     | Refinamiento del diseño visual                           | 0.5              | Renzo Luque            | Done    |
+| US10          | T28     | Listado de clases                                        | 1                | Cassius Martel         | Done    |
+|               | T29     | Añadir clases                                            | 0.5              | Cassius Martel         | Done    |
+|               | T30     | Editar clases                                            | 0.5              | Cassius Martel         | Done    |
+|               | T31     | Eliminar clases                                          | 0.5              | Cassius Martel         | Done    |
+|               | T32     | Conexión con fake API                                    | 0.5              | Cassius Martel         | Done    |
+|               | T33     | Refinamiento visual                                      | 0.5              | Cassius Martel         | Done    |
+| US11          | T34     | Tabla de personal                                        | 1                | Cassius Martel         | Done    |
+|               | T35     | Conexión con fake API                                    | 0.5              | Cassius Martel         | Done    |
+|               | T36     | Crear personal                                           | 0.5              | Cassius Martel         | Done    |
+|               | T37     | Editar personal                                          | 0.5              | Cassius Martel         | Done    |
+|               | T38     | Borrar personal                                          | 0.5              | Cassius Martel         | Done    |
+|               | T39     | Filtros y búsqueda                                       | 0.5              | Cassius Martel         | Done    |
+|               | T40     | Card de personal                                         | 2                | Cassius Martel         | Done    |
+|               | T41     | Refinamiento visual                                      | 0.5              | Cassius Martel         | Done    |
+| US12          | T42     | Notificaciones enviadas                                  | 2                | Victor Ortiz           | Done    |
+|               | T43     | Notificaciones recibidas                                 | 2                | Victor Ortiz           | Done    |
+|               | T44     | Crear notificación                                       | 2                | Victor Ortiz           | Done    |
+|               | T45     | Conexión con fake API                                    | 1                | Victor Ortiz           | Done    |
+|               | T46     | Refinamiento visual                                      | 0.5              | Victor Ortiz           | Done    |
+| US17          | T47     | Listado de inventario                                    | 1                | Cassius Martel         | Done    |
+|               | T48     | Añadir ítems                                             | 1                | Cassius Martel         | Done    |
+|               | T49     | Editar ítems                                             | 0.5              | Cassius Martel         | Done    |
+|               | T50     | Eliminar ítems                                           | 0.5              | Cassius Martel         | Done    |
+|               | T51     | Conexión con fake API                                    | 0.5              | Cassius Martel         | Done    |
+|               | T52     | Refinamiento visual                                      | 0.5              | Cassius Martel         | Done    |
+| US18          | T53     | Cambio de idioma                                         | 3                | Juan Alvarado          | Done    |
+|               | T54     | Lógica en labels de la app                               | 3                | Juan Alvarado          | Done    |
+| US19          | T55     | Etiquetas aria                                           | 3                | Juan Alvarado          | Done    |
+| US21          | T56     | Gráfico de asistencia                                    | 3                | Tomio Nakamurakare     | Done    |
+|               | T57     | Componentes de métricas                                  | 1                | Tomio Nakamurakare     | Done    |
+|               | T58     | Conexión con fake API                                    | 0.5              | Tomio Nakamurakare     | Done    |
+|               | T59     | Refinamiento visual                                      | 0.5              | Tomio Nakamurakare     | Done    |
+
+Historias de usuario a desarrollar en este Sprint
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5ae34378-2b9b-43a5-9db9-1564704b0ee5" alt="Historias de usuario para este sprint">
+</p>
+
+Ejemplo de tareas y descripción de una historia
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/175f5afa-f2d9-4ada-8e76-c44a8a5c79d1" alt="Tareas y descripción de una historia">
+</p>
+
+#### 5.2.2.4. Development Evidence for Sprint Review
+
+## Members
+
+| Repository   | Branch          | Commit Id | Commit message                          | Committed on (Date) |
+|--------------|-----------------|-----------|-----------------------------------------|---------------------|
+| FitManager   | feature/members | 699fb19   | Add initial project structure           | May 7, 2025         |
+| FitManager   | feature/members | b1cb0c9   | Add calendar directory                  | May 7, 2025         |
+| FitManager   | feature/members | 7c07d01   | Modified main.js                        | May 7, 2025         |
+| FitManager   | feature/members | f6d2188   | Add members screen                      | May 9, 2025         |
+| FitManager   | feature/members | 7bda199   | fix(member): change height to 100% for better layout responsiveness | May 9, 2025 |
+
+## Employees
+
+| Repository   | Branch          | Commit Id | Commit message                          | Committed on (Date) |
+|--------------|-----------------|-----------|-----------------------------------------|---------------------|
+| FitManager   | feature/employees| 2d0d8e8   | Remove accident                         | May 9, 2025         |
+| FitManager   | feature/employees| 7c02f9f   | Add employee screen                     | May 9, 2025         |
+| FitManager   | feature/employees| cce63dc   | Merge branch 'feature/employees' into develop | May 9, 2025 |
+
+## Classes
+
+| Repository   | Branch          | Commit Id | Commit message                          | Committed on (Date) |
+|--------------|-----------------|-----------|-----------------------------------------|---------------------|
+| FitManager   | feature/classes | f5fdc35   | Add class.entity                        | May 9, 2025         |
+| FitManager   | feature/classes | 8f9f891   | Add class list                          | May 9, 2025         |
+| FitManager   | feature/classes | 5aef9a7   | Add trainer column                      | May 9, 2025         |
+| FitManager   | feature/classes | b89d352   | Add add-class.component                 | May 9, 2025         |
+| FitManager   | feature/classes | 6a26932   | Add edit-class.component                | May 10, 2025        |
+| FitManager   | feature/classes | 70cf17d   | Add delete-class.component              | May 10, 2025        |
+| FitManager   | feature/classes | 7e549cf   | Add view-members.component              | May 10, 2025        |
+| FitManager   | feature/classes | 5e8c6f3   | Add more gym classes                    | May 10, 2025        |
+| FitManager   | feature/classes | 59939f5   | Delete max-width property               | May 10, 2025        |
+| FitManager   | feature/classes | d721af5   | Merge branch 'feature/employees' into develop | May 10, 2025        |
+
+## Dashboard
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/dashboard| 033799d   | feat(assets): add svg for dashboard items                            | May 9, 2025         |
+| FitManager   | feature/dashboard| f4cf77c   | Add data entity                                                      | May 9, 2025         |
+| FitManager   | feature/dashboard| 61e43e4   | Add data assembler                                                   | May 9, 2025         |
+| FitManager   | feature/dashboard| 814ff10   | Add dashboard section                                                | May 9, 2025         |
+| FitManager   | feature/dashboard| d6551ca   | Merge branch 'feat/dashboard' into develop                           | May 9, 2025         |
+| FitManager   | feature/dashboard| d97847a   | fix(data-item): changed title color based on mockup prototype and adjust its size for readability | May 10, 2025 |
+| FitManager   | feature/dashboard| a156352   | Fix main.js                                                          | May 9, 2025         |
+| FitManager   | feature/dashboard| f3ba7c8   | Update dashboard endpoint                                            | May 9, 2025         |
+| FitManager   | feature/dashboard| 3e0d03b   | Refactor layout structure                                            | May 9, 2025         |
+
+## Calendar
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/calendar| a156352   | Fix main.js                                                          | May 10, 2025        |
+| FitManager   | feature/calendar| 728f310   | Add calendar component                                               | May 10, 2025        |
+| FitManager   | feature/calendar| 9d4b44d   | Merge branch 'feature/calendar' into develop                         | May 10, 2025        |
+
+## Attendance
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/attendance| 0a7d85f  | feat(attendance): integrate heatmap and summary components into attendance layout | May 11, 2025 |
+| FitManager   | feature/attendance| ae66044  | feat(heatmap): update component name and enhance styling with container layout | May 11, 2025 |
+| FitManager   | feature/attendance| a932531  | feat(historical-summary): rename component and enhance styling with container layout | May 11, 2025 |
+| FitManager   | feature/attendance| 9aa004f  | feat(weekly-summary): rename component and add container layout with styling enhancements | May 11, 2025 |
+| FitManager   | feature/attendance| 31b47b3  | feat(db): update db adding attendance                               | May 11, 2025        |
+| FitManager   | feature/attendance| 28fd118  | feat(week): add WeeklyAttendance class to manage weekly attendance data | May 11, 2025 |
+| FitManager   | feature/attendance| 9b1ef1d  | feat(week-api): implement WeekApiService and WeekAssembler for fetching and processing weekly attendance data | May 11, 2025 |
+| FitManager   | feature/attendance| 163e5bf  | feat(week-assembler): add WeekAssembler class for transforming attendance data from resources and responses | May 11, 2025 |
+| FitManager   | feature/attendance| 86478bf  | feat(heatmap): enhance heat map component with data fetching, formatting, and improved UI | May 11, 2025 |
+| FitManager   | feature/attendance| 50adc0a  | fix(week-api): update API endpoint and improve error handling for weekly attendance data | May 11, 2025 |
+| FitManager   | feature/attendance| 27e75a7  | fix(week-assembler): handle null resource input and update property names for weekly attendance | May 11, 2025 |
+| FitManager   | feature/attendance| 6909afb  | style(heatmap): adjust box-shadow for improved visual appearance    | May 11, 2025        |
+| FitManager   | feature/attendance| ef54e85  | feat(historical-summary): implement data fetching and enhance UI for historical summary component | May 11, 2025 |
+| FitManager   | feature/attendance| 64a81e7  | feat(weekly-summary): implement data fetching and loading states for weekly summary component | May 11, 2025 |
+| FitManager   | feature/attendance| abf56ee  | feat(summary): add Summary class to encapsulate weekly and historical attendance data | May 11, 2025 |
+| FitManager   | feature/attendance| 7890a29  | feat(summary-api): implement SummaryApiService for fetching and processing attendance summary data | May 11, 2025 |
+| FitManager   | feature/attendance| 8be626f  | feat(summary-assembler): add SummaryAssembler class for transforming summary resources into entities | May 11, 2025 |
+| FitManager   | feature/attendance| 3570c80  | feat(attendance): add flexbox layout for attendance component to improve UI structure | May 11, 2025 |
+| FitManager   | feature/attendance| b791ce9  | style(heatmap): remove margin from heatmap component for better alignment | May 11, 2025 |
+| FitManager   | feature/attendance| 8dd1d28  | feat(weekly-summary): centered component. | May 11, 2025 |
+| FitManager   | feature/attendance| 975e3f4  | Merge branch 'feat/attendance' into develop                         | May 11, 2025        |
+
+## App Layout
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/app-layout | d9e68ac  | feat(assets): add svg for menu items                                | May 8, 2025         |
+| FitManager   | feature/app-layout | b3cbc70  | feat(calendar): add initial calendar component                       | May 8, 2025         |
+| FitManager   | feature/app-layout | 748cc86  | feat(layout): integrate app layout component into main app         | May 8, 2025         |
+| FitManager   | feature/app-layout | 987e07b  | feat(router): set up Vue router with initial routes                 | May 8, 2025         |
+| FitManager   | feature/app-layout | 4968c6b  | feat(style): update body and app styles for full-width layout       | May 8, 2025         |
+| FitManager   | feature/app-layout | b889fac  | feat(index): update title and add Google Fonts for improved typography | May 8, 2025     |
+| FitManager   | feature/app-layout | 53b248a  | feat(sidebar): add sidebar component with navigation menu           | May 8, 2025         |
+| FitManager   | feature/app-layout | 95af015  | feat(toolbar): add toolbar component with search and profile options (still TODO) | May 8, 2025 |
+| FitManager   | feature/app-layout | 4896600  | feat(components): add new components for attendance, classes, dashboard, bookings, employees, finances, members, and notifications | May 8, 2025 |
+| FitManager   | feature/app-layout | dd79438  | feat(main): integrate router and PrimeVue for enhanced functionality | May 8, 2025        |
+| FitManager   | feature/app-layout | 5d02d12  | feat(layout): create app layout component with sidebar, toolbar and content integration | May 8, 2025 |
+| FitManager   | feature/app-layout | fc9a2e4  | chore: add logo-app png for sidebar.                                | May 8, 2025         |
+| FitManager   | feature/app-layout | e3dc67c  | feat(sidebar): add link routes to menu items (SPA)                  | May 8, 2025         |
+| FitManager   | feature/app-layout | abc41c2  | chore: update con .svg files                                         | May 8, 2025         |
+| FitManager   | feature/app-layout | 2bf9dd5  | feat(sidebar): replace logo image with SVG and adjust padding in sidebar navigation | May 8, 2025 |
+| FitManager   | feature/app-layout | b47b777  | feat(svg): add new SVG for brand logo                               | May 8, 2025         |
+| FitManager   | feature/app-layout | 2f899e1  | feat(sidebar): enhance menu styles for improved aesthetics and hover effect (still to work) | May 8, 2025 |
+| FitManager   | feature/app-layout | 601774b  | feat(style): update color scheme and background for improved readability | May 8, 2025 |
+| FitManager   | feature/app-layout | f71c40f  | feat(theme): integrate Aura theme with PrimeVue for enhanced styling options | May 8, 2025 |
+| FitManager   | feature/app-layout | 3b860ad  | feat(toolbar): enhance toolbar layout with search input and profile section | May 8, 2025 |
+| FitManager   | feature/app-layout | 9de832f  | feat(sidebar): enhance menu item interaction with active state and hover effects | May 8, 2025 |
+| FitManager   | feature/app-layout | 6f741ec  | feat(sidebar): reduce line separator height for improved visual clarity | May 8, 2025 |
+| FitManager   | app-layout       | cfe15b2   | feat(toolbar): improve search input styling and update profile button layout | May 8, 2025 |
+| FitManager   | feature/app-layout | 9778105  | feat(toolbar): replace card for div, removed redundancies from styles | May 8, 2025         |
+| FitManager   | feature/app-layout | f11b1ba  | chore: update.                                                      | May 8, 2025         |
+| FitManager   | feature/app-layout | f533919  | feat(profile): refactor components and set up script for gym profile, info, and settings | May 8, 2025 |
+| FitManager   | feature/app-layout | 1c75155  | feat(router): add profile route to the application                  | May 8, 2025         |
+| FitManager   | feature/app-layout | 465b207  | feat(router): add profile route to the application                  | May 8, 2025         |
+| FitManager   | feature/app-layout | dfd2021  | feat(sidebar): update font weight and link colors for improved visibility | May 8, 2025 |
+| FitManager   | feature/app-layout | 0d84dbc  | Merge branch 'feat/app-layout' of https://github.com/FitFlow-AppWeb/FitManager into develop | May 9, 2025 |
+
+## Finances
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/finances | d2f3c84   | feat(db-finances): add initial subscription income data for 2024-2025 | May 9, 2025         |
+| FitManager   | feature/finances | 895788d   | feat(finances): restructure finances layout with new components for improved organization | May 9, 2025 |
+| FitManager   | feature/finances | f61cf73   | feat(finances): add card layout to finances info component for better presentation | May 9, 2025 |
+| FitManager   | feature/finances | 5e3b98d   | feat(graphic): add card layout and styling for improved data presentation | May 9, 2025 |
+| FitManager   | feature/finances | 8c9bea0   | refactor(transactions): remove unused component names and add card layout to transaction list | May 9, 2025 |
+| FitManager   | feature/finances | edacc1b   | feat(graphic): add graphic component and creating linear graph from API | May 9, 2025         |
+| FitManager   | feature/finances | a13af41   | style(sidebar): update text color for improved visibility           | May 9, 2025         |
+| FitManager   | feature/finances | dd7d992   | fix(finances): update field names                                   | May 9, 2025         |
+| FitManager   | feature/finances | 114f797   | feat(finances): enhance FinancesInfo component with card layout and divider | May 9, 2025 |
+| FitManager   | feature/finances | b464401   | feat(main): add Divider component from PrimeVue for improved layout | May 9, 2025         |
+| FitManager   | feature/finances | 2ab136d   | feat(finances): add GeneralInfo and IncomeData entities for financial data management | May 10, 2025 |
+| FitManager   | feature/finances | ff2e6c3   | chore: deleted db                                                   | May 10, 2025        |
+| FitManager   | feature/finances | 4045825   | feat(db): add finances database in API                               | May 10, 2025        |
+| FitManager   | feature/finances | 3ad9222   | feat(finances): update layout styles for improved spacing in finances component | May 10, 2025 |
+| FitManager   | feature/finances | 7065830   | feat(finances): implement GeneralInfoComponent for displaying financial data | May 10, 2025 |
+| FitManager   | feature/finances | 38ffcb0   | feat(finances): add general-info assembler for transforming financial data resources | May 10, 2025 |
+| FitManager   | feature/finances | 0041688   | feat(finances): add GeneralInfoApiService for fetching financial data | May 10, 2025 |
+| FitManager   | feature/finances | bbdd3bc   | feat(finances): implement IncomeChartComponent for visualizing income data | May 10, 2025 |
+| FitManager   | feature/finances | 83a94d3   | feat(finances): add IncomeAssembler for transforming income data resources | May 10, 2025 |
+| FitManager   | feature/finances | 5372a97   | feat(finances): add IncomeApiService for fetching income data       | May 10, 2025         |
+| FitManager   | feature/finances | a01bda2   | feat(transaction): add transaction assembler.                       | May 10, 2025         |
+| FitManager   | feature/finances | a9d01a4   | feat(transaction): add transaction entity.                          | May 10, 2025         |
+| FitManager   | feature/finances | 5414861   | feat(transaction): implement transaction API service for fetching transactions | May 10, 2025 |
+| FitManager   | feature/finances | 38321c2   | feat(transaction): implement transaction list component with filtering and loading states | May 9, 2025 |
+| FitManager   | feature/finances | 563c9c9   | Merge branch 'feat/finances' into develop                           | May 10, 2025        |
+
+## Inventory
+
+| Repository   | Branch          | Commit Id | Commit message                                                      | Committed on (Date) |
+|--------------|-----------------|-----------|---------------------------------------------------------------------|---------------------|
+| FitManager   | feature/inventory | 806dafa  | Add inventory.entity.js                                             | May 10, 2025        |
+| FitManager   | feature/inventory | e78796f  | Add inventory.assembler.js.js                                        | May 10, 2025        |
+| FitManager   | feature/inventory | b70b562  | Add inventory-api.service.js                                         | May 10, 2025        |
+| FitManager   | feature/inventory | b3914b8  | Add inventory-list                                                   | May 10, 2025        |
+| FitManager   | feature/inventory | 89cf4bf  | Add edit inventory feature                                           | May 10, 2025        |
+| FitManager   | feature/inventory | 6590902  | Add delete inventory feature                                         | May 10, 2025        |
+| FitManager   | feature/inventory | a8628f4  | Merge branch 'feature/inventory' into develop                        | May 10, 2025        |
+
+## Profile
+
+| Repository   | Branch         | Commit Id | Commit message                                           | Committed on (Date) |
+|--------------|----------------|-----------|----------------------------------------------------------|---------------------|
+| FitManager   | feature/profile | 148b314   | Initial commit                                            | May 9, 2025         |
+| FitManager   | feature/profile | 8595ab1   | add users to db.json                                      | May 9, 2025         |
+| FitManager   | feature/profile | 5236187   | chore: add logo-profile.png and gimnasio-profile.png      | May 9, 2025         |
+| FitManager   | feature/profile | 37e9e83   | add profile screen                                        | May 10, 2025        |
+| FitManager   | feature/profile | ef0caa8   | Profile fake api                                          | May 10, 2025        |
+| FitManager   | feature/profile | f671fb8   | add i18n implementation on profile                        | May 11, 2025        |
+| FitManager   | feature/profile | 5c6ee29   | Fix user and i18n                                          | May 12, 2025        |
+
+## Internationalization
+
+| Repository   | Branch                  | Commit Id | Commit message                                           | Committed on (Date) |
+|--------------|-------------------------|-----------|----------------------------------------------------------|---------------------|
+| FitManager   | feature/internacionalization | 2c16899   | Implement i18n for dashboard section                      | May 12, 2025        |
+| FitManager   | feature/internacionalization | 8e09168   | Adjust key naming in i18n                                 | May 12, 2025        |
+| FitManager   | feature/internacionalization | 2f30f9e   | Implement i18n for calendar section                       | May 12, 2025        |
+| FitManager   | feature/internacionalization | 33151b7   | Add definitions for employees section                     | May 12, 2025        |
+
+## Notifications
+
+| Repository   | Branch         | Commit Id | Commit message                                           | Committed on (Date) |
+|--------------|----------------|-----------|----------------------------------------------------------|---------------------|
+| FitManager   | feature/notification | 5de501eb74ceedabbb7f75c3b3d02f807c3ed96a | Add login                                            | May 13, 2025        |
+| FitManager   | feature/notification | 5de501eb74ceedabbb7f75c3b3d02f807c3ed96a | Finish notification and login                          | May 13, 2025        |
+
+#### 5.2.2.5. Execution Evidence for Sprint Review.
+
+En el Sprint 2 hemos logrado implementar y visualizar las siguientes funcionalidades clave para nuestra aplicación web **FitManager**. A continuación, se presenta la evidencia de ejecución de estas funcionalidades implementadas:
+
+### Layout General de la Aplicación (App-Layout)
+
+Se ha integrado el layout general de la aplicación con las siguientes características:
+
+- **Barra de Navegación Superior (Toolbar)**: La barra de navegación contiene:
+  - El **logotipo de la aplicación**.
+  - Una **barra de búsqueda global** para facilitar la búsqueda dentro de la aplicación.
+  - El acceso al **perfil del usuario**.
+  
+ <p align="center">
+  <img src="https://github.com/user-attachments/assets/96d1d7e8-b38d-4531-be72-b7850c39ca52" alt="Toolbar">
+</p>
+
+El **Menú Lateral** ofrece acceso directo a todas las secciones principales de gestión de la plataforma, incluyendo:
+
+- **Dashboard**
+- **Miembros**
+- **Personal**
+- **Clases**
+- **Calendario**
+- **Asistencia**
+- **Finanzas**
+- **Inventario**
+- **Notificaciones**
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b51e12b5-532a-4b93-9a81-88030f4626fb" alt="sidebar">
+</p>
+
+El **Área de Contenido Principal** es el espacio donde se cargarán las diferentes vistas y funcionalidades de cada sección seleccionada. Dependiendo de la opción seleccionada en el menú lateral, este área se actualizará dinámicamente para mostrar los detalles y las interacciones específicas relacionadas con la sección activa.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a95570c9-c0ec-4981-9064-6fb302cc917d" alt="area de contenido principal">
+</p>
+
+### Dashboard
+
+El **Dashboard** ofrece una vista general y rápida del estado y las actividades clave del gimnasio:
+
+- **Métricas**: Presenta tarjetas con métricas importantes como total de miembros, miembros activos, e ingresos recientes.
+- **Gráfico de Asistencias**: Incluye un gráfico de asistencia del día y un listado de las clases programadas para la jornada actual.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/904395f2-2e0e-4f8e-829d-9f708d31b5b2" alt="dashboard">
+</p>
+
+### Calendar
+
+El **Calendar** es una herramienta visual para la programación y consulta de actividades:
+
+- **Vista Mensual**: Presenta un calendario mensual donde se pueden identificar las clases programadas.
+- **Detalle por Día**: Al seleccionar un día, se muestran las clases y eventos específicos de esa fecha.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/05e8ca92-c3f0-4fa4-b7a2-3e3691988995" alt="calendar">
+</p>
+
+### Personal
+
+La funcionalidad **Personal** permite administrar al equipo de trabajo del gimnasio:
+
+- **Listado de Personal**: Una tabla que muestra los empleados (entrenadores, recepcionistas, etc.), sus roles y datos de contacto. Incluye opciones de búsqueda para facilitar la navegación.
+- **Creación y Edición de Personal**: Interfaces que permiten agregar nuevos empleados y actualizar sus perfiles existentes.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/65a3518e-674d-4f31-b139-009b0eee11cd" alt="personal">
+</p>
+
+### Members
+
+La sección **Members** permite la administración integral de los clientes del gimnasio:
+
+- **Listado de Miembros**: Se visualiza una tabla con los miembros registrados, mostrando información relevante como nombre, estado de membresía, etc. Incluye funcionalidades de búsqueda y filtros para facilitar la navegación.
+- **Creación y Edición de Miembros**: Formularios dedicados para registrar nuevos miembros y modificar la información de los existentes.
+- **Vista de Detalle del Miembro**: Al seleccionar un miembro, se muestra una tarjeta o panel con su información completa y opciones de gestión.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6f22d171-5f83-43cc-a6e6-292dd2fff767" alt="members">
+</p>
+
+### Classes
+
+La sección **Classes** permite la organización y administración de las clases ofrecidas en el gimnasio:
+
+- **Listado de Clases**: Visualización de todas las clases con detalles como nombre, entrenador, horario, cupos disponibles e inscritos.
+- **Gestión de Clases**: Funcionalidades para añadir nuevas clases, editar las existentes y eliminarlas.
+- **Vista de Detalle de Clase**: Muestra información ampliada de una clase específica, incluyendo la lista de participantes.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/de32445e-cdf7-4914-9500-a34ccca1a363" alt="classes">
+</p>
+
+### Inventory
+
+La sección **Inventory** proporciona la funcionalidad para administrar los recursos y equipos del gimnasio:
+
+- **Listado de Inventario**: Tabla que muestra los ítems del inventario, su cantidad disponible y estado.
+- **Gestión de Ítems**: Formularios para agregar, editar y eliminar ítems del inventario.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/df224d1b-36c2-4d5a-af0a-49718f241c63" alt="inventory">
+</p>
+
+### Finances
+
+La sección **Finances** permite realizar un seguimiento de los movimientos económicos del gimnasio:
+
+- **Gráfico de Ingresos**: Representación visual de la evolución de los ingresos a lo largo del tiempo.
+- **Tabla de Transacciones**: Listado detallado de los pagos y otros movimientos financieros realizados.
+- **Resumen Financiero**: Información consolidada sobre el estado financiero general del gimnasio.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/11377a39-34d9-48da-a904-109cc82739bb" alt="finances">
+</p>
+
+### Attendance
+
+El módulo **Attendance** permite el seguimiento de la concurrencia al gimnasio:
+
+- **Mapa de Calor Semanal (Heatmap)**: Visualización gráfica de los horarios con mayor y menor afluencia durante la semana.
+- **Resúmenes de Asistencia**: Paneles con estadísticas de asistencia tanto a nivel semanal como histórica.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/14f98e95-d676-4ad5-92bc-8fc5f07f35de" alt="attendance">
+</p>
+
+### Notifications
+
+El sistema de **Notifications** facilita la comunicación de avisos importantes dentro de la plataforma y hacia los usuarios:
+
+- **Bandeja de Notificaciones Recibidas/Enviadas**: Interfaz que muestra un listado de las notificaciones, permitiendo ver su estado.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4a954af6-c72e-4f54-bdd3-43d960d680c9" alt="notifications">
+</p>
+
+### Perfil
+
+Esta sección permite a los usuarios (administradores del gimnasio) gestionar la información de su cuenta y las configuraciones generales de la aplicación FitManager:
+
+- **Visualización de Información del Perfil**: Muestra los datos asociados a la cuenta del gimnasio o del usuario administrador, como nombre del gimnasio, datos de contacto principales y rol del usuario.
+- **Edición de Información del Perfil**: Interfaz para modificar los detalles de la cuenta, como el nombre del gimnasio, dirección, información de contacto y, posiblemente, cargar o cambiar el logo del gimnasio.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/82f01528-51c0-434b-a7ce-e8b245f900c2" alt="profile">
+</p>
+
+### Login
+
+Permite a los administradores acceder a la plataforma FitManager mediante credenciales o autenticación social:
+
+- **Autenticación de usuarios existentes**: Los administradores pueden ingresar al sistema utilizando su **email** y **contraseña**.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1f49aac5-d9ef-4bf0-b5f7-8db362e4e7e7" alt="profile">
+</p>
+
+#### 5.2.2.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 2, el desarrollo del frontend de FitManager para las funcionalidades de gestión de miembros, finanzas, empleados, clases, dashboard, asistencia, usuarios (perfil) e inventario se realizó utilizando una API simulada (`fake API`). 
+
+Esta API fue servida localmente mediante json-server, utilizando el archivo `db.json` como fuente de datos. Este enfoque permitió que el equipo de frontend avanzara de manera paralela y desacoplada del desarrollo completo del backend, facilitando la implementación temprana de vistas, interacción y validación de funcionalidades clave.
+  
+> La documentación formal con OpenAPI (Swagger) de los servicios web RESTful definitivos y su implementación en el backend real están planificadas para sprints posteriores.  
+> La estructura de datos reflejada en `db.json` y los endpoints simulados servirán como referencia base para el diseño y desarrollo de los servicios reales.
+
+| Endpoint                            | Entidad Principal        | Operaciones Simuladas (JSON Server)             | Alcance Futuro con OpenAPI |
+|-------------------------------------|---------------------------|--------------------------------------------------|-----------------------------|
+| `http://localhost:3000/member`      | Miembros (Members)        | `GET`, `POST`, `PUT`, `DELETE` (por ID)         | Métodos detallados para listar, obtener por ID, crear, actualizar y eliminar miembros. |
+| `http://localhost:3000/finances`    | Finanzas (Finances)       | `GET` (para `subscription_income`, `transaction_history`) | Consultas de ingresos, historial de transacciones y resumen financiero. |
+| `http://localhost:3000/employees`   | Empleados (Employees)     | `GET`, `POST`, `PUT`, `DELETE` (por ID)         | Gestión completa del personal. |
+| `http://localhost:3000/classes`     | Clases (Classes)          | `GET`, `POST`, `PUT`, `DELETE` (por ID)         | Gestión de clases, horarios, entrenadores e inscripciones. |
+| `http://localhost:3000/dashboard`   | Dashboard (Estadísticas)  | `GET` (para `statistics`, `todayAttendance`, `todayClasses`) | Consulta de métricas y datos consolidados del panel principal. |
+| `http://localhost:3000/attendance`  | Asistencia (Attendance)   | `GET` (para `weekly_heatmap`, `weekly_overview`, `historical_summary`) | Datos de asistencia, mapas de calor y resúmenes semanales/históricos. |
+| `http://localhost:3000/users`       | Usuarios / Perfil         | `GET`, `PUT` (por ID)                           | Gestión del perfil del usuario/gimnasio. |
+| `http://localhost:3000/inventory`   | Inventario (Inventory)    | `GET`, `POST`, `PUT`, `DELETE` (por ID)         | Gestión de ítems del inventario. |
+| `http://localhost:3000/receivednotification` | Notificaciones Recibidas | `GET`                                            | Consulta de notificaciones recibidas. |
+| `http://localhost:3000/inventory/sentnotification` | Notificaciones Enviadas  | `GET`                                            | Consulta de notificaciones enviadas. |
+| `http://localhost:3000/admin`       | Login (Administradores)   | `GET`                                            | Consulta de credenciales de acceso. |
+
+## Interacción con la Documentación OpenAPI (Simulada)
+
+Las interacciones con la API simulada se realizaron directamente a través de solicitudes HTTP desde el código fuente del frontend (utilizando axios) basándose en la estructura del archivo db.json y las rutas visibles en el tablero.
+
+A continuación, se detalla un ejemplo de cómo el frontend de FitManager interactúa con el endpoint simulado /attendance para obtener los datos de resumen de asistencia, utilizando el servicio SummaryApiService:
+
+- La imagen a continuación muestra el resultado de acceder directamente al endpoint http://localhost:3000/attendance a través de un navegador web mientras json-server está sirviendo el archivo db.json. Se puede observar la estructura JSON completa devuelta para la clave "attendance", incluyendo weekly_heatmap, weekly_overview, y historical_summary, que son los datos que el SummaryApiService procesa:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8480a2be-0d78-49fe-a29e-e1919a066c94" alt="endpoints result">
+</p>
+
+### Acción: Obtener los datos de resumen de asistencia (incluyendo el resumen semanal y el histórico)
+
+- **Servicio Frontend Involucrado**: `SummaryApiService` (definido en `summary-api.service.js`)
+- **Método del Servicio**: `getSummary()`
+- **Verbo HTTP** (simulado por json-server para la solicitud `axios.get`): `GET`
+- **Sintaxis de Llamada** (URL utilizada por axios): `http://localhost:3000/attendance`
+
+`SummaryApiService` realiza una solicitud `GET` a `http://localhost:3000/attendance`.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a7da4ac2-553c-44b1-8d15-b8e45f5c1bde" alt="attendance api service">
+</p>
+
+La respuesta esperada de json-server (basada en db.json bajo la clave "attendance") contiene los objetos `weekly_overview` y `historical_summary`.
+
+El servicio extrae `response.data.weekly_overview` y `response.data.historical_summary`.
+
+Estos datos "resource" se pasan a `SummaryAssembler.toEntityFromResource()` (definido en `summary.assembler.js`).
+
+El `SummaryAssembler` instancia un objeto `Summary` (definido en `summary.entity.js`) con los datos transformados.
+
+El objeto `Summary` resultante es devuelto por el método `getSummary()`, listo para ser utilizado por los componentes de la UI en el frontend.
+
+La documentación de servicios en Sprint 2 se centró en la API simulada (`json-server`, `db.json`) usada para el desarrollo frontend de FitManager. Aunque no se generó documentación OpenAPI formal, esta API simulada y su consumo (ej. `SummaryApiService`) establecen un contrato inicial para los servicios RESTful reales que se documentará un sprint futuro.
+
+#### 5.2.2.7. Software Deployment Evidence for Sprint Review
+
+Para el despliegue de la aplicación utilizamos Firebase. Como parte del proceso, migramos nuestra API falsa (fake API) a Render, una plataforma que facilita la publicación de servicios backend simulados como json-server.
+
+Para ello, primero subimos nuestro archivo db.json a un repositorio de github, con la configuración necesaria para que se despliegue correctamente en Render.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/544f8cfb-f6e9-4a41-a96b-8febf12c9b03" alt="repositorio para fakeapi">
+</p>
+
+Luego, en Render, creamos un Web Service y conectamos el repositorio previamente creado en GitHub. Seleccionamos una instancia del tipo gratuito (Free instance) y finalizamos la configuración para desplegar la API falsa.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/28ffad52-e4f6-416d-a7e2-440cbcc2db3f" alt="creating web service in render">
+</p>
+
+Después de ello, esperamos a que el servicio termine de desplegarse hasta que Render lo marque como listo (Live), indicando que la API ya está disponible públicamente.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ce795e98-7fa2-4cf2-aad8-bba0510d53ac" alt="web service deployed in render">
+</p>
+
+Se puede verificar el correcto despliegue accediendo al enlace proporcionado por Render, donde estarán disponibles todos los endpoints de la API. Una vez confirmada su funcionalidad, procedimos a reemplazar en nuestro proyecto las URLs locales de la fake API por el nuevo enlace público.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5300ae14-c5cf-428a-923c-7219c14c5b49" alt="fake api in json server">
+</p>
+
+Una vez que el proyecto está listo, procedemos a instalar las herramientas necesarias para utilizar Firebase desde la consola. Para ello, instalamos la Firebase CLI mediante el siguiente comando.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7e3addba-b4d9-466f-943d-8200aa426d98" alt="fake api in json server">
+</p>
+
+Luego, iniciamos sesión con nuestra cuenta de Firebase utilizando el comando 'firebase login', el cual abrirá una ventana en el navegador para autenticarnos. Una vez que el inicio de sesión sea exitoso, procedemos a generar la versión optimizada del proyecto.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/baf637db-03f7-4bde-aff3-660d4812660c" alt="npm run build">
+</p>
+
+A continuación, iniciamos el proceso de configuración del hosting con el comando 'firebase init hosting'. Durante este proceso, Firebase nos pedirá una confirmación para inicializar el hosting en el repositorio actual, a lo cual responderemos afirmativamente. Luego, seleccionamos la opción de "usar un proyecto existente", ya que previamente hemos creado nuestro proyecto en la consola de Firebase. En la configuración que aparece a continuación, especificamos la carpeta dist como directorio público y respondemos "No" al resto de las opciones, como configurar la aplicación como una Single Page Application o sobrescribir archivos existentes.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e43dd7ad-9977-4393-8d20-76a92fc8ab74" alt="firebase init hosting">
+</p>
+
+Finalmente, realizamos el despliegue con el comando correspondiente y así tendremos nuestra aplicación desplegada exitosamente.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/97a83b32-03f4-4052-9626-1278085fffad" alt="firebase deploy">
+</p>
+
+#### 5.2.2.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 2, el equipo FitManager continuó aplicando la metodología ágil Scrum y las herramientas de colaboración definidas para avanzar en el desarrollo del frontend de la aplicación web. Este sprint se caracterizó por un esfuerzo coordinado en la implementación de múltiples funcionalidades clave. La comunicación se mantuvo principalmente a través de nuestro grupo de Whatsapp y Discord, realizando reuniones entre días que tuviéramos libres, y la gestión de tareas se centralizó en Pivotal Tracker.
+Planificación del Sprint:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e9a68a95-5f97-435a-9173-f74c53f07512" alt="pivotal tracker">
+</p>
+
+Uso de Herramientas de Colaboración (GitHub): 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a02e72df-e7c4-4cd0-a65c-9d5cdeed68d5" alt="herramientas de colaboración">
+</p>
+
+Evidencia de las ramas
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/47e5917f-45d6-47f0-8b28-38ef2bfe9770" alt="ramas del repositorio">
+</p>
+
 # Conclusiones
 
 * Consideramos que nuestro equipo ha realizado un esfuerzo exhaustivo en la obtención y el análisis de los requisitos. Las diversas técnicas que empleamos, incluyendo entrevistas, needfinding, creación de user personas, journey maps, y más, nos han permitido obtener una comprensión profunda de las necesidades de los usuarios y las demandas del mercado. Este enfoque integral proporciona una base sólida para el desarrollo de un producto centrado en el usuario.
@@ -2097,6 +2775,8 @@ Por otro lado, en esta imagen se ve que todos participaron también en los commi
 * Hemos puesto un fuerte énfasis en la experiencia del usuario (UX) a lo largo del proyecto. La aplicación de los principios de Lean UX, el desarrollo de user personas detalladas y el diseño meticuloso de las interfaces de usuario y los flujos de usuario demuestran nuestro compromiso con la creación de un producto que no solo sea funcional, sino que también proporcione una experiencia agradable e intuitiva para los usuarios.
 * Nuestro equipo ha desarrollado una arquitectura de software bien definida, utilizando los principios del Domain Driven Design y creando diagramas detallados (Contexto, Contenedor, Componentes). Esto refleja nuestra comprensión de las mejores prácticas de diseño de software y proporciona un marco robusto para las etapas posteriores de implementación.
 * Hemos avanzado con éxito más allá de las fases de planificación y diseño y ya hemos logrado un progreso tangible en la implementación, como lo demuestra el trabajo completado durante el Sprint 1 para la landing page. Esto demuestra nuestra capacidad para traducir las especificaciones de diseño en entregables concretos y nuestro compromiso para llevar el producto a buen término.
+* La adopción de Vue como framework, junto con la consideración de la internacionalización (i18n) y la accesibilidad (a11y) desde las etapas iniciales del desarrollo del frontend, demuestra un compromiso con la creación de una aplicación moderna, inclusiva y adaptable a diferentes audiencias. Este enfoque proactivo sentará una base sólida para la escalabilidad y la usabilidad a largo plazo.
+* La estrategia de dividir la interfaz de usuario en componentes reutilizables en Vue no solo facilita la organización del trabajo entre el equipo, sino que también mejora la mantenibilidad y la escalabilidad del código. Además, la utilización de GitHub con una disciplina de commits y branches refleja una práctica profesional en el control de versiones, lo que contribuye a la estabilidad y la colaboración efectiva dentro del equipo de desarrollo.
 
 # Recomendaciones
 
@@ -2104,6 +2784,7 @@ Por otro lado, en esta imagen se ve que todos participaron también en los commi
 * Recomendamos encarecidamente la implementación de una estrategia de pruebas integral que cubra todos los aspectos cruciales de la aplicación. Esta estrategia debe abarcar pruebas unitarias, pruebas de integración, pruebas de sistema y pruebas de aceptación del usuario para garantizar la calidad, la confiabilidad y la estabilidad del producto.
 * Nuestro equipo debe adherirse a un enfoque de desarrollo iterativo, caracterizado por sprints cortos y ciclos de retroalimentación frecuentes. Debemos priorizar la incorporación de los comentarios de los usuarios de forma temprana y frecuente para validar nuestras suposiciones y realizar los ajustes necesarios en el diseño y la funcionalidad.
 * Debemos enfatizar la importancia de mantener una documentación completa y actualizada de la arquitectura, el diseño y la implementación del sistema. Además, debemos fomentar una sólida cultura de intercambio de conocimientos dentro del equipo para garantizar la continuidad, facilitar la colaboración y agilizar los esfuerzos de desarrollo futuros.
+* Para asegurar una experiencia de usuario fluida y evitar posibles cuellos de botella en etapas posteriores, se recomienda establecer una estrategia de integración temprana y continua entre el frontend desarrollado en Vue y el futuro backend de la aplicación. Esto podría incluir la definición clara de APIs, la creación de mocks para el desarrollo paralelo y la realización de pruebas de integración frecuentes para validar la correcta comunicación y el flujo de datos entre ambas partes del sistema.
 
 # Bibliografía
 
@@ -2119,13 +2800,21 @@ Cibanal, S. (2022). La transformación digital en los gimnasios. Trainingym. htt
 
 Data Bridge Market Research. (2024). Global Gym Management Software Market. https://www.databridgemarketresearch.com/es/reports/global-gym-management-software-market
 
+Forbes Perú. (2023, marzo 8). Smart Fit invertirá US$ 21 millones en 14 nuevos gimnasios en Perú durante 2023. https://forbes.pe/negocios/2023-03-08/smart-fit-invertira-us-21-millones-en-14-nuevos-gimnasios-en-peru-durante-2023
+
 Gestión. (2024). La asistencia a gimnasios: entre la recesión y una mayor disposición al gasto. https://gestion.pe/economia/empresas/la-asistencia-a-gimnasios-entre-la-recesion-y-una-mayor-disposicion-al-gasto-empresas-peru-inversiones-impronta-research-noticia/?ref=gesr
 
 Ipsos Perú. (2024). Lima activa. https://www.ipsos.com/es-pe/lima-activa
 
+Mercado Fitness. (2019, agosto 20). Latinoamérica cuenta con más de 46 mil gimnasios. https://mercadofitness.com/latinoamerica-cuenta-con-mas-de-46-mil-gimnasios
+
+Mercado Fitness. (2024, abril 5). El 55% de los latinoamericanos activos prefieren hacer ejercicio en gimnasios. https://mercadofitness.com/latinoamericanos-activos-prefieren-hacer-ejercicio-gimnasios
+
 Shrivastava, M., Mishra, R., Patil, A., & Thakare, R. (2022). Digitalization in Gym Management System. International Journal of Research Publication and Reviews, 3(12), 354–358. https://ijrpr.com/uploads/V5ISSUE3/IJRPR23946.pdf
 
 Tandon, M. (2025, 22 de febrero). 100 Gym Membership Retention Statistics. Smart Health Clubs. https://smarthealthclubs.com/blog/100-gym-membership-retention-statistics/
+
+Universidad Nacional de Cuyo. (2019). El mercado del fitness en América Latina. https://bdigital.uncu.edu.ar/objetos_digitales/17929/kemelmajer-fce.pdf
 
 # Anexos
 
@@ -2150,8 +2839,16 @@ Landing page prototyping. https://www.figma.com/proto/5Hnhhda3IFBYmJFJmVGhAO/Fit
 
 Anexo D. Pivotal Tracker
 
-FitManager. https://www.pivotaltracker.com/n/projects/2740715
+FitManager. https://app.litetracker.com/n/projects/4855e0
 
 Anexo E. Lean UX Canvas
 
 Fit Manager Lean UX Canvas. https://drive.google.com/file/d/1s4bRIgJBOXdcWbEElVUIdd4UmPVrTLMN/view
+
+Anexo F. Landing Page
+
+FitManager. https://fitflow-appweb.github.io/FitManagerLanding/
+
+Anexo G. Web Application
+
+FitManager. https://fitmanager-bb835.web.app/
