@@ -250,9 +250,10 @@ button[type="button"] {
 }
 
 .apple-btn .social-logo {
-  width: 16px;         
+  width: 14px;         
   height: 16px;
   display: block;
+  filter: invert(1);
 }
 
 .social-logo {
