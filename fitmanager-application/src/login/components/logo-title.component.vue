@@ -12,7 +12,7 @@ export default {
 
 <template>
   <div class="logo-title-container">
-    <img src="/assets/logo-app.png" alt="FitManager Logo" class="logo" />
+    <img src="/assets/fit-manager-logo.svg" alt="FitManager Logo" class="logo" />
     <h1>FITMANAGER</h1>
   </div>
 </template>
@@ -22,17 +22,18 @@ export default {
 <style scoped>
 .logo-title-container {
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .logo {
-  width: 120px;
+  width: 140px;
   height: auto;
 }
 
 h1 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #3b3b3b;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 75px;
+  font-weight: 400;
+  color: #545353;
+  margin: 0px;
 }
 </style>
