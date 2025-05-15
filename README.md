@@ -2763,6 +2763,14 @@ Evidencia de las ramas
   <img src="https://github.com/user-attachments/assets/47e5917f-45d6-47f0-8b28-38ef2bfe9770" alt="ramas del repositorio">
 </p>
 
+Evidencia de commits por integrante del grupo
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6cc77c8e-b7ef-43ad-97b0-60088a352b68" alt="commits por integrante">
+</p>
+
+
+
 # Conclusiones
 
 * Consideramos que nuestro equipo ha realizado un esfuerzo exhaustivo en la obtención y el análisis de los requisitos. Las diversas técnicas que empleamos, incluyendo entrevistas, needfinding, creación de user personas, journey maps, y más, nos han permitido obtener una comprensión profunda de las necesidades de los usuarios y las demandas del mercado. Este enfoque integral proporciona una base sólida para el desarrollo de un producto centrado en el usuario.
