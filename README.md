@@ -32,17 +32,12 @@
 
 Repositorio donde está el project report: https://github.com/FitFlow-AppWeb/FitManager
 
-Para el desarrollo del informe hemos trabajado en un google docs, y luego hemos pasado el contenido al readme del repositorio principal. A cada uno se le encargo subir un capítulo
+Para el desarrollo del informe hemos trabajado en un google docs, y luego hemos pasado el contenido al readme del repositorio principal. A cada uno se le encargo subir un capítulo.
+Para esta entrega, se actualizo el readme y se agrego el sprint 2.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/10f7e376-a1bf-459a-81df-802ba9249fad" alt="Insights repositorio">
+  <img src="https://github.com/user-attachments/assets/77ebf430-b486-4123-824b-fadd5583decd" alt="Insights repositorio">
 </p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a4179b65-5933-4b31-89d1-014545c03263" alt="Commits repositorio">
-</p>
-
-Si bien es cierto que uno de los miembros registra un mayor número de commits en el repositorio, esto se debe a que fue el encargado principal de realizar hotfixes, ajustes menores y correcciones de formato a lo largo del desarrollo del informe, asegurando su calidad final.
 
 # Contenido
 
@@ -137,6 +132,25 @@ Si bien es cierto que uno de los miembros registra un mayor número de commits e
       - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
       - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
       - [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+* [5.2. Landing Page, Services & Applications Implementation](#52-landing-page-services--applications-implementation)
+    + [5.2.1. Sprint 1](#521-sprint-1)
+      - [5.2.1.1. Sprint Planning](#5211-sprint-planning)
+      - [5.2.1.2. Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
+      - [5.2.1.3 Sprint Backlog 1](#5213-sprint-backlog-1)
+      - [5.2.1.4. Development Evidence for Sprint Review](#5214-development-evidence-for-sprint-review)
+      - [5.2.1.5. Execution Evidence for Sprint Review](#5215-execution-evidence-for-sprint-review)
+      - [5.2.1.6. Services Documentation Evidence for Sprint Review](#5216-services-documentation-evidence-for-sprint-review)
+      - [5.2.1.7. Software Deployment Evidence for Sprint Review](#5217-software-deployment-evidence-for-sprint-review)
+      - [5.2.1.8. Team Collaboration Insights during Sprint](#5218-team-collaboration-insights-during-sprint)
+    + [5.2.2. Sprint 2](#522-sprint-2)
+      - [5.2.2.1. Sprint Planning](#5221-sprint-planning)
+      - [5.2.2.2. Aspect Leaders and Collaborators](#5222-aspect-leaders-and-collaborators)
+      - [5.2.2.3 Sprint Backlog 2](#5223-sprint-backlog-2)
+      - [5.2.2.4. Development Evidence for Sprint Review](#5224-development-evidence-for-sprint-review)
+      - [5.2.2.5. Execution Evidence for Sprint Review](#5225-execution-evidence-for-sprint-review)
+      - [5.2.2.6. Services Documentation Evidence for Sprint Review](#5226-services-documentation-evidence-for-sprint-review)
+      - [5.2.2.7. Software Deployment Evidence for Sprint Review](#5227-software-deployment-evidence-for-sprint-review)
+      - [5.2.2.8. Team Collaboration Insights during Sprint](#5228-team-collaboration-insights-during-sprint)
 
 - [Conclusiones](#conclusiones)
   
@@ -2050,7 +2064,7 @@ Historias de usuario empezadas y finalizadas del sprint
   <img src="https://github.com/user-attachments/assets/943e82bd-5128-4978-9b9d-57a2380e77a7" alt="Épicas">
 </p>
 
-#### 5.1.2.4. Development Evidence for Sprint Review
+#### 5.2.1.4. Development Evidence for Sprint Review
 
 Durante el Sprint 1, el equipo completó todas las tareas asociadas al desarrollo de la primera versión del Landing Page de FitManager. Se desarrollo el header, la sección inicio, la sección sobre nosotros, la sección de muestra, la sección de planes, la sección de contacto y el footer. Respecto a la aplicación web, se realizó el diseño UX/UI para facilitar el avance de este en los siguientes sprints.
 
@@ -2678,7 +2692,76 @@ La documentación de servicios en Sprint 2 se centró en la API simulada (`json-
 
 #### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
+Para el despliegue de la aplicación utilizamos Firebase. Como parte del proceso, migramos nuestra API falsa (fake API) a Render, una plataforma que facilita la publicación de servicios backend simulados como json-server.
+
+Para ello, primero subimos nuestro archivo db.json a un repositorio de github, con la configuración necesaria para que se despliegue correctamente en Render.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/544f8cfb-f6e9-4a41-a96b-8febf12c9b03" alt="repositorio para fakeapi">
+</p>
+
+Luego, en Render, creamos un Web Service y conectamos el repositorio previamente creado en GitHub. Seleccionamos una instancia del tipo gratuito (Free instance) y finalizamos la configuración para desplegar la API falsa.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/28ffad52-e4f6-416d-a7e2-440cbcc2db3f" alt="creating web service in render">
+</p>
+
+Después de ello, esperamos a que el servicio termine de desplegarse hasta que Render lo marque como listo (Live), indicando que la API ya está disponible públicamente.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ce795e98-7fa2-4cf2-aad8-bba0510d53ac" alt="web service deployed in render">
+</p>
+
+Se puede verificar el correcto despliegue accediendo al enlace proporcionado por Render, donde estarán disponibles todos los endpoints de la API. Una vez confirmada su funcionalidad, procedimos a reemplazar en nuestro proyecto las URLs locales de la fake API por el nuevo enlace público.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5300ae14-c5cf-428a-923c-7219c14c5b49" alt="fake api in json server">
+</p>
+
+Una vez que el proyecto está listo, procedemos a instalar las herramientas necesarias para utilizar Firebase desde la consola. Para ello, instalamos la Firebase CLI mediante el siguiente comando.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7e3addba-b4d9-466f-943d-8200aa426d98" alt="fake api in json server">
+</p>
+
+Luego, iniciamos sesión con nuestra cuenta de Firebase utilizando el comando 'firebase login', el cual abrirá una ventana en el navegador para autenticarnos. Una vez que el inicio de sesión sea exitoso, procedemos a generar la versión optimizada del proyecto.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/baf637db-03f7-4bde-aff3-660d4812660c" alt="npm run build">
+</p>
+
+A continuación, iniciamos el proceso de configuración del hosting con el comando 'firebase init hosting'. Durante este proceso, Firebase nos pedirá una confirmación para inicializar el hosting en el repositorio actual, a lo cual responderemos afirmativamente. Luego, seleccionamos la opción de "usar un proyecto existente", ya que previamente hemos creado nuestro proyecto en la consola de Firebase. En la configuración que aparece a continuación, especificamos la carpeta dist como directorio público y respondemos "No" al resto de las opciones, como configurar la aplicación como una Single Page Application o sobrescribir archivos existentes.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e43dd7ad-9977-4393-8d20-76a92fc8ab74" alt="firebase init hosting">
+</p>
+
+Finalmente, realizamos el despliegue con el comando correspondiente y así tendremos nuestra aplicación desplegada exitosamente.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/97a83b32-03f4-4052-9626-1278085fffad" alt="firebase deploy">
+</p>
+
 #### 5.2.2.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 2, el equipo FitManager continuó aplicando la metodología ágil Scrum y las herramientas de colaboración definidas para avanzar en el desarrollo del frontend de la aplicación web. Este sprint se caracterizó por un esfuerzo coordinado en la implementación de múltiples funcionalidades clave. La comunicación se mantuvo principalmente a través de nuestro grupo de Whatsapp y Discord, realizando reuniones entre días que tuviéramos libres, y la gestión de tareas se centralizó en Pivotal Tracker.
+Planificación del Sprint:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e9a68a95-5f97-435a-9173-f74c53f07512" alt="pivotal tracker">
+</p>
+
+Uso de Herramientas de Colaboración (GitHub): 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a02e72df-e7c4-4cd0-a65c-9d5cdeed68d5" alt="herramientas de colaboración">
+</p>
+
+Evidencia de las ramas
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/47e5917f-45d6-47f0-8b28-38ef2bfe9770" alt="ramas del repositorio">
+</p>
 
 # Conclusiones
 
@@ -2751,8 +2834,16 @@ Landing page prototyping. https://www.figma.com/proto/5Hnhhda3IFBYmJFJmVGhAO/Fit
 
 Anexo D. Pivotal Tracker
 
-FitManager. https://www.pivotaltracker.com/n/projects/2740715
+FitManager. https://app.litetracker.com/n/projects/4855e0
 
 Anexo E. Lean UX Canvas
 
 Fit Manager Lean UX Canvas. https://drive.google.com/file/d/1s4bRIgJBOXdcWbEElVUIdd4UmPVrTLMN/view
+
+Anexo F. Landing Page
+
+FitManager. https://fitflow-appweb.github.io/FitManagerLanding/
+
+Anexo G. Web Application
+
+FitManager. https://fitmanager-bb835.web.app/
