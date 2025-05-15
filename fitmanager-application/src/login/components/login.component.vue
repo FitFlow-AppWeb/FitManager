@@ -43,9 +43,17 @@ export default {
 
 <style scoped>
 .login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 100vh;
   margin: 0 auto;
   padding: 20px;
-  border-radius: 10px;
+  
+  background: #ffffff;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(51, 51, 51, 1) 100%);
+
 }
 </style>
