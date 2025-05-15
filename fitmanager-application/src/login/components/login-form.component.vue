@@ -49,20 +49,33 @@ export default {
 
 <template>
   <div class="login-form-container">
-    <h2>Iniciar Sesión</h2>
     <form @submit.prevent="submitForm">
-      <div class="input-group">
+      
+      <pv-floatlabel variant="on" class="input-group">
+        <pv-inputtext id="email" v-model="email" required aria-label="Email" />
+        <label for="email">Email</label>
+      </pv-floatlabel>
+
+
+      <!-- <div class="input-group">
         <label for="email">Email</label>
         <input type="email" id="email" v-model="email" required aria-label="Email" />
-      </div>
+      </div> -->
 
-      <div class="input-group">
+
+      <pv-floatlabel variant="on" class="input-group">
+        <pv-inputtext :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" required aria-label="Contraseña" />
+        <label for="password">Contraseña</label>
+      </pv-floatlabel>
+
+      
+      <!-- <div class="input-group">
         <label for="password">Contraseña</label>
         <input :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" required aria-label="Contraseña" />
         <button type="button" @click="togglePasswordVisibility" aria-label="Toggle password visibility">
           {{ passwordVisible ? 'Ocultar' : 'Mostrar' }}
         </button>
-      </div>
+      </div> -->
 
       <button type="submit" class="submit-btn" aria-label="Iniciar sesión">Iniciar Sesión</button>
 
@@ -73,13 +86,19 @@ export default {
 
     <div v-if="error" class="error-message" role="alert">{{ error }}</div>
 
+    <div class="divider-container">
+      <pv-divider /> <span>O</span> <pv-divider />
+    </div>
+
     <div class="social-login">
       <button class="google-btn" aria-label="Iniciar sesión con Google">
-        <img src="/assets/google-logo.png" alt="Google Logo" class="social-logo" />
+        <img src="/assets/google.svg" alt="Google Logo" class="social-logo" />
         Iniciar Sesión con Google
       </button>
       <button class="apple-btn" aria-label="Iniciar sesión con Apple">
-        <img src="/assets/apple-logo.png" alt="Apple Logo" class="social-logo" />
+        <span class="logo-circle">
+          <img src="/assets/apple.svg" alt="Apple Logo" class="social-logo" />
+        </span>
         Iniciar Sesión con Apple
       </button>
     </div>
@@ -95,20 +114,23 @@ export default {
   padding: 30px;
   background-color: #fff;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif
 }
 
 h2 {
-  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
   margin-bottom: 20px;
   color: #333;
   text-align: center;
 }
 
 .input-group {
-  margin-bottom: 25px;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .input-group label {
@@ -119,7 +141,7 @@ h2 {
 
 .input-group input {
   width: 100%;
-  padding: 12px;
+  padding: 14px 12px;
   font-size: 16px;
   border: 1px solid #A7D1D2;
   border-radius: 10px;
@@ -128,7 +150,7 @@ h2 {
 }
 
 .input-group input:focus {
-  border-color: #007bff;
+  border-color: #7aa4a4;
 }
 
 button[type="button"] {
@@ -140,30 +162,34 @@ button[type="button"] {
 }
 
 .submit-btn {
-  width: 100%;
-  padding: 14px;
+  width: 50%;
+  padding: 10px;
   font-size: 16px;
-  background-color: #A7D1D2;
+  background-color: #DFEEEF;
   color: #3b3b3b;
-  border: none;
-  border-radius: 25px;
+  border: 2px solid #A7D1D2;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 0 auto;
+  display: block;
 }
 
 .submit-btn:hover {
   background-color: #8BB5B6;
+  color: #000000;
+  border: 2px solid #8BB5B6;
 }
 
 .forgot-password {
-  text-align: right;
+  text-align: center;
   margin-top: 10px;
 }
 
 .forgot-password a {
-  color: #000000;
+  color: #595959;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .error-message {
@@ -191,22 +217,64 @@ button[type="button"] {
 
 .google-btn {
   background-color: #fff;
+  transition: background-color 0.3s ease;
   color: #000000;
   border: none;
+  height: 53px;
+}
+
+.google-btn:hover{
+  background-color:#DFEEEF;
 }
 
 .apple-btn {
   background-color: #ffff;
+  transition: background-color 0.3s ease;
   color: #000000;
   border: none;
 }
 
+.apple-btn:hover{
+  background-color:#DFEEEF;
+}
+
+.apple-btn .logo-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: #000;    
+  border-radius: 50%;
+}
+
+.apple-btn .social-logo {
+  width: 16px;         
+  height: 16px;
+  display: block;
+}
+
 .social-logo {
   width: 20px;
-  height: auto;
+  height: 20px;
 }
 
 .social-login button:hover {
   opacity: 0.8;
 }
+
+.divider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.divider-container span {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: #595959;
+}
+
+
 </style>
