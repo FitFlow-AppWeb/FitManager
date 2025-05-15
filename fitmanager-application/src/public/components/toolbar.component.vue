@@ -22,7 +22,7 @@ import Button from 'primevue/button';
       <template #start>
         <IconField class="toolbar-search">
           <InputIcon class="pi pi-search" aria-hidden="true" />
-          <InputText class="search-input-text" placeholder="Search" aria-label="Search input" />
+          <InputText class="search-input-text" :placeholder="$t('general.search')" aria-label="Search input" />
         </IconField>
       </template>
       <template #end>

@@ -8,7 +8,7 @@
 * Author: Renzo Luque
 -->
 
-<script setup>
+<script>
 import {Menu} from "primevue";
 import {ref} from "vue";
 
@@ -22,53 +22,68 @@ import FinancesIcon from '/assets/Credit_card_fill.svg?raw';
 import AttendanceIcon from '/assets/Time_fill.svg?raw';
 import NotificationsIcon from '/assets/Bell_fill.svg?raw';
 
-const menuItems = ref([
-  {
-    label: 'Dashboard',
-    svgContent: DashboardIcon,
-    to: '/dashboard'
+export default {
+  name: "SidebarComponent",
+  components: {
+    Menu,
   },
-  {
-    label: 'Calendar',
-    svgContent: CalendarIcon,
-    to: '/calendar'
+  data() {
+    return {
+      selectedItem: null
+    };
   },
-  {
-    label: 'Personal',
-    svgContent: PersonalIcon,
-    to: '/employees'
-  },
-  {
-    label: 'Members',
-    svgContent: MembersIcon,
-    to: '/members'
-  },
-  {
-    label: 'Classes',
-    svgContent: ClassesIcon,
-    to: '/classes'
-  },
-  {
-    label: 'Inventory',
-    svgContent: BookingsIcon,
-    to: '/inventory'
-  },
-  {
-    label: 'Finances',
-    svgContent: FinancesIcon,
-    to: '/finances'
-  },
-  {
-    label: 'Attendance',
-    svgContent: AttendanceIcon,
-    to: '/attendance'
-  },
-  {
-    label: 'Notifications',
-    svgContent: NotificationsIcon,
-    to: '/notifications'
+  computed: {
+    menuItems() {
+      return [
+        {
+          label: this.$t('general.dashboard'),
+          svgContent: DashboardIcon,
+          to: '/dashboard'
+        },
+        {
+          label: this.$t('general.calendar'),
+          svgContent: CalendarIcon,
+          to: '/calendar'
+        },
+        {
+          label: this.$t('general.personal'),
+          svgContent: PersonalIcon,
+          to: '/employees'
+        },
+        {
+          label: this.$t('general.members'),
+          svgContent: MembersIcon,
+          to: '/members'
+        },
+        {
+          label: this.$t('general.classes'),
+          svgContent: ClassesIcon,
+          to: '/classes'
+        },
+        {
+          label: this.$t('general.inventory'),
+          svgContent: BookingsIcon,
+          to: '/inventory'
+        },
+        {
+          label: this.$t('general.finances'),
+          svgContent: FinancesIcon,
+          to: '/finances'
+        },
+        {
+          label: this.$t('general.attendance'),
+          svgContent: AttendanceIcon,
+          to: '/attendance'
+        },
+        {
+          label: this.$t('general.notifications'),
+          svgContent: NotificationsIcon,
+          to: '/notifications'
+        }
+      ];
+    }
   }
-]);
+};
 
 </script>
 

@@ -32,7 +32,17 @@
     "loading": "Cargando",
     "add": "Agregar",
     "cancel": "Cancelar",
-    "save": "Guardar"
+    "save": "Guardar",
+    "dashboard": "Resumen general",
+    "calendar": "Calendario",
+    "personal": "Personal",
+    "members": "Miembros",
+    "classes": "Clases",
+    "inventory": "Inventario",
+    "finances": "Finanzas",
+    "attendance": "Asistencia",
+    "notifications": "Notificaciones",
+    "search": "Buscar"
   },
   "dashboard": {
     "chart-title": "Asistencia de hoy por hora",

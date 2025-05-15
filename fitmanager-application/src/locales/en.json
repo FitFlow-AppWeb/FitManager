@@ -32,7 +32,17 @@
     "loading": "Loading",
     "add": "Add",
     "cancel": "Cancel",
-    "save": "Save"
+    "save": "Save",
+    "dashboard": "Dashboard",
+    "calendar" : "Calendar",
+    "personal": "Personal",
+    "members": "Members",
+    "classes": "Classes",
+    "inventory": "Inventory",
+    "finances": "Finances",
+    "attendance": "Attendance",
+    "notifications": "Notifications",
+    "search": "Search"
   },
   "dashboard": {
     "chart-title": "Today's Attendance by Hour",
