@@ -2832,6 +2832,8 @@ Web applications. prototyping.https://upcedupe-my.sharepoint.com/:v:/g/personal/
 
 Execution Evidence for Sprint 1 Review. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Ed9gIYEnn7pHoo-q92jS8bEBMDLFkl5UR49PFMps5WnhhQ?e=Whi8i4
 
+Execution Evidence for Sprint 2 Review. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Eadp2HRIXb5DnFlCBCUolFQBwWQPHVned1ARzTaDKu71Lg?e=nLiT9C
+
 Anexo C. UI Design
 
 Wireframes y mockups. https://www.figma.com/design/4gPCmaqbcavYIRPzj9J5iK/UI-Design?node-id=1-3818&t=JJGdaovG3eenwj5D-1
@@ -2854,4 +2856,4 @@ FitManager. https://fitflow-appweb.github.io/FitManagerLanding/
 
 Anexo G. Web Application
 
-FitManager. https://fitmanager-bb835.web.app/
+FitManager. https://fitmanager-f6e6e.web.app/
