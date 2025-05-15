@@ -27,11 +27,6 @@ export default {
   components: {
     Menu,
   },
-  data() {
-    return {
-      selectedItem: null
-    };
-  },
   computed: {
     menuItems() {
       return [
