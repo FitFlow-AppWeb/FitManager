@@ -32,17 +32,12 @@
 
 Repositorio donde está el project report: https://github.com/FitFlow-AppWeb/FitManager
 
-Para el desarrollo del informe hemos trabajado en un google docs, y luego hemos pasado el contenido al readme del repositorio principal. A cada uno se le encargo subir un capítulo
+Para el desarrollo del informe hemos trabajado en un google docs, y luego hemos pasado el contenido al readme del repositorio principal. A cada uno se le encargo subir un capítulo.
+Para esta entrega, se actualizo el readme y se agrego el sprint 2.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/10f7e376-a1bf-459a-81df-802ba9249fad" alt="Insights repositorio">
+  <img src="https://github.com/user-attachments/assets/77ebf430-b486-4123-824b-fadd5583decd" alt="Insights repositorio">
 </p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a4179b65-5933-4b31-89d1-014545c03263" alt="Commits repositorio">
-</p>
-
-Si bien es cierto que uno de los miembros registra un mayor número de commits en el repositorio, esto se debe a que fue el encargado principal de realizar hotfixes, ajustes menores y correcciones de formato a lo largo del desarrollo del informe, asegurando su calidad final.
 
 # Contenido
 
