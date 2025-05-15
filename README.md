@@ -20,9 +20,13 @@
 
 # Registro de versiones del informe
 
-| **Versión**  | **Fecha**   | **Autor/es**                                                                                           | **Descripción**                                                                                                                |
-|--------------|-------------|--------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| 1.0 (TB1)    | 25/04/25    | - Alvarado De La Cruz, Juan Carlos <br> - Luque Minaya, Renzo Andrés <br> - Martel Andrade, Cassius Estefano <br> - Nakamurakare Teruya, Alex Tomio <br> - Ortiz Alarcón, Víctor Nicolás | Capítulo I: Introducción <br> Capítulo II: Requirements Elicitation & Analysis <br> Capítulo III: Requirements Specification <br> Capítulo IV: Product Design <br> Capítulo V: Product Implementation, Validation & Deployment |
+## Versiones del Documento
+
+| Versión   | Fecha     | Autor(es)                                                                                 | Descripción                                                                                   |
+|-----------|-----------|--------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| 1.0 (TB1) | 25/04/25  | - Alvarado De La Cruz, Juan Carlos<br>- Luque Minaya, Renzo Andrés<br>- Martel Andrade, Cassius Estefano<br>- Nakamurakare Teruya, Alex Tomio<br>- Ortiz Alarcón, Víctor Nicolás | Capítulo I: Introducción<br>Capítulo II: Requirements Elicitation & Analysis<br>Capítulo III: Requirements Specification<br>Capítulo IV: Product Design<br>Capítulo V: Product Implementation, Validation & Deployment |
+| 2.0 (TP)  | 14/05/25  | - Alvarado De La Cruz, Juan Carlos<br>- Luque Minaya, Renzo Andrés<br>- Martel Andrade, Cassius Estefano<br>- Nakamurakare Teruya, Alex Tomio<br>- Ortiz Alarcón, Víctor Nicolás | Correcciones de la TB1<br>Capítulo V: Product Implementation, Validation & Deployment        |
+
 
 # Project Report Collaboration Insights
 
