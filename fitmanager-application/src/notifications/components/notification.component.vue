@@ -71,7 +71,6 @@ export default {
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .tabs button {
@@ -81,10 +80,12 @@ export default {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .tabs button.active {
-  background-color: #A7D1D2;
+  background-color: #86A7A8;
 }
 
 .tabs button:hover {
@@ -103,6 +104,5 @@ export default {
 
 .create-btn:hover {
   background-color: #A7D1D2;
-  color: white;
 }
 </style>

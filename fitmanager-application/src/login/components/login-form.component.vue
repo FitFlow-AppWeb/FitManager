@@ -239,16 +239,15 @@ button[type="button"] {
   border-radius: 50%;
 }
 
+.social-logo {
+  width: 20px;
+  height: 20px;
+}
+
 .apple-btn .social-logo {
   width: 14px;         
   height: 16px;
   display: block;
-  filter: invert(1);
-}
-
-.social-logo {
-  width: 20px;
-  height: 20px;
 }
 
 .social-login button:hover {
