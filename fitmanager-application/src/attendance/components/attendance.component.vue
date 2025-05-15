@@ -1,5 +1,9 @@
 <!--
-  Description: This component serves as a layout for displaying attendance data in two sections. On the left side, it shows a heatmap through the `HeatmapComponent`, and on the right side, it displays two additional components: `WeeklySummaryComponent` and `HistoricalSummaryComponent`. These components work together to provide a comprehensive view of attendance trends, with the heatmap offering a visual representation and the other components displaying statistical summaries. The layout is structured using two main containers: `attendance-left` and `attendance-right`.
+  This Vue component serves as a layout for displaying attendance data in two sections. On the left side, it shows a heatmap
+  through the `HeatmapComponent`, and on the right side, it displays two additional components: `WeeklySummaryComponent` and
+   `HistoricalSummaryComponent`. These components work together to provide a comprehensive view of attendance trends, with the
+  heatmap offering a visual representation and the other components displaying statistical summaries. The layout is structured
+  using two main containers: `attendance-left` and `attendance-right`.
   Author: Renzo Luque
 -->
 
