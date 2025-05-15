@@ -56,27 +56,11 @@ export default {
         <label for="email">Email</label>
       </pv-floatlabel>
 
-
-      <!-- <div class="input-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" v-model="email" required aria-label="Email" />
-      </div> -->
-
-
       <pv-floatlabel variant="on" class="input-group">
         <pv-inputtext :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" required aria-label="Contraseña" />
         <label for="password">Contraseña</label>
       </pv-floatlabel>
-
       
-      <!-- <div class="input-group">
-        <label for="password">Contraseña</label>
-        <input :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" required aria-label="Contraseña" />
-        <button type="button" @click="togglePasswordVisibility" aria-label="Toggle password visibility">
-          {{ passwordVisible ? $t('login.hide') : $t('login.show') }}
-
-        </button>
-      </div> -->
 
       <button type="submit" class="submit-btn" aria-label="Iniciar sesión">{{ $t('login.login') }}</button>
 
@@ -113,10 +97,16 @@ export default {
   max-width: 600px;
   margin: 0 auto;
   padding: 30px;
-  background-color: #fff;
+  background-color: #ffffff;
+  border: 1px solid #A7D1D2;
   border-radius: 15px;
   text-align: left;
-  font-family: 'Arial', sans-serif
+  font-family: 'Arial', sans-serif;
+  box-shadow: 
+    0 10px 20px rgba(167, 209, 210, 0.3),
+    0 20px 40px rgba(167, 209, 210, 0.2),
+    0 30px 60px rgba(167, 209, 210, 0.1),
+    0 0 0 10px rgba(167, 209, 210, 0.05);
 }
 
 h2 {
