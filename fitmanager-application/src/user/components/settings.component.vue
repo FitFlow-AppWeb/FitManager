@@ -120,7 +120,7 @@ export default {
 .settings-container {
   background: white;
   border-radius: 10px;
-  padding: 25px;
+  padding: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   height: 100%;
   display: flex;
@@ -130,7 +130,6 @@ export default {
 .section-title {
   color: #2c3e50;
   font-size: 1.4rem;
-  margin-bottom: 15px;
 }
 
 .divider {
@@ -178,14 +177,7 @@ export default {
   font-size: 1.1rem;
 }
 
-/* Ajustes para PrimeVue Dropdown */
 .p-dropdown {
-  width: 180px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-
-.p-dropdown .p-dropdown-label {
   padding: 8px 12px;
 }
 </style>

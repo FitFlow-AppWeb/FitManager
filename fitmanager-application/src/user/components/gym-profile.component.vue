@@ -67,21 +67,21 @@ export default {
 
 .section-title {
   color: #2c3e50;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-bottom: 12px;
 }
 
 .divider {
   height: 1px;
-  background-color: #a0c4e0;
-  margin-bottom: 20px;
+  background-color: #e0e0e0;
+  margin: 18px 0 38px 0;
 }
 
 .info-content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 
 .account-info {
