@@ -1,5 +1,10 @@
 <!--
-  Description: This component, WeeklySummaryComponent, fetches and displays weekly attendance data in a bar chart format. It retrieves the data using the SummaryApiService and displays attendance statistics for each day of the week. The chart dynamically updates based on the fetched data, and error or loading states are handled accordingly. Additionally, the component calculates and displays the total weekly attendance. The chart is configured with custom options for better styling and layout.
+  Description: This component, WeeklySummaryComponent, fetches and displays weekly attendance data in a bar chart format.
+  It retrieves the data using the SummaryApiService and displays attendance statistics for each day of the week. The chart
+  dynamically updates based on the fetched data, and error or loading states are handled accordingly. Additionally, the
+  component calculates and displays the total weekly attendance. The chart is configured with custom options for better
+  styling and layout.
+  
   Author: Renzo Luque
 -->
 

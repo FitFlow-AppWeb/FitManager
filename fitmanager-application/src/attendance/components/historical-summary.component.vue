@@ -1,5 +1,8 @@
 <!--
-  Description: This component, HistoricalSummary, is responsible for fetching and displaying a historical summary of weekly attendance data. It fetches the data from an API using the SummaryApiService and handles loading, error, and data display states. The summary includes various statistics like average daily attendance, absences, overall attendance rate, peak hours, and most frequent user. It shows either a loading message, an error message, or the summary data once it's available.
+  Description: This component, HistoricalSummary, is responsible for fetching and displaying a historical summary of weekly
+  attendance data. It fetches the data from an API using the SummaryApiService and handles loading, error, and data display states. 
+  The summary includes various statistics like average daily attendance, absences, overall attendance rate, peak hours, and most 
+  frequent user. It shows either a loading message, an error message, or the summary data once it's available.
   Author: Renzo Luque
   Accessibility:
     - The component uses proper aria roles and attributes for better accessibility.

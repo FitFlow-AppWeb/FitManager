@@ -2,11 +2,10 @@
 /**
  * General Information Component
  *
- * This component fetches and displays financial data for a specific month (April by default) and provides projected data for the target year (2025).
- * The data includes earnings, income, and expenses for the current month, as well as projected information for the target year.
- * The component fetches the data asynchronously using a service (`GeneralInfoApiService`).
- * It displays the data in a formatted currency style and handles loading and error states.
- * If no data is available, a "no data" message is shown.
+ * This component fetches and displays financial data for a specific month (April by default) and provides projected data for the
+ * target year (2025). The data includes earnings, income, and expenses for the current month, as well as projected information for
+ * the target year. The component fetches the data asynchronously using a service (`GeneralInfoApiService`). It displays the data in
+ * a formatted currency style and handles loading and error states. If no data is available, a "no data" message is shown.
  *
  * Author: Renzo Luque
  */
