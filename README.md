@@ -2749,6 +2749,25 @@ Finalmente, realizamos el despliegue con el comando correspondiente y así tendr
 
 #### 5.2.2.8. Team Collaboration Insights during Sprint
 
+Durante el Sprint 2, el equipo FitManager continuó aplicando la metodología ágil Scrum y las herramientas de colaboración definidas para avanzar en el desarrollo del frontend de la aplicación web. Este sprint se caracterizó por un esfuerzo coordinado en la implementación de múltiples funcionalidades clave. La comunicación se mantuvo principalmente a través de nuestro grupo de Whatsapp y Discord, realizando reuniones entre días que tuviéramos libres, y la gestión de tareas se centralizó en Pivotal Tracker.
+Planificación del Sprint:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e9a68a95-5f97-435a-9173-f74c53f07512" alt="pivotal tracker">
+</p>
+
+Uso de Herramientas de Colaboración (GitHub): 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a02e72df-e7c4-4cd0-a65c-9d5cdeed68d5" alt="herramientas de colaboración">
+</p>
+
+Evidencia de las ramas
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/47e5917f-45d6-47f0-8b28-38ef2bfe9770" alt="ramas del repositorio">
+</p>
+
 # Conclusiones
 
 * Consideramos que nuestro equipo ha realizado un esfuerzo exhaustivo en la obtención y el análisis de los requisitos. Las diversas técnicas que empleamos, incluyendo entrevistas, needfinding, creación de user personas, journey maps, y más, nos han permitido obtener una comprensión profunda de las necesidades de los usuarios y las demandas del mercado. Este enfoque integral proporciona una base sólida para el desarrollo de un producto centrado en el usuario.
