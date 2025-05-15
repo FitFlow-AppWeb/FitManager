@@ -34,7 +34,7 @@ export default {
 
 <template>
   <div class="notification-list" role="region" aria-labelledby="received-notifications-title">
-    <h3 id="received-notifications-title">Notificaciones Recibidas</h3>
+    <h3 id="received-notifications-title">{{ $t('notification.received-notifications') }}</h3>
     <div v-for="notification in notifications" :key="notification.id" class="notification-item" role="listitem" aria-labelledby="notification-title">
       <div class="notification-header">
         <span id="notification-title" class="notification-title">{{ notification.title }}</span>
@@ -42,8 +42,8 @@ export default {
       </div>
       <div class="notification-body">
         <p>{{ notification.body }}</p>
-        <p><strong>Remitente:</strong> {{ notification.sender }}</p>
-        <p><strong>Destinatarios:</strong> {{ notification.recipients.join(', ') }}</p>
+        <p><strong>{{ $t('notification.sender') }}:</strong> {{ notification.sender }}</p>
+        <p><strong>{{ $t('notification.recipients2') }}:</strong> {{ notification.recipients.join(', ') }}</p>
       </div>
     </div>
   </div>

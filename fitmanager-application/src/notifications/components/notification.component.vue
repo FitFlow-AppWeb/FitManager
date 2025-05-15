@@ -39,9 +39,9 @@ export default {
   <div class="notification-container">
     <!-- Tabs for navigating between Sent and Received notifications -->
     <div class="tabs" role="tablist">
-      <button @click="switchTab('sent')" :class="{ active: showSent }" role="tab" aria-selected="showSent">Notificaciones Enviadas</button>
-      <button @click="switchTab('received')" :class="{ active: !showSent }" role="tab" aria-selected="!showSent">Notificaciones Recibidas</button>
-      <button @click="openCreateNotificationModal" class="create-btn" aria-label="Create notification">Crear Notificación</button>
+      <button @click="switchTab('sent')" :class="{ active: showSent }" role="tab" aria-selected="showSent">{{ $t('notification.sent-notifications') }}</button>
+      <button @click="switchTab('received')" :class="{ active: !showSent }" role="tab" aria-selected="!showSent">{{ $t('notification.received-notifications') }}</button>
+      <button @click="openCreateNotificationModal" class="create-btn" aria-label="Create notification">{{ $t('notification.create-button') }}</button>
     </div>
 
     <!-- Section for Sent Notifications -->

@@ -90,12 +90,6 @@ export default {
 
 
 <style scoped>
-.dashboard-container {
-  padding: 20px;
-  background-color: #f0f2f5;
-  min-height: 100vh;
-}
-
 .top-section {
   background: white;
   border-radius: 10px;
@@ -113,7 +107,6 @@ export default {
 
 .dashboard-container {
   padding: 20px;
-  background-color: #f0f2f5; /* Fondo gris claro */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -132,15 +125,22 @@ export default {
 /* CONTENEDOR DE MITADES INFERIORES */
 .bottom-container {
   display: flex;
-  gap: 20px;
+  gap: 40px;
   flex: 1; /* Ocupa el espacio restante */
 }
 
 /* CUADROS IZQUIERDO Y DERECHO */
-.left-section, .right-section {
+.left-section {
   background: white;
   border-radius: 10px;
   padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: fit-content; /* Altura según contenido */
+}
+
+.right-section {
+  background: white;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   height: fit-content; /* Altura según contenido */
 }
@@ -154,23 +154,6 @@ export default {
 
 .left-section, .right-section {
   flex: 1;
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  height: fit-content; /* Ajusta altura al contenido */
-  max-height: 400px; /* Altura máxima opcional */
-  overflow-y: auto; /* Scroll si el contenido excede la altura */
 }
 
-/* Versión móvil */
-@media (max-width: 768px) {
-  .bottom-container {
-    flex-direction: column;
-  }
-
-  .left-section, .right-section {
-    max-height: none; /* Eliminamos límite en móvil */
-  }
-}
 </style>

@@ -73,14 +73,15 @@ export default {
         <label for="password">Contraseña</label>
         <input :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" required aria-label="Contraseña" />
         <button type="button" @click="togglePasswordVisibility" aria-label="Toggle password visibility">
-          {{ passwordVisible ? 'Ocultar' : 'Mostrar' }}
+          {{ passwordVisible ? $t('login.hide') : $t('login.show') }}
+
         </button>
       </div> -->
 
-      <button type="submit" class="submit-btn" aria-label="Iniciar sesión">Iniciar Sesión</button>
+      <button type="submit" class="submit-btn" aria-label="Iniciar sesión">{{ $t('login.login') }}</button>
 
       <p class="forgot-password">
-        <a href="#" aria-label="Olvidé mi contraseña">Olvidé mi contraseña</a>
+        <a href="#" aria-label="Olvidé mi contraseña">{{ $t('login.forget') }}</a>
       </p>
     </form>
 

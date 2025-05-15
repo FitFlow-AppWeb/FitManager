@@ -16,7 +16,7 @@ export default {
 
 <template>
   <div class="create-account-btn">
-    <button @click="goToCreateAccount">Crear Cuenta</button>
+    <button @click="goToCreateAccount">{{ $t('login.register') }}</button>
   </div>
 </template>
 

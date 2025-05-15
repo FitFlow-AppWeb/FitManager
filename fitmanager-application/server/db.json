@@ -2822,7 +2822,7 @@
       "avatar": "/assets/logo-profile.PNG",
       "gymLogo": "/assets/gimnasio-profile.PNG",
       "settings": {
-        "language": "Español",
+        "language": "English",
         "units": "kg/cm",
         "timezone": "GMT-5",
         "notifications": "disabled",
@@ -2860,6 +2860,116 @@
         "disparities": "Vendrides 2",
         "planAssist": "Active"
       }
+    },
+    {
+      "id": "3",
+      "display": "assd",
+      "email": "asd",
+      "icon": "asd",
+      "password": "asd",
+      "phrase": "asd",
+      "order": [],
+      "subscription": false
+    },
+    {
+      "id": "4",
+      "display": "assd",
+      "email": "asd",
+      "icon": "asd",
+      "password": "asd",
+      "phrase": "asd",
+      "order": [],
+      "subscription": false
+    },
+    {
+      "id": "5",
+      "display": "assd",
+      "email": "asd",
+      "icon": "asd",
+      "password": "asd",
+      "phrase": "asd",
+      "order": [],
+      "subscription": false
+    },
+    {
+      "id": "6",
+      "display": "assd",
+      "email": "asd",
+      "icon": "asd",
+      "password": "asd",
+      "phrase": "asd",
+      "order": [],
+      "subscription": false
+    },
+    {
+      "id": "7",
+      "display": "assd",
+      "email": "asd",
+      "icon": "asd",
+      "password": "asd",
+      "phrase": "asd",
+      "order": [],
+      "subscription": false
+    },
+    {
+      "id": "8",
+      "display": "assd",
+      "email": "asd",
+      "icon": "asd",
+      "password": "asd",
+      "phrase": "asd",
+      "order": [],
+      "subscription": false
+    },
+    {
+      "id": "9",
+      "display": "assd",
+      "email": "asd",
+      "icon": "asd",
+      "password": "asd",
+      "phrase": "asd",
+      "order": [],
+      "subscription": false
+    },
+    {
+      "id": "10",
+      "display": "assd",
+      "email": "asd",
+      "icon": "asd",
+      "password": "asd",
+      "phrase": "asd",
+      "order": [],
+      "subscription": false
+    },
+    {
+      "id": "11",
+      "display": "assd",
+      "email": "asd",
+      "icon": "asd",
+      "password": "asd",
+      "phrase": "asd",
+      "order": [],
+      "subscription": false
+    },
+    {
+      "id": "12",
+      "display": "assd",
+      "email": "asd",
+      "icon": "asd",
+      "password": "asd",
+      "phrase": "asd",
+      "order": [],
+      "subscription": false
+    },
+    {
+      "id": "13",
+      "display": "asd",
+      "email": "asd",
+      "icon": "asd",
+      "password": "asd",
+      "phrase": "asd",
+      "order": [],
+      "subscription": false
     }
   ],
   "inventory": [

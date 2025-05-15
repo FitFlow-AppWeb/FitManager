@@ -48,36 +48,36 @@ export default {
 <template>
   <div v-if="showModal" class="modal-overlay" role="dialog" aria-labelledby="modalTitle" aria-hidden="false">
     <div class="modal" role="document">
-      <h2 id="modalTitle">Crear Notificación</h2>
+      <h2 id="modalTitle">{{ $t('notification.create-button') }}</h2>
       <form @submit.prevent="submitForm">
         <!-- Title -->
         <div class="input-group">
-          <label for="title">Título</label>
+          <label for="title">{{ $t('notification.title') }}</label>
           <input type="text" id="title" v-model="title" required aria-required="true" />
         </div>
 
         <!-- Body -->
         <div class="input-group">
-          <label for="body">Cuerpo</label>
+          <label for="body">{{ $t('notification.body') }}</label>
           <textarea id="body" v-model="body" required aria-required="true"></textarea>
         </div>
 
         <!-- Recipients -->
         <div class="input-group">
-          <label for="recipients">Destinatarios (separados por coma)</label>
+          <label for="recipients">{{ $t('notification.recipients') }}</label>
           <input type="text" id="recipients" v-model="recipients" required aria-required="true" />
         </div>
 
         <!-- Date -->
         <div class="input-group">
-          <label for="date">Fecha</label>
+          <label for="date">{{ $t('notification.date') }}</label>
           <input type="datetime-local" id="date" v-model="date" required aria-required="true" />
         </div>
 
         <!-- Buttons -->
         <div class="modal-buttons">
-          <button type="submit" class="submit-btn" aria-label="Create notification">Crear Notificación</button>
-          <button type="button" @click="closeModal" class="cancel-btn" aria-label="Cancel creating notification">Cancelar</button>
+          <button type="submit" class="submit-btn" aria-label="Create notification">{{ $t('notification.create-button') }}</button>
+          <button type="button" @click="closeModal" class="cancel-btn" aria-label="Cancel creating notification">{{ $t('notification.cancel') }}</button>
         </div>
       </form>
     </div>

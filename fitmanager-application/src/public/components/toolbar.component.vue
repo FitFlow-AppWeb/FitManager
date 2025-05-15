@@ -39,6 +39,7 @@ import Button from 'primevue/button';
 
 .app-card {
   display: flex;
+  min-height: 70px;
   height: 70px;
   width: 100%;
 }
