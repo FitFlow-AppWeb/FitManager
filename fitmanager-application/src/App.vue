@@ -28,5 +28,14 @@ const handleLoginSuccess = (authenticated) => {
 <style scoped>
 #app {
   font-family: 'Arial', sans-serif;
+  height: 100%;
+}
+</style>
+
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 </style>
