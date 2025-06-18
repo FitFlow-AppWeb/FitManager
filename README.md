@@ -1088,110 +1088,169 @@ Lista de Términos
 | **User Story ID** | TS01 |
 |-------------------|------|
 | **Epic ID** | EP07 |
-| **Title** | Consultar Disponibilidad de Clases en el Sistema |
-| **Description** | Como desarrollador, quiero que el RESTful API permita consultar la disponibilidad de clases y entrenadores, para que la plataforma de FitManager pueda mostrar horarios actualizados en tiempo real a los usuarios. |
-| **Acceptance Criteria #1** | Dado que el desarrollador está haciendo una solicitud a la API, <br> Cuando se consulta la disponibilidad de clases, <br> Entonces la API debe devolver un listado actualizado de las clases disponibles, incluyendo la información de fecha, hora, entrenadores asignados y cupos disponibles. |
-| **Acceptance Criteria #2** | Dado que el desarrollador realiza una consulta para ver la disponibilidad de un entrenador, <br> Cuando se consulta la disponibilidad de un entrenador específico, <br> Entonces la API debe devolver una lista de las clases en las que el entrenador está asignado y la disponibilidad correspondiente. |
+| **Title** | Gestión de Miembros y Tipos de Membresía en la API |
+| **Description** | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los miembros y consultar los tipos de membresía, para interactuar de forma eficiente con el sistema de gimnasio. |
+| **Acceptance Criteria #1** | Dado que el desarrollador se encuentra en una aplicación cliente para la gestión de miembros <br> Cuando el desarrollador realiza una solicitud POST a `/api/v1/Member` con los datos completos y válidos de un nuevo miembro (incluyendo un `membershipTypeId` existente) <br> Entonces el sistema debe crear un nuevo registro de miembro, devolver un estado `201 Created` y los datos del miembro recién creado. |
+| **Acceptance Criteria #2** | Dado que el desarrollador se encuentra en una aplicación cliente para la gestión de miembros <br> Cuando el desarrollador realiza una solicitud GET a `/api/v1/Member` <br> Entonces el sistema debe devolver un estado `200 OK` y una lista de todos los miembros registrados, incluyendo su estado de membresía y tipo de membresía asociado. |
+| **Acceptance Criteria #3** | Dado que existe un miembro registrado en el sistema con un ID específico <br> Cuando el desarrollador realiza una solicitud PUT a `/api/v1/Member/{id}` con el ID del miembro y los datos actualizados <br> Entonces el sistema debe actualizar los datos del miembro, devolver un estado `200 OK` y los datos del miembro actualizado. |
+| **Acceptance Criteria #4** | Dado que existe un miembro registrado en el sistema con un ID específico <br> Cuando el desarrollador realiza una solicitud DELETE a `/api/v1/Member/{id}` <br> Entonces el sistema debe eliminar el registro del miembro, devolver un estado `204 No Content`, y el miembro ya no debe aparecer en las listas. |
+| **Acceptance Criteria #5** | Dado que el desarrollador se encuentra en una aplicación cliente que necesita conocer los tipos de membresía disponibles <br> Cuando el desarrollador realiza una solicitud GET a `/api/v1/MembershipType` <br> Entonces el sistema debe devolver un estado `200 OK` y una lista de todos los tipos de membresía existentes en el sistema. |
 
 | **User Story ID** | TS02 |
 |-------------------|------|
 | **Epic ID** | EP07 |
-| **Title** | Crear y Gestionar Reservas de Clases |
-| **Description** | Como desarrollador, quiero que el API permita a los usuarios crear, cancelar y modificar reservas de clases, para que FitManager pueda gestionar las interacciones entre clientes y entrenadores. |
-| **Acceptance Criteria #1** | Dado que un cliente desea reservar una clase, <br> Cuando el cliente envía una solicitud de reserva a la API, <br> Entonces la API debe verificar la disponibilidad de la clase <br> Y, si está disponible, crear la reserva, devolviendo una confirmación con los detalles de la clase reservada (fecha, hora, entrenador y nombre del cliente). |
-| **Acceptance Criteria #2** | Dado que un cliente desea cancelar una reserva, <br> Cuando el cliente envía una solicitud de cancelación a la API, <br> Entonces la API debe cancelar la reserva y liberar el espacio en la clase, devolviendo una confirmación de la cancelación. |
-| **Acceptance Criteria #3** | Dado que un cliente intenta hacer una reserva para una clase llena, <br> Cuando el cliente envía la solicitud de reserva, <br> Entonces la API debe devolver un mensaje de error indicando que la clase está completa. |
+| **Title** | Gestión de Clases en la API |
+| **Description** | Como desarrollador, quiero que la RESTful API me permita gestionar completamente las clases, para que los administradores del gimnasio puedan programar, actualizar y cancelar actividades. |
+| **Acceptance Criteria #1** | Dado que el desarrollador se encuentra en una aplicación cliente para la gestión de clases <br> Cuando el desarrollador realiza una solicitud POST a `/api/v1/Classes` con los datos completos y válidos de una nueva clase (incluyendo IDs de recursos relacionados si aplica, como un instructor o tipo de clase) <br> Entonces el sistema debe crear un nuevo registro de clase, devolver un estado `201 Created` y los datos de la clase recién creada. |
+| **Acceptance Criteria #2** | Dado que el desarrollador se encuentra en una aplicación cliente para la gestión de clases <br> Cuando el desarrollador realiza una solicitud GET a `/api/v1/Classes` <br> Entonces el sistema debe devolver un estado `200 OK` y una lista de todas las clases programadas, incluyendo detalles como horario, capacidad y instructor asignado. |
+| **Acceptance Criteria #3** | Dado que existe una clase programada en el sistema con un ID específico <br> Cuando el desarrollador realiza una solicitud PUT a `/api/v1/Classes/{id}` con el ID de la clase y los datos actualizados <br> Entonces el sistema debe actualizar los datos de la clase (como horario, capacidad o instructor), devolver un estado `200 OK` y los datos de la clase actualizada. |
+| **Acceptance Criteria #4** | Dado que existe una clase programada en el sistema con un ID específico <br> Cuando el desarrollador realiza una solicitud DELETE a `/api/v1/Classes/{id}` <br> Entonces el sistema debe eliminar (o marcar como cancelada) el registro de la clase, devolver un estado `204 No Content`, y la clase ya no debe aparecer en las listas de clases activas/programadas. |
 
 | **User Story ID** | TS03 |
 |-------------------|------|
 | **Epic ID** | EP07 |
-| **Title** | Registrar Clientes y Personal |
-| **Description** | Como desarrollador, quiero que el API permita crear y gestionar perfiles de clientes y personal, para que FitManager pueda almacenar y actualizar la información relevante para los usuarios. |
-| **Acceptance Criteria #1** | Dado que un administrador quiere registrar un nuevo cliente, <br> Cuando el administrador envía una solicitud con la información del cliente (nombre, correo electrónico, teléfono, etc.), <br> Entonces la API debe crear un perfil de cliente y devolver una confirmación con los detalles del cliente registrado, incluyendo un ID único de cliente. |
-| **Acceptance Criteria #2** | Dado que un administrador desea actualizar la información de un cliente, <br> Cuando el administrador envía una solicitud con los nuevos detalles del cliente, <br> Entonces la API debe actualizar los datos del cliente y devolver una confirmación de que la información fue actualizada correctamente. |
-| **Acceptance Criteria #3** | Dado que un administrador quiere registrar un nuevo miembro del personal (entrenador o personal administrativo), <br> Cuando el administrador envía una solicitud con la información del personal (nombre, rol, correo electrónico, teléfono, etc.), <br> Entonces la API debe crear un perfil de personal y devolver una confirmación con los detalles del perfil registrado, incluyendo un ID único de personal. |
-| **Acceptance Criteria #4** | Dado que un administrador desea actualizar los detalles de un miembro del personal, <br> Cuando el administrador envía una solicitud con los nuevos detalles del personal, <br> Entonces la API debe actualizar la información del miembro del personal y devolver una confirmación de que la actualización fue exitosa. |
+| **Title** | Gestión de Reservas y Asistencia de Clases en la API |
+| **Description** | Como desarrollador, quiero que la RESTful API me permita registrar la asistencia y consultar las reservas y asistencias de clases, para que los administradores del gimnasio puedan llevar un control del uso de las clases. |
+| **Acceptance Criteria #1** | Dado que el desarrollador se encuentra en una aplicación cliente para la gestión de asistencia <br> Cuando el desarrollador realiza una solicitud POST a `/api/v1/Attendances` con los datos necesarios (ej. `MemberId`, `ClassId`, `Date`) <br> Entonces el sistema debe crear un nuevo registro, devolver `201 Created` y los datos de la asistencia registrada. |
+| **Acceptance Criteria #2** | Dado que el desarrollador necesita ver quiénes asistieron a una clase específica <br> Cuando realiza una solicitud GET a `/api/v1/Attendances/class/{classId}` <br> Entonces el sistema debe devolver `200 OK` y una lista de asistencias para esa clase, incluyendo datos del miembro y la fecha de asistencia. |
+| **Acceptance Criteria #3** | Dado que el desarrollador necesita ver quiénes han reservado una clase específica <br> Cuando realiza una solicitud GET a `/api/v1/Bookings/class/{classId}` <br> Entonces el sistema debe devolver `200 OK` y una lista de reservas registradas para esa clase, incluyendo datos del miembro y la fecha de reserva. |
+
+| **User Story ID** | TS04 |
+|-------------------|------|
+| **Epic ID** | EP07 |
+| **Title** | Gestión de Empleados en la API |
+| **Description** | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los empleados, para que los administradores del gimnasio puedan mantener actualizada la información del personal. |
+| **Acceptance Criteria #1** | Dado que el desarrollador se encuentra en una aplicación cliente para la gestión de empleados <br> Cuando realiza una solicitud POST a `/api/v1/Employee` con los datos completos y válidos <br> Entonces el sistema debe crear un nuevo empleado, devolver `201 Created` y los datos del empleado recién creado. |
+| **Acceptance Criteria #2** | Dado que el desarrollador se encuentra en una aplicación cliente <br> Cuando realiza una solicitud GET a `/api/v1/Employee` <br> Entonces el sistema debe devolver `200 OK` y una lista de todos los empleados registrados. |
+| **Acceptance Criteria #3** | Dado que existe un empleado con un ID específico <br> Cuando realiza una solicitud PUT a `/api/v1/Employee/{id}` con los datos actualizados <br> Entonces el sistema debe actualizar los datos del empleado, devolver `200 OK` y los datos actualizados. |
+| **Acceptance Criteria #4** | Dado que existe un empleado con un ID específico <br> Cuando realiza una solicitud DELETE a `/api/v1/Employee/{id}` <br> Entonces el sistema debe eliminar el registro, devolver `204 No Content` y el empleado ya no debe aparecer en las listas. |
+
+| **User Story ID** | TS05 |
+|-------------------|------|
+| **Epic ID** | EP07 |
+| **Title** | Gestión de Inventario en la API |
+| **Description** | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los ítems del inventario, para que los administradores del gimnasio puedan controlar los productos disponibles. |
+| **Acceptance Criteria #1** | Dado que el desarrollador se encuentra en una aplicación cliente para la gestión de inventario <br> Cuando realiza una solicitud POST a `/api/v1/Item` con los datos completos y válidos de un nuevo ítem <br> Entonces el sistema debe crear un nuevo registro, devolver `201 Created` y los datos del ítem recién creado. |
+| **Acceptance Criteria #2** | Dado que el desarrollador se encuentra en una aplicación cliente para la gestión de inventario <br> Cuando realiza una solicitud GET a `/api/v1/Item` <br> Entonces el sistema debe devolver `200 OK` y una lista de todos los ítems registrados en el inventario. |
+| **Acceptance Criteria #3** | Dado que existe un ítem registrado con un ID específico <br> Cuando realiza una solicitud PUT a `/api/v1/Item/{id}` con los datos actualizados <br> Entonces el sistema debe actualizar el ítem, devolver `200 OK` y los datos del ítem actualizado. |
+| **Acceptance Criteria #4** | Dado que existe un ítem registrado con un ID específico <br> Cuando realiza una solicitud DELETE a `/api/v1/Item/{id}` <br> Entonces el sistema debe eliminar el ítem, devolver `204 No Content` y el ítem ya no debe aparecer en las listas. |
+
+| **User Story ID** | TS06 |
+|-------------------|------|
+| **Epic ID** | EP07 |
+| **Title** | Gestión de Membresías y Salarios en la API |
+| **Description** | Como desarrollador, quiero que la RESTful API me permita registrar y listar pagos de membresías y salarios, para que los administradores del gimnasio puedan llevar un control financiero. |
+| **Acceptance Criteria #1** | Dado que el desarrollador se encuentra en una aplicación cliente para la gestión de pagos de membresía <br> Cuando realiza una solicitud POST a `/api/v1/MembershipPayment` con los datos completos y válidos (ej. `MemberId`, `Amount`, `PaymentDate`) <br> Entonces el sistema debe crear un nuevo registro, devolver `201 Created` y los datos del pago recién registrado. |
+| **Acceptance Criteria #2** | Dado que el desarrollador necesita consultar los pagos de membresía <br> Cuando realiza una solicitud GET a `/api/v1/MembershipPayment` <br> Entonces el sistema debe devolver `200 OK` y una lista de todos los pagos de membresía registrados. |
+| **Acceptance Criteria #3** | Dado que el desarrollador se encuentra en una aplicación cliente para la gestión de pagos de salario <br> Cuando realiza una solicitud POST a `/api/v1/SalaryPayment` con los datos completos y válidos (ej. `EmployeeId`, `Amount`, `PaymentDate`) <br> Entonces el sistema debe crear un nuevo registro, devolver `201 Created` y los datos del pago recién registrado. |
+| **Acceptance Criteria #4** | Dado que el desarrollador necesita consultar los pagos de salario <br> Cuando realiza una solicitud GET a `/api/v1/SalaryPayment` <br> Entonces el sistema debe devolver `200 OK` y una lista de todos los pagos de salario registrados. |
+
+| **User Story ID** | TS07 |
+|-------------------|------|
+| **Epic ID** | EP07 |
+| **Title** | Gestión de Compras de Insumos en la API |
+| **Description** | Como desarrollador, quiero que la RESTful API me permita registrar y consultar las compras de insumos, incluyendo sus detalles, para que los administradores del gimnasio puedan llevar un control preciso de las adquisiciones. |
+| **Acceptance Criteria #1** | Dado que el desarrollador se encuentra en una aplicación cliente para la gestión de compras de insumos <br> Cuando realiza una solicitud POST a `/api/v1/SupplyPurchase` con los datos completos y válidos (incluyendo detalles de los ítems comprados) <br> Entonces el sistema debe crear un nuevo registro de compra de insumos y sus detalles, devolver `201 Created` y los datos registrados. |
+| **Acceptance Criteria #2** | Dado que el desarrollador necesita consultar compras de insumos <br> Cuando realiza una solicitud GET a `/api/v1/SupplyPurchase` <br> Entonces el sistema debe devolver `200 OK` y una lista de todas las compras registradas, con sus respectivos detalles. |
+
+| **User Story ID** | TS08 |
+|-------------------|------|
+| **Epic ID** | EP07 |
+| **Title** | Gestión de Notificaciones en la API |
+| **Description** | Como desarrollador, quiero que la RESTful API me permita enviar y listar notificaciones tanto para miembros como para empleados, para facilitar la comunicación y la gestión interna del gimnasio. |
+| **Acceptance Criteria #1** | Dado que el desarrollador necesita enviar un mensaje a un miembro <br> Cuando realiza una solicitud POST a `/api/v1/MemberNotifications` con los datos válidos (`MemberId`, `Message`, `Subject`, `DateSent`) <br> Entonces el sistema debe crear un nuevo registro, devolver `201 Created` y los datos de la notificación enviada. |
+| **Acceptance Criteria #2** | Dado que el desarrollador necesita ver las notificaciones enviadas a miembros <br> Cuando realiza una solicitud GET a `/api/v1/MemberNotifications` <br> Entonces el sistema debe devolver `200 OK` y una lista con los detalles de todas las notificaciones. |
+| **Acceptance Criteria #3** | Dado que el desarrollador necesita enviar un mensaje a un empleado <br> Cuando realiza una solicitud POST a `/api/v1/StaffNotifications` con los datos válidos (`EmployeeId`, `Message`, `Subject`, `DateSent`) <br> Entonces el sistema debe crear un nuevo registro, devolver `201 Created` y los datos de la notificación enviada. |
+| **Acceptance Criteria #4** | Dado que el desarrollador necesita ver las notif
+
+| **User Story ID** | TS09 |
+|-------------------|------|
+| **Epic ID** | EP07 |
+| **Title** | Internacionalización del Backend de la API |
+| **Description** | Como desarrollador, quiero que el backend de la API sea capaz de traducir sus mensajes y errores de validación a diferentes idiomas, para que la aplicación pueda mostrar información localizada a usuarios de distintas regiones sin cambiar la lógica principal. |
+| **Acceptance Criteria #1** | Dado que el backend necesita enviar mensajes al frontend <br> Cuando se realiza una solicitud con un idioma especificado <br> Entonces los mensajes de respuesta deben ser devueltos en ese idioma, o en uno predeterminado si no está soportado. |
+| **Acceptance Criteria #2** | Dado que se validan modelos de entrada <br> Cuando se produce un error de validación <br> Entonces el mensaje de error debe mostrarse en el idioma solicitado por el cliente, si está disponible. |
+| **Acceptance Criteria #3** | Dado que se requiere gestionar textos traducibles <br> Cuando el sistema necesita recuperar un mensaje <br> Entonces debe utilizar un mecanismo centrali
 
 ### 3.2.4. Epicas
 
 | **Epic ID** | EP01 |
 |-------------|------|
-| **Title**   | Gestión de reservas y horarios |
+| **Title** | Gestión de Reservas y Horarios |
 | **Description** | Como usuario, quiero una plataforma que permita visualizar horarios, gestionar y realizar reservas de clases de manera eficiente, para garantizar una experiencia fluida, organizada y sin sobrecupo en las sesiones de entrenamiento. |
-| **User Story ID** | US01 |
-| **Título** | Visualización de horarios |
-| **User Story ID** | US02 |
-| **Título** | Gestión de calendario |
-| **User Story ID** | US03 |
-| **Título** | Reservar clases |
+| **User Story ID** | **Título** |
+| US01 | Visualización de horarios |
+| US02 | Gestión de calendario |
+| US03 | Reservar clases |
 
 | **Epic ID** | EP02 |
 |-------------|------|
-| **Title** | Seguimiento personalizado del entrenamiento |
+| **Title** | Seguimiento Personalizado del Entrenamiento |
 | **Description** | Como usuario, quiero una funcionalidad para registrar el progreso físico y consultar rutinas personalizadas, para mejorar la constancia, motivación y resultados de los entrenamientos. |
-| **User Story ID** | US04 |
-| **Título** | Registrar y consultar el progreso físico |
-| **User Story ID** | US05 |
-| **Título** | Visualizar rutina personalizada |
+| **User Story ID** | **Título** |
+| US04 | Registrar y consultar el progreso físico |
+| US05 | Visualizar rutina personalizada |
 
 | **Epic ID** | EP03 |
 |-------------|------|
-| **Title** | Gestión y pago de membresías online |
+| **Title** | Gestión y Pago de Membresías Online |
 | **Description** | Como administrador del gimnasio y como cliente, quiero contar con opciones para gestionar y realizar pagos de membresías desde la plataforma, para facilitar las transacciones, evitar retrasos y mejorar la organización financiera del gimnasio. |
-| **User Story ID** | US06 |
-| **Título** | Gestionar finanzas |
-| **User Story ID** | US07 |
-| **Título** | Realizar pagos de membresía desde la app |
+| **User Story ID** | **Título** |
+| US06 | Gestionar finanzas |
+| US07 | Realizar pagos de membresía desde la app |
 
 | **Epic ID** | EP04 |
 |-------------|------|
-| **Title** | Gestión de perfiles y personal del gimnasio |
+| **Title** | Gestión de Perfiles y Personal del Gimnasio |
 | **Description** | Como administrador del gimnasio, quiero gestionar los perfiles tanto del personal como de los clientes, para mantener organizada y actualizada la información de todos los involucrados en el funcionamiento del gimnasio, facilitar la administración interna y mejorar la atención a los usuarios. |
-| **User Story ID** | US08 |
-| **Título** | Registrar nuevo cliente en la plataforma |
-| **User Story ID** | US09 |
-| **Título** | Consultar historial de asistencias general |
-| **User Story ID** | US10 |
-| **Título** | Gestionar clases |
-| **User Story ID** | US11 |
-| **Título** | Gestionar personal del gimnasio |
-| **User Story ID** | US17 |
-| **Título** | Gestión de inventario |
-| **User Story ID** | US20 |
-| **Título** | Gestionar clientes del gimnasio |
-| **User Story ID** | US21 |
-| **Título** | Visualización del Dashboard |
+| **User Story ID** | **Título** |
+| US08 | Registrar nuevo cliente en la plataforma |
+| US09 | Consultar historial de asistencias general |
+| US10 | Gestionar clases |
+| US11 | Gestionar personal del gimnasio |
+| US17 | Gestión de inventario |
+| US20 | Gestionar clientes del gimnasio |
+| US21 | Visualización del Dashboard |
 
 | **Epic ID** | EP05 |
 |-------------|------|
-| **Title** | Sistema de notificaciones |
-| **Description** | Como administrador o cliente del gimnasio, quiero recibir notificaciones administrativas y personalizadas, para mantenerte informado de manera oportuna y mejorar la comunicación con la plataforma. |
-| **User Story ID** | US12 |
-| **Título** | Notificaciones sobre actualizaciones administrativas |
-| **User Story ID** | US13 |
-| **Título** | Notificaciones según mi actividad personal |
+| **Title** | Sistema de Notificaciones |
+| **Description** | Como administrador o cliente del gimnasio, quiero recibir notificaciones administrativas y personalizadas, para mantenerme informado de manera oportuna y mejorar la comunicación con la plataforma. |
+| **User Story ID** | **Título** |
+| US12 | Notificaciones sobre actualizaciones administrativas |
+| US13 | Notificaciones según mi actividad personal |
 
 | **Epic ID** | EP06 |
 |-------------|------|
 | **Title** | Landing Page |
 | **Description** | Como visitante del sitio web de FitManager, quiero acceder fácilmente a información clara y detallada sobre la plataforma, sus beneficios, precios y funcionalidades, para evaluar si se adapta a las necesidades de mi gimnasio o como cliente potencial. |
-| **User Story ID** | US14 |
-| **Título** | Información General sobre FitManager |
-| **User Story ID** | US15 |
-| **Título** | Registro para una Demo o Consulta |
-| **User Story ID** | US16 |
-| **Título** | Acceso a Precios y Paquetes de FitManager |
+| **User Story ID** | **Título** |
+| US14 | Información General sobre FitManager |
+| US15 | Registro para una Demo o Consulta |
+| US16 | Acceso a Precios y Paquetes de FitManager |
 
 | **Epic ID** | EP07 |
 |-------------|------|
 | **Title** | RESTful API |
 | **Description** | Como desarrollador, quiero implementar y mantener los endpoints del RESTful API necesarios para las funciones clave de la plataforma, como gestión de clases, reservas, perfiles y pagos, para asegurar la operatividad y escalabilidad del sistema. |
-| **User Story ID** | TS01 |
-| **Título** | Consultar Disponibilidad de Clases en el Sistema |
-| **User Story ID** | TS02 |
-| **Título** | Crear y Gestionar Reservas de Clases |
-| **User Story ID** | TS03 |
-| **Título** | Registrar Clientes y Personal |
+| **Technical Story ID** | **Título** |
+| TS01 | Gestión de Miembros y Tipos de Membresía en la API |
+| TS02 | Gestión de Clases en la API |
+| TS03 | Gestión de Reservas y Asistencia de Clases en la API |
+| TS04 | Gestión de Empleados en la API |
+| TS05 | Gestión de Inventario en la API |
+| TS06 | Gestión de Membresías y Salarios en la API |
+| TS07 | Gestión de Compras de Insumos en la API |
+| TS08 | Gestión de Notificaciones en la API |
+| TS09 | Internacionalización del Backend de la API |
+
+| **Epic ID** | EP08 |
+|-------------|------|
+| **Title** | Internacionalización y Accesibilidad de Usuarios |
+| **Description** | Como usuario de la plataforma, quiero poder acceder a la aplicación en mi idioma preferido y con soporte para tecnologías de asistencia como lectores de pantalla, para asegurar una experiencia inclusiva, accesible y adaptada a mis necesidades. |
+| **User Story ID** | **Título** |
+| US18 | Visualización en múltiples idiomas |
+| US19 | Accesibilidad para lectores de pantalla |
 
 ## 3.3. Impact Mapping
 
@@ -1235,27 +1294,32 @@ Objetivo SMART: Obtener 50 formularios de contacto para demo o consulta desde la
 | 2  | US02 | Como administrador, quiero poder gestionar y modificar la información mostrada en el calendario de clases, incluyendo la adición de nuevas clases y la visualización de la programación, para asegurar que los clientes siempre tengan una visión clara y actualizada de la disponibilidad de las clases. | 3 |
 | 3  | US20 | Como administrador del gimnasio, quiero poder gestionar la información de los clientes del gimnasio para mantener un registro actualizado, agregar nuevos clientes y editar la información existente, asegurando que toda la base de datos esté organizada y sea fácilmente accesible. | 5 |
 | 4  | US01 | Como usuario, quiero acceder a un calendario con los horarios de todas las clases para planificar fácilmente la programación y disponibilidad. | 3 |
-| 5  | TS01 | Como desarrollador, quiero que el RESTful API permita consultar la disponibilidad de clases y entrenadores, para que la plataforma de FitManager pueda mostrar horarios actualizados en tiempo real a los usuarios. | 5 |
-| 6  | TS02 | Como desarrollador, quiero que el API permita a los usuarios crear, cancelar y modificar reservas de clases, para que FitManager pueda gestionar las interacciones entre clientes y entrenadores. | 5 |
-| 7  | TS03 | Como desarrollador, quiero que el API permita crear y gestionar perfiles de clientes y personal, para que FitManager pueda almacenar y actualizar la información relevante para los usuarios. | 5 |
+| 5  | TS02 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente las clases, para que los administradores del gimnasio puedan programar, actualizar y cancelar actividades. | 2 |
+| 6  | TS01 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los miembros y consultar los tipos de membresía, para interactuar de forma eficiente con el sistema de gimnasio. | 2 |
+| 7  | TS04 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los empleados, para que los administradores del gimnasio puedan mantener actualizada la información del personal. | 2 |
 | 8  | US06 | Como administrador del gimnasio, quiero ver y gestionar el estado de pagos de cada cliente para llevar un control eficiente de membresías activas e inactivas. | 5 |
-| 9  | US17 | Como administrador del gimnasio, quiero gestionar los ítems del inventario, para mantener un control actualizado y ordenado de los recursos y equipos disponibles en el gimnasio. | 3 |
-| 10 | US07 | Como cliente del gimnasio, quiero pagar mi membresía desde la app usando mi tarjeta o billetera digital para mantener mi suscripción activa fácilmente. | 5 |
-| 11 | US04 | Como cliente, quiero registrar y visualizar mi progreso físico dentro de la app para evaluar mi evolución y mantenerme motivado. | 3 |
-| 12 | US10 | Como administrador del gimnasio, quiero poder gestionar las clases ofrecidas por el gimnasio para mantener actualizada la programación. | 3 |
-| 13 | US08 | Como cliente, quiero poder crear mi perfil para llevar un control de mi información personal y actividad dentro del gimnasio. | 3 |
-| 14 | US09 | Como entrenador, quiero poder ver un historial general de asistencias de todos los clientes para analizar tendencias de asistencia, evaluar el compromiso de los miembros y ajustar las clases según la demanda. | 3 |
-| 15 | US12 | Como administrador o entrenador, quiero recibir notificaciones administrativas relevantes para mantenerme informado sobre situaciones importantes relacionadas con la operación del gimnasio. | 3 |
-| 16 | US13 | Como cliente del gimnasio, quiero recibir notificaciones personalizadas según mis clases. | 3 |
-| 17 | US14 | Como visitante del sitio web de FitManager, quiero obtener información clara sobre las características y beneficios de la plataforma, para decidir si encaja con las necesidades de mi gimnasio. | 3 |
-| 18 | US15 | Como visitante interesado, quiero registrarme para solicitar una demo personalizada o más información sobre FitManager, para poder explorar cómo puede mejorar la gestión de mi gimnasio | 2 |
-| 19 | US21 | Como administrador, quiero tener una vista general del rendimiento y la actividad del gimnasio en un solo lugar, incluyendo métricas clave de miembros, asistencia y finanzas, para poder obtener una comprensión rápida del estado actual del negocio y tomar decisiones informadas. | 2 |
-| 20 | US16 | Como visitante, quiero ver los precios y paquetes disponibles para FitManager, para poder decidir si la plataforma se ajusta a mi presupuesto y necesidades. | 2 |
-| 21 | US05 | Como cliente, quiero ver mi rutina personalizada de entrenamiento en la plataforma para seguirla paso a paso durante mis sesiones. | 5 |
-| 22 | US11 | Como administrador del gimnasio, quiero poder gestionar al personal del gimnasio para mantener un control organizado sobre los entrenadores y otros empleados. | 5 |
-| 23 | US18 | Como usuario, quiero poder visualizar la aplicación en inglés o español, para entender fácilmente la información según mi idioma preferido. | 2 |
-| 24 | US19 | Como usuario que usa un lector de pantalla, quiero poder navegar y entender la plataforma fácilmente con herramientas de asistencia, para tener una experiencia de uso fluida y sin barreras. | 2 |
-
+| 9  | TS03 | Como desarrollador, quiero que la RESTful API me permita registrar la asistencia y consultar las reservas y asistencias de clases, para que los administradores del gimnasio puedan llevar un control del uso de las clases. | 2 |
+| 10 | US17 | Como administrador del gimnasio, quiero gestionar los ítems del inventario, para mantener un control actualizado y ordenado de los recursos y equipos disponibles en el gimnasio. | 3 |
+| 11 | TS05 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los ítems del inventario, para que los administradores del gimnasio puedan controlar los productos disponibles. | 2 |
+| 12 | US07 | Como cliente del gimnasio, quiero pagar mi membresía desde la app usando mi tarjeta o billetera digital para mantener mi suscripción activa fácilmente. | 5 |
+| 13 | TS06 | Como desarrollador, quiero que la RESTful API me permita registrar y listar pagos de membresías y salarios, para que los administradores del gimnasio puedan llevar un control financiero. | 2 |
+| 14 | TS07 | Como desarrollador, quiero que la RESTful API me permita registrar y consultar las compras de insumos, incluyendo sus detalles, para que los administradores del gimnasio puedan llevar un control preciso de las adquisiciones. | 2 |
+| 15 | US04 | Como cliente, quiero registrar y visualizar mi progreso físico dentro de la app para evaluar mi evolución y mantenerme motivado. | 3 |
+| 16 | US10 | Como administrador del gimnasio, quiero poder gestionar las clases ofrecidas por el gimnasio para mantener actualizada la programación. | 3 |
+| 17 | US08 | Como cliente, quiero poder crear mi perfil para llevar un control de mi información personal y actividad dentro del gimnasio. | 3 |
+| 18 | US09 | Como entrenador, quiero poder ver un historial general de asistencias de todos los clientes para analizar tendencias de asistencia, evaluar el compromiso de los miembros y ajustar las clases según la demanda. | 3 |
+| 19 | US12 | Como administrador o entrenador, quiero recibir notificaciones administrativas relevantes para mantenerme informado sobre situaciones importantes relacionadas con la operación del gimnasio. | 3 |
+| 20 | US13 | Como cliente del gimnasio, quiero recibir notificaciones personalizadas según mis clases. | 3 |
+| 21 | TS08 | Como desarrollador, quiero que la RESTful API me permita enviar y listar notificaciones tanto para miembros como para empleados, para facilitar la comunicación y la gestión interna del gimnasio. | 2 |
+| 22 | TS09 | Como desarrollador, quiero que el backend de la API sea capaz de traducir sus mensajes y errores de validación a diferentes idiomas, para que la aplicación pueda mostrar información localizada a usuarios de distintas regiones sin cambiar la lógica principal. | 1 |
+| 23 | US14 | Como visitante del sitio web de FitManager, quiero obtener información clara sobre las características y beneficios de la plataforma, para decidir si encaja con las necesidades de mi gimnasio. | 3 |
+| 24 | US15 | Como visitante interesado, quiero registrarme para solicitar una demo personalizada o más información sobre FitManager, para poder explorar cómo puede mejorar la gestión de mi gimnasio. | 2 |
+| 25 | US21 | Como administrador, quiero tener una vista general del rendimiento y la actividad del gimnasio en un solo lugar, incluyendo métricas clave de miembros, asistencia y finanzas, para poder obtener una comprensión rápida del estado actual del negocio y tomar decisiones informadas. | 2 |
+| 26 | US16 | Como visitante, quiero ver los precios y paquetes disponibles para FitManager, para poder decidir si la plataforma se ajusta a mi presupuesto y necesidades. | 2 |
+| 27 | US05 | Como cliente, quiero ver mi rutina personalizada de entrenamiento en la plataforma para seguirla paso a paso durante mis sesiones. | 5 |
+| 28 | US11 | Como administrador del gimnasio, quiero poder gestionar al personal del gimnasio para mantener un control organizado sobre los entrenadores y otros empleados. | 5 |
+| 29 | US18 | Como usuario, quiero poder visualizar la aplicación en inglés o español, para entender fácilmente la información según mi idioma preferido. | 2 |
+| 30 | US19 | Como usuario que usa un lector de pantalla, quiero poder navegar y entender la plataforma fácilmente con herramientas de asistencia, para tener una experiencia de uso fluida y sin barreras. | 2 |
 
 # CAPÍTULO 4: PRODUCT UX/UI DESIGN
 
@@ -1896,7 +1960,7 @@ El Domain-Driven Software Architecture extiende los principios del Domain Driven
 ### 4.8.1. Database Diagram
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/cf093f3d-1290-416d-b21f-26353d97f995" alt="Diagrama clases">
+  <img src="https://github.com/user-attachments/assets/ea4d6006-9a0c-4361-8577-b074ffac72ca" alt="Database Diagram">
 </p>
 
 # CAPÍTULO 5: PRODUCT IMPLEMENTATION & DEPLOYMENT
@@ -2818,7 +2882,107 @@ Evidencia de commits por integrante del grupo
   <img src="https://github.com/user-attachments/assets/6cc77c8e-b7ef-43ad-97b0-60088a352b68" alt="commits por integrante">
 </p>
 
+### 5.2.3. Sprint 3
 
+Durante el Sprint 3 del proyecto FitManager, el enfoque se centró en el desarrollo del backend mediante la implementación de FitManager Web Services. Se crearon APIs RESTful para las entidades del sistema, permitiendo operaciones CRUD y gestión de relaciones. Además, se estableció la conexión con la base de datos MySQL, configurando los repositorios y entidades de dominio dentro de una arquitectura basada en Clean Architecture y DDD. Este sprint sentó las bases de la lógica de negocio, integrando validaciones, manejo de errores y asegurando una estructura escalable para el sistema.
+
+#### 5.2.3.1. Sprint Planning
+
+| **Sprint #**                     | Sprint 3 |
+|----------------------------------|---------|
+|        | **Sprint Planning Background** |
+| Date                             | 10/06/2025 |
+| Location                         | Discord group call |
+| Prepared by                      | Cassius Martel |
+| Attendees (to planning meeting)  | Juan Alvarado, Renzo Luque, Cassius Martel, Tomio Nakamurakare, Victor Ortiz |
+| Sprint 2 Review Summary          | During Sprint 2, the team successfully developed the frontend of the FitManager web application, focusing on the key sections for managing members, staff, classes, inventory, notifications, and income. This sprint also introduced foundational support for accessibility and internationalization, allowing the interface to adapt to different languages and assistive technologies. The views created are now fully navigable and interactive, offering gym administrators and owners a first functional version of the platform to manage their operational and financial resources. Additionally, fake APIs were implemented to simulate data interactions, laying the groundwork for integration with the future backend services. |
+| Sprint 2 Retrospective Summary   | The team highlighted strong progress during Sprint 2, particularly in turning UX/UI designs into functional interfaces and aligning the frontend with the project's architectural standards. The use of fake APIs proved valuable for testing and iterating on components in a realistic context. Team members appreciated the improved communication flows and greater design-development alignment compared to Sprint 1. However, there were still minor challenges in maintaining consistent code structure and ensuring accessibility compliance across all views. Moving forward, the team agreed to establish stricter coding guidelines and to perform earlier accessibility reviews during development. |
+|      | **Sprint Goal & User Stories** |
+| Sprint 3 Goal                    | Our focus is on: developing the backend services of the FitManager platform, including the creation of RESTful APIs, definition of domain entities, implementation of use cases, and configuration of the connection with the MySQL database using a Clean Architecture and Domain-Driven Design (DDD) approach. <br><br>We believe it delivers: a solid and scalable foundation for handling business logic and data persistence, enabling secure and efficient interaction between the frontend and the database, while ensuring the modularity and maintainability of the system. <br><br>This will be confirmed when: each API endpoint successfully handles requests for the core entities (members, staff, classes, inventory, notifications, and income), returns expected responses, and integrates correctly with the simulated frontend developed in the previous sprint. |
+| Sprint 3 Velocity                | 18 |
+| Sum of Story Points              | 17 |
+
+#### 5.2.3.2. Aspect Leaders and Collaborators
+
+En esta sección se elaborará la **Leadership-and-Collaboration Matrix (LACX)**, un artefacto que permite identificar claramente quién lidera (L) y quién colabora (C) en cada aspecto funcional del Sprint 3.
+
+| Team Member (Last Name, First Name) | GitHub Username             | Classes Feature | Employees Feature | Finances Feature | Inventory Feature | Members Feature | Notifications Feature | Internationalization Feature |
+|-------------------------------------|------------------------------|------------------|-------------------|------------------|--------------------|------------------|-------------------------|-------------------------------|
+| Alarcón, Víctor Nicolás             | @Nico1234556                 |                  | L                 |                  |                    |                  | L                       |                               |
+| Nakamurakare Teruya, Alex Tomio     | @kistoo                      |                  |                   |                  | L                  |                  |                         |                               |
+| Martel Andrade, Cassius Estefano    | @kcc12321                    |                  |                   |                  |                    | L                |                         |                               |
+| Luque Minaya, Renzo Andrés          | @renzoluquem                 |                  |                   | L                |                    |                  |                         | L                             |
+| Alvarado De La Cruz, Juan Carlos    | @JuanCarlosAlvarado900       | L                |                   |                  |                    |                  |                         |                               |
+
+#### 5.2.3.3 Sprint Backlog 3
+
+El presente Sprint Backlog 3 detalla el conjunto de tareas y Technical Stories seleccionadas del Product Backlog que el equipo de FitManager se ha comprometido a completar durante esta iteración. El objetivo principal de este sprint fue desarrollar los servicios backend de la plataforma, divididos en seis bounded contexts: gestión de clases, empleados, finanzas, inventario, miembros y notificaciones, además de implementar la internacionalización del backend con soporte multilingüe para mensajes y validaciones.
+
+| Technical Story ID | Task ID | Descripción                                                                 | Estimación (hrs) | Asignado a           | Estado |
+|--------------------|---------|------------------------------------------------------------------------------|------------------|-----------------------|--------|
+| TS01               | T01     | Implementar y Validar la solicitud POST de Creación de Miembro               | 2                | Cassius Martel        | Done   |
+|                    | T02     | Implementar y Validar la solicitud GET de Listado de Miembros                | 1                | Cassius Martel        | Done   |
+|                    | T03     | Implementar y Validar la solicitud PUT de Actualización de Miembro           | 2                | Cassius Martel        | Done   |
+|                    | T04     | Implementar y Validar la solicitud DELETE de Eliminación de Miembro          | 2                | Cassius Martel        | Done   |
+|                    | T05     | Implementar y Validar la solicitud GET de Listado de Tipos de Membresía      | 1                | Cassius Martel        | Done   |
+| TS02               | T06     | Implementar y Validar la solicitud POST de Creación de Clase                 | 2                | Juan Alvarado         | Done   |
+|                    | T07     | Implementar y Validar la solicitud GET de Listado de Clases                  | 1                | Juan Alvarado         | Done   |
+|                    | T08     | Implementar y Validar la solicitud PUT de Actualización de Clase             | 2                | Juan Alvarado         | Done   |
+|                    | T09     | Implementar y Validar la solicitud DELETE de Eliminación de Clase            | 2                | Juan Alvarado         | Done   |
+| TS03               | T10     | Implementar y Validar la solicitud POST de Registro de Asistencia            | 1                | Juan Alvarado         | Done   |
+|                    | T11     | Implementar y Validar la solicitud GET de Listado de Registros de Asistencia | 2                | Juan Alvarado         | Done   |
+|                    | T12     | Implementar y Validar la solicitud GET de Listado de Reservas por Clase      | 1                | Juan Alvarado         | Done   |
+| TS04               | T13     | Implementar y Validar la solicitud POST de Creación de Empleado              | 2                | Victor Ortíz          | Done   |
+|                    | T14     | Implementar y Validar la solicitud GET de Listado de Empleado                | 1                | Victor Ortíz          | Done   |
+|                    | T15     | Implementar y Validar la solicitud PUT de Actualización de Empleado          | 2                | Victor Ortíz          | Done   |
+|                    | T16     | Implementar y Validar la solicitud DELETE de Eliminación de Empleado         | 1                | Victor Ortíz          | Done   |
+| TS05               | T17     | Implementar y Validar la solicitud POST de Creación de Ítem                  | 2                | Tomio Nakamurakare    | Done   |
+|                    | T18     | Implementar y Validar la solicitud GET de Listado de Ítem                    | 1                | Tomio Nakamurakare    | Done   |
+|                    | T19     | Implementar y Validar la solicitud PUT de Actualización de Ítem              | 2                | Tomio Nakamurakare    | Done   |
+|                    | T20     | Implementar y Validar la solicitud DELETE de Eliminación de Ítem             | 1                | Tomio Nakamurakare    | Done   |
+| TS06               | T21     | Implementar y Validar la solicitud POST de Registro de Pago de Membresía     | 2                | Renzo Luque           | Done   |
+|                    | T22     | Implementar y Validar la solicitud GET de Listado de Pagos de Membresía      | 1                | Renzo Luque           | Done   |
+|                    | T23     | Implementar y Validar la solicitud POST de Registro de Pago de Salario       | 2                | Renzo Luque           | Done   |
+|                    | T24     | Implementar y Validar la solicitud GET de Listado de Pagos de Salario        | 1                | Renzo Luque           | Done   |
+| TS07               | T25     | Implementar y Validar la solicitud POST de Registro de Compra de Insumos     | 3                | Renzo Luque           | Done   |
+|                    | T26     | Implementar y Validar la solicitud GET de Listado de Compras de Insumos      | 2                | Renzo Luque           | Done   |
+| TS08               | T27     | Implementar y Validar la solicitud POST de Envío de Notificación a Miembro   | 2                | Victor Ortíz          | Done   |
+|                    | T28     | Implementar y Validar la solicitud GET de Listado de Notificaciones de Miembros | 1              | Victor Ortíz          | Done   |
+|                    | T29     | Implementar y Validar la solicitud POST de Envío de Notificación a Empleado  | 2                | Victor Ortíz          | Done   |
+|                    | T30     | Implementar y Validar la solicitud GET de Listado de Notificaciones de Empleados | 1            | Victor Ortíz          | Done   |
+| TS09               | T31     | Configurar servicios de localización                                        | 1                | Renzo Luque           | Done   |
+|                    | T32     | Crear archivos `.resx` para textos                                           | 1                | Renzo Luque           | Done   |
+|                    | T33     | Usar `IStringLocalizer` en mensajes y validaciones                          | 1                | Renzo Luque           | Done   |
+
+Historias de usuario a desarrollar en este Sprint
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/70bf36d6-264d-471d-8361-b86a4b9417a2" alt="Historias de usuario para este sprint">
+</p>
+
+Ejemplo de tareas y descripción de una historia
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e7c4b2dc-5b83-4765-82b1-8a10e499a863" alt="Tareas y descripción de una historia">
+</p>
+
+#### 5.2.3.4. Development Evidence for Sprint Review
+
+#### 5.2.3.5. Execution Evidence for Sprint Review.
+
+#### 5.2.3.6. Services Documentation Evidence for Sprint Review
+
+#### 5.2.3.7. Software Deployment Evidence for Sprint Review
+
+#### 5.2.3.8. Team Collaboration Insights during Sprint
+
+## 5.3. Validation Interviews
+
+### 5.3.1. Diseño de Entrevistas
+
+### 5.3.2. Registros de Entrevistas
+
+### 5.3.3. Evaluaciones según Heurísticas
+
+## 5.4. Video About-the-Product
 
 # Conclusiones
 
@@ -2829,6 +2993,7 @@ Evidencia de commits por integrante del grupo
 * Hemos avanzado con éxito más allá de las fases de planificación y diseño y ya hemos logrado un progreso tangible en la implementación, como lo demuestra el trabajo completado durante el Sprint 1 para la landing page. Esto demuestra nuestra capacidad para traducir las especificaciones de diseño en entregables concretos y nuestro compromiso para llevar el producto a buen término.
 * La adopción de Vue como framework, junto con la consideración de la internacionalización (i18n) y la accesibilidad (a11y) desde las etapas iniciales del desarrollo del frontend, demuestra un compromiso con la creación de una aplicación moderna, inclusiva y adaptable a diferentes audiencias. Este enfoque proactivo sentará una base sólida para la escalabilidad y la usabilidad a largo plazo.
 * La estrategia de dividir la interfaz de usuario en componentes reutilizables en Vue no solo facilita la organización del trabajo entre el equipo, sino que también mejora la mantenibilidad y la escalabilidad del código. Además, la utilización de GitHub con una disciplina de commits y branches refleja una práctica profesional en el control de versiones, lo que contribuye a la estabilidad y la colaboración efectiva dentro del equipo de desarrollo.
+* Hemos establecido una sólida base de backend aplicando Domain-Driven Design (DDD) y Clean Architecture. La clara separación en capas (Dominio, Aplicación, Infraestructura, Interfaces) junto con patrones como el Unit of Work y un Base Repository genérico, garantiza un código mantenible, testable y adaptable. Este enfoque nos prepara para construir un sistema resiliente y de alto rendimiento que responde eficazmente a las necesidades del negocio.
 
 # Recomendaciones
 
@@ -2837,6 +3002,7 @@ Evidencia de commits por integrante del grupo
 * Nuestro equipo debe adherirse a un enfoque de desarrollo iterativo, caracterizado por sprints cortos y ciclos de retroalimentación frecuentes. Debemos priorizar la incorporación de los comentarios de los usuarios de forma temprana y frecuente para validar nuestras suposiciones y realizar los ajustes necesarios en el diseño y la funcionalidad.
 * Debemos enfatizar la importancia de mantener una documentación completa y actualizada de la arquitectura, el diseño y la implementación del sistema. Además, debemos fomentar una sólida cultura de intercambio de conocimientos dentro del equipo para garantizar la continuidad, facilitar la colaboración y agilizar los esfuerzos de desarrollo futuros.
 * Para asegurar una experiencia de usuario fluida y evitar posibles cuellos de botella en etapas posteriores, se recomienda establecer una estrategia de integración temprana y continua entre el frontend desarrollado en Vue y el futuro backend de la aplicación. Esto podría incluir la definición clara de APIs, la creación de mocks para el desarrollo paralelo y la realización de pruebas de integración frecuentes para validar la correcta comunicación y el flujo de datos entre ambas partes del sistema.
+* Para la calidad continua del backend, recomendamos priorizar la implementación exhaustiva de pruebas automatizadas a todos los niveles, especialmente en las capas de Dominio y Aplicación. Además, es crucial mantener un proceso de revisión de código sistemático para asegurar la adherencia a los principios de DDD y Clean Architecture, mitigando la deuda técnica y promoviendo un crecimiento ordenado del proyecto.
 
 # Bibliografía
 
