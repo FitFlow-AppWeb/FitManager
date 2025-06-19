@@ -2914,7 +2914,7 @@ Durante el Sprint 3 del proyecto FitManager, el enfoque se centró en el desarro
 |      | **Sprint Goal & User Stories** |
 | Sprint 3 Goal                    | Our focus is on: developing the backend services of the FitManager platform, including the creation of RESTful APIs, definition of domain entities, implementation of use cases, and configuration of the connection with the MySQL database using a Clean Architecture and Domain-Driven Design (DDD) approach. <br><br>We believe it delivers: a solid and scalable foundation for handling business logic and data persistence, enabling secure and efficient interaction between the frontend and the database, while ensuring the modularity and maintainability of the system. <br><br>This will be confirmed when: each API endpoint successfully handles requests for the core entities (members, staff, classes, inventory, notifications, and income), returns expected responses, and integrates correctly with the simulated frontend developed in the previous sprint. |
 | Sprint 3 Velocity                | 18 |
-| Sum of Story Points              | 17 |
+| Sum of Story Points              | 16 |
 
 #### 5.2.3.2. Aspect Leaders and Collaborators
 
@@ -2964,9 +2964,6 @@ El presente Sprint Backlog 3 detalla el conjunto de tareas y Technical Stories s
 |                    | T28     | Implementar y Validar la solicitud GET de Listado de Notificaciones de Miembros | 1              | Victor Ortíz          | Done   |
 |                    | T29     | Implementar y Validar la solicitud POST de Envío de Notificación a Empleado  | 2                | Victor Ortíz          | Done   |
 |                    | T30     | Implementar y Validar la solicitud GET de Listado de Notificaciones de Empleados | 1            | Victor Ortíz          | Done   |
-| TS09               | T31     | Configurar servicios de localización                                        | 1                | Renzo Luque           | Done   |
-|                    | T32     | Crear archivos `.resx` para textos                                           | 1                | Renzo Luque           | Done   |
-|                    | T33     | Usar `IStringLocalizer` en mensajes y validaciones                          | 1                | Renzo Luque           | Done   |
 
 Historias de usuario a desarrollar en este Sprint
 <p align="center">
