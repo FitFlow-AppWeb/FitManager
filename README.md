@@ -2977,6 +2977,31 @@ Ejemplo de tareas y descripción de una historia
 
 #### 5.2.3.4. Development Evidence for Sprint Review
 
+En el Sprint 3, se llevó a cabo el desarrollo integral de la lógica de negocio de la aplicación, estructurándola en seis Bounded Contexts bien definidos: Classes, Employees, Finances, Inventory, Members y Notifications. Cada uno de estos contextos fue implementado siguiendo una arquitectura modular y por capas, lo que permitió una clara separación de responsabilidades entre el Dominio (con sus entidades y Value Objects), la Aplicación (con sus comandos, queries y servicios de aplicación), la Infraestructura (con las implementaciones de repositorios y la persistencia de datos mediante Entity Framework Core) y las Interfaces REST (con los DTOs, ensambladores y controladores). Este enfoque no solo facilitó el desarrollo simultáneo y el mantenimiento, sino que también aseguró la adherencia a principios de diseño robustos, culminando en la exposición de una API RESTful documentada con Swagger para su consumo eficiente.
+
+Bounded Contexts con su respectiva división de carpetas
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/033f6cf3-31bf-4a7d-8820-11558cbcf4a4" alt="bounded contexts en rider">
+</p>
+
+Base de datos en MySQL
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/67a02a7c-5841-4c48-8a2e-cccd2fcbe8ca" alt="tablas en mysql">
+</p>
+
+Endpoints implementados
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/07aacd0d-7be4-43be-b381-94d60629a531" alt="endpoints1">
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a9316166-66c3-4db6-9c17-9c77a95ccb83" alt="endpoints2">
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/739fe0f9-b3ab-4f07-a234-45a992130002" alt="endpoints3">
+</p>
+
+Video explicativo sobre lo desarrollado en este Sprint:
+
 #### 5.2.3.5. Execution Evidence for Sprint Review.
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
@@ -2984,6 +3009,26 @@ Ejemplo de tareas y descripción de una historia
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 3, el equipo FitManager prosiguió con la implementación de la metodología ágil Scrum y las herramientas de colaboración establecidas, esta vez enfocándose en el desarrollo del backend y la lógica de negocio de la aplicación web. Este sprint se distinguió por un esfuerzo intensivo y coordinado en la construcción de una arquitectura robusta, materializada en seis Bounded Contexts principales: Classes, Employees, Finances, Inventory, Members y Notifications. La comunicación se mantuvo fluida y constante a través de nuestro grupo de Whatsapp y Discord, complementada con reuniones realizadas en días libres para una sincronización efectiva, mientras que la gestión y seguimiento de las tareas continuó centralizada en Pivotal Tracker.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/202c2db0-5698-4e7b-8200-774a6958fe55" alt="pivotal tracker">
+</p>
+
+Uso de Herramientas de Colaboración (GitHub): 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7cca47c3-6f5f-4230-9ccb-f56f9a926353" alt="herramientas de colaboración">
+</p>
+
+Evidencia de las ramas
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e74f675a-e369-4b9e-8d98-dc919ef36b3a" alt="ramas del repositorio">
+</p>
+
+Evidencia de commits por integrante del grupo
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1a24b070-c05f-40ad-bade-4f6c1a3738e4" alt="commits por integrante">
+</p>
 
 ## 5.3. Validation Interviews
 
