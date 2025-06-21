@@ -3133,7 +3133,7 @@ Durante el Sprint 3, el equipo se centró en la robusta documentación de los We
 | /api/v1/SupplyPurchase | Registra una nueva compra de suministros, sus detalles y crea ítems de inventario. | POST | POST /api/v1/SupplyPurchase | Body JSON: date, amount, method, currency, vendorName, purchaseDetails[] | { "date": "2025-06-21T07:21:24.692Z", "amount": 500.75, "method": "Tarjeta de Crédito", "currency": "USD", "vendorName": "Proveedor Fitness Global", "purchaseDetails": [ { "itemTypeId": 1, "unitPrice": 25.00, "quantity": 10, "lastMaintenanceDate": "2025-06-21T07:21:24.692Z", "nextMaintenanceDate": "2026-06-21T07:21:24.692Z", "status": "Nuevo", "employeeId": 101 } ] } | { "id": 1, "date": "2025-06-21T07:21:24.692Z", "amount": 500.75, "method": "Tarjeta de Crédito", "currency": "USD", "vendorName": "Proveedor Fitness Global", "purchaseDetails": [...] } | Permite registrar una compra de suministros y genera ítems en el inventario con los detalles especificados. |
 | /api/v1/SupplyPurchase | Recupera todas las compras de suministros registradas en el sistema. | GET | GET /api/v1/SupplyPurchase | No hay parámetros | GET /api/v1/SupplyPurchase | [ { "id": 1, "date": "2025-06-21T07:24:01.922Z", "amount": 500.75, "method": "Tarjeta de Crédito", "currency": "USD", "vendorName": "Proveedor Fitness Global", "purchaseDetails": [ { "id": 1, "supplyPurchaseId": 1, "itemTypeId": 1, "unitPrice": 25.00, "quantity": 10 } ] } ] | Retorna un arreglo con todas las compras de suministros registradas, incluyendo los detalles de los ítems adquiridos. |
 
-#### Evidencia de funcionamiento de Endpoints
+#### Ejemplos de funcionamiento de Endpoints
 - Insertamos un Empleado a la base de datos
 
   <p align="center">
@@ -3175,8 +3175,8 @@ Durante el Sprint 3, el equipo se centró en la robusta documentación de los We
   <img src="https://github.com/user-attachments/assets/3b91a41c-3ec0-4b49-a960-eb846ca555be" alt="SalaryPayment POST">
 </p
 
-- Le agregamos un pago al miembro ingresado
-
+- - Le agregamos un pago al miembro ingresado
+  
   <p align="center">
   <img src="https://github.com/user-attachments/assets/37d612a5-060d-4933-b4fe-afe28e78ac79" alt="MembershipPayment POST">
 </p>
