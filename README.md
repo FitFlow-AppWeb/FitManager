@@ -3133,6 +3133,54 @@ Durante el Sprint 3, el equipo se centró en la robusta documentación de los We
 | /api/v1/SupplyPurchase | Registra una nueva compra de suministros, sus detalles y crea ítems de inventario. | POST | POST /api/v1/SupplyPurchase | Body JSON: date, amount, method, currency, vendorName, purchaseDetails[] | { "date": "2025-06-21T07:21:24.692Z", "amount": 500.75, "method": "Tarjeta de Crédito", "currency": "USD", "vendorName": "Proveedor Fitness Global", "purchaseDetails": [ { "itemTypeId": 1, "unitPrice": 25.00, "quantity": 10, "lastMaintenanceDate": "2025-06-21T07:21:24.692Z", "nextMaintenanceDate": "2026-06-21T07:21:24.692Z", "status": "Nuevo", "employeeId": 101 } ] } | { "id": 1, "date": "2025-06-21T07:21:24.692Z", "amount": 500.75, "method": "Tarjeta de Crédito", "currency": "USD", "vendorName": "Proveedor Fitness Global", "purchaseDetails": [...] } | Permite registrar una compra de suministros y genera ítems en el inventario con los detalles especificados. |
 | /api/v1/SupplyPurchase | Recupera todas las compras de suministros registradas en el sistema. | GET | GET /api/v1/SupplyPurchase | No hay parámetros | GET /api/v1/SupplyPurchase | [ { "id": 1, "date": "2025-06-21T07:24:01.922Z", "amount": 500.75, "method": "Tarjeta de Crédito", "currency": "USD", "vendorName": "Proveedor Fitness Global", "purchaseDetails": [ { "id": 1, "supplyPurchaseId": 1, "itemTypeId": 1, "unitPrice": 25.00, "quantity": 10 } ] } ] | Retorna un arreglo con todas las compras de suministros registradas, incluyendo los detalles de los ítems adquiridos. |
 
+#### Evidencia de funcionamiento de Endpoints
+- Insertamos un Empleado a la base de datos
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/cc28a68e-62f0-41c5-b085-06a68de198cb" alt="Employee POST">
+</p>
+  
+- Hacemos el get del empleado que acabamos de crear
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/e03bc0a6-2c01-43fc-8bf2-ed1ac68db1df" alt="Employee GET">
+</p>
+
+- Ingresamos un miembro a la base de datos
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/4aff8b82-b041-4a1f-9226-ecf4fc4e8b01" alt="Member POST">
+</p>
+  
+- Hacemos el get del miembro que acabamos de crear
+
+    <p align="center">
+  <img src="https://github.com/user-attachments/assets/b8e60139-420b-4d18-be49-ac370cf98b09" alt="Member GET">
+  
+- Insertamos una clase a la base de datos
+
+    <p align="center">
+  <img src="https://github.com/user-attachments/assets/7d1641fd-34aa-4428-b825-dd55f0e66e1d" alt="Classes POST">
+</p>
+
+- Hacemos el get de la clase que acabamos de crear
+
+    <p align="center">
+  <img src="https://github.com/user-attachments/assets/c08f47b1-7371-4d7d-be1b-73234ba1a9a2" alt="Classes GET">
+</p>
+
+- Le agregamos un salario al empleado que creamos
+
+    <p align="center">
+  <img src="https://github.com/user-attachments/assets/3b91a41c-3ec0-4b49-a960-eb846ca555be" alt="SalaryPayment POST">
+</p
+
+- Le agregamos un pago al miembro ingresado
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/37d612a5-060d-4933-b4fe-afe28e78ac79" alt="MembershipPayment POST">
+</p>
+
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
 Este documento presenta la evidencia del proceso de despliegue del software realizado durante el sprint actual. El objetivo de este despliegue fue entregar la última versión estable de FitManager Web Services en el entorno de producción alojado en Microsoft Azure.
