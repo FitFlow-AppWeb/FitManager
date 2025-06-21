@@ -2977,6 +2977,91 @@ Ejemplo de tareas y descripción de una historia
 
 #### 5.2.3.4. Development Evidence for Sprint Review
 
+| Repository              | Branch           | Commit ID                                | Commit Message                                                                                 | Committed on   |
+|:------------------------|:-----------------|:-----------------------------------------|:-----------------------------------------------------------------------------------------------|:---------------|
+| FitManager-Web-Services | develop          | eb6ce547b070970ebfad855b83eec23f417723a8 | Basic project setup                                                                            | June 6, 2025   |
+| FitManager-Web-Services | develop          | 93012de8d67699680c028d4b18ffb108a1ed4c32 | Add .gitignore configuration                                                                   | June 6, 2025   |
+| FitManager-Web-Services | develop          | d6def687908b453e915a3a092abc6513d3590884 | Add Initial Project Structure                                                                  | June 7, 2025   |
+| FitManager-Web-Services | feature/member   | 3406556fb25fddf89c63a535d9f174e002e9d2f3 | Add Initial Member files                                                                       | June 7, 2025   |
+| FitManager-Web-Services | feature/member   | 89a7c8f498b213ff3dda18f7c5330294a5cd626f | Add Member Files                                                                               | June 7, 2025   |
+| FitManager-Web-Services | develop          | 7118657cd5c05e1b160a7f85b4faf4445211f698 | Assemble info                                                                                  | June 7, 2025   |
+| FitManager-Web-Services | develop          | 1431d21076a10e765226147332c532f319cd5e6e | Add Member Example Endpoints                                                                   | June 7, 2025   |
+| FitManager-Web-Services | develop          | cf88a2ceb826080fbd4be8d71254d8f8404398d6 | Merge branch “develop” into member                                                             | June 7, 2025   |
+| FitManager-Web-Services | develop          | 988dbb52ad2cf2918af499342ed35c1b0507965b | Implement Unit of Work pattern                                                                 | June 7, 2025   |
+| FitManager-Web-Services | develop          | 921603dfa461cd11840d00e79e1f3a1221a66840 | Add REST initial files                                                                         | June 7, 2025   |
+| FitManager-Web-Services | feature/sfatt    | 71bac1f03d50d7c622ae38974e8b54c70e9ef407 | Add Employee table                                                                             | June 9, 2025   |
+| FitManager-Web-Services | develop          | ad04fddae0389b15b1fc1582a15f7e6ce5a1bef0 | Initial implementation of domain models across bounded contexts                                | June 10, 2025  |
+| FitManager-Web-Services | feature/member   | 236008ce090c3ac49afba3aa3d36cad51d40439d | Add Member Services                                                                            | June 11, 2025  |
+| FitManager-Web-Services | feature/member   | 37db4762e3c593277c04fd5273ff97ecddb7fcb5 | Add Member Repository                                                                          | June 11, 2025  |
+| FitManager-Web-Services | feature/member   | 27bcbdc6b68e951e5a25cf4a918aee02a531edcc | Add Member Controller                                                                          | June 11, 2025  |
+| FitManager-Web-Services | feature/member   | f96bcb921ba2a9e47062c8221d801c99a63c4089 | Add Member Resources                                                                           | June 11, 2025  |
+| FitManager-Web-Services | feature/member   | 5a8af4cf262a3d99909ec8443e6cb6ecdde25130 | Add Member Entity endpoints                                                                    | June 11, 2025  |
+| FitManager-Web-Services | feature/member   | 7eb870abc04f9c5231e74cae6d4dd86f4d84c8c1 | Add MembershipType endpoints                                                                   | June 11, 2025  |
+| FitManager-Web-Services | feature/member   | 18f1ad33be4914f410896a3b25b9be4d5308eb06 | Implement complete MembershipStatus management for Member                                      | June 11, 2025  |
+| FitManager-Web-Services | feature/member   | bd7b4f254ef7fcc62c057705a9ec4fc38b600a60 | Remove specific GET endpoints for Member and MembershipType                                    | June 12, 2025  |
+| FitManager-Web-Services | feature/member   | 130c00edb1878204678320b26e29ab29d412c30f | Improve Swagger UI endpoint descriptions                                                       | June 12, 2025  |
+| FitManager-Web-Services | feature/finances | b1245fee5c130dbdd8a38dc6550bb1112befba7a | chore(domain): rename model properties and update AppDbContext accordingly                     | June 13, 2025  |
+| FitManager-Web-Services | feature/finances | 27b359bb60f3fdf64c334d20d1f15229212db5f9 | feat(finances): add repositories for MembershipPayment, SalaryPayment and SupplyPurchase       | June 13, 2025  |
+| FitManager-Web-Services | feature/finances | 6a28c7da020b8d67af5a0967dccfb5b7543461c2 | feat(finances): implement repositories for MembershipPayment, SalaryPayment and SupplyPurchase | June 13, 2025  |
+| FitManager-Web-Services | feature/finances | 94c2787c105ad6dceb47995f238e355732c3acdd | feat(finances): add command services layer                                                     | June 14, 2025  |
+| FitManager-Web-Services | feature/finances | ed74b4ad9d599bbafcd58a015300175a96364380 | feat(finances): add query services layer                                                       | June 14, 2025  |
+| FitManager-Web-Services | feature/finances | 7fa70d6df9cec63a894c57b0639f47e0fec08cb7 | feat(finances): add domain repositories (IItemTypeRepository and IPurchaseDetailRepository)    | June 14, 2025  |
+| FitManager-Web-Services | feature/finances | ae851aa8d0462ba9336e7a53d92df8b82d6ffa4c | feat(finances): add PurchaseDetail infrastructure repository                                   | June 14, 2025  |
+| FitManager-Web-Services | feature/finances | ae8be486b751f4187d000e1282491c1e6b68f77b | feat(finances): add REST controllers                                                           | June 14, 2025  |
+| FitManager-Web-Services | feature/finances | 923641b1813c7a51d134406defffd41de9ff444f | feat(finances): add REST resources and assemblers                                              | June 14, 2025  |
+| FitManager-Web-Services | feature/finances      | 77a03e97559a96cb335f85114ba1d5e66e8b3527 | chore(finance): register finances services in Program.cs                                                             | June 14, 2025  |
+| FitManager-Web-Services | feature/staff         | 63d25c37c0886bba63af7c292a2e699f05416d91 | add staff                                                                                                            | June 14, 2025  |
+| FitManager-Web-Services | feature/staff         | e21e48020c9eb6dba9270987b32a5e709b332014 | changes                                                                                                              | June 14, 2025  |
+| FitManager-Web-Services | feature/staff         | cdcdd0e27c97bca430cb475cb690154fbbfc7e1b | Merge remote-tracking branch ‘origin-develop’ into feature/staff                                                     | June 14, 2025  |
+| FitManager-Web-Services | feature/staff         | 988155ce5b57574fcc8ffd3f4586333800dce24d | changes                                                                                                              | June 14, 2025  |
+| FitManager-Web-Services | feature/member        | b97a3366aefea1aa17021d8c30ff7934ebb29652 | Implement XML docs in Member Bounded Context                                                                         | June 14, 2025  |
+| FitManager-Web-Services | feature/member        | 09713f74564f998b26002ade99ce69c6253d489a | Merge branch ‘feature/member’ into develop                                                                           | June 14, 2025  |
+| FitManager-Web-Services | feature/inventory     | 8388e5116c5d133a626b44fb9cbf416767339015 | Improve gitignore config                                                                                             | June 15, 2025  |
+| FitManager-Web-Services | feature/inventory     | 510b61bfb669d1a1c8534e6011923ae372797e8c | Implement CRUD for inventory context                                                                                 | June 16, 2025  |
+| FitManager-Web-Services | feature/staff         | bfe70ef4ad8683e806812dc41489471ebf8b01ea | Finish staff                                                                                                         | June 16, 2025  |
+| FitManager-Web-Services | feature/staff         | 148ac3af5a05e14ab47ab4bbe9035f014c9fadf9 | commit develop                                                                                                       | June 16, 2025  |
+| FitManager-Web-Services | feature/staff         | df7468c8a4050da238019f1edb42a0c94296aa67 | Revert “commit develop”                                                                                              | June 16, 2025  |
+| FitManager-Web-Services | feature/staff         | 109eb2044e7fe6dd840988affc99516d8b996c19 | a                                                                                                                    | June 16, 2025  |
+| FitManager-Web-Services | feature/staff         | 180882e39e5db7aa0ca2c982f689a277ed04b3d6 | Revert “a”                                                                                                           | June 16, 2025  |
+| FitManager-Web-Services | feature/staff         | 257b250580e63ff769fb31d39288dd227c11b942 | fix staff                                                                                                            | June 16, 2025  |
+| FitManager-Web-Services | develop               | cd78246b8a8f899040d4c3580e6c548d85fec499 | Merge branch ‘develop’ into feature/staff                                                                            | June 17, 2025  |
+| FitManager-Web-Services | develop               | a72fd41a3ad6fd1b213540f176a791d59b33b3c4 | Remove obj files from tracking                                                                                       | June 17, 2025  |
+| FitManager-Web-Services | develop               | e70bc0b1cc70488d9d52b7f4413f3373a8e95b40 | Remove cache files from tracking                                                                                     | June 17, 2025  |
+| FitManager-Web-Services | develop               | e7c27c97fd6d943d004660d292ed3b98705d5004 | Merge branch ‘develop’ of https://github.com/FitFlow-AppWeb/FitManager-Web-Services                                  | June 17, 2025  |
+| FitManager-Web-Services | feature/intentory     | 1a594be3d0d8b55073cd991d4c4fa00fbf53e1e3 | Fix Inventory api implementation                                                                                     | June 17, 2025  |
+| FitManager-Web-Services | feature/inventory     | fa0cdfe0eaa3f6d012c99c976a3557e478cc8fdf | Add integration with employees                                                                                       | June 17, 2025  |
+| FitManager-Web-Services | feature/classes       | 74dccc582c480e930c48a73f54a4dfaea22eeed4 | refactor(api): remove redundant endpoints from Classes, Attendance and Booking                                       | June 17, 2025  |
+| FitManager-Web-Services | feature/classes       | 47964ca95ea36c7d43bc02c059315393d8fca935 | refactor(api): remove redundant endpoints from Booking                                                               | June 17, 2025  |
+| FitManager-Web-Services | feature/classes       | 885b9f951bb762a6d72f38279255c1405643e272 | refactor(api): remove meaningless endpoints from Booking                                                             | June 17, 2025  |
+| FitManager-Web-Services | develop               | d765aeb0fcc95d8385c0b8b7f5a93e78abbee107 | Implement classes content in program                                                                                 | June 18, 2025  |
+| FitManager-Web-Services | feature/inventory     | 243fa0ec8ed850c6ef2c31ade80d263ead073bcb | Merge branch ‘feature/inventory’ of https://github.com/FitFlow-AppWeb/FitManager-Web-Services into feature/inventory | June 18, 2025  |
+| FitManager-Web-Services | feature/notifications | 7884ce50e409645f6208888da5587b391e20b6bd | Update Notifications                                                                                                 | June 19, 2025  |
+| FitManager-Web-Services | feature/notifications | 8230ef328f091eeae1e9d026eee62865dd382193 | Initial setup for Notifications module structure                                                                     | June 19, 2025  |
+| FitManager-Web-Services | feature/notifications | c54b472bd96940c9b278af6780b69fb428e29bad | Define MemberNotification and EmployeeNotification entities                                                          | June 19, 2025  |
+| FitManager-Web-Services | feature/notifications | 751b2491d9c2bdd68ffc1ec2cf8e7a56154fda99 | Implement domain repositories for Notifications                                                                      | June 19, 2025  |
+| FitManager-Web-Services | feature/notifications | f9e2b3d78e126b766365536e130d38e65f59fbea | Define application layer commands and queries                                                    | June 19, 2025  |
+| FitManager-Web-Services | feature/notifications | d90ccd08867416b02d67fb4d3ec44ae27014bb25 | Create REST API resources (DTOs) and assemblers                                                  | June 19, 2025  |
+| FitManager-Web-Services | feature/notifications | ca37a82266a66ec8813b980bf90eab47e674f660 | Implement REST API Controllers                                                                   | June 19, 2025  |
+| FitManager-Web-Services | develop               | e109729da214acbfcde1ca14acd593621225fe23 | Merge with feature/notifications                                                                 | June 19, 2025  |
+| FitManager-Web-Services | feature/inventory     | 662f2ea3a42cc0d1f7f56d27860d31e7562e8fd1 | Improve SupplyPurchases and items API response logic                                             | June 19, 2025  |
+| FitManager-Web-Services | feature/inventory     | 9be1756e084c7899e73c249821032c977c31861a | Merge branch ‘feature/inventory’ into develop                                                    | June 19, 2025  |
+| FitManager-Web-Services | feature/inventory     | dccaf2d1a4ec2e4d17209e77f69dd53278859c0f | Resolve MembershipPayment POST serialization loop                                                | June 19, 2025  |
+| FitManager-Web-Services | feature/classes       | 8a4fd7ccc4015ee2388dd262cc23a039c0efda46 | Improve Classes GET response                                                                     | June 20, 2025  |
+| FitManager-Web-Services | develop               | 06dfaae17740b5dbde03e3cdc492dc24de1a501d | Merge branch ‘feature/classes’ into develop                                                      | June 20, 2025  |
+| FitManager-Web-Services | refactor/finances     | 575cb4e03504ccc472fd60d30bcdb7d0104b5e68 | feat(finances): addSalaryPayment feature with controller and basic validation                    | June 20, 2025  |
+| FitManager-Web-Services | refactor/finances     | 2334576f34603d0b2ce50e69a5ddf596388980af | fix(finances): correct assembler usage and controller logic for PurchaseDetail                   | June 20, 2025  |
+| FitManager-Web-Services | develop               | 9fb808c3de2662e1e9eec3d5360fdc2a2eae7d72 | Update language                                                                                  | June 20, 2025  |
+| FitManager-Web-Services | develop               | 20316bdc72524cf872cdafc52634fa6cb9285a33 | Merge branch ‘develop’ of https://github.com/FitFlow-AppWeb/FitManager-Web-Services into develop | June 20, 2025  |
+| FitManager-Web-Services | develop               | 6573f222ec5c12fec3f9ddcd0830d09adf7e8bf2 | Update language                                                                                  | June 20, 2025  |
+| FitManager-Web-Services | develop               | 3760113ca73a240fdfa8788fdae18a8c6a93fd91 | chore(config): update connection strings for Azure MySQL deployment                              | June 20, 2025  |
+| FitManager-Web-Services | refactor/member       | 736e29385dbac1fbdae4e5bdb96cfeac5af3fc33 | Add new MembershipType endpoints                                                                 | June 20, 2025  |
+| FitManager-Web-Services | refactor/member       | 88f82366df6b59dcac883033975dc9dfb5800961 | Add Certification and Specialty endpoints                                                        | June 20, 2025  |
+| FitManager-Web-Services | refactor/member       | c1056dde7a6f16911a9eae1b9556793fd4b4f1ea | Merge branch ‘refactor/member’ into develop                                                      | June 20, 2025  |
+| FitManager-Web-Services | refactor/member       | 57b5814997d6c718aab5292993fa1f0a4ab93139 | Change language                                                                                  | June 20, 2025  |
+
+
+#### 5.2.3.5. Execution Evidence for Sprint Review.
+
 En el Sprint 3, se llevó a cabo el desarrollo integral de la lógica de negocio de la aplicación, estructurándola en seis Bounded Contexts bien definidos: Classes, Employees, Finances, Inventory, Members y Notifications. Cada uno de estos contextos fue implementado siguiendo una arquitectura modular y por capas, lo que permitió una clara separación de responsabilidades entre el Dominio (con sus entidades y Value Objects), la Aplicación (con sus comandos, queries y servicios de aplicación), la Infraestructura (con las implementaciones de repositorios y la persistencia de datos mediante Entity Framework Core) y las Interfaces REST (con los DTOs, ensambladores y controladores). Este enfoque no solo facilitó el desarrollo simultáneo y el mantenimiento, sino que también aseguró la adherencia a principios de diseño robustos, culminando en la exposición de una API RESTful documentada con Swagger para su consumo eficiente.
 
 Bounded Contexts con su respectiva división de carpetas
@@ -3002,11 +3087,85 @@ Endpoints implementados
 
 Video explicativo sobre lo desarrollado en este Sprint:
 
-#### 5.2.3.5. Execution Evidence for Sprint Review.
-
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
+
+Este documento presenta la evidencia del proceso de despliegue del software realizado durante el sprint actual. El objetivo de este despliegue fue entregar la última versión estable de FitManager Web Services en el entorno de producción alojado en Microsoft Azure.
+El proceso incluyó la preparación del build de la aplicación, la configuración de los parámetros del entorno, la provisión de los recursos necesarios en la nube y la publicación exitosa de la aplicación en el servicio Azure Web App. Asimismo, se configuró la conexión a la base de datos mediante Azure MySQL Flexible Server, garantizando el almacenamiento persistente de datos.
+Esta evidencia proporciona transparencia sobre los pasos realizados, las configuraciones aplicadas y la correcta finalización del despliegue, asegurando que el producto entregado esté operativo y disponible para la revisión y validación de los interesados.
+
+- Primero se debe crear el grupo de recursos que almacena la base de datos para el proyecto
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3caae03f-4f8b-4f9e-8e99-4401742a1254" alt="Deployment Step 1">
+</p>
+
+- En ese grupo de recursos se debe crear una base de datos de mysql flexible, esta debe estar en la misma región que el grupo de recursos
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/590ef925-6c3c-4a64-a837-2075eeb12b92" alt="Deployment Step 2">
+</p>
+
+- Después de crear la base de datos, vamos a configuración -> redes y se activan estas opciones para que se pueda acceder a la base de datos
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/724d8877-0197-496f-ad6f-63cf88c8081d" alt="Deployment Step 3">
+</p>
+
+- Luego en el rider debemos poner la información del servidor para que se pueda deployar, se debe cambiar appsettings.json y appsettings.Development.json
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3c2a4c68-fd2a-41c1-8d2c-462f4d699130" alt="Deployment Step 4">
+</p>
+
+- Ahora se instala el plugin de Azure
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/89cecc97-ed09-484a-9e36-29618e9c872f" alt="Deployment Step 5">
+</p>
+
+- Se conecta Rider con Azure
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/74b4fd1b-95cc-46a2-a8ed-569cf7faf1d6" alt="Deployment Step 6">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/92711c4b-9c9c-46c2-afba-3281423905c9" alt="Deployment Step 6">
+</p>
+
+- En solution se le da al proyecto y Publish en Azure
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e499966e-bb05-42d1-866b-20d1b38be5c2" alt="Deployment Step 6">
+</p>
+
+- Se configura la aplicación en el grupo de recursos creado anteriormente
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/806454ac-e025-4bec-a285-5db3b5bffcbc" alt="Deployment Step 6">
+</p>
+
+- Una vez configurado se le da a run 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d2da4801-675d-4957-b9ea-57014cf3dd63" alt="Deployment Step 7">
+</p>
+
+- Cuando salga el link, se verá así
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f8b5707e-39dc-4a7a-a650-7af6bd1b5119" alt="Deployment Step 8">
+</p>
+
+- Eso está bien, solo debemos agregar el /swagger/index.html para que aparezca toda la documentación
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4cb342d9-071f-41e5-a5b1-7e888e5512ad" alt="Deployment Step 9">
+</p>  
+
+Link a la Documentación en Swagger: https://app-250620211419.azurewebsites.net/swagger/index.html
 
 #### 5.2.3.8. Team Collaboration Insights during Sprint
 
@@ -3128,3 +3287,8 @@ FitManager. https://fitflow-appweb.github.io/FitManagerLanding/
 Anexo G. Web Application
 
 FitManager. https://fitmanager-f6e6e.web.app/
+
+Anexo H. Swagger
+
+FitManager. https://app-250620211419.azurewebsites.net/swagger/index.html
+
