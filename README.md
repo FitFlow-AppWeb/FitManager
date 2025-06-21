@@ -1974,7 +1974,7 @@ El Domain-Driven Software Architecture extiende los principios del Domain Driven
 ### 4.8.1. Database Diagram
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ea4d6006-9a0c-4361-8577-b074ffac72ca" alt="Database Diagram">
+  <img src="https://github.com/user-attachments/assets/c4b8dc10-880b-4777-8b1a-8fa0f50c698d" alt="Database Diagram">
 </p>
 
 # CAPÍTULO 5: PRODUCT IMPLEMENTATION & DEPLOYMENT
@@ -3192,6 +3192,44 @@ Evidencia de commits por integrante del grupo
 ## 5.3. Validation Interviews
 
 ### 5.3.1. Diseño de Entrevistas
+
+## 🧑‍💼 Segmento 1: Dueños, Administradores y Entrenadores de Gimnasios
+
+#### 👤 Perfil del Entrevistado
+- ¿Cuál es tu nombre y rol en el gimnasio?
+- ¿Qué herramientas usas actualmente para gestionar el gimnasio?
+
+#### 🖥️ Tras mostrar la Landing Page
+- ¿Qué entendiste que ofrece FitManager?
+- ¿Crees que esta solución está pensada para alguien como tú?
+- ¿Qué mejorarías de la página?
+
+#### 💻 Tras la demostración de la Aplicación Web
+- ¿Qué impresión general te dio la plataforma?
+- ¿Te parece útil para la gestión diaria de tu gimnasio?
+- ¿Fue fácil de entender cómo funciona?
+- ¿Qué le agregarías o cambiarías?
+
+#### ✅ Cierre
+- ¿Qué es lo que más te gustó?
+- ¿Usarías esta herramienta?
+
+---
+
+## 🧘 Segmento 2: Clientes de Gimnasios
+
+#### 👤 Perfil del Entrevistado
+- ¿Cuál es tu nombre?
+- ¿De qué gimnasio actualmente eres cliente?
+
+#### 💻 Tras la demostración de la Aplicación Web
+- ¿Qué te pareció la herramienta que el gimnasio podría usar?
+- Si el gimnasio usa esta herramienta para organizar tus clases, tener tu información, ver tu asistencia o tus pagos, ¿crees que eso mejoraría tu experiencia como cliente?
+- ¿Qué le cambiarías o le agregarías para que tu experiencia como cliente sea aún mejor?
+
+#### ✅ Cierre
+- En general, ¿qué es lo que más te gustó de lo que podría hacer esta herramienta por tu experiencia como cliente?
+- ¿Te gustaría que tu gimnasio usara una herramienta así?
 
 ### 5.3.2. Registro de Entrevistas
 
