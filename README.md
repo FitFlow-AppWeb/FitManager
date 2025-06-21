@@ -34,7 +34,7 @@
 Repositorio donde está el project report: https://github.com/FitFlow-AppWeb/FitManager
 
 Para el desarrollo del informe hemos trabajado en un google docs, y luego hemos pasado el contenido al readme del repositorio principal.
-Para esta entrega, se actualizo el readme, se agregó el sprint 3 y se hicieron entrevista de validación de producto que permiteron realizar evaluaciones heurísticas.
+Para esta entrega, se actualizo el readme, se agregó el sprint 3 y se hicieron entrevistas de validación de producto que permiteron realizar evaluaciones heurísticas.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/40f5dd65-d50e-4a9a-9196-c438db6d6e19" alt="Insights repositorio">
