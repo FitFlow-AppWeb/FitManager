@@ -201,8 +201,6 @@ Criterio: La capacidad de funcionar efectivamente en un equipo cuyos miembros ju
 
 ## TP
 
-## TP
-
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---------------------|---------------------|--------------|
 | Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Alvarado De La Cruz, Juan Carlos**: Implementación de sección de perfil y traducciones con i18n. | Durante esta fase, los miembros del equipo asumieron roles complementarios en el liderazgo. La elaboración de la pantalla de perfil implicó toma de decisiones compartida sobre prioridades de diseño y experiencia de usuario, mientras que la investigación fue distribuida equitativamente entre los miembros. Esto permitió aprovechar las fortalezas individuales y facilitar un liderazgo distribuido en base a conocimiento y habilidades, consolidando una visión común del producto. |
@@ -3504,6 +3502,8 @@ Anexo A. Entrevistas
 
 Entrevistas FitManager. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD
 
+Entrevistas de Validación. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUvaQoUT3N9Jq4q_2Vt6DusBduswFv8N9Q-uuBXlkkPUmQ?e=PLYXX3
+
 Anexo B. Videos del proyecto
 
 Web applications. prototyping.https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ERuo8X7cvC5FqEx6YCN0JpYBKXMEph_E6QqXlAQ9kbxQHw?e=TTxgUe
@@ -3512,6 +3512,8 @@ Web applications. prototyping.https://upcedupe-my.sharepoint.com/:v:/g/personal/
 Execution Evidence for Sprint 1 Review. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Ed9gIYEnn7pHoo-q92jS8bEBMDLFkl5UR49PFMps5WnhhQ?e=Whi8i4
 
 Execution Evidence for Sprint 2 Review. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Eadp2HRIXb5DnFlCBCUolFQBwWQPHVned1ARzTaDKu71Lg?e=nLiT9C
+
+Execution Evidence for Sprint 3 Review. https://upcedupe-my.sharepoint.com/personal/u202312899_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202312899_upc_edu_pe%2FDocuments%2F2025-06-21%2011-07-26%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E303b1036-6230-4148-a4f0-08f1abca1fac
 
 Anexo C. UI Design
 
@@ -3523,7 +3525,7 @@ Landing page prototyping. https://www.figma.com/proto/5Hnhhda3IFBYmJFJmVGhAO/Fit
 
 Anexo D. Pivotal Tracker
 
-FitManager. https://app.litetracker.com/n/projects/4855e0
+FitManager. https://app.litetracker.com/n/projects/400656
 
 Anexo E. Lean UX Canvas
 
@@ -3540,4 +3542,8 @@ FitManager. https://fitmanager-f6e6e.web.app/
 Anexo H. Swagger
 
 FitManager. https://app-250620211419.azurewebsites.net/swagger/index.html
+
+Anexo I. Video About-the-Product
+
+About-the-Product. https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312899_upc_edu_pe/ETYd4FsH0WRBgukPyX2xQMcBXNGVC6qeFqMPlGUkf8I2Yg?e=5rJa0I&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
