@@ -3327,6 +3327,125 @@ Evidencia de commits por integrante del grupo
 
 ### 5.3.3. Evaluaciones según Heurísticas
 
+# **UX Heuristics & Principles Evaluation**  
+**Usability – Inclusive Design – Information Architecture**
+
+- **Carrera:** Ingeniería de Software  
+- **Curso:** Aplicaciones Web  
+- **Sección:** 4388  
+- **Profesores:** Alex Humberto Sánchez Ponce  
+- **Auditor:** FitManager  
+
+## **Cliente(s):**
+- Tsuyoshi Arakaki  
+- Gonzalo Carhuancote  
+- Piero Ramírez  
+- Tatiana Nakamurakare  
+- Daniel Ríos  
+- Rodrigo Thompson
+  
+---
+
+## **Site o App a Evaluar:** FitManager
+
+### **Tareas a Evaluar:**
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+- Navegación por la aplicación web  
+- Interfaz de usuario  
+- Gestión de miembros  
+- Gestión de personal  
+- Gestión de clases  
+- Gestión de inventario  
+- Búsqueda de pagos  
+- Visualización de asistencia  
+- Visualización de calendario  
+- Gestión de notificaciones  
+
+**No están incluidas** en esta versión de la evaluación las siguientes tareas:  
+
+- Configuración de la cuenta  
+- Implementación de versión de la plataforma para miembros de gimnasio  
+- Agregado de nuevos módulos  
+
+---
+
+## **Escala de Severidad**
+
+| **Nivel** | **Descripción** |
+|:---------:|-----------------|
+| **1** | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| **2** | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja para el siguiente lanzamiento. |
+| **3** | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante corregirlo y se le debe asignar una prioridad alta. |
+| **4** | Problema muy grave: error de gran impacto que impide al usuario continuar con el uso de la herramienta. Debe ser corregido antes del lanzamiento. |
+
+---
+
+## **Tabla Resumen de Problemas Detectados**
+
+| **#** | **Problema** | **Escala de Severidad** | **Heurística/Principio Violado** |
+|:-----:|--------------|:-----------------------:|----------------------------------|
+| 1 | Falta de notificaciones por correo o WhatsApp para recordatorios (ej. membresías por vencer). | 2 | Reconocimiento antes que recuerdo |
+| 2 | Opciones del menú insuficientemente explicadas. | 1 | Claridad y Coherencia |
+| 3 | Insuficientes detalles visuales (colores, imágenes). | 2 | Estética y diseño minimalista |
+| 4 | Ausencia de historial profesional de los profesores. | 2 | Visibilidad del estado del sistema |
+| 5 | Falta de ejemplos visuales o capturas reales de la plataforma. | 3 | Coherencia y estándares |
+
+#### PROBLEMA #1 
+Severidad: 2
+Heurística Violada: Reconocimiento antes que recuerdo
+Problema: Falta de notificaciones por correo o WhatsApp para recordatorios (ej. membresías por vencer).
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a8ea11ef-9caa-4135-8bed-072e018bbcf3" alt="Recomendación Problema 1">
+</p>
+
+Recomendación: Implementar opciones para enviar una copia del mensaje por Whatsapp y por SMS. Al automatizar los recordatorios y enviarlos por canales familiares (WhatsApp, SMS), se elimina la necesidad de que el usuario "recuerde" activamente los vencimientos.
+
+#### PROBLEMA #2
+Severidad: 1
+Heurística Violada: Claridad y Coherencia
+Problema: Opciones del menú insuficientemente explicadas.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/915d4423-f164-4fc2-a96d-723fb2ca001e" alt="Recomendación Problema 2">
+</p>
+
+Recomendación: Implementar descripciones emergentes (tooltips) para las opciones del menú, para mejorar el entendimiento de las funcionalidades.
+
+#### PROBLEMA #3
+Severidad: 2
+Heurística Violada: Estética y diseño minimalista
+Problema: Insuficientes detalles visuales (colores, imágenes).
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b51bc501-d88d-437d-9363-067e3ece340c" alt="Recomendación Problema 3">
+</p>
+
+Recomendación: Se pueden añadir colores llamativos a elementos clave de cada sección de la aplicación.
+
+#### PROBLEMA #4
+Severidad: 2
+Heurística Violada: Visibilidad del estado del sistema
+Problema: Ausencia de historial profesional de los profesores.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4af1da1c-742e-46e4-b6f9-3042b217b411" alt="Recomendación Problema 4">
+</p>
+
+Recomendación: Colocar un campo más de historial de enseñanza, así se provee al usuario de información relevante para tomar decisiones informadas.
+
+#### PROBLEMA #5
+Severidad: 3
+Heurística Violada: Coherencia y estándares
+Problema: Falta de ejemplos visuales o capturas reales de la plataforma.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3db8e172-d249-4dc9-b196-7ed5364b4818" alt="Recomendación Problema 5">
+</p>
+
+Recomendación: Se recomienda implementar, en la sección de Muestras de la Landing Page, capturas reales de la plataforma, preferiblemente a modo de carrusel
+
 ## 5.4. Video About-the-Product
 
 # Conclusiones
