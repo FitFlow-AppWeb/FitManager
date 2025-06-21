@@ -3446,6 +3446,16 @@ Recomendación: Se recomienda implementar, en la sección de Muestras de la Land
 
 ## 5.4. Video About-the-Product
 
+Esta sección presenta el video 'About-the-Product' de FitManager, el cual describe el modelo de negocio y las características principales del software. Está dirigido tanto a visitantes de la Landing Page que buscan comprender la solución, como a usuarios de las Aplicaciones interesados en las tareas y procesos soportados. 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f72088b6-1f18-4744-9466-df00f68ada4c" alt="About-the-Product Screenshot">
+</p>
+
+Link (Microsoft Stream): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312899_upc_edu_pe/ETYd4FsH0WRBgukPyX2xQMcBXNGVC6qeFqMPlGUkf8I2Yg?e=5rJa0I&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+
+Link (Youtube): https://www.youtube.com/watch?v=waMrHExcU5w&t=13s
+
 # Conclusiones
 
 * Consideramos que nuestro equipo ha realizado un esfuerzo exhaustivo en la obtención y el análisis de los requisitos. Las diversas técnicas que empleamos, incluyendo entrevistas, needfinding, creación de user personas, journey maps, y más, nos han permitido obtener una comprensión profunda de las necesidades de los usuarios y las demandas del mercado. Este enfoque integral proporciona una base sólida para el desarrollo de un producto centrado en el usuario.
