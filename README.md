@@ -33,11 +33,11 @@
 
 Repositorio donde está el project report: https://github.com/FitFlow-AppWeb/FitManager
 
-Para el desarrollo del informe hemos trabajado en un google docs, y luego hemos pasado el contenido al readme del repositorio principal. A cada uno se le encargo subir un capítulo.
-Para esta entrega, se actualizo el readme y se agrego el sprint 2.
+Para el desarrollo del informe hemos trabajado en un google docs, y luego hemos pasado el contenido al readme del repositorio principal.
+Para esta entrega, se actualizo el readme, se agregó el sprint 3 y se hicieron entrevista de validación de producto que permiteron realizar evaluaciones heurísticas.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/77ebf430-b486-4123-824b-fadd5583decd" alt="Insights repositorio">
+  <img src="https://github.com/user-attachments/assets/40f5dd65-d50e-4a9a-9196-c438db6d6e19" alt="Insights repositorio">
 </p>
 
 # Contenido
@@ -3088,6 +3088,8 @@ Endpoints implementados
 Video explicativo sobre lo desarrollado en este Sprint:
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 3, el equipo se centró en la robusta documentación de los Web Services desarrollados, utilizando la especificación OpenAPI (Swagger UI) para asegurar la claridad, facilidad de uso y mantenibilidad de la API. Este esfuerzo ha culminado en la completa documentación de los endpoints correspondientes a los bounded contexts de Classes, Employees, Finances, Inventory, Members y Notifications. Se han detallado las acciones soportadas por cada endpoint, incluyendo los verbos HTTP, la sintaxis de llamada, la especificación de parámetros, y ejemplos claros de las respuestas esperadas, abarcando tanto escenarios de éxito como de error. Esta documentación es fundamental para el consumo eficiente de la API por parte del frontend y otros servicios.
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
 
