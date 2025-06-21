@@ -3085,7 +3085,7 @@ Endpoints implementados
   <img src="https://github.com/user-attachments/assets/739fe0f9-b3ab-4f07-a234-45a992130002" alt="endpoints3">
 </p>
 
-Video explicativo sobre lo desarrollado en este Sprint:
+Video explicativo sobre lo desarrollado en este Sprint: https://upcedupe-my.sharepoint.com/personal/u202312899_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202312899_upc_edu_pe%2FDocuments%2F2025-06-21%2011-07-26%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E303b1036-6230-4148-a4f0-08f1abca1fac
 
 #### 5.2.3.6. Services Documentation Evidence for Sprint Review
 
