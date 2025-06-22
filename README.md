@@ -3323,6 +3323,106 @@ Evidencia de commits por integrante del grupo
 
 ### 5.3.2. Registro de Entrevistas
 
+## 🧑‍💼 Segmento 1: Dueños, Administradores y Entrenadores de Gimnasios
+
+Entrevistado N°1: Tsuyoshi Arakaki
+Edad: 22
+Distrito: San Juan de Lurigancho
+Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUvaQoUT3N9Jq4q_2Vt6DusBduswFv8N9Q-uuBXlkkPUmQ?e=PLYXX3
+Instante en el que inicia: 0:00
+Duración: 16:29
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2e0ecffa-8e3e-447e-af08-d8bdbf35d671" alt="Interview 1">
+</p>
+
+Resumen:
+Tsuyoshi, quien asiste a su tío en la gestión de un gimnasio, encontró muy atractiva la propuesta de FitManager tras ver la landing page. Entendió que la solución podría ser de gran ayuda en la gestión de personal y horarios, y que además mejoraría la experiencia del cliente. Consideró que la herramienta es interactiva, fácil de usar y que la propuesta es adecuada para sus necesidades.
+Respecto a la aplicación web, Tsuyoshi tuvo una impresión muy positiva, creyendo que le ahorraría bastante tiempo en sus tareas diarias. La consideró muy útil para la gestión diaria del gimnasio de su tío y destacó que la navegación es fácil de usar y entender. Lo que más le gustó de la plataforma fue que le permitiría mejorar el tema de los pagos, la gestión de personal y la posibilidad de ver el tema de las finanzas para las ganancias y pérdidas.
+Al finalizar la entrevista, lo que más le gustó a Tsuyoshi fue la gestión de miembros y personal, así como la capacidad de manejar su información de forma eficiente. Su respuesta general denota un gran interés en la herramienta, sugiriendo una alta probabilidad de que la considere para el gimnasio.
+
+Entrevistado N°2: Gonzalo Carhuancote
+Edad: 20
+Distrito: Los Olivos
+Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUvaQoUT3N9Jq4q_2Vt6DusBduswFv8N9Q-uuBXlkkPUmQ?e=PLYXX3
+Instante en el que inicia: 16:30
+Duración: 4:05
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2e7d0008-e8cc-4992-8437-2d3dcad78c0f" alt="Interview 2">
+</p>
+
+Resumen:
+Gonzalo Carhuancote, administrador general del gimnasio, comentó que actualmente utilizan principalmente Excel para llevar el control de pagos y membresías. Además, utilizan un grupo de WhatsApp para coordinar con los entrenadores, lo que genera cierta dispersión en la información y dificulta algunas tareas administrativas.
+Luego de mostrarle la landing page de FitManager, Gonzalo comprendió que la herramienta está diseñada para gestionar integralmente el gimnasio: pagos, horarios, entrenadores y membresías. Le pareció especialmente útil el enfoque en la automatización de los pagos, ya que es el área donde enfrenta más problemas en la gestión actual. Como sugerencia, mencionó que sería ideal incorporar más ejemplos visuales o capturas reales de la plataforma, para transmitir mayor confianza a quienes la visiten.
+Tras la demostración de la aplicación web, su impresión general fue positiva. Consideró que la plataforma se ve limpia, ordenada y profesional. Destacó que le resultaría útil centralizar todas las operaciones en un solo lugar, lo que le evitaría depender de archivos dispersos o distintas aplicaciones. Si bien en general entendió el funcionamiento, sugirió que algunas opciones del menú podrían estar mejor explicadas para facilitar su uso. También propuso incluir una función que permita enviar notificaciones automáticas a los clientes cuando sus membresías estén por vencer.
+Finalmente, Gonzalo resaltó que lo que más le gustó de FitManager fue el control automático de pagos y membresías, ya que representaría un ahorro importante de tiempo en la gestión diaria. Concluyó afirmando que sí utilizaría la herramienta, siempre que el precio sea razonable y la plataforma cumpla con lo prometido.
+
+Entrevistado N°3: Piero Ramirez
+Edad: 20
+Distrito: Magdalena del mar
+Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUvaQoUT3N9Jq4q_2Vt6DusBduswFv8N9Q-uuBXlkkPUmQ?e=PLYXX3
+Instante en el que inicia: 20:36
+Duración: 15:46
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/deb31588-ebc6-44b1-a0af-6b2149900b25" alt="Interview 3">
+</p>
+
+Resumen:
+Piero Ramírez, coach en el gimnasio Vivafit y estudiante de Ingeniería Industrial en la UPC, destacó que la aplicación FitManager le pareció una solución clara, didáctica y moderna frente a sus métodos actuales basados en Excel y WhatsApp. Valoró especialmente la capacidad de la plataforma para organizar horarios, asignar rutinas, gestionar alumnos y centralizar la comunicación mediante notificaciones, evitando el uso de múltiples canales como correos o mensajes.
+Entre los aspectos que más le gustaron, mencionó el panel de asistencia por horarios (útil para saber cuándo hay más o menos gente), la ficha detallada de cada coach (certificaciones, especialidades, etc.) y el apartado financiero que permite visualizar ingresos, pagos y membresías. Como sugerencia de mejora, propuso incluir más detalles visuales (colores o imágenes) y añadir el historial profesional de los profesores, lo cual consideró relevante para que los usuarios puedan conocer mejor a los entrenadores disponibles. En general, afirmó que definitivamente usaría la aplicación, ya que mejoraría significativamente su forma de trabajar.
+
+## 🧘 Segmento 2: Clientes de Gimnasios
+
+Entrevistado N.º 4: Tatiana Nakamurakare
+Edad: 20
+Distrito: San Isidro
+Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUvaQoUT3N9Jq4q_2Vt6DusBduswFv8N9Q-uuBXlkkPUmQ?e=PLYXX3
+Instante en el que inicia: 36:23
+Duración: 4:42
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fdbf620f-6541-4b22-9dc9-20094dfbea79" alt="Interview 4">
+</p>
+
+Resumen:
+Tati, cliente actual de Smarfit, encontró la herramienta de gestión bastante útil y consideró que tiene todo lo necesario para un gimnasio. Le agradaron todas las secciones presentadas, destacando que brindan información relevante y son fáciles de entender.
+Al reflexionar sobre el impacto que tendría esta herramienta en su experiencia como cliente, Tati afirmó que si su gimnasio la utilizara para organizar clases, mantener su información, registrar asistencia o gestionar pagos, definitivamente mejoraría su experiencia al proporcionar un mejor control. Como sugerencia para optimizar aún más su vivencia como usuaria, Tati mencionó que le gustaría que se agregara una forma en la que los miembros del gimnasio también pudieran usar la aplicación.
+En el cierre de la entrevista, lo que más le gustó a Tati de la herramienta fue la función de los mapas de calor. Esto se debe a que los gimnasios suelen llenarse en ciertas horas, y esta característica le permitiría evitar los momentos de mayor afluencia de gente. Finalmente, Tati expresó claramente su deseo de que su gimnasio sí usara una herramienta así.
+
+Entrevistado N.º 5: Daniel Rios
+Edad: 21
+Distrito: La Perla
+Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUvaQoUT3N9Jq4q_2Vt6DusBduswFv8N9Q-uuBXlkkPUmQ?e=PLYXX3
+Instante en el que inicia: 41:06
+Duración: 3:11
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7d272096-db5b-4e15-8181-ea23be97a9cb" alt="Interview 5">
+</p>
+
+Resumen:
+Daniel Ríos, cliente del gimnasio SmartFit, participó en la demostración de la aplicación web de FitManager. Tras verla en funcionamiento, mencionó que la herramienta le pareció bastante práctica y bien organizada. Destacó que su diseño es claro y fácil de usar, tanto para el gimnasio como para los propios clientes.
+Cuando se le preguntó si creía que esta herramienta mejoraría su experiencia como cliente, respondió que sí, especialmente porque actualmente necesita comunicarse por WhatsApp o ir directamente a recepción para consultar su información. Comentó que, en ocasiones, los datos no están actualizados, por lo que contar con acceso directo desde una plataforma web le resultaría mucho más cómodo y eficiente.
+Como sugerencia, indicó que le gustaría que la herramienta incluyera notificaciones por correo o WhatsApp, principalmente para recordar renovaciones de pago o avisar sobre cambios en las clases, lo cual le ayudaría a mantenerse informado sin necesidad de consultar constantemente.
+Finalmente, lo que más valoró de la herramienta fue la posibilidad de tener toda su información en un solo lugar, especialmente los pagos y las clases inscritas, lo que facilitaría su organización personal. Concluyó afirmando que le gustaría que su gimnasio implementara una herramienta así.
+
+Entrevistado N.º 6: Rodrigo Thompson
+Edad: 20	
+Distrito: Surco
+Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUvaQoUT3N9Jq4q_2Vt6DusBduswFv8N9Q-uuBXlkkPUmQ?e=PLYXX3
+Instante en el que inicia: 44:18
+Duración: 08:39
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/15ce8c68-8f84-4fce-9ac2-f532c7e3145c" alt="Interview 6">
+</p>
+
+Resumen:
+El entrevistador formuló a Rodrigo Thomson una serie de preguntas orientadas a comprender su perfil como usuario de gimnasios y recabar su impresión sobre FitManager. Primero indagó sobre el gimnasio al que asiste (SmartFit) y la duración de su membresía (dos años y medio). A continuación, tras la demostración de la aplicación, preguntó su opinión general sobre la herramienta, su utilidad frente a la gestión en Excel y la claridad de la interfaz en el dashboard financiero y de asistencia.
+En la segunda tanda de preguntas, se exploró cómo la adopción de FitManager podría mejorar la experiencia tanto del cliente como del administrador: se le inquirió si el uso de la app para organizar clases, gestionar miembros y recibir notificaciones elevaría la atención al cliente; luego pidió sugerencias de mejora (por ejemplo, automatizar correos a miembros inactivos); finalmente, indagó qué funcionalidades le gustaron más y si desearía que su propio gimnasio adoptase una solución semejante.
+
 ### 5.3.3. Evaluaciones según Heurísticas
 
 # **UX Heuristics & Principles Evaluation**  
