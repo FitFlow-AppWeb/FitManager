@@ -55,6 +55,14 @@ export default {
   },
   mounted(){
     this.fetchClasses();
+    const service = new ClassApiService();
+    service.testLocalMembershipTypes()
+        .then(data => {
+          console.log('🎉 Datos en componente:', data);
+        })
+        .catch(err => {
+          console.error('😵 Error al probar endpoint local:', err);
+        });
   }
 }
 </script>

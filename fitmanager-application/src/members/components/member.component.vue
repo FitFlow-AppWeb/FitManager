@@ -19,17 +19,19 @@ import MemberCard from "./member-card.component.vue";
 import AddMember from "./add-member.component.vue";
 import EditMember from "./edit-member.component.vue";
 import DeactivateMember from "./deactivate.component.vue";
+import MemberPayments from "./member-payments.component.vue";
 
 export default {
   name: "MemberComponent",
-  components: { MemberList, MemberCard, AddMember, EditMember, DeactivateMember },
+  components: { MemberList, MemberCard, AddMember, EditMember, DeactivateMember, MemberPayments  },
   data() {
     return {
       members: [],
       selectedMember: null,
       showAddModal: false,
       showEditModal: false,
-      showDeactivateModal: false
+      showDeactivateModal: false,
+      showPaymentsModal: false
     };
   },
   methods: {
@@ -42,10 +44,19 @@ export default {
     onDeactivateRequest() {
       this.showDeactivateModal = true;
     },
+    onPaymentsRequest() {
+      console.log("Received payments-request from card");
+
+      this.showPaymentsModal = true;
+    },
     fetchMembers() {
       const service = new MemberApiService();
       service.getAllMembers().then(data => {
         this.members = data;
+        if (this.selectedMember) {
+          const updated = data.find(m => m.id === this.selectedMember.id);
+          this.selectedMember = updated || null;
+        }
       });
     }
   },
@@ -63,6 +74,7 @@ export default {
           :members="members"
           @selected="onMemberSelected"
           @add-request="showAddModal = true"
+          @payments-request="onPaymentsRequest"
       />
       <AddMember
           v-if="showAddModal"
@@ -77,6 +89,7 @@ export default {
           :member="selectedMember"
           @edit-request="onEditRequest"
           @deactivate-request="onDeactivateRequest"
+          @payments-request="onPaymentsRequest"
       />
     </div>
 
@@ -95,6 +108,11 @@ export default {
         :visible="showDeactivateModal"
         @close="showDeactivateModal = false"
         @member-deactivated="fetchMembers"
+    />
+    <MemberPayments
+        v-if="showPaymentsModal"
+        :member-id="selectedMember.id"
+        @close="showPaymentsModal = false"
     />
   </div>
 </template>

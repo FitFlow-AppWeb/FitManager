@@ -7,6 +7,7 @@
  * When the user confirms, it calls a service to deactivate the member and emits
  * relevant events to update the parent component.
  *
+ *
  * Author: Cassius Martel
  */
 

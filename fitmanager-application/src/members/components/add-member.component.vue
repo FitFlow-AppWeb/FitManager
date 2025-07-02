@@ -10,7 +10,7 @@
  * Author: Cassius Martel
  */
 
-import { MemberApiService } from "../services/member-api.service.js";
+import { MemberApiService } from '../services/member-api.service.js';
 
 export default {
   name: "AddMember",
@@ -19,7 +19,7 @@ export default {
       fullName: "",
       age: null,
       membershipStatus: "",
-      membershipType: "",
+      membershipType: null,
       expirationDate: "",
       dni: "",
       email: "",
@@ -27,46 +27,65 @@ export default {
       address: "",
       membershipStartDate: "",
       profilePicture: "",
+
       statusOptions: [
-        { name: this.$t("members.active"), value: "active" },
-        { name: this.$t("members.inactive"), value: "inactive" },
-        { name: this.$t("members.pending"), value: "pending" }
+        { name: this.$t("members.active"), value: "Active" },
+        { name: this.$t("members.inactive"), value: "Inactive" },
+        { name: this.$t("members.pending"), value: "Pending" }
       ],
-      typeOptions: [
-        { name: this.$t("members.monthly"), value: "monthly" },
-        { name: this.$t("members.quarterly"), value: "quarterly" },
-        { name: this.$t("members.annual"), value: "annual" }
-      ]
+
+      typeOptions: [],
     };
   },
+
+  async mounted() {
+    try {
+      const response = await fetch('http://localhost:7070/api/v1/MembershipType');
+      const data = await response.json();
+      this.typeOptions = data.map(t => ({
+        name: t.name,
+        value: t.id
+      }));
+    } catch (err) {
+      console.error("Error fetching membership types:", err);
+    }
+  },
+
   methods: {
     async submitForm() {
+      const [firstName, ...rest] = this.fullName.trim().split(' ');
+      const lastName = rest.join(' ') || "";
+
       const formattedExpirationDate = this.expirationDate instanceof Date
-          ? this.expirationDate.toISOString().split('T')[0]
-          : this.expirationDate;
+          ? this.expirationDate.toISOString()
+          : new Date(this.expirationDate).toISOString();
+
       const formattedStartDate = this.membershipStartDate instanceof Date
-          ? this.membershipStartDate.toISOString().split('T')[0]
-          : this.membershipStartDate;
+          ? this.membershipStartDate.toISOString()
+          : new Date(this.membershipStartDate).toISOString();
 
       const newMember = {
-
-        fullName: this.fullName,
+        firstName,
+        lastName,
         age: this.age,
-        membershipStatus: this.membershipStatus,
-        membershipType: this.membershipType,
-        expirationDate: formattedExpirationDate,
         dni: this.dni,
-        email: this.email,
-        phone: this.phone,
+        phoneNumber: this.phone,
         address: this.address,
-        membershipStartDate: formattedStartDate,
-        profilePicture: this.profilePicture
+        email: this.email,
+        startDate: formattedStartDate,
+        endDate: formattedExpirationDate,
+        status: this.membershipStatus,
+        membershipTypeId: this.membershipType
       };
 
-      const service = new MemberApiService();
-      await service.addMember(newMember);
-      this.$emit("member-added");
-      this.$emit("close");
+      try {
+        const service = new MemberApiService();
+        await service.addMember(newMember);
+        this.$emit("member-added");
+        this.$emit("close");
+      } catch (error) {
+        console.error("Error adding member:", error);
+      }
     }
   }
 };
@@ -77,26 +96,114 @@ export default {
     <div class="modal-content">
       <h2 id="addMemberTitle" class="modal-title">{{ $t('members.add-new-member') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="fullName" :placeholder="$t('members.full-name')" class="input-field" required aria-label="Full name" />
-        <pv-inputtext v-model.number="age" :placeholder="$t('members.age')" type="number" class="input-field" required aria-label="Age" />
-        <pv-select v-model="membershipStatus" :options="statusOptions" :placeholder="$t('members.membership-status')" option-label="name" option-value="value" class="input-field" required aria-label="Membership status" />
-        <pv-select v-model="membershipType" :options="typeOptions" :placeholder="$t('members.membership-type')" option-label="name" option-value="value" class="input-field" required aria-label="Membership type" />
-        <pv-datepicker v-model="expirationDate" :placeholder="$t('members.expiration-date')" class="input-field" required aria-label="Membership expiration date" />
-        <pv-datepicker v-model="membershipStartDate" :placeholder="$t('members.start-date')" class="input-field" required aria-label="Membership start date" />
-        <pv-inputtext v-model="dni" placeholder="DNI" class="input-field" required aria-label="DNI" />
-        <pv-inputtext v-model="email" type="email" :placeholder="$t('members.email')" class="input-field" required aria-label="Email" />
-        <pv-inputtext v-model="phone" type="tel" :placeholder="$t('members.phone')" class="input-field" required aria-label="Phone number" />
-        <pv-inputtext v-model="address" :placeholder="$t('members.address')" class="input-field" required aria-label="Address" />
-        <pv-inputtext v-model="profilePicture" type="url" :placeholder="$t('members.profile-picture')" class="input-field" required aria-label="Profile picture URL" />
+        <pv-inputtext
+            v-model="fullName"
+            :placeholder="$t('members.full-name')"
+            class="input-field"
+            required
+            aria-label="Full name"
+        />
+
+        <pv-inputtext
+            v-model.number="age"
+            :placeholder="$t('members.age')"
+            type="number"
+            class="input-field"
+            required
+            aria-label="Age"
+        />
+
+        <pv-select
+            v-model="membershipStatus"
+            :options="statusOptions"
+            :placeholder="$t('members.membership-status')"
+            option-label="name"
+            option-value="value"
+            class="input-field"
+            required
+            aria-label="Membership status"
+        />
+
+        <pv-select
+            v-model="membershipType"
+            :options="typeOptions"
+            :placeholder="$t('members.membership-type')"
+            option-label="name"
+            option-value="value"
+            class="input-field"
+            required
+            aria-label="Membership type"
+        />
+
+        <pv-datepicker
+            v-model="expirationDate"
+            :placeholder="$t('members.expiration-date')"
+            class="input-field"
+            required
+            aria-label="Membership expiration date"
+        />
+
+        <pv-datepicker
+            v-model="membershipStartDate"
+            :placeholder="$t('members.start-date')"
+            class="input-field"
+            required
+            aria-label="Membership start date"
+        />
+
+        <pv-inputtext
+            v-model="dni"
+            placeholder="DNI"
+            class="input-field"
+            required
+            aria-label="DNI"
+        />
+
+        <pv-inputtext
+            v-model="email"
+            type="email"
+            :placeholder="$t('members.email')"
+            class="input-field"
+            required
+            aria-label="Email"
+        />
+
+        <pv-inputtext
+            v-model="phone"
+            type="tel"
+            :placeholder="$t('members.phone')"
+            class="input-field"
+            required
+            aria-label="Phone number"
+        />
+
+        <pv-inputtext
+            v-model="address"
+            :placeholder="$t('members.address')"
+            class="input-field"
+            required
+            aria-label="Address"
+        />
+
 
         <div class="actions" role="group" aria-label="Form actions">
-          <pv-button :label="$t('general.add')" type="submit" class="add-button" />
-          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
+          <pv-button
+              :label="$t('general.add')"
+              type="submit"
+              class="add-button"
+          />
+          <pv-button
+              :label="$t('general.cancel')"
+              type="button"
+              @click="$emit('close')"
+              class="cancel-button"
+          />
         </div>
       </form>
     </div>
   </div>
 </template>
+
 
 
 

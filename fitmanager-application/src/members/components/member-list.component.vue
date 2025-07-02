@@ -1,5 +1,4 @@
-<script>
-/**
+<script>/**
  * Member List Component
  *
  * This component displays a searchable and filterable table of members.
@@ -9,9 +8,12 @@
  *
  * Author: Cassius Martel
  */
+import {Select as PvSelect} from "primevue";
+import axios from "axios";
 
 export default {
   name: "MemberList",
+  components: {PvSelect},
   props: {
     members: {
       type: Array,
@@ -24,16 +26,34 @@ export default {
       searchQuery: "",
       showFilters: false,
       ageRange: { min: null, max: null },
-      statusOptions: ['active', 'pending', 'inactive'],
+      statusOptions: [
+        { label: 'Active', value: 'active' },
+        { label: 'Pending', value: 'pending' },
+        { label: 'Inactive', value: 'inactive' }
+      ],
       statusFilter: null,
-      typeOptions: ['annual', 'quarterly', 'monthly'],
+      typeOptions: [],
       typeFilter: null
     };
   },
   methods: {
+    async fetchMembershipTypes() {
+      try {
+        const response = await axios.get('http://localhost:7070/api/v1/MembershipType');
+        this.typeOptions = response.data.map(type => ({
+          label: type.name,
+          value: type.name
+        }));
+      } catch (error) {
+        console.error('❌ Error loading membership types:', error);
+      }
+    },
     handleRowSelect(event) {
       this.internalSelection = event.data;
       this.$emit('selected', event.data);
+    },
+    capitalize(text) {
+      return text ? text.charAt(0).toUpperCase() + text.slice(1).toLowerCase() : '';
     },
     getRowClass(data) {
       return this.internalSelection && this.internalSelection.id === data.id
@@ -73,6 +93,9 @@ export default {
       }
       return list;
     }
+  },
+  mounted() {
+    this.fetchMembershipTypes();
   }
 };
 </script>
@@ -119,17 +142,31 @@ export default {
                 <pv-sbutton
                     v-model="statusFilter"
                     :options="statusOptions"
+                    optionLabel="label"
+                    optionValue="value"
                     class="filter-sbutton"
                     aria-label="Membership status filter"
                 />
               </div>
               <div class="filter-row">
                 <label>{{ $t("members.type") }}:</label>
-                <pv-sbutton
+                <pv-select
                     v-model="typeFilter"
                     :options="typeOptions"
-                    class="filter-sbutton"
+                    optionLabel="label"
+                    placeholder="Select Type"
+                    class="filter-dropdown"
                     aria-label="Membership type filter"
+                />
+              </div>
+              <div class="filter-row">
+                <pv-button
+                    :label="$t('clearfilters')"
+                    icon="pi pi-times"
+                    class="clear-filters-btn"
+                    severity="secondary"
+                    @click="clearFilters"
+                    aria-label="Clear all filters"
                 />
               </div>
             </div>
@@ -148,7 +185,12 @@ export default {
 
       <pv-column field="fullName" :header="$t('members.name')" sortable style="width:25%"></pv-column>
       <pv-column field="age" :header="$t('members.age')" sortable style="width:15%"></pv-column>
-      <pv-column field="membershipStatus" :header="$t('members.membership-status')" sortable style="width:25%"></pv-column>
+      <pv-column field="membershipStatus" :header="$t('members.membership-status')" sortable style="width:25%">
+
+        <template #body="{ data }">
+          {{ capitalize(data.membershipStatus) }}
+        </template>
+      </pv-column>
       <pv-column field="membershipType" :header="$t('members.membership-type')" sortable style="width:20%"></pv-column>
       <pv-column field="expirationDate" :header="$t('members.expiration-date')" sortable style="width:25%"></pv-column>
 
@@ -318,7 +360,10 @@ export default {
   padding: 0.25rem;
 }
 
-
+.filter-dropdown {
+  width: 100%;
+  margin-top: 4px;
+}
 
 
 .right-group .add-btn {
@@ -330,7 +375,10 @@ export default {
 .right-group .add-btn:hover {
   background-color: #8FBFC0 !important;
 }
-
+.clear-filters-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
 
 </style>
 

@@ -49,7 +49,7 @@ export default {
     <template #header>
       <div class="header">
         <img
-            :src="member.profilePicture"
+            src="https://i.imgur.com/jVyXxXV.jpg"
             alt="Profile picture"
             class="profile-img"
             role="img"
@@ -97,6 +97,8 @@ export default {
         <pv-button
             :label="$t('members.payments')"
             class="action-btn"
+            @click="$emit('payments-request')"
+
         />
         <pv-button
             :label="$t('members.remove-member')"

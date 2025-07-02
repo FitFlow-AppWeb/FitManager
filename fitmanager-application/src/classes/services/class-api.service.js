@@ -12,6 +12,7 @@
 import axios from 'axios';
 import { ClassAssembler } from "./class.assembler.js";
 import { Member } from "../../members/model/member.entity.js";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 export class ClassApiService {
     async getAllClasses() {
@@ -35,6 +36,17 @@ export class ClassApiService {
 
         } catch (error) {
             console.error('Error fetching classes or employees:', error);
+            throw error;
+        }
+    }
+
+    async testLocalMembershipTypes() {
+        try {
+            const response = await axios.get(`${BASE_URL}/api/v1/MembershipType`);;
+            console.log('✅ Datos recibidos desde backend local:', response.data);
+            return response.data;
+        } catch (error) {
+            console.error('❌ Error al llamar al backend local:', error);
             throw error;
         }
     }

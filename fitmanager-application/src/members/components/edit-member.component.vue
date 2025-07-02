@@ -24,28 +24,98 @@ export default {
   },
   data() {
     return {
-      editedMember: { ...this.member },
+      editedMember: {},
       statusOptions: [
-        { name: this.$t('members.active'), value: "active" },
-        { name: this.$t('members.inactive'), value: "inactive" },
-        { name: this.$t('members.pending'), value: "pending" }
+        { name: this.$t("members.active"), value: "Active" },
+        { name: this.$t("members.inactive"), value: "Inactive" },
+        { name: this.$t("members.pending"), value: "Pending" }
       ],
-      typeOptions: [
-        { name: this.$t('members.monthly'), value: "monthly" },
-        { name: this.$t('members.quarterly'), value: "quarterly" },
-        { name: this.$t('members.annual'), value: "annual" }
-      ]
+      typeOptions: []
     };
   },
+  watch: {
+    member: {
+      immediate: true,
+      handler(newVal) {
+        if (!newVal) return;
+
+        this.editedMember = {
+          ...newVal,
+          membershipType: null,
+          membershipStatus: this.capitalizeFirstLetter(newVal.membershipStatus)
+        };
+
+        this.loadMembershipTypes();
+      }
+    }
+  },
   methods: {
+    capitalizeFirstLetter(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    },
+    async loadMembershipTypes() {
+      try {
+        const service = new MemberApiService();
+        const types = await service.getMembershipTypes();
+
+        this.typeOptions = types.map(t => ({
+          name: t.name,
+          value: t.id
+        }));
+
+        if (typeof this.member.membershipType === "string") {
+          const match = this.typeOptions.find(opt => opt.name === this.member.membershipType);
+          if (match) {
+            this.editedMember.membershipType = match.value;
+          }
+        } else {
+          this.editedMember.membershipType = this.member.membershipType;
+        }
+      } catch (error) {
+        console.error("Error loading membership types:", error);
+      }
+    },
     async submitForm() {
-      const service = new MemberApiService();
-      await service.updateMember(this.editedMember);
-      this.$emit("member-updated", this.editedMember);
-      this.$emit("close");
+      const [firstName, ...rest] = this.editedMember.fullName.trim().split(" ");
+      const lastName = rest.join(" ") || "";
+
+      const formattedStartDate = this.editedMember.membershipStartDate instanceof Date
+          ? this.editedMember.membershipStartDate.toISOString()
+          : new Date(this.editedMember.membershipStartDate).toISOString();
+
+      const formattedExpirationDate = this.editedMember.expirationDate instanceof Date
+          ? this.editedMember.expirationDate.toISOString()
+          : new Date(this.editedMember.expirationDate).toISOString();
+
+      const updatedMember = {
+        id: this.editedMember.id,
+        firstName,
+        lastName,
+        age: this.editedMember.age,
+        dni: this.editedMember.dni,
+        email: this.editedMember.email,
+        phoneNumber: this.editedMember.phone,
+        address: this.editedMember.address,
+        startDate: formattedStartDate,
+        endDate: formattedExpirationDate,
+        status: this.editedMember.membershipStatus,
+        membershipTypeId: this.editedMember.membershipType,
+        profilePicture: "https://i.imgur.com/jVyXxXV.jpg"
+      };
+
+      try {
+        const service = new MemberApiService();
+        await service.updateMember(updatedMember);
+        this.$emit("member-updated", updatedMember);
+        this.$emit("close");
+      } catch (error) {
+        console.error("Error updating member:", error);
+      }
     }
   }
 };
+
+
 </script>
 
 <template>
@@ -53,8 +123,6 @@ export default {
     <div class="modal-content">
       <h2 class="modal-title" id="editMemberTitle">{{ $t('members.edit-member') }}</h2>
       <form @submit.prevent="submitForm" aria-describedby="editMemberDesc">
-        <p id="editMemberDesc" class="sr-only">{{ $t('members.fill-form-to-edit-member') }}</p>
-
         <pv-inputtext
             v-model="editedMember.fullName"
             :placeholder="$t('members.full-name')"
@@ -75,7 +143,7 @@ export default {
             :options="statusOptions"
             option-label="name"
             option-value="value"
-            :placeholder="$t('members.status')"
+            :label="$t('members.status')"
             class="input-field"
             required
             aria-label="Membership status"
@@ -85,7 +153,7 @@ export default {
             :options="typeOptions"
             option-label="name"
             option-value="value"
-            :placeholder="$t('members.type')"
+            :label="$t('members.type')"
             class="input-field"
             required
             aria-label="Membership type"
@@ -134,14 +202,8 @@ export default {
             required
             aria-label="Address"
         />
-        <pv-inputtext
-            v-model="editedMember.profilePicture"
-            type="url"
-            :placeholder="$t('members.profile-picture')"
-            class="input-field"
-            required
-            aria-label="Profile picture URL"
-        />
+        <input type="hidden" v-model="editedMember.profilePicture" />
+
 
         <div class="actions" role="group" aria-label="Form actions">
           <pv-button
