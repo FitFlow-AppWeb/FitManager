@@ -44,7 +44,7 @@ export class MemberApiService {
     }
 
     getMembershipTypes() {
-        return fetch('http://localhost:7070/api/v1/MembershipType')
+        return fetch(`${BASE_URL}/api/v1/MembershipType`)
             .then(res => {
                 if (!res.ok) throw new Error("Error fetching membership types");
                 return res.json();
@@ -53,7 +53,7 @@ export class MemberApiService {
 
     async getAllPayments() {
         try {
-            const response = await fetch("http://localhost:7070/api/v1/MembershipPayment");
+            const response = await fetch(`${BASE_URL}/api/v1/MembershipPayment`);
             if (!response.ok) throw new Error("Failed to fetch payments");
             return await response.json();
         } catch (error) {

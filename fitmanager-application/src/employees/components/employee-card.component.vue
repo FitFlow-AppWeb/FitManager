@@ -13,11 +13,13 @@
  * Author: Cassius Martel
  */
 
-import { Button as PvButton } from "primevue";
+import Button from 'primevue/button';
 
 export default {
   name: "EmployeeCard",
-  components: { PvButton },
+  components: {
+    PvButton: Button
+  },
   props: {
     employee: {
       type: Object,
@@ -26,7 +28,8 @@ export default {
   },
   computed: {
     statusColor() {
-      switch (this.employee.role) {
+      if (!this.employee || !this.employee.role) return 'black';
+      switch (this.employee.role.toLowerCase()) {
         case 'trainer':
           return 'darkgreen';
         case 'group instructor':
@@ -41,6 +44,7 @@ export default {
     }
   }
 };
+
 </script>
 
 <template>
@@ -48,7 +52,8 @@ export default {
     <!-- Profile picture + Name header -->
     <template #header>
       <div class="header">
-        <img :src="employee.profilePicture" alt="Profile" class="profile-img" />
+        <img             src="https://i.imgur.com/jVyXxXV.jpg"
+                         alt="Profile" class="profile-img" />
         <h2 class="name">{{ employee.fullName }}</h2>
       </div>
 
@@ -66,22 +71,28 @@ export default {
         <p><strong>DNI:</strong> {{ employee.dni }}</p>
         <p><strong>{{ $t('employees.age')}}:</strong> {{ employee.age }}</p>
         <p><strong>{{ $t('employees.email')}}:</strong> {{ employee.email }}</p>
-        <p><strong>{{ $t('employees.phone')}}:</strong> {{ employee.phone }}</p>
+        <p><strong>{{ $t('employees.phone')}}:</strong> {{ employee.phoneNumber }}</p>
         <p><strong>{{ $t('employees.address')}}:</strong> {{ employee.address }}</p>
       </div>
 
       <hr />
 
-      <!-- Membership dates & type -->
+      <!-- Work info -->
       <div class="section">
-        <p><strong>{{ $t('employees.weekly-hours')}}:</strong> {{ employee.hoursPerWeek }}</p>
-        <p><strong>{{ $t('employees.hourly-wage')}}: </strong> {{ employee.hourlyWage }}</p>
+        <p><strong>{{ $t('employees.weekly-hours')}}:</strong> {{ employee.workHours }}</p>
+        <p><strong>{{ $t('employees.hourly-wage')}}: </strong> {{ employee.wage }}</p>
+
         <p><strong>{{ $t('employees.specialities')}}: </strong>
-          <span v-if="employee.specialties.length">{{ employee.specialties.join(', ') }}</span>
+          <span v-if="employee.specialties.length">
+            {{ employee.specialties.map(s => s.name).join(', ') }}
+          </span>
           <span v-else>None</span>
         </p>
+
         <p><strong>{{ $t('employees.certifications')}}: </strong>
-          <span v-if="employee.certifications.length">{{ employee.certifications.join(', ') }}</span>
+          <span v-if="employee.certifications.length">
+            {{ employee.certifications.map(c => c.name).join(', ') }}
+          </span>
           <span v-else>None</span>
         </p>
       </div>
@@ -91,12 +102,18 @@ export default {
       <!-- Action buttons -->
       <div class="actions">
         <pv-button :label="$t('employees.edit-details')" class="action-btn" @click="$emit('edit-request')" aria-label="Edit employee details"/>
-        <pv-button :label="$t('employees.schedule-assignment')" class="action-btn" aria-label="Schedule employee assignment"/>
+        <pv-button
+            :label="$t('employees.schedule-assignment')"
+            class="action-btn"
+            aria-label="Schedule employee assignment"
+            @click="$emit('view-schedule', employee.id)"
+        />
         <pv-button :label="$t('employees.fire')" class="action-btn"  @click="$emit('fire-request')" aria-label="Fire employee"/>
       </div>
     </template>
   </pv-card>
 </template>
+
 
 
 <style scoped>
@@ -116,7 +133,6 @@ export default {
 .header {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
 }
 
 .profile-img {
@@ -142,7 +158,6 @@ export default {
 
 hr {
   border: 1px solid #A7D1D2;
-  margin: 1rem 0;
 }
 
 .actions {

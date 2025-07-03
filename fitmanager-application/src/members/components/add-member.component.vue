@@ -11,6 +11,7 @@
  */
 
 import { MemberApiService } from '../services/member-api.service.js';
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 export default {
   name: "AddMember",
@@ -27,49 +28,116 @@ export default {
       address: "",
       membershipStartDate: "",
       profilePicture: "",
-
+      typeOptions: [],
       statusOptions: [
         { name: this.$t("members.active"), value: "Active" },
         { name: this.$t("members.inactive"), value: "Inactive" },
         { name: this.$t("members.pending"), value: "Pending" }
       ],
-
-      typeOptions: [],
+      errors: {},
+      touched: {},
+      allMembers: []
     };
   },
 
   async mounted() {
     try {
-      const response = await fetch('http://localhost:7070/api/v1/MembershipType');
+      const response = await fetch(`${BASE_URL}/api/v1/MembershipType`);
       const data = await response.json();
       this.typeOptions = data.map(t => ({
         name: t.name,
         value: t.id
       }));
+
+      const service = new MemberApiService();
+      this.allMembers = await service.getAllMembers();
     } catch (err) {
-      console.error("Error fetching membership types:", err);
+      console.error("Error fetching data:", err);
+    }
+  },
+
+  computed: {
+    hasErrors() {
+      return Object.values(this.errors).some(Boolean);
     }
   },
 
   methods: {
+    touch(field) {
+      this.touched[field] = true;
+      this.validateField(field);
+    },
+
+    validateField(field) {
+      const value = this[field];
+      switch (field) {
+        case "fullName":
+          this.errors.fullName = !value ? this.$t("validation.fullName_required") : "";
+          break;
+        case "age":
+          this.errors.age = value === null ? this.$t("validation.age_required") : "";
+          break;
+        case "dni":
+          if (!/^\d{8}$/.test(value)) {
+            this.errors.dni = this.$t("validation.dni_invalid");
+          } else if (this.allMembers.some(m => m.dni === Number(value))) {
+            this.errors.dni = this.$t("validation.dni_taken");
+          } else {
+            this.errors.dni = "";
+          }
+          break;
+        case "email":
+          if (!/\S+@\S+\.\S+/.test(value)) {
+            this.errors.email = this.$t("validation.email_invalid");
+          } else if (this.allMembers.some(m => m.email === value)) {
+            this.errors.email = this.$t("validation.email_taken");
+          } else {
+            this.errors.email = "";
+          }
+          break;
+        case "phone":
+          this.errors.phone = !/^\d{9}$/.test(value) ? this.$t("validation.phone_invalid") : "";
+          break;
+        case "address":
+          this.errors.address = !value ? this.$t("validation.address_required") : "";
+          break;
+        case "membershipStatus":
+          this.errors.membershipStatus = !value ? this.$t("validation.status_required") : "";
+          break;
+        case "membershipType":
+          this.errors.membershipType = !value ? this.$t("validation.type_required") : "";
+          break;
+        case "membershipStartDate":
+          this.errors.membershipStartDate = !value ? this.$t("validation.startDate_required") : "";
+          break;
+        case "expirationDate":
+          this.errors.expirationDate = !value ? this.$t("validation.expiration_required") : "";
+          break;
+      }
+    },
+
     async submitForm() {
+      const fields = [
+        "fullName", "age", "dni", "email", "phone", "address",
+        "membershipStatus", "membershipType", "membershipStartDate", "expirationDate"
+      ];
+
+      fields.forEach(this.touch);
+
+      if (this.hasErrors) return;
+
       const [firstName, ...rest] = this.fullName.trim().split(' ');
       const lastName = rest.join(' ') || "";
 
-      const formattedExpirationDate = this.expirationDate instanceof Date
-          ? this.expirationDate.toISOString()
-          : new Date(this.expirationDate).toISOString();
-
-      const formattedStartDate = this.membershipStartDate instanceof Date
-          ? this.membershipStartDate.toISOString()
-          : new Date(this.membershipStartDate).toISOString();
+      const formattedExpirationDate = new Date(this.expirationDate).toISOString();
+      const formattedStartDate = new Date(this.membershipStartDate).toISOString();
 
       const newMember = {
         firstName,
         lastName,
         age: this.age,
-        dni: this.dni,
-        phoneNumber: this.phone,
+        dni: Number(this.dni),
+        phoneNumber: Number(this.phone),
         address: this.address,
         email: this.email,
         startDate: formattedStartDate,
@@ -84,7 +152,7 @@ export default {
         this.$emit("member-added");
         this.$emit("close");
       } catch (error) {
-        console.error("Error adding member:", error);
+        console.error("❌ Error adding member:", error);
       }
     }
   }
@@ -96,108 +164,39 @@ export default {
     <div class="modal-content">
       <h2 id="addMemberTitle" class="modal-title">{{ $t('members.add-new-member') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext
-            v-model="fullName"
-            :placeholder="$t('members.full-name')"
-            class="input-field"
-            required
-            aria-label="Full name"
-        />
+        <pv-inputtext v-model="fullName" :placeholder="$t('members.full-name')" class="input-field" @blur="touch('fullName')" />
+        <small v-if="touched.fullName && errors.fullName" class="error">{{ $t(errors.fullName) }}</small>
 
-        <pv-inputtext
-            v-model.number="age"
-            :placeholder="$t('members.age')"
-            type="number"
-            class="input-field"
-            required
-            aria-label="Age"
-        />
+        <pv-inputtext v-model.number="age" :placeholder="$t('members.age')" type="number" class="input-field" @blur="touch('age')" />
+        <small v-if="touched.age && errors.age" class="error">{{ $t(errors.age) }}</small>
 
-        <pv-select
-            v-model="membershipStatus"
-            :options="statusOptions"
-            :placeholder="$t('members.membership-status')"
-            option-label="name"
-            option-value="value"
-            class="input-field"
-            required
-            aria-label="Membership status"
-        />
+        <pv-select v-model="membershipStatus" :options="statusOptions" :placeholder="$t('members.membership-status')" option-label="name" option-value="value" class="input-field" @blur="touch('membershipStatus')" />
+        <small v-if="touched.membershipStatus && errors.membershipStatus" class="error">{{ $t(errors.membershipStatus) }}</small>
 
-        <pv-select
-            v-model="membershipType"
-            :options="typeOptions"
-            :placeholder="$t('members.membership-type')"
-            option-label="name"
-            option-value="value"
-            class="input-field"
-            required
-            aria-label="Membership type"
-        />
+        <pv-select v-model="membershipType" :options="typeOptions" :placeholder="$t('members.membership-type')" option-label="name" option-value="value" class="input-field" @blur="touch('membershipType')" />
+        <small v-if="touched.membershipType && errors.membershipType" class="error">{{ $t(errors.membershipType) }}</small>
 
-        <pv-datepicker
-            v-model="expirationDate"
-            :placeholder="$t('members.expiration-date')"
-            class="input-field"
-            required
-            aria-label="Membership expiration date"
-        />
+        <pv-datepicker v-model="expirationDate" :placeholder="$t('members.expiration-date')" class="input-field" @blur="touch('expirationDate')" />
+        <small v-if="touched.expirationDate && errors.expirationDate" class="error">{{ $t(errors.expirationDate) }}</small>
 
-        <pv-datepicker
-            v-model="membershipStartDate"
-            :placeholder="$t('members.start-date')"
-            class="input-field"
-            required
-            aria-label="Membership start date"
-        />
+        <pv-datepicker v-model="membershipStartDate" :placeholder="$t('members.start-date')" class="input-field" @blur="touch('membershipStartDate')" />
+        <small v-if="touched.membershipStartDate && errors.membershipStartDate" class="error">{{ $t(errors.membershipStartDate) }}</small>
 
-        <pv-inputtext
-            v-model="dni"
-            placeholder="DNI"
-            class="input-field"
-            required
-            aria-label="DNI"
-        />
+        <pv-inputtext v-model="dni" placeholder="DNI" class="input-field" @blur="touch('dni')" />
+        <small v-if="touched.dni && errors.dni" class="error">{{ $t(errors.dni) }}</small>
 
-        <pv-inputtext
-            v-model="email"
-            type="email"
-            :placeholder="$t('members.email')"
-            class="input-field"
-            required
-            aria-label="Email"
-        />
+        <pv-inputtext v-model="email" type="email" :placeholder="$t('members.email')" class="input-field" @blur="touch('email')" />
+        <small v-if="touched.email && errors.email" class="error">{{ $t(errors.email) }}</small>
 
-        <pv-inputtext
-            v-model="phone"
-            type="tel"
-            :placeholder="$t('members.phone')"
-            class="input-field"
-            required
-            aria-label="Phone number"
-        />
+        <pv-inputtext v-model="phone" type="tel" :placeholder="$t('members.phone')" class="input-field" @blur="touch('phone')" />
+        <small v-if="touched.phone && errors.phone" class="error">{{ $t(errors.phone) }}</small>
 
-        <pv-inputtext
-            v-model="address"
-            :placeholder="$t('members.address')"
-            class="input-field"
-            required
-            aria-label="Address"
-        />
+        <pv-inputtext v-model="address" :placeholder="$t('members.address')" class="input-field" @blur="touch('address')" />
+        <small v-if="touched.address && errors.address" class="error">{{ $t(errors.address) }}</small>
 
-
-        <div class="actions" role="group" aria-label="Form actions">
-          <pv-button
-              :label="$t('general.add')"
-              type="submit"
-              class="add-button"
-          />
-          <pv-button
-              :label="$t('general.cancel')"
-              type="button"
-              @click="$emit('close')"
-              class="cancel-button"
-          />
+        <div class="actions">
+          <pv-button :label="$t('general.add')" type="submit" class="add-button" />
+          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
         </div>
       </form>
     </div>
@@ -310,6 +309,12 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+}
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 

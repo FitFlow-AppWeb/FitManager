@@ -128,7 +128,6 @@ export default {
 .header {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
 }
 
 .profile-img {
@@ -154,7 +153,7 @@ export default {
 
 hr {
   border: 1px solid #A7D1D2;
-  margin: 1rem 0;
+  margin: 0;
 }
 
 .actions {

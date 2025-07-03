@@ -9,7 +9,6 @@
  *
  * Author: Cassius Martel
  */
-
 import { EmployeeApiService } from "../services/employee-api.service.js"
 
 export default {
@@ -24,35 +23,23 @@ export default {
       required: true
     }
   },
-
-  data() {
-    return {
-      localVisible: this.visible
-    };
-  },
-
-  watch: {
-    visible(val) {
-      this.localVisible = val;
-    }
-  },
-
   methods: {
     closeDialog() {
-      this.localVisible = false;
       this.$emit("close");
     },
     fireEmployee() {
       const service = new EmployeeApiService();
-      service.fireEmployee(this.employee).then(() => {
-        this.$emit("employee-fire", this.employee);
-        this.closeDialog();
-      }).catch(error => {
-        console.error("Error firing employee:", error);
-      });
+      service.fireEmployee(this.employee.id)
+          .then(() => {
+            this.$emit("employee-fire", this.employee);
+            this.closeDialog();
+          })
+          .catch(error => {
+            console.error("Error firing employee:", error);
+          });
     }
   }
-}
+};
 </script>
 
 <template>

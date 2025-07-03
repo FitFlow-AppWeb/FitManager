@@ -28,8 +28,7 @@ export default {
       ageRange: { min: null, max: null },
       salaryRange: { min: null, max: null },
       hoursRange: { min: null, max: null },
-      roleOptions: ["trainer", "group instructor", "reception", "cleaning"],
-      roleFilter: null
+      roleFilter: ""
     };
   },
   methods: {
@@ -45,56 +44,37 @@ export default {
     toggleFilters() {
       this.showFilters = !this.showFilters;
     },
-    applyFilters() {
-      this.showFilters = false;
-    },
     clearFilters() {
       this.ageRange = { min: null, max: null };
       this.salaryRange = { min: null, max: null };
       this.hoursRange = { min: null, max: null };
-      this.roleFilter = null;
+      this.roleFilter = "";
     }
   },
   computed: {
     filteredEmployees() {
-      // Búsqueda por nombre
       let result = this.employees.filter(emp =>
           emp.fullName.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
 
-      // Filtro por edad
-      if (this.ageRange.min !== null) {
-        result = result.filter(emp => emp.age >= this.ageRange.min);
-      }
-      if (this.ageRange.max !== null) {
-        result = result.filter(emp => emp.age <= this.ageRange.max);
-      }
+      if (this.ageRange.min !== null) result = result.filter(emp => emp.age >= this.ageRange.min);
+      if (this.ageRange.max !== null) result = result.filter(emp => emp.age <= this.ageRange.max);
 
-      // Filtro por salario
-      if (this.salaryRange.min !== null) {
-        result = result.filter(emp => emp.hourlyWage >= this.salaryRange.min);
-      }
-      if (this.salaryRange.max !== null) {
-        result = result.filter(emp => emp.hourlyWage <= this.salaryRange.max);
-      }
+      if (this.salaryRange.min !== null) result = result.filter(emp => emp.wage >= this.salaryRange.min);
+      if (this.salaryRange.max !== null) result = result.filter(emp => emp.wage <= this.salaryRange.max);
 
-      // Filtro por horas por semana
-      if (this.hoursRange.min !== null) {
-        result = result.filter(emp => emp.hoursPerWeek >= this.hoursRange.min);
-      }
-      if (this.hoursRange.max !== null) {
-        result = result.filter(emp => emp.hoursPerWeek <= this.hoursRange.max);
-      }
+      if (this.hoursRange.min !== null) result = result.filter(emp => emp.workHours >= this.hoursRange.min);
+      if (this.hoursRange.max !== null) result = result.filter(emp => emp.workHours <= this.hoursRange.max);
 
-      // Filtro por rol
       if (this.roleFilter) {
-        result = result.filter(emp => emp.role === this.roleFilter);
+        result = result.filter(emp => emp.role.toLowerCase().includes(this.roleFilter.toLowerCase()));
       }
 
       return result;
     }
   }
 };
+
 </script>
 
 <template>
@@ -127,36 +107,57 @@ export default {
                 @click="toggleFilters"
                 aria-label="Toggle filters"
             />
+
             <div v-if="showFilters" class="filter-panel" aria-expanded="true">
+              <!-- Edad -->
               <div class="filter-row">
                 <label>{{ $t("employees.age") }} Min:</label>
                 <input type="number" v-model.number="ageRange.min" min="0" aria-label="Minimum age" />
                 <label>Max:</label>
                 <input type="number" v-model.number="ageRange.max" min="0" aria-label="Maximum age" />
               </div>
+
+              <!-- Sueldo por hora -->
               <div class="filter-row">
-                <label>{{$t("employees.wage")}}  Min:</label>
+                <label>{{ $t("employees.wage") }} Min:</label>
                 <input type="number" v-model.number="salaryRange.min" min="0" aria-label="Minimum wage" />
                 <label>Max:</label>
                 <input type="number" v-model.number="salaryRange.max" min="0" aria-label="Maximum wage" />
               </div>
+
+              <!-- Horas por semana -->
               <div class="filter-row">
-                <label>{{$t("employees.hours")}}  Min:</label>
-                <input type="number" v-model.number="hoursRange.min" min="0" aria-label="Minimum hours per week" />
+                <label>{{ $t("employees.hours") }} Min:</label>
+                <input type="number" v-model.number="hoursRange.min" min="0" aria-label="Minimum hours" />
                 <label>Max:</label>
-                <input type="number" v-model.number="hoursRange.max" min="0" aria-label="Maximum hours per week" />
+                <input type="number" v-model.number="hoursRange.max" min="0" aria-label="Maximum hours" />
               </div>
+
+              <!-- Rol como texto libre -->
               <div class="filter-row">
-                <label>{{ $t("employees.status") }}:</label>
-                <pv-sbutton
+                <label>{{ $t("employees.role") }}:</label>
+                <input
+                    type="text"
                     v-model="roleFilter"
-                    :options="roleOptions"
-                    class="filter-sbutton"
-                    aria-label="Role filter"
+                    aria-label="Filter by role"
+                    class="filter-text-role"
+                />
+              </div>
+
+              <!-- Botón limpiar -->
+              <div class="filter-row filter-row-full">
+                <pv-button
+                    icon="pi pi-times"
+                    :label="$t('clearfilters')"
+                    class="clear-filters-btn"
+                    @click="clearFilters"
+                    aria-label="Clear all filters"
                 />
               </div>
             </div>
+
           </div>
+
           <div class="right-group">
             <pv-button
                 :label="$t('employees.add-employee')"
@@ -173,8 +174,8 @@ export default {
       <pv-column field="fullName" :header="$t('employees.name')" sortable style="width:25%"></pv-column>
       <pv-column field="age" :header="$t('employees.age')" sortable style="width:15%"></pv-column>
       <pv-column field="role" :header="$t('employees.role')" sortable style="width:25%"></pv-column>
-      <pv-column field="hourlyWage" :header="$t('employees.wage')" sortable style="width:20%"></pv-column>
-      <pv-column field="hoursPerWeek" :header="$t('employees.hours')" sortable style="width:25%"></pv-column>
+      <pv-column field="wage" :header="$t('employees.wage')" sortable style="width:20%"></pv-column>
+      <pv-column field="workHours" :header="$t('employees.hours')" sortable style="width:25%"></pv-column>
 
       <template #empty>{{ $t('employees.not-found') }}.</template>
     </pv-datatable>
@@ -310,46 +311,76 @@ export default {
   margin-left: 0.5rem;
 }
 
-.filter-sbutton{
-  background: white !important;
-  border: 1px solid #A7D1D2 !important;
-  color: black !important;
-  width: 250px;
-}
+
 
 .filter-panel {
   position: absolute;
   top: 2.5rem;
-  background: white;
+  background-color: white;
   border: 1px solid #A7D1D2;
   padding: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 10;
-  width: 330px !important;   /* más ancho */
-  max-width: 90vw;           /* nunca mayor al 90% de la ventana */
-  right: 0;                  /* alinéalo a la derecha */
-  left: auto !important;     /* desactiva el left fijo */
+  width: 350px !important;
+  max-width: 90vw;
+  right: 0;
+  left: auto !important;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .filter-row {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .filter-row label {
-  margin-right: 0.5rem;
+  min-width: 50px;
+  font-size: 0.9rem;
+  color: #333;
 }
 
 .filter-row input {
-  width: 60px;
-  margin-right: 1rem;
+  flex: 1;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
   border: 1px solid #A7D1D2;
-  padding: 0.25rem;
+  border-radius: 4px;
+  color: black;
+  background-color: white;
+  font-size: 0.9rem;
 }
 
+.filter-text-role {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #A7D1D2;
+  border-radius: 4px;
+  color: black;
+  background-color: white;
+}
 
+.filter-row-full {
+  justify-content: center;
+}
 
+.clear-filters-btn {
+  background-color: #F1F5F9 !important;
+  color: #333 !important;
+  border: 0 !important;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: 500;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.clear-filters-btn:hover {
+  background-color: #dcdcdc !important;
+}
 
 .right-group .add-btn {
   background-color: #A7D1D2 !important;

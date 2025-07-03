@@ -23,22 +23,25 @@ export default {
       hourlyWage: "",
       hoursPerWeek: "",
       dni: "",
-      role:"",
+      role: "",
       email: "",
       phone: "",
       address: "",
-      profilePicture: "",
-      roleOptions: [
-        { name: this.$t('employees.cleaning'), value: "cleaning" },
-        { name: this.$t('employees.trainer'), value: "trainer" },
-        { name: this.$t('employees.group-instructor'), value: "group instructor" },
-        { name: this.$t('employees.reception'), value: "Reception" }
-      ],
       specialties: [],
       newSpecialty: "",
       certifications: [],
-      newCertification: ""
+      newCertification: "",
+      errorMessage: "",
+      existingDnis: [],
+      existingEmails: [],
+      touched: {},
+      errors: {},
     };
+  },
+  computed: {
+    hasErrors() {
+      return Object.values(this.errors).some(Boolean);
+    }
   },
   methods: {
     addSpecialty() {
@@ -51,6 +54,7 @@ export default {
     removeSpecialty(index) {
       this.specialties.splice(index, 1);
     },
+
     addCertification() {
       const trimmed = this.newCertification.trim();
       if (trimmed && !this.certifications.includes(trimmed)) {
@@ -61,26 +65,98 @@ export default {
     removeCertification(index) {
       this.certifications.splice(index, 1);
     },
+    touch(field) {
+      this.touched[field] = true;
+      this.validateField(field);
+    },
+    validateField(field) {
+      const value = this[field];
+      switch (field) {
+        case "fullName":
+          this.errors.fullName = !value ? "validation.fullName_required" :
+              value.length > 100 ? "validation.fullName_tooLong" : "";
+          break;
+        case "age":
+          this.errors.age = (!value || value < 16) ? "validation.age_min" : "";
+          break;
+        case "role":
+          this.errors.role = !value ? "validation.role_required" :
+              value.length > 100 ? "validation.role_tooLong" : "";
+          break;
+        case "hourlyWage":
+          this.errors.hourlyWage = (value === null || value === "") ? "validation.wage_required" : "";
+          break;
+        case "hoursPerWeek":
+          this.errors.hoursPerWeek = (value === null || value === "") ? "validation.hours_required" : "";
+          break;
+        case "dni":
+          this.errors.dni = !/^\d{8}$/.test(value) ? "validation.dni_invalid" :
+              this.existingDnis.includes(value) ? "validation.dni_taken" : "";
+          break;
+        case "email":
+          this.errors.email = !/^\S+@\S+\.\S+$/.test(value) ? "validation.email_invalid" :
+              this.existingEmails.includes(value) ? "validation.email_taken" : "";
+          break;
+        case "phone":
+          this.errors.phone = !/^\d{9}$/.test(value) ? "validation.phone_invalid" : "";
+          break;
+        case "address":
+          this.errors.address = !value ? "validation.address_required" :
+              value.length > 200 ? "validation.address_tooLong" : "";
+          break;
+      }
+    },
     async submitForm() {
-      const newEmployee = {
-        fullName: this.fullName,
-        age: this.age,
-        hourlyWage: this.hourlyWage,
-        hoursPerWeek: this.hoursPerWeek,
-        dni: this.dni,
-        email: this.email,
-        phone: this.phone,
-        address: this.address,
-        profilePicture: this.profilePicture,
-        role: this.role,
-        specialties: this.specialties,
-        certifications: this.certifications
-      };
+      [
+        "fullName", "age", "role", "hourlyWage", "hoursPerWeek",
+        "dni", "email", "phone", "address"
+      ].forEach(field => {
+        this.touch(field);  // Marca como tocado y valida
+      });
+      if (this.hasErrors) return;
 
       const service = new EmployeeApiService();
-      await service.addEmployee(newEmployee);
-      this.$emit("employee-added");
-      this.$emit("close");
+      try {
+        const newEmployee = {
+          firstName: this.fullName.split(" ")[0] || "",
+          lastName: this.fullName.split(" ").slice(1).join(" ") || "",
+          age: Number(this.age),
+          wage: Number(this.hourlyWage),
+          workHours: Number(this.hoursPerWeek),
+          dni: Number(this.dni),
+          email: this.email,
+          phoneNumber: Number(this.phone),
+          address: this.address,
+          role: this.role,
+          password: "123456"
+        };
+
+        const response = await service.addEmployee(newEmployee);
+        const employeeId = response.data.id;
+
+        for (const spec of this.specialties) {
+          await service.addSpecialty(spec, employeeId);
+        }
+        for (const cert of this.certifications) {
+          await service.addCertification(cert, employeeId);
+        }
+
+        this.$emit("employee-added");
+        this.$emit("close");
+      } catch (error) {
+        console.error("❌ Error durante la creación del empleado:", error);
+        this.errorMessage = this.$t("validation.server_error");
+      }
+    }
+  },
+  async mounted() {
+    const service = new EmployeeApiService();
+    try {
+      const employees = await service.getAllEmployees();
+      this.existingDnis = employees.map(e => e.dni.toString());
+      this.existingEmails = employees.map(e => e.email);
+    } catch (e) {
+      console.error("❌ Error obteniendo empleados para validación:", e);
     }
   }
 };
@@ -91,16 +167,23 @@ export default {
     <div class="modal-content">
       <h2 class="modal-title">{{ $t('employees.add-new-employee') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="fullName" :placeholder="$t('employees.full-name')" class="input-field" required aria-label="Full Name" />
-        <pv-inputtext v-model.number="age" :placeholder="$t('employees.age')" type="number" class="input-field" required aria-label="Age" />
-        <pv-select v-model="role" :options="roleOptions" :placeholder="$t('employees.role')" option-label="name" option-value="value" class="input-field" required aria-label="Role" />
-        <pv-inputtext v-model.number="hourlyWage" :placeholder="$t('employees.wage')" type="number" class="input-field" required aria-label="Hourly Wage" />
-        <pv-inputtext v-model.number="hoursPerWeek" :placeholder="$t('employees.hours')" type="number" class="input-field" required aria-label="Hours per Week" />
+        <pv-inputtext v-model="fullName" @blur="touch('fullName')" :placeholder="$t('employees.full-name')" class="input-field" />
+        <p v-if="touched.fullName && errors.fullName" class="error">{{ $t(errors.fullName) }}</p>
+        <pv-inputtext v-model.number="age" @blur="touch('age')" :placeholder="$t('employees.age')" type="number" class="input-field" />
+        <p v-if="touched.age && errors.age" class="error">{{ $t(errors.age) }}</p>
+        <pv-inputtext v-model="role" @blur="touch('role')" :placeholder="$t('employees.role')" class="input-field" />
+        <p v-if="touched.role && errors.role" class="error">{{ $t(errors.role) }}</p>
+        <pv-inputtext v-model.number="hourlyWage" @blur="touch('hourlyWage')" :placeholder="$t('employees.wage')" type="number" class="input-field" />
+        <p v-if="touched.hourlyWage && errors.hourlyWage" class="error">{{ $t(errors.hourlyWage) }}</p>
+        <pv-inputtext v-model.number="hoursPerWeek" @blur="touch('hoursPerWeek')" :placeholder="$t('employees.hours')" type="number" class="input-field" />
+        <p v-if="touched.hoursPerWeek && errors.hoursPerWeek" class="error">{{ $t(errors.hoursPerWeek) }}</p>
+
+        <!-- Especialidades -->
         <div class="input-field">
           <label>{{ $t('employees.specialities') }}</label>
           <div style="display: flex; gap: 0.5rem; align-items: center;">
             <pv-inputtext v-model="newSpecialty" :placeholder="$t('employees.add-specialty')" aria-label="Specialty to add" />
-            <pv-button icon="pi pi-plus" @click="addSpecialty" :label="$t('general.add')"  class="add-button2"/>
+            <pv-button icon="pi pi-plus" @click="addSpecialty" :label="$t('general.add')" class="add-button2"/>
           </div>
           <ul style="margin-top: 0.5rem; padding-left: 1rem;">
             <li v-for="(spec, index) in specialties" :key="'spec-' + index" style="margin-top: 0.25rem;">
@@ -110,11 +193,12 @@ export default {
           </ul>
         </div>
 
+        <!-- Certificaciones -->
         <div class="input-field">
           <label>{{ $t('employees.certifications') }}</label>
           <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <pv-inputtext v-model="newCertification" :placeholder="$t('employees.add-certification')"  aria-label="Certification to add" />
-            <pv-button icon="pi pi-plus" @click="addCertification" label="Add" class="add-button2" />
+            <pv-inputtext v-model="newCertification" :placeholder="$t('employees.add-certification')" aria-label="Certification to add" />
+            <pv-button icon="pi pi-plus" @click="addCertification" :label="$t('general.add')" class="add-button2" />
           </div>
           <ul style="margin-top: 0.5rem; padding-left: 1rem;">
             <li v-for="(cert, index) in certifications" :key="'cert-' + index" style="margin-top: 0.25rem;">
@@ -123,20 +207,32 @@ export default {
             </li>
           </ul>
         </div>
-        <pv-inputtext v-model="dni" placeholder="DNI" class="input-field" required aria-label="DNI" />
-        <pv-inputtext v-model="email" type="email" :placeholder="$t('employees.email')" class="input-field" required aria-label="Email" />
-        <pv-inputtext v-model="phone" type="tel" :placeholder="$t('employees.phone')" class="input-field" required aria-label="Phone" />
-        <pv-inputtext v-model="address" :placeholder="$t('employees.address')" class="input-field" required aria-label="Address" />
-        <pv-inputtext v-model="profilePicture" type="url" :placeholder="$t('employees.profile-picture')" class="input-field" required aria-label="Profile Picture URL" />
+
+        <pv-inputtext v-model="dni" @blur="touch('dni')" placeholder="DNI" class="input-field" />
+        <p v-if="touched.dni && errors.dni" class="error">{{ $t(errors.dni) }}</p>
+
+        <pv-inputtext v-model="email" @blur="touch('email')" type="email" :placeholder="$t('employees.email')" class="input-field" />
+        <p v-if="touched.email && errors.email" class="error">{{ $t(errors.email) }}</p>
+        <pv-inputtext v-model="phone" @blur="touch('phone')" type="tel" :placeholder="$t('employees.phone')" class="input-field" />
+        <p v-if="touched.phone && errors.phone" class="error">{{ $t(errors.phone) }}</p>
+        <pv-inputtext v-model="address" @blur="touch('address')" :placeholder="$t('employees.address')" class="input-field" />
+        <p v-if="touched.address && errors.address" class="error">{{ $t(errors.address) }}</p>
+
+        <p v-if="errorMessage" class="text-red-600 mt-2">{{ errorMessage }}</p>
+
 
         <div class="actions">
+
           <pv-button :label="$t('general.add')" type="submit" class="add-button" />
           <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
+
         </div>
       </form>
     </div>
   </div>
 </template>
+
+
 
 
 <style scoped>
@@ -255,4 +351,12 @@ export default {
   justify-content: space-between;
   margin-top: 1rem;
 }
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+  margin-bottom: 0.5rem;
+}
+
 </style>

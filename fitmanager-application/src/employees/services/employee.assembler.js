@@ -13,25 +13,27 @@
 import { Employee } from '../model/employee.entity.js';
 
 export class EmployeeAssembler {
-    static toEntityFromResource(resource) {
-        return new Employee(
-            resource.id,
-            resource.fullName,
-            resource.age,
-            resource.role,
-            resource.hourlyWage,
-            resource.hoursPerWeek,
-            resource.dni,
-            resource.email,
-            resource.phone,
-            resource.address,
-            resource.profilePicture,
-            resource.specialties || [],
-            resource.certifications || []
-        );
+    static oneFromBackend(resource) {
+        return new Employee({
+            id: resource.id,
+            firstName: resource.firstName,
+            lastName: resource.lastName,
+            age: resource.age,
+            dni: resource.dni,
+            phoneNumber: resource.phoneNumber,
+            address: resource.address,
+            email: resource.email,
+            password: resource.password || "",
+            wage: resource.wage,
+            role: resource.role,
+            workHours: resource.workHours,
+            profilePicture: resource.profilePicture || "",
+            specialties: resource.specialties || [],
+            certifications: resource.certifications || []
+        });
     }
 
-    static toEntitiesFromResponse(response) {
-        return response.map(this.toEntityFromResource);
+    static manyFromBackend(response) {
+        return response.map(this.oneFromBackend);
     }
 }

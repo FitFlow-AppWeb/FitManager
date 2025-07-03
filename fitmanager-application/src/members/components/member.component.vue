@@ -95,7 +95,7 @@ export default {
 
     <!-- Edit Modal -->
     <EditMember
-        v-if="showEditModal"
+        v-if="showEditModal && selectedMember"
         :member="selectedMember"
         @close="showEditModal = false"
         @member-updated="fetchMembers"

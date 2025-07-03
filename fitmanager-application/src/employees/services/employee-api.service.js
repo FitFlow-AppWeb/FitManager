@@ -14,33 +14,60 @@
  * Author: Cassius Martel
  */
 
-import axios from 'axios';
-import { EmployeeAssembler } from './employee.assembler.js';
+import axios from "axios";
+import { EmployeeAssembler } from "./employee.assembler.js";
 
-export class EmployeeApiService{
+const BASE_URL = import.meta.env.VITE_API_URL;
+
+export class EmployeeApiService {
     getAllEmployees() {
-        return axios.get('https://fitmanager.onrender.com/employees')
-            .then(response => EmployeeAssembler.toEntitiesFromResponse(response.data))
+        return axios
+            .get(`${BASE_URL}/api/v1/Employee`)
+            .then(response => EmployeeAssembler.manyFromBackend(response.data))
             .catch(error => {
-                console.error('Error fetching employees:', error);
+                console.error("❌ Error fetching employees from backend:", error);
                 throw error;
             });
     }
+
     addEmployee(employee) {
-        return axios.post("https://fitmanager.onrender.com/employees", employee);
+        return axios.post(`${BASE_URL}/api/v1/Employee`, employee
+        ).catch(error => {
+            console.error("❌ Error adding employee:", error);
+            throw error;
+        });
     }
+
     updateEmployee(employee) {
-        return axios.put(`https://fitmanager.onrender.com/employees/${employee.id}`, employee)
+        return axios.put(`${BASE_URL}/api/v1/Employee/${employee.id}`, employee, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    }
+
+    fireEmployee(employeeId) {
+        return axios.delete(`${BASE_URL}/api/v1/Employee/${employeeId}`)
             .catch(error => {
-                console.error('Error updating employee:', error);
+                console.error("❌ Error firing employee:", error);
                 throw error;
             });
     }
-    fireEmployee(employee) {
-        return axios.delete(`https://fitmanager.onrender.com/employees/${employee.id}`)
-            .catch(error => {
-                console.error('Error deleting employee:', error);
-                throw error;
-            });
+    addSpecialty(specialty, employeeId) {
+        return axios.post(`${BASE_URL}/api/v1/Specialties`, {
+            name: specialty,
+            description: "a",
+            employeeId: employeeId
+        });
     }
+
+    addCertification(certification, employeeId) {
+        return axios.post(`${BASE_URL}/api/v1/Certifications`, {
+            name: certification,
+            description: "a",
+            employeeId: employeeId
+        });
+    }
+
+
 }

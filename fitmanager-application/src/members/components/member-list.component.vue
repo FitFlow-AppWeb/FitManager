@@ -11,6 +11,9 @@
 import {Select as PvSelect} from "primevue";
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
+
 export default {
   name: "MemberList",
   components: {PvSelect},
@@ -39,7 +42,7 @@ export default {
   methods: {
     async fetchMembershipTypes() {
       try {
-        const response = await axios.get('http://localhost:7070/api/v1/MembershipType');
+        const response = await axios.get(`${BASE_URL}/api/v1/MembershipType`);
         this.typeOptions = response.data.map(type => ({
           label: type.name,
           value: type.name

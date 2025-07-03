@@ -11,8 +11,10 @@
  *
  * Author: Cassius Martel
  */
-
+import axios from "axios";
 import { EmployeeApiService } from "../services/employee-api.service.js";
+
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 export default {
   name: "EditEmployee",
@@ -24,50 +26,188 @@ export default {
   },
   data() {
     return {
-      editedEmployee: { ...this.employee },
-      roleOptions: [
-        { name: this.$t('employees.cleaning'), value: "cleaning" },
-        { name: this.$t('employees.trainer'), value: "trainer" },
-        { name: this.$t('employees.group-instructor'), value: "group instructor" },
-        { name: this.$t('employees.reception'), value: "Reception" }
-      ],
+      fullName: `${this.employee.firstName} ${this.employee.lastName}`,
+      age: this.employee.age,
+      role: this.employee.role,
+      hourlyWage: this.employee.wage,
+      hoursPerWeek: this.employee.workHours,
+      dni: this.employee.dni.toString(),
+      email: this.employee.email,
+      phone: this.employee.phoneNumber.toString(),
+      address: this.employee.address,
       specialties: [...(this.employee.specialties || [])],
       certifications: [...(this.employee.certifications || [])],
       newSpecialty: '',
-      newCertification: ''
+      newCertification: '',
+      errorMessage: '',
+      touched: {},
+      errors: {},
+      existingDnis: [],
+      existingEmails: []
     };
   },
+  computed: {
+    hasErrors() {
+      return Object.values(this.errors).some(Boolean);
+    }
+  },
   methods: {
-    async submitForm() {
-      this.editedEmployee.specialties = this.specialties;
-      this.editedEmployee.certifications = this.certifications;
+
+    touch(field) {
+      this.touched[field] = true;
+      this.validateField(field);
+    },
+    async fetchEmployees() {
       const service = new EmployeeApiService();
-      await service.updateEmployee(this.editedEmployee);
-      this.$emit("employee-updated", this.editedEmployee);
-      this.$emit("close");
+      try {
+        const allEmployees = await service.getAllEmployees();
+        const others = allEmployees.filter(e => e.id !== this.employee.id);
+        this.existingDnis = others.map(e => e.dni.toString());
+        this.existingEmails = others.map(e => e.email);
+        console.log("📋 Dnis existentes:", this.existingDnis);
+        console.log("📋 Emails existentes:", this.existingEmails);
+      } catch (error) {
+        console.error("❌ Error obteniendo empleados:", error);
+      }
+    },
+    validateField(field) {
+      const value = this[field];
+      switch (field) {
+        case "fullName":
+          this.errors.fullName = !value ? "validation.fullName_required" :
+              value.length > 100 ? "validation.fullName_tooLong" : "";
+          break;
+        case "age":
+          this.errors.age = (!value || value < 16) ? "validation.age_min" : "";
+          break;
+        case "role":
+          this.errors.role = !value ? "validation.role_required" : "";
+          break;
+        case "hourlyWage":
+          this.errors.hourlyWage = (value === null || value === "") ? "validation.wage_required" : "";
+          break;
+        case "hoursPerWeek":
+          this.errors.hoursPerWeek = (value === null || value === "") ? "validation.hours_required" : "";
+          break;
+        case "dni":
+          this.errors.dni = !/^\d{8}$/.test(value)
+              ? "validation.dni_invalid"
+              : this.existingDnis.includes(value)
+                  ? "validation.dni_taken"
+                  : "";
+          console.log("👀 Validando DNI:", value);
+          console.log("📋 Lista de Dnis:", this.existingDnis);
+          break;
+        case "email":
+          this.errors.email = !/^\S+@\S+\.\S+$/.test(value)
+              ? "validation.email_invalid"
+              : this.existingEmails.includes(value)
+                  ? "validation.email_taken"
+                  : "";
+          console.log("👀 Validando DNI:", value);
+          console.log("📋 Lista de Dnis:", this.existingEmails);
+          break;
+        case "phone":
+          this.errors.phone = !/^[0-9]{9}$/.test(value) ? "validation.phone_invalid" : "";
+          break;
+        case "address":
+          this.errors.address = !value ? "validation.address_required" : "";
+          break;
+      }
+    },
+    async removeSpecialty(index) {
+      const specialty = this.specialties[index];
+      if (specialty.id) {
+        try {
+          console.log("🗑 Eliminando especialidad con ID:", specialty.id);
+          await axios.delete(`${BASE_URL}/api/v1/Specialties/${specialty.id}`);
+        } catch (e) {
+          console.error("❌ Error al eliminar especialidad:", e);
+        }
+      }
+      this.specialties.splice(index, 1);
+    },
+    async removeCertification(index) {
+      const certification = this.certifications[index];
+      if (certification.id) {
+        try {
+          console.log("🗑 Eliminando certificación con ID:", certification.id);
+          await axios.delete(`${BASE_URL}/api/v1/Certifications/${certification.id}`);
+        } catch (e) {
+          console.error("❌ Error al eliminar certificación:", e);
+        }
+      }
+      this.certifications.splice(index, 1);
     },
     addSpecialty() {
       const trimmed = this.newSpecialty.trim();
-      if (trimmed && !this.specialties.includes(trimmed)) {
-        this.specialties.push(trimmed);
+      if (trimmed && !this.specialties.some(s => s.name === trimmed)) {
+        console.log("➕ Agregando especialidad:", trimmed);
+        this.specialties.push({ name: trimmed });
         this.newSpecialty = '';
       }
     },
-    removeSpecialty(index) {
-      this.specialties.splice(index, 1);
-    },
     addCertification() {
       const trimmed = this.newCertification.trim();
-      if (trimmed && !this.certifications.includes(trimmed)) {
-        this.certifications.push(trimmed);
+      if (trimmed && !this.certifications.some(c => c.name === trimmed)) {
+        console.log("➕ Agregando certificación:", trimmed);
+        this.certifications.push({ name: trimmed });
         this.newCertification = '';
       }
     },
-    removeCertification(index) {
-      this.certifications.splice(index, 1);
-    }
+    async submitForm() {
+      ["fullName", "age", "role", "hourlyWage", "hoursPerWeek", "dni", "email", "phone", "address"]
+          .forEach(field => this.touch(field));
+      if (this.hasErrors) return;
+
+      const service = new EmployeeApiService();
+      try {
+        const updated = {
+          id: this.employee.id,
+          firstName: this.fullName.split(" ")[0] || "",
+          lastName: this.fullName.split(" ").slice(1).join(" ") || "NoLastName",
+          age: Number(this.age),
+          wage: Number(this.hourlyWage),
+          workHours: Number(this.hoursPerWeek),
+          dni: Number(this.dni),
+          email: this.email,
+          phoneNumber: Number(this.phone),
+          address: this.address,
+          role: this.role,
+          password: this.employee.password || "123456"
+        };
+
+        console.log("📦 Payload enviado al backend:", updated);
+        await service.updateEmployee(updated);
+
+        for (const spec of this.specialties) {
+          if (!spec.id) {
+            console.log("📌 Agregando especialidad nueva:", spec.name);
+            await service.addSpecialty(spec.name, this.employee.id);
+          }
+        }
+
+        for (const cert of this.certifications) {
+          if (!cert.id) {
+            console.log("📌 Agregando certificación nueva:", cert.name);
+            await service.addCertification(cert.name, this.employee.id);
+          }
+        }
+
+        this.$emit("employee-updated");
+        this.$emit("close");
+      } catch (error) {
+        console.error("❌ Error actualizando empleado:", error);
+        this.errorMessage = this.$t("validation.server_error");
+      }
+    },
+
+  },
+  async mounted() {
+    await this.fetchEmployees();
   }
 };
+
 </script>
 
 <template>
@@ -75,45 +215,64 @@ export default {
     <div class="modal-content">
       <h2 class="modal-title">{{ $t('employees.edit-employee') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="editedEmployee.fullName" :placeholder="$t('employees.full-name')" class="input-field" required aria-label="Full Name" />
-        <pv-inputtext v-model.number="editedEmployee.age" :placeholder="$t('employees.age')" type="number" class="input-field" required aria-label="Age" />
-        <pv-select v-model="editedEmployee.role" :options="roleOptions" :placeholder="$t('employees.role')" option-label="name" option-value="value" class="input-field" required aria-label="Role" />
-        <pv-inputtext v-model.number="editedEmployee.hourlyWage" :placeholder="$t('employees.wage')" type="number" class="input-field" required aria-label="Hourly Wage" />
-        <pv-inputtext v-model.number="editedEmployee.hoursPerWeek" :placeholder="$t('employees.hours')" type="number" class="input-field" required aria-label="Hours per Week" />
+        <pv-inputtext v-model="fullName" @blur="touch('fullName')" :placeholder="$t('employees.full-name')" class="input-field" />
+        <p v-if="touched.fullName && errors.fullName" class="error">{{ $t(errors.fullName) }}</p>
 
+        <pv-inputtext v-model.number="age" @blur="touch('age')" :placeholder="$t('employees.age')" type="number" class="input-field" />
+        <p v-if="touched.age && errors.age" class="error">{{ $t(errors.age) }}</p>
+
+        <pv-inputtext v-model="role" @blur="touch('role')" :placeholder="$t('employees.role')" class="input-field" />
+        <p v-if="touched.role && errors.role" class="error">{{ $t(errors.role) }}</p>
+
+        <pv-inputtext v-model.number="hourlyWage" @blur="touch('hourlyWage')" :placeholder="$t('employees.wage')" type="number" class="input-field" />
+        <p v-if="touched.hourlyWage && errors.hourlyWage" class="error">{{ $t(errors.hourlyWage) }}</p>
+
+        <pv-inputtext v-model.number="hoursPerWeek" @blur="touch('hoursPerWeek')" :placeholder="$t('employees.hours')" type="number" class="input-field" />
+        <p v-if="touched.hoursPerWeek && errors.hoursPerWeek" class="error">{{ $t(errors.hoursPerWeek) }}</p>
+
+        <!-- Especialidades -->
         <div class="input-field">
           <label>{{ $t('employees.specialities') }}</label>
           <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <pv-inputtext v-model="newSpecialty" :placeholder="$t('employees.add-specialty')" aria-label="Specialty to add" />
+            <pv-inputtext v-model="newSpecialty" :placeholder="$t('employees.add-specialty')" />
             <pv-button icon="pi pi-plus" @click="addSpecialty" :label="$t('general.add')" class="add-button2" />
           </div>
           <ul style="margin-top: 0.5rem; padding-left: 1rem;">
             <li v-for="(spec, index) in specialties" :key="'spec-' + index" style="margin-top: 0.25rem;">
-              {{ spec }}
-              <pv-button icon="pi pi-times" class="p-button-text p-button-sm" @click="removeSpecialty(index)" aria-label="Remove Specialty"/>
+              {{ spec.name }}
+              <pv-button icon="pi pi-times" class="p-button-text p-button-sm" @click="removeSpecialty(index)" />
             </li>
           </ul>
         </div>
 
+        <!-- Certificaciones -->
         <div class="input-field">
           <label>{{ $t('employees.certifications') }}</label>
           <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <pv-inputtext v-model="newCertification" :placeholder="$t('employees.add-certification')" aria-label="Certification to add" />
+            <pv-inputtext v-model="newCertification" :placeholder="$t('employees.add-certification')" />
             <pv-button icon="pi pi-plus" @click="addCertification" :label="$t('general.add')" class="add-button2" />
           </div>
           <ul style="margin-top: 0.5rem; padding-left: 1rem;">
             <li v-for="(cert, index) in certifications" :key="'cert-' + index" style="margin-top: 0.25rem;">
-              {{ cert }}
-              <pv-button icon="pi pi-times" class="p-button-text p-button-sm" @click="removeCertification(index)" aria-label="Remove Certification"/>
+              {{ cert.name }}
+              <pv-button icon="pi pi-times" class="p-button-text p-button-sm" @click="removeCertification(index)" />
             </li>
           </ul>
         </div>
 
-        <pv-inputtext v-model="editedEmployee.dni" placeholder="DNI" class="input-field" required aria-label="DNI" />
-        <pv-inputtext v-model="editedEmployee.email" type="email" :placeholder="$t('employees.email')" class="input-field" required aria-label="Email" />
-        <pv-inputtext v-model="editedEmployee.phone" type="tel" :placeholder="$t('employees.phone')" class="input-field" required aria-label="Phone" />
-        <pv-inputtext v-model="editedEmployee.address" :placeholder="$t('employees.address')" class="input-field" required aria-label="Address" />
-        <pv-inputtext v-model="editedEmployee.profilePicture" type="url" :placeholder="$t('employees.profile-picture')" class="input-field" required aria-label="Profile Picture URL" />
+        <pv-inputtext v-model="dni" @blur="touch('dni')" placeholder="DNI" class="input-field" />
+        <p v-if="touched.dni && errors.dni" class="error">{{ $t(errors.dni) }}</p>
+
+        <pv-inputtext v-model="email" @blur="touch('email')" type="email" :placeholder="$t('employees.email')" class="input-field" />
+        <p v-if="touched.email && errors.email" class="error">{{ $t(errors.email) }}</p>
+
+        <pv-inputtext v-model="phone" @blur="touch('phone')" type="tel" :placeholder="$t('employees.phone')" class="input-field" />
+        <p v-if="touched.phone && errors.phone" class="error">{{ $t(errors.phone) }}</p>
+
+        <pv-inputtext v-model="address" @blur="touch('address')" :placeholder="$t('employees.address')" class="input-field" />
+        <p v-if="touched.address && errors.address" class="error">{{ $t(errors.address) }}</p>
+
+        <p v-if="errorMessage" class="text-red-600 mt-2">{{ errorMessage }}</p>
 
         <div class="actions">
           <pv-button :label="$t('general.save')" type="submit" class="add-button" />
@@ -123,6 +282,7 @@ export default {
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .modal-overlay {
@@ -239,5 +399,11 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+}
+
+
+.error {
+  color: red;
+  font-size: 0.85rem;
 }
 </style>

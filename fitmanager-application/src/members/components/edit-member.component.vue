@@ -30,8 +30,15 @@ export default {
         { name: this.$t("members.inactive"), value: "Inactive" },
         { name: this.$t("members.pending"), value: "Pending" }
       ],
-      typeOptions: []
+      typeOptions: [],
+      errors: {},
+      touched: {}
     };
+  },
+  computed: {
+    hasErrors() {
+      return Object.values(this.errors).some(Boolean);
+    }
   },
   watch: {
     member: {
@@ -39,13 +46,20 @@ export default {
       handler(newVal) {
         if (!newVal) return;
 
+        const [firstName, ...rest] = (newVal.fullName || "").trim().split(" ");
+        const lastName = rest.join(" ");
+
         this.editedMember = {
           ...newVal,
+          fullName: `${firstName} ${lastName}`.trim(),
+          firstName,
+          lastName,
           membershipType: null,
           membershipStatus: this.capitalizeFirstLetter(newVal.membershipStatus)
         };
 
         this.loadMembershipTypes();
+
       }
     }
   },
@@ -57,12 +71,10 @@ export default {
       try {
         const service = new MemberApiService();
         const types = await service.getMembershipTypes();
-
         this.typeOptions = types.map(t => ({
           name: t.name,
           value: t.id
         }));
-
         if (typeof this.member.membershipType === "string") {
           const match = this.typeOptions.find(opt => opt.name === this.member.membershipType);
           if (match) {
@@ -75,17 +87,74 @@ export default {
         console.error("Error loading membership types:", error);
       }
     },
+    touch(field) {
+      this.touched[field] = true;
+      this.validateField(field);
+    },
+    async validateField(field) {
+      const value = this.editedMember[field];
+      const service = new MemberApiService();
+
+      switch (field) {
+        case "fullName":
+          this.errors.fullName = !value ? this.$t("validation.fullName_required") : "";
+          break;
+        case "age":
+          this.errors.age = value === null ? this.$t("validation.age_required") : "";
+          break;
+        case "membershipStatus":
+          this.errors.membershipStatus = !value ? this.$t("validation.status_required") : "";
+          break;
+        case "membershipType":
+          this.errors.membershipType = !value ? this.$t("validation.type_required") : "";
+          break;
+        case "expirationDate":
+          this.errors.expirationDate = !value ? this.$t("validation.expiration_required") : "";
+          break;
+        case "membershipStartDate":
+          this.errors.membershipStartDate = !value ? this.$t("validation.start_required") : "";
+          break;
+        case "dni":
+          if (!/^[0-9]{8}$/.test(value)) {
+            this.errors.dni = this.$t("validation.dni_invalid");
+          } else {
+            const exists = await service.getAllMembers();
+            const conflict = exists.find(m => m.dni == value && m.id !== this.member.id);
+            this.errors.dni = conflict ? this.$t("validation.dni_taken") : "";
+          }
+          break;
+        case "email":
+          if (!/\S+@\S+\.\S+/.test(value)) {
+            this.errors.email = this.$t("validation.email_invalid");
+          } else {
+            const exists = await service.getAllMembers();
+            const conflict = exists.find(m => m.email === value && m.id !== this.member.id);
+            this.errors.email = conflict ? this.$t("validation.email_taken") : "";
+          }
+          break;
+        case "phone":
+          this.errors.phone = !/^[0-9]{9}$/.test(value) ? this.$t("validation.phone_invalid") : "";
+          break;
+        case "address":
+          this.errors.address = !value ? this.$t("validation.address_required") : "";
+          break;
+      }
+    },
     async submitForm() {
+      const fields = [
+        "fullName", "age", "membershipStatus", "membershipType",
+        "expirationDate", "membershipStartDate", "dni", "email", "phone", "address"
+      ];
+      for (const field of fields) {
+        await this.touch(field);
+      }
+      if (this.hasErrors) return;
+
       const [firstName, ...rest] = this.editedMember.fullName.trim().split(" ");
       const lastName = rest.join(" ") || "";
 
-      const formattedStartDate = this.editedMember.membershipStartDate instanceof Date
-          ? this.editedMember.membershipStartDate.toISOString()
-          : new Date(this.editedMember.membershipStartDate).toISOString();
-
-      const formattedExpirationDate = this.editedMember.expirationDate instanceof Date
-          ? this.editedMember.expirationDate.toISOString()
-          : new Date(this.editedMember.expirationDate).toISOString();
+      const formattedStartDate = new Date(this.editedMember.membershipStartDate).toISOString();
+      const formattedExpirationDate = new Date(this.editedMember.expirationDate).toISOString();
 
       const updatedMember = {
         id: this.editedMember.id,
@@ -100,7 +169,7 @@ export default {
         endDate: formattedExpirationDate,
         status: this.editedMember.membershipStatus,
         membershipTypeId: this.editedMember.membershipType,
-        profilePicture: "https://i.imgur.com/jVyXxXV.jpg"
+        profilePicture: this.editedMember.profilePicture || ""
       };
 
       try {
@@ -114,111 +183,103 @@ export default {
     }
   }
 };
-
-
 </script>
 
 <template>
   <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="editMemberTitle">
     <div class="modal-content">
       <h2 class="modal-title" id="editMemberTitle">{{ $t('members.edit-member') }}</h2>
-      <form @submit.prevent="submitForm" aria-describedby="editMemberDesc">
+      <form @submit.prevent="submitForm">
         <pv-inputtext
             v-model="editedMember.fullName"
             :placeholder="$t('members.full-name')"
             class="input-field"
-            required
-            aria-label="Full name"
+            @blur="touch('fullName')"
         />
+        <small v-if="touched.fullName && errors.fullName" class="error">{{ errors.fullName }}</small>
+
         <pv-inputtext
             v-model.number="editedMember.age"
             :placeholder="$t('members.age')"
             type="number"
             class="input-field"
-            required
-            aria-label="Age"
+            @blur="touch('age')"
         />
+        <small v-if="touched.age && errors.age" class="error">{{ errors.age }}</small>
+
         <pv-select
             v-model="editedMember.membershipStatus"
             :options="statusOptions"
             option-label="name"
             option-value="value"
-            :label="$t('members.status')"
             class="input-field"
-            required
-            aria-label="Membership status"
+            @blur="touch('membershipStatus')"
         />
+        <small v-if="touched.membershipStatus && errors.membershipStatus" class="error">{{ errors.membershipStatus }}</small>
+
         <pv-select
             v-model="editedMember.membershipType"
             :options="typeOptions"
             option-label="name"
             option-value="value"
-            :label="$t('members.type')"
             class="input-field"
-            required
-            aria-label="Membership type"
+            @blur="touch('membershipType')"
         />
+        <small v-if="touched.membershipType && errors.membershipType" class="error">{{ errors.membershipType }}</small>
+
         <pv-datepicker
             v-model="editedMember.expirationDate"
             :placeholder="$t('members.expiration-date')"
             class="input-field"
-            required
-            aria-label="Expiration date"
+            @blur="touch('expirationDate')"
         />
+        <small v-if="touched.expirationDate && errors.expirationDate" class="error">{{ errors.expirationDate }}</small>
+
         <pv-datepicker
             v-model="editedMember.membershipStartDate"
             :placeholder="$t('members.start-date')"
             class="input-field"
-            required
-            aria-label="Start date"
+            @blur="touch('membershipStartDate')"
         />
+        <small v-if="touched.membershipStartDate && errors.membershipStartDate" class="error">{{ errors.membershipStartDate }}</small>
+
         <pv-inputtext
             v-model="editedMember.dni"
             placeholder="DNI"
             class="input-field"
-            required
-            aria-label="DNI"
+            @blur="touch('dni')"
         />
+        <small v-if="touched.dni && errors.dni" class="error">{{ errors.dni }}</small>
+
         <pv-inputtext
             v-model="editedMember.email"
             type="email"
             :placeholder="$t('members.email')"
             class="input-field"
-            required
-            aria-label="Email"
+            @blur="touch('email')"
         />
+        <small v-if="touched.email && errors.email" class="error">{{ errors.email }}</small>
+
         <pv-inputtext
             v-model="editedMember.phone"
             type="tel"
             :placeholder="$t('members.phone')"
             class="input-field"
-            required
-            aria-label="Phone"
+            @blur="touch('phone')"
         />
+        <small v-if="touched.phone && errors.phone" class="error">{{ errors.phone }}</small>
+
         <pv-inputtext
             v-model="editedMember.address"
             :placeholder="$t('members.address')"
             class="input-field"
-            required
-            aria-label="Address"
+            @blur="touch('address')"
         />
-        <input type="hidden" v-model="editedMember.profilePicture" />
-
+        <small v-if="touched.address && errors.address" class="error">{{ errors.address }}</small>
 
         <div class="actions" role="group" aria-label="Form actions">
-          <pv-button
-              :label="$t('members.save')"
-              type="submit"
-              class="add-button"
-              aria-label="Save changes"
-          />
-          <pv-button
-              :label="$t('members.cancel')"
-              type="button"
-              @click="$emit('close')"
-              class="cancel-button"
-              aria-label="Cancel editing"
-          />
+          <pv-button :label="$t('members.save')" type="submit" class="add-button" />
+          <pv-button :label="$t('members.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
         </div>
       </form>
     </div>
@@ -305,4 +366,14 @@ export default {
   justify-content: space-between;
   margin-top: 1rem;
 }
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+
+
 </style>

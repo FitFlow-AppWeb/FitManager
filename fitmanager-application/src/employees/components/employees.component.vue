@@ -20,20 +20,28 @@ import EmployeeCard from "./employee-card.component.vue";
 import AddEmployee from "./add-employee.component.vue";
 import EditEmployee from "./edit-employee.component.vue";
 import FireEmployee from "./fire-employee.component.vue";
+import EmployeeScheduleModal from "./employee-schedule-modal.vue";
+
 
 export default {
   name: "EmployeeComponent",
-  components: {EmployeeCard, EmployeeList, AddEmployee, EditEmployee, FireEmployee },
+  components: {EmployeeCard, EmployeeList, AddEmployee, EditEmployee, FireEmployee, EmployeeScheduleModal },
   data() {
     return {
       employees: [],
       selectedEmployee: null,
       showAddModal: false,
       showEditModal: false,
-      showFireModal: false // nuevo
+      showFireModal: false,
+      showScheduleModal: false,
+      selectedEmployeeId: null
     };
   },
   methods: {
+    openScheduleModal(employeeId) {
+      this.selectedEmployeeId = employeeId;
+      this.showScheduleModal = true;
+    },
     onEmployeeSelected(employee) {
       this.selectedEmployee = employee;
     },
@@ -41,14 +49,16 @@ export default {
       this.showEditModal = true;
     },
     onFireRequest() {
-      console.log("hola");
       this.showFireModal = true;
     },
     fetchEmployees() {
       const service = new EmployeeApiService();
       service.getAllEmployees().then(data => {
         this.employees = data;
-
+        if (this.selectedEmployee) {
+          const updated = data.find(e => e.id === this.selectedEmployee.id);
+          this.selectedEmployee = updated || null;
+        }
       });
     }
   },
@@ -80,6 +90,7 @@ export default {
           :employee="selectedEmployee"
           @edit-request="onEditRequest"
           @fire-request="onFireRequest"
+          @view-schedule="openScheduleModal"
           aria-labelledby="employee-card"
       />
     </div>
@@ -92,11 +103,18 @@ export default {
         aria-labelledby="edit-employee-modal"
     />
     <FireEmployee
+        v-if="selectedEmployee"
         :employee="selectedEmployee"
         :visible="showFireModal"
         @close="showFireModal = false"
         @employee-fire="fetchEmployees"
         aria-labelledby="fire-employee-modal"
+    />
+    <EmployeeScheduleModal
+        v-if="selectedEmployeeId !== null"
+        :employee-id="selectedEmployeeId"
+        :visible="showScheduleModal"
+        @close="showScheduleModal = false"
     />
   </div>
 </template>
