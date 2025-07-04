@@ -3328,6 +3328,70 @@ Aunque la suma total de Story Points asociada a las historias del Sprint 4 es de
 
 #### 5.2.4.3 Sprint Backlog 4
 
+El presente Sprint Backlog 4 detalla el conjunto de tareas y Technical/User Stories seleccionadas del Product Backlog que el equipo de FitManager se ha comprometido a completar durante esta iteración. El objetivo principal de este sprint fue integrar el backend previamente desarrollado con el frontend de la plataforma, permitiendo flujos de datos completos y funcionales. Además, se abordaron funcionalidades clave como la internacionalización del backend para el soporte multilenguaje y la implementación de autenticación mediante JSON Web Tokens (JWT), asegurando una experiencia segura y localizada para los usuarios finales.
+
+| User Story ID | Task ID | Descripción                                                                  | Estimación (hrs) | Asignado a           | Estado |
+|--------------------|---------|-------------------------------------------------------------------------------|------------------|-----------------------|--------|
+| US02               | T01     | Integración de calendar.component con el backend                              | 2                | Víctor Ortiz          | Done   |
+| US06               | T02     | Integración de finances.component con el backend                              | 1                | Tomio Nakamurakare    | Done   |
+|                    | T03     | Integración de graphic.component con el backend                               | 2                | Tomio Nakamurakare    | Done   |
+|                    | T04     | Integración de transaction-list.component con el backend                       | 1                | Tomio Nakamurakare    | Done   |
+|                    | T05     | Integración de finances-info.component con el backend                          | 1                | Tomio Nakamurakare    | Done   |
+| US09               | T06     | Integración de attendance.component con el backend                            | 2                | Tomio Nakamurakare    | Done   |
+|                    | T07     | Integración de historial-summary.component con el backend                      | 1                | Tomio Nakamurakare    | Done   |
+|                    | T08     | Integración de weekly-summary.component con el backend                         | 1                | Tomio Nakamurakare    | Done   |
+|                    | T09     | Integración de heatmap.component con el backend                                | 2                | Tomio Nakamurakare    | Done   |
+| US10               | T10     | Integración de add-class.component con el backend                              | 2                | Juan Alvarado         | Done   |
+|                    | T11     | Integración de class-list.component con el backend                             | 2                | Juan Alvarado         | Done   |
+|                    | T12     | Integración de classes.component con el backend                                | 1                | Juan Alvarado         | Done   |
+|                    | T13     | Integración de delete-class.component con el backend                           | 1                | Juan Alvarado         | Done   |
+|                    | T14     | Integración de edit-class.component con el backend                             | 1                | Juan Alvarado         | Done   |
+|                    | T15     | Integración de view-members.component con el backend                           | 2                | Juan Alvarado         | Done   |
+| US11               | T16     | Integración de add-employee.component con el backend                           | 2                | Cassius Martel        | Done   |
+|                    | T17     | Integración de edit-employee.component con el backend                          | 1                | Cassius Martel        | Done   |
+|                    | T18     | Integración de employee-card.component con el backend                          | 2                | Cassius Martel        | Done   |
+|                    | T19     | Integración de employee-list.component con el backend                          | 1                | Cassius Martel        | Done   |
+|                    | T20     | Creación e integración de employee-schedule-modal.component con el backend     | 1                | Cassius Martel        | Done   |
+|                    | T21     | Integración de employees.component con el backend                              | 1                | Cassius Martel        | Done   |
+|                    | T22     | Integración de fire-employee.component con el backend                          | 2                | Cassius Martel        | Done   |
+| US13               | T23     | Integración de create-notification-button.component con el backend             | 2                | Victor Ortiz          | Done   |
+|                    | T24     | Integración de create-notification-modal.component con el backend              | 2                | Victor Ortiz          | Done   |
+|                    | T25     | Integración de notification.component con el backend                           | 1                | Victor Ortiz          | Done   |
+|                    | T26     | Integración de sent-notification.component con el backend                      | 1                | Victor Ortiz          | Done   |
+| US17               | T27     | Integración de add-inventory.component con el backend                          | 1                | Tomio Nakamurakare    | Done   |
+|                    | T28     | Integración de delete-inventory.component con el backend                       | 1                | Tomio Nakamurakare    | Done   |
+|                    | T29     | Integración de edit-inventory.component con el backend                         | 2                | Tomio Nakamurakare    | Done   |
+|                    | T30     | Integración de inventory.component con el backend                              | 1                | Tomio Nakamurakare    | Done   |
+|                    | T31     | Integración de inventory-list.component con el backend                         | 1                | Tomio Nakamurakare    | Done   |
+| US20               | T32     | Integración de add-member.component con el backend                             | 2                | Cassius Martel        | Done   |
+|                    | T33     | Integración de edit-member.component con el backend                            | 2                | Cassius Martel        | Done   |
+|                    | T34     | Integración de member-card.component con el backend                            | 1                | Cassius Martel        | Done   |
+|                    | T35     | Integración de member-list.component con el backend                            | 1                | Cassius Martel        | Done   |
+|                    | T36     | Creación e integración de member-payments.component con el backend             | 2                | Cassius Martel        | Done   |
+|                    | T37     | Integración de member.component con el backend                                 | 1                | Cassius Martel        | Done   |
+|                    | T38     | Integración de deactivate.component con el backend                             | 2                | Cassius Martel        | Done   |
+| US21               | T39     | Integración de dashboard.component con el backend                              | 2                | Renzo Luque           | Done   |
+|                    | T40     | Integración de data-bottom-list.component con el backend                       | 2                | Renzo Luque           | Done   |
+|                    | T41     | Integración de data-item.component con el backend                              | 2                | Renzo Luque           | Done   |
+|                    | T42     | Integración de data-top-list.component con el backend                          | 1                | Renzo Luque           | Done   |
+|                    | T43     | Integración de today-attendance.component con el backend                       | 1                | Renzo Luque           | Done   |
+|                    | T44     | Integración de today-classes.component con el backend                          | 1                | Renzo Luque           | Done   |
+| TS09               | T45     | Configurar soporte multilenguaje en el backend                                | 1                | Juan Alvarado         | Done   |
+|                    | T46     | Implementar archivos de recursos y traducir mensajes clave                     | 2                | Juan Alvarado         | Done   |
+| TS10               | T47     | Implementar endpoint de login con generación de JWT                            | 2                | Renzo Luque           | Done   |
+|                    | T48     | Configurar validación de JWT en endpoints protegidos                           | 1                | Renzo Luque           | Done   |
+|                    | T49     | Integración de la pantalla de Login con los JWT                                | 2                | Renzo Luque           | Done   |
+
+Historias de usuario a desarrollar en este Sprint
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/095d29ce-ecf8-4e71-9956-bddb462e6c90" alt="Historias de usuario para este sprint">
+</p>
+
+Ejemplo de tareas y descripción de una historia
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aaae492a-b963-4774-a40d-8017a77da09d" alt="Tareas y descripción de una historia">
+</p>
+
 #### 5.2.4.4. Development Evidence for Sprint Review
 
 #### 5.2.4.5. Execution Evidence for Sprint Review.
