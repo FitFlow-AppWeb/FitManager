@@ -161,6 +161,15 @@ Para esta entrega, se actualizo el readme, se agregó el sprint 3 y se hicieron 
       - [5.2.3.6. Services Documentation Evidence for Sprint Review](#5236-services-documentation-evidence-for-sprint-review)
       - [5.2.3.7. Software Deployment Evidence for Sprint Review](#5237-software-deployment-evidence-for-sprint-review)
       - [5.2.3.8. Team Collaboration Insights during Sprint](#5238-team-collaboration-insights-during-sprint)
+    + [5.2.4. Sprint 3](#524-sprint-4)
+      - [5.2.4.1. Sprint Planning](#5241-sprint-planning)
+      - [5.2.4.2. Aspect Leaders and Collaborators](#5242-aspect-leaders-and-collaborators)
+      - [5.2.4.3 Sprint Backlog 2](#5243-sprint-backlog-4)
+      - [5.2.4.4. Development Evidence for Sprint Review](#5244-development-evidence-for-sprint-review)
+      - [5.2.4.5. Execution Evidence for Sprint Review](#5245-execution-evidence-for-sprint-review)
+      - [5.2.4.6. Services Documentation Evidence for Sprint Review](#5246-services-documentation-evidence-for-sprint-review)
+      - [5.2.4.7. Software Deployment Evidence for Sprint Review](#5247-software-deployment-evidence-for-sprint-review)
+      - [5.2.4.8. Team Collaboration Insights during Sprint](#5248-team-collaboration-insights-during-sprint)
 * [5.3. Validation Interviews](#53-validation-interviews)
     + [5.3.1. Diseño de Entrevistas](#531-diseño-de-entrevistas)
     + [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas)
@@ -170,6 +179,8 @@ Para esta entrega, se actualizo el readme, se agregó el sprint 3 y se hicieron 
 - [Conclusiones](#conclusiones)
   
 - [Recomendaciones](#recomendaciones)
+
+- [Video About-the-Team](#video-about-the-team)
   
 - [Bibliografía](#bibliografía)
   
@@ -3291,6 +3302,42 @@ Evidencia de commits por integrante del grupo
   <img src="https://github.com/user-attachments/assets/1a24b070-c05f-40ad-bade-4f6c1a3738e4" alt="commits por integrante">
 </p>
 
+### 5.2.4. Sprint 4
+
+Durante el Sprint 4 del proyecto FitManager, el equipo se enfocó en la integración del backend previamente desarrollado con el frontend de la aplicación web. Esta integración permitió establecer una comunicación efectiva entre ambas capas, habilitando flujos completos de datos y funcionalidades clave del sistema. Además, se implementó la internacionalización del backend, permitiendo que los mensajes de respuesta y errores se adapten dinámicamente al idioma del usuario. Como parte esencial de este sprint, también se desarrolló un sistema de autenticación basado en JSON Web Tokens (JWT), asegurando sesiones seguras y control de acceso a los recursos protegidos de la plataforma. Estas acciones consolidan una versión funcional, segura y localizada de FitManager, lista para pruebas más exhaustivas y retroalimentación del usuario final.
+
+#### 5.2.4.1. Sprint Planning
+
+| **Sprint #**                     | Sprint 4 |
+|----------------------------------|---------|
+|        | **Sprint Planning Background** |
+| Date                             | 26/06/2025 |
+| Location                         | Discord group call |
+| Prepared by                      | Cassius Martel |
+| Attendees (to planning meeting)  | Juan Alvarado, Renzo Luque, Cassius Martel, Tomio Nakamurakare, Victor Ortiz |
+| Sprint 3 Review Summary          | During Sprint 3, the team focused on building the backend services of the FitManager platform. The team strategically divided responsibilities among its members to develop the RESTful API endpoints required for the platform's core business logic, including those related to members, staff, classes, inventory, notifications, and income. This division of work proved effective in reducing bottlenecks and increasing individual productivity. Each developer was able to concentrate on specific entities and use cases, resulting in faster and more structured progress. The APIs were built following Clean Architecture and Domain-Driven Design (DDD) principles, establishing a modular and maintainable backend layer. This sprint successfully laid the technical foundation for future integration with the frontend and external services. |
+| Sprint 3 Retrospective Summary   | The team reported positive outcomes from Sprint 3, especially regarding the effectiveness of task division and backend implementation using Clean Architecture. This approach improved the clarity of responsibilities and reduced the risk of overlapping efforts. Team members highlighted better focus and increased ownership over their assigned components, which contributed to higher quality in API design and business logic. The collaborative spirit and communication flows also remained strong throughout the sprint. Nonetheless, some minor synchronization issues emerged when defining shared domain models, prompting the decision to improve early alignment sessions before implementation. Overall, the team concluded that structured task assignment and design-first thinking were key enablers of this sprint’s success. |
+|      | **Sprint Goal & User Stories** |
+| Sprint 4 Goal                    | Our focus is on: integrating the backend services with the frontend application, implementing internationalization in the backend, and securing the authentication process using JSON Web Tokens (JWT). <br> <br> We believe it delivers: a complete and functional flow from interface to database, multilingual support for system messages, and a robust authentication layer that protects user sessions and data access. <br> <br> This will be confirmed when: the frontend successfully communicates with the backend APIs in a realistic environment, server responses are available in multiple languages, and users can log in and interact with the system using secure, token-based authentication. |
+| Sprint 4 Velocity                | 19 |
+| Sum of Story Points              | 33 (16) |
+
+Aunque la suma total de Story Points asociada a las historias del Sprint 4 es de 33 puntos, estimamos que el esfuerzo real requerido se reduce a aproximadamente 16 puntos, ya que varias funcionalidades fueron parcial o completamente desarrolladas en Sprints anteriores, específicamente durante las fases de diseño (Sprint 1) y codificación del frontend (Sprint 2). Esta estimación ajustada se encuentra alineada con nuestra Sprint Velocity de 19 puntos y permite una planificación más precisa del esfuerzo restante.
+
+#### 5.2.4.2. Aspect Leaders and Collaborators
+
+#### 5.2.4.3 Sprint Backlog 4
+
+#### 5.2.4.4. Development Evidence for Sprint Review
+
+#### 5.2.4.5. Execution Evidence for Sprint Review.
+
+#### 5.2.4.6. Services Documentation Evidence for Sprint Review
+
+#### 5.2.4.7. Software Deployment Evidence for Sprint Review
+
+#### 5.2.4.8. Team Collaboration Insights during Sprint
+
 ## 5.3. Validation Interviews
 
 ### 5.3.1. Diseño de Entrevistas
@@ -3587,6 +3634,8 @@ Link (Youtube): https://www.youtube.com/watch?v=waMrHExcU5w&t=13s
 * Debemos enfatizar la importancia de mantener una documentación completa y actualizada de la arquitectura, el diseño y la implementación del sistema. Además, debemos fomentar una sólida cultura de intercambio de conocimientos dentro del equipo para garantizar la continuidad, facilitar la colaboración y agilizar los esfuerzos de desarrollo futuros.
 * Para asegurar una experiencia de usuario fluida y evitar posibles cuellos de botella en etapas posteriores, se recomienda establecer una estrategia de integración temprana y continua entre el frontend desarrollado en Vue y el futuro backend de la aplicación. Esto podría incluir la definición clara de APIs, la creación de mocks para el desarrollo paralelo y la realización de pruebas de integración frecuentes para validar la correcta comunicación y el flujo de datos entre ambas partes del sistema.
 * Para la calidad continua del backend, recomendamos priorizar la implementación exhaustiva de pruebas automatizadas a todos los niveles, especialmente en las capas de Dominio y Aplicación. Además, es crucial mantener un proceso de revisión de código sistemático para asegurar la adherencia a los principios de DDD y Clean Architecture, mitigando la deuda técnica y promoviendo un crecimiento ordenado del proyecto.
+
+# Video About-the-team
 
 # Bibliografía
 
