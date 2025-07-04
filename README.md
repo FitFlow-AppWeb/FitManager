@@ -1173,16 +1173,26 @@ Lista de Términos
 | **Acceptance Criteria #1** | Dado que el desarrollador necesita enviar un mensaje a un miembro <br> Cuando realiza una solicitud POST a `/api/v1/MemberNotifications` con los datos válidos (`MemberId`, `Message`, `Subject`, `DateSent`) <br> Entonces el sistema debe crear un nuevo registro, devolver `201 Created` y los datos de la notificación enviada. |
 | **Acceptance Criteria #2** | Dado que el desarrollador necesita ver las notificaciones enviadas a miembros <br> Cuando realiza una solicitud GET a `/api/v1/MemberNotifications` <br> Entonces el sistema debe devolver `200 OK` y una lista con los detalles de todas las notificaciones. |
 | **Acceptance Criteria #3** | Dado que el desarrollador necesita enviar un mensaje a un empleado <br> Cuando realiza una solicitud POST a `/api/v1/StaffNotifications` con los datos válidos (`EmployeeId`, `Message`, `Subject`, `DateSent`) <br> Entonces el sistema debe crear un nuevo registro, devolver `201 Created` y los datos de la notificación enviada. |
-| **Acceptance Criteria #4** | Dado que el desarrollador necesita ver las notif
+| **Acceptance Criteria #4** | Dado que el desarrollador se encuentra en una aplicación cliente y necesita ver las notificaciones enviadas a los empleados <br> Cuando el desarrollador realiza una solicitud GET a /api/v1/StaffNotifications <br> Entonces el sistema debe devolver un estado 200 OK y una lista de todas las notificaciones enviadas a los empleados, incluyendo sus detalles.
 
 | **User Story ID** | TS09 |
 |-------------------|------|
 | **Epic ID** | EP07 |
 | **Title** | Internacionalización del Backend de la API |
 | **Description** | Como desarrollador, quiero que el backend de la API sea capaz de traducir sus mensajes y errores de validación a diferentes idiomas, para que la aplicación pueda mostrar información localizada a usuarios de distintas regiones sin cambiar la lógica principal. |
-| **Acceptance Criteria #1** | Dado que el backend necesita enviar mensajes al frontend <br> Cuando se realiza una solicitud con un idioma especificado <br> Entonces los mensajes de respuesta deben ser devueltos en ese idioma, o en uno predeterminado si no está soportado. |
-| **Acceptance Criteria #2** | Dado que se validan modelos de entrada <br> Cuando se produce un error de validación <br> Entonces el mensaje de error debe mostrarse en el idioma solicitado por el cliente, si está disponible. |
-| **Acceptance Criteria #3** | Dado que se requiere gestionar textos traducibles <br> Cuando el sistema necesita recuperar un mensaje <br> Entonces debe utilizar un mecanismo centrali
+| **Acceptance Criteria #1** | Dado que el backend necesita enviar mensajes al frontend <br> Cuando se realiza una solicitud a un endpoint de la API y se especifica un idioma deseado <br> Entonces el backend debe devolver estos mensajes en el idioma solicitado, si está soportado; de lo contrario, debe usar un idioma predeterminado. |
+| **Acceptance Criteria #2** | Dado que el backend utiliza validaciones de modelos (DataAnnotations) y model binding <br> Cuando una solicitud entrante no cumple con las reglas de validación o el formato de datos <br> Entonces el backend debe generar los mensajes de error de validación y model binding en el idioma solicitado por el cliente, si está soportado. |
+| **Acceptance Criteria #3** | Dado que el backend necesita gestionar y acceder a todas las cadenas de texto traducibles <br> Cuando el código requiere una cadena de texto <br> Entonces el backend debe utilizar un mecanismo centralizado para almacenar y recuperar la versión correcta de esa cadena según el idioma de la solicitud. |
+| **Acceptance Criteria #4** | Dado que se desea expandir el soporte del backend a un nuevo idioma en el futuro <br> Cuando se añaden los archivos de recursos .resx para el nuevo idioma y se registra en la configuración de internacionalización <br> Entonces el backend debe ser capaz de utilizar este nuevo idioma para sus mensajes y validaciones sin necesidad de modificar la lógica de negocio existente. |
+
+| **User Story ID** | TS10 |
+|-------------------|------|
+| **Epic ID** | EP07 |
+| **Title** | Implementación de autenticación basada en JSON Web Tokens (JWT) |
+| **Description** | Como desarrollador, quiero implementar un mecanismo de autenticación mediante JSON Web Tokens (JWT) en el sistema, para garantizar sesiones seguras y control de acceso en las solicitudes a recursos protegidos. |
+| **Acceptance Criteria #1** | Dado que el usuario proporciona credenciales válidas en el proceso de inicio de sesión <br> Cuando el sistema valida correctamente estas credenciales <br> Entonces debe generar un token JWT que contenga los datos esenciales del usuario y devolverlo junto con una respuesta exitosa. |
+| **Acceptance Criteria #2** | Dado que un cliente realiza una solicitud a una funcionalidad que requiere autenticación <br> Cuando la solicitud incluye un token JWT válido en el encabezado de autorización <br> Entonces el sistema debe validar el token antes de permitir el acceso al recurso solicitado. |
+| **Acceptance Criteria #3** | Dado que el backend necesita gestionar y acceder a todas las cadenas de texto traducibles <br> Cuando el código requiere una cadena de texto <br> Entonces el backend debe utilizar un mecanismo centralizado para almacenar y recuperar la versión correcta de esa cadena según el idioma de la solicitud. |
 
 ### 3.2.4. Epicas
 
@@ -1255,6 +1265,7 @@ Lista de Términos
 | TS07 | Gestión de Compras de Insumos en la API |
 | TS08 | Gestión de Notificaciones en la API |
 | TS09 | Internacionalización del Backend de la API |
+| TS10 | Implementación de autenticación basada en JSON Web Tokens (JWT) |
 
 | **Epic ID** | EP08 |
 |-------------|------|
@@ -1307,31 +1318,32 @@ Objetivo SMART: Obtener 50 formularios de contacto para demo o consulta desde la
 | 3  | US20 | Como administrador del gimnasio, quiero poder gestionar la información de los clientes del gimnasio para mantener un registro actualizado, agregar nuevos clientes y editar la información existente, asegurando que toda la base de datos esté organizada y sea fácilmente accesible. | 5 |
 | 4  | US01 | Como usuario, quiero acceder a un calendario con los horarios de todas las clases para planificar fácilmente la programación y disponibilidad. | 3 |
 | 5  | TS02 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente las clases, para que los administradores del gimnasio puedan programar, actualizar y cancelar actividades. | 2 |
-| 6  | TS01 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los miembros y consultar los tipos de membresía, para interactuar de forma eficiente con el sistema de gimnasio. | 2 |
-| 7  | TS04 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los empleados, para que los administradores del gimnasio puedan mantener actualizada la información del personal. | 2 |
-| 8  | US06 | Como administrador del gimnasio, quiero ver y gestionar el estado de pagos de cada cliente para llevar un control eficiente de membresías activas e inactivas. | 5 |
-| 9  | TS03 | Como desarrollador, quiero que la RESTful API me permita registrar la asistencia y consultar las reservas y asistencias de clases, para que los administradores del gimnasio puedan llevar un control del uso de las clases. | 2 |
-| 10 | US17 | Como administrador del gimnasio, quiero gestionar los ítems del inventario, para mantener un control actualizado y ordenado de los recursos y equipos disponibles en el gimnasio. | 3 |
-| 11 | TS05 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los ítems del inventario, para que los administradores del gimnasio puedan controlar los productos disponibles. | 2 |
-| 12 | US07 | Como cliente del gimnasio, quiero pagar mi membresía desde la app usando mi tarjeta o billetera digital para mantener mi suscripción activa fácilmente. | 5 |
-| 13 | TS06 | Como desarrollador, quiero que la RESTful API me permita registrar y listar pagos de membresías y salarios, para que los administradores del gimnasio puedan llevar un control financiero. | 2 |
-| 14 | TS07 | Como desarrollador, quiero que la RESTful API me permita registrar y consultar las compras de insumos, incluyendo sus detalles, para que los administradores del gimnasio puedan llevar un control preciso de las adquisiciones. | 2 |
-| 15 | US04 | Como cliente, quiero registrar y visualizar mi progreso físico dentro de la app para evaluar mi evolución y mantenerme motivado. | 3 |
-| 16 | US10 | Como administrador del gimnasio, quiero poder gestionar las clases ofrecidas por el gimnasio para mantener actualizada la programación. | 3 |
-| 17 | US08 | Como cliente, quiero poder crear mi perfil para llevar un control de mi información personal y actividad dentro del gimnasio. | 3 |
-| 18 | US09 | Como entrenador, quiero poder ver un historial general de asistencias de todos los clientes para analizar tendencias de asistencia, evaluar el compromiso de los miembros y ajustar las clases según la demanda. | 3 |
-| 19 | US12 | Como administrador o entrenador, quiero recibir notificaciones administrativas relevantes para mantenerme informado sobre situaciones importantes relacionadas con la operación del gimnasio. | 3 |
-| 20 | US13 | Como cliente del gimnasio, quiero recibir notificaciones personalizadas según mis clases. | 3 |
-| 21 | TS08 | Como desarrollador, quiero que la RESTful API me permita enviar y listar notificaciones tanto para miembros como para empleados, para facilitar la comunicación y la gestión interna del gimnasio. | 2 |
-| 22 | TS09 | Como desarrollador, quiero que el backend de la API sea capaz de traducir sus mensajes y errores de validación a diferentes idiomas, para que la aplicación pueda mostrar información localizada a usuarios de distintas regiones sin cambiar la lógica principal. | 1 |
-| 23 | US14 | Como visitante del sitio web de FitManager, quiero obtener información clara sobre las características y beneficios de la plataforma, para decidir si encaja con las necesidades de mi gimnasio. | 3 |
-| 24 | US15 | Como visitante interesado, quiero registrarme para solicitar una demo personalizada o más información sobre FitManager, para poder explorar cómo puede mejorar la gestión de mi gimnasio. | 2 |
-| 25 | US21 | Como administrador, quiero tener una vista general del rendimiento y la actividad del gimnasio en un solo lugar, incluyendo métricas clave de miembros, asistencia y finanzas, para poder obtener una comprensión rápida del estado actual del negocio y tomar decisiones informadas. | 2 |
-| 26 | US16 | Como visitante, quiero ver los precios y paquetes disponibles para FitManager, para poder decidir si la plataforma se ajusta a mi presupuesto y necesidades. | 2 |
-| 27 | US05 | Como cliente, quiero ver mi rutina personalizada de entrenamiento en la plataforma para seguirla paso a paso durante mis sesiones. | 5 |
-| 28 | US11 | Como administrador del gimnasio, quiero poder gestionar al personal del gimnasio para mantener un control organizado sobre los entrenadores y otros empleados. | 5 |
-| 29 | US18 | Como usuario, quiero poder visualizar la aplicación en inglés o español, para entender fácilmente la información según mi idioma preferido. | 2 |
-| 30 | US19 | Como usuario que usa un lector de pantalla, quiero poder navegar y entender la plataforma fácilmente con herramientas de asistencia, para tener una experiencia de uso fluida y sin barreras. | 2 |
+| 6  | TS10 | Como desarrollador, quiero implementar un mecanismo de autenticación mediante JSON Web Tokens (JWT) en el sistema, para garantizar sesiones seguras y control de acceso en las solicitudes a recursos protegidos. | 3 |
+| 7  | TS01 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los miembros y consultar los tipos de membresía, para interactuar de forma eficiente con el sistema de gimnasio. | 2 |
+| 8  | TS04 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los empleados, para que los administradores del gimnasio puedan mantener actualizada la información del personal. | 2 |
+| 9  | US06 | Como administrador del gimnasio, quiero ver y gestionar el estado de pagos de cada cliente para llevar un control eficiente de membresías activas e inactivas. | 5 |
+| 10  | TS03 | Como desarrollador, quiero que la RESTful API me permita registrar la asistencia y consultar las reservas y asistencias de clases, para que los administradores del gimnasio puedan llevar un control del uso de las clases. | 2 |
+| 11 | US17 | Como administrador del gimnasio, quiero gestionar los ítems del inventario, para mantener un control actualizado y ordenado de los recursos y equipos disponibles en el gimnasio. | 3 |
+| 12 | TS05 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los ítems del inventario, para que los administradores del gimnasio puedan controlar los productos disponibles. | 2 |
+| 13 | US07 | Como cliente del gimnasio, quiero pagar mi membresía desde la app usando mi tarjeta o billetera digital para mantener mi suscripción activa fácilmente. | 5 |
+| 14 | TS06 | Como desarrollador, quiero que la RESTful API me permita registrar y listar pagos de membresías y salarios, para que los administradores del gimnasio puedan llevar un control financiero. | 2 |
+| 15 | TS07 | Como desarrollador, quiero que la RESTful API me permita registrar y consultar las compras de insumos, incluyendo sus detalles, para que los administradores del gimnasio puedan llevar un control preciso de las adquisiciones. | 2 |
+| 16 | US04 | Como cliente, quiero registrar y visualizar mi progreso físico dentro de la app para evaluar mi evolución y mantenerme motivado. | 3 |
+| 17 | US10 | Como administrador del gimnasio, quiero poder gestionar las clases ofrecidas por el gimnasio para mantener actualizada la programación. | 3 |
+| 18 | US08 | Como cliente, quiero poder crear mi perfil para llevar un control de mi información personal y actividad dentro del gimnasio. | 3 |
+| 19 | US09 | Como entrenador, quiero poder ver un historial general de asistencias de todos los clientes para analizar tendencias de asistencia, evaluar el compromiso de los miembros y ajustar las clases según la demanda. | 3 |
+| 20 | US12 | Como administrador o entrenador, quiero recibir notificaciones administrativas relevantes para mantenerme informado sobre situaciones importantes relacionadas con la operación del gimnasio. | 3 |
+| 21 | US13 | Como cliente del gimnasio, quiero recibir notificaciones personalizadas según mis clases. | 3 |
+| 22 | TS08 | Como desarrollador, quiero que la RESTful API me permita enviar y listar notificaciones tanto para miembros como para empleados, para facilitar la comunicación y la gestión interna del gimnasio. | 2 |
+| 23 | TS09 | Como desarrollador, quiero que el backend de la API sea capaz de traducir sus mensajes y errores de validación a diferentes idiomas, para que la aplicación pueda mostrar información localizada a usuarios de distintas regiones sin cambiar la lógica principal. | 1 |
+| 24 | US14 | Como visitante del sitio web de FitManager, quiero obtener información clara sobre las características y beneficios de la plataforma, para decidir si encaja con las necesidades de mi gimnasio. | 3 |
+| 25 | US15 | Como visitante interesado, quiero registrarme para solicitar una demo personalizada o más información sobre FitManager, para poder explorar cómo puede mejorar la gestión de mi gimnasio. | 2 |
+| 26 | US21 | Como administrador, quiero tener una vista general del rendimiento y la actividad del gimnasio en un solo lugar, incluyendo métricas clave de miembros, asistencia y finanzas, para poder obtener una comprensión rápida del estado actual del negocio y tomar decisiones informadas. | 2 |
+| 27 | US16 | Como visitante, quiero ver los precios y paquetes disponibles para FitManager, para poder decidir si la plataforma se ajusta a mi presupuesto y necesidades. | 2 |
+| 28 | US05 | Como cliente, quiero ver mi rutina personalizada de entrenamiento en la plataforma para seguirla paso a paso durante mis sesiones. | 5 |
+| 29 | US11 | Como administrador del gimnasio, quiero poder gestionar al personal del gimnasio para mantener un control organizado sobre los entrenadores y otros empleados. | 5 |
+| 30 | US18 | Como usuario, quiero poder visualizar la aplicación en inglés o español, para entender fácilmente la información según mi idioma preferido. | 2 |
+| 31 | US19 | Como usuario que usa un lector de pantalla, quiero poder navegar y entender la plataforma fácilmente con herramientas de asistencia, para tener una experiencia de uso fluida y sin barreras. | 2 |
 
 # CAPÍTULO 4: PRODUCT UX/UI DESIGN
 
