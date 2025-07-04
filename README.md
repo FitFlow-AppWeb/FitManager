@@ -3158,48 +3158,48 @@ Durante el Sprint 3, el equipo se centró en la robusta documentación de los We
 - Insertamos un Empleado a la base de datos
 
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/cc28a68e-62f0-41c5-b085-06a68de198cb" alt="Employee POST">
+  <img src="https://github.com/user-attachments/assets/b50bd9b6-53e6-452d-b7be-79fd3ef0c302" alt="Employee POST">
 </p>
   
 - Hacemos el get del empleado que acabamos de crear
 
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/e03bc0a6-2c01-43fc-8bf2-ed1ac68db1df" alt="Employee GET">
+  <img src="https://github.com/user-attachments/assets/891fd08e-d984-4b43-ab7b-0ed33f7d5cd9" alt="Employee GET">
 </p>
 
 - Ingresamos un miembro a la base de datos
 
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/4aff8b82-b041-4a1f-9226-ecf4fc4e8b01" alt="Member POST">
+  <img src="https://github.com/user-attachments/assets/e3de273e-706c-4624-8431-3ae2d1d8deb5" alt="Member POST">
 </p>
   
 - Hacemos el get del miembro que acabamos de crear
 
     <p align="center">
-  <img src="https://github.com/user-attachments/assets/b8e60139-420b-4d18-be49-ac370cf98b09" alt="Member GET">
-  
+  <img src="https://github.com/user-attachments/assets/4d8d3a1f-64ad-4da5-bc30-68fef85951b9" alt="Member GET">
+
 - Insertamos una clase a la base de datos
 
     <p align="center">
-  <img src="https://github.com/user-attachments/assets/7d1641fd-34aa-4428-b825-dd55f0e66e1d" alt="Classes POST">
+  <img src="https://github.com/user-attachments/assets/0e93d670-2fbc-4522-968b-049a7678b410" alt="Classes POST">
 </p>
 
 - Hacemos el get de la clase que acabamos de crear
 
     <p align="center">
-  <img src="https://github.com/user-attachments/assets/c08f47b1-7371-4d7d-be1b-73234ba1a9a2" alt="Classes GET">
+  <img src="https://github.com/user-attachments/assets/331c6e15-e25c-4946-9597-0f526484e6e1" alt="Classes GET">
 </p>
 
 - Le agregamos un salario al empleado que creamos
 
     <p align="center">
-  <img src="https://github.com/user-attachments/assets/3b91a41c-3ec0-4b49-a960-eb846ca555be" alt="SalaryPayment POST">
+  <img src="https://github.com/user-attachments/assets/b8ca607c-47fa-4a5a-bea4-9763880966dc" alt="SalaryPayment POST">
 </p
 
 - - Le agregamos un pago al miembro ingresado
   
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/37d612a5-060d-4933-b4fe-afe28e78ac79" alt="MembershipPayment POST">
+  <img src="https://github.com/user-attachments/assets/399b8d16-bdfe-4c77-ba31-a9c57acc4153" alt="MembershipPayment POST">
 </p>
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
@@ -3325,6 +3325,14 @@ Durante el Sprint 4 del proyecto FitManager, el equipo se enfocó en la integrac
 Aunque la suma total de Story Points asociada a las historias del Sprint 4 es de 33 puntos, estimamos que el esfuerzo real requerido se reduce a aproximadamente 16 puntos, ya que varias funcionalidades fueron parcial o completamente desarrolladas en Sprints anteriores, específicamente durante las fases de diseño (Sprint 1) y codificación del frontend (Sprint 2). Esta estimación ajustada se encuentra alineada con nuestra Sprint Velocity de 19 puntos y permite una planificación más precisa del esfuerzo restante.
 
 #### 5.2.4.2. Aspect Leaders and Collaborators
+
+| Team Member (Last Name, First Name)       | GitHub Username             | Classes | Employees | Finances | Inventory | Members | Notifications | i18n Feature | Dashboard | Calendar | JWT Implementation | Attendance |
+|------------------------------------------|-----------------------------|---------|-----------|----------|-----------|---------|----------------|---------------|-----------|----------|---------------------|------------|
+| Alarcón, Víctor Nicolás                   | @Nico1234556                |         |           |          |           |         | L              |               |           | L        |                     |            |
+| Nakamurakare Teruya, Alex Tomio          | @kistoo                     |         |           | L        | L         |         |                |               |           |          |                     | L          |
+| Martel Andrade, Cassius Estefano         | @kcc12321                   |         | L         |          |           | L       |                |               |           |          |                     |            |
+| Luque Minaya, Renzo Andrés               | @renzoluquem               |         |           |          |           |         |                |               | L         |          | L                   |            |
+| Alvarado De La Cruz, Juan Carlos         | @JuanCarlosAlvarado900      | L       |           |          |           |         |                | L             |           |          |                     |            |
 
 #### 5.2.4.3 Sprint Backlog 4
 
