@@ -28,7 +28,23 @@
     "status_required": "El estado de membresía es obligatorio.",
     "type_required": "El tipo de membresía es obligatorio.",
     "startDate_required": "La fecha de inicio es obligatoria.",
-    "expiration_required": "La fecha de expiración es obligatoria."
+    "expiration_required": "La fecha de expiración es obligatoria.",
+    "required": "Este campo es obligatorio",
+    "validation.name_required": "El nombre de la clase es obligatorio.",
+    "validation.type_required": "El tipo de clase es obligatorio.",
+    "validation.date_required": "La fecha de la clase es obligatoria.",
+    "validation.time_required": "La hora de la clase es obligatoria.",
+    "validation.duration_required": "La duración de la clase es obligatoria.",
+    "validation.trainer_required": "El entrenador es obligatorio.",
+    "validation.status_required": "El estado de la clase es obligatorio.",
+    "name_required": "El nombre es obligatorio",
+    "type_required": "El tipo es obligatorio",
+    "date_required": "La fecha es obligatoria",
+    "time_required": "La hora es obligatoria",
+    "duration_required": "La duración es obligatoria",
+    "trainer_id_required": "El entrenador es obligatorio",
+    "status_required": "El estado es obligatorio"
+
   },
   "clearfilters": "Limpiar Filtros",
   "profile": {

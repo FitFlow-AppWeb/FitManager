@@ -76,7 +76,7 @@ export default {
     },
     async fetchTrainers() {
       try {
-        const response = await axios.get("https://fitmanager.onrender.com/employees");
+        const response = await axios.get("/api/v1/Employee");
         this.trainers = response.data
             .filter(emp => emp.role === "group instructor" || emp.role === "trainer")
             .map(emp => ({ name: emp.fullName, value: emp.id }));

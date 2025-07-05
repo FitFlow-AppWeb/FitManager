@@ -1,29 +1,20 @@
-// 
-// Description: This code defines the `ClassApiService` class, which handles the communication with an API to manage gym classes and their associated data. It includes several methods:
-// - `getAllClasses`: Fetches all classes and employees data concurrently. It then assembles the class data and associates each class with its trainer's name based on the employee data.
-// - `addClass`: Sends a POST request to add a new class.
-// - `updateClass`: Sends a PUT request to update an existing class.
-// - `deleteClass`: Sends a DELETE request to remove a class.
-// - `getMembersByClass`: Fetches all members and filters them by the `members_ids` associated with a specific class, returning a list of member objects.
-// The `ClassAssembler` is used to convert API responses into class entities, and the `Member` class is used to represent members.
-// Author: Cassius Martel
-//
-
 import axios from 'axios';
 import { ClassAssembler } from "./class.assembler.js";
 import { Member } from "../../members/model/member.entity.js";
+
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 export class ClassApiService {
     async getAllClasses() {
         try {
             const [classesRes, employeesRes] = await Promise.all([
-                axios.get('https://fitmanager.onrender.com/classes'),
-                axios.get('https://fitmanager.onrender.com/employees')
+                axios.get(`${BASE_URL}/api/v1/Classes`),
+                axios.get(`${BASE_URL}/api/v1/Employee`)
             ]);
 
             const classes = ClassAssembler.toEntitiesFromResponse(classesRes.data);
             const employees = employeesRes.data;
+
             const employeeMap = {};
             for (const emp of employees) {
                 employeeMap[emp.id] = emp.fullName;
@@ -33,7 +24,6 @@ export class ClassApiService {
                 ...c,
                 trainerName: employeeMap[c.trainer_id] || 'Unknown'
             }));
-
         } catch (error) {
             console.error('Error fetching classes or employees:', error);
             throw error;
@@ -42,7 +32,7 @@ export class ClassApiService {
 
     async testLocalMembershipTypes() {
         try {
-            const response = await axios.get(`${BASE_URL}/api/v1/MembershipType`);;
+            const response = await axios.get(`${BASE_URL}/api/v1/MembershipType`);
             console.log('✅ Datos recibidos desde backend local:', response.data);
             return response.data;
         } catch (error) {
@@ -52,11 +42,11 @@ export class ClassApiService {
     }
 
     addClass(gymClass) {
-        return axios.post("https://fitmanager.onrender.com/classes", gymClass);
+        return axios.post(`${BASE_URL}/api/v1/Classes`, gymClass);
     }
 
     updateClass(gymClass) {
-        return axios.put(`https://fitmanager.onrender.com/classes/${gymClass.id}`, gymClass)
+        return axios.put(`${BASE_URL}/api/v1/Classes/${gymClass.id}`, gymClass)
             .catch(error => {
                 console.error('Error updating class:', error);
                 throw error;
@@ -64,7 +54,7 @@ export class ClassApiService {
     }
 
     deleteClass(gymClass) {
-        return axios.delete(`https://fitmanager.onrender.com/classes/${gymClass.id}`)
+        return axios.delete(`${BASE_URL}/api/v1/Classes/${gymClass.id}`)
             .catch(error => {
                 console.error('Error deleting class:', error);
                 throw error;
@@ -73,13 +63,8 @@ export class ClassApiService {
 
     async getMembersByClass(gymClass) {
         try {
-            const response = await axios.get('https://fitmanager.onrender.com/member');
-            const allMembers = response.data;
-
-            const filteredMembers = allMembers
-                .filter(member => gymClass.members_ids.includes(Number(member.id)));
-
-            return filteredMembers.map(m =>
+            const response = await axios.get(`${BASE_URL}/api/v1/Attendances/class/${gymClass.id}`);
+            return response.data.map(m =>
                 new Member(
                     Number(m.id),
                     m.fullName,
@@ -95,9 +80,8 @@ export class ClassApiService {
                     m.profilePicture
                 )
             );
-
         } catch (error) {
-            console.error('Error fetching members:', error);
+            console.error('Error fetching members by class:', error);
             throw error;
         }
     }

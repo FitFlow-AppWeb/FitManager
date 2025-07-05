@@ -28,7 +28,21 @@
     "status_required": "Membership Status is Required.",
     "type_required": "Membership Type is Required.",
     "startDate_required": "Start Date is Required.",
-    "expiration_required": "End Date is Required."
+    "expiration_required": "End Date is Required.",
+    "validation.name_required": "Class name is required.",
+    "validation.type_required": "Class type is required.",
+    "validation.date_required": "Class date is required.",
+    "validation.time_required": "Class time is required.",
+    "validation.duration_required": "Class duration is required.",
+    "validation.trainer_required": "Trainer is required.",
+    "validation.status_required": "Class status is required.",
+    "name_required": "Name is required",
+    "type_required": "Type is required",
+    "date_required": "Date is required",
+    "time_required": "Time is required",
+    "duration_required": "Duration is required",
+    "trainer_id_required": "Trainer is required",
+    "status_required": "Status is required"
   },
   "clearfilters": "Clear Filters",
   "profile": {

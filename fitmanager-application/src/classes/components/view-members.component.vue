@@ -8,7 +8,7 @@
 -->
 
 <script>
-import { ClassApiService } from "../services/class-api.service.js";
+import axios from "axios";
 
 export default {
   name: "ViewMembers",
@@ -32,8 +32,13 @@ export default {
       this.$emit("close");
     },
     async getMembersByClass() {
-      const service = new ClassApiService();
-      this.members = await service.getMembersByClass(this.classData);
+      try {
+        const response = await axios.get(`/api/v1/Attendances/class/${this.classData.id}`);
+        this.members = response.data;
+      } catch (error) {
+        console.error("Error fetching members:", error);
+        this.members = [];
+      }
     }
   },
   mounted() {
@@ -41,6 +46,7 @@ export default {
   }
 };
 </script>
+
 
 <template>
   <pv-dialog
