@@ -101,7 +101,8 @@
     "today-classes": "Clases de hoy",
     "no-classes": "Sin clases",
     "classes": "Clases",
-    "hour": "Hora"
+    "hour": "Hora",
+    "loading": "Cargando"
   },
   "calendar": {
     "class-panel": "Clases el",

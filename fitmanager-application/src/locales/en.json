@@ -100,7 +100,8 @@
     "today-classes": "Today's Classes",
     "no-classes": "No classes",
     "classes": "Classes",
-    "hour": "Hour"
+    "hour": "Hour",
+    "loading": "Loading"
   },
   "calendar": {
     "class-panel": "Classes for",
