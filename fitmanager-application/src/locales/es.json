@@ -34,7 +34,7 @@
     "itemTypeDescription_required": "La descripción del tipo de ítem es obligatoria.",
     "itemTypeDescription_tooLong": "La descripción del tipo de ítem debe tener menos de 200 caracteres.",
     "itemTypeName_taken": "El nombre del tipo de ítem ya está en uso.",
-    "itemType_server_error": "Ocurrió un error al crear el tipo de ítem. Intenta nuevamente."
+    "itemType_server_error": "Ocurrió un error al crear el tipo de ítem. Intenta nuevamente.",
     "expiration_required": "La fecha de expiración es obligatoria.",
     "required": "Este campo es obligatorio",
     "validation.name_required": "El nombre de la clase es obligatorio.",
@@ -120,7 +120,6 @@
     "confirmed": "Confirmada",
     "pending": "Pendiente",
     "cancelled": "Cancelada"
-
   },
   "employees": {
     "name": "Nombre",

@@ -34,7 +34,7 @@
     "itemTypeDescription_required": "Item type description is required.",
     "itemTypeDescription_tooLong": "Item type description must be under 200 characters.",
     "itemTypeName_taken": "Item type name is already in use.",
-    "itemType_server_error": "An error occurred while creating the item type. Please try again."
+    "itemType_server_error": "An error occurred while creating the item type. Please try again.",
     "expiration_required": "End Date is Required.",
     "validation.name_required": "Class name is required.",
     "validation.type_required": "Class type is required.",
