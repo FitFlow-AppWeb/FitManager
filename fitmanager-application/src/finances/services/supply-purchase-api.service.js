@@ -3,7 +3,7 @@
  *
  * This service handles all API calls related to **Supply Purchases**. It provides methods
  * for creating new supply purchase records and fetching existing ones from the backend.
- * It uses `axios` for HTTP requests and `SupplyPurchaseAssembler` to format the data
+ * It uses `api` for HTTP requests and `SupplyPurchaseAssembler` to format the data
  * into **SupplyPurchase** entities for consistency within the application.
  *
  * The methods include:
@@ -12,16 +12,14 @@
  *
  * Author: Tomio Nakamurakare
  */
-import axios from 'axios';
+import api from '../../login/services/api.js';
 import { SupplyPurchaseAssembler } from './supply-purchase.assembler.js';
-
-const BASE_URL = 'http://localhost:7070';
 
 export class SupplyPurchaseApiService {
     async createSupplyPurchase(supplyPurchaseData) {
         try {
-            const response = await axios.post(`${BASE_URL}/api/v1/SupplyPurchase`, supplyPurchaseData);
-            return SupplyPurchaseAssembler.oneFromBackend(response.data);
+            const response = await api.post(`/api/v1/SupplyPurchase`, supplyPurchaseData);
+            return SupplyPurchaseAssembler.oneFromBackend(response.data.data);
         } catch (error) {
             console.error('Error creating supply purchase:', error);
             throw error;
@@ -30,8 +28,8 @@ export class SupplyPurchaseApiService {
 
     async getAllSupplyPurchases() {
         try {
-            const response = await axios.get(`${BASE_URL}/api/v1/SupplyPurchase`);
-            return SupplyPurchaseAssembler.manyFromBackend(response.data);
+            const response = await api.get(`/api/v1/SupplyPurchase`);
+            return SupplyPurchaseAssembler.manyFromBackend(response.data.data);
         } catch (error) {
             console.error('Error fetching supply purchases:', error);
             throw error;

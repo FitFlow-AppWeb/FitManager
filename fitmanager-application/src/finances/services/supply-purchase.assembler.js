@@ -45,10 +45,10 @@ export class SupplyPurchaseAssembler {
     }
 
     static manyFromBackend(responseData) {
-        if (!Array.isArray(responseData)) {
+        if (!Array.isArray(responseData.data)) {
             console.error("❌ SupplyPurchaseAssembler: Expected an array for manyFromBackend, but received:", responseData);
             return [];
         }
-        return responseData.map(this.oneFromBackend);
+        return responseData.data.map(this.oneFromBackend);
     }
 }

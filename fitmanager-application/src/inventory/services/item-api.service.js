@@ -2,7 +2,7 @@
  * Item API Service
  *
  * This service handles all the API calls related to **Item** (inventory) data. It interacts with the backend
- * to retrieve, add, update, and delete item information. The methods in this class use `axios`
+ * to retrieve, add, update, and delete item information. The methods in this class use `api`
  * for making HTTP requests and `ItemAssembler` to format the data into **Item** entities.
  *
  * The methods include:
@@ -14,16 +14,14 @@
  * Author: Tomio Nakamurakare
  */
 
-import axios from "axios";
+import api from '../../login/services/api.js';
 import { ItemAssembler } from "./item.assembler.js";
-
-const BASE_URL = "http://localhost:7070";
 
 export class ItemApiService {
     async getAllItems() {
         try {
-            const response = await axios.get(`${BASE_URL}/api/v1/Item`);
-            return ItemAssembler.manyFromBackend(response.data);
+            const response = await api.get('/api/v1/Item');
+            return ItemAssembler.manyFromBackend(response.data.data);
         } catch (error) {
             console.error("❌ Error fetching items from backend:", error);
             throw error;
@@ -31,7 +29,7 @@ export class ItemApiService {
     }
 
     updateItem(item) {
-        return axios.put(`${BASE_URL}/api/v1/Item/${item.id}`, item.toBackendFormat(), {
+        return api.put(`/api/v1/Item/${item.id}`, item.toBackendFormat(), {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -42,7 +40,7 @@ export class ItemApiService {
     }
 
     deleteItem(itemId) {
-        return axios.delete(`${BASE_URL}/api/v1/Item/${itemId}`)
+        return api.delete(`/api/v1/Item/${itemId}`)
             .catch(error => {
                 console.error('❌ Error deleting item:', error);
                 throw error;
