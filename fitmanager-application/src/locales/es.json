@@ -12,7 +12,7 @@
     "fullName_required": "El nombre completo es obligatorio.",
     "fullName_tooLong": "El nombre completo debe tener menos de 100 caracteres.",
     "age_min": "La edad debe ser al menos 16.",
-    "age_required": "La edad es obligatoria",
+    "age_required": "La edad es obligatoria.",
     "role_required": "El rol es obligatorio.",
     "role_tooLong": "El rol debe tener menos de 100 caracteres.",
     "wage_required": "El sueldo por hora es obligatorio.",
@@ -28,7 +28,13 @@
     "status_required": "El estado de membresía es obligatorio.",
     "type_required": "El tipo de membresía es obligatorio.",
     "startDate_required": "La fecha de inicio es obligatoria.",
-    "expiration_required": "La fecha de expiración es obligatoria."
+    "expiration_required": "La fecha de expiración es obligatoria.",
+    "itemTypeName_required": "El nombre del tipo de ítem es obligatorio.",
+    "itemTypeName_tooLong": "El nombre del tipo de ítem debe tener menos de 100 caracteres.",
+    "itemTypeDescription_required": "La descripción del tipo de ítem es obligatoria.",
+    "itemTypeDescription_tooLong": "La descripción del tipo de ítem debe tener menos de 200 caracteres.",
+    "itemTypeName_taken": "El nombre del tipo de ítem ya está en uso.",
+    "itemType_server_error": "Ocurrió un error al crear el tipo de ítem. Intenta nuevamente."
   },
   "clearfilters": "Limpiar Filtros",
   "profile": {
@@ -75,8 +81,9 @@
     "attendance": "Asistencia",
     "notifications": "Notificaciones",
     "search": "Buscar",
-    "close": "Cerrar"
-
+    "close": "Cerrar",
+    "create": "Crear",
+    "confirm": "Confirmar"
   },
   "dashboard": {
     "chart-title": "Asistencia de hoy por hora",
@@ -154,7 +161,7 @@
     "payments": "Pagos",
     "search": "Buscar por nombre",
     "add-member": "Añadir Miembro",
-    "name" : "Nombre",
+    "name": "Nombre",
     "not-found": "No se encontraron miembros"
   },
   "classes": {
@@ -198,7 +205,12 @@
     "update": "Actualizar",
     "search": "Buscar por nombre",
     "add-item": "Agregar ítem",
-    "trainer": "Entrenador"
+    "trainer": "Entrenador",
+    "items-for-type": "Inventario: ",
+    "status": "Estado",
+    "add-maintenance-and-trainer": "Editar ítem",
+    "select-next-maintenance-date": "Seleccionar fecha de próximo mantenimiento",
+    "not-found": "No encontrado"
   },
   "finances": {
     "profit": "Ganancia",
@@ -224,7 +236,7 @@
     "payer": "Pagador",
     "concept": "Concepto",
     "amount": "Monto",
-    "curency": "Moneda",
+    "currency": "Moneda",
     "search": "Búsqueda por palabra clave"
   },
   "attendance": {
@@ -273,5 +285,36 @@
     "apple": "Iniciar sesión con Apple",
     "show": "Mostrar",
     "hide": "Ocultar"
+  },
+  "purchase": {
+    "add-new-purchase": "Agregar Nueva Compra",
+    "date": "Fecha",
+    "method": "Método",
+    "currency": "Moneda",
+    "vendor-name": "Nombre del Proveedor",
+    "item-details": "Detalles del Ítem",
+    "item-type": "Tipo de Ítem",
+    "select-item-type": "Seleccionar Tipo de Ítem",
+    "unit-price": "Precio Unitario",
+    "quantity": "Cantidad",
+    "assign-employee": "Asignar Empleado",
+    "select-employee": "Seleccionar Empleado",
+    "next-maintenance": "Próximo Mantenimiento",
+    "item-status": "Estado del Ítem",
+    "select-status": "Seleccionar Estado",
+    "add-detail": "Agregar Detalle",
+    "update-detail": "Actualizar Detalle",
+    "added-items": "Ítems Agregados",
+    "total-amount": "Monto Total",
+    "status": "Estado",
+    "assigned": "Asignado"
+  },
+  "item-type": {
+    "add-new": "Agregar Nuevo Tipo de Ítem",
+    "add-new-type": "Agregar Nuevo Tipo de Ítem",
+    "name": "Nombre",
+    "description": "Descripción",
+    "add": "Agregar",
+    "cancel": "Cancelar"
   }
 }

@@ -1,21 +1,32 @@
-//
-// The `inventory-list.component` is a Vue.js component designed to display and manage a list of inventory items in a table format.
-// It includes functionality for searching and filtering inventory items, selecting a specific item, and triggering actions
-// such as editing or deleting an inventory item.
-// - The `filteredInventory` computed property filters the inventory based on the search query.
-// - The component emits events like `selected`, `edit-request`, and `delete-request` when a user selects an inventory item,
-// edits it, or deletes it, respectively.
-// - The `toggleFilters` method controls the visibility of the filter options, while the `applyFilters` method applies them.
-// - The component uses the `pv-datatable` component to display inventory data in a paginated and sortable table format.
-//
-// Author: Cassius Martel
-//
-
 <script>
+/**
+ * Inventory List Component
+ *
+ * This component displays a list of inventory items, grouped by their item type, in a data table format.
+ * It provides features for searching items by name and description, and allows for interaction with individual items.
+ *
+ * The component receives an array of `items` (which are already grouped) as a prop.
+ *
+ * It includes the following functionalities:
+ * - **Item Selection:** Allows single row selection in the data table.
+ * - **Search:** Filters the displayed items based on a search query applied to item name and description.
+ * - **Date Formatting:** Formats dates for 'Last Maintenance' and 'Next Maintenance' columns.
+ * - **Actions:** Provides buttons for:
+ * - Adding a new item, emitting an `add-request` event.
+ * - Viewing more details for a grouped item type, emitting a `view-more-request` event.
+ * - (Potentially) Editing an individual item (though the direct edit functionality is commented out in the template).
+ *
+ * @emits selected - Emitted when a row in the data table is selected, with the `groupedItem` data.
+ * @emits add-request - Emitted when the "Add Item" button is clicked.
+ * @emits view-more-request - Emitted when the "View More" icon is clicked for a grouped item, with the `groupedItem` data.
+ * @emits edit-request - (Potentially) Emitted when an edit action is triggered for an individual item.
+ *
+ * Author: Tomio Nakamurakare
+ */
 export default {
   name: "inventory-list.component",
   props: {
-    inventory: {
+    items: {
       type: Array,
       required: true
     }
@@ -38,21 +49,39 @@ export default {
     applyFilters() {
       this.showFilters = false;
     },
-    editInventory(inventory) {
-      this.$emit('edit-request', inventory);
+    editInventory(groupedItem) {
+      if (groupedItem.individualItems && groupedItem.individualItems.length > 0) {
+        this.$emit('edit-request', groupedItem.individualItems[0]);
+      } else {
+        console.warn("No individual item found to edit for this grouped item type.");
+      }
     },
-    deleteInventory(inventory) {
-      this.$emit('delete-request', inventory);
+    showDetails(groupedItem) {
+      this.$emit('view-more-request', groupedItem);
+      console.log("Activando 'Ver más' para:", groupedItem.name);
+    },
+    formatDate(dateString) {
+      if (!dateString) return 'N/A';
+      try {
+        const date = new Date(dateString);
+        const options = {year: 'numeric', month: '2-digit', day: '2-digit'};
+        return date.toLocaleDateString('es-ES', options);
+      } catch (e) {
+        console.error("Error formatting date:", dateString, e);
+        return 'Fecha inválida';
+      }
     }
   },
   computed: {
-    filteredInventory() {
-      let list = [...this.inventory];
+    filteredItems() {
+      let list = [...this.items];
       if (this.searchQuery) {
         const q = this.searchQuery.toLowerCase();
-        list = list.filter(m => m.name.toLowerCase().includes(q));
+        list = list.filter(item =>
+            item.name.toLowerCase().includes(q) ||
+            item.description.toLowerCase().includes(q)
+        );
       }
-
       return list;
     }
   }
@@ -62,7 +91,7 @@ export default {
 <template>
   <div class="table-container">
     <pv-datatable
-        :value="filteredInventory"
+        :value="filteredItems"
         selectionMode="single"
         v-model:selection="internalSelection"
         @row-select="handleRowSelect"
@@ -96,26 +125,26 @@ export default {
         </div>
       </template>
 
-      <pv-column field="name" :header="$t('inventory.name')" sortable style="width:25%" aria-header="Item Name"></pv-column>
-      <pv-column field="description" :header="$t('inventory.description')" sortable style="width:15%" aria-header="Description"></pv-column>
-      <pv-column field="quantity" :header="$t('inventory.quantity')" sortable style="width:25%" aria-header="Quantity"></pv-column>
-      <pv-column field="last_maintenance" :header="$t('inventory.last-maintenance')" sortable style="width:20%" aria-header="Last Maintenance"></pv-column>
-      <pv-column field="next_maintenance" :header="$t('inventory.next-maintenance')" sortable style="width:25%" aria-header="Next Maintenance"></pv-column>
-      <pv-column field="trainerName" :header="$t('inventory.trainer')" sortable style="width:15%" aria-header="Trainer"></pv-column>
-      <pv-column header="Actions" style="width: 15%" aria-header="Actions">
+      <pv-column field="name" :header="$t('inventory.name')" sortable style="width:17%"
+                 aria-header="Item Name"></pv-column>
+      <pv-column field="description" :header="$t('inventory.description')" sortable style="width:50%"
+                 aria-header="Description"></pv-column>
+      <pv-column field="quantity" :header="$t('inventory.quantity')" sortable style="width:17%"
+                 aria-header="Quantity"></pv-column>
+
+      <pv-column header="Actions" style="width: 16%" aria-header="Actions">
         <template v-slot:body="{ data }">
           <div class="action-buttons">
-            <img src="/assets/pencil-svgrepo-com.svg" alt="Edit" class="action-icon" @click="() => editInventory(data)" aria-label="Edit inventory item"/>
-            <img src="/assets/close-svgrepo-com.svg" alt="Delete" class="action-icon" @click="() => deleteInventory(data)" aria-label="Delete inventory item"/>
+            <img src="/assets/eye-svgrepo-com.svg" alt="View More" class="action-icon"
+                 @click="() => showDetails(data)" aria-label="View more items of this type"/>
           </div>
         </template>
       </pv-column>
 
-      <template #empty>No items found.</template>
+      <template #empty>{{ $t('inventory.not-found') }}.</template>
     </pv-datatable>
   </div>
 </template>
-
 
 <style scoped>
 .table-container {
@@ -123,7 +152,7 @@ export default {
 }
 
 .datatable {
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: white;
   border: 20px solid #fff;
   border-radius: 10px;
@@ -221,8 +250,6 @@ export default {
 }
 
 
-
-
 ::v-deep(.filter-sbutton .p-highlight) {
   background-color: #A7D1D2 !important;
   color: white !important;
@@ -236,7 +263,7 @@ export default {
   margin-left: 0.5rem;
 }
 
-.filter-sbutton{
+.filter-sbutton {
   background: white !important;
   border: 1px solid #A7D1D2 !important;
   color: black !important;
@@ -249,7 +276,7 @@ export default {
   background: white;
   border: 1px solid #A7D1D2;
   padding: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 10;
   width: 360px !important;
   max-width: 90vw;
@@ -273,8 +300,6 @@ export default {
   border: 1px solid #A7D1D2;
   padding: 0.25rem;
 }
-
-
 
 
 .right-group .add-btn {

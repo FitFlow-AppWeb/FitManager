@@ -1,98 +1,167 @@
-//
-// The `InventoryComponent` is a Vue.js component responsible for managing the inventory. It includes functionality
-// for listing, adding, editing, and deleting inventory items. The component renders multiple child components,
-// including `InventoryList`, `AddInventory`, `EditInventory`, and `DeleteInventory`.
-// - `InventoryList` displays the list of inventory items and provides options for selecting, adding, editing,
-// and deleting items.
-// - `AddInventory` is used for adding new items to the inventory,
-// - `EditInventory` is used for editing the details of a selected item, and
-// - `DeleteInventory` is used for confirming and deleting an item.
-// The component maintains a list of inventory items (`inventory`) and tracks the selected inventory item (`selectedInventory`).
-// It manages the visibility of modals for adding, editing, and deleting inventory through `showAddModal`,
-// `showEditModal`, and `showDeleteModal`. It fetches the inventory data from the API when the component is mounted,
-// and after an action like adding, editing, or deleting, the inventory list is refreshed.
-//
-// Author: Cassius Martel
-//
-
 <script>
-import { InventoryApiService } from "../services/inventory-api.service.js";
-import InventoryList from "./inventory-list.component.vue"
-import AddInventory from ".//add-inventory.component.vue"
-import EditInventory from "./edit-inventory.component.vue";
+/**
+ * Inventory Component
+ *
+ * This is the main component for the inventory management feature. It orchestrates the display,
+ * addition, deletion, viewing, and maintenance of inventory items. It interacts with the
+ * `ItemApiService` to fetch and manage item data and utilizes several child components
+ * to handle specific UI/UX functionalities.
+ *
+ * The component manages the state for:
+ * - The list of items, grouped by their type (`groupedItems`).
+ * - Currently selected individual item or grouped item.
+ * - Visibility of various modal dialogs for adding, deleting, viewing details, and performing maintenance.
+ *
+ * It provides the following core functionalities:
+ * - **Data Fetching:** Retrieves all inventory items from the backend and groups them by `ItemType`.
+ * - **Item Grouping:** Organizes individual items into logical groups based on their type, providing
+ * a count and aggregated information for each type.
+ * - **Modal Management:** Controls the display of different modals for specific actions:
+ * - `AddPurchase`: To add new inventory items (integrated via a purchase flow).
+ * - `DeleteInventory`: To confirm and delete an individual item.
+ * - `ViewItems`: To display a detailed list of individual items within a selected type.
+ * - `Maintenance`: To update maintenance details and assigned trainers for individual items.
+ * - **Event Handling:** Responds to events from child components to trigger data updates or modal changes.
+ *
+ * Author: Tomio Nakamurakare
+ */
+import { ItemApiService } from "../services/item-api.service.js";
+import InventoryList from "./inventory-list.component.vue";
+import AddPurchase from "../../finances/components/add-purchase.component.vue";
 import DeleteInventory from "./delete-inventory.component.vue";
-import DeleteClass from "../../classes/components/delete-class.component.vue";
+import ViewItems from "./view-items.component.vue";
+import Maintenance from "./maintenance.component.vue";
 
 export default {
   name: "InventoryComponent",
-  components: {DeleteClass, EditInventory, InventoryApiService, InventoryList, AddInventory, DeleteInventory},
+  components: {
+    InventoryList,
+    AddPurchase,
+    DeleteInventory,
+    ViewItems,
+    Maintenance
+  },
   data() {
     return {
-      inventory: [],
-      selectedInventory: null,
+      itemService: null,
+      items: [],
+      selectedItem: null,
+      selectedGroupedItem: null,
       showAddModal: false,
-      showEditModal: false,
       showDeleteModal: false,
-    }
+      showViewItemsModal: false,
+      showMaintenanceModal: false,
+    };
   },
   methods: {
-    onInventorySelected(inventory) {
-      this.selectedInventory = inventory;
+    onOpenMaintenanceModalRequest(item) {
+      this.selectedItem = item;
+      this.showMaintenanceModal = true;
     },
-    onEditRequest(inventory) {
-      this.selectedInventory = inventory;
-      this.showEditModal = true;
-    },
-    ondDeleteRequest(inventory) {
-      this.selectedInventory = inventory;
+    onDeleteRequest(item) {
+      this.selectedItem = item;
       this.showDeleteModal = true;
     },
+    onViewMoreRequest(groupedItem) {
+      this.selectedGroupedItem = groupedItem;
+      this.showViewItemsModal = true;
+    },
+    closeViewItemsModal() {
+      this.showViewItemsModal = false;
+      this.selectedGroupedItem = null;
+    },
+    closeMaintenanceModal() {
+      this.showMaintenanceModal = false;
+      this.selectedItem = null;
+    },
+    onPurchaseAdded() {
+      this.fetchItems();
+    },
 
-    fetchInventory() {
-      const service = new InventoryApiService();
-      service.getInventory().then(data => {
-        this.inventory = data;
-      });
+    async fetchItems() {
+      try {
+        const data = await this.itemService.getAllItems();
+        this.items = data;
+        if (this.selectedItem) {
+          const updatedItem = this.items.find(i => i.id === this.selectedItem.id);
+          this.selectedItem = updatedItem || null;
+        }
+      } catch (error) {
+        console.error("Error al obtener ítems:", error);
+      }
     }
   },
-  mounted(){
-    this.fetchInventory();
+  computed: {
+    groupedItems() {
+      const grouped = {};
+      this.items.forEach(item => {
+        const itemTypeId = item.itemTypeId;
+
+        if (!grouped[itemTypeId]) {
+          grouped[itemTypeId] = {
+            id: item.itemTypeId,
+            name: item.name,
+            description: item.description,
+            lastMaintenanceDate: item.lastMaintenanceDate,
+            nextMaintenanceDate: item.nextMaintenanceDate,
+            assignedTrainerFullName: item.assignedTrainerFullName,
+            status: item.status,
+            quantity: 0,
+            individualItems: []
+          };
+        }
+        grouped[itemTypeId].quantity++;
+        grouped[itemTypeId].individualItems.push(item);
+      });
+      return Object.values(grouped);
+    }
+  },
+  created() {
+    this.itemService = new ItemApiService();
+    this.fetchItems();
   }
-}
+};
 </script>
 
 <template>
   <div class="inventory-container">
-    <!-- Panel de lista -->
     <div class="list-pane">
       <InventoryList
-          :inventory="inventory"
-          @selected="onInventorySelected"
-          @add-request="showAddModal = true"
-          @edit-request="onEditRequest"
-          @delete-request="ondDeleteRequest"
+          :items="groupedItems"
+          @add-request="showAddModal = true" @view-more-request="onViewMoreRequest"
           aria-label="Inventory list"
       />
-      <AddInventory
+
+      <AddPurchase
           v-if="showAddModal"
           @close="showAddModal = false"
-          @inventory-added="fetchInventory"
-          aria-labelledby="add-inventory-modal-title"
+          @purchase-added="onPurchaseAdded" aria-labelledby="add-purchase-modal-title"
       />
-      <EditInventory
-          v-if="showEditModal"
-          :inventory-data="selectedInventory"
-          @close="showEditModal = false"
-          @inventory-updated="fetchInventory"
-          aria-labelledby="edit-inventory-modal-title"
-      />
+
       <DeleteInventory
           v-if="showDeleteModal"
-          :inventory-data="selectedInventory"
+          :inventory-data="selectedItem"
           :visible="showDeleteModal"
           @close="showDeleteModal = false"
-          @deleted-inventory="fetchInventory"
+          @deleted-inventory="fetchItems"
           aria-labelledby="delete-inventory-modal-title"
+      />
+      <ViewItems
+          v-if="showViewItemsModal"
+          :grouped-item-data="selectedGroupedItem"
+          :visible="showViewItemsModal"
+          @close="closeViewItemsModal"
+          @open-maintenance-modal-request="onOpenMaintenanceModalRequest"
+          @delete-individual-request="onDeleteRequest"
+          aria-labelledby="view-items-modal-title"
+      />
+      <Maintenance
+          v-if="showMaintenanceModal"
+          :item-data="selectedItem"
+          :visible="showMaintenanceModal"
+          @close="closeMaintenanceModal"
+          @item-updated="fetchItems"
+          aria-labelledby="maintenance-modal-title"
       />
     </div>
   </div>

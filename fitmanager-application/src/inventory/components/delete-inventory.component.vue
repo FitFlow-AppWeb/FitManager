@@ -1,17 +1,19 @@
-<!--
-// The `DeleteInventory` is a Vue.js component that handles the deletion of an inventory item.
-// It displays a confirmation dialog to the user, asking whether they are sure they want to delete the item.
-// The component accepts two props: `inventoryData`, which contains the data of the inventory item to be deleted,
-// and `visible`, which controls the visibility of the confirmation dialog. When the user confirms the deletion,
-// the item is sent to the backend for removal via the `InventoryApiService`. After the deletion, the component emits
-// an event to notify the parent component that the item has been deleted and closes the dialog.
-// The component also handles errors in case the deletion process fails.
-//
-// Author: Cassius Martel
--->
-
 <script>
-import { InventoryApiService } from "../services/inventory-api.service.js";
+/**
+ * Delete Inventory Component
+ *
+ * This component provides a modal dialog for confirming and executing the deletion of an individual inventory item.
+ * It takes the `inventoryData` (which is assumed to have an `id`) and a `visible` prop to control its display.
+ *
+ * It interacts with the `ItemApiService` to perform the actual deletion operation.
+ *
+ * The component emits the following events:
+ * - `close`: When the dialog is closed, either by clicking cancel or after a successful deletion.
+ * - `deleted-inventory`: When an item is successfully deleted, passing the ID of the deleted item.
+ *
+ * Author: Tomio Nakamurakare
+ */
+import { ItemApiService } from "../services/item-api.service.js";
 
 export default {
   name: "DeleteInventory",
@@ -30,14 +32,16 @@ export default {
     closeDialog() {
       this.$emit("close");
     },
-    deleteInventory() {
-      const service = new InventoryApiService();
-      service.deleteInventory(this.inventoryData).then(() => {
-        this.$emit("deleted-inventory", this.inventoryData);
+    async deleteInventory() {
+      const service = new ItemApiService();
+
+      try {
+        await service.deleteItem(this.inventoryData.id);
+        this.$emit("deleted-inventory", this.inventoryData.id);
         this.closeDialog();
-      }).catch(error => {
+      } catch (error) {
         console.error("Error deleting item:", error);
-      });
+      }
     }
   }
 }

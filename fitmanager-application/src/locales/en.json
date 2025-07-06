@@ -28,7 +28,13 @@
     "status_required": "Membership Status is Required.",
     "type_required": "Membership Type is Required.",
     "startDate_required": "Start Date is Required.",
-    "expiration_required": "End Date is Required."
+    "expiration_required": "End Date is Required.",
+    "itemTypeName_required": "Item type name is required.",
+    "itemTypeName_tooLong": "Item type name must be under 100 characters.",
+    "itemTypeDescription_required": "Item type description is required.",
+    "itemTypeDescription_tooLong": "Item type description must be under 200 characters.",
+    "itemTypeName_taken": "Item type name is already in use.",
+    "itemType_server_error": "An error occurred while creating the item type. Please try again."
   },
   "clearfilters": "Clear Filters",
   "profile": {
@@ -75,8 +81,9 @@
     "attendance": "Attendance",
     "notifications": "Notifications",
     "search": "Search",
-    "close": "Close"
-
+    "close": "Close",
+    "create": "Create",
+    "confirm": "Confirm"
   },
   "dashboard": {
     "chart-title": "Today's Attendance by Hour",
@@ -198,7 +205,12 @@
     "update": "Update",
     "search": "Search by name",
     "add-item": "Add item",
-    "trainer": "Trainer"
+    "trainer": "Trainer",
+    "items-for-type": "Inventory: ",
+    "status": "Status",
+    "add-maintenance-and-trainer": "Edit item",
+    "select-next-maintenance-date": "Select next maintenance date",
+    "not-found": "Not found"
   },
   "finances": {
     "profit": "Profit",
@@ -250,7 +262,6 @@
     "lowest-attendance": "Lowest attendance",
     "most-frequent-user": "Most frequent user"
   },
-
   "notification": {
     "create-button": "Create Notification",
     "title": "Title",
@@ -274,5 +285,36 @@
     "apple": "Log in with Apple",
     "show": "Show",
     "hide": "Hide"
+  },
+  "purchase": {
+    "add-new-purchase": "Add New Purchase",
+    "date": "Date",
+    "method": "Method",
+    "currency": "Currency",
+    "vendor-name": "Vendor Name",
+    "item-details": "Item Details",
+    "item-type": "Item Type",
+    "select-item-type": "Select Item Type",
+    "unit-price": "Unit Price",
+    "quantity": "Quantity",
+    "assign-employee": "Assign Employee",
+    "select-employee": "Select Employee",
+    "next-maintenance": "Next Maintenance",
+    "item-status": "Item Status",
+    "select-status": "Select Status",
+    "add-detail": "Add Detail",
+    "update-detail": "Update Detail",
+    "added-items": "Added Items",
+    "total-amount": "Total Amount",
+    "status": "Status",
+    "assigned": "Assigned"
+  },
+  "item-type": {
+    "add-new": "Add New Item Type",
+    "add-new-type": "Add New Item Type",
+    "name": "Name",
+    "description": "Description",
+    "add": "Add",
+    "cancel": "Cancel"
   }
 }
