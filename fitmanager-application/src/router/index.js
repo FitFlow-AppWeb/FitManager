@@ -8,89 +8,70 @@
  * Author: Renzo Luque
  */
 
+/**
+ * @type {import('vue-router').RouteRecordRaw[]}
+ */
 import { createRouter, createWebHistory } from "vue-router";
-import Dashboard from '../dashboard/components/dashboard.component.vue';
-import Calendar from '../calendar/components/calendar.component.vue';
-import Members from '../members/components/member.component.vue';
-import Employees from '../employees/components/employees.component.vue';
-import Classes from '../classes/components/classes.component.vue';
-import Inventory from '../inventory/components/inventory.component.vue';
-import Finances from '../finances/components/finances.component.vue';
-import Attendance from '../attendance/components/attendance.component.vue';
+
+import Layout      from "../public/components/app-layout.componet.vue";
+import Login       from "../login/components/login.component.vue";
+import Register    from "../login/components/register.component.vue";
+import Dashboard   from '../dashboard/components/dashboard.component.vue';
+import Calendar    from '../calendar/components/calendar.component.vue';
+import Members     from '../members/components/member.component.vue';
+import Employees   from '../employees/components/employees.component.vue';
+import Classes     from '../classes/components/classes.component.vue';
+import Inventory   from '../inventory/components/inventory.component.vue';
+import Finances    from '../finances/components/finances.component.vue';
+import Attendance  from '../attendance/components/attendance.component.vue';
 import Notifications from '../notifications/components/notification.component.vue';
-import Profile from '../user/components/profile.component.vue';
-import Login from '../login/components/login.component.vue'; // Import the login component
+import Profile     from '../user/components/profile.component.vue';
+
+const routes = [
+    // Rutas públicas
+    { path: '/login',    name: 'Login',    component: Login    },
+    { path: '/register', name: 'Register', component: Register },
+
+    // Rutas protegidas dentro del Layout
+    {
+        path: '/',
+        component: Layout,
+        meta: { requiresAuth: true },
+        children: [
+            { path: '',           name: 'Home',         component: Dashboard   },
+            { path: 'dashboard',  name: 'Dashboard',    component: Dashboard   },
+            { path: 'calendar',   name: 'Calendar',     component: Calendar    },
+            { path: 'members',    name: 'Members',      component: Members     },
+            { path: 'employees',  name: 'Employees',    component: Employees   },
+            { path: 'classes',    name: 'Classes',      component: Classes     },
+            { path: 'inventory',  name: 'Inventory',    component: Inventory   },
+            { path: 'finances',   name: 'Finances',     component: Finances    },
+            { path: 'attendance', name: 'Attendance',   component: Attendance  },
+            { path: 'notifications', name: 'Notifications', component: Notifications },
+            { path: 'profile',    name: 'Profile',      component: Profile     },
+        ]
+    },
+
+    // Redirigir cualquier otra ruta al Home (o podrías usar un 404)
+    { path: '/:catchAll(.*)', redirect: { name: 'Home' } }
+];
 
 const router = createRouter({
-
     history: createWebHistory(),
-    routes: [
-        {
-            path: '/',
-            name: 'Home',
-            component: Dashboard, // Home page
-        },
-        {
-            path: '/calendar',
-            name: 'Calendar',
-            component: Calendar,
-            meta: { requiresAuth: true }, // Protected route
-        },
-        {
-            path: '/dashboard',
-            name: 'Dashboard',
-            component: Dashboard,
-            meta: { requiresAuth: true }, // Protected route
-        },
-        {
-            path: '/employees',
-            name: 'Employees',
-            component: Employees,
-            meta: { requiresAuth: true }, // Protected route
-        },
-        {
-            path: '/members',
-            name: 'Members',
-            component: Members,
-            meta: { requiresAuth: true }, // Protected route
-        },
-        {
-            path: '/classes',
-            name: 'Classes',
-            component: Classes,
-            meta: { requiresAuth: true }, // Protected route
-        },
-        {
-            path: '/inventory',
-            name: 'Inventory',
-            component: Inventory,
-            meta: { requiresAuth: true }, // Protected route
-        },
-        {
-            path: '/finances',
-            name: 'Finances',
-            component: Finances,
-            meta: { requiresAuth: true }, // Protected route
-        },
-        {
-            path: '/attendance',
-            name: 'Attendance',
-            component: Attendance,
-            meta: { requiresAuth: true }, // Protected route
-        },
-        {
-            path: '/notifications',
-            name: 'Notifications',
-            component: Notifications,
-            meta: { requiresAuth: true }, // Protected route
-        },
-        {
-            path: '/profile',
-            name: 'Profile',
-            component: Profile,
-            meta: { requiresAuth: true }, // Protected route
-        },
-    ],
+    routes
+});
+
+router.beforeEach((to, from, next) => {
+    const token = localStorage.getItem('jwt');
+    // Si ruta protegida y NO hay token → Login
+    if (to.meta.requiresAuth && !token) {
+        return next({ name: 'Login' });
+    }
+    // Si vamos a Login/Register pero YA hay token → Home
+    if ((to.name === 'Login' || to.name === 'Register') && token) {
+        return next({ name: 'Home' });
+    }
+    next();
 });
 
 export default router;
