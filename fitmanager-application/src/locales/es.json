@@ -43,7 +43,9 @@
     "time_required": "La hora es obligatoria",
     "duration_required": "La duración es obligatoria",
     "trainer_id_required": "El entrenador es obligatorio",
-    "status_required": "El estado es obligatorio"
+    "status_required": "El estado es obligatorio",
+    "description_required": "La descripción es obligatoria",
+    "capacity_required": "La capacidad es obligatoria"
 
   },
   "clearfilters": "Limpiar Filtros",
@@ -181,6 +183,8 @@
     "date": "Fecha",
     "time": "Hora",
     "duration": "Duración",
+    "description": "Descripción",
+    "capacity": "Capacidad",
     "select-trainer": "Seleccionar entrenador",
     "status": "Estado",
     "group": "Grupo",

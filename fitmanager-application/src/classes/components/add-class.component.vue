@@ -1,12 +1,14 @@
 <script>
 import { ClassApiService } from "../services/class-api.service.js";
-import axios from "axios";
+import api from "../../login/services/axios.config.js"; // ✅ Usa la instancia con token
 
 export default {
   name: "AddClass",
   data() {
     return {
       name: "",
+      description: "",
+      capacity: "",
       type: "",
       date: "",
       time: "",
@@ -17,38 +19,39 @@ export default {
       touched: {},
       trainers: [],
       typeOptions: [
-        { name: this.$t("classes.group"), value: "Group" },
-        { name: this.$t("classes.solo"), value: "Solo" }
+        {name: this.$t("classes.group"), value: "Group"},
+        {name: this.$t("classes.solo"), value: "Solo"}
       ],
       timeOptions: [
-        { name: "06:00", value: "06:00" },
-        { name: "07:00", value: "07:00" },
-        { name: "08:00", value: "08:00" },
-        { name: "09:00", value: "09:00" },
-        { name: "10:00", value: "10:00" },
-        { name: "11:00", value: "11:00" },
-        { name: "12:00", value: "12:00" },
-        { name: "13:00", value: "13:00" },
-        { name: "14:00", value: "14:00" },
-        { name: "15:00", value: "15:00" },
-        { name: "16:00", value: "16:00" },
-        { name: "17:00", value: "17:00" },
-        { name: "18:00", value: "18:00" },
-        { name: "19:00", value: "19:00" },
-        { name: "20:00", value: "20:00" },
-        { name: "21:00", value: "21:00" },
-        { name: "22:00", value: "22:00" }
+        {name: "06:00", value: "06:00"},
+        {name: "07:00", value: "07:00"},
+        {name: "08:00", value: "08:00"},
+        {name: "09:00", value: "09:00"},
+        {name: "10:00", value: "10:00"},
+        {name: "11:00", value: "11:00"},
+        {name: "12:00", value: "12:00"},
+        {name: "13:00", value: "13:00"},
+        {name: "14:00", value: "14:00"},
+        {name: "15:00", value: "15:00"},
+        {name: "16:00", value: "16:00"},
+        {name: "17:00", value: "17:00"},
+        {name: "18:00", value: "18:00"},
+        {name: "19:00", value: "19:00"},
+        {name: "20:00", value: "20:00"},
+        {name: "21:00", value: "21:00"},
+        {name: "22:00", value: "22:00"}
       ],
       durationOptions: [
-        { name: "30 min", value: "30 min" },
-        { name: "45 min", value: "45 min" },
-        { name: "60 min", value: "60 min" },
-        { name: "90 min", value: "90 min" }
+        {name: "45 min", value: "45 min"},
+        {name: "60 min", value: "60 min"},
+        {name: "90 min", value: "90 min"},
+        {name: "120 min", value: "120 min"}
+
       ],
       statusOptions: [
-        { name: this.$t("classes.confirmed"), value: "Confirmed" },
-        { name: this.$t("classes.cancelled"), value: "Cancelled" },
-        { name: this.$t("classes.pending"), value: "Pending" }
+        {name: this.$t("classes.confirmed"), value: "Confirmed"},
+        {name: this.$t("classes.cancelled"), value: "Cancelled"},
+        {name: this.$t("classes.pending"), value: "Pending"}
       ]
     };
   },
@@ -76,30 +79,54 @@ export default {
 
     async fetchTrainers() {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/Employee`);
-        this.trainers = response.data
-            .filter(emp => emp.role === "group instructor" || emp.role === "trainer")
-            .map(emp => ({ name: emp.fullName, value: emp.id }));
+        const response = await api.get(`/api/v1/Employee`);
+        console.log("👀 Respuesta completa de /Employee:", response.data);
+
+        const employees = Array.isArray(response.data?.data) ? response.data.data : [];
+        console.log("📋 Lista cruda de empleados:", employees);
+
+        this.trainers = employees.map(emp => {
+          console.log("📦 Emp individual:", emp);
+          return {
+            name: `${emp.firstName ?? "?"} ${emp.lastName ?? "?"} (${emp.role ?? "?"})`,
+            value: emp.id
+          };
+        });
+
+        console.log("👨‍🏫 Opciones para selector:", this.trainers);
       } catch (err) {
         console.error("❌ Error fetching trainers:", err);
       }
     },
 
     async submitForm() {
-      const fields = ["name", "type", "date", "time", "duration", "trainer_id", "status"];
+      const fields = ["name", "type", "date", "time", "duration", "trainer_id", "status", "description", "capacity"];
       fields.forEach(this.touch);
 
       if (this.hasErrors) return;
 
+      // Parse duration: convertir "45 min" => 45 (entero)
+      const durationMinutes = parseInt(this.duration);
+
+      // Combinar date y time para formar un DateTime ISO string
+      // Por ejemplo: date = '2025-08-01', time = '08:00'
+      const datePart = this.date instanceof Date
+          ? this.date.toISOString().split("T")[0]
+          : this.date;
+
+      const startDate = datePart && this.time ? new Date(`${datePart}T${this.time}:00`) : null;
       const newClass = {
-        name: this.name,
-        type: this.type,
-        date: this.date,
-        time: this.time,
-        duration: this.duration,
-        trainer_id: this.trainer_id,
-        status: this.status
+        Name: this.name,
+        Description: this.description || "", // agregar campo descripción (puede ser un campo nuevo en data())
+        Type: this.type,
+        Capacity: this.capacity ? parseInt(this.capacity) : 0,  // agregar campo capacidad (nuevo también)
+        StartDate: startDate ? startDate.toISOString() : null,
+        Duration: durationMinutes,
+        Status: this.status,
+        EmployeeId: this.trainer_id // ajustar nombre de propiedad
       };
+
+      console.log("📦 Payload que se enviará:", newClass);
 
       try {
         const service = new ClassApiService();
@@ -108,14 +135,19 @@ export default {
         this.$emit("close");
       } catch (err) {
         console.error("❌ Error adding class:", err);
+        if (err.response) {
+          console.error("📨 Backend response:", err.response.data);
+          console.error("❗ Detalle de errores de validación:", err.response.data.errors);
+        }
       }
     }
-  },
+,
 
+  },
   mounted() {
     this.fetchTrainers();
   }
-};
+}
 </script>
 
 <template>
@@ -125,6 +157,22 @@ export default {
       <form @submit.prevent="submitForm">
         <pv-inputtext v-model="name" :placeholder="$t('classes.name')" class="input-field" @blur="touch('name')" />
         <small v-if="touched.name && errors.name" class="error">{{ errors.name }}</small>
+
+        <!-- Descripción -->
+        <pv-textarea v-model="description" @blur="touch('description')" :placeholder="$t('classes.description')" class="input-field" />
+        <small v-if="touched.description && errors.description" class="error">{{ errors.description }}</small>
+
+
+
+        <!-- Capacidad -->
+        <pv-inputnumber
+            v-model="capacity"
+            :placeholder="$t('classes.capacity')"
+            class="input-field"
+            :min="1"
+            @blur="touch('capacity')"
+        />
+        <small v-if="touched.capacity && errors.capacity" class="error">{{ errors.capacity }}</small>
 
         <pv-select v-model="type" :options="typeOptions" :placeholder="$t('classes.type')" option-label="name" option-value="value" class="input-field" @blur="touch('type')" />
         <small v-if="touched.type && errors.type" class="error">{{ errors.type }}</small>
@@ -138,7 +186,15 @@ export default {
         <pv-select v-model="duration" :options="durationOptions" :placeholder="$t('classes.duration')" option-label="name" option-value="value" class="input-field" @blur="touch('duration')" />
         <small v-if="touched.duration && errors.duration" class="error">{{ errors.duration }}</small>
 
-        <pv-select v-model="trainer_id" :options="trainers" :placeholder="$t('classes.select-trainer')" option-label="name" option-value="value" class="input-field" @blur="touch('trainer_id')" />
+        <pv-select
+            v-model="trainer_id"
+            :options="trainers"
+            :placeholder="$t('classes.select-trainer')"
+            option-label="name"
+            option-value="value"
+            class="input-field"
+            @blur="touch('trainer_id')"
+        />
         <small v-if="touched.trainer_id && errors.trainer_id" class="error">{{ errors.trainer_id }}</small>
 
         <pv-select v-model="status" :options="statusOptions" :placeholder="$t('classes.status')" option-label="name" option-value="value" class="input-field" @blur="touch('status')" />

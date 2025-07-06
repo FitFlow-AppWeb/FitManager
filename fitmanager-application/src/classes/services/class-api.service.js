@@ -1,19 +1,17 @@
-import axios from 'axios';
+import api from '../../login/services/axios.config.js'; // usa la instancia con token
 import { ClassAssembler } from "./class.assembler.js";
 import { Member } from "../../members/model/member.entity.js";
-
-const BASE_URL = import.meta.env.VITE_API_URL;
 
 export class ClassApiService {
     async getAllClasses() {
         try {
             const [classesRes, employeesRes] = await Promise.all([
-                axios.get(`${BASE_URL}/api/v1/Classes`),
-                axios.get(`${BASE_URL}/api/v1/Employee`)
+                api.get(`/api/v1/Classes`),
+                api.get(`/api/v1/Employee`)
             ]);
 
-            const classes = ClassAssembler.toEntitiesFromResponse(classesRes.data);
-            const employees = employeesRes.data;
+            const classes = ClassAssembler.toEntitiesFromResponse(classesRes.data.data);
+            const employees = employeesRes.data.data;
 
             const employeeMap = {};
             for (const emp of employees) {
@@ -32,7 +30,7 @@ export class ClassApiService {
 
     async testLocalMembershipTypes() {
         try {
-            const response = await axios.get(`${BASE_URL}/api/v1/MembershipType`);
+            const response = await api.get(`/api/v1/MembershipType`);
             console.log('✅ Datos recibidos desde backend local:', response.data.data);
             return response.data.data;
         } catch (error) {
@@ -42,11 +40,11 @@ export class ClassApiService {
     }
 
     addClass(gymClass) {
-        return axios.post(`${BASE_URL}/api/v1/Classes`, gymClass);
+        return api.post(`/api/v1/Classes`, gymClass);
     }
 
     updateClass(gymClass) {
-        return axios.put(`${BASE_URL}/api/v1/Classes/${gymClass.id}`, gymClass)
+        return api.put(`/api/v1/Classes/${gymClass.id}`, gymClass)
             .catch(error => {
                 console.error('Error updating class:', error);
                 throw error;
@@ -54,7 +52,7 @@ export class ClassApiService {
     }
 
     deleteClass(gymClass) {
-        return axios.delete(`${BASE_URL}/api/v1/Classes/${gymClass.id}`)
+        return api.delete(`/api/v1/Classes/${gymClass.id}`)
             .catch(error => {
                 console.error('Error deleting class:', error);
                 throw error;
@@ -63,7 +61,7 @@ export class ClassApiService {
 
     async getMembersByClass(gymClass) {
         try {
-            const response = await axios.get(`${BASE_URL}/api/v1/Attendances/class/${gymClass.id}`);
+            const response = await api.get(`/api/v1/Attendances/class/${gymClass.id}`);
             return response.data.data.map(m =>
                 new Member(
                     Number(m.id),

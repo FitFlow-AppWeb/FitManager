@@ -9,7 +9,8 @@ import i18n from './i18n.js'
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import router from './router/index.js'
-
+import Textarea from 'primevue/textarea';
+import InputNumber from 'primevue/inputnumber';
 
 const app = createApp(App);
 
@@ -41,6 +42,10 @@ app
     .component('pv-tooltip', Tooltip)
     .component('pv-row', Row)
     .component('pv-dialog', Dialog)
+    .component('pv-inputnumber', InputNumber)
+    .component('pv-textarea', Textarea)
+
+
     .use(router)
     .use(i18n)
     .mount('#app')

@@ -42,7 +42,10 @@
     "time_required": "Time is required",
     "duration_required": "Duration is required",
     "trainer_id_required": "Trainer is required",
-    "status_required": "Status is required"
+    "status_required": "Status is required",
+    "description_required": "Description is Required",
+    "capacity_required": "Capacity is Required"
+
   },
   "clearfilters": "Clear Filters",
   "profile": {
@@ -179,6 +182,8 @@
     "date": "Date",
     "time": "Time",
     "duration": "Duration",
+    "description": "Description",
+    "capacity": "Capacity",
     "select-trainer": "Select Trainer",
     "status": "Status",
     "group": "Group",
