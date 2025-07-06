@@ -166,6 +166,7 @@
     "remove-confirmation": "Are you sure you want to remove this member?",
     "edit-details": "Edit details",
     "payments": "Payments",
+    "no-payments": "No payments",
     "search": "Search by name",
     "add-member": "Add Member",
     "name" : "Name",

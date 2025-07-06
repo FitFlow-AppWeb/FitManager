@@ -42,17 +42,17 @@ export default {
 
   async mounted() {
     try {
-      const response = await fetch(`${BASE_URL}/api/v1/MembershipType`);
-      const data = await response.json();
-      this.typeOptions = data.map(t => ({
+      const service = new MemberApiService();
+
+      const types = await service.getMembershipTypes();
+      this.typeOptions = types.map(t => ({
         name: t.name,
         value: t.id
       }));
 
-      const service = new MemberApiService();
       this.allMembers = await service.getAllMembers();
     } catch (err) {
-      console.error("Error fetching data:", err);
+      console.error("❌ Error fetching data:", err);
     }
   },
 

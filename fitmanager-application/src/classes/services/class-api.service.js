@@ -33,8 +33,8 @@ export class ClassApiService {
     async testLocalMembershipTypes() {
         try {
             const response = await axios.get(`${BASE_URL}/api/v1/MembershipType`);
-            console.log('✅ Datos recibidos desde backend local:', response.data);
-            return response.data;
+            console.log('✅ Datos recibidos desde backend local:', response.data.data);
+            return response.data.data;
         } catch (error) {
             console.error('❌ Error al llamar al backend local:', error);
             throw error;
@@ -64,7 +64,7 @@ export class ClassApiService {
     async getMembersByClass(gymClass) {
         try {
             const response = await axios.get(`${BASE_URL}/api/v1/Attendances/class/${gymClass.id}`);
-            return response.data.map(m =>
+            return response.data.data.map(m =>
                 new Member(
                     Number(m.id),
                     m.fullName,

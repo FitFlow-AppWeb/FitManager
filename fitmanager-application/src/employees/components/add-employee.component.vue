@@ -132,7 +132,7 @@ export default {
         };
 
         const response = await service.addEmployee(newEmployee);
-        const employeeId = response.data.id;
+        const employeeId = response.data.data.id;
 
         for (const spec of this.specialties) {
           await service.addSpecialty(spec, employeeId);

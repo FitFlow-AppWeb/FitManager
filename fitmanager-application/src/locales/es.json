@@ -144,6 +144,7 @@
     "payments-title": "Pagos del Miembro",
     "full-name": "Nombre completo",
     "age": "Edad",
+    "no-payments": "No hay pagos",
     "status": "Estado",
     "type": "Tipo",
     "membership-status": "Estado de la membresía",

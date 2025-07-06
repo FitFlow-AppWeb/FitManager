@@ -17,7 +17,8 @@ export default {
   async mounted() {
     try {
       const service = new MemberApiService();
-      const allPayments = await service.getAllPayments();
+      const response = await service.getAllPayments();
+      const allPayments = response.data;
       this.payments = allPayments.filter(p => p.memberId === this.memberId);
     } catch (error) {
       console.error("Error fetching payments:", error);

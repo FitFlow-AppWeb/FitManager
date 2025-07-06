@@ -22,24 +22,33 @@ export default {
       this.error = null;
 
       try {
-        const admins = await new AdminApiService().getAllAdmins();
+        const credentials = {
+          email: this.email,
+          password: this.password
+        };
 
-        const admin = admins.find(
-            (admin) => admin.email === this.email && admin.password === this.password
-        );
+        const response = await new AdminApiService().login(credentials);
 
-        console.log("Admin encontrado:", admin);
+        console.log(response);
 
-        if (admin) {
-          this.$emit('login-success', true);
-        } else {
-          this.error = "Correo o contraseña incorrectos.";
-        }
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        localStorage.setItem("token", response.data.token);
+
+        // Puedes guardar datos adicionales del usuario si lo necesitas
+        localStorage.setItem("user", JSON.stringify(response.user));
+
+        this.$emit("login-success", true);
       } catch (error) {
-        console.error('Error al intentar iniciar sesión:', error);
-        this.error = 'Hubo un error al procesar tu solicitud.';
+        if (error.response && error.response.status === 401) {
+          this.error = "Correo o contraseña incorrectos.";
+        } else {
+          console.error("❌ Error en el login:", error);
+          this.error = "Hubo un error al procesar tu solicitud.";
+        }
       }
     },
+
     togglePasswordVisibility() {
       this.passwordVisible = !this.passwordVisible;
     },
@@ -50,19 +59,25 @@ export default {
 <template>
   <div class="login-form-container">
     <form @submit.prevent="submitForm">
-      
       <pv-floatlabel variant="on" class="input-group">
         <pv-inputtext id="email" v-model="email" required aria-label="Email" />
         <label for="email">Email</label>
       </pv-floatlabel>
 
       <pv-floatlabel variant="on" class="input-group">
-        <pv-inputtext :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" required aria-label="Contraseña" />
+        <pv-inputtext
+            :type="passwordVisible ? 'text' : 'password'"
+            id="password"
+            v-model="password"
+            required
+            aria-label="Contraseña"
+        />
         <label for="password">Contraseña</label>
       </pv-floatlabel>
-      
 
-      <button type="submit" class="submit-btn" aria-label="Iniciar sesión">{{ $t('login.login') }}</button>
+      <button type="submit" class="submit-btn" aria-label="Iniciar sesión">
+        {{ $t('login.login') }}
+      </button>
 
       <p class="forgot-password">
         <a href="#" aria-label="Olvidé mi contraseña">{{ $t('login.forget') }}</a>
@@ -88,7 +103,8 @@ export default {
       </button>
     </div>
   </div>
-</template>
+  </template>
+
 
 
 <style scoped>

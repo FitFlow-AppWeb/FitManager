@@ -16,7 +16,7 @@ export class TodayClassesApiService {
     getTodayClasses() {
         return axios.get('https://fitmanager.onrender.com/dashboard/')
             .then(response => {
-                const todayClasses = response.data?.todayClasses;
+                const todayClasses = response.data.data?.todayClasses;
 
                 // Validate response structure
                 if (!Array.isArray(todayClasses)) {

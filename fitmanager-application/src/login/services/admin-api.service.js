@@ -1,41 +1,27 @@
 /**
- * This file contains the AdminApiService class, which is responsible for
- * making API calls to manage admin data. It handles fetching, adding,
- * updating, and deactivating admin accounts using axios requests.
- * It also utilizes the AdminAssembler to transform raw API data into
- * Admin entities for use within the application.
+ * This file contains the AdminApiService class, responsible for
+ * authenticating admin users via the backend authentication service.
  *
- * Author: Victor Ortiz
+ * Author: Victor Ortiz (modificado por Cassius Martel)
  */
-
-import axios from 'axios';
-import { AdminAssembler } from './admin.assembler.js';
+import api from './axios.config.js';
 
 export class AdminApiService {
-    getAllAdmins() {
-        return axios.get('https://fitmanager.onrender.com/admin')
-            .then(response => AdminAssembler.toEntitiesFromResponse(response.data))
+    login(credentials) {
+        return api.post('/api/v1/Authentication/sign-in', credentials)
+            .then(res => res.data)
             .catch(error => {
-                console.error('Error fetching admins:', error);
+                console.error('❌ Error during login:', error.response?.data || error.message);
                 throw error;
             });
     }
 
-    addAdmin(admin) {
-        return axios.post("https://fitmanager.onrender.com/admin", admin);
-    }
-
-    updateAdmin(admin) {
-        return axios.put(`https://fitmanager.onrender.com/admin/${admin.id}`, admin)
+    signUp(adminData) {
+        return api.post('/api/v1/Authentication/sign-up', adminData)
+            .then(res => res.data)
             .catch(error => {
-                console.error('Error updating admin:', error);
+                console.error('❌ Error during sign-up:', error.response?.data || error.message);
                 throw error;
             });
-    }
-
-    deactivateAdmin(admin) {
-        return axios.patch(`https://fitmanager.onrender.com/admin/${admin.id}`, {
-            membershipStatus: "inactive"
-        });
     }
 }

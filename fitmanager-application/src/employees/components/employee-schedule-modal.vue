@@ -31,7 +31,7 @@ export default {
     async fetchClasses() {
       try {
         const response = await axios.get(`${BASE_URL}/api/v1/Classes`);
-        console.log("✅ Clases recibidas:", response.data);
+        console.log("✅ Clases recibidas:", response.data.data);
         this.allClasses = response.data;
       } catch (error) {
         console.error("❌ Error fetching classes:", error);
