@@ -6,15 +6,30 @@
 -->
 
 <script>
-import { UserApiService } from '../services/user-api.service.js';
+import axios from 'axios';
 
 export default {
   name: 'AccountInfo',
-  components: { UserApiService },
   props: {
-    user: Object,
-    required: true
+    user: {
+      type: Object,
+      required: true
+    }
   },
+  methods: {
+    /**
+     * Logs the user out by clearing stored credentials and redirecting to Login
+     */
+    logout() {
+      // 1) Remove stored JWT and userId
+      localStorage.removeItem('jwt');
+      localStorage.removeItem('userId');
+      // 2) Remove axios default Authorization header
+      delete axios.defaults.headers.common['Authorization'];
+      // 3) Redirect to the Login page
+      this.$router.push({ name: 'Login' });
+    }
+  }
 };
 </script>
 
@@ -48,7 +63,7 @@ export default {
 
     <div class="buttons-container">
       <button class="edit-btn" aria-label="Edit account information">{{ $t('profile.buttons.edit') }}</button>
-      <button class="logout-btn" aria-label="Log out of the account">{{ $t('profile.buttons.logout') }}</button>
+      <button class="logout-btn" @click="logout" aria-label="Log out of the account">{{ $t('profile.buttons.logout') }}</button>
     </div>
   </div>
 
@@ -56,7 +71,6 @@ export default {
     <p aria-live="polite">{{ $t('general.loading') }} . . .</p>
   </div>
 </template>
-
 
 <style scoped>
 .personal-info-container {
@@ -82,12 +96,6 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-.account-info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Espacio entre elementos */
 }
 
 .info-row {

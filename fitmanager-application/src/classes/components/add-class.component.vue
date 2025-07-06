@@ -1,102 +1,149 @@
-<!--
-// Description: This code defines the `add-class.component`, which is a Vue.js component for adding a new class to the system.
-// It includes a form that collects the class name, trainer, type, date, time, duration, and status. The form also provides a list of available trainers and other options for status, type, time, and duration.
-// The form submission triggers the `submitForm` method, which formats the data and calls the `addClass` service to save the new class. Upon successful submission, the component emits the `class-added` event and closes the modal.
-// The component fetches the list of available trainers when it is mounted, filtering them based on role.
-// Author: Cassius Martel
--->
-
 <script>
 import { ClassApiService } from "../services/class-api.service.js";
-import axios from "axios";
+import api from "../../login/services/axios.config.js"; // ✅ Usa la instancia con token
 
 export default {
-  name: "add-class.component",
+  name: "AddClass",
   data() {
     return {
       name: "",
-      trainer_id: null,
-      trainers: [],
-      status: "",
+      description: "",
+      capacity: "",
       type: "",
       date: "",
       time: "",
       duration: "",
-      statusOptions: [
-        { name: this.$t("classes.confirmed"), value: "Confirmed" },
-        { name: this.$t("classes.cancelled"), value: "Cancelled" },
-        { name: this.$t("classes.pending"), value: "Pending" }
-      ],
+      trainer_id: "",
+      status: "",
+      errors: {},
+      touched: {},
+      trainers: [],
       typeOptions: [
-        { name: this.$t("classes.group"), value: "Group" },
-        { name: this.$t("classes.solo"), value: "Solo" }
+        {name: this.$t("classes.group"), value: "Group"},
+        {name: this.$t("classes.solo"), value: "Solo"}
       ],
       timeOptions: [
-        { name: "06:00", value: "06:00" },
-        { name: "07:00", value: "07:00" },
-        { name: "08:00", value: "08:00" },
-        { name: "09:00", value: "09:00" },
-        { name: "10:00", value: "10:00" },
-        { name: "11:00", value: "11:00" },
-        { name: "12:00", value: "12:00" },
-        { name: "13:00", value: "13:00" },
-        { name: "14:00", value: "14:00" },
-        { name: "15:00", value: "15:00" },
-        { name: "16:00", value: "16:00" },
-        { name: "17:00", value: "17:00" },
-        { name: "18:00", value: "18:00" },
-        { name: "19:00", value: "19:00" },
-        { name: "20:00", value: "20:00" },
-        { name: "21:00", value: "21:00" },
-        { name: "22:00", value: "22:00" },
-        { name: "23:00", value: "23:00" }
+        {name: "06:00", value: "06:00"},
+        {name: "07:00", value: "07:00"},
+        {name: "08:00", value: "08:00"},
+        {name: "09:00", value: "09:00"},
+        {name: "10:00", value: "10:00"},
+        {name: "11:00", value: "11:00"},
+        {name: "12:00", value: "12:00"},
+        {name: "13:00", value: "13:00"},
+        {name: "14:00", value: "14:00"},
+        {name: "15:00", value: "15:00"},
+        {name: "16:00", value: "16:00"},
+        {name: "17:00", value: "17:00"},
+        {name: "18:00", value: "18:00"},
+        {name: "19:00", value: "19:00"},
+        {name: "20:00", value: "20:00"},
+        {name: "21:00", value: "21:00"},
+        {name: "22:00", value: "22:00"}
       ],
       durationOptions: [
-        { name: "30 min", value: "30 min" },
-        { name: "45 min", value: "45 min" },
-        { name: "60 min", value: "60 min" },
-        { name: "75 min", value: "75 min" },
-        { name: "90 min", value: "90 min" },
-        { name: "105 min", value: "105 min" },
-        { name: "120 min", value: "120 min" },
-        { name: "135 min", value: "135 min" },
-        { name: "150 min", value: "150 min" },
-        { name: "165 min", value: "165 min" },
-        { name: "180 min", value: "180 min" }
+        {name: "45 min", value: "45 min"},
+        {name: "60 min", value: "60 min"},
+        {name: "90 min", value: "90 min"},
+        {name: "120 min", value: "120 min"}
+
+      ],
+      statusOptions: [
+        {name: this.$t("classes.confirmed"), value: "Confirmed"},
+        {name: this.$t("classes.cancelled"), value: "Cancelled"},
+        {name: this.$t("classes.pending"), value: "Pending"}
       ]
     };
   },
+
+  computed: {
+    hasErrors() {
+      return Object.values(this.errors).some(Boolean);
+    }
+  },
+
   methods: {
-    async submitForm() {
-      const formattedDate = this.date instanceof Date
-          ? this.date.toISOString().split('T')[0]
-          : this.date;
-      const newClass = {
-
-        name: this.name,
-        status: this.status,
-        type: this.type,
-        date: formattedDate,
-        time: this.time,
-        duration: this.duration,
-        trainer_id: this.trainer_id,
-      };
-
-      const service = new ClassApiService();
-      await service.addClass(newClass);
-      this.$emit("class-added");
-      this.$emit("close");
+    touch(field) {
+      this.touched[field] = true;
+      this.validateField(field);
     },
+
+    validateField(field) {
+      const value = this[field];
+      if (!value) {
+        this.errors[field] = this.$t(`validation.${field}_required`);
+      } else {
+        this.errors[field] = "";
+      }
+    },
+
     async fetchTrainers() {
       try {
-        const response = await axios.get("https://fitmanager.onrender.com/employees");
-        this.trainers = response.data
-            .filter(emp => emp.role === "group instructor" || emp.role === "trainer")
-            .map(emp => ({name: emp.fullName, value: emp.id}));
-      } catch (error) {
-        console.error("Error fetching trainers:", error);
+        const response = await api.get(`/api/v1/Employee`);
+        console.log("👀 Respuesta completa de /Employee:", response.data);
+
+        const employees = Array.isArray(response.data?.data) ? response.data.data : [];
+        console.log("📋 Lista cruda de empleados:", employees);
+
+        this.trainers = employees.map(emp => {
+          console.log("📦 Emp individual:", emp);
+          return {
+            name: `${emp.firstName ?? "?"} ${emp.lastName ?? "?"} (${emp.role ?? "?"})`,
+            value: emp.id
+          };
+        });
+
+        console.log("👨‍🏫 Opciones para selector:", this.trainers);
+      } catch (err) {
+        console.error("❌ Error fetching trainers:", err);
+      }
+    },
+
+    async submitForm() {
+      const fields = ["name", "type", "date", "time", "duration", "trainer_id", "status", "description", "capacity"];
+      fields.forEach(this.touch);
+
+      if (this.hasErrors) return;
+
+      const durationMinutes = parseInt(this.duration);
+
+      const datePart = this.date instanceof Date
+          ? this.date.toISOString().split("T")[0]
+          : this.date;
+
+      const startDate = datePart && this.time
+          ? `${datePart}T${this.time}:00`
+          : null;
+
+      const newClass = {
+        Name: this.name,
+        Description: this.description || "",
+        Type: this.type,
+        Capacity: this.capacity ? parseInt(this.capacity) : 0,
+        StartDate: startDate, // ya está bien formado
+        Duration: durationMinutes,
+        Status: this.status,
+        EmployeeId: this.trainer_id
+      };
+
+      console.log("📦 Payload que se enviará:", newClass);
+
+      try {
+        const service = new ClassApiService();
+        await service.addClass(newClass);
+        this.$emit("class-added");
+        this.$emit("close");
+      } catch (err) {
+        console.error("❌ Error adding class:", err);
+        if (err.response) {
+          console.error("📨 Backend response:", err.response.data);
+          console.error("❗ Detalle de errores de validación:", err.response.data.errors);
+        }
       }
     }
+
+    ,
+
   },
   mounted() {
     this.fetchTrainers();
@@ -105,32 +152,41 @@ export default {
 </script>
 
 <template>
-  <div class="modal-overlay">
+  <div class="modal-overlay" @click.self="$emit('close')" role="dialog" aria-modal="true" aria-labelledby="addClassTitle">
     <div class="modal-content">
-      <h2 class="modal-title">{{ $t("classes.add-new-class") }}</h2>
+      <h2 id="addClassTitle" class="modal-title">{{ $t('classes.add-class') }}</h2>
       <form @submit.prevent="submitForm">
-        <pv-inputtext v-model="name" :placeholder="$t('classes.name')" class="input-field" required aria-label="Class name" />
-        <pv-select v-model="type" :options="typeOptions" :placeholder="$t('classes.type')" option-label="name" option-value="value" class="input-field" required aria-label="Select class type" />
-        <pv-datepicker v-model="date" :placeholder="$t('classes.date')" class="input-field" required aria-label="Select class date" />
-        <pv-select
-            v-model="time"
-            :options="timeOptions"
-            :placeholder="$t('classes.time')"
-            option-label="name"
-            option-value="value"
-            class="input-field"
-            required aria-label="Select class time"
-        />
+        <pv-inputtext v-model="name" :placeholder="$t('classes.name')" class="input-field" @blur="touch('name')" />
+        <small v-if="touched.name && errors.name" class="error">{{ errors.name }}</small>
 
-        <pv-select
-            v-model="duration"
-            :options="durationOptions"
-            :placeholder="$t('classes.duration')"
-            option-label="name"
-            option-value="value"
+        <!-- Descripción -->
+        <pv-textarea v-model="description" @blur="touch('description')" :placeholder="$t('classes.description')" class="input-field" />
+        <small v-if="touched.description && errors.description" class="error">{{ errors.description }}</small>
+
+
+
+        <!-- Capacidad -->
+        <pv-inputnumber
+            v-model="capacity"
+            :placeholder="$t('classes.capacity')"
             class="input-field"
-            required aria-label="Select class duration"
+            :min="1"
+            @blur="touch('capacity')"
         />
+        <small v-if="touched.capacity && errors.capacity" class="error">{{ errors.capacity }}</small>
+
+        <pv-select v-model="type" :options="typeOptions" :placeholder="$t('classes.type')" option-label="name" option-value="value" class="input-field" @blur="touch('type')" />
+        <small v-if="touched.type && errors.type" class="error">{{ errors.type }}</small>
+
+        <pv-datepicker v-model="date" :placeholder="$t('classes.date')" class="input-field" @blur="touch('date')" />
+        <small v-if="touched.date && errors.date" class="error">{{ errors.date }}</small>
+
+        <pv-select v-model="time" :options="timeOptions" :placeholder="$t('classes.time')" option-label="name" option-value="value" class="input-field" @blur="touch('time')" />
+        <small v-if="touched.time && errors.time" class="error">{{ errors.time }}</small>
+
+        <pv-select v-model="duration" :options="durationOptions" :placeholder="$t('classes.duration')" option-label="name" option-value="value" class="input-field" @blur="touch('duration')" />
+        <small v-if="touched.duration && errors.duration" class="error">{{ errors.duration }}</small>
+
         <pv-select
             v-model="trainer_id"
             :options="trainers"
@@ -138,19 +194,21 @@ export default {
             option-label="name"
             option-value="value"
             class="input-field"
-            required aria-label="Select class trainer"
+            @blur="touch('trainer_id')"
         />
-        <pv-select v-model="status" :options="statusOptions" :placeholder="$t('classes.status')" option-label="name" option-value="value" class="input-field" required aria-label="Select class status" />
+        <small v-if="touched.trainer_id && errors.trainer_id" class="error">{{ errors.trainer_id }}</small>
+
+        <pv-select v-model="status" :options="statusOptions" :placeholder="$t('classes.status')" option-label="name" option-value="value" class="input-field" @blur="touch('status')" />
+        <small v-if="touched.status && errors.status" class="error">{{ errors.status }}</small>
 
         <div class="actions">
-          <pv-button :label="$t('general.add')" type="submit" class="add-button" aria-label="Add class" />
-          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" aria-label="Cancel" />
+          <pv-button :label="$t('general.add')" type="submit" class="add-button" />
+          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
         </div>
       </form>
     </div>
   </div>
 </template>
-
 
 <style scoped>
 .modal-overlay {
@@ -165,7 +223,6 @@ export default {
   align-items: center;
   z-index: 1000;
 }
-
 .modal-content {
   background: white;
   padding: 2rem;
@@ -175,14 +232,12 @@ export default {
   overflow-y: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .modal-title {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   color: #A7D1D2;
   text-align: center;
 }
-
 .input-field {
   width: 100%;
   margin-bottom: 1rem;
@@ -193,12 +248,10 @@ export default {
   font-size: 1rem;
   color: #333;
 }
-
 .input-field:focus {
   border-color: #5d7273 !important;
   outline: none;
 }
-
 ::v-deep(.p-dropdown),
 ::v-deep(.p-calendar),
 ::v-deep(.p-inputtext) {
@@ -209,11 +262,9 @@ export default {
   width: 100% !important;
   font-size: 1rem !important;
 }
-
 ::v-deep(.p-dropdown-label) {
   color: #333 !important;
 }
-
 ::v-deep(.p-dropdown-item) {
   color: #333 !important;
 }
@@ -221,7 +272,6 @@ export default {
   background-color: #A7D1D2 !important;
   color: white !important;
 }
-
 .add-button {
   background-color: #A7D1D2;
   color: white;
@@ -229,14 +279,10 @@ export default {
   width: 100%;
   margin-top: 1rem;
 }
-
-
 .add-button:hover {
   background-color: #8FBFC0 !important;
   border-color: #8FBFC0 !important;
 }
-
-
 .cancel-button {
   background-color: #f0f0f0;
   color: #A7D1D2;
@@ -244,17 +290,20 @@ export default {
   width: 100%;
   margin-top: 1rem;
 }
-
 .cancel-button:hover {
   background-color: #dcdcdc !important;
   border-color: #8FBFC0 !important;
   color: #000 !important;
 }
-
 .actions {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
 }
-
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+  margin-bottom: 0.5rem;
+}
 </style>

@@ -35,6 +35,25 @@
     "itemTypeDescription_tooLong": "La descripción del tipo de ítem debe tener menos de 200 caracteres.",
     "itemTypeName_taken": "El nombre del tipo de ítem ya está en uso.",
     "itemType_server_error": "Ocurrió un error al crear el tipo de ítem. Intenta nuevamente."
+    "expiration_required": "La fecha de expiración es obligatoria.",
+    "required": "Este campo es obligatorio",
+    "validation.name_required": "El nombre de la clase es obligatorio.",
+    "validation.type_required": "El tipo de clase es obligatorio.",
+    "validation.date_required": "La fecha de la clase es obligatoria.",
+    "validation.time_required": "La hora de la clase es obligatoria.",
+    "validation.duration_required": "La duración de la clase es obligatoria.",
+    "validation.trainer_required": "El entrenador es obligatorio.",
+    "validation.status_required": "El estado de la clase es obligatorio.",
+    "name_required": "El nombre es obligatorio",
+    "type_required": "El tipo es obligatorio",
+    "date_required": "La fecha es obligatoria",
+    "time_required": "La hora es obligatoria",
+    "duration_required": "La duración es obligatoria",
+    "trainer_id_required": "El entrenador es obligatorio",
+    "status_required": "El estado es obligatorio",
+    "description_required": "La descripción es obligatoria",
+    "capacity_required": "La capacidad es obligatoria"
+
   },
   "clearfilters": "Limpiar Filtros",
   "profile": {
@@ -90,12 +109,18 @@
     "today-classes": "Clases de hoy",
     "no-classes": "Sin clases",
     "classes": "Clases",
-    "hour": "Hora"
+    "hour": "Hora",
+    "loading": "Cargando"
   },
   "calendar": {
     "class-panel": "Clases el",
     "no-classes": "No hay clases para este día",
-    "month-view": "Vista mensual de clases"
+    "month-view": "Vista mensual de clases",
+    "classes": "Clases programadas",
+    "confirmed": "Confirmada",
+    "pending": "Pendiente",
+    "cancelled": "Cancelada"
+
   },
   "employees": {
     "name": "Nombre",
@@ -135,6 +160,7 @@
     "payments-title": "Pagos del Miembro",
     "full-name": "Nombre completo",
     "age": "Edad",
+    "no-payments": "No hay pagos",
     "status": "Estado",
     "type": "Tipo",
     "membership-status": "Estado de la membresía",
@@ -171,6 +197,8 @@
     "date": "Fecha",
     "time": "Hora",
     "duration": "Duración",
+    "description": "Descripción",
+    "capacity": "Capacidad",
     "select-trainer": "Seleccionar entrenador",
     "status": "Estado",
     "group": "Grupo",

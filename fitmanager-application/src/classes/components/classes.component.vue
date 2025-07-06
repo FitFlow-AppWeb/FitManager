@@ -20,7 +20,7 @@ import ViewMembers from "./view-members.component.vue";
 export default {
   name: "ClassComponent",
   components: {DeactivateMember, ClassApiService, ClassList, AddClass, EditClass, DeleteClass, ViewMembers},
-  data(){
+  data() {
     return {
       classes: [],
       selectedClass: null,
@@ -46,14 +46,30 @@ export default {
       this.selectedClass = gymClass;
       this.showViewMembers = true;
     },
-    fetchClasses() {
+    async fetchClasses() {
       const service = new ClassApiService();
-      service.getAllClasses().then(data => {
-        this.classes = data;
-      });
-    }
+      try {
+        const classes = await service.getAllClasses();
+
+        this.classes = classes.map(cls => {
+          const startDate = new Date(cls.startDate);
+          const hours = startDate.getHours().toString().padStart(2, "0");
+          const minutes = startDate.getMinutes().toString().padStart(2, "0");
+
+          return {
+            ...cls,
+            date: startDate.toLocaleDateString(),
+            time: `${hours}:${minutes}`
+          };
+        });
+
+      } catch (error) {
+        console.error("❌ Error fetching classes:", error);
+      }
+    },
+
   },
-  mounted(){
+  mounted() {
     this.fetchClasses();
     const service = new ClassApiService();
     service.testLocalMembershipTypes()

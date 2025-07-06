@@ -8,7 +8,7 @@
 -->
 
 <script>
-import { ClassApiService } from "../services/class-api.service.js";
+import api from "../../login/services/axios.config.js";
 
 export default {
   name: "ViewMembers",
@@ -32,27 +32,65 @@ export default {
       this.$emit("close");
     },
     async getMembersByClass() {
-      const service = new ClassApiService();
-      this.members = await service.getMembersByClass(this.classData);
+      this.members = [];
+      try {
+        const response = await api.get(`/api/v1/Attendances/class/${this.classData.id}`);
+
+        console.log("Respuesta backend members:", response);
+
+        // Asumiendo que el array está en response.data.data (ajusta si es otro)
+        const data = response.data?.data;
+
+        if (Array.isArray(data)) {
+          this.members = data;
+        } else {
+          console.warn("La data recibida no es un array:", data);
+          this.members = [];
+        }
+      } catch (error) {
+        console.error("Error fetching members:", error);
+        this.members = [];
+      }
     }
   },
-  mounted() {
-    this.getMembersByClass();
+  watch: {
+    visible(newVal) {
+      if (newVal) {
+        this.getMembersByClass();
+      } else {
+        this.members = [];
+      }
+    },
+    classData(newVal, oldVal) {
+      if (newVal?.id && newVal.id !== oldVal?.id && this.visible) {
+        this.getMembersByClass();
+      }
+    }
   }
 };
 </script>
+
 
 <template>
   <pv-dialog
       :header="$t('classes.members-class')"
       :visible="visible"
-      @update:visible="closeDialog"
+      @update:visible="$emit('close')"
       modal
       style="min-width: 80vw"
       aria-labelledby="view-members-dialog"
+      role="dialog"
+      aria-modal="true"
   >
-    <div v-if="members.length">
-      <pv-datatable :value="members" responsive-layout="scroll" :rows="10" scrollable aria-describedby="members-table">
+    <div v-if="members.length > 0">
+      <pv-datatable
+          :value="members"
+          responsive-layout="scroll"
+          :rows="10"
+          scrollable
+          aria-describedby="members-table"
+          class="members-table"
+      >
         <pv-column field="fullName" :header="$t('members.full-name')" />
         <pv-column field="age" :header="$t('members.age')" />
         <pv-column field="membershipStatus" :header="$t('members.membership-status')" />
@@ -64,14 +102,21 @@ export default {
       </pv-datatable>
     </div>
     <div v-else>
-      <p id="members-table">{{$t('members.members-not-found')}}.</p>
+      <p id="members-table">{{ $t('members.not-found') }}.</p>
     </div>
 
-    <div class="dialog-actions">
-      <pv-button label="Close" class="p-button-secondary" @click="closeDialog" aria-label="Close Members List" />
+    <div class="dialog-actions" style="margin-top: 1rem; text-align: right;">
+      <pv-button
+          label="Close"
+          class="p-button-secondary"
+          @click="$emit('close')"
+          aria-label="Close Members List"
+      />
     </div>
   </pv-dialog>
 </template>
+
+
 
 <style scoped>
 .dialog-actions {

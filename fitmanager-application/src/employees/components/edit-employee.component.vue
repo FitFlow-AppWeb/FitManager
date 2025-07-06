@@ -13,6 +13,8 @@
  */
 import axios from "axios";
 import { EmployeeApiService } from "../services/employee-api.service.js";
+import api from "../../login/services/axios.config.js";
+
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -120,25 +122,27 @@ export default {
       if (specialty.id) {
         try {
           console.log("🗑 Eliminando especialidad con ID:", specialty.id);
-          await axios.delete(`${BASE_URL}/api/v1/Specialties/${specialty.id}`);
+          await api.delete(`/api/v1/Specialties/${specialty.id}`);
         } catch (e) {
           console.error("❌ Error al eliminar especialidad:", e);
         }
       }
       this.specialties.splice(index, 1);
     },
+
     async removeCertification(index) {
       const certification = this.certifications[index];
       if (certification.id) {
         try {
           console.log("🗑 Eliminando certificación con ID:", certification.id);
-          await axios.delete(`${BASE_URL}/api/v1/Certifications/${certification.id}`);
+          await api.delete(`/api/v1/Certifications/${certification.id}`);
         } catch (e) {
           console.error("❌ Error al eliminar certificación:", e);
         }
       }
       this.certifications.splice(index, 1);
     },
+
     addSpecialty() {
       const trimmed = this.newSpecialty.trim();
       if (trimmed && !this.specialties.some(s => s.name === trimmed)) {

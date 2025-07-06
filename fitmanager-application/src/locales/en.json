@@ -35,6 +35,24 @@
     "itemTypeDescription_tooLong": "Item type description must be under 200 characters.",
     "itemTypeName_taken": "Item type name is already in use.",
     "itemType_server_error": "An error occurred while creating the item type. Please try again."
+    "expiration_required": "End Date is Required.",
+    "validation.name_required": "Class name is required.",
+    "validation.type_required": "Class type is required.",
+    "validation.date_required": "Class date is required.",
+    "validation.time_required": "Class time is required.",
+    "validation.duration_required": "Class duration is required.",
+    "validation.trainer_required": "Trainer is required.",
+    "validation.status_required": "Class status is required.",
+    "name_required": "Name is required",
+    "type_required": "Type is required",
+    "date_required": "Date is required",
+    "time_required": "Time is required",
+    "duration_required": "Duration is required",
+    "trainer_id_required": "Trainer is required",
+    "status_required": "Status is required",
+    "description_required": "Description is Required",
+    "capacity_required": "Capacity is Required"
+
   },
   "clearfilters": "Clear Filters",
   "profile": {
@@ -90,12 +108,17 @@
     "today-classes": "Today's Classes",
     "no-classes": "No classes",
     "classes": "Classes",
-    "hour": "Hour"
+    "hour": "Hour",
+    "loading": "Loading"
   },
   "calendar": {
     "class-panel": "Classes for",
     "no-classes": "No classes scheduled for this day",
-    "month-view": "Monthly Class View"
+    "month-view": "Monthly Class View",
+    "classes": "Scheduled Classes",
+    "confirmed": "Confirmed",
+    "pending": "Pending",
+    "cancelled": "Cancelled"
   },
   "employees": {
     "name": "Name",
@@ -159,6 +182,7 @@
     "remove-confirmation": "Are you sure you want to remove this member?",
     "edit-details": "Edit details",
     "payments": "Payments",
+    "no-payments": "No payments",
     "search": "Search by name",
     "add-member": "Add Member",
     "name" : "Name",
@@ -171,6 +195,8 @@
     "date": "Date",
     "time": "Time",
     "duration": "Duration",
+    "description": "Description",
+    "capacity": "Capacity",
     "select-trainer": "Select Trainer",
     "status": "Status",
     "group": "Group",

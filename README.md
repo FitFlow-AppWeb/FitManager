@@ -155,12 +155,21 @@ Para esta entrega, se actualizo el readme, se agregó el sprint 3 y se hicieron 
     + [5.2.3. Sprint 3](#523-sprint-3)
       - [5.2.3.1. Sprint Planning](#5231-sprint-planning)
       - [5.2.3.2. Aspect Leaders and Collaborators](#5232-aspect-leaders-and-collaborators)
-      - [5.2.3.3 Sprint Backlog 2](#5233-sprint-backlog-3)
+      - [5.2.3.3 Sprint Backlog 3](#5233-sprint-backlog-3)
       - [5.2.3.4. Development Evidence for Sprint Review](#5234-development-evidence-for-sprint-review)
       - [5.2.3.5. Execution Evidence for Sprint Review](#5235-execution-evidence-for-sprint-review)
       - [5.2.3.6. Services Documentation Evidence for Sprint Review](#5236-services-documentation-evidence-for-sprint-review)
       - [5.2.3.7. Software Deployment Evidence for Sprint Review](#5237-software-deployment-evidence-for-sprint-review)
       - [5.2.3.8. Team Collaboration Insights during Sprint](#5238-team-collaboration-insights-during-sprint)
+    + [5.2.4. Sprint 4](#524-sprint-4)
+      - [5.2.4.1. Sprint Planning](#5241-sprint-planning)
+      - [5.2.4.2. Aspect Leaders and Collaborators](#5242-aspect-leaders-and-collaborators)
+      - [5.2.4.3 Sprint Backlog 4](#5243-sprint-backlog-4)
+      - [5.2.4.4. Development Evidence for Sprint Review](#5244-development-evidence-for-sprint-review)
+      - [5.2.4.5. Execution Evidence for Sprint Review](#5245-execution-evidence-for-sprint-review)
+      - [5.2.4.6. Services Documentation Evidence for Sprint Review](#5246-services-documentation-evidence-for-sprint-review)
+      - [5.2.4.7. Software Deployment Evidence for Sprint Review](#5247-software-deployment-evidence-for-sprint-review)
+      - [5.2.4.8. Team Collaboration Insights during Sprint](#5248-team-collaboration-insights-during-sprint)
 * [5.3. Validation Interviews](#53-validation-interviews)
     + [5.3.1. Diseño de Entrevistas](#531-diseño-de-entrevistas)
     + [5.3.2. Registro de Entrevistas](#532-registro-de-entrevistas)
@@ -170,6 +179,8 @@ Para esta entrega, se actualizo el readme, se agregó el sprint 3 y se hicieron 
 - [Conclusiones](#conclusiones)
   
 - [Recomendaciones](#recomendaciones)
+
+- [Video About-the-Team](#video-about-the-team)
   
 - [Bibliografía](#bibliografía)
   
@@ -180,56 +191,10 @@ Para esta entrega, se actualizo el readme, se agregó el sprint 3 y se hicieron 
 ABET - EAC - Student Outcome 5
 Criterio: La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
 
----
-
-## TB1
-
-| Criterio específico | Acciones realizadas | Conclusiones |
-|---------------------|---------------------|--------------|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Alvarado De La Cruz, Juan Carlos**: Entrevistas, análisis competitivo, antecedentes y problemática, style guidelines, landing page UI design, web applications UI design. | El equipo demostró liderazgo conjunto al dividir responsabilidades estratégicamente según fortalezas individuales, como análisis, investigación de mercado o validación con usuarios. La ejecución de entrevistas y los mapeos de escenarios requirieron coordinación y toma de decisiones colaborativas, fomentando un liderazgo compartido en todas las fases de diagnóstico del problema y definición de oportunidades. Esta sinergia permitió mantener una visión alineada y centrada en el usuario desde múltiples frentes del proyecto. |
-|  | **Luque Minaya, Renzo Andrés**: Entrevistas, style guidelines, landing page UI design, web applications UI design. | La colaboración efectiva fue esencial para alinear la visión del proyecto entre todos los integrantes. Un liderazgo compartido permitió que las discusiones y la planificación inicial se enriquecieran con diversas perspectivas, asegurando así una base sólida y un entendimiento común de los objetivos desde el comienzo. |
-|  | **Martel Andrade, Cassius Estefano**: Lean UX Process, antecedentes y problemática, needfinding, user stories, information architecture, diagramas, landing page UI design, web applications UI design. | El trabajo en equipo jugó un papel crucial en la planificación del proyecto, asegurando que todos los miembros estuvieran alineados con la visión y los objetivos establecidos. Gracias a una colaboración continua, logramos garantizar que el desarrollo siguiera los lineamientos iniciales, lo que permitió mantener un enfoque coherente y eficiente en todo momento. |
-|  | **Nakamurakare Teruya, Alex Tomio**: Lean UX Process, antecedentes y problemática, user stories, product backlog, landing page UI design, web applications UI design, sprint planning. | Trabajar en equipo para proporcionar liderazgo en forma conjunta fortalece la toma de decisiones, fomenta un ambiente de colaboración y permite aprovechar las habilidades y perspectivas de todos los miembros. Este enfoque compartido no solo distribuye la responsabilidad, sino que promueve un espacio donde cada integrante se siente valorado y comprometido con los objetivos comunes. |
-|  | **Ortiz Alarcón, Víctor Nicolás**: Landing page UI design, web applications UI design, desarrollo de la landing page. | El trabajo en equipo fue fundamental para lograr una planificación clara y unificada desde las primeras etapas del proyecto. La colaboración entre todos los integrantes permitió abordar el análisis del problema y la definición de oportunidades desde distintas perspectivas, enriqueciendo el proceso y asegurando una visión centrada en el usuario. Gracias a una comunicación constante y al compromiso de cada miembro, se logró avanzar de forma estructurada y coherente. |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Alvarado De La Cruz, Juan Carlos** | El desarrollo de actividades evidenció un entorno inclusivo y colaborativo, donde cada miembro aportó perspectivas desde diseño, análisis y experiencia de usuario. Las metas fueron definidas en conjunto y las tareas se asignaron equitativamente mediante herramientas de planificación compartida. El cumplimiento de entregables clave demuestra que se logró una organización efectiva del trabajo en equipo, promoviendo la integración de diversas disciplinas en la toma de decisiones. |
-|  | **Luque Minaya, Renzo Andrés** | La definición precisa de metas y la planificación detallada de tareas resultaron fundamentales para un flujo de trabajo organizado. Un entorno donde se valoró la puntualidad y el compromiso individual con las responsabilidades asignadas permitió al equipo evitar malentendidos y avanzar eficientemente hacia el cumplimiento de los primeros objetivos. |
-|  | **Martel Andrade, Cassius Estefano** | La planificación detallada desde el inicio fue clave para la efectividad del proyecto. Definir con precisión las tareas y expectativas permitió que no existieran malentendidos entre los miembros del equipo, especialmente en áreas críticas como el diseño, la codificación de la landing page y el manejo de los commits. Esto facilitó un flujo de trabajo organizado y sin contratiempos. |
-|  | **Nakamurakare Teruya, Alex Tomio** | Crear un entorno colaborativo e inclusivo, establecer metas claras, planificar tareas de forma organizada y cumplir los objetivos propuestos son elementos clave para el éxito de cualquier equipo. Este enfoque impulsa la participación activa, el respeto por la diversidad de ideas y el sentido de responsabilidad compartida, lo que fortalece la cohesión del grupo y mejora los resultados alcanzados. |
-|  | **Ortiz Alarcón, Víctor Nicolás** | En esta fase del proyecto, mi aporte se centró en el desarrollo de funcionalidades clave como el login y el componente de notificaciones, integrándolos de manera fluida con el resto del sistema. El trabajo en equipo se vio reforzado por el uso de ramas para una mejor gestión del código y una comunicación constante que permitió alinear criterios técnicos y de diseño. Esta dinámica favoreció una integración ordenada de los avances individuales y potenció la calidad general del producto. |
-
----
-
-## TP
-
-| Criterio específico | Acciones realizadas | Conclusiones |
-|---------------------|---------------------|--------------|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Alvarado De La Cruz, Juan Carlos**: Implementación de sección de perfil y traducciones con i18n. | Durante esta fase, los miembros del equipo asumieron roles complementarios en el liderazgo. La elaboración de la pantalla de perfil implicó toma de decisiones compartida sobre prioridades de diseño y experiencia de usuario, mientras que la investigación fue distribuida equitativamente entre los miembros. Esto permitió aprovechar las fortalezas individuales y facilitar un liderazgo distribuido en base a conocimiento y habilidades, consolidando una visión común del producto. |
-|  | **Luque Minaya, Renzo Andrés**: Implementación de sección de asistencia y transacciones. | Durante esta etapa, la comunicación constante y abierta dentro del equipo fue un pilar para el liderazgo conjunto. Facilitó la toma de decisiones informadas y aseguró que los avances individuales contribuyeran de manera coherente al progreso general del proyecto, aprovechando la fortaleza colectiva. |
-|  | **Martel Andrade, Cassius Estefano**: Implementación de secciones de inventario, empleados e ítems. | Durante todo el proceso, nos aseguramos de mantener a cada miembro informado sobre los avances y tareas de los demás. Esta comunicación constante no solo aumentó la profundidad del proyecto, sino que también fortaleció la coherencia en las decisiones tomadas. Como resultado, el proyecto creció de manera más integrada y fluida, beneficiándose de la contribución de cada miembro en sus respectivas áreas. |
-|  | **Nakamurakare Teruya, Alex Tomio**: Implementación de sección de dashboard y calendario. | En esta entrega, trabajamos en equipo de manera organizada utilizando ramas, lo que permitió una mejor gestión del desarrollo y control de versiones. Fomentamos el intercambio de ideas, lo que enriqueció el proceso colaborativo y facilitó la identificación y aplicación de mejoras en la aplicación. Esta metodología no solo fortaleció el trabajo en equipo, sino que también elevó la calidad del producto final. |
-|  | **Ortiz Alarcón, Víctor Nicolás**: Implementación de sección de notificaciones y login. | Desde el inicio del proyecto, la colaboración constante y el uso de herramientas compartidas facilitaron una organización clara de las tareas y una comunicación efectiva entre los miembros. El enfoque en la integración de distintas perspectivas —como análisis, diseño y experiencia de usuario— permitió que cada etapa avanzara con solidez y coherencia. El cumplimiento de los entregables demuestra que el equipo logró mantener un ritmo de trabajo equilibrado y orientado a los objetivos establecidos. |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Alvarado De La Cruz, Juan Carlos** | Se promovió un entorno de trabajo abierto al intercambio de ideas, donde cada integrante pudo aportar desde su perspectiva y experiencia. Las tareas fueron planificadas de forma consensuada mediante reuniones semanales y herramientas de gestión, lo que facilitó la organización y el cumplimiento de los objetivos en tiempo. Esta dinámica fortaleció la inclusión de todos los miembros y mejoró la eficiencia en la ejecución del proyecto. |
-|  | **Luque Minaya, Renzo Andrés** | La efectividad en la TP se vio impulsada por un entorno colaborativo enfocado en la consecución de objetivos. La planificación estructurada, como la adopción de sprints para el frontend, y el cumplimiento riguroso de las tareas asignadas, fueron clave para mantener el enfoque y lograr avances significativos, culminando con el cumplimiento de las metas establecidas para este entregable. |
-|  | **Martel Andrade, Cassius Estefano** | La adopción de la metodología de planificación basada en sprints fue fundamental para el desarrollo ágil del frontend. Al establecer objetivos claros y alcanzables en cada sprint, conseguimos mantener un enfoque constante y dirigido, lo que resultó en una ejecución más rápida y de mayor calidad. Esta estructura nos permitió optimizar nuestros recursos y tiempo, logrando avances significativos de manera continua. |
-|  | **Nakamurakare Teruya, Alex Tomio** | En esta entrega, planificamos abordar la mayor parte del desarrollo del frontend, y logramos cumplir con lo establecido. Esto refleja una adecuada planificación de metas y una ejecución efectiva del trabajo. Considero que hemos alcanzado los objetivos propuestos para este entregable, demostrando un buen manejo del tiempo y del esfuerzo en equipo. |
-|  | **Ortiz Alarcón, Víctor Nicolás** | Durante esta etapa del proyecto, contribuí activamente al desarrollo del login y de componentes funcionales como el de notificaciones, integrándolos dentro del sistema de forma coherente con el resto del frontend. El uso de sprints y reuniones de seguimiento permitió distribuir las tareas de manera equitativa y asegurar un flujo de trabajo constante. Esta metodología facilitó la entrega de resultados concretos en los tiempos establecidos y promovió una colaboración efectiva entre los miembros del equipo. |
-
----
-
-## TB2
-
-| Criterio específico | Acciones realizadas | Conclusiones |
-|---------------------|---------------------|--------------|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Alvarado De La Cruz, Juan Carlos**: Desarrollo de bounded context Classes y el deployment. | Al desarrollar el Bounded Context Classes y liderar el deployment del backend, aseguramos una pieza clave para la funcionalidad central de la aplicación. Conseguimos tomar decisiones compartidas sobre cómo integrar eficazmente este módulo en el ecosistema general, consolidando una visión unificada del producto. |
-|  | **Luque Minaya, Renzo Andrés**: Desarrollo del bounded context de Finances. | Con el desarrollo del Bounded Context Finances, pudimos liderar áreas críticas que impactan la escalabilidad del sistema. La comunicación constante nos facilitó la toma de decisiones informadas, asegurando que nuestros avances individuales contribuyeran coherentemente al progreso global del proyecto. |
-|  | **Martel Andrade, Cassius Estefano**: Desarrollo del bounded context de Members. | Al desarrollar el Bounded Context Members en el backend, nos aseguramos de mantener a cada miembro informado sobre los avances de esta entidad central. Esta comunicación constante no solo aumentó la profundidad del módulo, sino que también fortaleció la coherencia en las decisiones que tomamos como equipo. |
-|  | **Nakamurakare Teruya, Alex Tomio**: Desarrollo del bounded context de Inventory. | En la implementación del Bounded Context Inventory en el backend, trabajamos de manera organizada utilizando ramas, lo que nos permitió una mejor gestión del desarrollo y control de versiones. Fomentamos el intercambio de ideas, lo que enriqueció el proceso colaborativo e impulsó mejoras en la lógica del backend. |
-|  | **Ortiz Alarcón, Víctor Nicolás**: Desarrollo del bounded context de Employees y Notifications. | Desde el inicio del proyecto, al desarrollar los Bounded Contexts Employees y Notifications en el backend, la colaboración constante y el uso de herramientas compartidas nos facilitaron una organización clara de las tareas y una comunicación efectiva. Esto permitió integrar distintas perspectivas para avanzar con solidez. |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Alvarado De La Cruz, Juan Carlos** | Promovimos un entorno abierto al intercambio de ideas al planificar el backend, especialmente con el módulo de Clases. Las tareas fueron consensuadas y organizadas, lo que nos permitió cumplir los objetivos de desarrollo y despliegue del backend de manera eficiente y colaborativa. |
-|  | **Luque Minaya, Renzo Andrés** | La implementación de la lógica de Finanzas en el backend impulsó un entorno colaborativo enfocado en objetivos. Conseguimos una planificación estructurada y un cumplimiento riguroso de las tareas, lo que fue clave para lograr avances significativos y cumplir las metas establecidas para este entregable del backend. |
-|  | **Martel Andrade, Cassius Estefano** | La adopción de sprints para el desarrollo del backend, especialmente en el módulo de Miembros, fue fundamental. Al establecer objetivos claros, logramos mantener un enfoque constante y dirigido, optimizando nuestros recursos para una ejecución más rápida y de mayor calidad en el desarrollo de este componente. |
-|  | **Nakamurakare Teruya, Alex Tomio** | En esta entrega, planificamos abordar la mayor parte del desarrollo del backend para el inventario, y logramos cumplir con lo establecido. Esto refleja una adecuada planificación de metas y una ejecución efectiva del trabajo, alcanzando los objetivos propuestos para este entregable. |
-|  | **Ortiz Alarcón, Víctor Nicolás** | Durante esta etapa del proyecto, contribuimos activamente al desarrollo de la lógica del backend para empleados y notificaciones. El uso de sprints y reuniones de seguimiento nos permitió distribuir las tareas de manera equitativa y asegurar un flujo de trabajo constante, facilitando la entrega de resultados concretos en los tiempos establecidos. |
+| Criterio Específico | Acciones Realizadas | Conclusiones |
+|---|---|---|
+| 1. Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Cassius Estefano Martel Andrade** <br> **TB1** <br> Como team leader, propicié un entorno inicial de liderazgo compartido, facilitando las primeras reuniones y promoviendo la participación activa de todos los integrantes. Propuse herramientas colaborativas como Figma, Notion y Trello, y coordiné la definición del alcance inicial del proyecto.<br>**TP** <br> Organicé el flujo de trabajo para el desarrollo del frontend, asignando tareas equitativamente, gestionando conflictos entre módulos y promoviendo la revisión cruzada de componentes.<br>**TB2** <br> Tomé el liderazgo técnico en la definición de la estructura del backend, promoviendo el uso de Clean Architecture y facilitando la comunicación entre pares para unificar criterios de codificación.<br>**TF** <br> Durante la fase de integración, asumí la responsabilidad de coordinar los esfuerzos técnicos y organizativos, asegurándome de que todos los módulos converjan sin fricciones, brindando soporte activo a todo el equipo.<br><br>**Juan Carlos Alvarado De La Cruz**<br>**TB1**  <br> Mostré iniciativa para organizar ideas en las sesiones de ideación. Participé activamente en la definición del problema y ayudé a ordenar los requerimientos.<br>**TP** <br> Tomé responsabilidad en las vistas de clases y guié a los demás en el uso correcto de los componentes compartidos.<br>**TB2** <br> Fui referente del módulo de clases en el backend, colaborando estrechamente con quienes requerían apoyo en la integración de lógica.<br>**TF** <br> Aporté liderazgo técnico en la depuración de flujos críticos y participé activamente en pruebas funcionales.<br><br>**Renzo Andrés Luque Minaya**<br>**TB1** <br> Participé con una actitud proactiva en las decisiones iniciales, proponiendo ideas clave para el modelo de negocio y facilitando la estructuración del proyecto.<br>**TP** <br> Asumí responsabilidad en la accesibilidad del sistema, liderando revisiones para asegurar una interfaz coherente y funcional.<br>**TB2** <br> Dirigí el desarrollo de los módulos de pagos, promoviendo orden y estructura en la lógica.<br>**TF** <br> Lideré la implementación del sistema de autenticación basado en JWT, promoviendo buenas prácticas de seguridad y asegurando la integración sin conflictos.<br><br>**Alex Tomio Nakamurakare Teruya**<br>**TB1** <br> Lideré sesiones de needfinding y entrevistas a usuarios, coordinando el equipo de investigación y promoviendo discusiones significativas sobre los hallazgos.<br>**TP** <br> Guié la organización de componentes de inventario, aportando estructura y consistencia al código.<br>**TB2** <br> Establecí convenciones para las entidades relacionadas a inventario y asistencia, lo cual facilitó el trabajo colaborativo.<br>**TF** <br> Contribuí a la integración técnica resolviendo conflictos entre endpoints y vistas de frontend.<br><br>**Víctor Nicolás Ortíz Alarcón**<br>**TB1** <br> Propuse mejoras estructurales en los entregables UX y fomenté la participación de todos en la validación del diseño.<br>**TP** <br> Mostré liderazgo en la implementación del módulo de notificaciones, asegurando la reutilización de componentes y ayudando a otros con sus módulos.<br>**TB2** <br> Coordiné pruebas de endpoints de usuarios y gestión de roles, generando documentación para facilitar el uso por otros miembros.<br>**TF** <br> Guié sesiones de verificación final y pruebas integradas, garantizando la estabilidad del sistema previo a la presentación final. | **TB1** <br> El grupo demostró una distribución inicial del liderazgo, con participación activa de todos los integrantes. Cassius asumió el rol de facilitador, pero las decisiones se tomaron de forma conjunta, permitiendo que todos tuvieran voz en las propuestas. <br> **TP** <br> Se evidenció un liderazgo técnico rotativo, donde distintos miembros lideraron sus respectivos módulos. Esto favoreció el progreso paralelo, aunque en algunos momentos se necesitó centralizar decisiones para evitar bloqueos.<br>**TB2** <br> El liderazgo se ejerció desde el conocimiento técnico específico. Renzo y Cassius impulsaron decisiones clave, mientras que Juan Carlos, Tomio y Victor tomaron la delantera en dominios particulares.<br>**TF** <br> El liderazgo compartido fue fundamental. El equipo trabajó de forma sincronizada, enfrentando los desafíos técnicos con coordinación, compromiso y apoyo mutuo, consolidando una dinámica madura y funcional. |
+| 2. Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Cassius Estefano Martel Andrade**<br>**TB1** <br> Establecí un cronograma realista considerando la carga de cada integrante, promoviendo un ambiente donde todas las ideas fueran escuchadas y valoradas. Impulsé dinámicas de trabajo que favorecieran la participación equitativa.<br>**TP** <br> Organicé sesiones de seguimiento frecuentes, identificando cuellos de botella y brindando apoyo a quienes lo necesitaban, sin dejar de priorizar el avance grupal.<br>**TB2** <br> Fomenté la autogestión mediante la planificación por dominios, asegurándome de que cada integrante comprenda su rol en el sistema.<br>**TF** <br> Establecí prioridades claras, delegué tareas de forma justa y reforcé la cultura de colaboración con canales de comunicación abiertos.<br><br>**Juan Carlos Alvarado De La Cruz**<br>**TB1** <br> Colaboré en la elaboración de entregables visuales, promoviendo un espacio abierto a la retroalimentación.<br>**TP** <br> Compartí avances regularmente y me aseguré de documentarlos para facilitar el trabajo de mis compañeros.<br>**TB2** <br> Fui puntual en mis entregables y me ofrecí a asistir a quienes necesitaban apoyo con sus endpoints.<br>**TF** <br> Colaboré con frontend en asegurar que mi lógica de backend encaje sin problemas, mostrando apertura y disposición constante.<br><br>**Renzo Andrés Luque Minaya**<br>**TB1** <br> Participé activamente en la estimación de tiempos y tareas, ajustando expectativas del equipo a las capacidades reales.<br>**TP** <br> Mostré compromiso en resolver errores que afectaban la visualización correcta del sistema, comunicando constantemente mis avances.<br>**TB2** <br> Propicié un entorno de ayuda mutua, facilitando la instalación de entornos de desarrollo.<br>**TF** <br> Coordiné con Cassius para asegurar que el sistema de autenticación se integre sin interrumpir otros módulos.<br><br>**Alex Tomio Nakamurakare Teruya**<br>**TB1** <br> Fomentó una dinámica empática en el análisis de usuarios, proponiendo que se tomen en cuenta distintas realidades.<br>**TP** <br> Revisé el trabajo de otros, proponiendo mejoras sin imponer, siempre desde la colaboración.<br>**TB2** <br> Organicé mi trabajo en base a entregas modulares, asegurando que otros puedan integrar fácilmente mis endpoints.<br>**TF** <br> Mantuvo una actitud resolutiva y de acompañamiento técnico constante.<br><br>**Víctor Nicolás Ortíz Alarcón**<br>**TB1** <br> Mostró respeto y valoración por los tiempos y aportes de todos los miembros.<br>**TP** <br> Participó activamente en dailies y propuso soluciones para organizar tareas pendientes.<br>**TB2** <br> Documentó endpoints de notificaciones y los validó con mis compañeros antes de cerrarlos.<br>**TF** <br>  Promovió sesiones de testing colaborativo, fomentando el trabajo en parejas para validar componentes cruzados. | **TB1** <br> El equipo estableció un ambiente colaborativo desde el inicio. Las tareas se distribuyeron con base en habilidades individuales y se valoró la participación equitativa en todas las etapas de definición.<br>**TP** <br> Se reforzó la planificación mediante dailies y entregas incrementales. Aunque surgieron dificultades en tiempos, el grupo mantuvo una comunicación efectiva y una disposición de ayuda constante.<br>**TB2** <br> La planificación por dominios facilitó la ejecución. El entorno de trabajo fue inclusivo, respetuoso y se fortaleció la autonomía de cada integrante.<br>**TF** <br> La integración final reflejó la consolidación de un entorno colaborativo maduro. El cumplimiento de objetivos fue posible gracias al compromiso compartido, la apertura a la retroalimentación y la sinergia lograda como equipo. |
 
 # CAPÍTULO 1: INTRODUCCIÓN
 
@@ -1173,16 +1138,26 @@ Lista de Términos
 | **Acceptance Criteria #1** | Dado que el desarrollador necesita enviar un mensaje a un miembro <br> Cuando realiza una solicitud POST a `/api/v1/MemberNotifications` con los datos válidos (`MemberId`, `Message`, `Subject`, `DateSent`) <br> Entonces el sistema debe crear un nuevo registro, devolver `201 Created` y los datos de la notificación enviada. |
 | **Acceptance Criteria #2** | Dado que el desarrollador necesita ver las notificaciones enviadas a miembros <br> Cuando realiza una solicitud GET a `/api/v1/MemberNotifications` <br> Entonces el sistema debe devolver `200 OK` y una lista con los detalles de todas las notificaciones. |
 | **Acceptance Criteria #3** | Dado que el desarrollador necesita enviar un mensaje a un empleado <br> Cuando realiza una solicitud POST a `/api/v1/StaffNotifications` con los datos válidos (`EmployeeId`, `Message`, `Subject`, `DateSent`) <br> Entonces el sistema debe crear un nuevo registro, devolver `201 Created` y los datos de la notificación enviada. |
-| **Acceptance Criteria #4** | Dado que el desarrollador necesita ver las notif
+| **Acceptance Criteria #4** | Dado que el desarrollador se encuentra en una aplicación cliente y necesita ver las notificaciones enviadas a los empleados <br> Cuando el desarrollador realiza una solicitud GET a /api/v1/StaffNotifications <br> Entonces el sistema debe devolver un estado 200 OK y una lista de todas las notificaciones enviadas a los empleados, incluyendo sus detalles.
 
 | **User Story ID** | TS09 |
 |-------------------|------|
 | **Epic ID** | EP07 |
 | **Title** | Internacionalización del Backend de la API |
 | **Description** | Como desarrollador, quiero que el backend de la API sea capaz de traducir sus mensajes y errores de validación a diferentes idiomas, para que la aplicación pueda mostrar información localizada a usuarios de distintas regiones sin cambiar la lógica principal. |
-| **Acceptance Criteria #1** | Dado que el backend necesita enviar mensajes al frontend <br> Cuando se realiza una solicitud con un idioma especificado <br> Entonces los mensajes de respuesta deben ser devueltos en ese idioma, o en uno predeterminado si no está soportado. |
-| **Acceptance Criteria #2** | Dado que se validan modelos de entrada <br> Cuando se produce un error de validación <br> Entonces el mensaje de error debe mostrarse en el idioma solicitado por el cliente, si está disponible. |
-| **Acceptance Criteria #3** | Dado que se requiere gestionar textos traducibles <br> Cuando el sistema necesita recuperar un mensaje <br> Entonces debe utilizar un mecanismo centrali
+| **Acceptance Criteria #1** | Dado que el backend necesita enviar mensajes al frontend <br> Cuando se realiza una solicitud a un endpoint de la API y se especifica un idioma deseado <br> Entonces el backend debe devolver estos mensajes en el idioma solicitado, si está soportado; de lo contrario, debe usar un idioma predeterminado. |
+| **Acceptance Criteria #2** | Dado que el backend utiliza validaciones de modelos (DataAnnotations) y model binding <br> Cuando una solicitud entrante no cumple con las reglas de validación o el formato de datos <br> Entonces el backend debe generar los mensajes de error de validación y model binding en el idioma solicitado por el cliente, si está soportado. |
+| **Acceptance Criteria #3** | Dado que el backend necesita gestionar y acceder a todas las cadenas de texto traducibles <br> Cuando el código requiere una cadena de texto <br> Entonces el backend debe utilizar un mecanismo centralizado para almacenar y recuperar la versión correcta de esa cadena según el idioma de la solicitud. |
+| **Acceptance Criteria #4** | Dado que se desea expandir el soporte del backend a un nuevo idioma en el futuro <br> Cuando se añaden los archivos de recursos .resx para el nuevo idioma y se registra en la configuración de internacionalización <br> Entonces el backend debe ser capaz de utilizar este nuevo idioma para sus mensajes y validaciones sin necesidad de modificar la lógica de negocio existente. |
+
+| **User Story ID** | TS10 |
+|-------------------|------|
+| **Epic ID** | EP07 |
+| **Title** | Implementación de autenticación basada en JSON Web Tokens (JWT) |
+| **Description** | Como desarrollador, quiero implementar un mecanismo de autenticación mediante JSON Web Tokens (JWT) en el sistema, para garantizar sesiones seguras y control de acceso en las solicitudes a recursos protegidos. |
+| **Acceptance Criteria #1** | Dado que el usuario proporciona credenciales válidas en el proceso de inicio de sesión <br> Cuando el sistema valida correctamente estas credenciales <br> Entonces debe generar un token JWT que contenga los datos esenciales del usuario y devolverlo junto con una respuesta exitosa. |
+| **Acceptance Criteria #2** | Dado que un cliente realiza una solicitud a una funcionalidad que requiere autenticación <br> Cuando la solicitud incluye un token JWT válido en el encabezado de autorización <br> Entonces el sistema debe validar el token antes de permitir el acceso al recurso solicitado. |
+| **Acceptance Criteria #3** | Dado que el backend necesita gestionar y acceder a todas las cadenas de texto traducibles <br> Cuando el código requiere una cadena de texto <br> Entonces el backend debe utilizar un mecanismo centralizado para almacenar y recuperar la versión correcta de esa cadena según el idioma de la solicitud. |
 
 ### 3.2.4. Epicas
 
@@ -1255,6 +1230,7 @@ Lista de Términos
 | TS07 | Gestión de Compras de Insumos en la API |
 | TS08 | Gestión de Notificaciones en la API |
 | TS09 | Internacionalización del Backend de la API |
+| TS10 | Implementación de autenticación basada en JSON Web Tokens (JWT) |
 
 | **Epic ID** | EP08 |
 |-------------|------|
@@ -1307,31 +1283,32 @@ Objetivo SMART: Obtener 50 formularios de contacto para demo o consulta desde la
 | 3  | US20 | Como administrador del gimnasio, quiero poder gestionar la información de los clientes del gimnasio para mantener un registro actualizado, agregar nuevos clientes y editar la información existente, asegurando que toda la base de datos esté organizada y sea fácilmente accesible. | 5 |
 | 4  | US01 | Como usuario, quiero acceder a un calendario con los horarios de todas las clases para planificar fácilmente la programación y disponibilidad. | 3 |
 | 5  | TS02 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente las clases, para que los administradores del gimnasio puedan programar, actualizar y cancelar actividades. | 2 |
-| 6  | TS01 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los miembros y consultar los tipos de membresía, para interactuar de forma eficiente con el sistema de gimnasio. | 2 |
-| 7  | TS04 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los empleados, para que los administradores del gimnasio puedan mantener actualizada la información del personal. | 2 |
-| 8  | US06 | Como administrador del gimnasio, quiero ver y gestionar el estado de pagos de cada cliente para llevar un control eficiente de membresías activas e inactivas. | 5 |
-| 9  | TS03 | Como desarrollador, quiero que la RESTful API me permita registrar la asistencia y consultar las reservas y asistencias de clases, para que los administradores del gimnasio puedan llevar un control del uso de las clases. | 2 |
-| 10 | US17 | Como administrador del gimnasio, quiero gestionar los ítems del inventario, para mantener un control actualizado y ordenado de los recursos y equipos disponibles en el gimnasio. | 3 |
-| 11 | TS05 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los ítems del inventario, para que los administradores del gimnasio puedan controlar los productos disponibles. | 2 |
-| 12 | US07 | Como cliente del gimnasio, quiero pagar mi membresía desde la app usando mi tarjeta o billetera digital para mantener mi suscripción activa fácilmente. | 5 |
-| 13 | TS06 | Como desarrollador, quiero que la RESTful API me permita registrar y listar pagos de membresías y salarios, para que los administradores del gimnasio puedan llevar un control financiero. | 2 |
-| 14 | TS07 | Como desarrollador, quiero que la RESTful API me permita registrar y consultar las compras de insumos, incluyendo sus detalles, para que los administradores del gimnasio puedan llevar un control preciso de las adquisiciones. | 2 |
-| 15 | US04 | Como cliente, quiero registrar y visualizar mi progreso físico dentro de la app para evaluar mi evolución y mantenerme motivado. | 3 |
-| 16 | US10 | Como administrador del gimnasio, quiero poder gestionar las clases ofrecidas por el gimnasio para mantener actualizada la programación. | 3 |
-| 17 | US08 | Como cliente, quiero poder crear mi perfil para llevar un control de mi información personal y actividad dentro del gimnasio. | 3 |
-| 18 | US09 | Como entrenador, quiero poder ver un historial general de asistencias de todos los clientes para analizar tendencias de asistencia, evaluar el compromiso de los miembros y ajustar las clases según la demanda. | 3 |
-| 19 | US12 | Como administrador o entrenador, quiero recibir notificaciones administrativas relevantes para mantenerme informado sobre situaciones importantes relacionadas con la operación del gimnasio. | 3 |
-| 20 | US13 | Como cliente del gimnasio, quiero recibir notificaciones personalizadas según mis clases. | 3 |
-| 21 | TS08 | Como desarrollador, quiero que la RESTful API me permita enviar y listar notificaciones tanto para miembros como para empleados, para facilitar la comunicación y la gestión interna del gimnasio. | 2 |
-| 22 | TS09 | Como desarrollador, quiero que el backend de la API sea capaz de traducir sus mensajes y errores de validación a diferentes idiomas, para que la aplicación pueda mostrar información localizada a usuarios de distintas regiones sin cambiar la lógica principal. | 1 |
-| 23 | US14 | Como visitante del sitio web de FitManager, quiero obtener información clara sobre las características y beneficios de la plataforma, para decidir si encaja con las necesidades de mi gimnasio. | 3 |
-| 24 | US15 | Como visitante interesado, quiero registrarme para solicitar una demo personalizada o más información sobre FitManager, para poder explorar cómo puede mejorar la gestión de mi gimnasio. | 2 |
-| 25 | US21 | Como administrador, quiero tener una vista general del rendimiento y la actividad del gimnasio en un solo lugar, incluyendo métricas clave de miembros, asistencia y finanzas, para poder obtener una comprensión rápida del estado actual del negocio y tomar decisiones informadas. | 2 |
-| 26 | US16 | Como visitante, quiero ver los precios y paquetes disponibles para FitManager, para poder decidir si la plataforma se ajusta a mi presupuesto y necesidades. | 2 |
-| 27 | US05 | Como cliente, quiero ver mi rutina personalizada de entrenamiento en la plataforma para seguirla paso a paso durante mis sesiones. | 5 |
-| 28 | US11 | Como administrador del gimnasio, quiero poder gestionar al personal del gimnasio para mantener un control organizado sobre los entrenadores y otros empleados. | 5 |
-| 29 | US18 | Como usuario, quiero poder visualizar la aplicación en inglés o español, para entender fácilmente la información según mi idioma preferido. | 2 |
-| 30 | US19 | Como usuario que usa un lector de pantalla, quiero poder navegar y entender la plataforma fácilmente con herramientas de asistencia, para tener una experiencia de uso fluida y sin barreras. | 2 |
+| 6  | TS10 | Como desarrollador, quiero implementar un mecanismo de autenticación mediante JSON Web Tokens (JWT) en el sistema, para garantizar sesiones seguras y control de acceso en las solicitudes a recursos protegidos. | 3 |
+| 7  | TS01 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los miembros y consultar los tipos de membresía, para interactuar de forma eficiente con el sistema de gimnasio. | 2 |
+| 8  | TS04 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los empleados, para que los administradores del gimnasio puedan mantener actualizada la información del personal. | 2 |
+| 9  | US06 | Como administrador del gimnasio, quiero ver y gestionar el estado de pagos de cada cliente para llevar un control eficiente de membresías activas e inactivas. | 5 |
+| 10  | TS03 | Como desarrollador, quiero que la RESTful API me permita registrar la asistencia y consultar las reservas y asistencias de clases, para que los administradores del gimnasio puedan llevar un control del uso de las clases. | 2 |
+| 11 | US17 | Como administrador del gimnasio, quiero gestionar los ítems del inventario, para mantener un control actualizado y ordenado de los recursos y equipos disponibles en el gimnasio. | 3 |
+| 12 | TS05 | Como desarrollador, quiero que la RESTful API me permita gestionar completamente los ítems del inventario, para que los administradores del gimnasio puedan controlar los productos disponibles. | 2 |
+| 13 | US07 | Como cliente del gimnasio, quiero pagar mi membresía desde la app usando mi tarjeta o billetera digital para mantener mi suscripción activa fácilmente. | 5 |
+| 14 | TS06 | Como desarrollador, quiero que la RESTful API me permita registrar y listar pagos de membresías y salarios, para que los administradores del gimnasio puedan llevar un control financiero. | 2 |
+| 15 | TS07 | Como desarrollador, quiero que la RESTful API me permita registrar y consultar las compras de insumos, incluyendo sus detalles, para que los administradores del gimnasio puedan llevar un control preciso de las adquisiciones. | 2 |
+| 16 | US04 | Como cliente, quiero registrar y visualizar mi progreso físico dentro de la app para evaluar mi evolución y mantenerme motivado. | 3 |
+| 17 | US10 | Como administrador del gimnasio, quiero poder gestionar las clases ofrecidas por el gimnasio para mantener actualizada la programación. | 3 |
+| 18 | US08 | Como cliente, quiero poder crear mi perfil para llevar un control de mi información personal y actividad dentro del gimnasio. | 3 |
+| 19 | US09 | Como entrenador, quiero poder ver un historial general de asistencias de todos los clientes para analizar tendencias de asistencia, evaluar el compromiso de los miembros y ajustar las clases según la demanda. | 3 |
+| 20 | US12 | Como administrador o entrenador, quiero recibir notificaciones administrativas relevantes para mantenerme informado sobre situaciones importantes relacionadas con la operación del gimnasio. | 3 |
+| 21 | US13 | Como cliente del gimnasio, quiero recibir notificaciones personalizadas según mis clases. | 3 |
+| 22 | TS08 | Como desarrollador, quiero que la RESTful API me permita enviar y listar notificaciones tanto para miembros como para empleados, para facilitar la comunicación y la gestión interna del gimnasio. | 2 |
+| 23 | TS09 | Como desarrollador, quiero que el backend de la API sea capaz de traducir sus mensajes y errores de validación a diferentes idiomas, para que la aplicación pueda mostrar información localizada a usuarios de distintas regiones sin cambiar la lógica principal. | 1 |
+| 24 | US14 | Como visitante del sitio web de FitManager, quiero obtener información clara sobre las características y beneficios de la plataforma, para decidir si encaja con las necesidades de mi gimnasio. | 3 |
+| 25 | US15 | Como visitante interesado, quiero registrarme para solicitar una demo personalizada o más información sobre FitManager, para poder explorar cómo puede mejorar la gestión de mi gimnasio. | 2 |
+| 26 | US21 | Como administrador, quiero tener una vista general del rendimiento y la actividad del gimnasio en un solo lugar, incluyendo métricas clave de miembros, asistencia y finanzas, para poder obtener una comprensión rápida del estado actual del negocio y tomar decisiones informadas. | 2 |
+| 27 | US16 | Como visitante, quiero ver los precios y paquetes disponibles para FitManager, para poder decidir si la plataforma se ajusta a mi presupuesto y necesidades. | 2 |
+| 28 | US05 | Como cliente, quiero ver mi rutina personalizada de entrenamiento en la plataforma para seguirla paso a paso durante mis sesiones. | 5 |
+| 29 | US11 | Como administrador del gimnasio, quiero poder gestionar al personal del gimnasio para mantener un control organizado sobre los entrenadores y otros empleados. | 5 |
+| 30 | US18 | Como usuario, quiero poder visualizar la aplicación en inglés o español, para entender fácilmente la información según mi idioma preferido. | 2 |
+| 31 | US19 | Como usuario que usa un lector de pantalla, quiero poder navegar y entender la plataforma fácilmente con herramientas de asistencia, para tener una experiencia de uso fluida y sin barreras. | 2 |
 
 # CAPÍTULO 4: PRODUCT UX/UI DESIGN
 
@@ -3135,48 +3112,48 @@ Durante el Sprint 3, el equipo se centró en la robusta documentación de los We
 - Insertamos un Empleado a la base de datos
 
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/cc28a68e-62f0-41c5-b085-06a68de198cb" alt="Employee POST">
+  <img src="https://github.com/user-attachments/assets/b50bd9b6-53e6-452d-b7be-79fd3ef0c302" alt="Employee POST">
 </p>
   
 - Hacemos el get del empleado que acabamos de crear
 
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/e03bc0a6-2c01-43fc-8bf2-ed1ac68db1df" alt="Employee GET">
+  <img src="https://github.com/user-attachments/assets/891fd08e-d984-4b43-ab7b-0ed33f7d5cd9" alt="Employee GET">
 </p>
 
 - Ingresamos un miembro a la base de datos
 
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/4aff8b82-b041-4a1f-9226-ecf4fc4e8b01" alt="Member POST">
+  <img src="https://github.com/user-attachments/assets/e3de273e-706c-4624-8431-3ae2d1d8deb5" alt="Member POST">
 </p>
   
 - Hacemos el get del miembro que acabamos de crear
 
     <p align="center">
-  <img src="https://github.com/user-attachments/assets/b8e60139-420b-4d18-be49-ac370cf98b09" alt="Member GET">
-  
+  <img src="https://github.com/user-attachments/assets/4d8d3a1f-64ad-4da5-bc30-68fef85951b9" alt="Member GET">
+
 - Insertamos una clase a la base de datos
 
     <p align="center">
-  <img src="https://github.com/user-attachments/assets/7d1641fd-34aa-4428-b825-dd55f0e66e1d" alt="Classes POST">
+  <img src="https://github.com/user-attachments/assets/0e93d670-2fbc-4522-968b-049a7678b410" alt="Classes POST">
 </p>
 
 - Hacemos el get de la clase que acabamos de crear
 
     <p align="center">
-  <img src="https://github.com/user-attachments/assets/c08f47b1-7371-4d7d-be1b-73234ba1a9a2" alt="Classes GET">
+  <img src="https://github.com/user-attachments/assets/331c6e15-e25c-4946-9597-0f526484e6e1" alt="Classes GET">
 </p>
 
 - Le agregamos un salario al empleado que creamos
 
     <p align="center">
-  <img src="https://github.com/user-attachments/assets/3b91a41c-3ec0-4b49-a960-eb846ca555be" alt="SalaryPayment POST">
+  <img src="https://github.com/user-attachments/assets/b8ca607c-47fa-4a5a-bea4-9763880966dc" alt="SalaryPayment POST">
 </p
 
 - - Le agregamos un pago al miembro ingresado
   
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/37d612a5-060d-4933-b4fe-afe28e78ac79" alt="MembershipPayment POST">
+  <img src="https://github.com/user-attachments/assets/399b8d16-bdfe-4c77-ba31-a9c57acc4153" alt="MembershipPayment POST">
 </p>
 
 #### 5.2.3.7. Software Deployment Evidence for Sprint Review
@@ -3278,6 +3255,114 @@ Evidencia de commits por integrante del grupo
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1a24b070-c05f-40ad-bade-4f6c1a3738e4" alt="commits por integrante">
 </p>
+
+### 5.2.4. Sprint 4
+
+Durante el Sprint 4 del proyecto FitManager, el equipo se enfocó en la integración del backend previamente desarrollado con el frontend de la aplicación web. Esta integración permitió establecer una comunicación efectiva entre ambas capas, habilitando flujos completos de datos y funcionalidades clave del sistema. Además, se implementó la internacionalización del backend, permitiendo que los mensajes de respuesta y errores se adapten dinámicamente al idioma del usuario. Como parte esencial de este sprint, también se desarrolló un sistema de autenticación basado en JSON Web Tokens (JWT), asegurando sesiones seguras y control de acceso a los recursos protegidos de la plataforma. Estas acciones consolidan una versión funcional, segura y localizada de FitManager, lista para pruebas más exhaustivas y retroalimentación del usuario final.
+
+#### 5.2.4.1. Sprint Planning
+
+| **Sprint #**                     | Sprint 4 |
+|----------------------------------|---------|
+|        | **Sprint Planning Background** |
+| Date                             | 26/06/2025 |
+| Location                         | Discord group call |
+| Prepared by                      | Cassius Martel |
+| Attendees (to planning meeting)  | Juan Alvarado, Renzo Luque, Cassius Martel, Tomio Nakamurakare, Victor Ortiz |
+| Sprint 3 Review Summary          | During Sprint 3, the team focused on building the backend services of the FitManager platform. The team strategically divided responsibilities among its members to develop the RESTful API endpoints required for the platform's core business logic, including those related to members, staff, classes, inventory, notifications, and income. This division of work proved effective in reducing bottlenecks and increasing individual productivity. Each developer was able to concentrate on specific entities and use cases, resulting in faster and more structured progress. The APIs were built following Clean Architecture and Domain-Driven Design (DDD) principles, establishing a modular and maintainable backend layer. This sprint successfully laid the technical foundation for future integration with the frontend and external services. |
+| Sprint 3 Retrospective Summary   | The team reported positive outcomes from Sprint 3, especially regarding the effectiveness of task division and backend implementation using Clean Architecture. This approach improved the clarity of responsibilities and reduced the risk of overlapping efforts. Team members highlighted better focus and increased ownership over their assigned components, which contributed to higher quality in API design and business logic. The collaborative spirit and communication flows also remained strong throughout the sprint. Nonetheless, some minor synchronization issues emerged when defining shared domain models, prompting the decision to improve early alignment sessions before implementation. Overall, the team concluded that structured task assignment and design-first thinking were key enablers of this sprint’s success. |
+|      | **Sprint Goal & User Stories** |
+| Sprint 4 Goal                    | Our focus is on: integrating the backend services with the frontend application, implementing internationalization in the backend, and securing the authentication process using JSON Web Tokens (JWT). <br> <br> We believe it delivers: a complete and functional flow from interface to database, multilingual support for system messages, and a robust authentication layer that protects user sessions and data access. <br> <br> This will be confirmed when: the frontend successfully communicates with the backend APIs in a realistic environment, server responses are available in multiple languages, and users can log in and interact with the system using secure, token-based authentication. |
+| Sprint 4 Velocity                | 19 |
+| Sum of Story Points              | 33 (16) |
+
+Aunque la suma total de Story Points asociada a las historias del Sprint 4 es de 33 puntos, estimamos que el esfuerzo real requerido se reduce a aproximadamente 16 puntos, ya que varias funcionalidades fueron parcial o completamente desarrolladas en Sprints anteriores, específicamente durante las fases de diseño (Sprint 1) y codificación del frontend (Sprint 2). Esta estimación ajustada se encuentra alineada con nuestra Sprint Velocity de 19 puntos y permite una planificación más precisa del esfuerzo restante.
+
+#### 5.2.4.2. Aspect Leaders and Collaborators
+
+| Team Member (Last Name, First Name)       | GitHub Username             | Classes | Employees | Finances | Inventory | Members | Notifications | i18n Feature | Dashboard | Calendar | JWT Implementation | Attendance |
+|------------------------------------------|-----------------------------|---------|-----------|----------|-----------|---------|----------------|---------------|-----------|----------|---------------------|------------|
+| Alarcón, Víctor Nicolás                   | @Nico1234556                |         |           |          |           |         | L              |               |           | L        |                     |            |
+| Nakamurakare Teruya, Alex Tomio          | @kistoo                     |         |           | L        | L         |         |                |               |           |          |                     | L          |
+| Martel Andrade, Cassius Estefano         | @kcc12321                   |         | L         |          |           | L       |                |               |           |          |                     |            |
+| Luque Minaya, Renzo Andrés               | @renzoluquem               |         |           |          |           |         |                |               | L         |          | L                   |            |
+| Alvarado De La Cruz, Juan Carlos         | @JuanCarlosAlvarado900      | L       |           |          |           |         |                | L             |           |          |                     |            |
+
+#### 5.2.4.3 Sprint Backlog 4
+
+El presente Sprint Backlog 4 detalla el conjunto de tareas y Technical/User Stories seleccionadas del Product Backlog que el equipo de FitManager se ha comprometido a completar durante esta iteración. El objetivo principal de este sprint fue integrar el backend previamente desarrollado con el frontend de la plataforma, permitiendo flujos de datos completos y funcionales. Además, se abordaron funcionalidades clave como la internacionalización del backend para el soporte multilenguaje y la implementación de autenticación mediante JSON Web Tokens (JWT), asegurando una experiencia segura y localizada para los usuarios finales.
+
+| User Story ID | Task ID | Descripción                                                                  | Estimación (hrs) | Asignado a           | Estado |
+|--------------------|---------|-------------------------------------------------------------------------------|------------------|-----------------------|--------|
+| US02               | T01     | Integración de calendar.component con el backend                              | 2                | Víctor Ortiz          | Done   |
+| US06               | T02     | Integración de finances.component con el backend                              | 1                | Tomio Nakamurakare    | Done   |
+|                    | T03     | Integración de graphic.component con el backend                               | 2                | Tomio Nakamurakare    | Done   |
+|                    | T04     | Integración de transaction-list.component con el backend                       | 1                | Tomio Nakamurakare    | Done   |
+|                    | T05     | Integración de finances-info.component con el backend                          | 1                | Tomio Nakamurakare    | Done   |
+| US09               | T06     | Integración de attendance.component con el backend                            | 2                | Tomio Nakamurakare    | Done   |
+|                    | T07     | Integración de historial-summary.component con el backend                      | 1                | Tomio Nakamurakare    | Done   |
+|                    | T08     | Integración de weekly-summary.component con el backend                         | 1                | Tomio Nakamurakare    | Done   |
+|                    | T09     | Integración de heatmap.component con el backend                                | 2                | Tomio Nakamurakare    | Done   |
+| US10               | T10     | Integración de add-class.component con el backend                              | 2                | Juan Alvarado         | Done   |
+|                    | T11     | Integración de class-list.component con el backend                             | 2                | Juan Alvarado         | Done   |
+|                    | T12     | Integración de classes.component con el backend                                | 1                | Juan Alvarado         | Done   |
+|                    | T13     | Integración de delete-class.component con el backend                           | 1                | Juan Alvarado         | Done   |
+|                    | T14     | Integración de edit-class.component con el backend                             | 1                | Juan Alvarado         | Done   |
+|                    | T15     | Integración de view-members.component con el backend                           | 2                | Juan Alvarado         | Done   |
+| US11               | T16     | Integración de add-employee.component con el backend                           | 2                | Cassius Martel        | Done   |
+|                    | T17     | Integración de edit-employee.component con el backend                          | 1                | Cassius Martel        | Done   |
+|                    | T18     | Integración de employee-card.component con el backend                          | 2                | Cassius Martel        | Done   |
+|                    | T19     | Integración de employee-list.component con el backend                          | 1                | Cassius Martel        | Done   |
+|                    | T20     | Creación e integración de employee-schedule-modal.component con el backend     | 1                | Cassius Martel        | Done   |
+|                    | T21     | Integración de employees.component con el backend                              | 1                | Cassius Martel        | Done   |
+|                    | T22     | Integración de fire-employee.component con el backend                          | 2                | Cassius Martel        | Done   |
+| US13               | T23     | Integración de create-notification-button.component con el backend             | 2                | Victor Ortiz          | Done   |
+|                    | T24     | Integración de create-notification-modal.component con el backend              | 2                | Victor Ortiz          | Done   |
+|                    | T25     | Integración de notification.component con el backend                           | 1                | Victor Ortiz          | Done   |
+|                    | T26     | Integración de sent-notification.component con el backend                      | 1                | Victor Ortiz          | Done   |
+| US17               | T27     | Integración de add-inventory.component con el backend                          | 1                | Tomio Nakamurakare    | Done   |
+|                    | T28     | Integración de delete-inventory.component con el backend                       | 1                | Tomio Nakamurakare    | Done   |
+|                    | T29     | Integración de edit-inventory.component con el backend                         | 2                | Tomio Nakamurakare    | Done   |
+|                    | T30     | Integración de inventory.component con el backend                              | 1                | Tomio Nakamurakare    | Done   |
+|                    | T31     | Integración de inventory-list.component con el backend                         | 1                | Tomio Nakamurakare    | Done   |
+| US20               | T32     | Integración de add-member.component con el backend                             | 2                | Cassius Martel        | Done   |
+|                    | T33     | Integración de edit-member.component con el backend                            | 2                | Cassius Martel        | Done   |
+|                    | T34     | Integración de member-card.component con el backend                            | 1                | Cassius Martel        | Done   |
+|                    | T35     | Integración de member-list.component con el backend                            | 1                | Cassius Martel        | Done   |
+|                    | T36     | Creación e integración de member-payments.component con el backend             | 2                | Cassius Martel        | Done   |
+|                    | T37     | Integración de member.component con el backend                                 | 1                | Cassius Martel        | Done   |
+|                    | T38     | Integración de deactivate.component con el backend                             | 2                | Cassius Martel        | Done   |
+| US21               | T39     | Integración de dashboard.component con el backend                              | 2                | Renzo Luque           | Done   |
+|                    | T40     | Integración de data-bottom-list.component con el backend                       | 2                | Renzo Luque           | Done   |
+|                    | T41     | Integración de data-item.component con el backend                              | 2                | Renzo Luque           | Done   |
+|                    | T42     | Integración de data-top-list.component con el backend                          | 1                | Renzo Luque           | Done   |
+|                    | T43     | Integración de today-attendance.component con el backend                       | 1                | Renzo Luque           | Done   |
+|                    | T44     | Integración de today-classes.component con el backend                          | 1                | Renzo Luque           | Done   |
+| TS09               | T45     | Configurar soporte multilenguaje en el backend                                | 1                | Juan Alvarado         | Done   |
+|                    | T46     | Implementar archivos de recursos y traducir mensajes clave                     | 2                | Juan Alvarado         | Done   |
+| TS10               | T47     | Implementar endpoint de login con generación de JWT                            | 2                | Renzo Luque           | Done   |
+|                    | T48     | Configurar validación de JWT en endpoints protegidos                           | 1                | Renzo Luque           | Done   |
+|                    | T49     | Integración de la pantalla de Login con los JWT                                | 2                | Renzo Luque           | Done   |
+
+Historias de usuario a desarrollar en este Sprint
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/095d29ce-ecf8-4e71-9956-bddb462e6c90" alt="Historias de usuario para este sprint">
+</p>
+
+Ejemplo de tareas y descripción de una historia
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aaae492a-b963-4774-a40d-8017a77da09d" alt="Tareas y descripción de una historia">
+</p>
+
+#### 5.2.4.4. Development Evidence for Sprint Review
+
+#### 5.2.4.5. Execution Evidence for Sprint Review.
+
+#### 5.2.4.6. Services Documentation Evidence for Sprint Review
+
+#### 5.2.4.7. Software Deployment Evidence for Sprint Review
+
+#### 5.2.4.8. Team Collaboration Insights during Sprint
 
 ## 5.3. Validation Interviews
 
@@ -3566,6 +3651,7 @@ Link (Youtube): https://www.youtube.com/watch?v=waMrHExcU5w&t=13s
 * La adopción de Vue como framework, junto con la consideración de la internacionalización (i18n) y la accesibilidad (a11y) desde las etapas iniciales del desarrollo del frontend, demuestra un compromiso con la creación de una aplicación moderna, inclusiva y adaptable a diferentes audiencias. Este enfoque proactivo sentará una base sólida para la escalabilidad y la usabilidad a largo plazo.
 * La estrategia de dividir la interfaz de usuario en componentes reutilizables en Vue no solo facilita la organización del trabajo entre el equipo, sino que también mejora la mantenibilidad y la escalabilidad del código. Además, la utilización de GitHub con una disciplina de commits y branches refleja una práctica profesional en el control de versiones, lo que contribuye a la estabilidad y la colaboración efectiva dentro del equipo de desarrollo.
 * Hemos establecido una sólida base de backend aplicando Domain-Driven Design (DDD) y Clean Architecture. La clara separación en capas (Dominio, Aplicación, Infraestructura, Interfaces) junto con patrones como el Unit of Work y un Base Repository genérico, garantiza un código mantenible, testable y adaptable. Este enfoque nos prepara para construir un sistema resiliente y de alto rendimiento que responde eficazmente a las necesidades del negocio.
+* Concluimos el desarrollo del proyecto FitManager consolidando todas las etapas previas de análisis, diseño y arquitectura en una solución funcional, escalable y alineada con los objetivos definidos desde el inicio. Durante la última iteración, nuestro equipo logró integrar exitosamente el backend con el frontend, permitiendo el funcionamiento completo del sistema en flujos reales de uso. Además, se incorporaron funcionalidades clave como la internacionalización del backend y la autenticación segura mediante JSON Web Tokens (JWT), reforzando el compromiso del equipo con la seguridad, accesibilidad y adaptabilidad de la plataforma. Esta integración técnica fue acompañada de una coordinación efectiva del equipo, con una distribución clara de tareas, cumplimiento de objetivos y una cultura de mejora continua. Consideramos que el producto resultante refleja tanto la visión del usuario como las buenas prácticas de ingeniería de software, posicionando a FitManager como una solución sólida y preparada para su validación con usuarios reales y futuras etapas de despliegue.
 
 # Recomendaciones
 
@@ -3575,6 +3661,8 @@ Link (Youtube): https://www.youtube.com/watch?v=waMrHExcU5w&t=13s
 * Debemos enfatizar la importancia de mantener una documentación completa y actualizada de la arquitectura, el diseño y la implementación del sistema. Además, debemos fomentar una sólida cultura de intercambio de conocimientos dentro del equipo para garantizar la continuidad, facilitar la colaboración y agilizar los esfuerzos de desarrollo futuros.
 * Para asegurar una experiencia de usuario fluida y evitar posibles cuellos de botella en etapas posteriores, se recomienda establecer una estrategia de integración temprana y continua entre el frontend desarrollado en Vue y el futuro backend de la aplicación. Esto podría incluir la definición clara de APIs, la creación de mocks para el desarrollo paralelo y la realización de pruebas de integración frecuentes para validar la correcta comunicación y el flujo de datos entre ambas partes del sistema.
 * Para la calidad continua del backend, recomendamos priorizar la implementación exhaustiva de pruebas automatizadas a todos los niveles, especialmente en las capas de Dominio y Aplicación. Además, es crucial mantener un proceso de revisión de código sistemático para asegurar la adherencia a los principios de DDD y Clean Architecture, mitigando la deuda técnica y promoviendo un crecimiento ordenado del proyecto.
+
+# Video About-the-team
 
 # Bibliografía
 

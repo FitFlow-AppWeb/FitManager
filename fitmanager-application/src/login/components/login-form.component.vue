@@ -6,85 +6,120 @@ Author: Victor Ortiz
 -->
 
 <script>
-import { AdminApiService } from "../services/admin-api.service.js";
+import axios from 'axios';
+import { AuthApiService } from '../services/auth-api.service.js';
 
 export default {
+  name: 'LoginForm',
+  emits: ['login-success'],
   data() {
     return {
       email: '',
       password: '',
       passwordVisible: false,
-      error: null,
+      error: null
     };
   },
   methods: {
+    /**
+     * Sends credentials to the backend, stores the JWT,
+     * sets the Axios header, and emits login-success.
+     */
     async submitForm() {
       this.error = null;
-
       try {
-        const admins = await new AdminApiService().getAllAdmins();
+        const { id, token } = await new AuthApiService().signIn({
+          email: this.email,
+          password: this.password
+        });
 
-        const admin = admins.find(
-            (admin) => admin.email === this.email && admin.password === this.password
-        );
+        // Persist token & configure axios
+        localStorage.setItem('jwt', token);
+        localStorage.setItem('userId', id);
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
-        console.log("Admin encontrado:", admin);
+        // Redirigir inmediatamente al Home
+        this.$router.push({ name: 'Home' })
 
-        if (admin) {
-          this.$emit('login-success', true);
+        // Notify parent component
+        this.$emit('login-success');
+      } catch (err) {
+        if (err.response?.status === 401) {
+          this.error = 'Invalid email or password.';
         } else {
-          this.error = "Correo o contraseña incorrectos.";
+          this.error = 'Server error. Please try again later.';
         }
-      } catch (error) {
-        console.error('Error al intentar iniciar sesión:', error);
-        this.error = 'Hubo un error al procesar tu solicitud.';
       }
     },
+
     togglePasswordVisibility() {
       this.passwordVisible = !this.passwordVisible;
-    },
-  },
+    }
+  }
 };
 </script>
 
 <template>
   <div class="login-form-container">
     <form @submit.prevent="submitForm">
-      
+      <h2>{{ $t('login.login') }}</h2>
+
       <pv-floatlabel variant="on" class="input-group">
-        <pv-inputtext id="email" v-model="email" required aria-label="Email" />
+        <pv-inputtext
+            id="email"
+            v-model="email"
+            type="email"
+            required
+            aria-label="Email"
+        />
         <label for="email">Email</label>
       </pv-floatlabel>
 
-      <pv-floatlabel variant="on" class="input-group">
-        <pv-inputtext :type="passwordVisible ? 'text' : 'password'" id="password" v-model="password" required aria-label="Contraseña" />
-        <label for="password">Contraseña</label>
+      <pv-floatlabel variant="on" class="input-group password-group">
+        <pv-inputtext
+            :type="passwordVisible ? 'text' : 'password'"
+            id="password"
+            v-model="password"
+            required
+            aria-label="Password"
+        />
+        <label for="password">Password</label>
+        <button type="button" class="password-toggle" @click="togglePasswordVisibility" tabindex="-1" aria-label="Toggle password visibility">
+          <img v-if="passwordVisible" src="/assets/close-svgrepo-com.svg" alt="Hide password" class="toggle-icon" />
+          <img v-else src="/assets/eye-svgrepo-com.svg" alt="Show password" class="toggle-icon" />
+        </button>
       </pv-floatlabel>
-      
 
-      <button type="submit" class="submit-btn" aria-label="Iniciar sesión">{{ $t('login.login') }}</button>
+      <button type="submit" class="submit-btn" aria-label="Log In">
+        {{ $t('login.login') }}
+      </button>
 
       <p class="forgot-password">
-        <a href="#" aria-label="Olvidé mi contraseña">{{ $t('login.forget') }}</a>
+        <a href="#" aria-label="Forgot password">{{ $t('login.forget') }}</a>
       </p>
     </form>
 
-    <div v-if="error" class="error-message" role="alert">{{ error }}</div>
-
-    <div class="divider-container">
-      <pv-divider /> <span>O</span> <pv-divider />
+    <!-- Error message -->
+    <div v-if="error" class="error-message" role="alert">
+      {{ error }}
     </div>
 
+    <!-- Divider -->
+    <div class="divider-container">
+      <pv-divider /><span>O</span><pv-divider />
+    </div>
+
+    <!-- Social login buttons -->
     <div class="social-login">
-      <button class="google-btn" aria-label="Iniciar sesión con Google">
+      <button class="google-btn" aria-label="Log in with Google">
         <img src="/assets/google.svg" alt="Google Logo" class="social-logo" />
-        Iniciar Sesión con Google
+        Log in with Google
       </button>
-      <button class="apple-btn" aria-label="Iniciar sesión con Apple">
+      <button class="apple-btn" aria-label="Log in with Apple">
         <span class="logo-circle">
           <img src="/assets/apple.svg" alt="Apple Logo" class="social-logo" />
         </span>
-        Iniciar Sesión con Apple
+        Log in with Apple
       </button>
     </div>
   </div>
@@ -267,5 +302,22 @@ button[type="button"] {
   color: #595959;
 }
 
+.password-group {
+  position: relative;
+}
 
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  width: 20px;
+  height: 20px;
+}
 </style>

@@ -10,6 +10,8 @@
  */
 import {Select as PvSelect} from "primevue";
 import axios from "axios";
+import { MemberApiService } from '../services/member-api.service.js';
+
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -36,14 +38,16 @@ export default {
       ],
       statusFilter: null,
       typeOptions: [],
-      typeFilter: null
+      typeFilter: null,
+      allMembers: []
     };
   },
   methods: {
     async fetchMembershipTypes() {
       try {
-        const response = await axios.get(`${BASE_URL}/api/v1/MembershipType`);
-        this.typeOptions = response.data.map(type => ({
+        const api = new MemberApiService();
+        const types = await api.getMembershipTypes();
+        this.typeOptions = types.map(type => ({
           label: type.name,
           value: type.name
         }));
@@ -97,8 +101,20 @@ export default {
       return list;
     }
   },
-  mounted() {
-    this.fetchMembershipTypes();
+  async mounted() {
+    try {
+      const service = new MemberApiService();
+
+      const types = await service.getMembershipTypes();
+      this.typeOptions = types.map(t => ({
+        label: t.name,
+        value: t.name
+      }));
+
+      this.allMembers = await service.getAllMembers();
+    } catch (err) {
+      console.error("Error fetching data:", err);
+    }
   }
 };
 </script>
@@ -157,6 +173,7 @@ export default {
                     v-model="typeFilter"
                     :options="typeOptions"
                     optionLabel="label"
+                    optionValue="value"
                     placeholder="Select Type"
                     class="filter-dropdown"
                     aria-label="Membership type filter"

@@ -30,9 +30,14 @@ export default {
   methods: {
     async fetchClasses() {
       try {
-        const response = await axios.get(`${BASE_URL}/api/v1/Classes`);
-        console.log("✅ Clases recibidas:", response.data);
-        this.allClasses = response.data;
+        const token = localStorage.getItem('token');
+        const response = await axios.get(`${BASE_URL}/api/v1/Classes`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+        console.log("✅ Clases recibidas:", response.data.data);
+        this.allClasses = response.data.data;
       } catch (error) {
         console.error("❌ Error fetching classes:", error);
       } finally {
@@ -40,7 +45,13 @@ export default {
       }
     },
     formatDate(dateStr) {
-      const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+      const options = {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      };
       return new Date(dateStr).toLocaleDateString(undefined, options);
     },
     toggleDetails(id) {
@@ -60,7 +71,6 @@ export default {
   }
 };
 </script>
-
 
 <template>
   <div class="modal-overlay" v-if="visible">

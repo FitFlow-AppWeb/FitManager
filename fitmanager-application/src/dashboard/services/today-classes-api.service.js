@@ -1,34 +1,36 @@
 /**
  * This file defines the TodayClassesApiService class, responsible for
  * retrieving today's class schedule from the backend API.
- * It uses axios to perform the HTTP request and delegates the
+ * It uses the pre-configured API instance to perform the HTTP request and delegates the
  * transformation of raw data to the TodayClassesAssembler.
  * /
  * Tomio Nakamurakare
  */
 
-import axios from 'axios';
+
+import api from '../../login/services/api.js';
 import { TodayClassesAssembler } from './today-classes.assembler.js';
 
 export class TodayClassesApiService {
 
-    // Fetches today's classes from the API and converts them to entity objects
     getTodayClasses() {
-        return axios.get('https://fitmanager.onrender.com/dashboard/')
+        return api.get('/api/v1/Classes')
             .then(response => {
-                const todayClasses = response.data?.todayClasses;
+                const classesData = response.data.data;
 
-                // Validate response structure
-                if (!Array.isArray(todayClasses)) {
-                    console.error('Invalid todayClasses format');
+                if (!Array.isArray(classesData)) {
+                    console.error('Invalid classes data format from API');
                     return [];
                 }
 
-                // Convert raw data to entity instances
-                return TodayClassesAssembler.toEntitiesFromResponse(todayClasses);
+                // *** CAMBIO AQUÍ: Corrige el nombre de la función ***
+                return TodayClassesAssembler.toTodayClassesFromApiClasses(classesData);
             })
             .catch(error => {
                 console.error('Error fetching todayClasses:', error);
+                if (error.response?.status === 401) {
+                    console.error('Authentication error. Redirecting to login...');
+                }
                 throw error;
             });
     }

@@ -8,7 +8,7 @@
 export default {
   methods: {
     goToCreateAccount() {
-      this.$router.push('/create-account');
+      this.$router.push({ name: 'Register' });
     },
   },
 };
@@ -16,7 +16,7 @@ export default {
 
 <template>
   <div class="create-account-btn">
-    <button @click="goToCreateAccount">{{ $t('login.register') }}</button>
+    <button @click="$router.push('/register')">Register</button>
   </div>
 </template>
 
