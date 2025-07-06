@@ -109,7 +109,6 @@ export default {
     </div>
     <div class="line-separator"></div>
     <div class="sidebar-footer">
-      <p>Salir</p>
     </div>
   </div>
 </template>

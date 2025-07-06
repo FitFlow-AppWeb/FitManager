@@ -105,7 +105,11 @@
   "calendar": {
     "class-panel": "Classes for",
     "no-classes": "No classes scheduled for this day",
-    "month-view": "Monthly Class View"
+    "month-view": "Monthly Class View",
+    "classes": "Scheduled Classes",
+    "confirmed": "Confirmed",
+    "pending": "Pending",
+    "cancelled": "Cancelled"
   },
   "employees": {
     "name": "Name",

@@ -105,25 +105,25 @@ export default {
 
       if (this.hasErrors) return;
 
-      // Parse duration: convertir "45 min" => 45 (entero)
       const durationMinutes = parseInt(this.duration);
 
-      // Combinar date y time para formar un DateTime ISO string
-      // Por ejemplo: date = '2025-08-01', time = '08:00'
       const datePart = this.date instanceof Date
           ? this.date.toISOString().split("T")[0]
           : this.date;
 
-      const startDate = datePart && this.time ? new Date(`${datePart}T${this.time}:00`) : null;
+      const startDate = datePart && this.time
+          ? `${datePart}T${this.time}:00`
+          : null;
+
       const newClass = {
         Name: this.name,
-        Description: this.description || "", // agregar campo descripción (puede ser un campo nuevo en data())
+        Description: this.description || "",
         Type: this.type,
-        Capacity: this.capacity ? parseInt(this.capacity) : 0,  // agregar campo capacidad (nuevo también)
-        StartDate: startDate ? startDate.toISOString() : null,
+        Capacity: this.capacity ? parseInt(this.capacity) : 0,
+        StartDate: startDate, // ya está bien formado
         Duration: durationMinutes,
         Status: this.status,
-        EmployeeId: this.trainer_id // ajustar nombre de propiedad
+        EmployeeId: this.trainer_id
       };
 
       console.log("📦 Payload que se enviará:", newClass);
@@ -141,7 +141,8 @@ export default {
         }
       }
     }
-,
+
+    ,
 
   },
   mounted() {

@@ -16,8 +16,9 @@ export default {
     classData: Object,
   },
   data() {
-    const dateObj = new Date(this.classData.startDate);
-    const dateValid = !isNaN(dateObj);
+    const rawStart = this.classData?.startDate ?? "";
+    const [dateStr, timeStr] = rawStart.split("T");
+    const [hours, minutes] = timeStr ? timeStr.split(":") : ["", ""];
 
     return {
       localClassData: {
@@ -26,8 +27,8 @@ export default {
         description: this.classData?.description ?? "",
         capacity: this.classData?.capacity ?? 0,
         type: this.classData?.type ?? "",
-        date: dateValid ? dateObj.toISOString().split("T")[0] : "",
-        time: dateValid ? dateObj.toTimeString().slice(0, 5) : "",
+        date: dateStr ?? "",
+        time: `${hours}:${minutes}` ?? "",
         duration: this.classData?.duration ? `${this.classData.duration} min` : "",
         trainer_id: this.classData?.trainer_id ?? this.classData?.employeeId ?? "",
         status: this.classData?.status ?? ""
@@ -94,12 +95,16 @@ export default {
       const service = new ClassApiService();
 
       const datePart = this.localClassData.date instanceof Date
-          ? this.localClassData.date.toISOString().split("T")[0]
+          ? this.localClassData.date.toLocaleDateString('sv-SE') // "YYYY-MM-DD" local
           : this.localClassData.date;
 
       const startDate = datePart && this.localClassData.time
           ? `${datePart}T${this.localClassData.time}:00`
           : null;
+
+      console.log("📤 Fecha para envío (date):", datePart);
+      console.log("📤 Hora para envío (time):", this.localClassData.time);
+      console.log("📤 Resultado combinado (StartDate):", startDate);
 
       const updatedClass = {
         id: this.localClassData.id,
@@ -113,7 +118,6 @@ export default {
         EmployeeId: this.localClassData.trainer_id
       };
 
-      console.log("📦 Payload que se enviará:", updatedClass);
 
       try {
         await service.updateClass(updatedClass);
@@ -122,7 +126,6 @@ export default {
       } catch (err) {
         console.error("❌ Error updating class:", err);
         if (err.response) {
-          console.error("📨 Backend response:", err.response.data);
         }
       }
     },
@@ -134,6 +137,14 @@ export default {
 
   mounted() {
     console.log("✏️ Datos precargados para editar:", this.classData);
+
+    const startDate = new Date(this.classData.startDate);
+    console.log("📥 Fecha original (desde backend):", this.classData.startDate);
+    console.log("📥 Interpretada como Date:", startDate);
+    console.log("📥 toISOString:", startDate.toISOString());
+    console.log("📥 toLocaleString:", startDate.toLocaleString());
+    console.log("📥 Fecha:", startDate.toLocaleDateString('sv-SE'));
+    console.log("📥 Hora:", startDate.toTimeString().slice(0, 5));
     this.fetchTrainers();
   }
 };

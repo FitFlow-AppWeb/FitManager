@@ -32,21 +32,38 @@ export default {
     this.loadAllClasses();
   },
   methods: {
-    async loadAllClasses() {
-      try {
-        this.allClasses = await this.classService.getAllClasses();
-        this.loadClassesForDate();
-        this.generateMonthView(); // Genera la vista mensual inicial
-      } catch (error) {
-        console.error('Error loading classes:', error);
-      }
-    },
+      formatLocalDate(date) {
+        const d = new Date(date);
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      },
+      async loadAllClasses() {
+        try {
+          const rawClasses = await this.classService.getAllClasses();
+
+          this.allClasses = rawClasses.map(cls => {
+            return {
+              ...cls,
+              date: this.formatLocalDate(cls.startDate) // ✅ fecha local segura
+            };
+          });
+
+          this.loadClassesForDate();
+          this.generateMonthView();
+        } catch (error) {
+          console.error('Error loading classes:', error);
+        }
+      },
     onDateChange() {
       this.loadClassesForDate();
     },
     loadClassesForDate() {
       const selected = this.formatDate(this.selectedDate);
-      this.classesForDate = this.allClasses.filter(cls => cls.date === selected);
+      this.classesForDate = this.allClasses
+          .filter(cls => cls.date === selected)
+          .sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
     },
     formatDate(date) {
       const d = new Date(date);
@@ -63,14 +80,30 @@ export default {
       const days = [];
       for (let i = 1; i <= numDays; i++) {
         const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
-        const classes = this.allClasses.filter(cls => cls.date === dateStr);
-        days.push({day: i, classes});
+        const classes = this.allClasses.filter(cls => cls.date === dateStr)
+            .sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+
+        days.push({ day: i, classes });
       }
 
       this.daysInMonth = days;
     },
-    onMonthChange({month, year}) {
-      this.monthDate = new Date(year, month - 1, 1);
+    async onMonthChange({ month, year }) {
+      const grid = this.$el.querySelector('.calendar-grid');
+      grid.classList.add('fade-out');
+
+      setTimeout(() => {
+        this.monthDate = new Date(year, month - 1, 1);
+        grid.classList.remove('fade-out');
+      }, 250);
+    },
+    isSelectedDate(dayNumber) {
+      const selected = new Date(this.selectedDate);
+      return (
+          selected.getDate() === dayNumber &&
+          selected.getMonth() === this.monthDate.getMonth() &&
+          selected.getFullYear() === this.monthDate.getFullYear()
+      );
     }
   },
   watch: {
@@ -83,6 +116,7 @@ export default {
   }
 };
 </script>
+
 
 <template>
   <div class="calendar-layout">
@@ -99,7 +133,12 @@ export default {
         <h2>{{$t('calendar.class-panel')}} {{ selectedDateFormatted }}</h2>
         <ul v-if="classesForDate.length">
           <li v-for="(cls, i) in classesForDate" :key="i">
-            {{ cls.name }} ({{ cls.time }}) - {{ cls.trainerName }}
+            <strong>{{ cls.name }} - </strong>
+            <span>({{ cls.time }})</span>
+            <span> - {{ cls.trainerName }} - </span>
+            <span class="status-tag" :class="cls.status.toLowerCase()">
+      {{ $t(`classes.${cls.status.toLowerCase()}`) }}
+    </span>
           </li>
         </ul>
         <p v-else>{{$t('calendar.no-classes')}}</p>
@@ -109,13 +148,20 @@ export default {
     <div class="month-view">
       <h2>{{$t('calendar.month-view')}} ({{ currentMonthName }} {{ currentYear }})</h2>
       <div class="calendar-grid">
-        <div class="day-cell" v-for="(day, i) in daysInMonth" :key="i">
-          <div class="day-number">{{ day.day }}</div>
-          <ul v-if="day.classes.length">
-            <li v-for="(cls, j) in day.classes" :key="j" class="class-name">
-              {{ cls.name }}
-            </li>
-          </ul>
+        <div
+            class="day-cell"
+            :class="{ selected: isSelectedDate(day.day) }"
+            v-for="(day, i) in daysInMonth"
+            :key="i"
+        >
+          <div class="day-number">
+            {{ day.day }}
+            <span v-if="day.classes.length" class="badge">{{ day.classes.length }} {{ $t('calendar.classes') }}</span>
+            <span v-if="day.classes.some(c => c.status === 'Confirmed')" class="dot dot-confirmed"></span>
+            <span v-if="day.classes.some(c => c.status === 'Pending')" class="dot dot-pending"></span>
+            <span v-if="day.classes.some(c => c.status === 'Cancelled')" class="dot dot-cancelled"></span>
+          </div>
+
         </div>
       </div>
     </div>
@@ -124,6 +170,27 @@ export default {
 
 
 <style scoped>
+
+.status-tag {
+  margin-left: 0.5rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: white;
+}
+
+.status-tag.confirmed {
+  background-color: #4CAF50;
+}
+.status-tag.pending {
+  background-color: #FFC107;
+  color: black;
+}
+.status-tag.cancelled {
+  background-color: #F44336;
+}
 
 .calendar-layout {
   display: flex;
@@ -141,12 +208,6 @@ export default {
   width: 100%;
 }
 
-.month-selector {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
 
 .class-panel,
 .month-view {
@@ -161,6 +222,11 @@ export default {
   grid-template-columns: repeat(7, 1fr);
   gap: 0.8rem;
   margin-top: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.calendar-grid.fade-out {
+  opacity: 0;
 }
 
 .day-cell {
@@ -184,6 +250,51 @@ export default {
 
 .month-view li {
   list-style: none;
+}
+
+.has-classes {
+  background-color: #eef4ff;
+  border: 1px solid #6699ff;
+}
+
+.dot-indicator {
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: #3366cc;
+  border-radius: 50%;
+  margin: 4px auto 0;
+}
+
+.day-cell.selected {
+  background-color: #e6f0ff;
+  border: 2px solid #3366cc;
+}
+
+.badge {
+  background-color: #3366cc;
+  color: white;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  margin-left: 5px;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-confirmed {
+  background-color: #4CAF50; /* verde */
+}
+.dot-pending {
+  background-color: #FFC107; /* amarillo */
+}
+.dot-cancelled {
+  background-color: #F44336; /* rojo */
 }
 
 </style>
