@@ -10,23 +10,32 @@ export class ClassApiService {
                 api.get(`/api/v1/Employee`)
             ]);
 
-            const classes = ClassAssembler.toEntitiesFromResponse(classesRes.data.data);
+            const classesRaw = classesRes.data.data;
             const employees = employeesRes.data.data;
 
             const employeeMap = {};
             for (const emp of employees) {
-                employeeMap[emp.id] = emp.fullName;
+                employeeMap[emp.id] = `${emp.firstName ?? ""} ${emp.lastName ?? ""}`.trim();
             }
 
-            return classes.map(c => ({
-                ...c,
-                trainerName: employeeMap[c.trainer_id] || 'Unknown'
-            }));
+            return classesRaw.map(c => {
+                const startDate = new Date(c.startDate);
+                const hours = startDate.getHours().toString().padStart(2, "0");
+                const minutes = startDate.getMinutes().toString().padStart(2, "0");
+
+                return {
+                    ...c,
+                    trainerName: employeeMap[c.employeeId] || "—",
+                    date: startDate.toLocaleDateString(),
+                    time: `${hours}:${minutes}`
+                };
+            });
         } catch (error) {
             console.error('Error fetching classes or employees:', error);
             throw error;
         }
     }
+
 
     async testLocalMembershipTypes() {
         try {
@@ -82,5 +91,8 @@ export class ClassApiService {
             console.error('Error fetching members by class:', error);
             throw error;
         }
+    }
+    getAllTrainers() {
+        return api.get("/api/v1/Employee").then(res => res.data?.data ?? []);
     }
 }

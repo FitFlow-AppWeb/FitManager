@@ -1,3 +1,11 @@
+<!--
+// Description: This code defines the `EditClass` component, which is used to edit the details of an existing class.
+// The component receives `classData` as a prop, which contains the class to be edited. It initializes local state `localClassData` with the class data
+// and provides methods for updating the class, closing the modal, and fetching the list of trainers. The component renders a form where the user can update the class's name,
+// type, date, time, duration, trainer, and status. Upon submitting the form, the `updateClass` method is called to update the class data.
+// Author: Cassius Martel
+-->
+
 <script>
 import { ClassApiService } from "../services/class-api.service.js";
 import api from "../../login/services/axios.config.js";
@@ -8,176 +16,242 @@ export default {
     classData: Object,
   },
   data() {
+    const dateObj = new Date(this.classData.startDate);
+    const dateValid = !isNaN(dateObj);
+
     return {
-      name: "",
-      description: "",
-      capacity: "",
-      type: "",
-      date: "",
-      time: "",
-      duration: "",
-      trainer_id: "",
-      status: "",
+      localClassData: {
+        id: this.classData?.id ?? null,
+        name: this.classData?.name ?? "",
+        description: this.classData?.description ?? "",
+        capacity: this.classData?.capacity ?? 0,
+        type: this.classData?.type ?? "",
+        date: dateValid ? dateObj.toISOString().split("T")[0] : "",
+        time: dateValid ? dateObj.toTimeString().slice(0, 5) : "",
+        duration: this.classData?.duration ? `${this.classData.duration} min` : "",
+        trainer_id: this.classData?.trainer_id ?? this.classData?.employeeId ?? "",
+        status: this.classData?.status ?? ""
+      },
+      trainers: [],
       errors: {},
       touched: {},
-      trainers: [],
-      typeOptions: [
-        { name: this.$t("classes.group"), value: "Group" },
-        { name: this.$t("classes.solo"), value: "Solo" }
-      ],
-      timeOptions: [
-        { name: "06:00", value: "06:00" }, { name: "07:00", value: "07:00" }, { name: "08:00", value: "08:00" },
-        { name: "09:00", value: "09:00" }, { name: "10:00", value: "10:00" }, { name: "11:00", value: "11:00" },
-        { name: "12:00", value: "12:00" }, { name: "13:00", value: "13:00" }, { name: "14:00", value: "14:00" },
-        { name: "15:00", value: "15:00" }, { name: "16:00", value: "16:00" }, { name: "17:00", value: "17:00" },
-        { name: "18:00", value: "18:00" }, { name: "19:00", value: "19:00" }, { name: "20:00", value: "20:00" },
-        { name: "21:00", value: "21:00" }, { name: "22:00", value: "22:00" }
-      ],
-      durationOptions: [
-        { name: "45 min", value: "45 min" }, { name: "60 min", value: "60 min" },
-        { name: "90 min", value: "90 min" }, { name: "120 min", value: "120 min" }
-      ],
       statusOptions: [
         { name: this.$t("classes.confirmed"), value: "Confirmed" },
         { name: this.$t("classes.cancelled"), value: "Cancelled" },
         { name: this.$t("classes.pending"), value: "Pending" }
-      ]
+      ],
+      typeOptions: [
+        { name: this.$t("classes.group"), value: "Group" },
+        { name: this.$t("classes.solo"), value: "Solo" }
+      ],
+      timeOptions: Array.from({ length: 17 }, (_, i) => {
+        const hour = (6 + i).toString().padStart(2, '0');
+        return { name: `${hour}:00`, value: `${hour}:00` };
+      }),
+      durationOptions: [45, 60, 90, 120].map(min => ({
+        name: `${min} min`,
+        value: `${min} min`
+      }))
     };
   },
+
   computed: {
     hasErrors() {
       return Object.values(this.errors).some(Boolean);
     }
   },
+
   methods: {
     touch(field) {
       this.touched[field] = true;
       this.validateField(field);
     },
+
     validateField(field) {
-      const value = this[field];
+      const value = this.localClassData[field];
       if (!value) {
         this.errors[field] = this.$t(`validation.${field}_required`);
       } else {
         this.errors[field] = "";
       }
     },
+
     async fetchTrainers() {
       try {
-        const response = await api.get(`/api/v1/Employee`);
-        this.trainers = response.data?.data.map(emp => ({
-          name: `${emp.firstName ?? "?"} ${emp.lastName ?? "?"} (${emp.role ?? "?"})`,
+        const response = await api.get("/api/v1/Employee");
+        const employees = Array.isArray(response.data?.data) ? response.data.data : [];
+
+        this.trainers = employees.map(emp => ({
+          name: `${emp.firstName ?? "?"} ${emp.lastName ?? "?"}`,
           value: emp.id
         }));
       } catch (err) {
-        console.error("Error fetching trainers:", err);
+        console.error("❌ Error fetching trainers:", err);
       }
     },
+
     async updateClass() {
-      const fields = ["name", "type", "date", "time", "duration", "trainer_id", "status", "description", "capacity"];
-      fields.forEach(this.touch);
-      if (this.hasErrors) return;
+      const service = new ClassApiService();
 
-      const durationMinutes = parseInt(this.duration);
-      const datePart = this.date instanceof Date
-          ? this.date.toISOString().split("T")[0]
-          : this.date;
+      const datePart = this.localClassData.date instanceof Date
+          ? this.localClassData.date.toISOString().split("T")[0]
+          : this.localClassData.date;
 
-      const startDate = datePart && this.time ? new Date(`${datePart}T${this.time}:00`) : null;
-
-      if (startDate && isNaN(startDate.getTime())) {
-        this.errors.date = this.$t("validation.invalid_date");
-        return;
-      }
+      const startDate = datePart && this.localClassData.time
+          ? `${datePart}T${this.localClassData.time}:00`
+          : null;
 
       const updatedClass = {
-        ...this.classData,
-        Name: this.name,
-        Description: this.description || "",
-        Type: this.type,
-        Capacity: this.capacity ? parseInt(this.capacity) : 0,
-        StartDate: startDate ? startDate.toISOString() : null,
-        Duration: durationMinutes,
-        Status: this.status,
-        EmployeeId: this.trainer_id
+        id: this.localClassData.id,
+        Name: this.localClassData.name,
+        Description: this.localClassData.description || "",
+        Capacity: parseInt(this.localClassData.capacity) || 0,
+        Type: this.localClassData.type,
+        StartDate: startDate,
+        Duration: parseInt(this.localClassData.duration),
+        Status: this.localClassData.status,
+        EmployeeId: this.localClassData.trainer_id
       };
 
+      console.log("📦 Payload que se enviará:", updatedClass);
+
       try {
-        const service = new ClassApiService();
         await service.updateClass(updatedClass);
         this.$emit("class-updated");
-        this.$emit("close");
+        this.closeModal();
       } catch (err) {
         console.error("❌ Error updating class:", err);
+        if (err.response) {
+          console.error("📨 Backend response:", err.response.data);
+        }
       }
+    },
+
+    closeModal() {
+      this.$emit("close");
     }
   },
+
   mounted() {
+    console.log("✏️ Datos precargados para editar:", this.classData);
     this.fetchTrainers();
-
-    // Inicializar campos desde props.classData
-    const data = this.classData;
-    this.name = data.name || "";
-    this.description = data.description || "";
-    this.capacity = data.capacity || "";
-    this.type = data.type || "";
-    this.status = data.status || "";
-    this.trainer_id = data.employeeId || "";
-
-    if (data.startDate) {
-      const dateObj = new Date(data.startDate);
-      this.date = dateObj;
-      const hours = dateObj.getHours().toString().padStart(2, "0");
-      const minutes = dateObj.getMinutes().toString().padStart(2, "0");
-      this.time = `${hours}:${minutes}`;
-    }
-
-    this.duration = data.duration ? `${data.duration} min` : "";
   }
 };
 </script>
 
+
 <template>
-  <div class="modal-overlay" @click.self="$emit('close')" aria-labelledby="edit-class-dialog">
+  <div class="modal-overlay" @click.self="closeModal" role="dialog" aria-modal="true" aria-labelledby="edit-class-dialog">
     <div class="modal-content">
       <h2 class="modal-title" id="edit-class-dialog">{{ $t('classes.edit-class') }}</h2>
       <form @submit.prevent="updateClass">
-        <pv-inputtext v-model="name" :placeholder="$t('classes.name')" class="input-field" @blur="touch('name')" />
+
+        <!-- Nombre -->
+        <pv-inputtext
+            v-model="localClassData.name"
+            :placeholder="$t('classes.name')"
+            class="input-field"
+            @blur="touch('name')"
+        />
         <small v-if="touched.name && errors.name" class="error">{{ errors.name }}</small>
 
-        <pv-textarea v-model="description" :placeholder="$t('classes.description')" class="input-field" @blur="touch('description')" />
+        <!-- Descripción -->
+        <pv-textarea
+            v-model="localClassData.description"
+            :placeholder="$t('classes.description')"
+            class="input-field"
+            @blur="touch('description')"
+        />
         <small v-if="touched.description && errors.description" class="error">{{ errors.description }}</small>
 
-        <pv-inputnumber v-model="capacity" :placeholder="$t('classes.capacity')" class="input-field" :min="1" @blur="touch('capacity')" />
+        <!-- Capacidad -->
+        <pv-inputnumber
+            v-model="localClassData.capacity"
+            :placeholder="$t('classes.capacity')"
+            class="input-field"
+            :min="1"
+            @blur="touch('capacity')"
+        />
         <small v-if="touched.capacity && errors.capacity" class="error">{{ errors.capacity }}</small>
 
-        <pv-select v-model="type" :options="typeOptions" :placeholder="$t('classes.type')" option-label="name" option-value="value" class="input-field" @blur="touch('type')" />
+        <!-- Tipo -->
+        <pv-select
+            v-model="localClassData.type"
+            :options="typeOptions"
+            :placeholder="$t('classes.type')"
+            option-label="name"
+            option-value="value"
+            class="input-field"
+            @blur="touch('type')"
+        />
         <small v-if="touched.type && errors.type" class="error">{{ errors.type }}</small>
 
-        <pv-datepicker v-model="date" :placeholder="$t('classes.date')" class="input-field" @blur="touch('date')" />
+        <!-- Fecha -->
+        <pv-datepicker
+            v-model="localClassData.date"
+            :placeholder="$t('classes.date')"
+            class="input-field"
+            @blur="touch('date')"
+        />
         <small v-if="touched.date && errors.date" class="error">{{ errors.date }}</small>
 
-        <pv-select v-model="time" :options="timeOptions" :placeholder="$t('classes.time')" option-label="name" option-value="value" class="input-field" @blur="touch('time')" />
+        <!-- Hora -->
+        <pv-select
+            v-model="localClassData.time"
+            :options="timeOptions"
+            :placeholder="$t('classes.time')"
+            option-label="name"
+            option-value="value"
+            class="input-field"
+            @blur="touch('time')"
+        />
         <small v-if="touched.time && errors.time" class="error">{{ errors.time }}</small>
 
-        <pv-select v-model="duration" :options="durationOptions" :placeholder="$t('classes.duration')" option-label="name" option-value="value" class="input-field" @blur="touch('duration')" />
+        <!-- Duración -->
+        <pv-select
+            v-model="localClassData.duration"
+            :options="durationOptions"
+            :placeholder="$t('classes.duration')"
+            option-label="name"
+            option-value="value"
+            class="input-field"
+            @blur="touch('duration')"
+        />
         <small v-if="touched.duration && errors.duration" class="error">{{ errors.duration }}</small>
 
-        <pv-select v-model="trainer_id" :options="trainers" :placeholder="$t('classes.select-trainer')" option-label="name" option-value="value" class="input-field" @blur="touch('trainer_id')" />
+        <!-- Entrenador -->
+        <pv-select
+            v-model="localClassData.trainer_id"
+            :options="trainers"
+            :placeholder="$t('classes.select-trainer')"
+            option-label="name"
+            option-value="value"
+            class="input-field"
+            @blur="touch('trainer_id')"
+        />
         <small v-if="touched.trainer_id && errors.trainer_id" class="error">{{ errors.trainer_id }}</small>
 
-        <pv-select v-model="status" :options="statusOptions" :placeholder="$t('classes.status')" option-label="name" option-value="value" class="input-field" @blur="touch('status')" />
+        <!-- Estado -->
+        <pv-select
+            v-model="localClassData.status"
+            :options="statusOptions"
+            :placeholder="$t('classes.status')"
+            option-label="name"
+            option-value="value"
+            class="input-field"
+            @blur="touch('status')"
+        />
         <small v-if="touched.status && errors.status" class="error">{{ errors.status }}</small>
 
+        <!-- Botones -->
         <div class="actions">
           <pv-button :label="$t('classes.update')" type="submit" class="update-button" />
-          <pv-button :label="$t('general.cancel')" type="button" @click="$emit('close')" class="cancel-button" />
+          <pv-button :label="$t('general.cancel')" type="button" @click="closeModal" class="cancel-button" />
         </div>
       </form>
     </div>
   </div>
 </template>
-
 
 
 
@@ -283,6 +357,13 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 </style>
