@@ -1,4 +1,4 @@
-import api from '../../login/services/axios.config.js'; // usa la instancia con token
+import api from '../../login/services/api.js';
 import { ClassAssembler } from "./class.assembler.js";
 import { Member } from "../../members/model/member.entity.js";
 

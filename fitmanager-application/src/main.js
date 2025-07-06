@@ -12,6 +12,16 @@ import router from './router/index.js'
 import Textarea from 'primevue/textarea';
 import InputNumber from 'primevue/inputnumber';
 
+import api from '/src/login/services/api.js';
+
+const storedToken = localStorage.getItem('jwt');
+if (storedToken) {
+    api.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`;
+    console.log("Token JWT cargado y configurado en Axios al inicio.");
+} else {
+    console.log("No se encontró token JWT en localStorage al inicio.");
+}
+
 const app = createApp(App);
 
 app

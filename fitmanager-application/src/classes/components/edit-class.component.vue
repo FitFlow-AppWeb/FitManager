@@ -8,7 +8,7 @@
 
 <script>
 import { ClassApiService } from "../services/class-api.service.js";
-import api from "../../login/services/axios.config.js";
+import api from '../../login/services/api.js';
 
 export default {
   name: "EditClass",

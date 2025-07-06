@@ -13,7 +13,7 @@
  */
 import axios from "axios";
 import { EmployeeApiService } from "../services/employee-api.service.js";
-import api from "../../login/services/axios.config.js";
+import api from '../../login/services/api.js';
 
 
 const BASE_URL = import.meta.env.VITE_API_URL;
@@ -76,8 +76,16 @@ export default {
       const value = this[field];
       switch (field) {
         case "fullName":
-          this.errors.fullName = !value ? "validation.fullName_required" :
-              value.length > 100 ? "validation.fullName_tooLong" : "";
+          if (!value) {
+            this.errors.fullName = this.$t("validation.fullName_required");
+          } else {
+            const parts = value.trim().split(/\s+/);
+            if (parts.length < 2) {
+              this.errors.fullName = this.$t("validation.fullName_min_two_words");
+            } else {
+              this.errors.fullName = "";
+            }
+          }
           break;
         case "age":
           this.errors.age = (!value || value < 16) ? "validation.age_min" : "";

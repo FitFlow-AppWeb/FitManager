@@ -8,33 +8,30 @@
  * The chart displays attendance data by hour, showing the number of attendees at each hour of the day.
  * It uses the `pv-chart` component to render the bar chart.
  *
- * Author: Tomio Nakamurakare
+ * Author: Tomio Nakamurakare (modificado por tu asistente AI)
  */
 
-// Import the service that fetches the attendance data for today
 import {TodayAttendanceApiService} from '../services/today-attendance-api.service.js';
 
 export default {
-  name: "TodayAttendanceComponent", // Component name
+  name: "TodayAttendanceComponent",
   data() {
     return {
-      chartData: null, // Will store the chart data (attendance values and labels)
-      chartOptions: null // Will store the options for the chart (like title, scales, etc.)
+      chartData: null,
+      chartOptions: null
     };
   },
   methods: {
-    // Fetch today's attendance data from the API and format it for the chart
     fetchTodayAttendance() {
-      const service = new TodayAttendanceApiService(); // Create an instance of the attendance service
+      const service = new TodayAttendanceApiService();
       service.getTodayAttendance()
           .then(attendance => {
-            // Map the API response into a format that can be used by the chart
             this.chartData = {
-              labels: attendance.map(item => item.hour), // Set the hours as the labels on the x-axis
+              labels: attendance.map(item => item.hour),
               datasets: [
                 {
-                  label: 'Attendance',
-                  data: attendance.map(item => item.value), // Attendance values for the chart
+                  label: 'Occupancy',
+                  data: attendance.map(item => item.value),
                   backgroundColor: '#D9D9D9',
                   borderColor: '#D9D9D9',
                   fill: false,
@@ -42,7 +39,6 @@ export default {
                 }
               ]
             };
-            // Chart options (such as title, legend, and axis configuration)
             this.chartOptions = {
               responsive: true,
               plugins: {
@@ -57,18 +53,20 @@ export default {
               scales: {
                 y: {
                   beginAtZero: true,
-                  ticks: {stepSize: 10}
+                  ticks: {stepSize: 1}
                 }
               }
             };
           })
           .catch(error => {
             console.error('Error loading today attendance:', error);
+            this.chartData = null;
+            this.chartOptions = null;
           });
     }
   },
   mounted() {
-    this.fetchTodayAttendance(); // Fetch the attendance data as soon as the component is mounted
+    this.fetchTodayAttendance();
   }
 };
 </script>
@@ -76,7 +74,6 @@ export default {
 <template>
   <!-- Container for the attendance chart -->
   <div class="today-attendance-chart" aria-labelledby="attendance-chart-title">
-    <!-- Render the chart if data is available, else show loading message -->
     <pv-chart
         v-if="chartData && chartOptions"
         type="bar"
@@ -84,7 +81,7 @@ export default {
         :options="chartOptions"
         aria-describedby="attendance-chart-description"
     />
-    <p id="attendance-chart-description" v-if="!chartData">
+    <p id="attendance-chart-description" v-else>
       {{ $t('dashboard.loading') }}
     </p>
   </div>

@@ -19,12 +19,7 @@ import Button from 'primevue/button';
 <template>
   <div class="app-card">
     <Toolbar class="app-toolbar" role="toolbar" aria-label="Main Toolbar">
-      <template #start>
-        <IconField class="toolbar-search">
-          <InputIcon class="pi pi-search" aria-hidden="true" />
-          <InputText class="search-input-text" :placeholder="$t('general.search')" aria-label="Search input" />
-        </IconField>
-      </template>
+
       <template #end>
         <RouterLink to="/profile" aria-label="Go to Profile">
           <Button class="toolbar-profile-pic" variant="outlined" icon="pi pi-user" aria-label="Profile Button"/>

@@ -1,31 +1,28 @@
-/**
- * This file defines the TodayAttendanceApiService class.
- * It is responsible for retrieving today's attendance data from the API
- * and converting the raw response into structured TodayAttendance entities.
- * /
- * Tomio Nakamurakare
- */
+// src/services/today-attendance-api.service.js
 
-import axios from 'axios';
+import api from '../../login/services/api.js';
 import { TodayAttendanceAssembler } from './today-attendance.assembler.js';
 
 export class TodayAttendanceApiService {
 
-    // Fetches today's attendance data from the API and transforms it into entity instances
     getTodayAttendance() {
-        return axios.get('https://fitmanager.onrender.com/dashboard/')
+        return api.get('/api/v1/attendances/raw-today')
             .then(response => {
-                const todayAttendance = response.data?.todayAttendance;
-                if (!Array.isArray(todayAttendance)) {
-                    console.error('Invalid todayAttendance format');
+                const rawData = response.data?.data || response.data;
+                const allAttendanceRecords = Array.isArray(rawData) ? rawData : [];
+
+                if (!Array.isArray(allAttendanceRecords)) {
+                    console.error('Invalid attendance records format from API - Fallback triggered');
                     return [];
                 }
 
-                // Transform raw attendance data into structured entities
-                return TodayAttendanceAssembler.toEntitiesFromResponse(todayAttendance);
+                return TodayAttendanceAssembler.toHourlyOccupancyFromApiRecords(allAttendanceRecords);
             })
             .catch(error => {
                 console.error('Error fetching today attendance:', error);
+                if (error.response?.status === 401) {
+                    console.error('Authentication error. Redirecting to login...');
+                }
                 throw error;
             });
     }
