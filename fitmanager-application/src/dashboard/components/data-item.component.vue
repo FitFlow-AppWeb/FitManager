@@ -41,14 +41,7 @@ export default {
       <pv-divider class="custom-divider"/>
 
       <!-- Change box showing the positive/negative change in value -->
-      <div class="change-box" :class="{'positive': data.change.startsWith('+'),'negative': data.change.startsWith('-')}">
-        <span class="triangle">
-          {{ data.change.startsWith('+') ? '▲' : '▼' }} <!-- Up/Down arrow based on change -->
-        </span>
-        <span class="change-text">
-          {{ data.change }} — {{ data.period }} <!-- Change value and the period it corresponds to -->
-        </span>
-      </div>
+
     </div>
   </div>
 </template>

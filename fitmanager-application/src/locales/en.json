@@ -11,6 +11,7 @@
   "validation": {
     "fullName_required": "Full name is required.",
     "fullName_tooLong": "Full name must be under 100 characters.",
+    "fullName_min_two_words": "Name must have a first and last name.",
     "age_min": "Age must be at least 16.",
     "age_required": "Age is Required",
     "role_required": "Role is required.",

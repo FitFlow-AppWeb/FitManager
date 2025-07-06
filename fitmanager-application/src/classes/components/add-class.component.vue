@@ -1,7 +1,6 @@
 <script>
 import { ClassApiService } from "../services/class-api.service.js";
-import api from "../../login/services/axios.config.js"; // ✅ Usa la instancia con token
-
+import api from '../../login/services/api.js';
 export default {
   name: "AddClass",
   data() {

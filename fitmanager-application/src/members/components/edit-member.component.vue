@@ -97,7 +97,16 @@ export default {
 
       switch (field) {
         case "fullName":
-          this.errors.fullName = !value ? this.$t("validation.fullName_required") : "";
+          if (!value) {
+            this.errors.fullName = this.$t("validation.fullName_required");
+          } else {
+            const parts = value.trim().split(/\s+/);
+            if (parts.length < 2) {
+              this.errors.fullName = this.$t("validation.fullName_min_two_words");
+            } else {
+              this.errors.fullName = "";
+            }
+          }
           break;
         case "age":
           this.errors.age = value === null ? this.$t("validation.age_required") : "";
