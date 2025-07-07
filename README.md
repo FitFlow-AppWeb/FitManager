@@ -34,11 +34,12 @@
 
 Repositorio donde está el project report: https://github.com/FitFlow-AppWeb/FitManager
 
-Para el desarrollo del informe hemos trabajado en un google docs, y luego hemos pasado el contenido al readme del repositorio principal.
-Para esta entrega, se actualizo el readme, se agregó el sprint 3 y se hicieron entrevistas de validación de producto que permiteron realizar evaluaciones heurísticas.
+Durante el Sprint 4, continuamos perfeccionando nuestro proyecto, enfocándonos en la integración y validación final de los componentes desarrollados. Se realizaron actualizaciones sustanciales en la documentación de ambos repositorios: web-services y web-application.
+En el repositorio principal, el README.md fue exhaustivamente actualizado para reflejar los avances de este sprint. Este proceso incluyó la incorporación de la información correspondiente al Sprint 4, detallando los hitos alcanzados y las funcionalidades implementadas.
 
+- Evidencia en el repositorio de Web Application
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/40f5dd65-d50e-4a9a-9196-c438db6d6e19" alt="Insights repositorio">
+  <img src="https://github.com/user-attachments/assets/42232e91-626e-4528-b0ef-340a0ba27485" alt="Insights repositorio">
 </p>
 
 # Contenido
@@ -194,8 +195,9 @@ Criterio: La capacidad de funcionar efectivamente en un equipo cuyos miembros ju
 
 | Criterio Específico | Acciones Realizadas | Conclusiones |
 |---|---|---|
-| 1. Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Cassius Estefano Martel Andrade** <br> **TB1** <br> Como team leader, propicié un entorno inicial de liderazgo compartido, facilitando las primeras reuniones y promoviendo la participación activa de todos los integrantes. Propuse herramientas colaborativas como Figma, Notion y Trello, y coordiné la definición del alcance inicial del proyecto.<br>**TP** <br> Organicé el flujo de trabajo para el desarrollo del frontend, asignando tareas equitativamente, gestionando conflictos entre módulos y promoviendo la revisión cruzada de componentes.<br>**TB2** <br> Tomé el liderazgo técnico en la definición de la estructura del backend, promoviendo el uso de Clean Architecture y facilitando la comunicación entre pares para unificar criterios de codificación.<br>**TF** <br> Durante la fase de integración, asumí la responsabilidad de coordinar los esfuerzos técnicos y organizativos, asegurándome de que todos los módulos converjan sin fricciones, brindando soporte activo a todo el equipo.<br><br>**Juan Carlos Alvarado De La Cruz**<br>**TB1**  <br> Mostré iniciativa para organizar ideas en las sesiones de ideación. Participé activamente en la definición del problema y ayudé a ordenar los requerimientos.<br>**TP** <br> Tomé responsabilidad en las vistas de clases y guié a los demás en el uso correcto de los componentes compartidos.<br>**TB2** <br> Fui referente del módulo de clases en el backend, colaborando estrechamente con quienes requerían apoyo en la integración de lógica.<br>**TF** <br> Aporté liderazgo técnico en la depuración de flujos críticos y participé activamente en pruebas funcionales.<br><br>**Renzo Andrés Luque Minaya**<br>**TB1** <br> Participé con una actitud proactiva en las decisiones iniciales, proponiendo ideas clave para el modelo de negocio y facilitando la estructuración del proyecto.<br>**TP** <br> Asumí responsabilidad en la accesibilidad del sistema, liderando revisiones para asegurar una interfaz coherente y funcional.<br>**TB2** <br> Dirigí el desarrollo de los módulos de pagos, promoviendo orden y estructura en la lógica.<br>**TF** <br> Lideré la implementación del sistema de autenticación basado en JWT, promoviendo buenas prácticas de seguridad y asegurando la integración sin conflictos.<br><br>**Alex Tomio Nakamurakare Teruya**<br>**TB1** <br> Lideré sesiones de needfinding y entrevistas a usuarios, coordinando el equipo de investigación y promoviendo discusiones significativas sobre los hallazgos.<br>**TP** <br> Guié la organización de componentes de inventario, aportando estructura y consistencia al código.<br>**TB2** <br> Establecí convenciones para las entidades relacionadas a inventario y asistencia, lo cual facilitó el trabajo colaborativo.<br>**TF** <br> Contribuí a la integración técnica resolviendo conflictos entre endpoints y vistas de frontend.<br><br>**Víctor Nicolás Ortíz Alarcón**<br>**TB1** <br> Propuse mejoras estructurales en los entregables UX y fomenté la participación de todos en la validación del diseño.<br>**TP** <br> Mostré liderazgo en la implementación del módulo de notificaciones, asegurando la reutilización de componentes y ayudando a otros con sus módulos.<br>**TB2** <br> Coordiné pruebas de endpoints de usuarios y gestión de roles, generando documentación para facilitar el uso por otros miembros.<br>**TF** <br> Guié sesiones de verificación final y pruebas integradas, garantizando la estabilidad del sistema previo a la presentación final. | **TB1** <br> El grupo demostró una distribución inicial del liderazgo, con participación activa de todos los integrantes. Cassius asumió el rol de facilitador, pero las decisiones se tomaron de forma conjunta, permitiendo que todos tuvieran voz en las propuestas. <br> **TP** <br> Se evidenció un liderazgo técnico rotativo, donde distintos miembros lideraron sus respectivos módulos. Esto favoreció el progreso paralelo, aunque en algunos momentos se necesitó centralizar decisiones para evitar bloqueos.<br>**TB2** <br> El liderazgo se ejerció desde el conocimiento técnico específico. Renzo y Cassius impulsaron decisiones clave, mientras que Juan Carlos, Tomio y Victor tomaron la delantera en dominios particulares.<br>**TF** <br> El liderazgo compartido fue fundamental. El equipo trabajó de forma sincronizada, enfrentando los desafíos técnicos con coordinación, compromiso y apoyo mutuo, consolidando una dinámica madura y funcional. |
-| 2. Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Cassius Estefano Martel Andrade**<br>**TB1** <br> Establecí un cronograma realista considerando la carga de cada integrante, promoviendo un ambiente donde todas las ideas fueran escuchadas y valoradas. Impulsé dinámicas de trabajo que favorecieran la participación equitativa.<br>**TP** <br> Organicé sesiones de seguimiento frecuentes, identificando cuellos de botella y brindando apoyo a quienes lo necesitaban, sin dejar de priorizar el avance grupal.<br>**TB2** <br> Fomenté la autogestión mediante la planificación por dominios, asegurándome de que cada integrante comprenda su rol en el sistema.<br>**TF** <br> Establecí prioridades claras, delegué tareas de forma justa y reforcé la cultura de colaboración con canales de comunicación abiertos.<br><br>**Juan Carlos Alvarado De La Cruz**<br>**TB1** <br> Colaboré en la elaboración de entregables visuales, promoviendo un espacio abierto a la retroalimentación.<br>**TP** <br> Compartí avances regularmente y me aseguré de documentarlos para facilitar el trabajo de mis compañeros.<br>**TB2** <br> Fui puntual en mis entregables y me ofrecí a asistir a quienes necesitaban apoyo con sus endpoints.<br>**TF** <br> Colaboré con frontend en asegurar que mi lógica de backend encaje sin problemas, mostrando apertura y disposición constante.<br><br>**Renzo Andrés Luque Minaya**<br>**TB1** <br> Participé activamente en la estimación de tiempos y tareas, ajustando expectativas del equipo a las capacidades reales.<br>**TP** <br> Mostré compromiso en resolver errores que afectaban la visualización correcta del sistema, comunicando constantemente mis avances.<br>**TB2** <br> Propicié un entorno de ayuda mutua, facilitando la instalación de entornos de desarrollo.<br>**TF** <br> Coordiné con Cassius para asegurar que el sistema de autenticación se integre sin interrumpir otros módulos.<br><br>**Alex Tomio Nakamurakare Teruya**<br>**TB1** <br> Fomentó una dinámica empática en el análisis de usuarios, proponiendo que se tomen en cuenta distintas realidades.<br>**TP** <br> Revisé el trabajo de otros, proponiendo mejoras sin imponer, siempre desde la colaboración.<br>**TB2** <br> Organicé mi trabajo en base a entregas modulares, asegurando que otros puedan integrar fácilmente mis endpoints.<br>**TF** <br> Mantuvo una actitud resolutiva y de acompañamiento técnico constante.<br><br>**Víctor Nicolás Ortíz Alarcón**<br>**TB1** <br> Mostró respeto y valoración por los tiempos y aportes de todos los miembros.<br>**TP** <br> Participó activamente en dailies y propuso soluciones para organizar tareas pendientes.<br>**TB2** <br> Documentó endpoints de notificaciones y los validó con mis compañeros antes de cerrarlos.<br>**TF** <br>  Promovió sesiones de testing colaborativo, fomentando el trabajo en parejas para validar componentes cruzados. | **TB1** <br> El equipo estableció un ambiente colaborativo desde el inicio. Las tareas se distribuyeron con base en habilidades individuales y se valoró la participación equitativa en todas las etapas de definición.<br>**TP** <br> Se reforzó la planificación mediante dailies y entregas incrementales. Aunque surgieron dificultades en tiempos, el grupo mantuvo una comunicación efectiva y una disposición de ayuda constante.<br>**TB2** <br> La planificación por dominios facilitó la ejecución. El entorno de trabajo fue inclusivo, respetuoso y se fortaleció la autonomía de cada integrante.<br>**TF** <br> La integración final reflejó la consolidación de un entorno colaborativo maduro. El cumplimiento de objetivos fue posible gracias al compromiso compartido, la apertura a la retroalimentación y la sinergia lograda como equipo. |
+| 1. Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Cassius Estefano Martel Andrade** <br> **TB1** <br> Asumí el rol de facilitador en las primeras reuniones, incentivando la participación equitativa y generando un ambiente donde todas las opiniones fueran escuchadas. Promoví el uso de herramientas colaborativas para organizar el trabajo y definir el rumbo inicial del proyecto en conjunto.<br>**TP** <br> Fomenté un clima de cooperación durante la planificación del frontend, distribuyendo responsabilidades de forma justa y promoviendo el diálogo para resolver desacuerdos entre propuestas de diseño. Impulsé espacios de retroalimentación constante.<br>**TB2** <br> Motivé al equipo a tomar decisiones en conjunto, orientando las conversaciones técnicas hacia consensos y asegurándome de que todos tuvieran claridad en los objetivos. Estuve disponible para apoyar emocionalmente cuando hubo momentos de frustración.<br>**TF** <br> Coordiné al equipo priorizando la comunicación clara, asegurándome de que nadie se quedara rezagado. Propicié una cultura de apoyo mutuo, en la que cada integrante sintiera que su aporte era valorado.<br><br>**Juan Carlos Alvarado De La Cruz**<br>**TB1**  <br> Me aseguré de que todos pudiéramos expresar nuestras ideas con libertad durante las sesiones iniciales. Ayudé a ordenar los requerimientos del proyecto, facilitando acuerdos entre distintas perspectivas.<br>**TP** <br> Apoyé a mis compañeros a comprender mejor cómo organizarse dentro del proyecto. Promoví la empatía y la disposición para resolver dudas entre nosotros.<br>**TB2** <br> Me mantuve abierto al diálogo con quienes necesitaban ayuda, promoviendo una actitud colaborativa y de aprendizaje compartido.<br>**TF** <br> Fui constante en generar confianza dentro del equipo, especialmente durante los momentos de presión, ofreciendo ayuda sin que me lo pidieran y alentando al grupo a mantener la motivación.<br><br>**Renzo Andrés Luque Minaya**<br>**TB1** <br> Mantuve una actitud abierta y receptiva en las discusiones grupales. Propuse ideas que sirvieron como punto de partida para consensuar decisiones importantes.<br>**TP** <br> Promoví la reflexión colectiva sobre cómo ofrecer una mejor experiencia a los usuarios, escuchando con atención y respetando los aportes de los demás.<br>**TB2** <br> Fomenté el orden y el respeto durante las sesiones de trabajo, ayudando a mantener el foco del equipo cuando se presentaban dudas o tensiones.<br>**TF** <br> Me aseguré de que todos tuviéramos claridad sobre nuestros objetivos. Mostré disposición para acompañar a otros compañeros cuando enfrentaban dificultades, generando un ambiente de confianza.<br><br>**Alex Tomio Nakamurakare Teruya**<br>**TB1** <br> Lideré entrevistas con usuarios, facilitando la participación del equipo de forma empática y promoviendo discusiones constructivas sobre los hallazgos. Me enfoqué en que todos sintieran que sus contribuciones eran valiosas.<br>**TP** <br> Establecí acuerdos con mis compañeros para organizar de forma efectiva nuestras responsabilidades, promoviendo el orden y la cooperación.<br>**TB2** <br> Organicé espacios para aclarar dudas de manera abierta, incentivando la comunicación horizontal y el respeto entre todos.<br>**TF** <br> Fui proactivo al resolver conflictos entre tareas del equipo, proponiendo soluciones conciliadoras que beneficiaran al grupo completo.<br><br>**Víctor Nicolás Ortíz Alarcón**<br>**TB1** <br> Escuché activamente a mis compañeros y propuse ideas que nos permitieran mejorar nuestros entregables de forma colaborativa. Fomenté la validación del trabajo con todo el equipo antes de concluir decisiones.<br>**TP** <br> Estuve siempre disponible para mis compañeros, promoviendo la solidaridad al momento de resolver dudas o enfrentar desafíos. Propicié un ambiente positivo en los canales de comunicación.<br>**TB2** <br> Organicé sesiones internas para aclarar dudas de mis compañeros, asegurándome de que todos se sintieran acompañados en sus responsabilidades.<br>**TF** <br> Acompañé al equipo en momentos clave para verificar que todo estuviera funcionando correctamente. Me enfoqué en la escucha activa y la resolución conjunta de problemas durante la integración final. | **TB1** <br> El equipo mostró un inicio marcado por la colaboración y la apertura. Cassius actuó como facilitador, pero todas las decisiones fueron tomadas en conjunto. Se logró un liderazgo distribuido, donde cada voz fue escuchada y valorada.<br>**TP** <br> El liderazgo fue asumido de forma rotativa, según las necesidades de cada módulo. Esta dinámica favoreció la autonomía de cada miembro, pero también exigió un esfuerzo adicional en la comunicación para mantener la coherencia.<br>**TB2** <br> El liderazgo se orientó hacia la coordinación emocional y organizativa, no solo técnica. Los miembros se mostraron dispuestos a ayudar a los demás y a actuar con empatía frente a las dificultades que surgían.<br>**TF** <br> La madurez del equipo se hizo evidente en esta etapa. El liderazgo se manifestó en la disposición constante de apoyar, escuchar, coordinar y resolver en conjunto. Fue clave para lograr una integración fluida y sin conflictos. |
+| 2. Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Cassius Estefano Martel Andrade**<br>**TB1** <br> Fomenté un ambiente donde cada integrante se sintiera escuchado y valorado, proponiendo un cronograma participativo que tomara en cuenta la disponibilidad y preferencias del grupo. Establecí espacios seguros para la expresión de ideas y opiniones diversas.<br>**TP** <br> Promoví la planificación colaborativa mediante reuniones frecuentes. Me aseguré de que cada miembro se sintiera acompañado frente a los desafíos, brindando apoyo emocional y facilitando acuerdos ante desacuerdos.<br>**TB2** <br> Propicié la autogestión en el equipo, motivando a cada persona a tomar responsabilidad con confianza. Estuve atento a necesidades individuales para ajustar planes y evitar sobrecargas.<br>**TF** <br> Coordiné la planificación de tareas finales con un enfoque humano, escuchando activamente las preocupaciones del equipo y fortaleciendo un ambiente de empatía, apoyo mutuo y comunicación clara.<br><br>**Juan Carlos Alvarado De La Cruz**<br>**TB1** <br> Me aseguré de que todos pudieran dar su punto de vista durante las sesiones de diseño, promoviendo la inclusión de diferentes enfoques y validando ideas de manera respetuosa.<br>**TP** <br> Mantuve una actitud abierta al compartir mis avances, permitiendo que el equipo tuviera visibilidad de mis aportes. Siempre estuve dispuesto a adaptar mi trabajo en función de las necesidades comunes.<br>**TB2** <br> Cumplí mis compromisos con puntualidad y ofrecí ayuda a quienes lo necesitaban, contribuyendo al bienestar colectivo. Me aseguré de que nadie trabajara aislado.<br>**TF** <br> Mostré disposición constante para colaborar en los momentos de integración, facilitando la comunicación entre partes del sistema y manteniendo una actitud positiva ante la presión.<br><br>**Renzo Andrés Luque Minaya**<br>**TB1** <br> Participé activamente en la organización de tareas, sugiriendo plazos realistas para evitar sobrecargar al equipo. Estuve atento a que todos nos sintiéramos cómodos con las metas propuestas.<br>**TP** <br> Fui transparente con los avances y dificultades que enfrenté, lo cual generó confianza entre mis compañeros. Colaboré sin reservas cuando alguien requería apoyo.<br>**TB2** <br> Propicié un entorno donde pedir ayuda era bien recibido. Me mantuve disponible para facilitar procesos y alentar a los demás a avanzar juntos.<br>**TF** <br> Coordiné acciones conjuntas con empatía, proponiendo soluciones sin imponer, y buscando siempre el bienestar del equipo al priorizar tareas urgentes.<br><br>**Alex Tomio Nakamurakare Teruya**<br>**TB1** <br> Promoví un enfoque inclusivo en la investigación de usuarios, asegurándome de que sus distintas realidades fueran consideradas y que todos en el equipo tuvieran espacio para contribuir con sus análisis.<br>**TP** <br> Estuve atento a las necesidades de mis compañeros y ofrecí mejoras de forma constructiva. Siempre busqué mantener un clima de respeto y colaboración.<br>**TB2** <br> Organicé mi flujo de trabajo para facilitar la integración con otros, con el objetivo de reducir la carga de coordinación y evitar malentendidos.<br>**TF** <br> Me mantuve cercano al equipo, resolviendo dudas y colaborando activamente, con disposición para adaptarme a los cambios de último momento sin perder el ánimo grupal.<br><br>**Víctor Nicolás Ortíz Alarcón**<br>**TB1** <br> Mantuve una actitud respetuosa y empática en todo momento, asegurándome de que cada propuesta fuera escuchada y validada antes de tomar decisiones.<br>**TP** <br> Propuse espacios para revisar tareas pendientes y me mostré receptivo ante cualquier sugerencia. Fomenté el trabajo conjunto como vía para cumplir objetivos.<br>**TB2** <br> Consulté con el equipo antes de finalizar mis entregables, propiciando un ambiente de retroalimentación saludable y constructiva.<br>**TF** <br> Organicé sesiones colaborativas de validación, invitando a trabajar en parejas para revisar puntos críticos y afianzar vínculos de confianza en el cierre del proyecto. | **TB1** <br> Desde el inicio se construyó un ambiente de trabajo respetuoso e inclusivo. La planificación fue realista y colectiva, permitiendo que todos participaran activamente en la toma de decisiones.<br>**TP** <br> Se fortalecieron los vínculos entre los integrantes gracias a la comunicación constante. Aunque hubo retos, el entorno se mantuvo colaborativo y solidario.<br>**TB2** <br> La planificación autónoma fue clave, pero siempre bajo un marco de confianza y apoyo mutuo. Se evidenció un entorno en el que compartir dudas y pedir ayuda era natural.<br>**TF** <br> La planificación fue acompañada de una comunicación madura y un fuerte sentido de equipo. El ambiente colaborativo permitió cumplir los objetivos con eficiencia, empatía y alto compromiso grupal. |
+
 
 # CAPÍTULO 1: INTRODUCCIÓN
 
@@ -3359,11 +3361,186 @@ Ejemplo de tareas y descripción de una historia
 
 #### 5.2.4.5. Execution Evidence for Sprint Review.
 
+En el Sprint 4, el enfoque principal se trasladó a la integración integral entre el frontend y el backend, consolidando la funcionalidad de la aplicación. Se estableció una comunicación fluida entre la interfaz de usuario desarrollada en Vue.js y la API RESTful expuesta en el Sprint 3, asegurando que las operaciones de los seis Bounded Contexts (Classes, Employees, Finances, Inventory, Members y Notifications) fueran accesibles y funcionales desde el lado del cliente. Este proceso incluyó la configuración de la política CORS para permitir la interacción entre el frontend desplegado en Firebase y el backend, la implementación de un sistema de autenticación JWT robusto para proteger las rutas y asegurar la sesión del usuario, y la creación de servicios HTTP en el frontend con interceptores de respuesta para manejar errores de autenticación y redirigir al login automáticamente. La culminación de esta fase fue una aplicación cohesiva donde el frontend consume eficientemente los datos y servicios proporcionados por el backend, ofreciendo una experiencia de usuario completa y segura.
+
+- El dashboard principal de la aplicación ofrece una visión general y resumida de métricas clave del gimnasio, como el total de miembros, miembros activos, asistencias del día, un gráfico de asistencias por hora y un listado de las clases programadas para el día. También incluye secciones para ingresos mensuales, nuevos miembros y pagos pendientes, actuando como un centro de información centralizado para la administración.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a2247ab2-5999-444a-a688-e442812251a6" alt="dashboard">
+</p>
+
+- El calendario permite a los usuarios visualizar las clases programadas. Incluye un calendario interactivo para navegar por los meses y días, y un panel lateral que detalla las clases para la fecha seleccionada, indicando la hora, el tipo de clase y su estado (confirmado o pendiente). Debajo, se presenta una vista mensual del calendario, resaltando los días con clases programadas, lo que facilita la planificación y el seguimiento de la disponibilidad de clases.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e131fe99-2756-49f3-96df-7ffacb556193" alt="calendario">
+</p>
+
+-  La interfaz de gestión de empleados dentro de la aplicación presenta una tabla con un listado de empleados, incluyendo sus nombres, edades, roles, salarios y horas de trabajo. Al seleccionar un empleado, se despliega un panel lateral con sus detalles completos, como información personal, especialidades y certificaciones. Además, los formularios para añadir y editar empleado tienen validaciones en tiempo real que guían al usuario, como "Full name is required" o "Age must be at least 16", asegurando la integridad y calidad de los datos ingresados en el sistema. El boton "Schedule" permite ver las clases asignadas al empleado.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b2e91e21-b496-45ec-af75-411ee5442ae6" alt="empleados">
+</p>
+
+- La interfaz de gestión de miembros es esencial para administrar la base de usuarios del gimnasio. Se muestra una tabla que lista a los miembros con detalles como su nombre, edad, estado y tipo de membresía, así como la fecha de expiración. Al seleccionar un miembro, un panel lateral despliega su información detallada. Se aprecian las las validaciones implementadas en los campos de entrada para añadir y editar un miembro, como "Full name is required", "Age is required" y "DNI must be exactly 8 digits". Estas validaciones son fundamentales para asegurar la correcta y completa captura de datos al registrar nuevos miembros en el sistema. Además, el botón "Payments" permite ver los pagos de membresía realizados por el empleado.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7017869d-9384-4b88-9dc3-fe8807fbb14b" alt="miembros">
+</p>
+
+- La interfaz de gestión de clases de la aplicación contiene una tabla organizada que detalla las clases programadas, incluyendo su nombre, tipo (ej., "Group", "Solo"), el entrenador asignado, la fecha, hora, duración y estado (ej., "Confirmed", "Pending"). La tabla también incorpora opciones de búsqueda y filtrado, junto con botones de acción para cada clase (como ver miembros, editar o eliminar), lo que permite una administración completa y eficiente de la oferta de clases del gimnasio.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f77e79ae-9b85-4b1a-ae00-e05edf0b124b" alt="clases">
+</p>
+
+- Interfaz de visualización de miembros alistados a una clase. Presenta una tabla que lista a los "Members in this Class", incluyendo su nombre completo, edad, estado y tipo de membresía, fecha de expiración, email, teléfono y dirección. La característica clave es la columna "Actions" con un botón "Mark Attendance" para cada miembro, lo que permite al personal registrar la asistencia de los participantes a una clase de manera individual. Además, en la esquina superior derecha, se observa una notificación de éxito "Attendance Register", confirmando que un registro de asistencia se ha realizado con éxito.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fcae0064-dc64-4abf-830a-437414451699" alt="ver miembros">
+</p>
+
+- La interfaz de gestión de inventario de la aplicación. En el panel superior izquierdo, se visualiza una lista de categorías de ítems (como "Cardiovascular", "Fuerza", "Funcional") con su descripción y cantidad total. Al seleccionar una categoría, en la parte inferior se despliega una tabla con los detalles de los ítems individuales dentro de esa categoría, incluyendo su ID, estado, fechas de última y próxima revisión, y el empleado asignado para su mantenimiento. En el lado derecho, se presenta un formulario "Edit item" que permite actualizar la información de un ítem específico, como la fecha de próxima revisión y el empleado asignado, incluyendo validaciones como "Next maintenance date is required".
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e1144940-ab82-410e-b858-4e209532b83d" alt="inventario">
+</p>
+
+- También se tiene gestión de inventario y sus finanzas. A la izquierda, se presenta el formulario "Add New Purchase" (Añadir Nueva Compra), que permite registrar la adquisición de nuevos objetos para el gimnasio, incluyendo detalles como la fecha, método de pago, moneda, nombre del proveedor y los ítems individuales de la compra (tipo de ítem, precio unitario, cantidad, empleado asignado y fecha de próxima revisión). A la derecha, se observa una funcionalidad para "Add New Item Type" (Añadir Nuevo Tipo de Objeto), con campos para el nombre y la descripción, y una validación en tiempo real que indica "Completa este campo" si la descripción está vacía. Esto facilita la expansión y organización del inventario del gimnasio.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/28ed494d-2e3f-4702-82d8-64b052ad1096" alt="compra de inventario">
+</p>
+
+
+- El panel de Finanzas es una sección crucial para la gestión económica del gimnasio. Presenta un gráfico de "Membership Income Overview" que visualiza los ingresos por membresías (mensuales, trimestrales, anuales) a lo largo del tiempo. A la derecha, el "Financial Overview" proporciona un resumen de métricas financieras clave, como el profit, ingresos y gastos actuales, y proyecciones. En la parte inferior, una tabla de "Transactions" lista los movimientos financieros recientes, detallando la fecha, el recipiente, el pagador, el concepto y el monto de cada transacción, lo que permite un seguimiento detallado de las operaciones económicas.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a812092a-cd79-4ded-af0c-99b291806618" alt="finanzas">
+</p>
+
+- El panel de asistencia proporciona una visión detallada y analítica de la actividad de los miembros en el gimnasio. Incluye un "Weekly Heatmap" que visualiza la distribución de la asistencia por hora y día de la semana, utilizando un gradiente de color para indicar la intensidad de la actividad. A la derecha, el "Weekly Summary" ofrece un desglose de la asistencia total por día de la semana, y un "Historical Summary" proporciona métricas acumuladas como el total de registros de asistencia, promedio diario y las clases más y menos populares. Este panel es fundamental para el análisis de patrones de uso y la optimización de recursos del gimnasio.
+- 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0f4b5028-de8c-4886-a2f5-cc1d479227bc" alt="asistencia">
+</p>
+
+- La interfaz de gestión de notificaciones. En el lado izquierdo, se visualizan las notificaciones existentes, separadas por "Employee Notifications" y "Member Notifications". A la derecha, se presenta un formulario "Send New Notification" que permite a los administradores crear y enviar mensajes, con campos para el título y el mensaje, y opciones para seleccionar los destinatarios (empleados o miembros) de una lista desplegable. Esto facilita la comunicación interna y con los clientes del gimnasio.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fd73f108-1220-4958-a6fd-1edb1ee52dce" alt="notis">
+</p>
+
+- La sección de perfil y configuración del usuario en la aplicación. A la izquierda, se presenta la "Personal Information"  del usuario, incluyendo su correo electrónico, una representación segura de su contraseña y el tipo de suscripción. Un botón de "Logout" permite al usuario cerrar su sesión. A la derecha, se encuentran las "Settings", donde el usuario puede ajustar preferencias como el idioma, la unidad de medida, la zona horaria, el estado de las notificaciones y la moneda, ofreciendo personalización de la experiencia de usuario.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/51aa5c5d-4264-493d-bcf2-d71f0b4ffde3" alt="mi perfil">
+</p>
+
+- Las siguientes imágenes proporcionan una evidencia clara del funcionamiento del sistema de autenticación basado en JSON Web Tokens (JWT) dentro de la interfaz de documentación Swagger. El endpoint POST /api/v1/Authentication/sign-in permite a los usuarios iniciar sesión con sus credenciales. Tras una solicitud exitosa (código de respuesta 200 OK), la respuesta de la API incluye un token JWT completo en el cuerpo. Posteriormente, la sección "Available authorizations" se utiliza para introducir este token (en formato Bearer <token>). Este proceso demuestra cómo el token JWT es generado y luego utilizado para autorizar y probar las llamadas a otros endpoints protegidos de la API directamente desde Swagger, validando la implementación de la seguridad y autenticación en el backend.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a900b24b-ccf1-44ab-b676-f52c9dc468e6" alt="jwt">
+</p>
+
+- Se implementó el mecanismo de localización en el backend de la aplicación, utilizando un SharedResource.cs. Se visualiza una tabla dentro de un gestor de localización, donde cada fila representa una clave (Name, por ejemplo, "AttendanceCreated" o "UserSignedIn") y sus correspondientes traducciones para diferentes culturas, en este caso "en-us - English (United States)" y "es - Spanish". Este enfoque permite que los mensajes de respuesta de la API y otros textos internos del backend se adapten al idioma preferido del usuario o cliente que consume la API, facilitando la creación de una aplicación multilingüe y mejorando la experiencia global.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/25a20ff9-ca98-4e00-a707-9f1fde64b1da" alt="sharedresource">
+</p>
+
+- Aquí se evidencian dos solicitudes HTTP GET idénticas al endpoint /api/v1/ItemTypes, con la única diferencia de un parámetro de consulta locale. La solicitud de la izquierda (?locale=en) devuelve un mensaje en inglés ("Item types retrieved successfully."), mientras que la solicitud de la derecha (?locale=es) devuelve el mismo mensaje traducido al español. Esto evidencia la correcta implementación del sistema de SharedResource en el backend, permitiendo que la API sirva mensajes en el idioma preferido por el cliente.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/77914414-d6dc-4f7d-ad5b-87d49cc430a8" alt="postman">
+</p>
+
+Video explicativo sobre lo desarrollado en este Sprint:
+
 #### 5.2.4.6. Services Documentation Evidence for Sprint Review
+
+| Endpoint | Acción | Verbo HTTP | Sintaxis de llamada | Parámetros | Ejemplo de Request | Ejemplo de Response | Explicación |
+|----------|--------|------------|--------------------|------------|--------------------|---------------------|-------------|
+| `/api/v1/Attendances/raw-today` | Obtiene las asistencias al gimnasio del día actual | `GET` | `GET /api/v1/Attendances/raw-today` | No hay parámetros para esta solicitud. | `GET /api/v1/Attendances/raw-today` | ```json { "message": "Attendances retrieved successfully", "data": [ { "id": 1, "entryTime": "2025-07-06T15:21:04.086", "exitTime": "2025-07-06T19:40:04.086", "memberId": 1, "classId": 1 } ] } ``` | El endpoint permite obtener un registro detallado de todas las asistencias al gimnasio ocurridas durante el día actual. Su propósito es proporcionar una vista inmediata y completa de la actividad de los miembros, incluyendo las horas de entrada y salida, sin requerir parámetros adicionales en la solicitud. |
+| `/api/v1/Authentication/sign-up` | Registra nuevas credenciales de autenticación | `POST` | `POST /api/v1/Authentication/sign-up` | Body JSON: `{"email": "string", "password": "string", "icon": "string", "subscription": "string"}` | ```json { "email": "hola@gmail.com", "password": "hola", "icon": "[https://i.imgur.com/7xuhDoA.jpg](https://i.imgur.com/7xuhDoA.jpg)", "subscription": "Basic" } ``` | ```json { "message": { "name": "UserSignedUp", "value": "User registered successfully.", "resourceNotFound": false, "searchedLocation": "FitManager_Web_Services.Resources.SharedResource" } } ``` | Permite registrar nuevas credenciales de usuario en el sistema, facilitando la creación de cuentas. Su propósito es habilitar el proceso de auto-registro para que los usuarios puedan comenzar a interactuar con la aplicación. |
+| `/api/v1/Authentication/sign-in` | Permite el ingreso con credenciales de autenticación ya existentes | `POST` | `POST /api/v1/Authentication/sign-in` | Body JSON: `{"email": "string", "password": "string"}` | ```json { "email": "string@gmail.com", "password": "string" } ``` | ```json { "message": { "name": "UserSignedIn", "value": "User signed in successfully.", "resourceNotFound": false, "searchedLocation": "FitManager_Web_Services.Resources.SharedResource" }, "data": { "id": 1, "email": "string@gmail.com", "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdAZ21haWwuY29tIiwibmJmIjoxNzUxODQxMTMyLCJleHAiOjE3NTE4NDgzMzIsImlhdCI6MTc1MTg0MTEzMn0.4pxwDmgIxSeW6MtGabpu6mk2WE8z-2ITigkdNNmoJ40" } } ``` | Facilita el acceso de usuarios ya registrados al sistema mediante la validación de sus credenciales (correo electrónico y contraseña). Su función principal es autenticar al usuario y, en caso de éxito, proporcionar un token JWT que le permitirá realizar solicitudes autorizadas a otros recursos de la API. |
+| `/api/v1/ItemTypes` | Obtiene todos los tipos de objeto registrados en la base de datos | `GET` | `GET /api/v1/ItemTypes` | No hay parámetros para esta solicitud. | `GET /api/v1/ItemTypes` | ```json { "message": { "name": "ItemTypesRetrievedSuccessfully", "value": "Item types retrieved successfully.", "resourceNotFound": false, "searchedLocation": "FitManager_Web_Services.Resources.SharedResource" }, "data": [ { "id": 1, "name": "Mancuerna", "description": "Mancuerna pue" } ] } ``` | Permite recuperar una lista completa de todos los tipos de ítems registrados en el sistema de inventario. Su propósito es proporcionar una referencia de los tipos de equipos o productos disponibles. |
+| `/api/v1/ItemTypes` | Permite registrar un tipo de objeto | `POST` | `POST /api/v1/ItemTypes` | Body JSON: `{"name": "string", "description": "string"}` | ```json { "name": "Mancuerna", "description": "Mancuerna pue" } ``` | ```json { "message": { "name": "ItemTypeCreatedSuccessfully", "value": "Item type created successfully.", "resourceNotFound": false, "searchedLocation": "FitManager_Web_Services.Resources.SharedResource" }, "data": { "id": 1, "name": "Mancuerna", "description": "Mancuerna pue" } } ``` | Permite registrar un nuevo tipo de ítem en el sistema de inventario. Su propósito es facilitar la clasificación y organización de los equipos o productos al permitir la creación de categorías personalizadas. |
+| `/api/v1/Attendances` | Obtiene todos los registros de asistencia de la base de datos | `GET` | `GET /api/v1/Attendances` | No hay parámetros para esta solicitud. | `GET /api/v1/Attendances` | ```json { "message": "Attendances retrieved successfully", "data": [ { "id": 1, "entryTime": "2025-07-26T15:00:00", "exitTime": "2025-07-26T16:00:00", "memberId": 1, "classId": 1 }, { "id": 2, "entryTime": "2025-07-26T15:00:00", "exitTime": "2025-07-26T16:00:00", "memberId": 2, "classId": 1 } ] } ``` | Permite obtener una lista completa de todas las entradas y salidas registradas de los miembros a las clases o instalaciones del gimnasio. |
+| `/api/v1/Attendances/exists` | Verifica la existencia de un registro de asistencia | `GET` | `GET /api/v1/Attendances/exists?memberId={memberId}&classId={classId}&date={date}` | `memberId`: `int`, `classId`: `int`, `date`: `string` | `GET /api/v1/Attendances/exists?memberId=1&classId=1&date=2025-07-26` | ```json { "exists": true } ``` | Permite verificar rápidamente si ya existe un registro de asistencia para un miembro y una clase específicos en una fecha determinada. Es útil para evitar duplicados o para mostrar si un miembro ya ha sido registrado para una clase en un día concreto. |
+| `/api/v1/Users/{id}` | Obtiene un usuario por su id | `GET` | `GET /api/v1/Users/{id}` | `id`: `int` | `GET /api/v1/Users/3` | ```json { "message": { "name": "UserRetrieved", "value": "User retrieved successfully.", "resourceNotFound": false, "searchedLocation": "FitManager_Web_Services.Resources.SharedResource" }, "data": { "id": 3, "email": "ssstring@gmail.com", "icon": "[https://i.imgur.com/SGaLe22.jpg](https://i.imgur.com/SGaLe22.jpg)", "subscription": "Basic" } } ``` | Permite obtener los detalles específicos de un usuario de la base de datos utilizando su identificador único (ID). Es útil para mostrar la información de perfil de un usuario. |
+
+#### Ejemplos de funcionamiento de Endpoints
+
+- Nos registramos mediante el sign-up de Authentication
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/3c8da0e4-5df2-4145-9f85-7b0da4e7481b" alt="Authentication Sign Up">
+</p>
+
+- Iniciamos sesión con nuestras credenciales
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/d7430fac-112c-40df-8405-ecc8ea2690fc" alt="Authentication Sign In">
+</p>
+
+- Obtenemos el usuario que acabamos de registrar
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/c46635ba-5cc6-4b45-88b3-2724e9a28f23" alt="User Get ID">
+</p>
+
+- Obtenemos todos los registros de asistencia
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/20fd8099-f2f5-4cd4-95eb-389c8e4faf55" alt="Attendance GET">
+</p>
+
+- Registramos un tipo de objeto
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/4841c1b4-fa80-46bd-9690-149011abbd26" alt="ItemType POST">
+</p>
+
+- Obtenemos los tipos de objeto registrados
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/5338f05d-d66d-4590-876b-7a7f02b13bb6" alt="ItemType GET">
+</p>
 
 #### 5.2.4.7. Software Deployment Evidence for Sprint Review
 
 #### 5.2.4.8. Team Collaboration Insights during Sprint
+
+En el Sprint 4, el equipo FitManager mantuvo su compromiso con la metodología ágil Scrum y las herramientas de colaboración, redirigiendo su enfoque principal hacia la integración del frontend con el backend. Este sprint se caracterizó por un esfuerzo coordinado para establecer una comunicación fluida entre la interfaz de usuario desarrollada en Vue.js y la API RESTful expuesta en el sprint anterior, asegurando la funcionalidad completa de los seis Bounded Contexts. La colaboración fue constante a través de nuestro grupo de Whatsapp y Discord, con reuniones adicionales en días libres para una sincronización óptima. La gestión y el seguimiento de las tareas se mantuvieron centralizados en Pivotal Tracker, lo que facilitó la coordinación del equipo para lograr una aplicación web cohesiva y plenamente operativa.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7aadec77-9c51-4f29-8188-9d2e4a486fda" alt="pivotal tracker">
+</p>
+
+Uso de Herramientas de Colaboración (GitHub - Repositorio de WebApplication): 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d51912e4-a4e8-4139-a4be-e0315f83e856" alt="herramientas de colaboración">
+</p>
+
+Evidencia de las ramas (Repositorio de Web Application)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4839f88a-8297-4af7-b32e-c181fe3d6e44" alt="ramas del repositorio application">
+</p>
+
+Evidencia de las ramas (Repositorio de Web Services)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9c9c523b-910d-42b9-a67f-66790da89eee" alt="ramas del repositorio services">
+</p>
+
+Evidencia de commits por integrante del grupo (Repositorio de Web Application)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ef5c5069-312d-443c-a2ea-76b7033dec55" alt="commits por integrante application">
+</p>
+
+Evidencia de commits por integrante del grupo (Repositorio de Web Services)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/efedf091-f5f0-4dee-8d88-9c5895d5a5ba" alt="commits por integrante services">
+</p>
 
 ## 5.3. Validation Interviews
 
@@ -3662,6 +3839,7 @@ Link (Youtube): https://www.youtube.com/watch?v=waMrHExcU5w&t=13s
 * Debemos enfatizar la importancia de mantener una documentación completa y actualizada de la arquitectura, el diseño y la implementación del sistema. Además, debemos fomentar una sólida cultura de intercambio de conocimientos dentro del equipo para garantizar la continuidad, facilitar la colaboración y agilizar los esfuerzos de desarrollo futuros.
 * Para asegurar una experiencia de usuario fluida y evitar posibles cuellos de botella en etapas posteriores, se recomienda establecer una estrategia de integración temprana y continua entre el frontend desarrollado en Vue y el futuro backend de la aplicación. Esto podría incluir la definición clara de APIs, la creación de mocks para el desarrollo paralelo y la realización de pruebas de integración frecuentes para validar la correcta comunicación y el flujo de datos entre ambas partes del sistema.
 * Para la calidad continua del backend, recomendamos priorizar la implementación exhaustiva de pruebas automatizadas a todos los niveles, especialmente en las capas de Dominio y Aplicación. Además, es crucial mantener un proceso de revisión de código sistemático para asegurar la adherencia a los principios de DDD y Clean Architecture, mitigando la deuda técnica y promoviendo un crecimiento ordenado del proyecto.
+* Tras el Sprint 4 y la fase de validación, sugerimos implementar un proceso estructurado para la gestión y priorización del feedback de los usuarios. Esto implica categorizar, analizar y asignar responsables para cada feedback recibido, asegurando que las observaciones clave se traduzcan en mejoras tangibles en futuras iteraciones del producto.
 
 # Video About-the-team
 
