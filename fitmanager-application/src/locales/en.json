@@ -1,4 +1,26 @@
 {
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "toast": {
+    "attendanceRegisteredSummary": "Attendance Register",
+    "attendanceMarkedSuccessDetail": "Attendace Registered Successfully.",
+    "attendanceErrorSummary": "Attendance Error",
+    "attendanceErrorDetail": "There was an error at attendance register",
+    "userProfileErrorSummary": "Profile Load Error",
+    "userProfileErrorDetail": "Could not load user information.",
+    "validationWarningSummary": "Validation Warning",
+    "requiredFieldsWarning": "Please fill in all required fields.",
+    "profileUpdateSuccessSummary": "Profile Updated",
+    "profileUpdateSuccessDetail": "Your profile has been successfully updated.",
+    "profileUpdateErrorSummary": "Profile Update Error",
+    "profileUpdateErrorDetail": "There was an error updating your profile.",
+    "logoutSuccessSummary": "Logged Out",
+    "logoutSuccessDetail": "You have successfully logged out.",
+    "settingsUpdateSuccessSummary": "Setting Saved",
+    "settingUpdatedDetail": "Setting updated"
+  },
   "employees.schedule-title": "Scheduled Classes",
   "employees.no-classes": "No classes assigned to this employee.",
   "general.details": "Details",
@@ -8,6 +30,7 @@
   "classes.capacity": "Capacity",
   "classes.duration": "Duration",
   "classes.status": "Status",
+  "actions": "Actions",
   "validation": {
     "fullName_required": "Full name is required.",
     "fullName_tooLong": "Full name must be under 100 characters.",
@@ -64,7 +87,37 @@
       "timezone": "Timezone",
       "notifications": "Notifications",
       "currency": "Currency",
-      "help": "Help"
+      "help": "Help",
+      "personalInformation": "Personal Information",
+      "email": "Email",
+      "password": "Password",
+      "subscription": "Subscription",
+      "editAccount": "Edit Account",
+      "logout": "Logout",
+      "editProfile": "Edit Profile",
+      "newPassword": "New Password",
+      "iconUrl": "Icon URL",
+      "emailPlaceholder": "Enter your new email",
+      "passwordPlaceholder": "Leave blank to keep current",
+      "iconPlaceholder": "Enter your icon/avatar URL",
+      "subscriptionPlaceholder": "Enter your subscription plan",
+      "passwordNote": "Leave blank if you don't want to change the password.",
+      "notification-options": {
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "important-only": "Important Only"
+      },
+      "settings": {
+        "title": "System Settings",
+        "language": "Language",
+        "measurementUnit": "Measurement Unit",
+        "timezone": "Timezone",
+        "notifications": "Notifications",
+        "currency": "Currency",
+        "help": "Help & Support"
+      }
+
+
     },
     "personal-info": {
       "title": "Personal Information",
@@ -215,7 +268,8 @@
     "edit-class": "Edit Class",
     "update": "Update",
     "members-class": "Members in this Class",
-    "members-not-found": "No members found for this class"
+    "members-not-found": "No members found for this class",
+    "mark-attendance": "Mark Attendance"
   },
   "inventory": {
     "add-new-item": "Add New Item",

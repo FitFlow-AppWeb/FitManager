@@ -11,6 +11,8 @@ import 'primeflex/primeflex.css';
 import router from './router/index.js'
 import Textarea from 'primevue/textarea';
 import InputNumber from 'primevue/inputnumber';
+import ToastService from 'primevue/toastservice';
+import Toast from 'primevue/toast';
 
 import api from '/src/login/services/api.js';
 
@@ -34,6 +36,7 @@ app
             }
         }
     })
+    .use(ToastService)
     .component('pv-floatlabel', FloatLabel)
     .component('pv-divider', Divider)
     .component('pv-inputtext', InputText)
@@ -54,6 +57,7 @@ app
     .component('pv-dialog', Dialog)
     .component('pv-inputnumber', InputNumber)
     .component('pv-textarea', Textarea)
+    .component('Toast', Toast)
 
 
     .use(router)
