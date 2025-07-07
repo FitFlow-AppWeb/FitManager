@@ -3603,6 +3603,34 @@ Video explicativo sobre lo desarrollado en este Sprint:
 
 #### 5.2.4.7. Software Deployment Evidence for Sprint Review
 
+Para el Sprint 4, el proceso de despliegue se mantuvo consistente con los sprints anteriores. Se replicaron los mismos pasos utilizados en el Sprint 2 para el despliegue del frontend en Firebase Hosting y, de manera similar, se siguieron las directrices del Sprint 3 para el despliegue del backend en Azure App Service.
+
+Web Applications desplegado en Firebase
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/e65c60dc-371d-4bbb-9189-fb652889e12e" alt="deployed web applications">
+</p>
+
+Web Services desplegado en Azure
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/5cc01b85-93c9-4899-9532-ecf5c55d26f5" alt="deployed web services">
+</p>
+
+Adicionalmente, se implementó una configuración CORS en el archivo Program.cs del backend, permitiendo la comunicación fluida con el frontend. Con esta actualización, las solicitudes del frontend fueron redirigidas desde el entorno de FakeAPI directamente al backend desplegado en Azure.
+
+- Program.cs
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/9b07b038-d46a-4675-b534-f4db919a9547" alt="program.cs">
+</p>
+
+- Redirección al api
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/6412c56d-516f-4ca7-a720-a0b63d934a52" alt="api redirection">
+</p>
+
 #### 5.2.4.8. Team Collaboration Insights during Sprint
 
 En el Sprint 4, el equipo FitManager mantuvo su compromiso con la metodología ágil Scrum y las herramientas de colaboración, redirigiendo su enfoque principal hacia la integración del frontend con el backend. Este sprint se caracterizó por un esfuerzo coordinado para establecer una comunicación fluida entre la interfaz de usuario desarrollada en Vue.js y la API RESTful expuesta en el sprint anterior, asegurando la funcionalidad completa de los seis Bounded Contexts. La colaboración fue constante a través de nuestro grupo de Whatsapp y Discord, con reuniones adicionales en días libres para una sincronización óptima. La gestión y el seguimiento de las tareas se mantuvieron centralizados en Pivotal Tracker, lo que facilitó la coordinación del equipo para lograr una aplicación web cohesiva y plenamente operativa.
