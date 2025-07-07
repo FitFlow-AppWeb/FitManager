@@ -34,11 +34,12 @@
 
 Repositorio donde está el project report: https://github.com/FitFlow-AppWeb/FitManager
 
-Para el desarrollo del informe hemos trabajado en un google docs, y luego hemos pasado el contenido al readme del repositorio principal.
-Para esta entrega, se actualizo el readme, se agregó el sprint 3 y se hicieron entrevistas de validación de producto que permiteron realizar evaluaciones heurísticas.
+Durante el Sprint 4, continuamos perfeccionando nuestro proyecto, enfocándonos en la integración y validación final de los componentes desarrollados. Se realizaron actualizaciones sustanciales en la documentación de ambos repositorios: web-services y web-application.
+En el repositorio principal, el README.md fue exhaustivamente actualizado para reflejar los avances de este sprint. Este proceso incluyó la incorporación de la información correspondiente al Sprint 4, detallando los hitos alcanzados y las funcionalidades implementadas.
 
+- Evidencia en el repositorio de Web Application
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/40f5dd65-d50e-4a9a-9196-c438db6d6e19" alt="Insights repositorio">
+  <img src="https://github.com/user-attachments/assets/42232e91-626e-4528-b0ef-340a0ba27485" alt="Insights repositorio">
 </p>
 
 # Contenido
@@ -3838,6 +3839,7 @@ Link (Youtube): https://www.youtube.com/watch?v=waMrHExcU5w&t=13s
 * Debemos enfatizar la importancia de mantener una documentación completa y actualizada de la arquitectura, el diseño y la implementación del sistema. Además, debemos fomentar una sólida cultura de intercambio de conocimientos dentro del equipo para garantizar la continuidad, facilitar la colaboración y agilizar los esfuerzos de desarrollo futuros.
 * Para asegurar una experiencia de usuario fluida y evitar posibles cuellos de botella en etapas posteriores, se recomienda establecer una estrategia de integración temprana y continua entre el frontend desarrollado en Vue y el futuro backend de la aplicación. Esto podría incluir la definición clara de APIs, la creación de mocks para el desarrollo paralelo y la realización de pruebas de integración frecuentes para validar la correcta comunicación y el flujo de datos entre ambas partes del sistema.
 * Para la calidad continua del backend, recomendamos priorizar la implementación exhaustiva de pruebas automatizadas a todos los niveles, especialmente en las capas de Dominio y Aplicación. Además, es crucial mantener un proceso de revisión de código sistemático para asegurar la adherencia a los principios de DDD y Clean Architecture, mitigando la deuda técnica y promoviendo un crecimiento ordenado del proyecto.
+* Tras el Sprint 4 y la fase de validación, sugerimos implementar un proceso estructurado para la gestión y priorización del feedback de los usuarios. Esto implica categorizar, analizar y asignar responsables para cada feedback recibido, asegurando que las observaciones clave se traduzcan en mejoras tangibles en futuras iteraciones del producto.
 
 # Video About-the-team
 
