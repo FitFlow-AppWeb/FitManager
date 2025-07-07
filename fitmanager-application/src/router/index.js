@@ -24,7 +24,7 @@ import Classes     from '../classes/components/classes.component.vue';
 import Inventory   from '../inventory/components/inventory.component.vue';
 import Finances    from '../finances/components/finances.component.vue';
 import Attendance  from '../attendance/components/attendance.component.vue';
-import Notifications from '../notifications/components/notification.component.vue';
+import Notifications from '../notifications/components/notificationSection.vue';
 import Profile     from '../user/components/profile.component.vue';
 
 const routes = [
