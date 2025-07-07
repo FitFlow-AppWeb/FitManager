@@ -52,7 +52,9 @@
     "trainer_id_required": "Trainer is required",
     "status_required": "Status is required",
     "description_required": "Description is Required",
-    "capacity_required": "Capacity is Required"
+    "capacity_required": "Capacity is Required",
+    "employee_required": "Employee is required",
+    "next_maintenance_date_required": "Next maintenance date is required"
   },
   "clearfilters": "Clear Filters",
   "profile": {
@@ -237,7 +239,10 @@
     "status": "Status",
     "add-maintenance-and-trainer": "Edit item",
     "select-next-maintenance-date": "Select next maintenance date",
-    "not-found": "Not found"
+    "not-found": "Not found",
+    "select-employee": "Select employee",
+    "enter-status": "Status",
+    "assigned-employee": "Assigned employee"
   },
   "finances": {
     "financial-overview": "Financial Overview",

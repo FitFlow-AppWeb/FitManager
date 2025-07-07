@@ -52,7 +52,10 @@
     "trainer_id_required": "El entrenador es obligatorio",
     "status_required": "El estado es obligatorio",
     "description_required": "La descripción es obligatoria",
-    "capacity_required": "La capacidad es obligatoria"
+    "capacity_required": "La capacidad es obligatoria",
+    "employee_required": "El empleado es obligatorio",
+    "next_maintenance_date_required": "La siguiente fecha de mantenimiento es requerida"
+
   },
   "clearfilters": "Limpiar Filtros",
   "profile": {
@@ -237,7 +240,10 @@
     "status": "Estado",
     "add-maintenance-and-trainer": "Editar ítem",
     "select-next-maintenance-date": "Seleccionar fecha de próximo mantenimiento",
-    "not-found": "No encontrado"
+    "not-found": "No encontrado",
+    "select-employee": "Selecciona empleado",
+    "enter-status": "Estado",
+    "assigned-employee": "Empleado a cargo"
   },
   "finances": {
     "financial-overview": "Resumen Financiero",

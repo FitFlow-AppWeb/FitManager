@@ -149,7 +149,6 @@ export default {
       this.touch('employeeId');
 
       if (this.hasErrors) {
-        this.errorMessage = this.$t("validation.form_errors");
         return;
       }
       this.errorMessage = "";
