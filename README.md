@@ -27,6 +27,7 @@
 | 1.0 (TB1) | 25/04/25  | - Alvarado De La Cruz, Juan Carlos<br>- Luque Minaya, Renzo Andrés<br>- Martel Andrade, Cassius Estefano<br>- Nakamurakare Teruya, Alex Tomio<br>- Ortiz Alarcón, Víctor Nicolás | Capítulo I: Introducción<br>Capítulo II: Requirements Elicitation & Analysis<br>Capítulo III: Requirements Specification<br>Capítulo IV: Product Design<br>Capítulo V: Product Implementation, Validation & Deployment |
 | 2.0 (TP)  | 14/05/25  | - Alvarado De La Cruz, Juan Carlos<br>- Luque Minaya, Renzo Andrés<br>- Martel Andrade, Cassius Estefano<br>- Nakamurakare Teruya, Alex Tomio<br>- Ortiz Alarcón, Víctor Nicolás | Correcciones de la TB1<br>Capítulo V: Product Implementation, Validation & Deployment        |
 | 3.0 (TB2)  | 20/06/25  | - Alvarado De La Cruz, Juan Carlos<br>- Luque Minaya, Renzo Andrés<br>- Martel Andrade, Cassius Estefano<br>- Nakamurakare Teruya, Alex Tomio<br>- Ortiz Alarcón, Víctor Nicolás | Correcciones del TP<br>Capítulo V: Product Implementation, Validation & Deployment<br>Desarrollo del FitManager Web Services        |
+| 4.0 (TF)  | 06/07/25  | - Alvarado De La Cruz, Juan Carlos<br>- Luque Minaya, Renzo Andrés<br>- Martel Andrade, Cassius Estefano<br>- Nakamurakare Teruya, Alex Tomio<br>- Ortiz Alarcón, Víctor Nicolás | Correcciones de la TB2<br>Capítulo V: Product Implementation, Validation & Deployment (Sprint 4) <br>Integración del frontend y el backend       |
 
 
 # Project Report Collaboration Insights
