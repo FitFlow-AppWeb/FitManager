@@ -12,16 +12,14 @@
  *
  * Author: Tomio Nakamurakare
  */
-import axios from 'axios';
+import api from '../../login/services/api.js';
 import { SupplyPurchaseAssembler } from './supply-purchase.assembler.js';
-
-const BASE_URL = 'http://localhost:7070';
 
 export class SupplyPurchaseApiService {
     async createSupplyPurchase(supplyPurchaseData) {
         try {
-            const response = await axios.post(`${BASE_URL}/api/v1/SupplyPurchase`, supplyPurchaseData);
-            return SupplyPurchaseAssembler.oneFromBackend(response.data);
+            const response = await api.post(`/api/v1/SupplyPurchase`, supplyPurchaseData);
+            return SupplyPurchaseAssembler.oneFromBackend(response.data.data);
         } catch (error) {
             console.error('Error creating supply purchase:', error);
             throw error;
@@ -30,8 +28,8 @@ export class SupplyPurchaseApiService {
 
     async getAllSupplyPurchases() {
         try {
-            const response = await axios.get(`${BASE_URL}/api/v1/SupplyPurchase`);
-            return SupplyPurchaseAssembler.manyFromBackend(response.data);
+            const response = await api.get(`/api/v1/SupplyPurchase`);
+            return SupplyPurchaseAssembler.manyFromBackend(response.data.data);
         } catch (error) {
             console.error('Error fetching supply purchases:', error);
             throw error;

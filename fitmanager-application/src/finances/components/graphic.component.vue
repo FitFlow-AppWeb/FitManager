@@ -2,16 +2,16 @@
 /**
  * Income Chart Component
  *
- * This component fetches income data from an API and displays it in a line chart using the PrimeVue Chart component.
- * The chart represents monthly, quarterly, and yearly income data, and provides a visual overview of the financial performance.
- * If no data is available or an error occurs during the data fetch, appropriate messages are displayed.
- * The chart data is updated asynchronously, and it supports different types of income (monthly, quarterly, yearly).
- * It also handles loading and error states during data fetching.
+ * This component fetches membership payment data and displays it in a line chart,
+ * focusing on the last 4 months of activity.
+ * The chart specifically represents income from 'Monthly', 'Quarterly', and 'Yearly'
+ * membership types, aggregated by the payment date's month, quarter, and year respectively.
  *
  * Author: Renzo Luque
  */
 
-import { IncomeApiService } from "../services/income-api.service.js";
+import { MembershipPaymentApiService } from "../services/membership-payment-api.service.js";
+import { MemberApiService } from "../../members/services/member-api.service.js";
 import Chart from "primevue/chart";
 
 export default {
@@ -29,7 +29,7 @@ export default {
           x: {
             title: {
               display: true,
-              text: this.$t('finances.month-year'),
+              text: this.$t('finances.period'),
             },
             ticks: {
               autoSkip: true,
@@ -51,7 +51,7 @@ export default {
           },
           title: {
             display: true,
-            text: this.$t('finances.overview'),
+            text: this.$t('finances.membership-income-overview-last-4-months'),
           }
         },
         tooltip: {
@@ -59,15 +59,15 @@ export default {
           intersect: false,
           callbacks: {
             label: function(tooltipItem) {
-              let label = context.dataset.label || '';
+              let label = tooltipItem.dataset.label || '';
               if (label) {
                 label += ': ';
               }
-              if (context.parsed.y !== null) {
+              if (tooltipItem.parsed.y !== null) {
                 label += new Intl.NumberFormat('es-PE', {
                   style: 'currency',
                   currency: 'PEN',
-                }).format(context.parsed.y);
+                }).format(tooltipItem.parsed.y);
               }
               return label;
             }
@@ -76,61 +76,124 @@ export default {
       },
       isLoading: false,
       errorMessage: null,
-      apiService: null,
+      membershipPaymentService: null,
+      memberApiService: null,
+      allMembershipPayments: [],
+      membersMap: new Map(),
     };
   },
   created() {
-    this.apiService = new IncomeApiService();
+    this.membershipPaymentService = new MembershipPaymentApiService();
+    this.memberApiService = new MemberApiService();
   },
   async mounted() {
-    await this.fetchIncomeData();
+    await this.fetchAndProcessIncomeData();
   },
   methods: {
-    async fetchIncomeData() {
+    async fetchAndProcessIncomeData() {
       this.isLoading = true;
       this.errorMessage = null;
       this.chartData = null;
 
-      try{
-        const incomeRecords = await this.apiService.getIncomeData();
+      try {
+        const fetchedPayments = await this.membershipPaymentService.getAllMembershipPayments();
+        this.allMembershipPayments = fetchedPayments;
 
-        const filteredRecords = incomeRecords.filter(
-            record => !(record.monthly === 0 && record.quarterly === 0 && record.yearly === 0 && record.month === "June" && record.year === 2025)
-        );
+        const allMembers = await this.memberApiService.getAllMembers();
+        allMembers.forEach(member => {
+          this.membersMap.set(member.id, member);
+        });
 
-        if (!incomeRecords || incomeRecords.length === 0) {
-          this.errorMessage = "No income data available.";
+        if (!this.allMembershipPayments || this.allMembershipPayments.length === 0) {
+          this.errorMessage = this.$t('finances.no-membership-income-data-available');
           this.chartData = { labels: [], datasets: [] };
           return;
         }
 
-        const labels = filteredRecords.map(record => `${record.month.substring(0,3)} ${record.year}`);
-        const monthlyData = filteredRecords.map(record => record.monthly);
-        const quarterlyData = filteredRecords.map(record => record.quarterly);
-        const yearlyData = filteredRecords.map(record => record.yearly);
+        const today = new Date();
+        const fourMonthsAgo = new Date(today.getFullYear(), today.getMonth() - 3, 1);
+
+        const filteredPayments = this.allMembershipPayments.filter(payment => {
+          const paymentDate = new Date(payment.date);
+          return paymentDate >= fourMonthsAgo && paymentDate <= today;
+        });
+
+        const monthlyMembershipIncome = new Map();
+        const quarterlyMembershipIncome = new Map();
+        const yearlyMembershipIncome = new Map();
+
+        const relevantMonthsKeys = [];
+        for (let i = 0; i < 4; i++) {
+          const d = new Date(today.getFullYear(), today.getMonth() - 3 + i, 1);
+          relevantMonthsKeys.push(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`);
+        }
+
+        filteredPayments.forEach(payment => {
+          const member = this.membersMap.get(payment.memberId);
+
+          if (!member) {
+            console.warn(`Miembro con ID ${payment.memberId} no encontrado para el pago. Ignorando.`);
+            return;
+          }
+
+          const membershipType = member.membershipType;
+          const date = new Date(payment.date);
+          const year = date.getFullYear();
+          const month = date.getMonth();
+
+          const monthKey = `${year}-${String(month + 1).padStart(2, '0')}`;
+
+          if (membershipType === 'Mensual') {
+            monthlyMembershipIncome.set(monthKey, (monthlyMembershipIncome.get(monthKey) || 0) + payment.amount);
+          } else if (membershipType === 'Trimestral') {
+            quarterlyMembershipIncome.set(monthKey, (quarterlyMembershipIncome.get(monthKey) || 0) + payment.amount);
+          } else if (membershipType === 'Anual') {
+            yearlyMembershipIncome.set(monthKey, (yearlyMembershipIncome.get(monthKey) || 0) + payment.amount);
+          }
+        });
+
+        const labels = [];
+        const monthlyChartData = [];
+        const quarterlyChartData = [];
+        const yearlyChartData = [];
+
+        const monthNames = [
+          this.$t('finances.jan'), this.$t('finances.feb'), this.$t('finances.mar'), this.$t('finances.apr'),
+          this.$t('finances.may'), this.$t('finances.jun'), this.$t('finances.jul'), this.$t('finances.aug'),
+          this.$t('finances.sep'), this.$t('finances.oct'), this.$t('finances.nov'), this.$t('finances.dec')
+        ];
+
+        relevantMonthsKeys.forEach(monthKey => {
+          const [year, monthNum] = monthKey.split('-');
+          labels.push(`${monthNames[parseInt(monthNum) - 1]} ${year}`);
+
+          monthlyChartData.push(monthlyMembershipIncome.get(monthKey) || 0);
+          quarterlyChartData.push(quarterlyMembershipIncome.get(monthKey) || 0);
+          yearlyChartData.push(yearlyMembershipIncome.get(monthKey) || 0);
+        });
 
         this.chartData = {
           labels: labels,
           datasets: [
             {
-              label: this.$t('finances.monthly-income'),
-              data: monthlyData,
+              label: this.$t('finances.income-from-monthly-memberships'),
+              data: monthlyChartData,
               borderColor: 'rgb(75, 192, 192)',
               backgroundColor: 'rgba(75, 192, 192, 0.2)',
-              tension: 0.2, // Slight curve to the line
+              tension: 0.2,
               fill: false
             },
             {
-              label: this.$t('finances.quarterly-income'),
-              data: quarterlyData,
+              label: this.$t('finances.income-from-quarterly-memberships'),
+              data: quarterlyChartData,
               borderColor: 'rgb(255, 159, 64)',
               backgroundColor: 'rgba(255, 159, 64, 0.2)',
               tension: 0.2,
               fill: false
             },
             {
-              label: this.$t('finances.yearly-income'),
-              data: yearlyData,
+              label: this.$t('finances.income-from-yearly-memberships'),
+              data: yearlyChartData,
               borderColor: 'rgb(54, 162, 235)',
               backgroundColor: 'rgba(54, 162, 235, 0.2)',
               tension: 0.2,
@@ -140,11 +203,11 @@ export default {
         };
 
       } catch (error) {
-        console.error("Failed to load income data for chart:", error);
-        this.errorMessage = "An error occurred while fetching chart data. Please try again later.";
-        this.chartData = { labels: [], datasets: [] }; // Fallback to empty chart on error
+        console.error("Failed to load membership income data for chart:", error);
+        this.errorMessage = this.$t('finances.error-fetching-chart-data');
+        this.chartData = {labels: [], datasets: []};
       } finally {
-        this.isLoading = false; // Data loading is complete (either success or failure)
+        this.isLoading = false;
       }
     }
   }
@@ -153,23 +216,55 @@ export default {
 
 <template>
   <div class="card">
-    <Chart type="line" :data="chartData" :options="chartOptions" class="p-chart" />
+    <Chart type="line" :data="chartData" :options="chartOptions" class="p-chart"/>
+    <div v-if="isLoading" class="loading-overlay">
+      <p>{{ $t('finances.loading-chart-data') }}</p>
+    </div>
+    <div v-if="errorMessage" class="error-message">
+      <p>{{ errorMessage }}</p>
+    </div>
+    <div v-if="!isLoading && !errorMessage && (!chartData || chartData.labels.length === 0)" class="no-data-message">
+      <p>{{ $t('finances.no-data-to-display') }}</p>
+    </div>
   </div>
 </template>
 
-
 <style scoped>
-.card{
+.card {
   background-color: #ffffff;
   border-radius: 8px;
   width: 45%;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .p-chart {
   width: 100% !important;
   height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
 }
 
+.loading-overlay, .error-message, .no-data-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+}
 
+.error-message {
+  color: red;
+}
 </style>

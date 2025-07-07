@@ -1,89 +1,154 @@
-<!--
- * HeatmapComponent - Displays weekly attendance data in a heatmap format.
- * Fetches data from the WeekApiService and formats it for display in a table with dynamic colors based on values.
- *
- * Author: Renzo Luque
- -->
-
-
 <script>
-import { WeekApiService } from "../services/week-api.service";
+import { AttendanceApiService } from "../services/attendance-api.service";
 
 export default {
   name: 'HeatmapComponent',
   data() {
     return {
-      weekly_heatmap_entity: null,
+      rawAttendanceRecords: [],
       isLoading: true,
-      hoursOfDay: ["06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"],
+      hoursOfDay: [
+        "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00",
+        "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"
+      ],
       daysConfig: [
-        { header: this.$t('attendance.monday'), keyInEntity: 'lunes', keyForColumn: 'Lunes' },
-        { header: this.$t('attendance.tuesday'), keyInEntity: 'martes', keyForColumn: 'Martes' },
-        { header: this.$t('attendance.wednesday'), keyInEntity: 'miercoles', keyForColumn: 'MiercolesValue' },
-        { header: this.$t('attendance.thursday'), keyInEntity: 'jueves', keyForColumn: 'Jueves' },
-        { header: this.$t('attendance.friday'), keyInEntity: 'viernes', keyForColumn: 'Viernes' },
-        { header: this.$t('attendance.saturday'), keyInEntity: 'sabado', keyForColumn: 'Sabado' },
-        { header: this.$t('attendance.sunday'), keyInEntity: 'domingo', keyForColumn: 'Domingo' }
-      ]
+        {header: this.$t('attendance.monday'), keyForProcessing: 1, keyForColumn: 'Lunes'},
+        {header: this.$t('attendance.tuesday'), keyForProcessing: 2, keyForColumn: 'Martes'},
+        {header: this.$t('attendance.wednesday'), keyForProcessing: 3, keyForColumn: 'MiercolesValue'},
+        {header: this.$t('attendance.thursday'), keyForProcessing: 4, keyForColumn: 'Jueves'},
+        {header: this.$t('attendance.friday'), keyForProcessing: 5, keyForColumn: 'Viernes'},
+        {header: this.$t('attendance.saturday'), keyForProcessing: 6, keyForColumn: 'Sabado'},
+        {header: this.$t('attendance.sunday'), keyForProcessing: 0, keyForColumn: 'Domingo'}
+      ],
+      attendanceApiService: null,
+      maxAttendanceValue: 0,
     };
   },
 
   computed: {
+    processedHeatmapData() {
+      if (!this.rawAttendanceRecords || this.rawAttendanceRecords.length === 0) {
+        console.log("2. processedHeatmapData: No raw records.");
+        this.maxAttendanceValue = 0;
+        return {};
+      }
+
+      const heatmap = {};
+      let currentMax = 0;
+
+      this.daysConfig.forEach(day => {
+        heatmap[day.keyForColumn] = {};
+        this.hoursOfDay.forEach(hour => {
+          heatmap[day.keyForColumn][hour] = 0;
+        });
+      });
+
+      const today = new Date();
+      const currentDayOfWeek = today.getDay();
+      const diffToMonday = today.getDate() - currentDayOfWeek + (currentDayOfWeek === 0 ? -6 : 1);
+      const startOfWeek = new Date(today.setDate(diffToMonday));
+      startOfWeek.setHours(0, 0, 0, 0);
+
+      const endOfWeek = new Date(startOfWeek);
+      endOfWeek.setDate(startOfWeek.getDate() + 6);
+      endOfWeek.setHours(23, 59, 59, 999);
+
+      this.rawAttendanceRecords.forEach(record => {
+        const entryDate = new Date(record.entryTime);
+
+        if (entryDate >= startOfWeek && entryDate <= endOfWeek) {
+          const dayOfWeek = entryDate.getDay();
+          const hour = String(entryDate.getHours()).padStart(2, '0') + ":00";
+
+          const dayConfig = this.daysConfig.find(d => d.keyForProcessing === dayOfWeek);
+
+          if (dayConfig && this.hoursOfDay.includes(hour)) {
+            heatmap[dayConfig.keyForColumn][hour]++;
+            if (heatmap[dayConfig.keyForColumn][hour] > currentMax) {
+              currentMax = heatmap[dayConfig.keyForColumn][hour];
+            }
+          }
+        }
+      });
+      this.maxAttendanceValue = currentMax;
+      console.log("3. Processed heatmap data:", heatmap);
+      console.log("Max attendance value for the week:", this.maxAttendanceValue);
+      return heatmap;
+    },
+
     formattedHeatmapData() {
-      if (!this.weekly_heatmap_entity || Object.keys(this.weekly_heatmap_entity).length === 0) {
+      const processedData = this.processedHeatmapData;
+      if (Object.keys(processedData).length === 0) {
         return [];
       }
 
       return this.hoursOfDay.map(hour => {
-        const row = { hour: hour };
+        const row = {hour: hour};
         this.daysConfig.forEach(day => {
-          const dayData = this.weekly_heatmap_entity[day.keyInEntity];
-          row[day.keyForColumn] = (dayData && dayData[hour] !== undefined) ? dayData[hour] : 0;
+          row[day.keyForColumn] = processedData[day.keyForColumn] ? processedData[day.keyForColumn][hour] : 0;
         });
         return row;
       });
+    },
+
+    dynamicColorScale() {
+      const max = this.maxAttendanceValue;
+      if (max === 0) {
+        return () => '#FFFFFF';
+      }
+
+      const colors = [
+        '#44CF44',
+        '#7EE669',
+        '#C1FF92',
+        '#FFCF82',
+        '#FFA382',
+        '#FF7B42',
+        '#FF6B6B',
+        '#FF3131',
+        '#E90A0A',
+      ];
+
+      const numberOfColors = colors.length;
+
+      return (value) => {
+        if (value === 0) {
+          return '#FFFFFF';
+        }
+        const index = Math.floor((value / max) * (numberOfColors - 1));
+        return colors[index] || colors[colors.length - 1];
+      };
     }
   },
 
+  created() {
+    this.attendanceApiService = new AttendanceApiService();
+  },
+
   methods: {
-    fetchWeeklyHeatmap() {
+    async fetchHeatmapData() {
       this.isLoading = true;
-      const service = new WeekApiService();
-      service.getWeekAttendance()
-          .then(data => {
-            this.weekly_heatmap_entity = data;
-            this.isLoading = false;
-          })
-          .catch(error => {
-            console.error("Error fetching weekly heatmap data in component:", error);
-            this.weekly_heatmap_entity = null;
-            this.isLoading = false;
-          });
+      try {
+        const data = await this.attendanceApiService.getAllAttendanceRecords();
+        this.rawAttendanceRecords = data;
+        this.isLoading = false;
+      } catch (error) {
+        console.error("Error fetching attendance data for heatmap:", error);
+        this.rawAttendanceRecords = [];
+        this.isLoading = false;
+      }
     },
 
     getCellColor(value) {
-      if (value === undefined || value === null) {
+      if (value === undefined || value === null || value === 0) {
         return '#FFFFFF';
       }
-      if (value === 0) {
-        return '#FFFFFF';
-      }
-
-      if (value >= 65) return '#E90A0A';
-      if (value >= 60) return '#FF3131';
-      if (value >= 50) return '#FF6B6B';
-      if (value >= 40) return '#FF7B42';
-      if (value >= 35) return '#FFA382'
-      if (value >= 30) return '#FFCF82';
-      if (value >= 20) return '#C1FF92';
-      if (value >= 15) return '#7EE669';
-      if (value > 0) return '#44CF44';
-      return '#FFFFFF';
+      return this.dynamicColorScale(value);
     }
   },
 
   mounted() {
-    this.fetchWeeklyHeatmap();
+    this.fetchHeatmapData();
   }
 }
 </script>
@@ -96,11 +161,11 @@ export default {
       {{ $t('attendance.loading') }}
     </div>
 
-    <div v-if="!isLoading && (!formattedHeatmapData || formattedHeatmapData.length === 0)" class="no-data-message" aria-live="assertive">
+    <div v-if="!isLoading && (!formattedHeatmapData || formattedHeatmapData.length === 0)" class="no-data-message"
+         aria-live="assertive">
       {{ $t('attendance.no-data') }}
     </div>
 
-    <!-- Heatmap table with ARIA attributes -->
     <pv-datatable v-if="!isLoading && formattedHeatmapData && formattedHeatmapData.length > 0"
                   :value="formattedHeatmapData"
                   class="p-datatable-sm heatmap-table p-datatable-gridlines"
@@ -108,7 +173,8 @@ export default {
                   role="grid"
                   aria-labelledby="heatmap-table">
 
-      <pv-column field="hour" :header="$t('attendance.hour-day')" :style="{width: '70px'}" class="hour-column-header" aria-sort="none">
+      <pv-column field="hour" :header="$t('attendance.hour-day')" :style="{width: '70px'}" class="hour-column-header"
+                 aria-sort="none">
         <template #body="slotProps">
           <div class="hour-cell-content" role="gridcell" aria-label="Hour: {{ slotProps.data.hour }}">
             {{ slotProps.data.hour }}
@@ -116,14 +182,14 @@ export default {
         </template>
       </pv-column>
 
-      <!-- Day columns dynamically created from daysConfig with ARIA roles for grid and cells -->
       <pv-column v-for="day in daysConfig"
                  :key="day.keyForColumn"
                  :field="day.keyForColumn"
                  :header="day.header"
                  aria-label="Attendance for {{ day.header }}">
         <template #body="slotProps">
-          <div class="heatmap-cell" :style="{ backgroundColor: getCellColor(slotProps.data[day.keyForColumn]) }" role="gridcell" aria-label="Attendance value: {{ slotProps.data[day.keyForColumn] }}">
+          <div class="heatmap-cell" :style="{ backgroundColor: getCellColor(slotProps.data[day.keyForColumn]) }"
+               role="gridcell" aria-label="Attendance value: {{ slotProps.data[day.keyForColumn] }}">
                     <span v-if="slotProps.data[day.keyForColumn] > 0">
                         {{ slotProps.data[day.keyForColumn] }}
                     </span>
@@ -140,7 +206,7 @@ export default {
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
 }
@@ -181,8 +247,8 @@ export default {
 }
 
 .heatmap-cell:hover {
-  transform: scale(1.02 );
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 10;
   cursor: pointer;
   position: relative;

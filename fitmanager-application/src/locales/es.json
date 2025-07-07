@@ -59,7 +59,6 @@
     "itemTypeDescription_tooLong": "La descripción del tipo de ítem debe tener menos de 200 caracteres.",
     "itemTypeName_taken": "El nombre del tipo de ítem ya está en uso.",
     "itemType_server_error": "Ocurrió un error al crear el tipo de ítem. Intenta nuevamente.",
-    "expiration_required": "La fecha de expiración es obligatoria.",
     "required": "Este campo es obligatorio",
     "validation.name_required": "El nombre de la clase es obligatorio.",
     "validation.type_required": "El tipo de clase es obligatorio.",
@@ -76,8 +75,9 @@
     "trainer_id_required": "El entrenador es obligatorio",
     "status_required": "El estado es obligatorio",
     "description_required": "La descripción es obligatoria",
-    "capacity_required": "La capacidad es obligatoria"
-
+    "capacity_required": "La capacidad es obligatoria",
+    "employee_required": "El empleado es obligatorio",
+    "next_maintenance_date_required": "La siguiente fecha de mantenimiento es requerida"
   },
   "clearfilters": "Limpiar Filtros",
   "profile": {
@@ -154,7 +154,9 @@
     "search": "Buscar",
     "close": "Cerrar",
     "create": "Crear",
-    "confirm": "Confirmar"
+    "confirm": "Confirmar",
+    "error-loading-info": "Error al cargar la información financiera.",
+    "error": "Error"
   },
   "dashboard": {
     "chart-title": "Asistencia de hoy por hora",
@@ -290,9 +292,13 @@
     "status": "Estado",
     "add-maintenance-and-trainer": "Editar ítem",
     "select-next-maintenance-date": "Seleccionar fecha de próximo mantenimiento",
-    "not-found": "No encontrado"
+    "not-found": "No encontrado",
+    "select-employee": "Selecciona empleado",
+    "enter-status": "Estado",
+    "assigned-employee": "Empleado a cargo"
   },
   "finances": {
+    "financial-overview": "Resumen Financiero",
     "profit": "Ganancia",
     "income": "Ingresos",
     "expenses": "Gastos",
@@ -317,7 +323,32 @@
     "concept": "Concepto",
     "amount": "Monto",
     "currency": "Moneda",
-    "search": "Búsqueda por palabra clave"
+    "search": "Búsqueda por palabra clave",
+    "avg-monthly-expenses": "Gastos Mensuales Promedio",
+    "projected-profit": "Ganancia Proyectada",
+    "projected-income": "Ingresos Proyectados",
+    "projected-expenses": "Gastos Proyectados",
+    "period": "Período",
+    "membership-income-overview-last-4-months": "Resumen de ingresos por membresías (últimos 4 meses)",
+    "no-membership-income-data-available": "No hay datos de ingresos por membresías disponibles.",
+    "error-fetching-chart-data": "Error al cargar los datos del gráfico.",
+    "loading-chart-data": "Cargando datos del gráfico...",
+    "no-data-to-display": "No hay datos para mostrar.",
+    "income-from-monthly-memberships": "Ingresos por membresías mensuales",
+    "income-from-quarterly-memberships": "Ingresos por membresías trimestrales",
+    "income-from-yearly-memberships": "Ingresos por membresías anuales",
+    "jan": "Enero",
+    "feb": "Febrero",
+    "mar": "Marzo",
+    "apr": "Abril",
+    "may": "Mayo",
+    "jun": "Junio",
+    "jul": "Julio",
+    "aug": "Agosto",
+    "sep": "Septiembre",
+    "oct": "Octubre",
+    "nov": "Noviembre",
+    "dec": "Diciembre"
   },
   "attendance": {
     "weekly-heatmap": "Mapa de calor semanal",
@@ -334,12 +365,18 @@
     "weekly-summary": "Resumen semanal",
     "total-weekly-attendance": "Asistencia semanal total",
     "historical-summary": "Resumen histórico",
+    "loading-historical-summary": "Cargando resumen histórico...",
+    "total-records": "Total de registros de asistencia",
+    "unique-attended-days": "Días únicos con asistencia",
     "average-daily-attendance": "Promedio diario de asistencia",
+    "peak-hour-average": "Hora pico promedio de asistencia",
+    "highest-attendance": "Mayor asistencia en un solo día",
+    "lowest-attendance": "Menor asistencia en un solo día",
+    "most-popular-class": "Clase más popular",
+    "least-popular-class": "Clase menos popular",
+    "no-historical-data-available": "No hay datos históricos disponibles.",
     "average-daily-absences": "Promedio diario de ausencias",
     "overall-attendance": "Asistencia general",
-    "peak-hour-average": "Promedio en hora pico",
-    "highest-attendance": "Mayor asistencia",
-    "lowest-attendance": "Menor asistencia",
     "most-frequent-user": "Usuario más frecuente"
   },
   "notification": {

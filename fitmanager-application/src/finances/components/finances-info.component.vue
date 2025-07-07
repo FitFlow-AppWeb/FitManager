@@ -2,84 +2,239 @@
 /**
  * General Information Component
  *
- * This component fetches and displays financial data for a specific month (April by default) and provides projected data for the
- * target year (2025). The data includes earnings, income, and expenses for the current month, as well as projected information for
- * the target year. The component fetches the data asynchronously using a service (`GeneralInfoApiService`). It displays the data in
- * a formatted currency style and handles loading and error states. If no data is available, a "no data" message is shown.
+ * This component fetches and displays financial data from granular API services
+ * (Membership Payments, Salary Payments, Supply Purchases) for the current month and
+ * provides aggregated and projected data for the current target year.
+ * It calculates earnings, income, and expenses, including a breakdown of membership income
+ * by type (monthly, quarterly, yearly subscriptions).
+ * The component handles loading and error states and displays data in formatted currency.
  *
  * Author: Renzo Luque
  */
+  import { MembershipPaymentApiService } from "../services/membership-payment-api.service.js";
+  import { SalaryPaymentApiService } from "../services/salary-payment-api.service.js";
+  import { SupplyPurchaseApiService } from "../services/supply-purchase-api.service.js";
+  import { MemberApiService } from "../../members/services/member-api.service.js";
 
-import { GeneralInfoApiService } from "../services/general-info-api.service.js"; // Verifies this path
-
-export default {
+  export default {
   name: "GeneralInfoComponent",
   data() {
-    return {
-      aprilInfo: null,
-      projectedInfo: null,
-      isLoading: true,
-      error: null,
-      targetMonth: "April",
-      displayMonth: "April",
-      targetYear: 2025,
-    };
-  },
+  const today = new Date();
+  const currentMonthIndex = today.getMonth();
+
+  return {
+  monthlyInfo: null,
+  projectedInfo: null,
+  isLoading: true,
+  error: null,
+  targetMonthIndex: currentMonthIndex,
+  displayMonthKey: `finances.${['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'][currentMonthIndex]}`,
+  targetYear: today.getFullYear(),
+
+  membershipPaymentService: null,
+  salaryPaymentService: null,
+  supplyPurchaseService: null,
+  memberApiService: null,
+
+  allMembershipPayments: [],
+  allSalaryPayments: [],
+  allSupplyPurchases: [],
+  membersMap: new Map(),
+};
+},
   async created() {
-    this.fetchInfo();
-  },
+  this.membershipPaymentService = new MembershipPaymentApiService();
+  this.salaryPaymentService = new SalaryPaymentApiService();
+  this.supplyPurchaseService = new SupplyPurchaseApiService();
+  this.memberApiService = new MemberApiService();
+
+  await this.fetchAndAggregateInfo();
+},
+  computed: {
+  translatedDisplayMonth() {
+  return this.$t(this.displayMonthKey);
+}
+},
   methods: {
-    async fetchInfo() {
-      this.isLoading = true;
-      this.error = null;
-      const apiService = new GeneralInfoApiService();
-      try {
-        const data = await apiService.getFinancialData();
-        this.aprilInfo = data.monthly?.find(
-            (item) => item.month === this.targetMonth && item.year === this.targetYear
-        ) || null;
-        this.projectedInfo = data.overall || null;
-      } catch (err) {
-        this.error = "Could not load info.";
-        console.error(err);
-      } finally {
-        this.isLoading = false;
-      }
-    },
-    formatCurrency(value) {
-      if (typeof value !== 'number') return 'S/. ---';
-      return `S/.${Math.round(value)}`;
-    }
-  }
+  async fetchAndAggregateInfo() {
+  this.isLoading = true;
+  this.error = null;
+  try {
+  const [
+  membershipPayments,
+  salaryPayments,
+  supplyPurchases,
+  members
+  ] = await Promise.all([
+  this.membershipPaymentService.getAllMembershipPayments(),
+  this.salaryPaymentService.getAllSalaryPayments(),
+  this.supplyPurchaseService.getAllSupplyPurchases(),
+  this.memberApiService.getAllMembers(),
+  ]);
+
+  this.allMembershipPayments = membershipPayments;
+  this.allSalaryPayments = salaryPayments;
+  this.allSupplyPurchases = supplyPurchases;
+  members.forEach(member => this.membersMap.set(member.id, member));
+
+  this.monthlyInfo = this.calculateMonthlyInfo(this.targetYear, this.targetMonthIndex);
+
+  this.projectedInfo = this.calculateProjectedInfo(this.targetYear);
+
+} catch (err) {
+  this.error = this.$t('general.error-loading-info');
+  console.error("Error fetching or aggregating financial data:", err);
+} finally {
+  this.isLoading = false;
+}
+},
+
+  calculateMonthlyInfo(year, monthIndex) {
+  let totalIncome = 0;
+  let totalExpenses = 0;
+  let monthlyMembership = 0;
+  let quarterlyMembership = 0;
+  let annualMembership = 0;
+
+  const currentMonthPayments = this.allMembershipPayments.filter(p => {
+  const date = new Date(p.date);
+  return date.getFullYear() === year && date.getMonth() === monthIndex;
+});
+
+  currentMonthPayments.forEach(payment => {
+  const member = this.membersMap.get(payment.memberId);
+  if (member) {
+  totalIncome += payment.amount;
+  switch (member.membershipType) {
+  case 'Mensual':
+  monthlyMembership += payment.amount;
+  break;
+  case 'Trimestral':
+  quarterlyMembership += payment.amount;
+  break;
+  case 'Anual':
+  annualMembership += payment.amount;
+  break;
+}
+}
+});
+
+  const currentMonthSalaryExpenses = this.allSalaryPayments.filter(p => {
+  const date = new Date(p.date);
+  return date.getFullYear() === year && date.getMonth() === monthIndex;
+});
+  currentMonthSalaryExpenses.forEach(p => totalExpenses += p.amount);
+
+  const currentMonthSupplyExpenses = this.allSupplyPurchases.filter(p => {
+  const date = new Date(p.date);
+  return date.getFullYear() === year && date.getMonth() === monthIndex;
+});
+  currentMonthSupplyExpenses.forEach(p => totalExpenses += p.amount);
+
+  const earnings = totalIncome - totalExpenses;
+
+  return {
+  month: this.translatedDisplayMonth,
+  year: year,
+  earnings: earnings,
+  total_income: totalIncome,
+  total_expenses: totalExpenses,
+  membership_income_breakdown: {
+  monthly: monthlyMembership,
+  quarterly: quarterlyMembership,
+  annual: annualMembership,
+},
+};
+},
+
+  calculateProjectedInfo(year) {
+  let totalIncomeYear = 0;
+  let totalExpensesYear = 0;
+  let monthsProcessed = 0;
+
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+
+  this.allMembershipPayments.forEach(payment => {
+  const date = new Date(payment.date);
+  if (date.getFullYear() === year && date.getMonth() <= currentMonth) {
+  totalIncomeYear += payment.amount;
+}
+});
+
+  this.allSalaryPayments.forEach(payment => {
+  const date = new Date(payment.date);
+  if (date.getFullYear() === year && date.getMonth() <= currentMonth) {
+  totalExpensesYear += payment.amount;
+}
+});
+
+  this.allSupplyPurchases.forEach(purchase => {
+  const date = new Date(purchase.date);
+  if (date.getFullYear() === year && date.getMonth() <= currentMonth) {
+  totalExpensesYear += purchase.amount;
+}
+});
+
+  monthsProcessed = currentMonth + 1;
+
+  let averageMonthlyExpenses = 0;
+  if (monthsProcessed > 0) {
+  averageMonthlyExpenses = totalExpensesYear / monthsProcessed;
+}
+
+  const remainingMonths = 12 - monthsProcessed;
+  const projectedExpenses = totalExpensesYear + (averageMonthlyExpenses * remainingMonths);
+
+  const averageMonthlyIncome = totalIncomeYear / monthsProcessed;
+  const projectedIncome = totalIncomeYear + (averageMonthlyIncome * remainingMonths);
+  const projectedEarnings = projectedIncome - projectedExpenses;
+
+
+  return {
+  period_covered: year,
+  average_monthly_expenses: averageMonthlyExpenses,
+  earnings_2025: projectedEarnings,
+  income_2025: projectedIncome,
+  expenses_2025: projectedExpenses,
+};
+},
+
+  formatCurrency(value) {
+  if (typeof value !== 'number' || isNaN(value)) return 'S/. ---';
+  return `S/.${Math.round(value)}`;
+}
+}
 };
 </script>
 
 <template>
   <div class="info-container">
-    <h3>Financial Overview</h3>
+    <h3>{{ $t('finances.financial-overview') }}</h3>
     <div v-if="isLoading" class="message" aria-live="polite">{{ $t('general.loading') }}...</div>
     <div v-if="error" class="message error" aria-live="assertive">{{ error }}</div>
 
-    <div v-if="!isLoading && !error && (aprilInfo || projectedInfo)" class="info-card">
-      <template v-if="aprilInfo">
-        <p>{{ $t('finances.profit') }} {{ displayMonth }}: <span>{{ formatCurrency(aprilInfo.earnings) }}</span></p>
-        <p>{{ $t('finances.income')}} {{ displayMonth }}: <span>{{ formatCurrency(aprilInfo.total_income) }}</span></p>
-        <p>{{ $t('finances.expenses') }} {{ displayMonth }}: <span>{{ formatCurrency(aprilInfo.total_expenses) }}</span></p>
-        <p v-if="aprilInfo.membership_income_breakdown">{{ displayMonth }} {{ $t('finances.monthly-subs') }}: <span>{{ formatCurrency(aprilInfo.membership_income_breakdown.monthly) }}</span></p>
-        <p v-if="aprilInfo.membership_income_breakdown">{{ displayMonth }} {{ $t('finances.quarterly-subs') }}: <span>{{ formatCurrency(aprilInfo.membership_income_breakdown.quarterly) }}</span></p>
-        <p v-if="aprilInfo.membership_income_breakdown">{{ displayMonth }} {{ $t('finances.yearly-subs') }}: <span>{{ formatCurrency(aprilInfo.membership_income_breakdown.annual) }}</span></p>
+    <div v-if="!isLoading && !error && (monthlyInfo || projectedInfo)" class="info-card">
+      <template v-if="monthlyInfo">
+        <p>{{ $t('finances.profit') }} {{ translatedDisplayMonth }}: <span>{{ formatCurrency(monthlyInfo.earnings) }}</span></p>
+        <p>{{ $t('finances.income')}} {{ translatedDisplayMonth }}: <span>{{ formatCurrency(monthlyInfo.total_income) }}</span></p>
+        <p>{{ $t('finances.expenses') }} {{ translatedDisplayMonth }}: <span>{{ formatCurrency(monthlyInfo.total_expenses) }}</span></p>
+        <p v-if="monthlyInfo.membership_income_breakdown">{{ translatedDisplayMonth }} {{ $t('finances.monthly-subs') }}: <span>{{ formatCurrency(monthlyInfo.membership_income_breakdown.monthly) }}</span></p>
+        <p v-if="monthlyInfo.membership_income_breakdown">{{ translatedDisplayMonth }} {{ $t('finances.quarterly-subs') }}: <span>{{ formatCurrency(monthlyInfo.membership_income_breakdown.quarterly) }}</span></p>
+        <p v-if="monthlyInfo.membership_income_breakdown">{{ translatedDisplayMonth }} {{ $t('finances.yearly-subs') }}: <span>{{ formatCurrency(monthlyInfo.membership_income_breakdown.annual) }}</span></p>
       </template>
 
-      <hr v-if="aprilInfo && projectedInfo" />
+      <hr v-if="monthlyInfo && projectedInfo" />
 
       <template v-if="projectedInfo">
-        <p>{{ $t('finances.expenses') }} {{ projectedInfo.period_covered }}: <span>{{ formatCurrency(projectedInfo.average_monthly_expenses) }}</span></p>
-        <p>{{ $t('finances.profits') }} {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.earnings_2025) }}</span></p>
-        <p>{{ $t('finances.income') }} {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.income_2025) }}</span></p>
-        <p>{{ $t('finances.expenses') }} {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.expenses_2025) }}</span></p>
+        <p>{{ $t('finances.avg-monthly-expenses') }}: <span>{{ formatCurrency(projectedInfo.average_monthly_expenses) }}</span></p>
+        <p>{{ $t('finances.projected-profit') }} {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.earnings_2025) }}</span></p>
+        <p>{{ $t('finances.projected-income') }} {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.income_2025) }}</span></p>
+        <p>{{ $t('finances.projected-expenses') }} {{ targetYear }}: <span>{{ formatCurrency(projectedInfo.expenses_2025) }}</span></p>
       </template>
     </div>
-    <div v-if="!isLoading && !error && !aprilInfo && !projectedInfo" class="message">
+    <div v-if="!isLoading && !error && !monthlyInfo && !projectedInfo" class="message">
       {{ $t('no-data') }}.
     </div>
   </div>

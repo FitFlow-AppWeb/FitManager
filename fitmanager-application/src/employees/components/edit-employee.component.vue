@@ -11,7 +11,6 @@
  *
  * Author: Cassius Martel
  */
-import axios from "axios";
 import { EmployeeApiService } from "../services/employee-api.service.js";
 import api from '../../login/services/api.js';
 

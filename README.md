@@ -3359,6 +3359,100 @@ Ejemplo de tareas y descripción de una historia
 
 #### 5.2.4.4. Development Evidence for Sprint Review
 
+- Commits del repositorio de Web Services:
+
+| Repository | Branch | Commit Id | Commit message | Committed on (Date) |
+|---|---|---|---|---|
+| FitManager-Web-Services | refactor/member2 | 0e2e85850bc612e713dcc18f8c567d61963484b9 | Configure CORS to allow frontend connection | July 1, 2025 |
+| FitManager-Web-Services | refactor/member2 | 0fcc40f53c266a5d16ecdd07b78132f2fecdbaee | Improve backend-frontend integration for member module | July 1, 2025 |
+| FitManager-Web-Services | refactor/member2 | dd57ccf56f8f42b9f274d17570fd9d2e2fd748e4 | Add backend-frontend integration | July 1, 2025 |
+| FitManager-Web-Services | refactor/member2 | 6ec284b317d26a4e696dbdbde6e8a812752df929 | Adjust backend for improved frontend integration | July 2, 2025 |
+| FitManager-Web-Services | feature/translate-api-mssages | 9326393dc80feacc6eb1dae62ba5e807790fbda8 | feat(i18n): add localized messages to controllers for Classes, Employees, Finances, Inventory, Members, Notifications and added Resources directory | July 4, 2025 |
+| FitManager-Web-Services | feature/user | f72af30c472560cbc59d48a9b1f29867faab4301 | feat(users): implement user commands and queries for user management | July 4, 2025 |
+| FitManager-Web-Services | feature/user | db2b29caaf01c4c9b8dbad2edebb8171cfda5cb0 | feat(users): add user creation and update resources and command assemblers | July 4, 2025 |
+| FitManager-Web-Services | feature/user | 1e153d07361caf437c9acf03ce9e75ca54226ca2 | feat(users): implement user command and query services for user management | July 4, 2025 |
+| FitManager-Web-Services | feature/user | ba1afc51d4c5f07dff50fbc62cf0d183ad2af94b | feat(users): add UserRepository for data access and retrieval by email | July 4, 2025 |
+| FitManager-Web-Services | feature/user | 57c53e1f588a11904fa2a24274c25054a697582e | feat(users): add Users DbSet to AppDbContext for user data management | July 4, 2025 |
+| FitManager-Web-Services | develop | f488b71566fcf67bccd937d568338f755dca896a | Merge pull request #1 from FitFlow-AppWeb/feature/user | July 4, 2025 |
+| FitManager-Web-Services | feature/user | dc33a6ba1f0f069cc05d395ea77efe484d151fa9 | refactor(users): remove obsolete user command, query services, and related models | July 4, 2025 |
+| FitManager-Web-Services | feature/user | 2c01a39c864ec9f43755ad98b24d7e8e00d28b2a | feat(users): implement UserCommandService and UserQueryService for user management operations | July 4, 2025 |
+| FitManager-Web-Services | feature/user | 3f0bd106776a9d7b5e922e9b35f68a278d148bf3 | feat(users): implement user management features including commands and queries for user creation, deletion, and updates; add authentication services and middleware; update configuration for JWT; enhance user repository and transformation logic | July 4, 2025 |
+| FitManager-Web-Services | feature/IAM | 1a1919c35ac9f042795ef3cf32544cba1dd71b08 | feat(auth): add JWT authentication middleware and services; implement AllowAnonymous attribute, RequestAuthorizationMiddleware, TokenService, UserRepository, and TokenSettings for user authentication management | July 4, 2025 |
+| FitManager-Web-Services | feature/IAM | 36f12753bda1e85035997fcf516a962b9adfec6f | feat(auth): implement authentication and user management controllers, resources, and command assemblers | July 4, 2025 |
+| FitManager-Web-Services | feature/IAM | 7ac0015ff44f4cc6fad855fc6a8c7e2d6437ad5f | feat(IAM): add folder structure for command/query services and repositories; configure JWT settings in appsettings | July 4, 2025 |
+| FitManager-Web-Services | feature(User) | c4cdc3f6ecf3f0a95a64555b1df301d1eb957a4f | fix(User): correct namespace for User aggregate to align with IAM domain structure | July 4, 2025 |
+| FitManager-Web-Services | feature/IAM | ce52c1010900a0c03d9c03b53d2a2408f3907205 | refactor(IAM): update namespaces and restructure user-related services and resources for consistency across the IAM module | July 4, 2025 |
+| FitManager-Web-Services | feature/IAM | 9a72d667c978d6aa3e88b58af783a2bc49c127c3 | refactor(IAM): update service registrations and namespaces for IAM integration; add JWT package reference | July 4, 2025 |
+| FitManager-Web-Services | develop | 19f85a49b5840800ace4f732e0b53f07b85d80b3 | Merge pull request #2 from Fitlow-AppWeb/feature/IAM | July 4, 2025 |
+| FitManager-Web-Services | refactor/booking-service | d8e63c2efec761223c9fe619ad3a67503d427151 | feat(bookings): add POST endpoint to create class bookings by members, also translation was applied | July 5, 2025 |
+| FitManager-Web-Services | develop | c365d9dc2ea1337b203f3cec25436f83b622a81a | Merge branch ‘feature/translate-api-messages’ of https://github.com/FitFlow-AppWeb/FitManager-Web-Services into feature/translate-api-messages | July 5, 2025 |
+| FitManager-Web-Services | feature/IAM | fd17db798c77c7c7bf86f47c26567b3a1be09212 | Implement JWT login and protect secured endpoints | July 5, 2025 |
+| FitManager-Web-Services | feature/translate-api-services | 730e765bef238aaef8c60a6479e4bde0bf3d1ec6 | feat(i18n): add localization to UsersController and AuthenticationController | July 5, 2025 |
+| FitManager-Web-Services | refactor/booking-service | 45eaaaa074f7f71247dc4d94621dcec3487d77b1 | Implement class booking and refine member data projection | July 6, 2025 |
+| FitManager-Web-Services | refactor/booking-service | c3e9613794699e3c9a3f1947344b1c5fdf594720 | Update inventory backend logic | July 6, 2025 |
+| FitManager-Web-Services | develop | e485517271cb255b35a0affa0f80227f1b3a4b41 | Merge branch ‘develop’ of https://github.com/FitFlow-AppWeb/FitManager-Web-Services into develop | July 6, 2025 |
+| FitManager-Web-Services | develop | 5de8c547882053d5e15a2514aab9d708a5655595 | Fix merge error | July 6, 2025 |
+| FitManager-Web-Services | refactor/attendance | 133833d81f77986bf90e1c7375a0a905e97c04e8 | Add get attendance endpoint | July 6, 2025 |
+| FitManager-Web-Services | develop | 857d34eee0ffee751e2968fb5fbf7f46db451bce | Merge branch ‘refactor/attendance’ into develop | July 6, 2025 |
+| FitManager-Web-Services | feature/translate-api-messages | 017554612455b05b9723e59ca111d38b12affb78 | Add new backend translations for item type | July 6, 2025 |
+| FitManager-Web-Services | feature/translate-api-messages | 205d2daa28e25139579d71796f93841ab81515bd | Fix Localization implementation | July 6, 2025 |
+| FitManager-Web-Services | feature/translate-api-messages | 9d989c6670164fb68b846a9bd3ab956d30aea8ef | Add backend translations | July 6, 2025 |
+| FitManager-Web-Services | feature/class-attendance | 2c00a7d2d0f5fbc4604d68332e17c457cb4882b2 | Fix class member post | July 6, 2025 |
+| FitManager-Web-Services | develop | c35c4f36c02e1ed330a056cf57751ca250ed92dd | Merge branch ‘develop’ of https://github.com/FitFlow-AppWeb/FitManager-Web-Services into develop | July 6, 2025 |
+| FitManager-Web-Services | develop | 3890b8eabf58da2921765db69cb1c34688bbe1ab | Repost accident | July 6, 2025 |
+| FitManager-Web-Services | develop | 9917d60b50b136c9a8bf5ac5f20f7f32963bfb81 | Fix item post endpoint | July 6, 2025 |
+| FitManager-Web-Services | develop | 6cabcfaf4d94adb75c3fa147fe95b5c7299afb54 | Merge branch ‘develop’ of https://github.com/FitFlow-AppWeb/FitManager-Web-Services into develop | July 6, 2025 |
+| FitManager-Web-Services | feature/class-attendance | 96d6b8d4c094c9032d3cedf583a4eec91ef7d49c | Validate user parameters | July 7, 2025 |
+| FitManager-Web-Services | develop | 92e8416ea15357d5495c5cb8689c8e51a0e65a87 | Merge branch ‘feature/class-attendance’ into develop | July 7, 2025 |
+| FitManager-Web-Services | develop | 3f05ed82b7cc5f9aa76195162b0314aef29d4570 | Add GET all endpoint for attendances | July 7, 2025 |
+| FitManager-Web-Services | develop | 45aaf0d245d045db35941d4876c5a03cd2624882 | Allow Firebase frontend in CORS policy | July 7, 2025 |
+| FitManager-Web-Services | develop | 465723f163c3445843a0e5617b744a5e4e0cc3a9 | Delete unnecessary endpoints | July 7, 2025 |
+| FitManager-Web-Services | develop | 9e9eb40f780540bd0348ff5e34dd7ed07c37d787 | Add firebase integration | July 7, 2025 |
+
+- Commits del repositorio de Web Application:
+
+| Repository | Branch | Commit Id | Commit message | Committed on (Date) |
+|---|---|---|---|---|
+| FitManager | develop | a350881a6cc26fad5fb54b06ee03f9d83af5e5ea | Integrate full CRUD with backend API | July 1, 2025 |
+| FitManager | develop | 571ea527e7242fa0aa20ae8432f9eb65d632e9a3 | Change i18n json | July 1, 2025 |
+| FitManager | feature/employees-integration | 676a71e32fedb564d2c35034f1758b5130a5037d | Fully integrate employee section with backend API | July 2, 2025 |
+| FitManager | feature/classes-integration | 9d1e21fa52b8b877e5724de88fb34d1e78b21d33 | feat(classes): add reactive validations with i18n and fetch classes from backend | July 5, 2025 |
+| FitManager | feature/classes-integration | a7b92f06314f66795e57451a7d1669ebbd7a3666 | Normalize membership types and payments response handling | July 5, 2025 |
+| FitManager | feature/classes-integration | 45719d803dffe2e400283323e06c94e25cf0600c | Improve classes | July 5, 2025 |
+| FitManager | feature/classes-integration | cb4c69c3e43f2b9be263f0ccdc724e8b95ffe3d3 | Add login logic to classes | July 5, 2025 |
+| FitManager | feature/classes-integration | f4d624c2bd8a8487066abe8fb973afd1211e3422 | Validate backend response to prevent duplicated rows and rendering errors | July 5, 2025 |
+| FitManager | feature/calendar-integration | 0ff54269cad099d2c553ca365ce92b6930eb4321 | Integrate calendar component with backend | July 6, 2025 |
+| FitManager | refactor/feature-login-register | e04b1eee70cb06dca43aed1a325676d5f2d952dc | refactor(router): streamline route definitions and add authentication checks | July 6, 2025 |
+| FitManager | refactor/feature-login-register | 16fbacd29c8e3bd96550b85d115e12fe72961ec7 | feat(auth): implement registration and enhance login functionality | July 6, 2025 |
+| FitManager | refactor/sign-up-form | 64297250500db47ee42c2082e5b4457166d9a002 | feat(auth): add AuthUser entity and authentication service for sign-in and sign-up | July 6, 2025 |
+| FitManager | refactor/sign-up-form | 5fd6b436a86aa7e008908c75f98444c96e58e012 | feat(auth): add AuthUser entity and authentication service for sign-in and sign-up | July 6, 2025 |
+| FitManager | refactor/sign-up-form | 8707b647019bf1928725b63b2c7e5c8f116dbfaf | Improve login api | July 6, 2025 |
+| FitManager | feature/inventory-integration | 812adb58ba0df1c1f037e23ddd5686810f686a29 | Integrate backend to inventory frontend | July 6, 2025 |
+| FitManager | feature/inventory-integration | 801e5391f15dd361764715f518b40d59b8d40798 | Merge branch ‘main’ of https://github.com/FitFlow-AppWeb/FitManager into feature/inventory-integration | July 6, 2025 |
+| FitManager | feature/inventory-integration | f4c2479ec5a006f457bef0dbadf2e8440be90304 | Fix locales typo | July 6, 2025 |
+| FitManager | feature/dashboard-integration | 5ddd0295a3cb8335ada802b641d95231dcccff14 | Integrate dashboard components with backend | July 6, 2025 |
+| FitManager | develop | 513663bb673daf05f93f64d12aafcc7f9c9b6fa7 | Merge branch ‘refactor/dashboard-integration’ | July 6, 2025 |
+| FitManager | develop | 467f25759523ecc9e258fba317a07736c1405531 | Fix api calls | July 6, 2025 |
+| FitManager | feature/class-member-integration | 2b45e1b504728df20ff28766b63aebffde583be3 | Integrate view-members component with backend | July 6, 2025 |
+| FitManager | refactor/feature-login-register | 5fdb583f952055a2777aed293cd4b249979b620f | feat(register): enhance registration form with snackbar notifications and validation | July 6, 2025 |
+| FitManager | develop | 3d61e89ea9717642dc4681d4dd1f642201811a56 | Merge pull request #1 FitFlow-AppWeb/refactor/feature-login-register | July 6, 2025 |
+| FitManager | feature/dashboard-integration | 2be857b7002cddea8c0cf5fd5d8a424f174a44c8 | Backend Integration for finances | July 6, 2025 |
+| FitManager | feature/dashboard-integration | 0a18ae55f5dc4b3b9ab8f0129deaa2bc8433f6b0 | Implement i18n | July 6, 2025 |
+| FitManager | feature/dashboard-integration | 5ca6246388ed5690ac6fd9322a259904ded9096c | Change graphic data organization | July 6, 2025 |
+| FitManager | feature/dashboard-integration | 7a94dee747f63ffe64222701a53eeb7437677dab | Fix filter layout | July 6, 2025 |
+| FitManager | refactor/feature-login-register | 8416e8f4e6abbcbab1186420d1190140404a3fc2 | Integrate profile with backend | July 7, 2025 |
+| FitManager | develop | d23711cdbfd99793bb9c3b842994de18ef67c13b | Merge branch ‘feature/class-attendance’ | July 7, 2025 |
+| FitManager | develop | fc77a307c504ef746543d2ba2df7aed239536315 | Merge branch ‘main’ of https://github.com/FitFlow-AppWeb/FitManager into develop | July 7, 2025 |
+| FitManager | feature/dashboard-integration | a54f1a9d696db8f6d834f51fe081208bafc9964f | Add dashboard routing | July 7, 2025 |
+| FitManager | feature/class-attendance | 2bea0bc94e35bfb6ccf393666e795760b75571ec | Integrate backend to attendance | July 7, 2025 |
+| FitManager | feature/notification-integration2 | 7d012691fb582d652f11326f9324a515da4f9285 | Add backend integration to notifications | July 7, 2025 |
+| FitManager | develop | d4f96f975cbc2fa1e351c6714b0fba5eb5e4b326 | Merge branch ‘feature/notification-integration2’ into develop | July 7, 2025 |
+| FitManager | develop | a43ad00b78e667e246f75e13e4b8ddde0ee8d118 | Implement API error interceptor for authentication | July 7, 2025 |
+| FitManager | develop | 1525d82ec43ca442cc2372fbb01dfd904e1e83b3 | Merge branch ‘main’ of https://github.com/FitFlow-AppWeb/FitManager | July 7, 2025 |
+| FitManager | develop | 1285b04715349d7f6296c594a13847e090aa619a | Merge branch ‘main’ of https://github.com/FitFlow-AppWeb/FitManager into develop | July 7, 2025 |
+| FitManager | main | 73340e5ade9f3efaaf31bd7eb80a998b7655bae2 | Deploy application with firebase | July 7, 2025 |
+| FitManager | main | 5e3026e8f7edbf0186bc19674f60267dadb1cc7f | Fix typo redeploy into firebase | July 7, 2025 |
+
 #### 5.2.4.5. Execution Evidence for Sprint Review.
 
 En el Sprint 4, el enfoque principal se trasladó a la integración integral entre el frontend y el backend, consolidando la funcionalidad de la aplicación. Se estableció una comunicación fluida entre la interfaz de usuario desarrollada en Vue.js y la API RESTful expuesta en el Sprint 3, asegurando que las operaciones de los seis Bounded Contexts (Classes, Employees, Finances, Inventory, Members y Notifications) fueran accesibles y funcionales desde el lado del cliente. Este proceso incluyó la configuración de la política CORS para permitir la interacción entre el frontend desplegado en Firebase y el backend, la implementación de un sistema de autenticación JWT robusto para proteger las rutas y asegurar la sesión del usuario, y la creación de servicios HTTP en el frontend con interceptores de respuesta para manejar errores de autenticación y redirigir al login automáticamente. La culminación de esta fase fue una aplicación cohesiva donde el frontend consume eficientemente los datos y servicios proporcionados por el backend, ofreciendo una experiencia de usuario completa y segura.

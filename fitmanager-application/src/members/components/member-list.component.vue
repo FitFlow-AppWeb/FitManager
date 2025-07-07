@@ -9,7 +9,7 @@
  * Author: Cassius Martel
  */
 import {Select as PvSelect} from "primevue";
-import axios from "axios";
+import api from '../../login/services/api.js';
 import { MemberApiService } from '../services/member-api.service.js';
 
 
@@ -359,7 +359,6 @@ export default {
   z-index: 10;
   width: 350px !important;
   max-width: 90vw;
-  right: 0;
   left: auto !important;
 }
 

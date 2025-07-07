@@ -134,7 +134,7 @@ export default {
       <span class="value" aria-live="polite">{{ currentUser.email }}</span>
     </div>
     <div class="info-row">
-      <span class="label" aria-label="Password">{{ $t('profile,settings.password') }}:</span>
+      <span class="label" aria-label="Password">{{ $t('profile.settings.password') }}:</span>
       <span class="value" aria-live="polite">*********************</span>
     </div>
     <div class="info-row">
