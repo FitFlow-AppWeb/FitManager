@@ -13,10 +13,23 @@ export default {
       subscription: '',
       error: null,
       success: null,
+      showSnackbar: false,
+      snackbarMessage: '',
+      snackbarType: '',
     };
   },
   methods: {
+    showSnack(message, type) {
+      this.snackbarMessage = message;
+      this.snackbarType = type;
+      this.showSnackbar = true;
+      setTimeout(() => this.showSnackbar = false, 3000);
+    },
     async onSubmit() {
+      if (!this.email || !this.password || !this.icon || !this.subscription) {
+        this.showSnack('Missing items, complete the form', 'error');
+        return;
+      }
       this.error = this.success = null;
       try {
         const api = new AuthApiService();
@@ -26,13 +39,13 @@ export default {
           icon:         this.icon,
           subscription: this.subscription,
         });
-        this.success = 'Registration successful! Redirecting to login…';
-        // small delay before emit
+        // mostrar snackbar de éxito antes de emitir
+        this.showSnack('Registration successful! Redirecting to login…', 'success');
         setTimeout(() => this.$emit('registered'), 1000);
       } catch (err) {
         console.error(err);
-        this.error = err.response?.data?.message?.value
-            || 'Server error. Please try again.';
+        const msg = err.response?.data?.message?.value || 'Server error. Please try again.';
+        this.showSnack(msg, 'error');
       }
     },
   },
@@ -42,24 +55,30 @@ export default {
 
 <template>
   <div class="register-form-container">
-    <form @submit.prevent="onSubmit" class="register-form">
+    <form @submit.prevent="onSubmit" class="register-form" novalidate>
       <h2 class="register-title">Sign Up</h2>
       <label for="email">Email</label>
-      <input id="email" v-model="email" type="email" required />
+      <input id="email" v-model="email" type="email" />
 
       <label for="password">Password</label>
-      <input id="password" v-model="password" type="password" required />
+      <input id="password" v-model="password" type="password" />
 
       <label for="icon">Icon URL</label>
       <input id="icon" v-model="icon" type="text" placeholder="https://..." />
 
       <label for="subscription">Subscription</label>
-      <input id="subscription" v-model="subscription" type="text" />
+      <select id="subscription" v-model="subscription">
+        <option disabled value="">Please select a subscription</option>
+        <option value="Basic">Basic</option>
+        <option value="Advanced">Advanced</option>
+        <option value="Premium">Premium</option>
+      </select>
 
       <button type="submit">Sign Up</button>
 
-      <p v-if="error" class="error">{{ error }}</p>
-      <p v-if="success" class="success">{{ success }}</p>
+      <div v-if="showSnackbar" :class="['snackbar', snackbarType]">
+        {{ snackbarMessage }}
+      </div>
     </form>
   </div>
 </template>
@@ -100,7 +119,8 @@ export default {
   margin-top: 0.5em;
 }
 
-.register-form input {
+.register-form input,
+.register-form select {
   padding: 12px 14px;
   border: 1px solid #A7D1D2;
   border-radius: 8px;
@@ -110,7 +130,8 @@ export default {
   background: #f9f9f9;
 }
 
-.register-form input:focus {
+.register-form input:focus,
+.register-form select:focus {
   border-color: #7aa4a4;
   background: #fff;
 }
@@ -134,6 +155,23 @@ export default {
   border: 2px solid #8BB5B6;
 }
 
-.error   { color: #e74c3c; margin-top: 1em; text-align: center; }
-.success { color: #27ae60; margin-top: 1em; text-align: center; }
+.snackbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  padding: 14px 24px;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0.9;
+}
+.snackbar.error {
+  background-color: #e74c3c;
+}
+.snackbar.success {
+  background-color: #27ae60;
+}
 </style>
