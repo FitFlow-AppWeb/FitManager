@@ -67,7 +67,6 @@ router.beforeEach((to, from, next) => {
     if (to.meta.requiresAuth && !token) {
         return next({ name: 'Login' });
     }
-    // Si vamos a Login/Register pero YA hay token → Home
     if ((to.name === 'Login' || to.name === 'Register') && token) {
         return next({ name: 'Home' });
     }

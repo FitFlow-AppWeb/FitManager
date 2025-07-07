@@ -10,7 +10,7 @@
  */
 
 import { Data } from "../model/data.entity.js";
-import { useRouter, useRoute } from 'vue-router'; // Importar useRoute
+import { useRouter, useRoute } from 'vue-router';
 
 export default {
   name: "data-item.component",
@@ -21,9 +21,8 @@ export default {
 
   setup(props) {
     const router = useRouter();
-    const route = useRoute(); // Inicializar useRoute
+    const route = useRoute();
 
-    // Función para obtener el nombre de la ruta objetivo
     const getTargetRouteName = (title) => {
       switch (title) {
         case 'Total Members':
@@ -36,26 +35,23 @@ export default {
         case 'Revenue/Month':
           return 'Finances';
         default:
-          return 'Dashboard'; // Ruta por defecto
+          return 'Dashboard';
       }
     };
 
-    // Función para navegar a la sección
     const navigateToSection = () => {
       const routeName = getTargetRouteName(props.data.title);
       router.push({ name: routeName });
     };
 
-    // Propiedad computada para determinar si el data-item actual está activo
     const isActive = () => {
       const targetRouteName = getTargetRouteName(props.data.title);
-      // Compara el nombre de la ruta actual con el nombre de la ruta objetivo del data-item
       return route.name === targetRouteName;
     };
 
     return {
       navigateToSection,
-      isActive // Exponer isActive al template
+      isActive
     };
   }
 }
@@ -97,13 +93,13 @@ export default {
 /* Main card styling */
 .custom-card {
   background-color: #fff; /* White background */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow effect */
-  max-width: 250px; /* Maximum width of the card */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
   min-height: 80px;
-  margin: 1rem; /* Margin around the card */
-  transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Añade box-shadow a la transición */
-  border: 1px solid transparent; /* Define un borde transparente por defecto */
+  margin: 1rem;
+  transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid transparent;
 }
 
 /* Header styling */
@@ -125,14 +121,6 @@ export default {
   cursor: pointer;
 }
 
-/* Considera si el cursor pointer debe ir en .custom-card si el click es en la imagen o en todo el card */
-/* Si el click es en toda la tarjeta: */
-/* .custom-card {
-  cursor: pointer;
-}
-.custom-card-header .clickable-icon {
-  cursor: default; // Opcional para deshabilitar el cursor pointer extra en el ícono
-}
 
 /* Styling for the numbers section in the card */
 .numbers {
@@ -170,28 +158,19 @@ export default {
   align-items: center;
   justify-content: center;
   /* Animación */
-  transition: transform 0.5s ease-in-out; /* Transición para el efecto de escala */
+  transition: transform 0.5s ease-in-out;
 }
 
 .clickable-icon:hover {
-  transform: scale(1.1); /* Ligeramente más grande al hacer hover */
+  transform: scale(1.1);
   background-color: #a7d1d2;
 }
 
 .active-data-item {
-  /* Usar los colores exactos del sidebar para el estado activo */
-  background-color: #86a7a8; /* Color de fondo del item activo en el sidebar */
-  color: #222222; /* Color de texto si también quieres que cambie */
-  border: 1px solid #769798; /* Un borde sutil que combine con el color de fondo o el color de texto del sidebar */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle un poco de profundidad */
+  background-color: #86a7a8;
+  color: #222222;
+  border: 1px solid #769798;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Asegúrate de que estas variables CSS estén definidas en alguna parte de tu CSS global
-   o reemplaza los var() por los valores directos de color que usa tu sidebar.
-   Por ejemplo, si en tu sidebar usas directamente background-color: #ABCDEF; */
-/*
-:root {
-  --sidebar-active-bg-color: #e6f2ff;
-  --sidebar-active-border-color: #007bff;
-}
 </style>
