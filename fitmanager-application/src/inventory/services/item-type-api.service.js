@@ -14,7 +14,7 @@
 import axios from "axios";
 import { ItemTypeAssembler } from './item-type.assembler.js';
 
-const BASE_URL = "https://app-250707032508.azurewebsites.net";
+const BASE_URL = "http://localhost:7070";
 
 export class ItemTypeApiService {
     async getAllItemTypes() {

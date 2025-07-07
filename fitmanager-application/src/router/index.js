@@ -12,6 +12,7 @@
  * @type {import('vue-router').RouteRecordRaw[]}
  */
 import { createRouter, createWebHistory } from "vue-router";
+import { authApiService } from '../login/services/auth-api.service.js';
 
 import Layout      from "../public/components/app-layout.componet.vue";
 import Login       from "../login/components/login.component.vue";
@@ -28,11 +29,9 @@ import Notifications from '../notifications/components/notification.component.vu
 import Profile     from '../user/components/profile.component.vue';
 
 const routes = [
-    // Rutas públicas
     { path: '/login',    name: 'Login',    component: Login    },
     { path: '/register', name: 'Register', component: Register },
 
-    // Rutas protegidas dentro del Layout
     {
         path: '/',
         component: Layout,
@@ -52,7 +51,6 @@ const routes = [
         ]
     },
 
-    // Redirigir cualquier otra ruta al Home (o podrías usar un 404)
     { path: '/:catchAll(.*)', redirect: { name: 'Home' } }
 ];
 
@@ -62,14 +60,17 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    const token = localStorage.getItem('jwt');
-    // Si ruta protegida y NO hay token → Login
-    if (to.meta.requiresAuth && !token) {
+    const isAuthenticated = authApiService.isAuthenticated();
+
+    if (to.meta.requiresAuth && !isAuthenticated) {
+        console.log('Redirecting to Login: Protected route without valid token.');
         return next({ name: 'Login' });
     }
-    if ((to.name === 'Login' || to.name === 'Register') && token) {
+    if ((to.name === 'Login' || to.name === 'Register') && isAuthenticated) {
+        console.log('Redirecting to Home: Already logged in with valid token, trying to access Login/Register.');
         return next({ name: 'Home' });
     }
+    console.log('Continuing to route.');
     next();
 });
 

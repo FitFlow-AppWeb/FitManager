@@ -1,58 +1,52 @@
 <script>
-import {UserApiService} from '../services/user-api.service.js'; // Ajusta la ruta si es necesario
-// Importa los componentes de PrimeVue necesarios
+import { UserApiService } from '../services/user-api.service.js';
+import { authApiService } from '../../login/services/auth-api.service.js';
+
 import Dialog from 'primevue/dialog';
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
-import Toast from 'primevue/toast'; // Para las notificaciones
+import Toast from 'primevue/toast';
 
 export default {
-  name: 'AccountInfo', // Buen nombre para la información de la cuenta
+  name: 'AccountInfo',
   components: {
     'pv-dialog': Dialog,
     'pv-inputtext': InputText,
     'pv-button': Button,
     'pv-toast': Toast
   },
-  // Quitamos el prop 'user' porque este componente va a cargar su propio usuario
-  // o el componente padre (ProfileComponent) le pasará el usuario completo.
-  // Por simplicidad, haremos que este componente cargue su propio usuario directamente.
-  // Si prefieres que ProfileComponent le pase el 'user', avísame.
   data() {
     return {
-      currentUser: null, // Aquí se almacenará el usuario obtenido de la API
+      currentUser: null,
       userApiService: null,
-      displayEditDialog: false, // Controla la visibilidad del modal de edición
-      editableUser: { // Objeto para almacenar los datos que se están editando
+      displayEditDialog: false,
+      editableUser: {
         id: null,
         email: '',
-        password: '', // Contraseña (solo si el usuario la cambia)
-        icon: '',     // URL del icono/avatar
+        password: '',
+        icon: '',
         subscription: ''
       }
     };
   },
   created() {
     this.userApiService = new UserApiService();
-    this.fetchUserProfile(); // Llama a la función para obtener el perfil al crear el componente
+    this.fetchUserProfile();
   },
   methods: {
     async fetchUserProfile() {
       try {
-        // Obtener el ID del usuario desde localStorage (asumiendo que se guarda al iniciar sesión)
         const userId = localStorage.getItem('userId');
         if (!userId) {
-          console.error("User ID not found in localStorage. Cannot fetch profile.");
-          // Opcional: Redirigir al login si no hay ID de usuario
+          console.error("User ID not found in localStorage. Cannot fetch profile. Redirecting to Login.");
           this.$router.push({ name: 'Login' });
           return;
         }
         this.currentUser = await this.userApiService.getUserById(parseInt(userId));
-        // Inicializar editableUser con los datos actuales del usuario para el formulario de edición
         this.editableUser = {
           id: this.currentUser.id,
           email: this.currentUser.email,
-          password: '', // La contraseña nunca se pre-rellena
+          password: '',
           icon: this.currentUser.icon,
           subscription: this.currentUser.subscription
         };
@@ -60,18 +54,17 @@ export default {
         console.error("Error fetching user profile:", error);
         this.$toast.add({
           severity: 'error',
-          summary: this.$t('toast.userProfileErrorSummary'), // "Error al cargar perfil"
-          detail: this.$t('toast.userProfileErrorDetail'), // "No se pudo cargar la información del usuario."
+          summary: this.$t('toast.userProfileErrorSummary'),
+          detail: this.$t('toast.userProfileErrorDetail'),
           life: 3000
         });
       }
     },
     openEditDialog() {
-      // Re-inicializa editableUser con los datos actuales para evitar datos antiguos
       this.editableUser = {
         id: this.currentUser.id,
         email: this.currentUser.email,
-        password: '', // Siempre vacío
+        password: '',
         icon: this.currentUser.icon,
         subscription: this.currentUser.subscription
       };
@@ -79,7 +72,6 @@ export default {
     },
     async saveUserProfile() {
       try {
-        // Validación básica: asegura que campos requeridos no estén vacíos
         if (!this.editableUser.email || !this.editableUser.icon || !this.editableUser.subscription) {
           this.$toast.add({
             severity: 'warn',
@@ -91,7 +83,7 @@ export default {
         }
 
         this.currentUser = await this.userApiService.updateProfile(this.editableUser.id, this.editableUser);
-        this.displayEditDialog = false; // Cierra el modal
+        this.displayEditDialog = false;
         this.$toast.add({
           severity: 'success',
           summary: this.$t('toast.profileUpdateSuccessSummary'),
@@ -110,7 +102,6 @@ export default {
     },
     cancelEdit() {
       this.displayEditDialog = false;
-      // Opcional: Reiniciar editableUser a los valores de currentUser si se cancela
       this.editableUser = {
         id: this.currentUser.id,
         email: this.currentUser.email,
@@ -120,13 +111,7 @@ export default {
       };
     },
     logout() {
-      // 1) Eliminar credenciales almacenadas
-      localStorage.removeItem('jwt');
-      localStorage.removeItem('userId');
-      // 2) Limpiar el header de autorización de axios (si lo hubieras configurado directamente aquí)
-      // Como estás usando la instancia 'api' compartida, esto ya se maneja en api.js
-      // delete axios.defaults.headers.common['Authorization'];
-      // 3) Redirigir a la página de Login
+      authApiService.logout();
       this.$router.push({ name: 'Login' });
       this.$toast.add({
         severity: 'info',

@@ -30,7 +30,7 @@ export default {
   methods: {
     async fetchClasses() {
       try {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem('jwt');
         const response = await axios.get(`${BASE_URL}/api/v1/Classes`, {
           headers: {
             Authorization: `Bearer ${token}`
