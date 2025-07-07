@@ -15,7 +15,7 @@
 import axios from 'axios';
 import { SupplyPurchaseAssembler } from './supply-purchase.assembler.js';
 
-const BASE_URL = 'http://localhost:7070';
+const BASE_URL = 'https://app-250707032508.azurewebsites.net';
 
 export class SupplyPurchaseApiService {
     async createSupplyPurchase(supplyPurchaseData) {
