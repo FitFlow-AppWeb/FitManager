@@ -2,7 +2,7 @@
  * ItemType API Service
  *
  * This service handles all API calls related to **ItemType** data. It interacts with the backend
- * to retrieve and create item type information. The methods in this class use `api`
+ * to retrieve and create item type information. The methods in this class use `axios`
  * for making HTTP requests and `ItemTypeAssembler` to format the data into **ItemType** entities.
  *
  * The methods include:

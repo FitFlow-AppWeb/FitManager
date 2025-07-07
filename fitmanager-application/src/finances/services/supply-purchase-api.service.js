@@ -3,7 +3,7 @@
  *
  * This service handles all API calls related to **Supply Purchases**. It provides methods
  * for creating new supply purchase records and fetching existing ones from the backend.
- * It uses `api` for HTTP requests and `SupplyPurchaseAssembler` to format the data
+ * It uses `axios` for HTTP requests and `SupplyPurchaseAssembler` to format the data
  * into **SupplyPurchase** entities for consistency within the application.
  *
  * The methods include:

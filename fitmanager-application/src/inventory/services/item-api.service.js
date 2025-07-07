@@ -2,7 +2,7 @@
  * Item API Service
  *
  * This service handles all the API calls related to **Item** (inventory) data. It interacts with the backend
- * to retrieve, add, update, and delete item information. The methods in this class use `api`
+ * to retrieve, add, update, and delete item information. The methods in this class use `axios`
  * for making HTTP requests and `ItemAssembler` to format the data into **Item** entities.
  *
  * The methods include:
