@@ -230,7 +230,6 @@
   z-index: 10;
   width: 360px !important;
   max-width: 90vw;
-  right: 0;
   left: auto !important;
 }
 

@@ -359,7 +359,6 @@ export default {
   z-index: 10;
   width: 350px !important;
   max-width: 90vw;
-  right: 0;
   left: auto !important;
 }
 

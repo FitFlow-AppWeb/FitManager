@@ -320,10 +320,9 @@ export default {
   border: 1px solid #A7D1D2;
   padding: 0.75rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  z-index: 100;
   width: 350px !important;
   max-width: 90vw;
-  right: 0;
   left: auto !important;
   border-radius: 8px;
   display: flex;
