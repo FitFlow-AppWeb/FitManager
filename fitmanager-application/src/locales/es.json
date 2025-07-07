@@ -36,7 +36,6 @@
     "itemTypeDescription_tooLong": "La descripción del tipo de ítem debe tener menos de 200 caracteres.",
     "itemTypeName_taken": "El nombre del tipo de ítem ya está en uso.",
     "itemType_server_error": "Ocurrió un error al crear el tipo de ítem. Intenta nuevamente.",
-    "expiration_required": "La fecha de expiración es obligatoria.",
     "required": "Este campo es obligatorio",
     "validation.name_required": "El nombre de la clase es obligatorio.",
     "validation.type_required": "El tipo de clase es obligatorio.",
@@ -54,7 +53,6 @@
     "status_required": "El estado es obligatorio",
     "description_required": "La descripción es obligatoria",
     "capacity_required": "La capacidad es obligatoria"
-
   },
   "clearfilters": "Limpiar Filtros",
   "profile": {
@@ -103,7 +101,8 @@
     "search": "Buscar",
     "close": "Cerrar",
     "create": "Crear",
-    "confirm": "Confirmar"
+    "confirm": "Confirmar",
+    "error-loading-info": "Error al cargar la información financiera."
   },
   "dashboard": {
     "chart-title": "Asistencia de hoy por hora",
@@ -241,6 +240,7 @@
     "not-found": "No encontrado"
   },
   "finances": {
+    "financial-overview": "Resumen Financiero",
     "profit": "Ganancia",
     "income": "Ingresos",
     "expenses": "Gastos",
@@ -265,7 +265,32 @@
     "concept": "Concepto",
     "amount": "Monto",
     "currency": "Moneda",
-    "search": "Búsqueda por palabra clave"
+    "search": "Búsqueda por palabra clave",
+    "avg-monthly-expenses": "Gastos Mensuales Promedio",
+    "projected-profit": "Ganancia Proyectada",
+    "projected-income": "Ingresos Proyectados",
+    "projected-expenses": "Gastos Proyectados",
+    "period": "Período",
+    "membership-income-overview-last-4-months": "Resumen de ingresos por membresías (últimos 4 meses)",
+    "no-membership-income-data-available": "No hay datos de ingresos por membresías disponibles.",
+    "error-fetching-chart-data": "Error al cargar los datos del gráfico.",
+    "loading-chart-data": "Cargando datos del gráfico...",
+    "no-data-to-display": "No hay datos para mostrar.",
+    "income-from-monthly-memberships": "Ingresos por membresías mensuales",
+    "income-from-quarterly-memberships": "Ingresos por membresías trimestrales",
+    "income-from-yearly-memberships": "Ingresos por membresías anuales",
+    "jan": "Enero",
+    "feb": "Febrero",
+    "mar": "Marzo",
+    "apr": "Abril",
+    "may": "Mayo",
+    "jun": "Junio",
+    "jul": "Julio",
+    "aug": "Agosto",
+    "sep": "Septiembre",
+    "oct": "Octubre",
+    "nov": "Noviembre",
+    "dec": "Diciembre"
   },
   "attendance": {
     "weekly-heatmap": "Mapa de calor semanal",

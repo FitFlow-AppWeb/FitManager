@@ -36,7 +36,7 @@
     "itemTypeDescription_tooLong": "Item type description must be under 200 characters.",
     "itemTypeName_taken": "Item type name is already in use.",
     "itemType_server_error": "An error occurred while creating the item type. Please try again.",
-    "expiration_required": "End Date is Required.",
+    "required": "This field is required",
     "validation.name_required": "Class name is required.",
     "validation.type_required": "Class type is required.",
     "validation.date_required": "Class date is required.",
@@ -53,7 +53,6 @@
     "status_required": "Status is required",
     "description_required": "Description is Required",
     "capacity_required": "Capacity is Required"
-
   },
   "clearfilters": "Clear Filters",
   "profile": {
@@ -91,7 +90,7 @@
     "cancel": "Cancel",
     "save": "Save",
     "dashboard": "Dashboard",
-    "calendar" : "Calendar",
+    "calendar": "Calendar",
     "personal": "Personal",
     "members": "Members",
     "classes": "Classes",
@@ -102,7 +101,8 @@
     "search": "Search",
     "close": "Close",
     "create": "Create",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "error-loading-info": "Error loading financial information."
   },
   "dashboard": {
     "chart-title": "Today's Attendance by Hour",
@@ -186,7 +186,7 @@
     "no-payments": "No payments",
     "search": "Search by name",
     "add-member": "Add Member",
-    "name" : "Name",
+    "name": "Name",
     "not-found": "No members found"
   },
   "classes": {
@@ -240,6 +240,7 @@
     "not-found": "Not found"
   },
   "finances": {
+    "financial-overview": "Financial Overview",
     "profit": "Profit",
     "income": "Income",
     "expenses": "Expenses",
@@ -263,8 +264,33 @@
     "payer": "Payer",
     "concept": "Concept",
     "amount": "Amount",
-    "curency": "Currency",
-    "search": "Keyword Search"
+    "currency": "Currency",
+    "search": "Keyword Search",
+    "avg-monthly-expenses": "Average Monthly Expenses",
+    "projected-profit": "Projected Profit",
+    "projected-income": "Projected Income",
+    "projected-expenses": "Projected Expenses",
+    "period": "Period",
+    "membership-income-overview-last-4-months": "Membership Income Overview (Last 4 Months)",
+    "no-membership-income-data-available": "No membership income data available.",
+    "error-fetching-chart-data": "Error fetching chart data.",
+    "loading-chart-data": "Loading chart data...",
+    "no-data-to-display": "No data to display.",
+    "income-from-monthly-memberships": "Income from Monthly Memberships",
+    "income-from-quarterly-memberships": "Income from Quarterly Memberships",
+    "income-from-yearly-memberships": "Income from Yearly Memberships",
+    "jan": "January",
+    "feb": "February",
+    "mar": "March",
+    "apr": "April",
+    "may": "May",
+    "jun": "June",
+    "jul": "July",
+    "aug": "August",
+    "sep": "September",
+    "oct": "October",
+    "nov": "November",
+    "dec": "December"
   },
   "attendance": {
     "weekly-heatmap": "Weekly Heatmap",

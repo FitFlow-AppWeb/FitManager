@@ -45,10 +45,16 @@ export class SupplyPurchaseAssembler {
     }
 
     static manyFromBackend(responseData) {
-        if (!Array.isArray(responseData.data)) {
-            console.error("❌ SupplyPurchaseAssembler: Expected an array for manyFromBackend, but received:", responseData);
+        let dataToProcess = [];
+        if (Array.isArray(responseData)) {
+            dataToProcess = responseData;
+        } else if (responseData && Array.isArray(responseData.data)) {
+            dataToProcess = responseData.data;
+        } else {
+            console.error("❌ SupplyPurchaseAssembler: Se esperaba un array o un objeto con un array 'data' para manyFromBackend, pero se recibió:", responseData);
             return [];
         }
-        return responseData.data.map(this.oneFromBackend);
+
+        return dataToProcess.map(this.oneFromBackend);
     }
 }
