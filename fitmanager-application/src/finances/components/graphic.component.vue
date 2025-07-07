@@ -140,18 +140,15 @@ export default {
           const date = new Date(payment.date);
           const year = date.getFullYear();
           const month = date.getMonth();
-          const quarter = Math.floor(month / 3) + 1;
 
           const monthKey = `${year}-${String(month + 1).padStart(2, '0')}`;
-          const quarterKey = `${year}-Q${quarter}`;
-          const yearKey = `${year}`;
 
           if (membershipType === 'Mensual') {
             monthlyMembershipIncome.set(monthKey, (monthlyMembershipIncome.get(monthKey) || 0) + payment.amount);
           } else if (membershipType === 'Trimestral') {
-            quarterlyMembershipIncome.set(quarterKey, (quarterlyMembershipIncome.get(quarterKey) || 0) + payment.amount);
+            quarterlyMembershipIncome.set(monthKey, (quarterlyMembershipIncome.get(monthKey) || 0) + payment.amount);
           } else if (membershipType === 'Anual') {
-            yearlyMembershipIncome.set(yearKey, (yearlyMembershipIncome.get(yearKey) || 0) + payment.amount);
+            yearlyMembershipIncome.set(monthKey, (yearlyMembershipIncome.get(monthKey) || 0) + payment.amount);
           }
         });
 
@@ -171,13 +168,8 @@ export default {
           labels.push(`${monthNames[parseInt(monthNum) - 1]} ${year}`);
 
           monthlyChartData.push(monthlyMembershipIncome.get(monthKey) || 0);
-
-          const dateForPeriod = new Date(`${monthKey}-01T00:00:00Z`);
-          const quarterNum = Math.floor(dateForPeriod.getMonth() / 3) + 1;
-          const currentQuarterKey = `${year}-Q${quarterNum}`;
-
-          quarterlyChartData.push(quarterlyMembershipIncome.get(currentQuarterKey) || 0);
-          yearlyChartData.push(yearlyMembershipIncome.get(year) || 0);
+          quarterlyChartData.push(quarterlyMembershipIncome.get(monthKey) || 0);
+          yearlyChartData.push(yearlyMembershipIncome.get(monthKey) || 0);
         });
 
         this.chartData = {
