@@ -8,7 +8,7 @@ export class AuthApiService {
     constructor() {
         this.client = axios.create({
 
-            baseURL: 'http://localhost:7070/api/v1/Authentication',
+            baseURL: 'https://app-250707032508.azurewebsites.net/api/v1/Authentication',
             headers: { 'Content-Type': 'application/json' }
         });
     }
