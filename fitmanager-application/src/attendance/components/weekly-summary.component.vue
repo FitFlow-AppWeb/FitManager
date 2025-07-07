@@ -34,24 +34,33 @@ export default {
       });
 
       const today = new Date();
-      const currentDayOfWeek = today.getDay();
-      const diffToMonday = today.getDate() - currentDayOfWeek + (currentDayOfWeek === 0 ? -6 : 1);
-      const startOfWeek = new Date(today.setDate(diffToMonday));
-      startOfWeek.setHours(0, 0, 0, 0);
+      today.setHours(0, 0, 0, 0);
 
-      const endOfWeek = new Date(startOfWeek);
-      endOfWeek.setDate(startOfWeek.getDate() + 6);
-      endOfWeek.setHours(23, 59, 59, 999);
+      const currentDayOfWeek = today.getDay();
 
       this.rawAttendanceRecords.forEach(record => {
         const entryDate = new Date(record.entryTime);
+        entryDate.setHours(0, 0, 0, 0);
 
-        if (entryDate >= startOfWeek && entryDate <= endOfWeek) {
-          const dayOfWeek = entryDate.getDay();
+        const recordDayOfWeek = entryDate.getDay();
 
-          const dayConfig = this.daysConfig.find(d => d.dayIndex === dayOfWeek);
-          if (dayConfig) {
+        const dayConfig = this.daysConfig.find(d => d.dayIndex === recordDayOfWeek);
+
+        if (dayConfig) {
+          if (entryDate.toDateString() === today.toDateString()) {
             dailyCounts[dayConfig.name]++;
+          } else if (recordDayOfWeek !== currentDayOfWeek) {
+            const startOfPreviousWeek = new Date(today);
+            startOfPreviousWeek.setDate(today.getDate() - (currentDayOfWeek === 0 ? 7 : currentDayOfWeek) - 6);
+            startOfPreviousWeek.setHours(0, 0, 0, 0);
+
+            const endOfPreviousWeek = new Date(startOfPreviousWeek);
+            endOfPreviousWeek.setDate(startOfPreviousWeek.getDate() + 6);
+            endOfPreviousWeek.setHours(23, 59, 59, 999);
+
+            if (entryDate >= startOfPreviousWeek && entryDate <= endOfPreviousWeek) {
+              dailyCounts[dayConfig.name]++;
+            }
           }
         }
       });

@@ -36,6 +36,7 @@ export default {
       const heatmap = {};
       let currentMax = 0;
 
+      // Initialize heatmap structure
       this.daysConfig.forEach(day => {
         heatmap[day.keyForColumn] = {};
         this.hoursOfDay.forEach(hour => {
@@ -44,25 +45,74 @@ export default {
       });
 
       const today = new Date();
-      const currentDayOfWeek = today.getDay();
-      const diffToMonday = today.getDate() - currentDayOfWeek + (currentDayOfWeek === 0 ? -6 : 1);
-      const startOfWeek = new Date(today.setDate(diffToMonday));
-      startOfWeek.setHours(0, 0, 0, 0);
+      const currentDayOfWeek = today.getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
 
-      const endOfWeek = new Date(startOfWeek);
-      endOfWeek.setDate(startOfWeek.getDate() + 6);
-      endOfWeek.setHours(23, 59, 59, 999);
+      // Calculate the start of the current week (Monday)
+      const startOfCurrentWeek = new Date(today);
+      startOfCurrentWeek.setDate(today.getDate() - (currentDayOfWeek === 0 ? 6 : currentDayOfWeek - 1));
+      startOfCurrentWeek.setHours(0, 0, 0, 0);
+
+      // Calculate the start of the previous week (Monday)
+      const startOfPreviousWeek = new Date(startOfCurrentWeek);
+      startOfPreviousWeek.setDate(startOfCurrentWeek.getDate() - 7);
+      startOfPreviousWeek.setHours(0, 0, 0, 0);
+
 
       this.rawAttendanceRecords.forEach(record => {
-        const entryDate = new Date(record.entryTime);
+        // Create a Date object from the original entryTime string
+        const originalEntryDate = new Date(record.entryTime);
 
-        if (entryDate >= startOfWeek && entryDate <= endOfWeek) {
-          const dayOfWeek = entryDate.getDay();
-          const hour = String(entryDate.getHours()).padStart(2, '0') + ":00";
+        // Get the day of the week based on the *original* date
+        // This is crucial to ensure records stay on their original day column
+        const recordDayOfWeek = originalEntryDate.getDay();
 
-          const dayConfig = this.daysConfig.find(d => d.keyForProcessing === dayOfWeek);
+        // Create a *copy* of the date to apply the hour adjustment
+        // We do this to not affect the original date used for day-of-week logic
+        const adjustedEntryDate = new Date(originalEntryDate);
 
-          if (dayConfig && this.hoursOfDay.includes(hour)) {
+        // --- HARDCODED HOUR ADJUSTMENT HERE ---
+        // Subtract 5 hours from the adjusted date's hour.
+        adjustedEntryDate.setHours(adjustedEntryDate.getHours() - 5);
+        // --- END HARDCODED HOUR ADJUSTMENT ---
+
+        // Get the hour from the *adjusted* date for display on the heatmap
+        const hour = String(adjustedEntryDate.getHours()).padStart(2, '0') + ":00";
+
+        const dayConfig = this.daysConfig.find(d => d.keyForProcessing === recordDayOfWeek);
+
+        if (dayConfig && this.hoursOfDay.includes(hour)) {
+          let shouldIncludeRecord = false;
+
+          // Normalize original record date to start of day for comparison
+          // Use originalEntryDate here for the date comparisons, not the adjusted one,
+          // to ensure week/day filtering is based on the actual date, not the hour-shifted date.
+          const normalizedOriginalEntryDate = new Date(originalEntryDate);
+          normalizedOriginalEntryDate.setHours(0, 0, 0, 0);
+
+
+          // Scenario 1: Record is from the current week AND on or before today
+          if (normalizedOriginalEntryDate >= startOfCurrentWeek && normalizedOriginalEntryDate <= today) {
+            shouldIncludeRecord = true;
+          }
+          // Scenario 2: Record is from the previous week and is for a day AFTER the current day of the week
+          else if (recordDayOfWeek !== currentDayOfWeek) { // Only check if not today's day
+            // Check if the record's date falls within the previous week
+            const endOfPreviousWeek = new Date(startOfPreviousWeek);
+            endOfPreviousWeek.setDate(startOfPreviousWeek.getDate() + 6);
+            endOfPreviousWeek.setHours(23, 59, 59, 999);
+
+            if (normalizedOriginalEntryDate >= startOfPreviousWeek && normalizedOriginalEntryDate <= endOfPreviousWeek) {
+              // Ensure this previous week's record is for a "future" day relative to today
+              if (recordDayOfWeek > currentDayOfWeek || (currentDayOfWeek === 0 && recordDayOfWeek !== 0)) {
+                shouldIncludeRecord = true;
+              }
+              if (currentDayOfWeek === 1 && recordDayOfWeek === 0) {
+                shouldIncludeRecord = true;
+              }
+            }
+          }
+
+          if (shouldIncludeRecord) {
             heatmap[dayConfig.keyForColumn][hour]++;
             if (heatmap[dayConfig.keyForColumn][hour] > currentMax) {
               currentMax = heatmap[dayConfig.keyForColumn][hour];

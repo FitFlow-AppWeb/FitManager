@@ -1,7 +1,5 @@
 <script>
-import axios from 'axios';
-
-const BASE_URL = import.meta.env.VITE_API_URL;
+import api from '../../login/services/api.js';
 
 export default {
   name: "EmployeeScheduleModal",
@@ -31,7 +29,7 @@ export default {
     async fetchClasses() {
       try {
         const token = localStorage.getItem('jwt');
-        const response = await axios.get(`${BASE_URL}/api/v1/Classes`, {
+        const response = await api.get(`/api/v1/Classes`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
