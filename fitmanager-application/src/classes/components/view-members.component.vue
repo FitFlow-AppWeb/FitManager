@@ -14,7 +14,8 @@ export default {
   name: "ViewMembers",
   data() {
     return {
-      members: []
+      members: [],
+      allMembers: []
     };
   },
   props: {
@@ -31,24 +32,84 @@ export default {
     closeDialog() {
       this.$emit("close");
     },
-    async getMembersByClass() {
-      this.members = [];
+
+    async fetchAllMembers() {
       try {
-        const response = await api.get(`/api/v1/Attendances/class/${this.classData.id}`);
-
-        console.log("Respuesta backend members:", response);
-
-        // Asumiendo que el array está en response.data.data (ajusta si es otro)
-        const data = response.data?.data;
-
-        if (Array.isArray(data)) {
-          this.members = data;
+        const response = await api.get('/api/v1/Member');
+        if (response.data && Array.isArray(response.data.data)) {
+          this.allMembers = response.data.data;
+          console.log("Todos los miembros cargados:", this.allMembers);
         } else {
-          console.warn("La data recibida no es un array:", data);
-          this.members = [];
+          console.warn("La respuesta de todos los miembros no es un array o está vacía:", response.data);
+          this.allMembers = [];
         }
       } catch (error) {
-        console.error("Error fetching members:", error);
+        console.error("Error al cargar todos los miembros:", error);
+        this.allMembers = [];
+      }
+    },
+
+    async getMembersByClass() {
+      this.members = [];
+      if (!this.classData || !this.classData.id) {
+        console.warn("No classData or classId available to fetch members.");
+        return;
+      }
+
+      if (this.allMembers.length === 0) {
+        await this.fetchAllMembers();
+        if (this.allMembers.length === 0) {
+          console.warn("No se pudieron cargar todos los miembros para filtrar.");
+          return;
+        }
+      }
+
+      try {
+        const bookingsResponse = await api.get(`/api/v1/Bookings/class/${this.classData.id}`);
+        console.log("Respuesta backend bookings:", bookingsResponse);
+
+        const bookingData = bookingsResponse.data.data;
+
+        if (!Array.isArray(bookingData) || bookingData.length === 0) {
+          console.warn("No bookings found for this class or data is not an array:", bookingData);
+          this.members = [];
+          return;
+        }
+
+        const memberIds = [...new Set(bookingData.map(booking => booking.memberId))];
+
+        if (memberIds.length === 0) {
+          console.warn("No member IDs found in bookings.");
+          this.members = [];
+          return;
+        }
+
+        const fetchedMembers = memberIds.map(memberId => {
+          const memberData = this.allMembers.find(member => member.id === memberId);
+
+          if (memberData) {
+            return {
+              id: memberData.id,
+              fullName: `${memberData.firstName || ''} ${memberData.lastName || ''}`.trim(),
+              age: memberData.age,
+              membershipStatus: memberData.membershipStatus?.status || 'N/A',
+              membershipType: memberData.membershipStatus?.membershipType?.name || 'N/A',
+              expirationDate: memberData.membershipStatus?.endDate ? new Date(memberData.membershipStatus.endDate).toLocaleDateString() : 'N/A',
+              email: memberData.email,
+              phone: memberData.phoneNumber,
+              address: memberData.address
+            };
+          } else {
+            console.warn(`Miembro con ID ${memberId} no encontrado en la lista de todos los miembros.`);
+            return null;
+          }
+        });
+
+        this.members = fetchedMembers.filter(member => member !== null);
+        console.log("Miembros cargados para la clase:", this.members);
+
+      } catch (error) {
+        console.error("Error fetching class bookings or filtering members:", error);
         this.members = [];
       }
     }
@@ -61,15 +122,25 @@ export default {
         this.members = [];
       }
     },
-    classData(newVal, oldVal) {
-      if (newVal?.id && newVal.id !== oldVal?.id && this.visible) {
-        this.getMembersByClass();
-      }
+    classData: {
+      handler(newVal, oldVal) {
+        if (newVal?.id && newVal.id !== oldVal?.id && this.visible) {
+          this.getMembersByClass();
+        }
+      },
+      deep: true,
+      immediate: false
+    }
+  },
+  async mounted() {
+    console.log("ViewMembers component mounted!");
+    await this.fetchAllMembers();
+    if (this.visible) {
+      this.getMembersByClass();
     }
   }
 };
 </script>
-
 
 <template>
   <pv-dialog
