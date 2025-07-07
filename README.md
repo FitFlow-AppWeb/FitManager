@@ -3509,6 +3509,37 @@ Video explicativo sobre lo desarrollado en este Sprint:
 
 #### 5.2.4.8. Team Collaboration Insights during Sprint
 
+En el Sprint 4, el equipo FitManager mantuvo su compromiso con la metodología ágil Scrum y las herramientas de colaboración, redirigiendo su enfoque principal hacia la integración del frontend con el backend. Este sprint se caracterizó por un esfuerzo coordinado para establecer una comunicación fluida entre la interfaz de usuario desarrollada en Vue.js y la API RESTful expuesta en el sprint anterior, asegurando la funcionalidad completa de los seis Bounded Contexts. La colaboración fue constante a través de nuestro grupo de Whatsapp y Discord, con reuniones adicionales en días libres para una sincronización óptima. La gestión y el seguimiento de las tareas se mantuvieron centralizados en Pivotal Tracker, lo que facilitó la coordinación del equipo para lograr una aplicación web cohesiva y plenamente operativa.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7aadec77-9c51-4f29-8188-9d2e4a486fda" alt="pivotal tracker">
+</p>
+
+Uso de Herramientas de Colaboración (GitHub - Repositorio de WebApplication): 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d51912e4-a4e8-4139-a4be-e0315f83e856" alt="herramientas de colaboración">
+</p>
+
+Evidencia de las ramas (Repositorio de Web Application)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4839f88a-8297-4af7-b32e-c181fe3d6e44" alt="ramas del repositorio application">
+</p>
+
+Evidencia de las ramas (Repositorio de Web Services)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9c9c523b-910d-42b9-a67f-66790da89eee" alt="ramas del repositorio services">
+</p>
+
+Evidencia de commits por integrante del grupo (Repositorio de Web Application)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ef5c5069-312d-443c-a2ea-76b7033dec55" alt="commits por integrante application">
+</p>
+
+Evidencia de commits por integrante del grupo (Repositorio de Web Services)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/efedf091-f5f0-4dee-8d88-9c5895d5a5ba" alt="commits por integrante services">
+</p>
+
 ## 5.3. Validation Interviews
 
 ### 5.3.1. Diseño de Entrevistas
