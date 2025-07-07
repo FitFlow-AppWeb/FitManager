@@ -3359,6 +3359,101 @@ Ejemplo de tareas y descripción de una historia
 
 #### 5.2.4.5. Execution Evidence for Sprint Review.
 
+En el Sprint 4, el enfoque principal se trasladó a la integración integral entre el frontend y el backend, consolidando la funcionalidad de la aplicación. Se estableció una comunicación fluida entre la interfaz de usuario desarrollada en Vue.js y la API RESTful expuesta en el Sprint 3, asegurando que las operaciones de los seis Bounded Contexts (Classes, Employees, Finances, Inventory, Members y Notifications) fueran accesibles y funcionales desde el lado del cliente. Este proceso incluyó la configuración de la política CORS para permitir la interacción entre el frontend desplegado en Firebase y el backend, la implementación de un sistema de autenticación JWT robusto para proteger las rutas y asegurar la sesión del usuario, y la creación de servicios HTTP en el frontend con interceptores de respuesta para manejar errores de autenticación y redirigir al login automáticamente. La culminación de esta fase fue una aplicación cohesiva donde el frontend consume eficientemente los datos y servicios proporcionados por el backend, ofreciendo una experiencia de usuario completa y segura.
+
+- El dashboard principal de la aplicación ofrece una visión general y resumida de métricas clave del gimnasio, como el total de miembros, miembros activos, asistencias del día, un gráfico de asistencias por hora y un listado de las clases programadas para el día. También incluye secciones para ingresos mensuales, nuevos miembros y pagos pendientes, actuando como un centro de información centralizado para la administración.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a2247ab2-5999-444a-a688-e442812251a6" alt="dashboard">
+</p>
+
+- El calendario permite a los usuarios visualizar las clases programadas. Incluye un calendario interactivo para navegar por los meses y días, y un panel lateral que detalla las clases para la fecha seleccionada, indicando la hora, el tipo de clase y su estado (confirmado o pendiente). Debajo, se presenta una vista mensual del calendario, resaltando los días con clases programadas, lo que facilita la planificación y el seguimiento de la disponibilidad de clases.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e131fe99-2756-49f3-96df-7ffacb556193" alt="calendario">
+</p>
+
+-  La interfaz de gestión de empleados dentro de la aplicación presenta una tabla con un listado de empleados, incluyendo sus nombres, edades, roles, salarios y horas de trabajo. Al seleccionar un empleado, se despliega un panel lateral con sus detalles completos, como información personal, especialidades y certificaciones. Además, los formularios para añadir y editar empleado tienen validaciones en tiempo real que guían al usuario, como "Full name is required" o "Age must be at least 16", asegurando la integridad y calidad de los datos ingresados en el sistema. El boton "Schedule" permite ver las clases asignadas al empleado.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b2e91e21-b496-45ec-af75-411ee5442ae6" alt="empleados">
+</p>
+
+- La interfaz de gestión de miembros es esencial para administrar la base de usuarios del gimnasio. Se muestra una tabla que lista a los miembros con detalles como su nombre, edad, estado y tipo de membresía, así como la fecha de expiración. Al seleccionar un miembro, un panel lateral despliega su información detallada. Se aprecian las las validaciones implementadas en los campos de entrada para añadir y editar un miembro, como "Full name is required", "Age is required" y "DNI must be exactly 8 digits". Estas validaciones son fundamentales para asegurar la correcta y completa captura de datos al registrar nuevos miembros en el sistema. Además, el botón "Payments" permite ver los pagos de membresía realizados por el empleado.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7017869d-9384-4b88-9dc3-fe8807fbb14b" alt="miembros">
+</p>
+
+- La interfaz de gestión de clases de la aplicación contiene una tabla organizada que detalla las clases programadas, incluyendo su nombre, tipo (ej., "Group", "Solo"), el entrenador asignado, la fecha, hora, duración y estado (ej., "Confirmed", "Pending"). La tabla también incorpora opciones de búsqueda y filtrado, junto con botones de acción para cada clase (como ver miembros, editar o eliminar), lo que permite una administración completa y eficiente de la oferta de clases del gimnasio.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f77e79ae-9b85-4b1a-ae00-e05edf0b124b" alt="clases">
+</p>
+
+- Interfaz de visualización de miembros alistados a una clase. Presenta una tabla que lista a los "Members in this Class", incluyendo su nombre completo, edad, estado y tipo de membresía, fecha de expiración, email, teléfono y dirección. La característica clave es la columna "Actions" con un botón "Mark Attendance" para cada miembro, lo que permite al personal registrar la asistencia de los participantes a una clase de manera individual. Además, en la esquina superior derecha, se observa una notificación de éxito "Attendance Register", confirmando que un registro de asistencia se ha realizado con éxito.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fcae0064-dc64-4abf-830a-437414451699" alt="ver miembros">
+</p>
+
+- La interfaz de gestión de inventario de la aplicación. En el panel superior izquierdo, se visualiza una lista de categorías de ítems (como "Cardiovascular", "Fuerza", "Funcional") con su descripción y cantidad total. Al seleccionar una categoría, en la parte inferior se despliega una tabla con los detalles de los ítems individuales dentro de esa categoría, incluyendo su ID, estado, fechas de última y próxima revisión, y el empleado asignado para su mantenimiento. En el lado derecho, se presenta un formulario "Edit item" que permite actualizar la información de un ítem específico, como la fecha de próxima revisión y el empleado asignado, incluyendo validaciones como "Next maintenance date is required".
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e1144940-ab82-410e-b858-4e209532b83d" alt="inventario">
+</p>
+
+- También se tiene gestión de inventario y sus finanzas. A la izquierda, se presenta el formulario "Add New Purchase" (Añadir Nueva Compra), que permite registrar la adquisición de nuevos objetos para el gimnasio, incluyendo detalles como la fecha, método de pago, moneda, nombre del proveedor y los ítems individuales de la compra (tipo de ítem, precio unitario, cantidad, empleado asignado y fecha de próxima revisión). A la derecha, se observa una funcionalidad para "Add New Item Type" (Añadir Nuevo Tipo de Objeto), con campos para el nombre y la descripción, y una validación en tiempo real que indica "Completa este campo" si la descripción está vacía. Esto facilita la expansión y organización del inventario del gimnasio.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/28ed494d-2e3f-4702-82d8-64b052ad1096" alt="compra de inventario">
+</p>
+
+
+- El panel de Finanzas es una sección crucial para la gestión económica del gimnasio. Presenta un gráfico de "Membership Income Overview" que visualiza los ingresos por membresías (mensuales, trimestrales, anuales) a lo largo del tiempo. A la derecha, el "Financial Overview" proporciona un resumen de métricas financieras clave, como el profit, ingresos y gastos actuales, y proyecciones. En la parte inferior, una tabla de "Transactions" lista los movimientos financieros recientes, detallando la fecha, el recipiente, el pagador, el concepto y el monto de cada transacción, lo que permite un seguimiento detallado de las operaciones económicas.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a812092a-cd79-4ded-af0c-99b291806618" alt="finanzas">
+</p>
+
+- El panel de asistencia proporciona una visión detallada y analítica de la actividad de los miembros en el gimnasio. Incluye un "Weekly Heatmap" que visualiza la distribución de la asistencia por hora y día de la semana, utilizando un gradiente de color para indicar la intensidad de la actividad. A la derecha, el "Weekly Summary" ofrece un desglose de la asistencia total por día de la semana, y un "Historical Summary" proporciona métricas acumuladas como el total de registros de asistencia, promedio diario y las clases más y menos populares. Este panel es fundamental para el análisis de patrones de uso y la optimización de recursos del gimnasio.
+- 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0f4b5028-de8c-4886-a2f5-cc1d479227bc" alt="asistencia">
+</p>
+
+- La interfaz de gestión de notificaciones. En el lado izquierdo, se visualizan las notificaciones existentes, separadas por "Employee Notifications" y "Member Notifications". A la derecha, se presenta un formulario "Send New Notification" que permite a los administradores crear y enviar mensajes, con campos para el título y el mensaje, y opciones para seleccionar los destinatarios (empleados o miembros) de una lista desplegable. Esto facilita la comunicación interna y con los clientes del gimnasio.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fd73f108-1220-4958-a6fd-1edb1ee52dce" alt="notis">
+</p>
+
+- La sección de perfil y configuración del usuario en la aplicación. A la izquierda, se presenta la "Personal Information"  del usuario, incluyendo su correo electrónico, una representación segura de su contraseña y el tipo de suscripción. Un botón de "Logout" permite al usuario cerrar su sesión. A la derecha, se encuentran las "Settings", donde el usuario puede ajustar preferencias como el idioma, la unidad de medida, la zona horaria, el estado de las notificaciones y la moneda, ofreciendo personalización de la experiencia de usuario.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/51aa5c5d-4264-493d-bcf2-d71f0b4ffde3" alt="mi perfil">
+</p>
+
+- Las siguientes imágenes proporcionan una evidencia clara del funcionamiento del sistema de autenticación basado en JSON Web Tokens (JWT) dentro de la interfaz de documentación Swagger. El endpoint POST /api/v1/Authentication/sign-in permite a los usuarios iniciar sesión con sus credenciales. Tras una solicitud exitosa (código de respuesta 200 OK), la respuesta de la API incluye un token JWT completo en el cuerpo. Posteriormente, la sección "Available authorizations" se utiliza para introducir este token (en formato Bearer <token>). Este proceso demuestra cómo el token JWT es generado y luego utilizado para autorizar y probar las llamadas a otros endpoints protegidos de la API directamente desde Swagger, validando la implementación de la seguridad y autenticación en el backend.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a900b24b-ccf1-44ab-b676-f52c9dc468e6" alt="jwt">
+</p>
+
+- Se implementó el mecanismo de localización en el backend de la aplicación, utilizando un SharedResource.cs. Se visualiza una tabla dentro de un gestor de localización, donde cada fila representa una clave (Name, por ejemplo, "AttendanceCreated" o "UserSignedIn") y sus correspondientes traducciones para diferentes culturas, en este caso "en-us - English (United States)" y "es - Spanish". Este enfoque permite que los mensajes de respuesta de la API y otros textos internos del backend se adapten al idioma preferido del usuario o cliente que consume la API, facilitando la creación de una aplicación multilingüe y mejorando la experiencia global.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/25a20ff9-ca98-4e00-a707-9f1fde64b1da" alt="sharedresource">
+</p>
+
+- Aquí se evidencian dos solicitudes HTTP GET idénticas al endpoint /api/v1/ItemTypes, con la única diferencia de un parámetro de consulta locale. La solicitud de la izquierda (?locale=en) devuelve un mensaje en inglés ("Item types retrieved successfully."), mientras que la solicitud de la derecha (?locale=es) devuelve el mismo mensaje traducido al español. Esto evidencia la correcta implementación del sistema de SharedResource en el backend, permitiendo que la API sirva mensajes en el idioma preferido por el cliente.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/77914414-d6dc-4f7d-ad5b-87d49cc430a8" alt="postman">
+</p>
+
+Video explicativo sobre lo desarrollado en este Sprint:
+
 #### 5.2.4.6. Services Documentation Evidence for Sprint Review
 
 | Endpoint | Acción | Verbo HTTP | Sintaxis de llamada | Parámetros | Ejemplo de Request | Ejemplo de Response | Explicación |
