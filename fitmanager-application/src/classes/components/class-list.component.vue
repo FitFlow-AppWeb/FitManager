@@ -8,6 +8,66 @@
 // Author: Cassius Martel
 -->
 
+<script>
+export default {
+  name: "class-list.component",
+  props: {
+    classes: {
+      type: Array,
+      required: true
+    }
+  },
+  data() {
+    return {
+      internalSelection: null,
+      searchQuery: "",
+      showFilters: false,
+      statusOptions: ['Confirmed', 'Pending', 'Cancelled'],
+      statusFilter: null,
+      typeOptions: ['Group', 'Solo'],
+      typeFilter: null
+    };
+  },
+  methods: {
+    handleRowSelect(event) {
+      this.internalSelection = event.data;
+      this.$emit('selected', event.data);
+    },
+    toggleFilters() {
+      this.showFilters = !this.showFilters;
+    },
+    applyFilters() {
+      this.showFilters = false;
+    },
+    viewClass(classData) {
+      this.$emit('view-request', classData);
+    },
+    editClass(classData) {
+      this.$emit('edit-request', classData);
+    },
+    deleteClass(classData) {
+      this.$emit('delete-request', classData);
+    }
+  },
+  computed: {
+    filteredClasses() {
+      let list = [...this.classes];
+      if (this.searchQuery) {
+        const q = this.searchQuery.toLowerCase();
+        list = list.filter(m => m.name.toLowerCase().includes(q));
+      }
+      if (this.statusFilter) {
+        list = list.filter(m => m.status === this.statusFilter);
+      }
+      if (this.typeFilter) {
+        list = list.filter(m => m.type === this.typeFilter);
+      }
+      return list;
+    }
+  }
+};
+</script>
+
 <template>
   <div class="table-container">
     <pv-datatable
@@ -31,32 +91,30 @@
                 class="search-bar"
                 aria-label="Search for a class"
             />
-            <div class="filter-button-container">
-              <pv-button
-                  icon="pi pi-filter"
-                  class="filter-btn"
-                  @click="toggleFilters"
-                  aria-label="Toggle filters"
-              />
-              <div v-if="showFilters" class="filter-panel">
-                <div class="filter-row">
-                  <label>{{ $t('classes.status') }}:</label>
-                  <pv-sbutton
-                      v-model="statusFilter"
-                      :options="statusOptions"
-                      class="filter-sbutton"
-                      aria-label="Filter by status"
-                  />
-                </div>
-                <div class="filter-row">
-                  <label>{{ $t('classes.type') }}:</label>
-                  <pv-sbutton
-                      v-model="typeFilter"
-                      :options="typeOptions"
-                      class="filter-sbutton"
-                      aria-label="Filter by type"
-                  />
-                </div>
+            <pv-button
+                icon="pi pi-filter"
+                class="filter-btn"
+                @click="toggleFilters"
+                aria-label="Toggle filters"
+            />
+            <div v-if="showFilters" class="filter-panel">
+              <div class="filter-row">
+                <label>{{ $t('classes.status') }}:</label>
+                <pv-sbutton
+                    v-model="statusFilter"
+                    :options="statusOptions"
+                    class="filter-sbutton"
+                    aria-label="Filter by status"
+                />
+              </div>
+              <div class="filter-row">
+                <label>{{ $t('classes.type') }}:</label>
+                <pv-sbutton
+                    v-model="typeFilter"
+                    :options="typeOptions"
+                    class="filter-sbutton"
+                    aria-label="Filter by type"
+                />
               </div>
             </div>
           </div>

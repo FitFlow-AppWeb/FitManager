@@ -10,11 +10,14 @@
 <script>
 import api from '../../login/services/api.js';
 
+
 export default {
   name: "ViewMembers",
   data() {
     return {
-      members: []
+      members: [],
+      allMembers: [],
+      attendanceStatus: {}
     };
   },
   props: {
@@ -28,28 +31,166 @@ export default {
     }
   },
   methods: {
+
+
     closeDialog() {
       this.$emit("close");
     },
-    async getMembersByClass() {
-      this.members = [];
+
+    async fetchAllMembers() {
       try {
-        const response = await api.get(`/api/v1/Attendances/class/${this.classData.id}`);
-
-        console.log("Respuesta backend members:", response);
-
-        // Asumiendo que el array está en response.data.data (ajusta si es otro)
-        const data = response.data?.data;
-
-        if (Array.isArray(data)) {
-          this.members = data;
+        const response = await api.get('/api/v1/Member');
+        if (response.data && Array.isArray(response.data.data)) {
+          this.allMembers = response.data.data;
+          console.log("Todos los miembros cargados:", this.allMembers);
         } else {
-          console.warn("La data recibida no es un array:", data);
-          this.members = [];
+          console.warn("La respuesta de todos los miembros no es un array o está vacía:", response.data);
+          this.allMembers = [];
         }
       } catch (error) {
-        console.error("Error fetching members:", error);
+        console.error("Error al cargar todos los miembros:", error);
+        this.allMembers = [];
+      }
+    },
+
+    async getMembersByClass() {
+      this.members = [];
+      this.attendanceStatus = {};
+
+      if (!this.classData || !this.classData.id) {
+        console.warn("No classData or classId available to fetch members.");
+        return;
+      }
+
+      if (this.allMembers.length === 0) {
+        await this.fetchAllMembers();
+        if (this.allMembers.length === 0) {
+          console.warn("No se pudieron cargar todos los miembros para filtrar.");
+          return;
+        }
+      }
+
+      try {
+        const bookingsResponse = await api.get(`/api/v1/Bookings/class/${this.classData.id}`);
+        console.log("Respuesta backend bookings:", bookingsResponse);
+
+        const bookingData = bookingsResponse.data.data;
+
+        if (!Array.isArray(bookingData) || bookingData.length === 0) {
+          console.warn("No bookings found for this class or data is not an array:", bookingData);
+          this.members = [];
+          return;
+        }
+
+        const memberIds = [...new Set(bookingData.map(booking => booking.memberId))];
+
+        if (memberIds.length === 0) {
+          console.warn("No member IDs found in bookings.");
+          this.members = [];
+          return;
+        }
+
+        const fetchedMembers = memberIds.map(memberId => {
+          const memberData = this.allMembers.find(member => member.id === memberId);
+
+          if (memberData) {
+            return {
+              id: memberData.id,
+              fullName: `${memberData.firstName || ''} ${memberData.lastName || ''}`.trim(),
+              age: memberData.age,
+              membershipStatus: memberData.membershipStatus?.status || 'N/A',
+              membershipType: memberData.membershipStatus?.membershipType?.name || 'N/A',
+              expirationDate: memberData.membershipStatus?.endDate ? new Date(memberData.membershipStatus.endDate).toLocaleDateString() : 'N/A',
+              email: memberData.email,
+              phone: memberData.phoneNumber,
+              address: memberData.address
+            };
+          } else {
+            console.warn(`Miembro con ID ${memberId} no encontrado en la lista de todos los miembros.`);
+            return null;
+          }
+        });
+
+        this.members = fetchedMembers.filter(member => member !== null);
+        console.log("Miembros cargados para la clase:", this.members);
+
+        await this.checkExistingAttendances();
+
+      } catch (error) {
+        console.error("Error fetching class bookings or filtering members:", error);
         this.members = [];
+      }
+    },
+
+    async checkExistingAttendances() {
+      if (!this.classData || !this.classData.id || this.members.length === 0) {
+        return;
+      }
+
+      const classDateObj = new Date(this.classData.date);
+      const formattedClassDate = classDateObj.getFullYear() + '-' +
+          String(classDateObj.getMonth() + 1).padStart(2, '0') + '-' +
+          String(classDateObj.getDate()).padStart(2, '0');
+
+      for (const member of this.members) {
+        try {
+          const response = await api.get(`/api/v1/Attendances/exists?memberId=${member.id}&classId=${this.classData.id}&date=${formattedClassDate}`);
+
+          this.attendanceStatus[member.id] = response.data.exists;
+
+        } catch (error) {
+          console.error(`Error al verificar la asistencia para el miembro ${member.id}:`, error);
+          this.attendanceStatus[member.id] = false;
+        }
+      }
+      console.log("Estado de asistencia verificado:", this.attendanceStatus);
+    },
+
+    async markAttendance(memberId) {
+      try {
+        this.attendanceStatus[memberId] = true;
+
+        const classDatePart = new Date(this.classData.date).toISOString().split('T')[0];
+        const classTimePart = this.classData.time && this.classData.time.match(/^\d{2}:\d{2}$/) ? this.classData.time : '00:00';
+
+        const entryTime = new Date(`${classDatePart}T${classTimePart}:00`);
+        const exitTime = new Date(entryTime);
+        if (this.classData.duration) {
+          exitTime.setMinutes(entryTime.getMinutes() + this.classData.duration);
+        } else {
+          exitTime.setHours(entryTime.getHours() + 1);
+        }
+
+        const attendanceData = {
+          entryTime: entryTime.toISOString(),
+          exitTime: exitTime.toISOString(),
+          memberId: memberId,
+          classId: this.classData.id
+        };
+
+        console.log("Enviando datos de asistencia:", attendanceData);
+
+        const response = await api.post('/api/v1/Attendances', attendanceData);
+
+        console.log("Respuesta de registro de asistencia:", response.data);
+
+        this.$toast.add({
+          severity: 'success',
+          summary: this.$t('toast.attendanceRegisteredSummary'),
+          detail: response.data.message || this.$t('toast.attendanceMarkedSuccessDetail'),
+          life: 3000
+        });
+
+      } catch (error) {
+        this.attendanceStatus[memberId] = false;
+        console.error("Error al marcar asistencia:", error);
+
+        this.$toast.add({
+          severity: 'error',
+          summary: this.$t('toast.attendanceErrorSummary'),
+          detail: error.response?.data?.message || this.$t('toast.attendanceErrorDetail'),
+          life: 3000
+        });
       }
     }
   },
@@ -59,17 +200,31 @@ export default {
         this.getMembersByClass();
       } else {
         this.members = [];
+        this.attendanceStatus = {};
       }
     },
-    classData(newVal, oldVal) {
-      if (newVal?.id && newVal.id !== oldVal?.id && this.visible) {
-        this.getMembersByClass();
-      }
+    classData: {
+      handler(newVal, oldVal) {
+        if (newVal?.id && newVal.id !== oldVal?.id && this.visible) {
+          this.getMembersByClass();
+        }
+      },
+      deep: true,
+      immediate: false
+    }
+  },
+  async mounted() {
+    console.log("ViewMembers component mounted!");
+    if (!this.$toast) {
+      console.warn("PrimeVue Toast no está disponible. Asegúrate de importarlo y usarlo en main.js");
+    }
+    await this.fetchAllMembers();
+    if (this.visible) {
+      this.getMembersByClass();
     }
   }
 };
 </script>
-
 
 <template>
   <pv-dialog
@@ -99,6 +254,20 @@ export default {
         <pv-column field="email" :header="$t('members.email')" />
         <pv-column field="phone" :header="$t('members.phone')" />
         <pv-column field="address" :header="$t('members.address')" />
+        <pv-column :header="$t('actions')">
+          <template #body="slotProps">
+            <pv-button
+                :label="$t('classes.mark-attendance')"
+                icon="pi pi-check"
+                class="p-button-success p-mr-2"
+                @click="markAttendance(slotProps.data.id)"
+                :disabled="attendanceStatus[slotProps.data.id]"
+                aria-label="Mark Attendance"
+                :style="{ backgroundColor: '#a7d1d2', borderColor: '#a7d1d2', color: '#333' }"
+                style="--p-button-text-color: #333; --p-button-hover-text-color: #333;"
+            />
+          </template>
+        </pv-column>
       </pv-datatable>
     </div>
     <div v-else>
@@ -114,9 +283,9 @@ export default {
       />
     </div>
   </pv-dialog>
+
+  <Toast />
 </template>
-
-
 
 <style scoped>
 .dialog-actions {

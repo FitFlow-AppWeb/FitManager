@@ -1,4 +1,26 @@
 {
+  "common": {
+    "cancel": "Cancelar",
+    "save": "Guardar"
+  },
+  "toast": {
+    "attendanceRegisteredSummary": "Asistencia Registrada",
+    "attendanceMarkedSuccessDetail": "Asistencia marcada con éxito.",
+    "attendanceErrorSummary": "Error de Asistencia",
+    "attendanceErrorDetail": "Hubo un error al marcar la asistencia.",
+    "userProfileErrorSummary": "Error al cargar perfil",
+    "userProfileErrorDetail": "No se pudo cargar la información del usuario.",
+    "validationWarningSummary": "Advertencia de Validación",
+    "requiredFieldsWarning": "Por favor, complete todos los campos obligatorios.",
+    "profileUpdateSuccessSummary": "Perfil Actualizado",
+    "profileUpdateSuccessDetail": "Su perfil ha sido actualizado con éxito.",
+    "profileUpdateErrorSummary": "Error al Actualizar Perfil",
+    "profileUpdateErrorDetail": "Hubo un error al actualizar su perfil.",
+    "logoutSuccessSummary": "Sesión Cerrada",
+    "logoutSuccessDetail": "Ha cerrado su sesión exitosamente.",
+    "settingsUpdateSuccessSummary": "Ajuste Guardado",
+    "settingUpdatedDetail": "Se actualizó el ajuste"
+  },
   "employees.schedule-title": "Clases Asignadas",
   "employees.no-classes": "Este empleado no tiene clases asignadas.",
   "general.details": "Detalles",
@@ -8,6 +30,7 @@
   "classes.capacity": "Capacidad",
   "classes.duration": "Duración",
   "classes.status": "Estado",
+  "actions": "Acciones",
   "validation": {
     "fullName_required": "El nombre completo es obligatorio.",
     "fullName_tooLong": "El nombre completo debe tener menos de 100 caracteres.",
@@ -66,7 +89,35 @@
       "timezone": "Zona horaria",
       "notifications": "Notificaciones",
       "currency": "Moneda",
-      "help": "Ayuda"
+      "help": "Ayuda",
+      "personalInformation": "Información Personal",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "subscription": "Suscripción",
+      "editAccount": "Editar Cuenta",
+      "logout": "Cerrar Sesión",
+      "editProfile": "Editar Perfil",
+      "newPassword": "Nueva Contraseña",
+      "iconUrl": "URL del Icono",
+      "emailPlaceholder": "Ingrese su nuevo correo electrónico",
+      "passwordPlaceholder": "Dejar en blanco para no cambiar",
+      "iconPlaceholder": "Ingrese la URL de su icono/avatar",
+      "subscriptionPlaceholder": "Ingrese su plan de suscripción",
+      "passwordNote": "Dejar en blanco si no desea cambiar la contraseña.",
+      "notification-options": {
+        "enabled": "Habilitadas",
+        "disabled": "Deshabilitadas",
+        "important-only": "Solo importantes"
+      },
+      "settings": {
+        "title": "Ajustes del Sistema",
+        "language": "Idioma",
+        "measurementUnit": "Unidad de Medida",
+        "timezone": "Zona Horaria",
+        "notifications": "Notificaciones",
+        "currency": "Moneda",
+        "help": "Ayuda y Soporte"
+      }
     },
     "personal-info": {
       "title": "Información Personal",
@@ -218,7 +269,8 @@
     "edit-class": "Editar clase",
     "update": "Actualizar",
     "members-class": "Miembros en esta clase",
-    "members-not-found": "No se encontraron miembros para esta clase"
+    "members-not-found": "No se encontraron miembros para esta clase",
+    "mark-attendance": "Marcar Asistencia"
   },
   "inventory": {
     "add-new-item": "Agregar nuevo ítem",
