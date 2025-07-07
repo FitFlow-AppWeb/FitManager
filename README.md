@@ -3548,7 +3548,7 @@ En el Sprint 4, el enfoque principal se trasladó a la integración integral ent
   <img src="https://github.com/user-attachments/assets/77914414-d6dc-4f7d-ad5b-87d49cc430a8" alt="postman">
 </p>
 
-Video explicativo sobre lo desarrollado en este Sprint:
+[Video de Execution Evidence for Sprint Review](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EamzKgwNOHxFhI00Pwve-DIBFaTIHtoe5zX6xmOLU__XZP?e=e3Hggs)
 
 #### 5.2.4.6. Services Documentation Evidence for Sprint Review
 
