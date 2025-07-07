@@ -3361,6 +3361,55 @@ Ejemplo de tareas y descripción de una historia
 
 #### 5.2.4.6. Services Documentation Evidence for Sprint Review
 
+| Endpoint | Acción | Verbo HTTP | Sintaxis de llamada | Parámetros | Ejemplo de Request | Ejemplo de Response | Explicación |
+|----------|--------|------------|--------------------|------------|--------------------|---------------------|-------------|
+| `/api/v1/Attendances/raw-today` | Obtiene las asistencias al gimnasio del día actual | `GET` | `GET /api/v1/Attendances/raw-today` | No hay parámetros para esta solicitud. | `GET /api/v1/Attendances/raw-today` | ```json { "message": "Attendances retrieved successfully", "data": [ { "id": 1, "entryTime": "2025-07-06T15:21:04.086", "exitTime": "2025-07-06T19:40:04.086", "memberId": 1, "classId": 1 } ] } ``` | El endpoint permite obtener un registro detallado de todas las asistencias al gimnasio ocurridas durante el día actual. Su propósito es proporcionar una vista inmediata y completa de la actividad de los miembros, incluyendo las horas de entrada y salida, sin requerir parámetros adicionales en la solicitud. |
+| `/api/v1/Authentication/sign-up` | Registra nuevas credenciales de autenticación | `POST` | `POST /api/v1/Authentication/sign-up` | Body JSON: `{"email": "string", "password": "string", "icon": "string", "subscription": "string"}` | ```json { "email": "hola@gmail.com", "password": "hola", "icon": "[https://i.imgur.com/7xuhDoA.jpg](https://i.imgur.com/7xuhDoA.jpg)", "subscription": "Basic" } ``` | ```json { "message": { "name": "UserSignedUp", "value": "User registered successfully.", "resourceNotFound": false, "searchedLocation": "FitManager_Web_Services.Resources.SharedResource" } } ``` | Permite registrar nuevas credenciales de usuario en el sistema, facilitando la creación de cuentas. Su propósito es habilitar el proceso de auto-registro para que los usuarios puedan comenzar a interactuar con la aplicación. |
+| `/api/v1/Authentication/sign-in` | Permite el ingreso con credenciales de autenticación ya existentes | `POST` | `POST /api/v1/Authentication/sign-in` | Body JSON: `{"email": "string", "password": "string"}` | ```json { "email": "string@gmail.com", "password": "string" } ``` | ```json { "message": { "name": "UserSignedIn", "value": "User signed in successfully.", "resourceNotFound": false, "searchedLocation": "FitManager_Web_Services.Resources.SharedResource" }, "data": { "id": 1, "email": "string@gmail.com", "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJzdHJpbmdAZ21haWwuY29tIiwibmJmIjoxNzUxODQxMTMyLCJleHAiOjE3NTE4NDgzMzIsImlhdCI6MTc1MTg0MTEzMn0.4pxwDmgIxSeW6MtGabpu6mk2WE8z-2ITigkdNNmoJ40" } } ``` | Facilita el acceso de usuarios ya registrados al sistema mediante la validación de sus credenciales (correo electrónico y contraseña). Su función principal es autenticar al usuario y, en caso de éxito, proporcionar un token JWT que le permitirá realizar solicitudes autorizadas a otros recursos de la API. |
+| `/api/v1/ItemTypes` | Obtiene todos los tipos de objeto registrados en la base de datos | `GET` | `GET /api/v1/ItemTypes` | No hay parámetros para esta solicitud. | `GET /api/v1/ItemTypes` | ```json { "message": { "name": "ItemTypesRetrievedSuccessfully", "value": "Item types retrieved successfully.", "resourceNotFound": false, "searchedLocation": "FitManager_Web_Services.Resources.SharedResource" }, "data": [ { "id": 1, "name": "Mancuerna", "description": "Mancuerna pue" } ] } ``` | Permite recuperar una lista completa de todos los tipos de ítems registrados en el sistema de inventario. Su propósito es proporcionar una referencia de los tipos de equipos o productos disponibles. |
+| `/api/v1/ItemTypes` | Permite registrar un tipo de objeto | `POST` | `POST /api/v1/ItemTypes` | Body JSON: `{"name": "string", "description": "string"}` | ```json { "name": "Mancuerna", "description": "Mancuerna pue" } ``` | ```json { "message": { "name": "ItemTypeCreatedSuccessfully", "value": "Item type created successfully.", "resourceNotFound": false, "searchedLocation": "FitManager_Web_Services.Resources.SharedResource" }, "data": { "id": 1, "name": "Mancuerna", "description": "Mancuerna pue" } } ``` | Permite registrar un nuevo tipo de ítem en el sistema de inventario. Su propósito es facilitar la clasificación y organización de los equipos o productos al permitir la creación de categorías personalizadas. |
+| `/api/v1/Attendances` | Obtiene todos los registros de asistencia de la base de datos | `GET` | `GET /api/v1/Attendances` | No hay parámetros para esta solicitud. | `GET /api/v1/Attendances` | ```json { "message": "Attendances retrieved successfully", "data": [ { "id": 1, "entryTime": "2025-07-26T15:00:00", "exitTime": "2025-07-26T16:00:00", "memberId": 1, "classId": 1 }, { "id": 2, "entryTime": "2025-07-26T15:00:00", "exitTime": "2025-07-26T16:00:00", "memberId": 2, "classId": 1 } ] } ``` | Permite obtener una lista completa de todas las entradas y salidas registradas de los miembros a las clases o instalaciones del gimnasio. |
+| `/api/v1/Attendances/exists` | Verifica la existencia de un registro de asistencia | `GET` | `GET /api/v1/Attendances/exists?memberId={memberId}&classId={classId}&date={date}` | `memberId`: `int`, `classId`: `int`, `date`: `string` | `GET /api/v1/Attendances/exists?memberId=1&classId=1&date=2025-07-26` | ```json { "exists": true } ``` | Permite verificar rápidamente si ya existe un registro de asistencia para un miembro y una clase específicos en una fecha determinada. Es útil para evitar duplicados o para mostrar si un miembro ya ha sido registrado para una clase en un día concreto. |
+| `/api/v1/Users/{id}` | Obtiene un usuario por su id | `GET` | `GET /api/v1/Users/{id}` | `id`: `int` | `GET /api/v1/Users/3` | ```json { "message": { "name": "UserRetrieved", "value": "User retrieved successfully.", "resourceNotFound": false, "searchedLocation": "FitManager_Web_Services.Resources.SharedResource" }, "data": { "id": 3, "email": "ssstring@gmail.com", "icon": "[https://i.imgur.com/SGaLe22.jpg](https://i.imgur.com/SGaLe22.jpg)", "subscription": "Basic" } } ``` | Permite obtener los detalles específicos de un usuario de la base de datos utilizando su identificador único (ID). Es útil para mostrar la información de perfil de un usuario. |
+
+#### Ejemplos de funcionamiento de Endpoints
+
+- Nos registramos mediante el sign-up de Authentication
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/3c8da0e4-5df2-4145-9f85-7b0da4e7481b" alt="Authentication Sign Up">
+</p>
+
+- Iniciamos sesión con nuestras credenciales
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/d7430fac-112c-40df-8405-ecc8ea2690fc" alt="Authentication Sign In">
+</p>
+
+- Obtenemos el usuario que acabamos de registrar
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/c46635ba-5cc6-4b45-88b3-2724e9a28f23" alt="User Get ID">
+</p>
+
+- Obtenemos todos los registros de asistencia
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/20fd8099-f2f5-4cd4-95eb-389c8e4faf55" alt="Attendance GET">
+</p>
+
+- Registramos un tipo de objeto
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/4841c1b4-fa80-46bd-9690-149011abbd26" alt="ItemType POST">
+</p>
+
+- Obtenemos los tipos de objeto registrados
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/5338f05d-d66d-4590-876b-7a7f02b13bb6" alt="ItemType GET">
+</p>
+
 #### 5.2.4.7. Software Deployment Evidence for Sprint Review
 
 #### 5.2.4.8. Team Collaboration Insights during Sprint
