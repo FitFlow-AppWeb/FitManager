@@ -78,7 +78,6 @@
     "capacity_required": "La capacidad es obligatoria",
     "employee_required": "El empleado es obligatorio",
     "next_maintenance_date_required": "La siguiente fecha de mantenimiento es requerida"
-
   },
   "clearfilters": "Limpiar Filtros",
   "profile": {
@@ -156,7 +155,8 @@
     "close": "Cerrar",
     "create": "Crear",
     "confirm": "Confirmar",
-    "error-loading-info": "Error al cargar la información financiera."
+    "error-loading-info": "Error al cargar la información financiera.",
+    "error": "Error"
   },
   "dashboard": {
     "chart-title": "Asistencia de hoy por hora",
@@ -365,12 +365,18 @@
     "weekly-summary": "Resumen semanal",
     "total-weekly-attendance": "Asistencia semanal total",
     "historical-summary": "Resumen histórico",
+    "loading-historical-summary": "Cargando resumen histórico...",
+    "total-records": "Total de registros de asistencia",
+    "unique-attended-days": "Días únicos con asistencia",
     "average-daily-attendance": "Promedio diario de asistencia",
+    "peak-hour-average": "Hora pico promedio de asistencia",
+    "highest-attendance": "Mayor asistencia en un solo día",
+    "lowest-attendance": "Menor asistencia en un solo día",
+    "most-popular-class": "Clase más popular",
+    "least-popular-class": "Clase menos popular",
+    "no-historical-data-available": "No hay datos históricos disponibles.",
     "average-daily-absences": "Promedio diario de ausencias",
     "overall-attendance": "Asistencia general",
-    "peak-hour-average": "Promedio en hora pico",
-    "highest-attendance": "Mayor asistencia",
-    "lowest-attendance": "Menor asistencia",
     "most-frequent-user": "Usuario más frecuente"
   },
   "notification": {

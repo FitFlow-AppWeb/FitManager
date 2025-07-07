@@ -117,8 +117,6 @@
         "currency": "Currency",
         "help": "Help & Support"
       }
-
-
     },
     "personal-info": {
       "title": "Personal Information",
@@ -157,7 +155,8 @@
     "close": "Close",
     "create": "Create",
     "confirm": "Confirm",
-    "error-loading-info": "Error loading financial information."
+    "error-loading-info": "Error loading financial information.",
+    "error": "Error"
   },
   "dashboard": {
     "chart-title": "Today's Attendance by Hour",
@@ -366,12 +365,18 @@
     "weekly-summary": "Weekly Summary",
     "total-weekly-attendance": "Total Weekly Attendance",
     "historical-summary": "Historical Summary",
+    "loading-historical-summary": "Loading historical summary...",
+    "total-records": "Total Attendance Records",
+    "unique-attended-days": "Unique Attended Days",
     "average-daily-attendance": "Average daily attendance",
+    "peak-hour-average": "Peak attendance hour",
+    "highest-attendance": "Highest attendance on a single day",
+    "lowest-attendance": "Lowest attendance on a single day",
+    "most-popular-class": "Most popular class",
+    "least-popular-class": "Least popular class",
+    "no-historical-data-available": "No historical data available.",
     "average-daily-absences": "Average daily absences",
     "overall-attendance": "Overall attendance",
-    "peak-hour-average": "Peak hour average",
-    "highest-attendance": "Highest attendance",
-    "lowest-attendance": "Lowest attendance",
     "most-frequent-user": "Most frequent user"
   },
   "notification": {

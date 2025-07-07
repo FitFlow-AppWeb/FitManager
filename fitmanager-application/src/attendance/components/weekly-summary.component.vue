@@ -1,30 +1,75 @@
-<!--
-  Description: This component, WeeklySummaryComponent, fetches and displays weekly attendance data in a bar chart format.
-  It retrieves the data using the SummaryApiService and displays attendance statistics for each day of the week. The chart
-  dynamically updates based on the fetched data, and error or loading states are handled accordingly. Additionally, the
-  component calculates and displays the total weekly attendance. The chart is configured with custom options for better
-  styling and layout.
-  
-  Author: Renzo Luque
--->
-
 <script>
-import { SummaryApiService } from "../services/summary-api.service";
+import { AttendanceApiService } from "../services/attendance-api.service";
+
 export default {
   name: "WeeklySummaryComponent",
   data() {
     return {
-      summary: null,
+      rawAttendanceRecords: [],
       isLoading: true,
       error: null,
       chartData: null,
-      chartOptions: null
+      chartOptions: null,
+      daysConfig: [
+        {name: "Lunes", dayIndex: 1},
+        {name: "Martes", dayIndex: 2},
+        {name: "Miercoles", dayIndex: 3},
+        {name: "Jueves", dayIndex: 4},
+        {name: "Viernes", dayIndex: 5},
+        {name: "Sabado", dayIndex: 6},
+        {name: "Domingo", dayIndex: 0}
+      ],
+      attendanceApiService: null,
     };
   },
   computed: {
+    weeklyOverview() {
+      if (!this.rawAttendanceRecords || this.rawAttendanceRecords.length === 0) {
+        return {};
+      }
+
+      const dailyCounts = {};
+      this.daysConfig.forEach(day => {
+        dailyCounts[day.name] = 0;
+      });
+
+      const today = new Date();
+      const currentDayOfWeek = today.getDay();
+      const diffToMonday = today.getDate() - currentDayOfWeek + (currentDayOfWeek === 0 ? -6 : 1);
+      const startOfWeek = new Date(today.setDate(diffToMonday));
+      startOfWeek.setHours(0, 0, 0, 0);
+
+      const endOfWeek = new Date(startOfWeek);
+      endOfWeek.setDate(startOfWeek.getDate() + 6);
+      endOfWeek.setHours(23, 59, 59, 999);
+
+      this.rawAttendanceRecords.forEach(record => {
+        const entryDate = new Date(record.entryTime);
+
+        if (entryDate >= startOfWeek && entryDate <= endOfWeek) {
+          const dayOfWeek = entryDate.getDay();
+
+          const dayConfig = this.daysConfig.find(d => d.dayIndex === dayOfWeek);
+          if (dayConfig) {
+            dailyCounts[dayConfig.name]++;
+          }
+        }
+      });
+
+      return {
+        asistencias_lunes: dailyCounts["Lunes"] || 0,
+        asistencias_martes: dailyCounts["Martes"] || 0,
+        asistencias_miercoles: dailyCounts["Miercoles"] || 0,
+        asistencias_jueves: dailyCounts["Jueves"] || 0,
+        asistencias_viernes: dailyCounts["Viernes"] || 0,
+        asistencias_sabado: dailyCounts["Sabado"] || 0,
+        asistencias_domingo: dailyCounts["Domingo"] || 0,
+      };
+    },
+
     totalAttendance() {
-      if (!this.summary?.weeklyOverview) return 0;
-      const overview = this.summary.weeklyOverview;
+      const overview = this.weeklyOverview;
+      if (!overview) return 0;
       return (
           (overview.asistencias_lunes || 0) +
           (overview.asistencias_martes || 0) +
@@ -36,57 +81,59 @@ export default {
       );
     }
   },
+  created() {
+    this.attendanceApiService = new AttendanceApiService();
+  },
   mounted() {
-    this.fetchSummary();
+    this.fetchAttendanceData();
     this.setChartOptions();
   },
   methods: {
-    fetchSummary() {
+    async fetchAttendanceData() {
       this.isLoading = true;
-      const summaryService = new SummaryApiService();
-      summaryService.getSummary()
-          .then((summary) => {
-            this.summary = summary;
-            this.formatChartData();
-            this.isLoading = false;
-          })
-          .catch((error) => {
-            this.error = error;
-            this.isLoading = false;
-            console.error("Error fetching summary:", error);
-          });
+      this.error = null;
+      try {
+        const data = await this.attendanceApiService.getAllAttendanceRecords();
+        this.rawAttendanceRecords = data;
+        this.formatChartData();
+        this.isLoading = false;
+      } catch (error) {
+        console.error("Error fetching attendance data for summary:", error);
+        this.error = error;
+        this.rawAttendanceRecords = [];
+        this.isLoading = false;
+      }
     },
     formatChartData() {
-      if (!this.summary || !this.summary.weeklyOverview) {
+      const overview = this.weeklyOverview;
+      if (Object.keys(overview).length === 0) {
         this.chartData = null;
         return;
       }
-      const overview = this.summary.weeklyOverview;
-      const labels = [
-        "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"
-      ];
+
+      const labels = this.daysConfig.map(day => day.name);
       const dataPoints = [
-        overview.asistencias_lunes || 0,
-        overview.asistencias_martes || 0,
-        overview.asistencias_miercoles || 0,
-        overview.asistencias_jueves || 0,
-        overview.asistencias_viernes || 0,
-        overview.asistencias_sabado || 0,
-        overview.asistencias_domingo || 0
+        overview.asistencias_lunes,
+        overview.asistencias_martes,
+        overview.asistencias_miercoles,
+        overview.asistencias_jueves,
+        overview.asistencias_viernes,
+        overview.asistencias_sabado,
+        overview.asistencias_domingo
       ];
 
-      const backgroundColores = [
+      const backgroundColors = [
         "#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40", "#FF6384"
-      ]
+      ];
 
       this.chartData = {
         labels: labels,
         datasets: [
           {
-            label: "Asistencias",
+            label: this.$t('attendance.attendances'),
             data: dataPoints,
-            backgroundColor: backgroundColores,
-            borderColor: backgroundColores,
+            backgroundColor: backgroundColors,
+            borderColor: backgroundColors,
             borderWidth: 1
           }
         ]
@@ -116,7 +163,9 @@ export default {
               color: textSecondaryColor,
               font: {
                 weight: 500,
-              }
+              },
+              beginAtZero: true,
+              precision: 0
             },
             grid: {
               color: surfaceBorder,
@@ -148,21 +197,24 @@ export default {
     <div class="weekly-summary-header">
       <h4 class="weekly-summary-title" aria-label="Weekly attendance summary">{{ $t('attendance.weekly-summary') }}</h4>
     </div>
-    <pv-divider class="weekly-summary-divider" />
+    <pv-divider class="weekly-summary-divider"/>
     <div class="weekly-summary-content-wrapper">
       <div v-if="isLoading" class="weekly-summary-message" aria-live="assertive">
-        Loading overview...
+        {{ $t('attendance.loading-overview') }}
       </div>
       <div v-else-if="error" class="weekly-summary-message" aria-live="assertive">
-        Error: {{ error.message || error }}
+        {{ $t('general.error') }}: {{ error.message || error }}
       </div>
-      <div v-else-if="chartData" class="weekly-summary-chart-container" aria-label="Attendance chart">
-        <pv-chart type="bar" :data="chartData" :options="chartOptions" />
+      <div v-else-if="chartData && totalAttendance > 0" class="weekly-summary-chart-container"
+           aria-label="Attendance chart">
+        <pv-chart type="bar" :data="chartData" :options="chartOptions"/>
       </div>
       <div v-else class="weekly-summary-message">
-        No data available.
+        {{ $t('attendance.no-data-available') }}
       </div>
-      <p class="total-attendance" aria-label="Total weekly attendance">{{ $t('attendance.total-weekly-attendance') }}: {{ totalAttendance }}</p>
+      <p class="total-attendance" aria-label="Total weekly attendance">
+        {{ $t('attendance.total-weekly-attendance') }}: {{ totalAttendance }}
+      </p>
     </div>
   </div>
 </template>
@@ -176,7 +228,7 @@ export default {
   height: 290px;
   background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .weekly-summary-header {
