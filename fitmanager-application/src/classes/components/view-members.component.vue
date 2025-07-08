@@ -1,12 +1,3 @@
-<!--
-// Description: This code defines the `ViewMembers` component, which is used to display the list of members for a particular class.
-// The component receives `classData` and `visible` as props, with `classData` containing the specific class information,
-// and `visible` determining whether the dialog showing the members is visible or not.
-// The `getMembersByClass` method fetches the list of members for the specified class using a service and then renders the members in a data table.
-// If there are no members, a message is shown. The dialog can be closed by clicking the 'Close' button.
-// Author: Cassius Martel
--->
-
 <script>
 import api from '../../login/services/api.js';
 
@@ -31,7 +22,70 @@ export default {
     }
   },
   methods: {
+    /**
+     * Helper function to parse and reformat a date string into a Date object or YYYY-MM-DD string.
+     * It handles DD/MM/YYYY or D/M/YYYY and attempts to parse other formats.
+     * @param {string} dateString The date string to reformat (e.g., '29/6/2025', '2025-06-29').
+     * @param {string} [timeString='00:00'] Optional time string (HH:MM) to combine with the date.
+     * @returns {Date|string|null} A Date object if timeString is provided, YYYY-MM-DD string if not, or null on failure.
+     */
+    reformatDate(dateString, timeString = '00:00') {
+      if (!dateString) {
+        return null;
+      }
 
+      let year, month, day;
+
+      // Check if it's already in YYYY-MM-DD format (or similar parsable by Date constructor)
+      // This is the preferred input format.
+      if (dateString.match(/^\d{4}-\d{2}-\d{2}$/)) {
+        [year, month, day] = dateString.split('-');
+      } else {
+        // Attempt to parse DD/MM/YYYY or D/M/YYYY
+        const parts = dateString.split('/');
+        if (parts.length === 3) {
+          day = String(parts[0]).padStart(2, '0');
+          month = String(parts[1]).padStart(2, '0'); // Month is 0-indexed in Date object, but 1-indexed from input
+          year = parts[2];
+        } else {
+          // Fallback: Try to parse as is, might be an ISO string or another valid format
+          try {
+            const d = new Date(dateString);
+            if (!isNaN(d.getTime())) {
+              year = d.getFullYear();
+              month = String(d.getMonth() + 1).padStart(2, '0');
+              day = String(d.getDate()).padStart(2, '0');
+            } else {
+              console.warn("Could not reliably parse dateString:", dateString);
+              return null;
+            }
+          } catch (e) {
+            console.error("Error parsing dateString:", dateString, e);
+            return null;
+          }
+        }
+      }
+
+      if (!year || !month || !day) {
+        return null; // Ensure we have all parts
+      }
+
+      const datePartISO = `${year}-${month}-${day}`;
+      const fullDateTimeString = `${datePartISO}T${timeString}:00`; // Always add seconds '00'
+
+      try {
+        const d = new Date(fullDateTimeString);
+        if (!isNaN(d.getTime())) {
+          return d; // Return a Date object if a timeString was intended for precise timestamp
+        } else {
+          // If the Date object is invalid even after reconstruction, return just the date part string
+          return datePartISO;
+        }
+      } catch (e) {
+        console.error("Error creating Date object from combined string:", fullDateTimeString, e);
+        return datePartISO; // Return just the date part as string if Date object creation fails
+      }
+    },
 
     closeDialog() {
       this.$emit("close");
@@ -100,6 +154,7 @@ export default {
               age: memberData.age,
               membershipStatus: memberData.membershipStatus?.status || 'N/A',
               membershipType: memberData.membershipStatus?.membershipType?.name || 'N/A',
+              // Assuming endDate from API is already an ISO string or parsable by Date
               expirationDate: memberData.membershipStatus?.endDate ? new Date(memberData.membershipStatus.endDate).toLocaleDateString() : 'N/A',
               email: memberData.email,
               phone: memberData.phoneNumber,
@@ -127,15 +182,31 @@ export default {
         return;
       }
 
-      const classDateObj = new Date(this.classData.date);
+      // We only need YYYY-MM-DD for the 'date' query parameter
+      const classDateObj = this.reformatDate(this.classData.date); // This returns a Date object now
+      console.log('Original classData.date:', this.classData.date);
+      console.log('Processed classDateObj for attendance check:', classDateObj);
+
+      if (!classDateObj || isNaN(classDateObj.getTime())) {
+        console.error("No se pudo formatear o la fecha de la clase es inválida para la verificación de asistencia.");
+        this.$toast.add({
+          severity: 'error',
+          summary: 'Error de fecha',
+          detail: 'La fecha de la clase no es válida para verificar asistencia.',
+          life: 5000
+        });
+        return;
+      }
+
       const formattedClassDate = classDateObj.getFullYear() + '-' +
           String(classDateObj.getMonth() + 1).padStart(2, '0') + '-' +
           String(classDateObj.getDate()).padStart(2, '0');
 
       for (const member of this.members) {
         try {
+          console.log('memberId:', member.id, ', classId:', this.classData.id, ', date:', formattedClassDate);
           const response = await api.get(`/api/v1/Attendances/exists?memberId=${member.id}&classId=${this.classData.id}&date=${formattedClassDate}`);
-
+          console.log('Attendance check response:', response);
           this.attendanceStatus[member.id] = response.data.exists;
 
         } catch (error) {
@@ -150,25 +221,38 @@ export default {
       try {
         this.attendanceStatus[memberId] = true;
 
-        const classDatePart = new Date(this.classData.date).toISOString().split('T')[0];
         const classTimePart = this.classData.time && this.classData.time.match(/^\d{2}:\d{2}$/) ? this.classData.time : '00:00';
 
-        // CREAR LAS FECHAS EN LA ZONA HORARIA LOCAL DESEADA PRIMERO:
-        // Asegúrate de que `this.classData.date` y `this.classData.time` sean correctos para tu zona horaria.
-        // `new Date("YYYY-MM-DDTHH:MM:00")` ya crea un objeto Date en la hora LOCAL del navegador.
-        const entryDateLocal = new Date(`${classDatePart}T${classTimePart}:00`);
-        const exitDateLocal = new Date(entryDateLocal);
+        // Use the reformatDate helper to get a full Date object combining date and time
+        const entryDateLocal = this.reformatDate(this.classData.date, classTimePart);
+
+        console.log('Original classData.date:', this.classData.date, 'classData.time:', this.classData.time);
+        console.log('Processed entryDateLocal (Date object):', entryDateLocal);
+
+        if (!entryDateLocal || isNaN(entryDateLocal.getTime())) {
+          console.error("ERROR: entryDateLocal es un objeto Date inválido después de formatear y combinar.", this.classData.date, classTimePart);
+          this.$toast.add({
+            severity: 'error',
+            summary: 'Error de Fecha y Hora',
+            detail: 'La fecha y/o hora de la clase es inválida para el registro.',
+            life: 5000
+          });
+          this.attendanceStatus[memberId] = false; // Revert optimistic update
+          return;
+        }
+
+        const exitDateLocal = new Date(entryDateLocal); // Create a new Date object from entryDateLocal
 
         if (this.classData.duration) {
           exitDateLocal.setMinutes(entryDateLocal.getMinutes() + this.classData.duration);
         } else {
-          exitDateLocal.setHours(entryDateLocal.getHours() + 1);
+          exitDateLocal.setHours(entryDateLocal.getHours() + 1); // Default to 1 hour duration
         }
 
         const attendanceData = {
-          // ENVIARLAS EN FORMATO UTC AL BACKEND (toISOString() hace esto automáticamente)
-          entryTime: entryDateLocal.toISOString(), // Esto enviará 8 AM local como 1 PM UTC
-          exitTime: exitDateLocal.toISOString(),   // Esto enviará 9:30 AM local como 2:30 PM UTC
+          // Convert Date objects to ISO 8601 strings (UTC) for the backend
+          entryTime: entryDateLocal.toISOString(),
+          exitTime: exitDateLocal.toISOString(),
           memberId: memberId,
           classId: this.classData.id
         };
@@ -210,6 +294,7 @@ export default {
     },
     classData: {
       handler(newVal, oldVal) {
+        // Only re-fetch if classId changes and dialog is visible
         if (newVal?.id && newVal.id !== oldVal?.id && this.visible) {
           this.getMembersByClass();
         }
@@ -251,14 +336,14 @@ export default {
           aria-describedby="members-table"
           class="members-table"
       >
-        <pv-column field="fullName" :header="$t('members.full-name')" />
-        <pv-column field="age" :header="$t('members.age')" />
-        <pv-column field="membershipStatus" :header="$t('members.membership-status')" />
-        <pv-column field="membershipType" :header="$t('members.membership-type')" />
-        <pv-column field="expirationDate" :header="$t('members.expiration-date')" />
-        <pv-column field="email" :header="$t('members.email')" />
-        <pv-column field="phone" :header="$t('members.phone')" />
-        <pv-column field="address" :header="$t('members.address')" />
+        <pv-column field="fullName" :header="$t('members.full-name')"/>
+        <pv-column field="age" :header="$t('members.age')"/>
+        <pv-column field="membershipStatus" :header="$t('members.membership-status')"/>
+        <pv-column field="membershipType" :header="$t('members.membership-type')"/>
+        <pv-column field="expirationDate" :header="$t('members.expiration-date')"/>
+        <pv-column field="email" :header="$t('members.email')"/>
+        <pv-column field="phone" :header="$t('members.phone')"/>
+        <pv-column field="address" :header="$t('members.address')"/>
         <pv-column :header="$t('actions')">
           <template #body="slotProps">
             <pv-button
@@ -289,7 +374,7 @@ export default {
     </div>
   </pv-dialog>
 
-  <Toast />
+  <Toast/>
 </template>
 
 <style scoped>

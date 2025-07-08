@@ -59,33 +59,41 @@ export default {
 
 
       this.rawAttendanceRecords.forEach(record => {
-        // Create a Date object from the original entryTime string
-        const originalEntryDate = new Date(record.entryTime);
+        // Use the already normalized and ADJUSTED 'entryTimeDate' Date object
+        const originalEntryDate = record.entryTimeDate;
 
-        // Get the day of the week based on the *original* date
-        // This is crucial to ensure records stay on their original day column
+        // Skip if date is invalid after parsing
+        if (!originalEntryDate || isNaN(originalEntryDate.getTime())) {
+          console.warn("Skipping record due to invalid entryTime:", record.entryTime);
+          return;
+        }
+
+        // Get the day of the week based on the *ADJUSTED* original date
         const recordDayOfWeek = originalEntryDate.getDay();
 
-        // Create a *copy* of the date to apply the hour adjustment
-        // We do this to not affect the original date used for day-of-week logic
-        const adjustedEntryDate = new Date(originalEntryDate);
-
-        // --- HARDCODED HOUR ADJUSTMENT HERE ---
-        // Subtract 5 hours from the adjusted date's hour.
-        adjustedEntryDate.setHours(adjustedEntryDate.getHours() - 5);
-        // --- END HARDCODED HOUR ADJUSTMENT ---
-
-        // Get the hour from the *adjusted* date for display on the heatmap
-        const hour = String(adjustedEntryDate.getHours()).padStart(2, '0') + ":00";
+        // Get the hour from the *ADJUSTED* date for display on the heatmap
+        const hour = String(originalEntryDate.getHours()).padStart(2, '0') + ":00"; // Use originalEntryDate directly for hours
 
         const dayConfig = this.daysConfig.find(d => d.keyForProcessing === recordDayOfWeek);
+
+        // --- CONSOLE.LOG PARA DEPURACIÓN AQUÍ ---
+        // Este log se ejecutará para CADA registro, mostrando la fecha y hora con el ajuste ya aplicado,
+        // y el día de la semana calculado.
+        console.log(
+            `Record processed:`,
+            `Original String (from backend): ${record.entryTime}`,
+            `Adjusted Date Object (used for calculations): ${originalEntryDate.toISOString()}`,
+            `Day of Week (0=Sun, 1=Mon...): ${recordDayOfWeek}`,
+            `Hour: ${hour}`,
+            `Belongs to column: ${dayConfig ? dayConfig.keyForColumn : 'N/A'}`
+        );
+        // --- FIN CONSOLE.LOG ---
 
         if (dayConfig && this.hoursOfDay.includes(hour)) {
           let shouldIncludeRecord = false;
 
           // Normalize original record date to start of day for comparison
-          // Use originalEntryDate here for the date comparisons, not the adjusted one,
-          // to ensure week/day filtering is based on the actual date, not the hour-shifted date.
+          // This uses the *already adjusted* originalEntryDate
           const normalizedOriginalEntryDate = new Date(originalEntryDate);
           normalizedOriginalEntryDate.setHours(0, 0, 0, 0);
 
@@ -176,12 +184,69 @@ export default {
   },
 
   methods: {
+    /**
+     * Parses a date string (can include time) into a Date object,
+     * and applies a -5 hour adjustment if parsing is successful.
+     * This method handles DD/MM/YYYY [HH:MM] and standard ISO formats.
+     * @param {string} dateString The date string to parse.
+     * @returns {Date|null} A Date object (adjusted), or null.
+     */
+    parseAndNormalizeEntryTime(dateString) {
+      if (!dateString) {
+        return null;
+      }
+
+      let date = new Date(dateString);
+
+      // If it's an invalid date, try to parse DD/MM/YYYY [HH:MM]
+      if (isNaN(date.getTime())) {
+        const parts = dateString.split(' ')[0].split('/'); // Get date part and split by '/'
+        const timePart = dateString.split(' ')[1] || '00:00:00'; // Get time part or default to midnight
+
+        if (parts.length === 3) {
+          const day = String(parts[0]).padStart(2, '0');
+          const month = String(parts[1]).padStart(2, '0');
+          const year = parts[2];
+
+          let time = timePart;
+          if (time.length === 5) { // HH:MM
+            time += ':00';
+          }
+
+          const isoString = `${year}-${month}-${day}T${time}`;
+          date = new Date(isoString);
+        }
+      }
+
+      // --- APPLY THE -5 HOUR ADJUSTMENT HERE, AFTER INITIAL DATE OBJECT CREATION ---
+      // This ensures that the Date object reflects the intended local time
+      // before any day-of-week or date range calculations are made.
+      if (!isNaN(date.getTime())) {
+        date.setHours(date.getHours() - 5);
+      }
+      // --- END ADJUSTMENT ---
+
+      return isNaN(date.getTime()) ? null : date;
+    },
+
     async fetchHeatmapData() {
       this.isLoading = true;
       try {
         const data = await this.attendanceApiService.getAllAttendanceRecords();
-        this.rawAttendanceRecords = data;
+        // Normalize entryTime for each record using the updated parseAndNormalizeEntryTime
+        this.rawAttendanceRecords = data.map(record => {
+          const normalizedDate = this.parseAndNormalizeEntryTime(record.entryTime);
+          if (!normalizedDate) {
+            console.warn("Could not normalize entryTime for record:", record);
+          }
+          return {
+            ...record,
+            entryTimeDate: normalizedDate // Store the parsed and ADJUSTED Date object
+          };
+        }).filter(record => record.entryTimeDate !== null); // Filter out records with invalid dates
+
         this.isLoading = false;
+        console.log("1. Raw attendance records (normalized):", this.rawAttendanceRecords);
       } catch (error) {
         console.error("Error fetching attendance data for heatmap:", error);
         this.rawAttendanceRecords = [];
