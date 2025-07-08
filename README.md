@@ -3548,7 +3548,7 @@ En el Sprint 4, el enfoque principal se trasladó a la integración integral ent
   <img src="https://github.com/user-attachments/assets/77914414-d6dc-4f7d-ad5b-87d49cc430a8" alt="postman">
 </p>
 
-Video explicativo sobre lo desarrollado en este Sprint:
+[Video de Execution Evidence for Sprint Review](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EamzKgwNOHxFhI00Pwve-DIBFaTIHtoe5zX6xmOLU__XZw?e=e3Hggs)
 
 #### 5.2.4.6. Services Documentation Evidence for Sprint Review
 
@@ -3602,6 +3602,34 @@ Video explicativo sobre lo desarrollado en este Sprint:
 </p>
 
 #### 5.2.4.7. Software Deployment Evidence for Sprint Review
+
+Para el Sprint 4, el proceso de despliegue se mantuvo consistente con los sprints anteriores. Se replicaron los mismos pasos utilizados en el Sprint 2 para el despliegue del frontend en Firebase Hosting y, de manera similar, se siguieron las directrices del Sprint 3 para el despliegue del backend en Azure App Service.
+
+Web Applications desplegado en Firebase
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/e65c60dc-371d-4bbb-9189-fb652889e12e" alt="deployed web applications">
+</p>
+
+Web Services desplegado en Azure
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/5cc01b85-93c9-4899-9532-ecf5c55d26f5" alt="deployed web services">
+</p>
+
+Adicionalmente, se implementó una configuración CORS en el archivo Program.cs del backend, permitiendo la comunicación fluida con el frontend. Con esta actualización, las solicitudes del frontend fueron redirigidas desde el entorno de FakeAPI directamente al backend desplegado en Azure.
+
+- Program.cs
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/9b07b038-d46a-4675-b534-f4db919a9547" alt="program.cs">
+</p>
+
+- Redirección al api
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/6412c56d-516f-4ca7-a720-a0b63d934a52" alt="api redirection">
+</p>
 
 #### 5.2.4.8. Team Collaboration Insights during Sprint
 
@@ -3903,7 +3931,17 @@ Recomendación: Se recomienda implementar, en la sección de Muestras de la Land
 
 ## 5.4. Video About-the-Product
 
-Esta sección presenta el video 'About-the-Product' de FitManager, el cual describe el modelo de negocio y las características principales del software. Está dirigido tanto a visitantes de la Landing Page que buscan comprender la solución, como a usuarios de las Aplicaciones interesados en las tareas y procesos soportados. 
+Esta sección presenta el video “About-the-Team” de FitFlow, donde se muestra el proceso colaborativo del equipo durante las distintas etapas del proyecto. El video combina tomas de sesiones de trabajo reales (planificación, diseño y desarrollo), narración en off que explica el flujo de trabajo y el enfoque Lean UX, y el testimonio ante cámara de cada uno de los cinco integrantes, quienes describen sus actividades, los resultados obtenidos (outcomes) y las competencias desarrolladas a lo largo del proyecto.
+
+| Sección               | Timing (hh:mm:ss) | Contenido                                                                           |
+|-----------------------|-------------------|-------------------------------------------------------------------------------------|
+| 00:00:00 – 00:00:08   | Intro             | Logotipo de FitFlow animado con música ligera                                       |
+| 00:00:08 – 00:01:37   | Casius Martel        | Organización del equipo, planificación, coordinación técnica y competencias desarrolladas. |
+| 01:37 – 02:17         | Renzo Luque          | Diseño de layout, navegación, autenticación y finanzas, habilidades de comunicación. |
+| 02:17 – 03:13         | Juan Carlos Alvarado | Análisis 5W2H, backend (empleoy), frontend (perfil de usuario), documentación.       |
+| 03:13 – 04:34         | Víctor Ortiz      | Dailies, Jira, DDD, frontend y backend, trabajo en equipo.                          |
+| 04:34 – 05:44         | Tomio Nakamurake     | Comunicación, Git, inventario, finanzas y asistencia, full-stack.                   |
+| 05:44 – Fin           | Narración Cierre  | Mensaje final sobre pasión y dedicación del equipo.                                 |
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/f72088b6-1f18-4744-9466-df00f68ada4c" alt="About-the-Product Screenshot">
@@ -3911,7 +3949,7 @@ Esta sección presenta el video 'About-the-Product' de FitManager, el cual descr
 
 Link (Microsoft Stream): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312899_upc_edu_pe/ETYd4FsH0WRBgukPyX2xQMcBXNGVC6qeFqMPlGUkf8I2Yg?e=5rJa0I&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
-Link (Youtube): https://www.youtube.com/watch?v=waMrHExcU5w&t=13s
+**Link (YouTube):** [About-the-Team en YouTube](https://youtu.be/pyM0A4Hb6mk)
 
 # Conclusiones
 
