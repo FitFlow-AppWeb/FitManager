@@ -3936,6 +3936,10 @@ Recomendación: Se recomienda implementar, en la sección de Muestras de la Land
 </p>
 
 [About-the-Product en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EbLGyLvUUxFPlIGWiR57v78BAJbDR9ghUPd41rberqZ2Dg?e=lBe9s3)
+[About-the-Product en Youtube](https://www.youtube.com/watch?v=Ug0ffFJ12WU)
+
+
+
 
 # Conclusiones
 
