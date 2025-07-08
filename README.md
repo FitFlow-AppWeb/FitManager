@@ -3973,9 +3973,9 @@ Esta sección presenta el video “About-the-Team” de FitFlow, donde se muestr
   <img src="https://github.com/user-attachments/assets/f72088b6-1f18-4744-9466-df00f68ada4c" alt="About-the-Product Screenshot">
 </p>
 
-Link (Microsoft Stream): [About-the-Team en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312899_upc_edu_pe/ETYd4FsH0WRBgukPyX2xQMcBXNGVC6qeFqMPlGUkf8I2Yg?e=5rJa0I&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+Link (Microsoft Stream): [About-the-Team en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221c275_upc_edu_pe/EXDF3KoYnHdEh6l0WuDEnOABpriC_rwGOCXwQLV46c0G3w?e=CcEKCo)
 
-**Link (YouTube):** [About-the-Team en YouTube](https://youtu.be/pyM0A4Hb6mk)
+**Link (YouTube):** [About-the-Team en YouTube](https://youtu.be/OHBoU9M-NuY)
 
 # Bibliografía
 
