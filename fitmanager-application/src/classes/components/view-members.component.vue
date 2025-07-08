@@ -153,17 +153,22 @@ export default {
         const classDatePart = new Date(this.classData.date).toISOString().split('T')[0];
         const classTimePart = this.classData.time && this.classData.time.match(/^\d{2}:\d{2}$/) ? this.classData.time : '00:00';
 
-        const entryTime = new Date(`${classDatePart}T${classTimePart}:00`);
-        const exitTime = new Date(entryTime);
+        // CREAR LAS FECHAS EN LA ZONA HORARIA LOCAL DESEADA PRIMERO:
+        // Asegúrate de que `this.classData.date` y `this.classData.time` sean correctos para tu zona horaria.
+        // `new Date("YYYY-MM-DDTHH:MM:00")` ya crea un objeto Date en la hora LOCAL del navegador.
+        const entryDateLocal = new Date(`${classDatePart}T${classTimePart}:00`);
+        const exitDateLocal = new Date(entryDateLocal);
+
         if (this.classData.duration) {
-          exitTime.setMinutes(entryTime.getMinutes() + this.classData.duration);
+          exitDateLocal.setMinutes(entryDateLocal.getMinutes() + this.classData.duration);
         } else {
-          exitTime.setHours(entryTime.getHours() + 1);
+          exitDateLocal.setHours(entryDateLocal.getHours() + 1);
         }
 
         const attendanceData = {
-          entryTime: entryTime.toISOString(),
-          exitTime: exitTime.toISOString(),
+          // ENVIARLAS EN FORMATO UTC AL BACKEND (toISOString() hace esto automáticamente)
+          entryTime: entryDateLocal.toISOString(), // Esto enviará 8 AM local como 1 PM UTC
+          exitTime: exitDateLocal.toISOString(),   // Esto enviará 9:30 AM local como 2:30 PM UTC
           memberId: memberId,
           classId: this.classData.id
         };
