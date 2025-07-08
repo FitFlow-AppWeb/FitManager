@@ -3931,25 +3931,7 @@ Recomendación: Se recomienda implementar, en la sección de Muestras de la Land
 
 ## 5.4. Video About-the-Product
 
-Esta sección presenta el video “About-the-Team” de FitFlow, donde se muestra el proceso colaborativo del equipo durante las distintas etapas del proyecto. El video combina tomas de sesiones de trabajo reales (planificación, diseño y desarrollo), narración en off que explica el flujo de trabajo y el enfoque Lean UX, y el testimonio ante cámara de cada uno de los cinco integrantes, quienes describen sus actividades, los resultados obtenidos (outcomes) y las competencias desarrolladas a lo largo del proyecto.
 
-| Sección               | Timing (hh:mm:ss) | Contenido                                                                           |
-|-----------------------|-------------------|-------------------------------------------------------------------------------------|
-| 00:00:00 – 00:00:08   | Intro             | Logotipo de FitFlow animado con música ligera                                       |
-| 00:00:08 – 00:01:37   | Casius Martel        | Organización del equipo, planificación, coordinación técnica y competencias desarrolladas. |
-| 01:37 – 02:17         | Renzo Luque          | Diseño de layout, navegación, autenticación y finanzas, habilidades de comunicación. |
-| 02:17 – 03:13         | Juan Carlos Alvarado | Análisis 5W2H, backend (empleoy), frontend (perfil de usuario), documentación.       |
-| 03:13 – 04:34         | Víctor Ortiz      | Dailies, Jira, DDD, frontend y backend, trabajo en equipo.                          |
-| 04:34 – 05:44         | Tomio Nakamurake     | Comunicación, Git, inventario, finanzas y asistencia, full-stack.                   |
-| 05:44 – Fin           | Narración Cierre  | Mensaje final sobre pasión y dedicación del equipo.                                 |
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/f72088b6-1f18-4744-9466-df00f68ada4c" alt="About-the-Product Screenshot">
-</p>
-
-Link (Microsoft Stream): https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312899_upc_edu_pe/ETYd4FsH0WRBgukPyX2xQMcBXNGVC6qeFqMPlGUkf8I2Yg?e=5rJa0I&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
-
-**Link (YouTube):** [About-the-Team en YouTube](https://youtu.be/pyM0A4Hb6mk)
 
 # Conclusiones
 
@@ -3974,6 +3956,26 @@ Link (Microsoft Stream): https://upcedupe-my.sharepoint.com/:v:/g/personal/u2023
 * Tras el Sprint 4 y la fase de validación, sugerimos implementar un proceso estructurado para la gestión y priorización del feedback de los usuarios. Esto implica categorizar, analizar y asignar responsables para cada feedback recibido, asegurando que las observaciones clave se traduzcan en mejoras tangibles en futuras iteraciones del producto.
 
 # Video About-the-team
+
+Esta sección presenta el video “About-the-Team” de FitFlow, donde se muestra el proceso colaborativo del equipo durante las distintas etapas del proyecto. El video combina tomas de sesiones de trabajo reales (planificación, diseño y desarrollo), narración en off que explica el flujo de trabajo y el enfoque Lean UX, y el testimonio ante cámara de cada uno de los cinco integrantes, quienes describen sus actividades, los resultados obtenidos (outcomes) y las competencias desarrolladas a lo largo del proyecto.
+
+| Sección               | Timing (hh:mm:ss) | Contenido                                                                           |
+|-----------------------|-------------------|-------------------------------------------------------------------------------------|
+| 00:00:00 – 00:00:08   | Intro             | Logotipo de FitFlow animado con música ligera                                       |
+| 00:00:08 – 00:01:37   | Casius Martel        | Organización del equipo, planificación, coordinación técnica y competencias desarrolladas. |
+| 01:37 – 02:17         | Renzo Luque          | Diseño de layout, navegación, autenticación y finanzas, habilidades de comunicación. |
+| 02:17 – 03:13         | Juan Carlos Alvarado | Análisis 5W2H, backend (empleoy), frontend (perfil de usuario), documentación.       |
+| 03:13 – 04:34         | Víctor Ortiz      | Dailies, Jira, DDD, frontend y backend, trabajo en equipo.                          |
+| 04:34 – 05:44         | Tomio Nakamurake     | Comunicación, Git, inventario, finanzas y asistencia, full-stack.                   |
+| 05:44 – Fin           | Narración Cierre  | Mensaje final sobre pasión y dedicación del equipo.                                 |
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f72088b6-1f18-4744-9466-df00f68ada4c" alt="About-the-Product Screenshot">
+</p>
+
+Link (Microsoft Stream): [About-the-Team en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312899_upc_edu_pe/ETYd4FsH0WRBgukPyX2xQMcBXNGVC6qeFqMPlGUkf8I2Yg?e=5rJa0I&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+**Link (YouTube):** [About-the-Team en YouTube](https://youtu.be/pyM0A4Hb6mk)
 
 # Bibliografía
 
