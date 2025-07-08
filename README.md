@@ -3931,7 +3931,11 @@ Recomendación: Se recomienda implementar, en la sección de Muestras de la Land
 
 ## 5.4. Video About-the-Product
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/55ed90ea-04f4-4dc3-a281-477b9570f28b" alt="Video about the product">
+</p>
 
+[About-the-Product en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EbLGyLvUUxFPlIGWiR57v78BAJbDR9ghUPd41rberqZ2Dg?e=lBe9s3)
 
 # Conclusiones
 
@@ -4011,20 +4015,21 @@ Universidad Nacional de Cuyo. (2019). El mercado del fitness en América Latina.
 
 Anexo A. Entrevistas
 
-Entrevistas FitManager. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD
+[Entrevistas FitManager](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUF7nqxQcJZBqixiAcPMVAABYJ-a94IJxisICrRIln7zJQ?e=XyZ6WD)
 
-Entrevistas de Validación. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUvaQoUT3N9Jq4q_2Vt6DusBduswFv8N9Q-uuBXlkkPUmQ?e=PLYXX3
+[Entrevistas de Validación](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EUvaQoUT3N9Jq4q_2Vt6DusBduswFv8N9Q-uuBXlkkPUmQ?e=PLYXX3)
 
 Anexo B. Videos del proyecto
 
-Web applications. prototyping.https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ERuo8X7cvC5FqEx6YCN0JpYBKXMEph_E6QqXlAQ9kbxQHw?e=TTxgUe
-![image](https://github.com/user-attachments/assets/9d547fca-102b-4ac3-a75b-08701f3a993e)
+[Web applications prototyping](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/ERuo8X7cvC5FqEx6YCN0JpYBKXMEph_E6QqXlAQ9kbxQHw?e=TTxgUe)
 
-Execution Evidence for Sprint 1 Review. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Ed9gIYEnn7pHoo-q92jS8bEBMDLFkl5UR49PFMps5WnhhQ?e=Whi8i4
+[Execution Evidence for Sprint 1 Review](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Ed9gIYEnn7pHoo-q92jS8bEBMDLFkl5UR49PFMps5WnhhQ?e=Whi8i4)
 
-Execution Evidence for Sprint 2 Review. https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Eadp2HRIXb5DnFlCBCUolFQBwWQPHVned1ARzTaDKu71Lg?e=nLiT9C
+[Execution Evidence for Sprint 2 Review](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/Eadp2HRIXb5DnFlCBCUolFQBwWQPHVned1ARzTaDKu71Lg?e=nLiT9C)
 
-Execution Evidence for Sprint 3 Review. https://upcedupe-my.sharepoint.com/personal/u202312899_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202312899_upc_edu_pe%2FDocuments%2F2025-06-21%2011-07-26%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E303b1036-6230-4148-a4f0-08f1abca1fac
+[Execution Evidence for Sprint 3 Review](https://upcedupe-my.sharepoint.com/personal/u202312899_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202312899_upc_edu_pe%2FDocuments%2F2025-06-21%2011-07-26%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E303b1036-6230-4148-a4f0-08f1abca1fac)
+
+[Execution Evidence for Sprint 4 Review](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EamzKgwNOHxFhI00Pwve-DIBFaTIHtoe5zX6xmOLU__XZw?e=e3Hggs)
 
 Anexo C. UI Design
 
@@ -4052,9 +4057,13 @@ FitManager. https://fitmanager-f6e6e.web.app/
 
 Anexo H. Swagger
 
-FitManager. https://app-250620211419.azurewebsites.net/swagger/index.html
+FitManager. https://app-250707032508.azurewebsites.net/swagger/index.html
 
 Anexo I. Video About-the-Product
 
-About-the-Product. https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312899_upc_edu_pe/ETYd4FsH0WRBgukPyX2xQMcBXNGVC6qeFqMPlGUkf8I2Yg?e=5rJa0I&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+[About-the-Product en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201f855_upc_edu_pe/EbLGyLvUUxFPlIGWiR57v78BAJbDR9ghUPd41rberqZ2Dg?e=lBe9s3)
+
+Anexo j. Video About-the-team
+
+[About-the-Team en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221c275_upc_edu_pe/EXDF3KoYnHdEh6l0WuDEnOABpriC_rwGOCXwQLV46c0G3w?e=CcEKCo)
 
